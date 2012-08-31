@@ -1,0 +1,15 @@
+<t:container
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+		
+	<div class="k-panel" id="${prop:clientId}">
+		<t:delegate t:to="block" />
+		<div class="content">
+			<t:body />
+		</div>
+	</div>
+	
+	<t:block t:id="defaultHeaderBlock">
+		<h4 class="control"><a href="#" title="${prop:title}">${prop:header}</a></h4>
+	</t:block>
+</t:container>

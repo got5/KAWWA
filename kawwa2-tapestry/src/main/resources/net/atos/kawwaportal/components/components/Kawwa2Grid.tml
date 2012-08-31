@@ -1,0 +1,32 @@
+<t:container
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+    
+    <t:zone t:id="rowPerPageZone" id="${rowPerPageZone}" t:update="show">
+    	<t:delegate t:to="blockToDisplay" />
+    </t:zone>
+    
+    <t:block t:id="gridBlock">
+    	
+    	<t:delegate t:to="pagerTop" />
+		
+		<t:Grid t:id="idKawwaGrid" 
+			t:source="prop:cachedSource"							
+			t:rowsPerPage="rowsPerPage"
+			t:pagerPosition="none"
+			t:class="prop:tableClass">
+		</t:Grid>
+		
+		<t:delegate t:to="pagerBottom" />
+		
+	  </t:block>
+	  
+	  <t:block t:id="pager">
+	
+		<t:kawwa2.Kawwa2Nav t:rowsPerPage="rowsPerPage" t:source="prop:cachedSource" 
+	  					   t:currentpage="currentPage"
+						   t:zone="rowPerPageZone"
+						   t:navigatorOptions="options" />
+	
+	  </t:block>
+</t:container>

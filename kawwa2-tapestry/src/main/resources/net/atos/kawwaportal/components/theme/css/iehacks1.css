@@ -1,0 +1,238 @@
+/* -------------------------------------------------------------------- 
+        		KAWWA2 - Theme 1
+      	  Hacks for Internet Explorer (< v9)
+          By Le Studio, Atos Worldline, 2011
+-------------------------------------------------------------------- */
+
+/*  "*" is for IE6 and 7 */
+/*  "_" is for ie6 only */
+/* no hack means all IE versions <9 */
+
+/* --- PAGE RESTRUCTURE --- */
+#wrapper {_display: inline; *width: 95.9%;}
+#main {*width: 100%; *margin: 0; *padding: 0;}
+#main-all {float: left; width: 59%; padding: 0 2%;} /* 3 cols */
+#main-menu {float: right; width: 83%;} /* with menu only */
+#main-aside {float: left; width: 78%;} /* with sidebar only */
+
+
+/* --- DOUBLE MARGIN BUG --- */
+div.k-catalog .k-product {display: inline;}
+div.i-topics div.k-info-block {display: inline;}
+
+
+/* ------------------------ GENERAL FIXES ------------------------- */
+
+h1 {_display: inline;}
+legend {margin-bottom: 21px;}
+
+/* --- NAVIGATON --- */
+
+ul.k-navbar {*border-bottom: 3px solid #000;}
+ul.k-navbar a, ul.k-navbar a:visited, ul.k-navbar li.active strong {_display: inline-block;}
+ul.k-navbar .dropdown li {float: left; width: 100%;}
+p.view-all a {_float: left; _width: 100%;}
+
+/* --- FORMS --- */
+input[type=radio], input[type=checkbox] {border: none;}
+
+.k-radio legend {margin-bottom: 0;}
+
+/* Buttons (ie6 only) */
+input.btSubmit {
+	height: 2.4em;
+	padding: 0 5px;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #F60;
+	border: 1px #FFF solid;;
+	cursor: pointer;
+}
+input.btReset {
+	height: 2.4em;
+	padding: 0 5px;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #808080;
+	border: 1px solid #808080;
+	cursor: pointer;
+}
+input.btDisabled {
+	height: 2.4em;
+	padding: 0 5px;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #999;
+	background: #CCC;
+	border: 1px solid #e3e3e3;
+	cursor: default;
+}
+input.btOptional {
+	height: 2.4em;
+	padding: 0 5px;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #990;
+	border: 1px solid #990;
+	cursor: pointer;
+}
+
+
+form.k-language {*width: 6em; *text-align: right;}
+
+p.k-login-data {_position: relative; _width: 40em; _top: -2.5em;}
+
+.k-tools-list {*padding-top: 0.5em;}
+
+/* Search form */
+#k-search input.btSubmit {
+	height: 2em;
+	font-size: 90%;
+    color: #FFF;
+    background: #000;
+    padding: 0;
+    margin: 0 0 0 -5px;
+	border-color: #000;
+}
+#k-search p {*padding-top: 3px;}
+#search-tag {*height: 1.5em; *vertical-align: middle;}
+
+/* Login form */
+#k-login input.btSubmit {_margin-top: 10px}
+
+/* Form wizard */
+ul.k-form-steps li {
+	*display: inline;
+	*float: left;
+	*width: auto;
+}
+ul.k-form-steps li.active {background-position: 0 0.4em;}
+
+/* --- BLOCKS --- */
+
+/* Accordion/collapsible panels */
+.k-panel {*overflow: visible; *border: none;}
+.k-panel .control {
+	_float: left;
+	_width: 98%;
+	_padding: 3px 1% 4px;
+}
+.k-panel .content {*border: 1px solid #808080;}
+.k-panel legend.control {margin-left: -0.8%;}
+ 
+ 
+/* --- TOOLTIPS'n MODALS --- */
+ .ui-dialog {*top: 10%; *left: 40%;}
+ a.ui-dialog-titlebar-close, a:link.ui-dialog-titlebar-close, a:visited.ui-dialog-titlebar-close {
+		*top: 0;
+		*left: -3px;
+	}
+
+/* --- TREEVIEW --- */
+div.k-tree li, div.k-tree li ins {_background: none; cursor: pointer;}
+div.k-tree li.jstree-leaf, div.k-tree li.jstree-leaf ins {_cursor: default;}
+
+/* --- TABS --- */
+div.k-tabbed-data div.content {
+		float: left;
+		width: 96%;
+		padding: 2%;
+		margin-bottom: 20px;
+		color: #000;
+		background: #FFF;
+		border: 1px solid #808080;
+	}
+	
+/* --- PRODUCT --- */
+
+.k-product-sheet {_width: 95%;}
+	
+/* --- CAROUSEL --- */
+.k-carousel li {
+	*float: left;
+	*display: inline;
+	*width: 101px; 
+	*list-style-type: none;
+	*margin: 1em;
+}
+
+.k-carousel .jcarousel-container-horizontal {
+    *width: 300px;
+    *padding: 20px 67px;border: 1px solid #C00
+}
+
+.k-carousel .jcarousel-clip-horizontal {
+   *width:  101px;
+    *height: 12.5em;
+}
+
+.k-carousel .jcarousel-clip-vertical {
+   *width:  101px;
+    *height: 12.5em;
+}
+
+.k-carousel .jcarousel-item {
+   *width:  101px;
+    *height: 12.5em;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.k-carousel .jcarousel-next-horizontal {
+    *position: absolute;
+    *top: 43px;
+    *left: 160px;
+    *width: 47px;
+    *height: 47px;
+    *cursor: pointer;
+}
+
+.k-carousel .jcarousel-prev-horizontal {
+    *position: absolute;
+    *top: 43px;
+    *left: -60px;
+    *width: 47px;
+    *height: 47px;
+    *cursor: pointer;
+}
+
+/* --- DATA TABLES --- */
+div.dataTables_wrapper {*width: 96%;}
+div.dataTables_wrapper {*position: static;}
+div.dataTables_info {*position: static;}
+
+
+/* --- E-COMMERCE --- */
+
+/* ZOOM */
+
+.zoomPreload {
+    *width: 100px;
+    *height: 49px;
+   filter: alpha(opacity = 80);
+}
+.zoomPup {filter: alpha(opacity = 60);}
+.zoomIframe {filter:alpha(opacity=0);}
+
+/* OPTIONS */
+div.k-product-options p {*padding: 0 0 1em 10px; margin-top: -2em;}
+
+/* RATING */
+
+fieldset.k-rating p {*padding: 0 0 1em 7px; *margin-top: -1.4em;}

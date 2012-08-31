@@ -1,0 +1,26 @@
+<t:container
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+
+	<form t:type="form" t:id="selectForm" class="k-language">
+		<fieldset class="k-radio">
+			<legend>${legend}</legend>
+			<p>
+				<t:if t:test="mode">
+					 <t:radiogroup t:id="language_radio" t:value="lang">
+					 	<t:loop t:id="languages" t:source="langues" t:value="current_lang">
+					 		<t:radio t:id="lang_radio" t:value="current_lang"/>
+					 		<t:label for="lang_radio" title="${langLibelle}" xml:lang="${lang}">${langLibelle}</t:label>
+					 	</t:loop>
+					 </t:radiogroup>
+					<p:else>
+						<t:select t:id="language" t:value="lang" 
+							title="Choose preferred language:" t:model="languageModel" 
+							 t:blankOption="prop:blank"/>
+					</p:else>
+				</t:if>	
+			</p>
+		</fieldset>
+	</form>
+
+</t:container>

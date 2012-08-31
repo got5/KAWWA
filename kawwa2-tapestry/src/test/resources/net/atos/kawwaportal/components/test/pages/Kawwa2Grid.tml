@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+ 
+<body>
+
+	<table t:type="kawwa2/Kawwa2Grid" t:source="allCelebrities" t:rowsPerPage="5" 
+        t:exclude="id, biography, birthDateVerified"
+		t:reorder="lastName,firstName,occupation,dateOfBirth" t:model="model" t:row="current" >
+		
+		
+	</table> 
+</body>
+</html>

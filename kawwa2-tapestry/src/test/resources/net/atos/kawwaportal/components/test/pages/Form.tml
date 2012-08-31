@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+	
+	<body>
+	 	<t:form t:clientValidation="false" t:id="form">
+	 		<t:errors t:banner="literal:test"/>
+	 		<t:label t:for="value" /><t:textfield t:id="value" t:validate="required"/><br />
+	 		<t:label t:for="second" /><t:passwordfield t:id="second" t:validate="required"/><br />
+	 		
+	 		
+	 		<fieldset class="k-radio">
+				<legend>Choose between:</legend>
+				<t:radiogroup t:id="type" t:validate="required">
+					<ul>
+						<li><t:label for="masterCard"><t:radio t:id="masterCard"/>Thing 1</t:label></li>
+						<li><t:label for="visa"><t:radio t:id="visa"/>Thing 2</t:label></li>
+						<li><t:label for="amex"><t:radio t:id="amex"/>Thing 3</t:label></li>
+						<li><t:label for="dinersClub"><t:radio t:id="dinersClub"/>Thing 4</t:label></li>
+						<li><t:label for="discover"><t:radio t:id="discover"/>Thing 5</t:label></li>
+					</ul>
+				</t:radiogroup>
+			</fieldset>
+			
+			
+			<fieldset class="k-check">
+				<legend>Choose another thing:</legend>
+				<ul>
+					<t:if t:test="CheckError">
+						<li><span class="k-contextual-error">${CheckboxError}</span></li>
+					</t:if>
+					<li><t:label t:for="t1"><input t:type="checkbox" id="t1" t:id="t1"  t:value="v1" /> Thing 1</t:label></li>
+					<li><t:label t:for="t2"><input t:type="checkbox" id="t2" t:id="t2" t:value="v2"/> Thing 2</t:label></li>
+				</ul>
+			</fieldset>
+			
+	 		<t:submit />
+	 	</t:form>
+ 	</body>
+</html>
