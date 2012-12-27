@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+ 	<p class="k-readmore">This is an example of text with read more link displaying some content...
+		<span t:type="any" t:mixins="kawwa2/readMore" t:header="literal: Read more...">
+ 			And here is the hidden text !
+ 		</span>
+	</p>
+</html>

@@ -1,0 +1,30 @@
+<t:container xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    
+	<div id="${type}-code" class="k-panel showSource ">
+		<h4 class="control ${classOpen}"><a href="#" title="Click to fold/unfold">${title}</a></h4>
+        <div class="content">
+            <div class="i-${type}-code">
+                <div id="${type}-code-clip-container" class="clip-container">
+                    <div id="${type}-code-clip-button" class="clip-button">
+                        COPY
+                    </div>
+                </div>
+                <div class="code">
+                    <ol class="display-code">
+                        <t:loop t:source="escapedCode" t:value="currentLine">
+                            <li>
+                                <pre>${currentLine}</pre>
+                            </li>
+                        </t:loop>
+                    </ol>
+                </div>
+            </div>
+            <t:if test="hasReadMore">
+                <p class="k-readmore">
+                    <!-- <img src="${asset:context:img/k-theme2/info-trans.png}" alt="More information" />--><t:outputraw t:value="readMore" />
+                </p>
+            </t:if>
+        </div>
+    </div>
+	
+</t:container>

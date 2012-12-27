@@ -1,0 +1,626 @@
+/*--------------------------------------------------------------------
+	          	  KAWWA2 - Theme 1
+	   	      PORTAL SPECIFIC INTERFACE
+          By Le Studio, Atos Worldline, 2011
+-------------------------------------------------------------------- */
+
+/* --- STYLESWITCH BOX --- */
+div.i-change-style {
+	border: 1px solid #CCC;
+	margin-bottom: 20px;
+}
+	#styleswitch {
+		border: 5px solid #FFF;
+		color: #000;
+		background: #BFBFBF;
+	}
+	div.i-change-style label {width: auto; text-align: left;}
+	div.i-change-style p {
+		margin: 5px 0;
+		padding: 5px 10px 8px;
+		line-height: 1.2;
+		font-size: 0.8em;
+	}
+	#i-theme {width: 90%; margin-top: 3px;}
+
+/* --- INDEX OF COMPONENTS --- */
+
+ul.i-index li {float: left; width: 20%; list-style-type: none; padding: 15px 3%;}
+ul.i-index li li {float: none; width: auto; padding: 0;}
+
+
+/* --- COMPONENT DEMO --- */
+
+/* Component data */
+
+ul.component-info {width: 19px; padding: 0; margin-top: -1em;}
+	
+	ul.component-info {
+		width: 15em;
+		background: #FFF;
+		padding: 0 0.8em;
+		border: 1px solid #CCC;
+		box-shadow: 2px 2px 3px #999;
+		z-index: 200;
+	}
+		ul.component-info li {
+			height: 3em;
+			line-height: 3em;
+			list-style-type: none;
+			font-size: 0.6em;
+			padding: 0;
+			border-top: 1px dashed #CCC;
+		}
+		ul.component-info li:first-child {border: none;}
+		
+		ul.component-info img {vertical-align: middle; padding-right: 5px;}
+
+
+
+/* Check this... */
+#i-component {
+	float: left;
+	width: 96%;
+	background: #E4E9F1 url(../img/bg_portal_demo.png);
+	padding: 2%;
+	margin-bottom: 21px;
+}
+
+/* --- CODE DISPLAY --- */
+
+.i-code {font-family: "Courier New", Courier, "American Typewriter", serif;}
+
+	div.i-code {
+		width: 85%;
+		padding: 1em 0 2em;
+	}
+		div.i-code dl {
+			position: relative;
+			padding-top: 1em;
+			margin-top: 1em;
+			border-top: 1px dashed #CCC;
+		}
+		div.i-code dt {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 5em;
+			font: bold 100% Verdana, Arial, sans-serif;
+			color: #CCC;
+		}
+		div.i-code dd {padding-left: 6em;}
+	
+	dl.css-ex {color: #060;}
+	dl.html-ex {color: #036;}
+	
+
+/* Specific interface folders */
+
+/* Code display format */
+ol.display-code {
+	min-width: 85%;
+	padding-left: 2em;
+	margin: 2%;
+	list-style-type: decimal; 
+	color: #FFF;
+	background: #F6FCF3;
+}
+	ol.display-code li {
+		padding: 2px 5px;
+		line-height: 1;
+		min-height: 1em;
+		font: 0.8em "Courier New", Courier, "American Typewriter", serif;
+		color: #000;
+		background: #FFF;
+		border-left: 2px solid #999;
+	}
+	ol.display-code li:nth-child(even) {color: #000; background: #EFEFEF;}
+	ol.display-code pre {font-size: 120%; text-align: left; line-height: 1; padding: 2px;}
+
+div.i-html-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #555;
+	background: #F6FCF3;
+	border: 1px dashed #CCC;
+	padding-top: 2em;
+}
+
+div.i-css-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #F6FCF3;
+	border: 1px dashed #CCC;
+	padding-top: 2em;
+}
+	
+div.i-js-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #F6FCF3;
+	border: 1px dashed #CCC;
+	padding-top: 2em;
+}
+div.i-TapestryIntegration_html-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #F6FCF3;
+	border: 1px dashed #CCC;
+	padding-top: 2em;
+}
+div.i-tapestry_java-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #F6FCF3;
+	border: 1px dashed #CCC;
+	padding-top: 2em;
+}
+div.i-tapestry_js-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #F6FCF3;
+	border: 1px dashed #CCC;
+	padding-top: 2em;
+}
+/* --- ZERO CLIPBOARD --- */
+div.clip-container {position: relative; float: right; width: 93px; right: 20px; top: -1em;}
+div.clip-button {
+	
+	width: 93px;
+	height: 26px;
+	font-size: 1px;
+	color: #FFF;
+	background: transparent url(../img/k-theme1/copy2clip-trans.png) no-repeat;
+}
+
+/*div.i-html-code:hover .clip-button {visibility: visible;}
+div.i-css-code:hover .clip-button {visibility: visible;}
+div.i-js-code:hover .clip-button {visibility: visible;}
+div.i-tapestry_html-code:hover .clip-button {visibility: visible;}
+div.i-tapestry_java-code:hover .clip-button {visibility: visible;}
+div.i-tapestry_js-code:hover .clip-button {visibility: visible;}*/
+
+
+/* Add to Basket */
+#toBasket {margin-top: -5em;}
+#downloadList ul.i-list {
+	overflow: auto;
+	max-height: 8em; 
+	padding: 0;
+	border-bottom: 1px solid #CCC;
+}
+
+li.basket-item {
+	list-style-type: none;
+	padding: 0.4em 0.6em;
+	border-bottom: 1px dashed #CCC;
+}
+	li.basket-item:before {content: "\2714 \00A0"}
+
+#downloadList fieldset {
+	width: 85%;
+	margin: 0.9em auto 0.6em;
+}
+#downloadList fieldset.k-radio {width: 90%; padding: 0; margin: 0.9em 0.4em 0;}
+
+#downloadList legend {
+	float: none;
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align: left;
+}
+#downloadList fieldset.k-radio legend {padding: 0;}
+
+#downloadList p.k-check {padding: 0 0.4em; margin: 0;}
+#downloadList .content p:first-child {
+	background: #E4E9F1;
+	padding: 2% 4%;
+	margin: 4%;
+}
+
+/* --- HOME PAGE --- */
+
+/* Auto-prom Banner */
+p.i-banner img {max-width: 100%;}
+
+/*  ie warning  */
+#ie-warning {
+	display: none; text-align: center; color: #000; background: #FCC16A; padding: 1em; margin-bottom: 2em;}
+
+/* --- Slider --- */
+#slider {
+	float: left;
+	overflow: hidden;
+	width: 68%;
+	height: 201px;
+	margin-bottom: 2em;
+}
+#slider ul {padding: 0;}
+#slider li {list-style-type: none; line-height: 1; padding: 0;}
+#slider img {max-width: 100%;}
+
+.jcarousel-clip {
+	width: 620px;
+	height: 201px;
+}
+
+.jcarousel-item {position: relative; width: 800px; height: 269px; }
+
+.jcarousel-control {
+	position: absolute;
+	top: 0;
+	right: 1%;
+	z-index: 100;
+}
+
+.jcarousel-control a {
+	display: block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    background: #66A3C7;
+    padding: 0 5px 2px;
+    margin: 0 0 5px 0;
+    border: 1px solid #fff;
+}
+
+.jcarousel-control a:focus,
+.jcarousel-control a:active {
+    outline: none;
+}
+.jcarousel-control a:hover {color: #FFF; background: #06A;}
+
+.jcarousel-control a.active {
+    color: #FFF;
+    background: #06A;
+}
+
+.jcarousel-scroll {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.jcarousel-scroll form {
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-scroll select {
+    font-size: 75%;
+}
+
+#mycarousel-next,
+#mycarousel-prev {
+    cursor: pointer;
+    margin-bottom: -10px;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+
+/* --- Highlight --- */
+#highlight {float: right; width: 30%;}
+
+	#highlight h2 {
+		line-height: 1.2;
+		color: #06A;
+		background: #FFF;
+		margin-bottom: 15px;
+	}
+	#highlight li {
+		margin: 0 0 0 15px;
+	}
+	#highlight p {line-height: 1.58; margin-bottom: 0.5em;}
+	#highlight p.k-readmore {margin-top: 1em;}
+
+/* --- Topics --- */
+div.i-topics {
+	float: left;
+	width: 100%;
+	padding-top: 1em;
+}
+	div.i-topics div.k-info-block {
+		clear: none;
+		float: left;
+		display: inline;
+		width: 30%;
+		margin-left: 4.5%;
+		border: 0;
+	}
+	div.i-topics div.k-info-block:first-child {margin-left: 0;}
+	div.i-topics div.k-info-block:last-child {
+		padding-left: 2.25%;
+		margin-left: 2.25%;
+		border-left: 1px dashed #06A;
+	}
+	
+	div.i-topics div.k-info-block h2 {
+		color: #FFF;
+		background: #06A;
+	}
+	div.i-topics div.k-info-block p {line-height: 1.58;}
+
+/* New component topic */
+#on-the-spot {
+	color: #000;
+	background: #EFEFEF;
+	padding-bottom: 10px;
+	margin-bottom: 1em;
+}
+
+	#on-the-spot div.hgroup {background: none;}
+	#on-the-spot h2 {
+		font-size: 0.9em;
+		font-weight: bold;
+		color: #06A;
+		background: #EFEFEF;
+		padding: 0;
+		margin: 10px 15px 0;
+	}
+	#on-the-spot h3 {
+		font-size: 1em;
+		color: #000;
+		background: #EFEFEF;
+		padding: 0;
+		margin: 5px 15px 10px;
+		border: none;
+	}
+	#on-the-spot h3:first-child {padding-top: 1em;}
+
+	#on-the-spot p {margin: 0 15px 8px;}
+
+/* Contact box */
+#contact {
+	border: 1px solid #68C800;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+	#contact div.hgroup {background: none;}
+	#contact h2 {
+		margin: 5px 0 0;
+		color: #57A503;
+		background: none;
+	}
+
+
+/* --- CONTACT US --- */
+
+#contact-form label {float: none; display: block; width: auto; text-align: left;}
+#ipEmail {width: 30em;}
+#ipQuestion {width: 90%;}
+
+/* --- DOWNLOAD PAGE --- */
+
+div.aside {
+	float: right;
+	width: 25%;
+	background: #06A;
+	padding: 1%;
+}
+#group-components {float: left; width: 65%;}
+
+	div.aside fieldset {
+		color: #FFF;
+		background: #06A;
+		border: none;
+		border-bottom: 1px dashed #FFF;
+	}
+		div.aside fieldset fieldset {border: none;}
+	
+	div.aside label {
+		float: none;
+		display: block;
+		width: auto;
+		text-align: left;
+	}
+	div.aside legend {
+		color: #F90;
+		background: #06A;
+		padding-left: 0;
+	}
+
+	div.aside p.k-check {padding-left: 0;}
+		div.aside p.k-check label {display: inline;}
+		div.aside .k-radio legend {
+			float: none;
+			display: block;
+			width: auto;
+			text-align: left;
+			color: #FFF;
+			background: #06A;
+		}
+		
+	div.aside p.k-buttons-bar {text-align: center;}
+
+
+#complete-selection {
+	display: none;
+	float: left;
+	width: 100%;
+	color: #000;
+	background: #E1E9F1;
+	padding: 0.2em 0;
+	margin-bottom: 2em;
+}
+	#complete-selection label {width: auto; padding: 0 5em 0 2.6em;}
+	#complete-selection p {float: left; width: auto;}
+	
+	#complete-selection + fieldset {margin-top: 4em;}
+	
+#total-selection {
+	display: inline-block;
+    background: #FFF;
+    padding: 1px 5px;
+    border: 2px solid #84D0F0;
+}
+
+#group-components ul {margin: 0; padding: 0;}
+#group-components li {list-style-type: none;}
+#group-components ul.k-check li {display: inline-block; width: 20em;}
+
+.alone {
+	display: inline-block;
+	width: 21em;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: left;
+	color: #000;
+	background: #EEE;
+	padding-left: 0.4em;
+	margin: 2em 0 2em 20px;
+	border: 1px solid #CCC;
+}
+	.alone label {
+		float: none;
+		width: auto;
+	}
+
+/* Download buttons */
+input.major-action {
+	width: auto;
+	height: 2em;
+	line-height: 2em;
+	font-size: 2em;
+	text-align: center;
+	padding: 0 0.8em;
+}
+
+/* Follow-up fieldset */
+#group-followUp {
+	color: #000;
+	background: #E4E9F1;
+	margin-bottom: 2em;
+	border: none;
+}
+	
+	#group-followUp legend {position: absolute; text-indent: -9999px; background: transparent;}
+
+#email {width: 90%; margin-top: 5px;}
+#downloadForm #theme {width: 90%; margin-top: 5px;}
+
+
+/* --- ABOUT KAWWA PAGES --- */
+
+.stressed {color: #C00;}
+
+ul.i-menu {padding: 0;}
+	ul.i-menu li {
+		list-style-type: none;
+		padding: 0.4em 0; 
+		border-bottom: 1px dashed #66A3C7;
+		}
+		ul.i-menu li li {border-bottom: none;}
+	
+	ul.i-menu a, ul.i-menu a:link {text-decoration: none;}
+	ul.i-menu li.active strong {color: #F60;}
+
+
+/* Example templates */
+
+#theTemplates div.k-illustration-block img {border: none; outline: none;}
+#theTemplates div.k-illustration-block.to-left {width: 70%;}
+
+#theTemplates .content li {list-style-position: inside;}
+
+/* --- DOCUMENTATION PAGE --- */
+
+#theTemplates h3 {float: left; width: 100%; margin-top: 2em;}
+#theTemplates h3:first-child {margin-top: 0;}
+
+dl.i-doc-list {margin-bottom: 2em;}
+	dl.i-doc-list dt {
+		font-size: 0.75em;
+		font-weight: bold;
+		padding-bottom: 1em;
+	}
+	dl.i-doc-list dd {padding: 0.5em 0 0.5em 0.5em;}
+	dl.i-doc-list dd:nth-child(even) {background: #E2F2FC;}
+	dl.i-doc-list a {float: left; width: 60%;}
+
+/* --- LOCAL ADJUSTEMENTS FOR COMPONENTS --- */
+#i-component #language-choice label {padding-bottom: 4px;}
+
+#i-component p.k-readmore {
+	color: #000;
+	background-color: #FFF;
+}
+
+#i-component div.k-article {background: #FFF;}	
+
+/* Tools */
+#i-component .k-tools {position: static;}
+#i-component ul.k-tools-list {max-width: 100%; width: 100%;}
+#i-component p.k-tools-list {width: 50%; background: #66A3C7;}
+
+/* e-commerce */
+#i-component div.k-product {background: #FFF; margin: 0;}
+#i-component div.k-basket.k-panel .content {display: block; background: #FFF;}
+#i-component .k-basket-sum {position: static; width: 16em; text-align: left;}
+
+#i-component div.photo-data {position: relative;}
+#i-component div.k-product-gallery:after {top: 25px;}
+
+#i-component div.k-product-options {background: #FFF;}
+
+/*  Language choice */
+#i-component form.k-language {position: static; float:left; width: auto;}
+
+/* Login form/data */
+#i-component #loginLink a, #i-component #loginLink a:link, #i-component #loginLink a:visited {
+	position: static;
+	color: #FFF;
+	background-color: #06A;
+}
+#i-component p.k-login-data {position: static;}
+
+#i-component .action-context {font-size: 0.7em;}
+
+/* Sitemap */
+#i-component ul.k-sitemap {width: 96%; background: #FFF; padding: 2%;}
+	#i-component ul.k-sitemap li {width: 20%;}
+		#i-component ul.k-sitemap li li {width: 100%; padding: 0.5em 0;}
+		
+
+
+/*-------------------------------------------- MEDIA QUERIES ---------------------------------------------- */
+
+/* Middle Res --------------------------------------------- */
+@media only screen and (min-width : 480px) and (max-width : 750px) {
+	#highlight {clear: both; float: none; width: 100%; margin-bottom: 1em;}
+	ul.i-menu {float: none; width: 100%;}
+	#group-basics label {float: none; display: block; width: auto; text-align: left;}
+	#group-basics p.k-check {padding: 0;}
+	#group-basics p.k-check label {display: inline;}
+	#toBasket {margin: -1.5em 0 1em;}
+	input.major-action {font-size: 1em;}
+}
+
+/* iPhone (portrait & landscape) --------------------------------------------- */
+@media only screen and (min-width : 300px) and (max-width : 480px) {
+	#slider {display: none;}	
+	#highlight {float: none; width: 100%; margin-bottom: 1em;}
+	
+	div.i-topics {border: none;}
+	div.i-topics div.k-info-block {width: 96%;}
+	#on-the-spot {
+		width: 96%;
+		color: #000;
+		background: #EEE;
+		padding: 0.5em 2%;
+		border: none;
+	}
+	#toBasket {margin: -1.5em 0 1em;}	
+	
+}

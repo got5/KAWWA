@@ -1,0 +1,93 @@
+<p>
+    There are a few components you can use to create a dialog in your pages. 
+</p>
+<ul>
+    <li>
+        Dialog, this is the base of your Dialog, just put the content of your dialog inside.
+    </li>
+    <li>
+        DialogLink, clicking a DialogLink will make the associated Dialog to open.
+    </li>
+    <li>
+        DialogAjaxLink, clicking a DialogAjaxLink will open the associated Dialog and refresh the zone you've set inside the Dalog.
+    </li>
+</ul>
+<p>
+    NB: Those components belong to the tapestry5-jquery project, please have a look to <a href="http://tapestry5-jquery.com/docs/components/jquerydialog">the official website.</a>
+</p>
+
+<table summary="This table shows the parameters needed for the Dialog Component">
+	<caption>Dialog parameters</caption>
+		<tr>
+           	<th scope="col"> Name </th>
+               <th scope="col"> Required </th>
+               <th scope="col"> Java Type </th>
+               <th scope="col"> Default Prefix </th>
+               <th scope="col"> Default Value </th>
+               <th scope="col"> Description </th>
+		</tr>
+           <tr>
+           	<td> params </td>
+			<td> false </td>
+               <td> JSONObject </td>
+               <td> prop </td>
+               <td></td>
+               <td> The Dialog parameters (please refer to <a href="http://jqueryui.com/demos/dialog/">jquery-ui documentation)</a>. </td>
+		</tr>
+		<tr>
+           	<td> initMethod </td>
+			<td> false </td>
+               <td> String </td>
+               <td> prop </td>
+               <td></td>
+               <td> The Tapestry.Initializer method to call to initialize the dialog. </td>
+		</tr>
+</table>
+
+<table summary="This table shows the parameters needed for the Dialoglink Component">
+	<caption>Dialoglink parameters</caption>
+      	<tr>
+           	<th scope="col"> Name </th>
+               <th scope="col"> Required </th>
+               <th scope="col"> Java Type </th>
+               <th scope="col"> Default Prefix </th>
+               <th scope="col"> Default Value </th>
+               <th scope="col"> Description </th>
+		</tr>
+           <tr>
+           	<td> dialog </td>
+			<td> true </td>
+               <td> String </td>
+               <td> literal </td>
+               <td></td>
+               <td> The id of the dialog to open. </td>
+		</tr>
+</table>    
+      
+<table summary="This table shows the parameters needed for the DialogAjaxLink Component">
+	<caption>DialogAjaxLink parameters</caption>
+   		<tr>
+           	<th scope="col"> Name </th>
+               <th scope="col"> Required </th>
+               <th scope="col"> Java Type </th>
+               <th scope="col"> Default Prefix </th>
+               <th scope="col"> Default Value </th>
+               <th scope="col"> Description </th>
+		</tr>
+           <tr>
+           	<td> zone </td>
+			<td> true </td>
+               <td> String </td>
+               <td> literal </td>
+               <td></td>
+               <td> The id of the zone to refresh. </td>
+		</tr>
+		<tr>
+           	<td> context </td>
+			<td> false </td>
+               <td> Object[] </td>
+               <td> prop </td>
+               <td></td>
+               <td> The activation context. </td>
+		</tr>
+</table>  

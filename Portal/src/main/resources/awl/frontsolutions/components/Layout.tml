@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"  xmlns:p="tapestry:parameter">
+<head>
+<title>[ Atos Worldline - KAWWA PORTAL ] ${title}</title>
+<link rel="icon" type="image/png" href="${faviconUrl}"/>
+</head>
+
+<body>
+
+<div id="container">
+
+	<div id="header">
+		<h1><img src="${logoUrl}" alt="Atos Worldline: KAWWA Portal" /></h1>
+		<div class="k-tools">
+	
+			<t:searchbox />
+			
+			<ul class="k-tools-list">
+				
+				<li><a t:type="pageLink" t:page="Faq">FAQ</a></li>
+				<li><a t:type="pageLink" t:page="Contact">Contact us</a></li>
+				
+				<t:if t:test="loggedUserExists">
+					<li><a t:type="eventlink" t:event="logout">Logout</a></li>
+					<p:else>
+						<li><a t:type="pagelink" t:page="Login">Login</a></li>
+					</p:else>
+				</t:if>
+				
+			</ul>
+		</div>
+		
+	</div>
+
+	<t:topmenu t:id="topmenu"/>
+	<t:breadcrumb />
+	
+	<hr />
+		
+	<div id="wrapper">
+	
+			<t:body />
+
+	</div>
+	
+	<hr />
+	<div id="footer">
+		<p class="k-copyright">&copy; The Studio/WebPlatform, Atos Worldline, ${currentYear}</p>
+	</div>
+	
+</div>
+
+</body>
+</html>

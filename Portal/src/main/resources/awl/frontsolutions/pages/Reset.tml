@@ -1,0 +1,17 @@
+<t:layout t:title="Reset" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"  xmlns:p="tapestry:parameter">
+
+<div id="resetBox">
+<strong>You're about to reload the whole structure of components. Are you sure ?</strong>
+<ul class="k-buttons-bar">
+	<li>
+		<t:eventlink t:event="resetComponents" class="k-button">OK</t:eventlink>
+	</li>
+	<li>
+		<t:pagelink t:page="index" class="k-button reset">Cancel</t:pagelink>
+	</li>
+</ul>
+</div>
+</t:layout>
+
+
+	

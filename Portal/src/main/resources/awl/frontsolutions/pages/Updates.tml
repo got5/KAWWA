@@ -1,0 +1,129 @@
+<t:layout t:activeMenu="20" t:title="All About Kawwa: The Kawwa Portal" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	
+<div id="main">
+	<h2>Updates</h2>
+	
+	<div class="k-panel ui-state-active">
+                        <h3 class="control ui-state-active"><a href="#" title="Click to fold/unfold block">Update 19/04/2012</a></h3>
+                        <div class="content k-article">
+                             <h4>Components updates</h4>
+                             <ul>	
+	                             	<li>The plugin for the "<strong>Field Comment</strong>" component has been updated with a newer version. 
+	                             			This new version of the Tipsy plugin corrects some bugs and is fully compatible with jQuery version 1.6.2.</li>
+                                   <li><strong>We've improved the way we apply the plugins to our components</strong>. Now, instead of traversing the DOM to test if the component is present in a page, 
+                                         we test if the component's plugin is loaded. This may improve the performance on page load. You may check the changes in a specific component's page 
+                                          (in the "How to apply" block) or in the "<em>k-load.js</em>" file delivered with the Templates Pack.</li>
+                                   <li>The <strong><a href="https://kawwa.atosworldline.com/component/catalog">Product Catalog component</a></strong> 
+                                         has now a display switch that allows the user to switch between block or list view. The HTML snippet for this component, as its CSS declarations, has changed and 
+                                         we've added a jQuery plugin and a javascript snippet also. Please check the component's page to update it.</li>
+                                   <li>The HTML snippet for the <strong><a href="https://kawwa.atosworldline.com/component/hproduct">Product Template component</a></strong> 
+                                         has been modified. A block of class "buyZone" was added to group the "Add to basket" button and eventually the product quantity component. 
+                                         Please check the component's page to update it.</li>
+                             </ul>
+                             <h4>Portal updates</h4>
+                             <ul>
+                                   <li>As we're preparing our portal to the future HTML5 version of components, 
+                                         we've moved the block listing the Internet Explorer support files to the component's version tab.</li>
+                             </ul>
+                             
+                             <h4>Updates to the templates pack</h4>
+                             <ul>
+                                   <li>The new "e-commerce" components (see here below) were added to the Product Catalog and Product Details templates.</li>
+                             </ul> 
+                                   
+                             <h4>New Kawwa Components</h4>
+                             <p>We've added some nice new components to the "<strong>e-commerce</strong>" category:</p>
+                             <ul>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/productQuantity">Product Quantity</a>:</strong>
+                                         This component allows the user to increment/decrement the quantity of a product to add to the shopping basket.</li>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/rating">Product Rating</a>:</strong>
+                                         A nice, simple way to allow the user to rate a product, an article, etc.</li>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/hreview">Product Review</a>:</strong>
+                                         This component lists users' reviews.</li>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/productOptions">Product Options</a>:</strong>
+                                         Using jQuery buttons, this component gives you the possibility to add new property options to a product sheet.</li>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/productGallery">Product Gallery</a>:</strong>
+                                         This component introduces a cool way to display your products, including thumbnails switch and image magnifier.</li>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/basketSum">Basket summary</a>:</strong>
+                                         A little note to place in the header of your pages to remember the user how many items she added to her shopping basket.</li>
+                             </ul>
+                             <p>And a new one to the "<strong>Site Utilities</strong>" category:</p>
+                             <ul>
+                                   <li><strong><a href="https://kawwa.atosworldline.com/component/sitemap">Sitemap</a>:</strong>
+                                         A first step to introduce a sitemap. This component will be improved shortly.</li>
+                             </ul>
+                        </div>
+                  </div>
+                  
+                  <div class="k-panel">
+                        <h3 class="control"><a href="#" title="Click to fold/unfold block">Update 17/02/2012</a></h3>
+                        <div class="content k-article">
+                             <h4>Major Kawwa components updates</h4>
+                             <ul>
+                                   <li class="stressed"><strong>Site Utilities &gt; Modal Component:</strong> The functions that create the dialog/modal window have been replaced in order to 
+                                         correct a bug with webkit browsers (Chrome/Safari). This bug created issues when using multiple modals in the same page. If you are 
+                                         using this component, <strong>please be sure to replace the construction functions</strong> with the new ones available at the 
+                                         <a href="https://kawwa.atosworldline.com/component/modal">Modal Component</a> page</li>
+                                   <li><strong>Forms &gt; Datepicker:</strong> We've added the initialisation code that defines the translation of the datepicker elements. You may add this 
+                                         code if you want to use the datepicker in a language other than English</li>
+                                   <li><strong>Blocks &gt; Carousel:</strong> We've added some conditions to the Carousel function so it will adapt the number of items to 
+                                         the browser's window width. You may replace it if you need a responsive carousel.</li>
+                                   <li><strong>New Component: Editorial &gt; Highlight Block:</strong> A new component was added to the Editorial category. You may use the 
+                                         <a href="https://kawwa.atosworldline.com/component/highlightBlock">Highlight Block</a> component to 
+                                         highlight portions of your text.</li>
+                             </ul>
+                             <h4>Updates to the templates pack</h4>
+                             <ul>
+                                   <li><strong>CODE /Internet Explorer compatibility:</strong> In order to assure a more evolutive compatibility with future versions of Internet Explorer 
+                                         the "X-UA-Compatible" meta tag is now defined for IE=edge: 
+                                         <br />
+                                         <code>&lt;meta http-equiv="X-UA-Compatible" content="IE=<strong class="stressed">edge</strong>" /&gt;</code></li>
+                                   <li><strong>CSS /Additional style for left column</strong>: In order to give more flexibility to your layouts, we've added a new style for the left column (
+                                         <code>#secondary</code>) that can be used when the left column won't hold navigation content. 
+                                         Consult the <a href="https://kawwa.atosworldline.com/component/pageStructure">Page structure Component</a> for more information.</li>
+                                   <li><strong>CSS &amp; CODE /Print styles:</strong> The print styles are now included in the main style-sheet to better performance. 
+                                         The call for the main style-sheet is now applied to "all" media, instead of to "screen" only:
+                                         <br />
+                                         <code>&lt;link href="XXX" rel="stylesheet" type="text/css" title="Default Theme" media="<strong class="stressed">all</strong>" /&gt;</code></li>
+                                   <li><strong>CSS /Media Queries:</strong> We've pushed the media queries a little further to optimize and fine-tune some components. You may update the main 
+                                         style-sheet or only the media queries if the responsive design is important to your project</li>
+                             </ul>
+                        </div>
+                  </div>
+                  
+                  <div class="k-panel ui-state-active">
+                        <h3 class="control"><a href="#" title="Click to fold/unfold block">Update 13/12/2011</a></h3>
+                        <div class="content k-article">
+                             <h4>Major Kawwa components updates</h4>
+                             <ul>
+                                   <li class="stressed"><strong>The "Main Nav" component:</strong> We've replaced the plugin used for this component to add keyboard navigation and a better cross-browser compatibility. 
+                                         <strong>You should update all the elements for this component</strong>.</li>
+                             </ul>
+                             <h4>Updates to the portal interface</h4>
+                             <ul>
+                                   <li><strong>Add to basket function:</strong> In order to ease the download of components, we added a "basket" function that will allow the user to add components 
+                                         to the download list, directly from a component's page</li>
+                                   <li><strong>Templates Pack:</strong> The templates pack were updated to reflect the changes of the "Main Nav" Component. Only the main style-sheets were modified.</li>
+                                   <li><strong>Contextual usability documentation:</strong> links to usability sheets were added to some of the component's pages to allow direct consultation 
+                                         of usability recommendations</li>
+                             </ul>
+                        </div>
+                  </div>
+		
+	<div class="k-orientation-aid">
+		<p class="go-top"><a href="#container" title="Go to the top of the page">Top</a></p>
+	</div>
+			
+</div>
+
+<div id="sidebar">
+	<ul class="k-actions">
+		<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
+	</ul>
+	
+	<t:themeswitcher />
+
+	<t:CheckOutAlso />		
+
+</div>
+</t:layout>

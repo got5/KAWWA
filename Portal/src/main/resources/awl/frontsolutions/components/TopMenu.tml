@@ -1,0 +1,23 @@
+<t:container xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+      	
+		
+		
+	<div id="navbar">
+		<p class="k-skip"><a href="#wrapper">Skip this menu</a></p>
+		<ul class="k-navbar">
+			<li class="${getClass(0)}"><t:pagelink page="index">Home</t:pagelink></li>
+			<li class="${getClass(4)}"><t:pagelink page="AboutKawwa">All About Kawwa</t:pagelink></li>
+			<li class="${getClass(5)}"><t:pagelink page="Templates">Example Templates</t:pagelink></li>
+			<t:if t:test="symbol:enableDocumentationBlock">
+				<li class="${getClass(2)}"><t:pagelink page="Documentation">Documentation &amp; Tools</t:pagelink></li>
+			</t:if>
+			<li class="${getClass(1)}"><t:pagelink page="components">Kawwa Components</t:pagelink></li>
+			<li class="${getClass(3)}"><t:pagelink page="download">Downloads</t:pagelink></li>
+		</ul>
+	</div>
+		
+	
+		
+</t:container>

@@ -1,0 +1,18 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+ 
+     <table t:type="jquery/datatable" t:source="allCelebrities" rowsPerPage="5" 
+        exclude="id, biography, birthDateVerified"
+		reorder="link,lastName,firstName,occupation,dateOfBirth" t:options="options" t:mode="false" 
+		t:model="model" t:row="current" t:add="link" t:tableInformation="information">
+		
+		<p:firstNameHeader>FirsName</p:firstNameHeader>
+		
+		<p:firstNameFooter>FirsName Footer</p:firstNameFooter>
+		
+		<p:firstNameCell>${current?.firstName}</p:firstNameCell>
+		
+		<p:linkCell>${current?.lastName}</p:linkCell>
+		
+	</table> 
+    
+</html>
