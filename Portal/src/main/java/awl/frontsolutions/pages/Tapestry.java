@@ -29,9 +29,9 @@ public class Tapestry {
 		
 		snippet.add("<repositories>");
 		snippet.add("	<repository>");
-		snippet.add("		<id>ganeshrepository</id>");	
-		snippet.add("		<name>Forge OD Repository for Maven2</name>");
-		snippet.add("		<url>http://ganesh-code.mpht.priv.atos.fr/nexus/content/repositories/ganeshrepository/</url>");
+		snippet.add("		<id>Kawwa2</id>");	
+		snippet.add("		<name>Kawwa2 Repository</name>");
+		snippet.add("		<url>http://nexus.devlab722.net/nexus/content/repositories/snapshots/</url>");
 		snippet.add("	</repository>");
 		snippet.add("</repositories>");
 		
