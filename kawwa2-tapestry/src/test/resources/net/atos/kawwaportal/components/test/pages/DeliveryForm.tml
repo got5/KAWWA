@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<body>
+
+		<form t:type="form" t:id="deliveryForm" id="deliveryForm" method="post" t:zone="resultZone">
+
+			<div t:type="kawwa2/DeliveryForm" t:id="delivery" t:currentDeliveryModesList="DeliveryModesListTest"
+			t:deliveryModeSelected="prop:deliveryModeSelected" t:deliveryLocationSelected="prop:deliveryLocationSelected"/>
+			
+			<fieldset id="fsSubmitdeliveryModeForm">
+				<input t:type="submit" t:id="deliveryModeSubmit" type="button" value="Submit" />
+			</fieldset>
+
+		</form>
+		
+		<t:zone t:id="resultZone" t:visible="false" t:update="show">
+			On obtient un mode : <strong>${deliveryModeSelected}</strong>
+			<br/>
+			Et l'adresse : <strong>${deliveryLocationSelected}</strong>
+		</t:zone>
+	</body>
+</html>

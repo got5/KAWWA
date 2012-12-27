@@ -1,0 +1,10 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+  <div class="${containerClass}">
+    <t:delegate to="renderRootNodes"/>
+  </div>
+  <t:block id="defaultRenderTreeNodeLabel">
+    <a href="#" class="t-tree-label">${node?.label}</a>
+  </t:block>
+
+</t:container>
