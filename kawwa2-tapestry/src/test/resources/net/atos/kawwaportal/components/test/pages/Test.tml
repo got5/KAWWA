@@ -1,0 +1,76 @@
+<!--<html  t:type="Layout"
+       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+       xmlns:p="tapestry:parameter"
+       xmlns:j="tapestry-library:jquery"> -->
+       
+       
+       
+       
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+       xmlns:p="tapestry:parameter" 
+       xmlns:j="tapestry-library:jquery">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
+
+	<!-- link rel="stylesheet" href="${stylesKstructure}" type="text/css"/>
+	<link rel="stylesheet" href="${stylesKtheme1}" type="text/css"/>
+	<link rel="stylesheet" href="${iehacks1}" type="text/css"/-->
+
+</head>
+
+<body>
+       
+       
+       
+       
+       
+       
+       
+<!--<div class="k-article hentry">
+	<h2 class="entry-title">CONTACTOS</h2>
+    <ul class="entry-info">
+    	<li><span class="published" title="2011-07-14T14:07:00-07:00">Mes 14, 2011</span></li>
+		<li>by <address class="vcard author"><a class="url fn" href="#">Author's name</a></address></li>
+	</ul>
+	<div class="content entry-content">
+		<div class="k-intro">
+			<p>Use this component for article introductions or summaries... </p>
+			<p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal...</p>
+		</div>
+					
+		<p><strong>This is a simple paragraph...</strong> As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me ...</p>
+					
+		<h3>Title level 3</h3>
+		<h4>Title level 4</h4>
+		<h5>Title level 5</h5>
+		
+		<p>"My quarters are on the first floor of this building," he said, "and the second floor also is fully occupied by warriors....</p>
+		<ul>
+			<li>My quarters are on the first floor</li>
+			<li>Dejah Thoris might fall into the clutches</li>
+			<li>The thought that the divine Dejah Thoris</li>
+		</ul>
+		-->
+		<form t:type="form" t:id="contatosForm">
+		<t:datefield t:id="fechaFin" 
+		             t:value="fechaFin" 		                                    
+		                t:mixins="jquery/CustomDatepicker"
+		                t:validate="required" 
+		                t:params="params"		                            
+		                size="10" 
+		                t:format="dd/MM/yyyy"
+		                title="Fecha fin"/>  
+		                
+		                
+       </form>
+		            
+		                
+<!--	</div>
+</div> -->
+
+</body>
+</html>

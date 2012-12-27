@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	
+	<div class="k-product-gallery photo-data">
+		<p>
+			<a class="jqzoom" rel="gal1" href="${firstProductImage.uriLarge}" title="${message:zoomImage.label}" id="${clientId}">
+				<img class="photo" src="${firstProductImage.uriSmall}" alt="${firstProductImage.name}" />
+			</a>
+		</p>
+		<ul class="thumblist">
+			<t:loop source="productImages" value="currentProductImage" index="index">
+				<li>
+					<t:if test="first">
+						<a class="zoomThumbActive" href="#" rel="{gallery: 'gal1', smallimage: '${currentProductImage.uriSmall}' ,largeimage: '${currentProductImage.uriLarge}' }">
+							<img src="${currentProductImage.uriThumb}" alt="${currentProductImage.name}" />
+						</a>
+						<p:else>
+                			<a href="#" rel="{gallery: 'gal1', smallimage: '${currentProductImage.uriSmall}' ,largeimage: '${currentProductImage.uriLarge}' }">
+								<img src="${currentProductImage.uriThumb}" alt="${currentProductImage.name}" />
+							</a>
+            			</p:else>
+					</t:if>
+				</li>
+			</t:loop>
+		</ul>
+	</div>
+</t:container>
+

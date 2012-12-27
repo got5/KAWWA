@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+
+	<head>
+	</head>
+
+	<body>
+		
+		<t:formcomp />
+		<t:zone t:id="forceCallAjaxUpdate"/>
+		<t:zone t:id="maZone">
+			test
+		</t:zone>		
+	</body>
+
+</html>

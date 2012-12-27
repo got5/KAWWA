@@ -1,0 +1,26 @@
+<t:container
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+	<fieldset id="fsLocation" class="k-radio">
+
+		<legend>${message:chooseLocation}</legend>
+
+		<t:radiogroup t:id="gMapSelectLocationRadio" encoder="stringEncoder"
+			value="inherit:gMapSelectLocationSelected">
+
+			<ul>
+				<li t:type="loop" t:formState="none"
+					t:source="currentGMapSelectLocationsList"
+					t:value="currentGMapSelectLocation"><t:label
+						for="radio_location">
+						<t:radio t:id="radio_location"
+							value="${currentGMapSelectLocation.ref}" />${currentGMapSelectLocation.address}</t:label>
+				</li>
+			</ul>
+
+		</t:radiogroup>
+
+	</fieldset>
+
+	<div t:type="kawwa2/GMap" t:parameters="gMapParameters" />
+</t:container>

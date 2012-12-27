@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<body>
+	
+		<h2>Formulaire classique:</h2>
+	
+		<span t:type="if" t:test="ResultForm">
+			Résultats récupérés: <strong>${quantityValues}</strong>
+		</span>
+	
+		<form t:type="form" t:id="quantityForm" id="quantityForm" method="post">
+
+			<fieldset id="fsGeneral">
+				<label for="Quantité">Quantité1</label> <input t:type="textfield" t:value="quantity_1" type="text" value="0" t:mixins="kawwa2/productquantity" />
+				<label for="Quantité">Quantité2</label> <input t:type="textfield" t:value="quantity_2" type="text" value="0" t:mixins="kawwa2/productquantity" />
+				<label for="Quantité">Quantité3</label> <input t:type="textfield" t:value="quantity_3" type="text" value="0" t:mixins="kawwa2/productquantity" />
+			</fieldset>
+
+			<fieldset id="fsSubmit">
+				<input t:type="submit" t:clientId="btSubmit" type="button" value="Submit" />
+			</fieldset>
+
+		</form>
+		
+		<h2>Formulaire Ajax:</h2>
+		
+		<t:zone t:id="resultZone">
+ 			Résultats Ajax récupérés: <strong>${quantityAjaxValues}</strong>
+		</t:zone>
+		
+		<form t:type="form" t:id="quantityAjaxForm" id="quantityAjaxForm" method="post" t:zone="prop:ZoneId">
+
+			<fieldset id="fsGeneral">
+				<label for="Quantité">Quantité1</label> <input t:type="textfield" t:value="quantity_Ajax_1" type="text" value="0" t:mixins="kawwa2/productquantity" />
+				<label for="Quantité">Quantité2</label> <input t:type="textfield" t:value="quantity_Ajax_2" type="text" value="0" t:mixins="kawwa2/productquantity" />
+				<label for="Quantité">Quantité3</label> <input t:type="textfield" t:value="quantity_Ajax_3" type="text" value="0" t:mixins="kawwa2/productquantity" />
+			</fieldset>
+
+			<fieldset id="fsSubmit">
+				<input t:type="submit" t:clientId="btSubmit" type="button" value="Submit" />
+			</fieldset>
+
+		</form>
+			
+	</body>
+
+</html>
