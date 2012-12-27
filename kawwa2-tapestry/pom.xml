@@ -5,13 +5,7 @@
     <version>2.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>kawwaportal-components</name>
-     <parent>
-            <groupId>net.awl.ganesh</groupId>
-            <artifactId>ganesh-parent</artifactId>
-            <version>2.1.5</version>
-    </parent>
-    
-    <dependencies>
+     <dependencies>
         <dependency>
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-core</artifactId>
@@ -132,7 +126,16 @@
 	        </releases>
 	    </repository>
     </repositories>
-	
+      <distributionManagement>
+		<repository>
+			<id>devlab722-repo</id>
+			<url>http://nexus.devlab722.net/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>devlab722-snapshot-repo</id>
+			<url>http://nexus.devlab722.net/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>	
     <properties>
         <tapestry-release-version>5.3.6</tapestry-release-version>
     </properties>
