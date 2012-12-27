@@ -1,9 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
-	xmlns:p="tapestry:parameter">
-
-	<body>	
-		<div t:type="kawwa2/SiteSearch" t:id="search" t:value="search" t:minChars="3" t:placeholder="Search..." t:tokens="," t:autofocus="false"/>
-	</body>
-</html>
