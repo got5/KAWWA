@@ -93,6 +93,7 @@ public class TapestryDocumentationComponent extends DocumentComponent{
 
 		StringBuilder result = new StringBuilder();
 		result.append(name.charAt(0));
+		//TODO Rewrite with tapestry-func
 		for (int i = 1; i < name.length(); i++) {
 			if (Character.isUpperCase(name.charAt(i)))
 				result.append(" ");

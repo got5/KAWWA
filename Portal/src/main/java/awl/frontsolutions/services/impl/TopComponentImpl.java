@@ -38,6 +38,7 @@ public class TopComponentImpl implements TopComponent {
 			String[] comps = TapestryInternalUtils.splitAtCommas((String) topComp.get("top"));
 			String[] compsLibelle = TapestryInternalUtils.splitAtCommas((String) topComp.get("top_libelle"));
 			
+			//TODO Rewrite with tapestry-func
 			for(int i = 0; i<comps.length; i++){
 				components.put(comps[i], compsLibelle[i]);
 			}

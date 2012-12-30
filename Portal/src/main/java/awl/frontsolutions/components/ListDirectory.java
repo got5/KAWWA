@@ -44,6 +44,7 @@ public class ListDirectory {
 		linkToResources = new HashMap<String, String>();
 		writer.element("ul","class","k-menu","id","kawwaportal_menu");
 		List<TreeNode> children = fileStructure.getChildren();
+		//TODO Rewrite with tapestry-func
 		for (int i=0;i<children.size();i++) {
 			TreeNode subMenu = children.get(i);
 			listDirectory(subMenu, writer, 1,i);

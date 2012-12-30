@@ -31,6 +31,8 @@ public class Searchbox {
     public List<String> autocompletion(String term){
     	List<String> retour = new ArrayList<String>();
     	List<TreeNode> tns = fileIndexer.searchComponent(term);
+    	
+    	//TODO Rewrite with tapestry-func
     	for (TreeNode tn : tns) {
     		retour.add(tn.getNodeName());
 		}
@@ -41,6 +43,7 @@ public class Searchbox {
     public Object submitForm(){
     	Map<String, TreeNode> linkToComponent = fileIndexer.getLinkToComponent();
     	Set<String> keys = linkToComponent.keySet();
+    	//TODO Rewrite with tapestry-func
     	for (String s : keys) {
 			if(linkToComponent.get(s).getNodeName().equalsIgnoreCase(searchTag)){
 				return pageLinkSource.createPageRenderLinkWithContext(Component.class, s);

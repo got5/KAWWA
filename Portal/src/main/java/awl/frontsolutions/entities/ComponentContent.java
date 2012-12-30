@@ -203,7 +203,8 @@ public class ComponentContent {
 
 	public List<String> getEscapedSnippetHTML(String theme) {
 		List<String> string = new ArrayList<String>();
-
+		
+		//TODO Rewrite with tapestry-func
 		for (String s : escapedSnippetHTML) {
 			string.add(s.replace(ComponentConstants.THEME_IMG_DIR, theme));
 		}
@@ -215,6 +216,7 @@ public class ComponentContent {
 	public List<String> getEscapedSnippetJS(String theme) {
 		List<String> string = new ArrayList<String>();
 
+		//TODO Rewrite with tapestry-func
 		for (String s : escapedSnippetJS) {
 			string.add(s.replace(ComponentConstants.THEME_IMG_DIR, theme));
 		}

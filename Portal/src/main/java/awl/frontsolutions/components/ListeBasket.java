@@ -84,7 +84,8 @@ public class ListeBasket {
 		}
 		
 		if (panier.getListeComponent().size()>0) {
-
+			
+			//TODO Rewrite with tapestry-func
 			for (int i=0; i<panier.getListeComponent().size();i++) {
 				if (StringUtils.isNotEmpty(panier.getListeComponent().get(i).toString())) {
 					zipFiller.fillWithComponent(

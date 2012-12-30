@@ -74,6 +74,7 @@ public class ThemeStack implements JavaScriptStack{
 		this.stylesheets = stylesheets;
 	}
 	
+	//TODO Rewrite with tapestry-func
 	protected final List<Asset> convertToAssets(List<String> paths) {
 		List<Asset> assets = CollectionFactory.newList();
 

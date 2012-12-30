@@ -93,6 +93,7 @@ public class HTML5Documentation {
 	public List<String> getEscapedSnippetHTML5(String theme) {
 		List<String> string = new ArrayList<String>();
 
+		//TODO Rewrite with tapestry-func
 		for (String s : escapedSnippetHTML5) {
 			string.add(s.replace(ComponentConstants.THEME_IMG_DIR, theme));
 		}
@@ -103,6 +104,7 @@ public class HTML5Documentation {
 	public List<String> getEscapedSnippetJS5(String theme) {
 		List<String> string = new ArrayList<String>();
 		
+		//TODO Rewrite with tapestry-func
 		for (String s : EscapedSnippetJS5) {
 			string.add(s.replace(ComponentConstants.THEME_IMG_DIR, theme));
 		}
