@@ -10,7 +10,7 @@
 	</context-param>
 	<context-param>
 		<param-name>awl.filesystemindexer.root</param-name>
-		<param-value>/WEBS/UniteOD/kawwa/docs/kawwa_components_angela</param-value>
+		<param-value>/WEBS/UniteOD/kawwa/docs/kawwa_components</param-value>
 	</context-param>
 	<context-param>
         <param-name>tapestry.production-mode</param-name>

@@ -67,8 +67,6 @@ public class AppModule {
 
 		configuration.add(SymbolConstants.APPLICATION_VERSION, "0.0.1-SNAPSHOT");
 		
-		configuration.add(ComponentConstants.FILE_INDEXER_ROOT, "D:\\Documents\\a503018\\Documents\\WEBPLATFORM_DOCUMENTATION\\KAWWA\\kawwaportal\\kawwa_components_angela");
-		
 		configuration.add(JQuerySymbolConstants.JQUERY_UI_DEFAULT_THEME,"classpath:org/got5/tapestry5/jquery/themes/jquery-ui.css");
 		
 		configuration.add(KawwaConstants.KAWWA_INCLUDE_STACK, "false");
