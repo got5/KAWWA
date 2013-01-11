@@ -14,7 +14,6 @@ import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Local;
 import org.apache.tapestry5.ioc.annotations.Startup;
-import org.apache.tapestry5.ioc.annotations.SubModule;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
@@ -29,9 +28,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.slf4j.Logger;
 
-import awl.frontsolutions.internal.ComponentConstants;
 import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
-import awl.frontsolutions.services.atos.AtosModule;
 import awl.frontsolutions.services.impl.AtosServiceDefaultImpl;
 import awl.frontsolutions.services.impl.AuthentificationDefaultImpl;
 import awl.frontsolutions.services.impl.ComponentUtilsImpl;
@@ -46,7 +43,7 @@ import awl.frontsolutions.services.stack.Theme2Stack;
 import awl.frontsolutions.services.stack.ThemeStack;
 import awl.frontsolutions.services.stack.ThemeSwitcherStack;
 
-@SubModule(AtosModule.class)
+//@SubModule(AtosModule.class)
 public class AppModule {
 	
 	@Startup
