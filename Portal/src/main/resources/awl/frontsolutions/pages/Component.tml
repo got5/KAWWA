@@ -1,8 +1,10 @@
 <t:layout t:activeMenu="1" t:title="prop:title" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
-
-	<div id="menu">
-        <t:leftMenu t:urlParam="componentInfo.urlParam"/>
-    </div>
+	
+	<t:if t:test="newTheme()">
+		<div id="menu">
+	        <t:leftMenu t:urlParam="componentInfo.urlParam"/>
+	    </div>
+    </t:if>
     <div id="main">
         <h2>${groupTitle}</h2>
         

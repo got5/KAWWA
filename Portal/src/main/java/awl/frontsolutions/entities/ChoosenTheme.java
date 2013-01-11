@@ -13,7 +13,7 @@ public class ChoosenTheme{
 	public ChoosenTheme() {
 		super();
 		themeName = ThemeStack.DEFAULT_THEME;
-		dir = "k-theme1";
+		dir = "k-theme0";
 	}
 
 	public ChoosenTheme(String themeName, String dir) {

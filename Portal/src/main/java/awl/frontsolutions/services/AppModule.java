@@ -88,8 +88,8 @@ public class AppModule {
 			MappedConfiguration<String, JavaScriptStack> configuration) {
 		configuration.addInstance("themestack", ThemeSwitcherStack.class);
 		configuration.addInstance(ThemeStack.DEFAULT_THEME, Theme0Stack.class);
-		configuration.addInstance(ThemeStack.PREFIX+"k-theme2", Theme1Stack.class);
-		configuration.addInstance(ThemeStack.PREFIX+"k-theme3", Theme2Stack.class);
+		configuration.addInstance(ThemeStack.PREFIX+"k-theme1", Theme1Stack.class);
+		configuration.addInstance(ThemeStack.PREFIX+"k-theme2", Theme2Stack.class);
 	}
 
 

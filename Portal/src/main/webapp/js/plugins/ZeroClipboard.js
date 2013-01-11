@@ -227,7 +227,6 @@ ZeroClipboard.Client.prototype = {
 	
 	receiveEvent: function(eventName, args) {
 		// receive event from flash
-	
 		eventName = eventName.toString().toLowerCase().replace(/^on/, '');
 				
 		// special behavior for certain events

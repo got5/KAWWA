@@ -19,10 +19,9 @@ public class Theme2Stack extends ThemeStack{
 		super(assetSource, productionMode, symbolSource, threadLocale);
 		
 		addStyleSheet(new StylesheetLink(expand("context:css/k-structure.css")));
-		addStyleSheet(new StylesheetLink(expand("context:css/i-theme3.css")));
-		addStyleSheet(new StylesheetLink(expand("context:css/k-theme3.css")));
-		addStyleSheet(new StylesheetLink(expand("context:css/iehacks3.css"),new StylesheetOptions("all").withCondition("lt IE 9")));
-		addStyleSheet(new StylesheetLink(expand("context:css/k-print3.css"), new StylesheetOptions("print")));
+		addStyleSheet(new StylesheetLink(expand("context:css/i-theme2.css")));
+		addStyleSheet(new StylesheetLink(expand("context:css/k-theme2.css")));
+		addStyleSheet(new StylesheetLink(expand("context:css/iehacks2.css"),new StylesheetOptions("all").withCondition("lt IE 9")));
 		
 		addLibrary(expand("context:js/k-general.js"));
 		addLibrary(expand("context:js/k-load.js"));

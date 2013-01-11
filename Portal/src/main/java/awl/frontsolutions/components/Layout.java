@@ -6,7 +6,6 @@ import java.util.Date;
 
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.ComponentResources;
-import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
@@ -19,10 +18,13 @@ import org.got5.tapestry5.jquery.ImportJQueryUI;
 import awl.frontsolutions.entities.ChoosenTheme;
 import awl.frontsolutions.entities.DASUser;
 import awl.frontsolutions.entities.Panier;
+import awl.frontsolutions.services.FileSystemIndexer;
+import awl.frontsolutions.services.stack.ThemeStack;
+import awl.frontsolutions.treeDescription.TreeNode;
 
 
 @ImportJQueryUI(value={"jquery.ui.tabs","jquery.ui.button","jquery.ui.accordion"})
-@Import(library={"context:js/plugins/ZeroClipboard.js","context:js/plugins/jquery.ui.panel.js"})
+@Import(library={"context:js/plugins/ZeroClipboard.js","context:js/ui/jquery.ui.panel.awl.js"})
 public class Layout
 {
 	
@@ -31,6 +33,10 @@ public class Layout
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String title;
 
+	@Property
+	@Parameter 
+	private String activeMenu;
+	
     @Property
     private String pageName;
 
@@ -46,21 +52,25 @@ public class Layout
     @SessionState
     private Panier panier;
 
-    @Component(publishParameters="activeMenu")
-    private TopMenu topmenu;
-
+    
     @Inject
     private ComponentResources resources;
     
     @Inject
     private AssetSource as;
     
+    @Inject
+	private FileSystemIndexer indexer;
+	
     public String getClassForPageName()
     {
       return resources.getPageName().equalsIgnoreCase(pageName)
              ? "current_page_item"
              : null;
     }
+    
+    public Boolean isIndex(){return title.equalsIgnoreCase("Index");}
+    public Boolean isNewIndex(){return isIndex() && newTheme();}
     
     public String getCurrentYear(){
     	DateFormat sdf = new SimpleDateFormat("yyyy");
@@ -74,6 +84,10 @@ public class Layout
     public String getFaviconUrl(){
     	return as.getContextAsset("img/"+choosen.getDir()+"/favicon.png", null).toClientURL();
     }
+    
+    public String getId(){
+    	return isIndex() ? "home" : "";
+    }
 
     
 	@OnEvent("logout")
@@ -83,4 +97,18 @@ public class Layout
 		loggedUser = null;
 		
 	}
+	
+	public Boolean newTheme(){
+		return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+	}
+	
+	public TreeNode getRoot() {
+		return indexer.getFileStructure();
+	}
+	public String getTwitterImg(){
+		
+		return as.getContextAsset("img/"+choosen.getDir()+"/tweetexe.png", null).toClientURL();
+		
+	}
+	
 }

@@ -288,8 +288,7 @@ public class Component {
 		return componentInfo.getContent().getSnippetCSS(currentTheme.getThemeName());
 	}
 	
-	public List<String> getEscaped
-(){
+	public List<String> getEscaped(){
 		return componentInfo.getContent().getEscapedSnippetCSS(currentTheme.getThemeName());
 	}
 
@@ -344,4 +343,6 @@ public class Component {
 	public boolean getHasJs(){
 		return !InternalUtils.isEmptyCollection(componentInfo.getContent().getJsDependencies()) || getHasJqueryTag();
 	}
+	
+	public boolean newTheme(){ return !currentTheme.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);}
 }

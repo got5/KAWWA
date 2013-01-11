@@ -12,11 +12,12 @@ import org.apache.tapestry5.services.AssetSource;
 import awl.frontsolutions.entities.ChoosenTheme;
 import awl.frontsolutions.services.AtosService;
 import awl.frontsolutions.services.TopComponent;
+import awl.frontsolutions.services.stack.ThemeStack;
 
 /**
  * Start page of application frontsolutions.
  */
-@Import(stack="themestack", library = "context:js/ui/jquery.jcarousel.js")
+@Import(stack="themestack")
 public class Index {
 
 	@SessionState
@@ -53,5 +54,7 @@ public class Index {
 	public boolean isAtosMember(){
 		return atos.isAtosMember();
 	}
-
+	public Boolean newTheme(){
+		return theme.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+	}
 }

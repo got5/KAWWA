@@ -18,5 +18,10 @@ public class TopMenu {
 		
 		return classe;
 	}
+	
+	public Boolean isActive(Integer indice){
+		return getClass(indice).contains("active");
+	}	
+	
 
 }
