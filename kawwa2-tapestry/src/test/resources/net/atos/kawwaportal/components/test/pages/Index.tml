@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+<body>
+<ul class="k-links-list">
+	<li><a t:type="pagelink" t:page="Form">Form</a></li>
+	<li><a t:type="pagelink" t:page="Layout">Layout</a></li>
+	<li><a t:type="pagelink" t:page="LanguageSelection">LanguageSelection</a></li>
+	<li><a t:type="pagelink" t:page="LanguageSelectionSelect">LanguageSelectionSelect</a></li>
+	<li><a t:type="pagelink" t:page="Kawwa2Grid">Kawwa2Grid</a></li>
+	<li><a t:type="pagelink" t:page="DeliveryForm">DeliveryForm</a></li>
+	<li><a t:type="pagelink" t:page="Collapsible">Collapsible</a></li>
+	<li><a t:type="pagelink" t:page="BreadCrumb">BreadCrumb</a></li>
+	<li><a t:type="pagelink" t:page="MainNav">MainNav</a></li>
+	<li><a t:type="pagelink" t:page="ProductGallery">ProductGallery</a></li>
+	<li><a t:type="pagelink" t:page="ProductQuantity">ProductQuantity</a></li>
+	<li><a t:type="pagelink" t:page="RatingForm">RatingForm</a></li>
+	<li><a t:type="pagelink" t:page="SiteSearch">SiteSearch</a></li>
+	<li><a t:type="pagelink" t:page="Tipsy">Tipsy</a></li>
+</ul>
+
+</body>
+</html>

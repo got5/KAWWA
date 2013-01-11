@@ -1,0 +1,16 @@
+<p xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+	
+	<t:label for="ratingRadioGroup"/>
+	
+	<t:RadioGroup t:id="ratingRadioGroup" t:label="prop:getRatingCriteriaLabel()"
+		t:value="ratingCriteria.optionValue" t:encoder="stringEncoder" t:disabled="renderMode">
+
+		<t:loop t:source="criteriaDefinition.options" t:value="currentOptionDefinition" t:encoder="optionEncoder">
+		
+			<t:Radio t:id="option" t:value="currentOptionDefinition.optionValue" title="prop:currentOptionDefinition.optionLabel"/>
+			
+		</t:loop>
+
+	</t:RadioGroup>
+	
+</p>
