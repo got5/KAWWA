@@ -22,16 +22,17 @@ import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 
 @SubModule(KawwaPortalComponentsModule.class)
 public class AppModule {
+	
 	@Contribute(SymbolProvider.class)
-	@ApplicationDefaults
-	public static void contributeFactoryDefaults(
-			MappedConfiguration<String, String> configuration) {
+    @ApplicationDefaults
+    public static void contributeFactoryDefaults(MappedConfiguration<String, String> configuration)
+    {
 		configuration.add(SymbolConstants.PRODUCTION_MODE, "false");
 		configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en, fr");
 		configuration.add(JQuerySymbolConstants.JQUERY_ALIAS, "$j");
 		configuration.add(JQuerySymbolConstants.SUPPRESS_PROTOTYPE, "true");
-	}
-
+    }
+	
 	public void contributeApplicationStateManager(
 			MappedConfiguration<Class, ApplicationStateContribution> configuration) {
 
@@ -44,19 +45,15 @@ public class AppModule {
 		configuration.add(IDataSource.class, new ApplicationStateContribution(
 				"session", creator));
 	}
-
+	
 	@Contribute(BreadcrumbListProviderSource.class)
-	public static void addingThePackageBasedBreadcrumbListProvider(
-			MappedConfiguration<String, BreadcrumbListProvider> configuration) {
-		configuration.addInstance(MyBreadcrumbListProvider.name,
-				MyBreadcrumbListProvider.class);
-	}
-
+	public static void addingThePackageBasedBreadcrumbListProvider(MappedConfiguration<String, BreadcrumbListProvider> configuration)
+    {
+    	configuration.addInstance(MyBreadcrumbListProvider.name, MyBreadcrumbListProvider.class);
+    }
+	
 	public static void bind(ServiceBinder binder) {
-		binder.bind(RatingService.class, RatingServiceImpl.class).withId(
-				"RatingServiceIndexer");
-		binder.bind(ReviewService.class, RatingServiceImpl.class).withId(
-				"ReviewServiceIndexer");
-	}
-
+	  	binder.bind(RatingService.class, RatingServiceImpl.class).withId("RatingServiceIndexer");
+	  	binder.bind(ReviewService.class, RatingServiceImpl.class).withId("ReviewServiceIndexer");
+	 }
 }

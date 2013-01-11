@@ -27,7 +27,6 @@ public class Errors {
 		if(!disableKawwaErrors){
 			Predicate<Element> predicate = new Predicate<Element>() {
 				
-				
 				public boolean accept(Element object) {
 					
 					if(InternalUtils.isBlank(object.getAttribute("class"))) return false;

@@ -2,7 +2,7 @@
 	xmlns:p="tapestry:parameter">
 <body>
 	
-	<t:kawwa.breadcrumb t:home="tabs"/>
+	<t:kawwa2.breadcrumb t:home="tabs"/>
 	
 </body>
 </html>

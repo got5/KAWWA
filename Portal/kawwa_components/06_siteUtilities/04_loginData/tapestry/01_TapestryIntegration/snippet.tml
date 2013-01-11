@@ -1,6 +1,0 @@
-<div t:type="if" t:test="loggedUserExists">
-	<p class="k-login-data">
-		Welcome, <span id="user-name">${loggedUser?.name}</span> 
-		[<strong><a t:type="actionLink" t:id="logout">Logout</a></strong>]
-	</p>
-</div>

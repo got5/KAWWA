@@ -27,13 +27,15 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * <p>
  * 		To use it, call the component as the following:
  * 		<br/>
- * 		"&lt;div t:type="kawwa2/GMapSelect" t:currentGMapSelectLocationsList="&lt;&lt;1&gt;&gt;" 
- * 			t:gMapSelectLocationSelected="prop:&lt;&lt;2&gt;&gt;"/&gt;"
+ * 		"&lt;div t:type="kawwa2/GMapSelect" t:currentGMapSelectLocationsList="&lt;&lt;1&gt;&gt;"
+ * 			t:gMapParameters="prop:&lt;&lt;2&gt;&gt;"/&gt;"
+ * 			t:gMapSelectLocationSelected="prop:&lt;&lt;3&gt;&gt;"/&gt;"
  *		<br/><br/>
  *		The fields must be filled with:
  *		<ul>
  *			<li>&lt;&lt;1&gt;&gt; : The list of GMapSelectLocation objects</li>
- *			<li>&lt;&lt;2&gt;&gt; : The name of the location reference variable returned on submit</li>
+ *			<li>&lt;&lt;2&gt;&gt; : The optional JSON Object that will parameter the gmap plugin</li>
+ *			<li>&lt;&lt;3&gt;&gt; : The name of the location reference variable returned on submit</li>
  *		</ul>
  * </p>
  */
@@ -49,6 +51,11 @@ public class GMapSelect {
 	@Property
 	@SuppressWarnings("unused")
 	private String gMapSelectLocationSelected;
+	
+	@Parameter
+	@Property
+	@SuppressWarnings("unused")
+	private JSONObject gMapParameters;
 	
 	@Property
 	@SuppressWarnings("unused")

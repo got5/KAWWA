@@ -1,0 +1,63 @@
+<html 
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter"
+      xmlns:j="tapestry-library:jquery">
+ 	<head></head>
+ 	<body>				
+		   <form t:type="form" t:id="formDatosCaptacion" t:zone="tarjetaZone"> 
+    
+			 
+   			   <div id="colapsable_captacion"
+   			        t:type="kawwa2/collapsiblePanel" 
+   			        t:header="${message:titulo_colapsable}" 
+ 					t:title="${message:titulo_colapsable}" 
+ 					t:autoOpen="literal:true"
+ 					style="position:relative;">
+			          
+ 					       <p>
+ 					          <label class="k-online" t:type="label" t:for="titular_fechaNacimiento" style="position:absolute;left:1%;width:14%">${message:titular_fechaNacimiento}</label>
+ 					          <t:datefield t:id="titular_fechaNacimiento"  					          			
+		                                   t:value="date" 		                                    
+		                                   t:mixins="jquery/CustomDatepicker"
+		                                   t:validate="required" 
+		                                   t:params="paramsDatePicker"		
+		                                   t:format="dd/MM/yyyy"       
+		                                   t:label="${message:titular_fechaNacimiento}" 	                                   
+		                                   title="${message:titular_fechaNacimiento_tit}" 
+		                                   />  					          
+ 
+                            
+                              						 	           
+                           </p>
+                    
+  		      </div>   
+  		     
+  		      <div id="colapsable_datos_pago"
+  		           t:type="kawwa2/collapsiblePanel" 
+   			       t:header="${message:titulo_colapsable_datos_pago}" 
+ 				   t:title="${message:titulo_colapsable_datos_pago}" 
+ 				   t:autoOpen="literal:true">
+ 				    				  	
+ 				   
+              
+                          <p>
+                          
+                             <label class="k-online" t:type="label" t:for="renovacion_fechaCaducidadTarjeta" style="position:absolute;left:30%;">${message:renovacion_fechaCaducidadTarjeta}</label>        
+                             <t:datefield t:id="renovacion_fechaCaducidadTarjeta" 
+                                           id="renovacion_fechaCaducidadTarjeta"
+		                                   t:value="date2" 		                                    
+		                                   t:mixins="jquery/CustomDatepicker" 
+		                                   t:params="paramsDatePicker"		                            
+		                                   size="10" 
+		                                   t:format="dd/MM/yyyy"
+		                                   title="${message:renovacion_fechaCaducidadTarjeta_tit}"/>  
+                          </p>          
+                                              
+  			  </div>
+  			  
+	          	
+  			  
+  		   </form>
+	  
+</body>
+</html>

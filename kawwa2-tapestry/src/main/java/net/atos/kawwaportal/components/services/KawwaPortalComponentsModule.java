@@ -18,6 +18,7 @@ import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.FactoryDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.json.JSONObject;
+import org.apache.tapestry5.services.ComponentClassTransformWorker;
 import org.apache.tapestry5.services.Environment;
 import org.apache.tapestry5.services.LibraryMapping;
 import org.apache.tapestry5.services.MarkupRenderer;
@@ -25,7 +26,6 @@ import org.apache.tapestry5.services.MarkupRendererFilter;
 import org.apache.tapestry5.services.RequestGlobals;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-import org.apache.tapestry5.services.transform.ComponentClassTransformWorker2;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.got5.tapestry5.jquery.services.WidgetParams;
 
@@ -58,10 +58,10 @@ public class KawwaPortalComponentsModule
 	
 	public static void contributeClasspathAssetAliasManager(MappedConfiguration<String, String> configuration)
     {
-        configuration.add("kawwa2_asset", "net/atos/kawwaportal/components");
+        configuration.add("kawwaAsset", "net/atos/kawwaportal/components");
     }
 	
-	public static void  contributeComponentClassTransformWorker(OrderedConfiguration<ComponentClassTransformWorker2> configuration) {
+	public static void  contributeComponentClassTransformWorker(OrderedConfiguration<ComponentClassTransformWorker> configuration) {
 
     	configuration.addInstance("ErrorTransformWorker", ErrorsTransformWorker.class);
     	configuration.addInstance("FormTransformWorker", FormTransformWorker.class);

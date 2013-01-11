@@ -4,6 +4,6 @@
 	xmlns:p="tapestry:parameter">
 
 	<body>	
-		<div t:type="kawwa2/SiteSearch" t:id="search" t:value="search" t:minChars="3" t:placeholder="Search..." t:tokens="," t:autofocus="false"/>
+		<div t:type="kawwa2/SiteSearch" t:id="search" t:value="search" t:minChars="3" t:placeholder="Search..." t:autofocus="false"/>
 	</body>
 </html>

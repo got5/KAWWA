@@ -2,10 +2,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.atos.tapestry</groupId>
     <artifactId>tapestry5-kawwa-components</artifactId>
-    <version>2.0.4-SNAPSHOT</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
     <name>kawwaportal-components</name>
-     <dependencies>
+
+    <dependencies>
         <dependency>
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-core</artifactId>
@@ -20,8 +21,8 @@
 		<dependency>
 	        <groupId>org.got5</groupId>
 	        <artifactId>tapestry5-jquery</artifactId>
-	        <version>3.3.5-SNAPSHOT</version>
-   		 </dependency>
+	         <version>2.6.7</version>
+   		</dependency>
         <dependency>
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-test</artifactId>
@@ -57,13 +58,15 @@
                 <configuration>
                     <!-- Log to the console. -->
                     <requestLog implementation="org.mortbay.jetty.NCSARequestLog">
-                       <append>true</append>
+                        <!-- This doesn't do anything for Jetty, but is a workaround for a Maven bug
+                             that prevents the requestLog from being set. -->
+                        <append>true</append>
                     </requestLog>
                     <useTestClasspath>true</useTestClasspath>
 					<webAppSourceDirectory>src/test/webapp</webAppSourceDirectory>
                 </configuration>
             </plugin>
-            <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.8.1</version>
@@ -125,8 +128,8 @@
 	            <enabled>false</enabled>
 	        </releases>
 	    </repository>
-    </repositories>
-      <distributionManagement>
+   </repositories>
+   <distributionManagement>
 		<repository>
 			<id>devlab722-repo</id>
 			<url>http://nexus.devlab722.net/nexus/content/repositories/releases</url>
@@ -135,8 +138,8 @@
 			<id>devlab722-snapshot-repo</id>
 			<url>http://nexus.devlab722.net/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
-	</distributionManagement>	
-    <properties>
-        <tapestry-release-version>5.3.6</tapestry-release-version>
+	</distributionManagement>		
+	<properties>
+        <tapestry-release-version>5.2.6</tapestry-release-version>
     </properties>
 </project>

@@ -8,7 +8,7 @@ import com.thoughtworks.selenium.Wait;
 public class TipsyTest extends SeleniumTestCase{
 	
 	@Test
-	public void testCollapsiblePanel(){
+	public void testTipsy(){
 		
 		open("Tipsy");
 		

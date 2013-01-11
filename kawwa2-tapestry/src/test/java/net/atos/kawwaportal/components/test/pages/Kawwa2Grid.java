@@ -15,7 +15,6 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.beaneditor.BeanModel;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.BeanModelSource;
-import org.got5.tapestry5.jquery.internal.TableInformation;
 
 public class Kawwa2Grid {
 	@Property private Boolean check;
@@ -74,24 +73,5 @@ public class Kawwa2Grid {
 		this.model = beanModelSource.createDisplayModel(Celebrity.class,resources.getMessages());
 		this.model.get("firstName").sortable(false);
 		return model;
-	}
-	
-	public TableInformation getInformations(){
-		return new TableInformation() {
-			
-			public String getTableSummary() {
-				return "Summary";
-				
-			}
-			
-			public String getTableCaption() {
-				return "Caption";
-			}
-			
-			public String getTableCSS() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		};
 	}
 }

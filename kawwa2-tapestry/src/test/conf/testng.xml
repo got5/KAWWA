@@ -2,8 +2,8 @@
 <suite name="kawwaportal-components Application Test Suite" annotations="1.5">
     <test name="Unit Tests">
     		<parameter name="tapestry.web-app-folder" value="src/test/webapp"/>
-			<parameter name="tapestry.browser-start-command" value="*firefox" />
-	         <packages>
+			<parameter name="tapestry.browser-start-command" value="*googlechrome" />
+			<packages>
 				<package name="net.atos.kawwaportal.components.test"></package>
 			</packages>
     </test>

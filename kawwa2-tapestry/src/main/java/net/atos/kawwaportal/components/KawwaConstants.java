@@ -23,5 +23,10 @@ public class KawwaConstants {
 	public static final String CSS_CLASS_REQUIRED = "k-required";
 	
 	public static final String CSS_CLASS_CONTEXTUAL_ERROR = "k-contextual-error";
+
+	/**
+	 * Path of the stylesheet for new components, not yet implemented in Kawwa2
+	 */
+	public static final String EXTRA_STYLESHEET = "kawwa2.extra_stylesheet";
 	
 }

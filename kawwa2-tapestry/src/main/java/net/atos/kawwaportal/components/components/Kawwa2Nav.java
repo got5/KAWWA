@@ -6,6 +6,7 @@ import net.atos.kawwaportal.components.KawwaUtils;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
+import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Environmental;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
@@ -68,6 +69,9 @@ public class Kawwa2Nav {
 	
 	@Inject
 	private Block navBlock;
+	
+	@Component(publishParameters="range")
+	private Kawwa2Pager pager;
 	
 	@SetupRender
 	public void initialWork() {

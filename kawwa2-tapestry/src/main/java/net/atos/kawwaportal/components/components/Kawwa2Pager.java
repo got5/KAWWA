@@ -1,8 +1,11 @@
 package net.atos.kawwaportal.components.components;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.atos.kawwaportal.components.KawwaConstants;
-import net.atos.kawwaportal.components.KawwaUtils;
 import net.atos.kawwaportal.components.KawwaEventsConstants;
+import net.atos.kawwaportal.components.KawwaUtils;
 
 import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.ComponentResources;
@@ -13,13 +16,16 @@ import org.apache.tapestry5.annotations.Environmental;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.dom.Element;
+import org.apache.tapestry5.func.F;
+import org.apache.tapestry5.func.Predicate;
+import org.apache.tapestry5.func.Worker;
 import org.apache.tapestry5.grid.GridDataSource;
 import org.apache.tapestry5.internal.InternalConstants;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.ClientBehaviorSupport;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-import org.apache.tapestry5.dom.Element;
 
 public class Kawwa2Pager {
 	/**
@@ -101,6 +107,7 @@ public class Kawwa2Pager {
 
 	@Property
 	private int lastIndex;
+	@Property private boolean displayEndPoints = false;
 
 	@Property
 	private int maxPages;
@@ -119,7 +126,7 @@ public class Kawwa2Pager {
 	 * 
 	 * @param writer
 	 */
-	void beginRender(MarkupWriter writer) {
+	void beginRender(final MarkupWriter writer) {
 		// high index in set
 		int high;
 
@@ -145,40 +152,39 @@ public class Kawwa2Pager {
 		writePreviousLink(writer, currentPage - 1, "page");
 
 		lastIndex = 0;
+		
+		List<Integer> pages = new ArrayList<Integer>();
+		for(Integer p = 1; p <= maxPages ; p++ ) pages.add(p);
+		
+		F.flow(pages).filter(new Predicate<Integer>() {
 
-		// displaying first two page link when
-		for (int i = 1; i <= 2; i++) {
-			writePageLink(writer, i);
-		}
-
-		// setting lower index based on range
-		low = currentPage - range;
-
-		// setting higher index based on range
-		high = currentPage + range;
-
-		// if low -ve means start point is 1st page
-		if (low < 1) {
-			low = 1;
-			high = 2 * range + 1;
-		} else {
-			// if high is maxPages then need to stop at high while writing the
-			// links
-			if (high > maxPages) {
-				high = maxPages;
-				low = high - 2 * range;
+			@Override
+			public boolean accept(Integer i) {
+				if(maxPages < range) return true;
+				else {
+					if(currentPage > range && currentPage <= (maxPages - range)){
+						if(i>=(currentPage - range/2) && i<=(currentPage + range/2)) {displayEndPoints = true;return true;}
+						else return false;
+					}else if(i<=range || i > maxPages - range) {
+						return true;
+					}
+				}
+				return false;
 			}
-		}
+		}).each(new Worker<Integer>() {
 
-		// based on above low - high logic show links
-		for (int i = low; i <= high; i++) {
-			writePageLink(writer, i);
+			@Override
+			public void work(Integer value) {
+				writePageLink(writer, value);
+			}
+		});
+		
+		if(displayEndPoints){
+			writer.element("strong");
+			writer.write(" ... ");
+			writer.end();
 		}
-
-		// showing last two pages of grid
-		for (int i = maxPages - 1; i <= maxPages; i++) {
-			writePageLink(writer, i);
-		}
+		
 		// Writing next page link
 		writeNextLink(writer, currentPage + 1, "page");
 
@@ -254,6 +260,7 @@ public class Kawwa2Pager {
 			writer.element("strong");
 			writer.write(" ... ");
 			writer.end();
+			writer.write(" | ");
 		}
 		
 		String separator = (pageIndex<maxPages) ? " | " : " ";
@@ -292,6 +299,8 @@ public class Kawwa2Pager {
 
             clientBehaviorSupport.linkZone(clientId, zone, link);
         }
+		
+		
 	}
 
 	/**
@@ -386,6 +395,7 @@ public class Kawwa2Pager {
 
 	protected boolean displaySupensionsPoints(int pageIndex) {
 		return pageIndex != (lastIndex + 1);
+		//return pageIndex != (lastIndex + 1) && (displayEndPoints && (pageIndex <= maxPages - range));
 	}
 	
 	/**

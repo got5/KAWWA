@@ -16,6 +16,20 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 public class Breadcrumb {
 
+	@Parameter(required=true, defaultPrefix = BindingConstants.LITERAL)
+	private String home;
+	
+	@Parameter(defaultPrefix=BindingConstants.LITERAL, value="PackageBasedBreadcrumbListProvider")
+	private String breadcrumbProvider;
+	
+	@Property
+	@Parameter(defaultPrefix=BindingConstants.LITERAL, value=" &gt; ")
+	private String splittingChar;
+	
+	@Property
+	@Parameter(defaultPrefix=BindingConstants.LITERAL, value=" &gt; ")
+	private String lastSplittingChar;
+
 	@Inject
 	private ComponentResources componentResources;
 	
@@ -33,21 +47,6 @@ public class Breadcrumb {
 
 	@Property
 	private String shortPageName;
-
-	@Parameter(required=true, defaultPrefix = BindingConstants.LITERAL)
-	private String home;
-	
-	@Parameter(defaultPrefix=BindingConstants.LITERAL, value="PackageBasedBreadcrumbListProvider")
-	private String breadcrumbProvider;
-
-	@Property
-	@Parameter(defaultPrefix=BindingConstants.LITERAL, value=" &gt; ")
-	private String splittingChar;
-	
-	@Property
-	@Parameter(defaultPrefix=BindingConstants.LITERAL, value=" &gt; ")
-	private String lastSplittingChar;
-
 
 	@Inject
 	private BreadcrumbListProviderSource listProviderSource;

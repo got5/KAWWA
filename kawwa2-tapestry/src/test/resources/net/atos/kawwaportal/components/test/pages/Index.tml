@@ -19,6 +19,11 @@
 	<li><a t:type="pagelink" t:page="SiteSearch">SiteSearch</a></li>
 	<li><a t:type="pagelink" t:page="Tipsy">Tipsy</a></li>
 </ul>
+<t:form>
+	<t:jquery.rangeslider t:min="min" t:max="max" t:params="rangeparams" class="k-slider"/>
+</t:form>
 
+<t:actionLink>testw</t:actionLink>
+<t:zone t:id="pagezone">Zone</t:zone>
 </body>
 </html>

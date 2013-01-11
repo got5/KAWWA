@@ -17,7 +17,9 @@
 		${perPage}</label></p>
 		<t:if test="disableRowPerPage" negate="true">
 			<p class="total-pages">${results} <strong>${totalRows}</strong></p>
-			<p class="page-numbers"><t:kawwa2.kawwa2Pager
+			<p class="page-numbers">
+			
+			<t:kawwa2.kawwa2Pager t:id="pager"
 				t:source="inherit:source" t:currentpage="inherit:currentPage"
 				t:rowsperpage="inherit:rowsPerPage" t:zone="prop:zone" t:inplace="inherit:inplace" /></p>
 		</t:if>
