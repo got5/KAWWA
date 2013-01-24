@@ -275,11 +275,6 @@ function supports_input_placeholder() {
 	}
 	
 	
-// CATALOG VIEW SWITCHER -------------------------------
-
-	if(jQuery.fn.switchView) {jQuery('catalog-view').switchView();}	
-	
-	
 // PRODUCT GALLERY -------------------------------
 	
 	if(jQuery.fn.jqzoom) {
