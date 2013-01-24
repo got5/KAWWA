@@ -45,8 +45,21 @@
 							<t:pagelink page="download">Downloads</t:pagelink>
 						</p:else>
 					</t:if></li>
-				<li class="${getClass(1)} compo-entry"><a
-					href="#components-list">Kawwa Components</a></li>
+					
+				<t:if t:test="newTheme()" t:negate="true">	
+				<li class="${getClass(1)}"><t:if t:test="${isActive(1)}">
+						<strong title="Current Section">Kawwa Components</strong>
+						<p:else>
+							<t:pagelink page="Components">Kawwa Components</t:pagelink>
+						</p:else>
+					</t:if></li>
+					
+					<p:else>
+						<li class="${getClass(1)} compo-entry"><a
+							href="#components-list">Kawwa Components</a></li>	
+					</p:else>
+				
+				</t:if>
 
 			</ul>
 		</div>

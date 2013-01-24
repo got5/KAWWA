@@ -1,9 +1,12 @@
 package awl.frontsolutions.components;
 
 import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+import awl.frontsolutions.entities.ChoosenTheme;
 import awl.frontsolutions.services.AtosService;
+import awl.frontsolutions.services.stack.ThemeStack;
 
 
 public class TopMenu {
@@ -11,6 +14,9 @@ public class TopMenu {
 	@Parameter
 	private Integer activeMenu;
 	
+	@SessionState
+    private ChoosenTheme choosen;
+    
 	public String getClass(Integer indice){
 		
 		String classe = new String();
@@ -33,5 +39,9 @@ public class TopMenu {
 	public Boolean isAtos(){
 		return atos.isAtosMember();
 	}	
-
+	
+	public Boolean newTheme(){
+		return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+	}
+	
 }
