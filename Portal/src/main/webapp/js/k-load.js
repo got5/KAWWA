@@ -120,11 +120,11 @@ var dTest = dateTest();
 
 // DATATABLES ----------------------------------	
 
-	if (jQuery.fn.dataTable) {
+	/*if (jQuery.fn.dataTable) {
 		jQuery('table.k-data-table').dataTable({
 			"sPaginationType": "full_numbers"
 		});
-	}
+	}*/
 	
 	
 // LANGUAGE SELECTION ----------------------------------	
@@ -136,7 +136,7 @@ var dTest = dateTest();
 
 // LOGIN FORM -------------------------------------------	
 	
-	if (jQuery('form.k-login').hasClass('collapsible')) {
+	/*if (jQuery('form.k-login').hasClass('collapsible')) {
 		jQuery('form.k-login.collapsible').css("display", "none");
 		jQuery('#loginLink').children("a").attr("href", "#");
 		jQuery('#loginLink').click(function() {
@@ -149,7 +149,7 @@ var dTest = dateTest();
 			    }
 			  });
 		});
-	}
+	}*/
 	
 
 // SEARCH/AUTOCOMPLETE ----------------------------------	
@@ -258,8 +258,20 @@ function supports_input_placeholder() {
 	
 // INCREMENT/DECREMENT VALUE -------------------------------
 	
-	if(jQuery.fn.uppydowner) {
-		jQuery("input.uppydowner").uppydowner();
+	function incrementTest() {
+		var i = document.createElement('input');
+		i.setAttribute('type', 'number');
+		return i.type !== 'text';
+	}
+	var incTest = incrementTest();
+
+	if (jQuery.fn.uppydowner) {
+		if(!incTest) {
+			jQuery('input[type=number]').attr('class', 'uppydowner');
+			jQuery('input.uppydowner').uppydowner();
+		} else {
+			jQuery('input[type=number]').css('width', '3em');
+		}
 	}
 	
 	

@@ -22,7 +22,7 @@ public class Theme0Stack extends ThemeStack{
 		addStyleSheet(new StylesheetLink(expand("context:css/k-structure.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/k-theme0.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/i-theme0.css")));
-		//addStyleSheet(new StylesheetLink(expand("context:css/iehacks0.css"),new StylesheetOptions("all").withCondition("lt IE 9")));
+		addStyleSheet(new StylesheetLink(expand("context:css/iehacks0.css"),new StylesheetOptions("all").withCondition("lt IE 9")));
 		
 		addLibrary(expand("context:js/plugins/jquery.masonry.min.js"));
 		addLibrary(expand("context:js/i-general.js"));

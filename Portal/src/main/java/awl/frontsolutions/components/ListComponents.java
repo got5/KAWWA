@@ -58,7 +58,15 @@ public class ListComponents {
 		writer.end();
 		writer.element("p", "class", "go-top");
 		writer.element("a", "href", "#", "title", "Top of the page");
-		writer.write("&#9195;");
+
+		writer.element(
+				"img",
+				"src",
+				assetSource.getContextAsset(
+						String.format("img/%s/to-top.png", theme.getDir()),
+						null).toClientURL(), "alt", "Top");
+		writer.end();
+
 		writer.end();
 		writer.end();
 
@@ -99,7 +107,7 @@ public class ListComponents {
 			if (level > 0) {
 				writer.element("h3");
 				String nameFile = null;
-				
+
 				writer.element(
 						"img",
 						"src",
@@ -119,27 +127,71 @@ public class ListComponents {
 				writer.end();
 			}
 			writer.end();
-		} else if (fileStructure.getNodeType().equals(NodeType.COMPONENT)
-				&& level > 1) {
-			writer.element("li");
-			writer.element("a", "href", pageRender
-					.createPageRenderLinkWithContext(Component.class,
-							fileStructure.getUrlParam()));
-			writer.write(fileStructure.getNodeName());
-			if (fileStructure.containsTag(ComponentConstants.TAG_JQUERY)) {
-				writer.write(" ");
-				writer.element("img", "src", jQueryIconUrl, "alt", "jQuery",
-						"title", "jQuery Interactive feature");
+		} else if (fileStructure.getNodeType().equals(NodeType.COMPONENT)) {
+			if (level == 1 ) {
+				writer.element("section");
+			
+				writer.element("h3");
+				String nameFile = null;
+
+				writer.element(
+						"img",
+						"src",
+						assetSource.getContextAsset(
+								String.format("img/%s/icon_%s.png", theme
+										.getDir(), fileStructure.getNodeName()
+										.replaceAll("\\s", "")), null)
+								.toClientURL(), "alt", "");
+				writer.end();
+				
+				writer.end();
+				
+				writer.element("ul");
+				
+				writer.element("li");
+				writer.element("a", "href", pageRender
+						.createPageRenderLinkWithContext(Component.class,
+								fileStructure.getUrlParam()));
+				writer.write("HTML5 Page Structure");
+				writer.element("img", "src", tapestryIconUrl, "alt", "Tapestry Integration");
+				writer.end();
+				writer.end();
+				writer.end();
+				
+				writer.element("li");
+				writer.element("a", "href", pageRender
+						.createPageRenderLinkWithContext(Component.class,
+								fileStructure.getUrlParam()));
+				writer.write("XHTML Page Structure");
+				writer.element("img", "src", tapestryIconUrl, "alt", "Tapestry Integration");
+				writer.end();
+				writer.end();
+				writer.end();
+				
+				writer.end();
+				
+				writer.end();
+			} else {
+				writer.element("li");
+				writer.element("a", "href", pageRender
+						.createPageRenderLinkWithContext(Component.class,
+								fileStructure.getUrlParam()));
+				writer.write(fileStructure.getNodeName());
+				if (fileStructure.containsTag(ComponentConstants.TAG_JQUERY)) {
+					writer.write(" ");
+					writer.element("img", "src", jQueryIconUrl, "alt",
+							"jQuery", "title", "jQuery Interactive feature");
+					writer.end();
+				}
+				if (fileStructure.containsTag(ComponentConstants.TAG_TAPESTRY)) {
+					writer.write(" ");
+					writer.element("img", "src", tapestryIconUrl, "alt",
+							"Tapestry", "title", "Tapestry Integration");
+					writer.end();
+				}
+				writer.end();
 				writer.end();
 			}
-			if (fileStructure.containsTag(ComponentConstants.TAG_TAPESTRY)) {
-				writer.write(" ");
-				writer.element("img", "src", tapestryIconUrl, "alt",
-						"Tapestry", "title", "Tapestry Integration");
-				writer.end();
-			}
-			writer.end();
-			writer.end();
 		}
 	}
 

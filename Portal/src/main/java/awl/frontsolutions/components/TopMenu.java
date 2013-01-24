@@ -1,6 +1,9 @@
 package awl.frontsolutions.components;
 
 import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.ioc.annotations.Inject;
+
+import awl.frontsolutions.services.AtosService;
 
 
 public class TopMenu {
@@ -23,5 +26,12 @@ public class TopMenu {
 		return getClass(indice).contains("active");
 	}	
 	
+	
+	@Inject
+	private AtosService atos;
+	
+	public Boolean isAtos(){
+		return atos.isAtosMember();
+	}	
 
 }

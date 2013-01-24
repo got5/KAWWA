@@ -5,7 +5,7 @@
 			<t:if t:test="Index">
 				<p>Changing a graphical theme here below will change all the portal pages, helping you to choose the theme you want to download.</p>
 			</t:if>
-			<t:form t:id="styleswitch">
+			<t:form t:id="styleswitch" t:autofocus="false">
 				<p>
 					<t:label t:for="theme">Select a graphic theme:</t:label>
 					<t:select t:clientId="i-theme" t:id="theme" model="themeModel" t:blankOption="NEVER"/>

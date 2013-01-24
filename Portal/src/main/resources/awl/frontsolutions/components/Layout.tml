@@ -16,9 +16,18 @@
 				<h1>
 					KAWWA <small>Markup Pattern Library</small>
 				</h1>
-				
+				<t:if t:test="loggedUserExists">
+					<p class="k-login-data">
+						[<strong><a t:type="eventlink" t:event="logout">Logout</a></strong>]
+					</p>
+					<p:else>
+						<p class="k-login-data">
+							[<strong><a t:type="pagelink" t:page="login">Login</a></strong>]
+						</p>
+					</p:else>
+				</t:if>
 			</header>
-			<t:topmenu t:id="topmenu" t:activeMenu="prop:activeMenu"/>
+			<t:topmenu t:id="topmenu" t:activeMenu="prop:activeMenu" />
 			<p:else>
 				<div id="header">
 					<h1>
@@ -42,34 +51,38 @@
 
 						</ul>
 					</div>
-					<t:topmenu t:id="topmenu2" t:activeMenu="prop:activeMenu"/>
+					<t:topmenu t:id="topmenu2" t:activeMenu="prop:activeMenu" />
 				</div>
-				
-			</p:else>
-			
-		</t:if>
-			<t:if t:test="isNewIndex()" t:negate="true">
-				<t:breadcrumb />
-			</t:if>
 
-		
+			</p:else>
+
+		</t:if>
+		<t:if t:test="isNewIndex()" t:negate="true">
+			<t:breadcrumb />
+		</t:if>
+
+
 
 		<hr />
 		<t:if t:test="isNewIndex()">
 			<div id="highlight">
 				<div class="baseline">
 					<p>
-						More than 50 crafted HTML patterns to help you start your <strong>standard</strong>,
+						More than 50 HTML patterns to help you start your <strong>standard</strong>,
 						<strong>accessible</strong> and <strong>adaptative</strong> web
 						sites.
 					</p>
 				</div>
 				<ul class="k-links-list">
-					<li><a t:type="pagelink" t:page="aboutkawwa">Discover <small>all about Kawwa</small></a></li>
-					<li class="compo-entry"><a t:type="pagelink" t:page="components">Explore <small>the
-								components</small></a></li>
-					<li><a t:type="pagelink" t:page="templates">Try-out <small>with our templates</small></a></li>
-					<li><a t:type="pagelink" t:page="download">Download <small>only what you need</small></a></li>
+					<li><a t:type="pagelink" t:page="KawwaPortal">Discover <small>all
+								about Kawwa</small></a></li>
+					<li class="compo-entry"><a href="#components-list">Explore
+							<small>the components</small>
+					</a></li>
+					<li><a t:type="pagelink" t:page="templates">Try-out <small>with
+								our templates</small></a></li>
+					<li><a t:type="pagelink" t:page="download">Download <small>only
+								what you need</small></a></li>
 				</ul>
 			</div>
 		</t:if>
@@ -81,9 +94,9 @@
 
 		<hr />
 		<t:if t:test="newTheme()">
-
-			<t:listComponents fileStructure="root" />
-			
+			<t:if t:test="hideListComponents" t:negate="true">
+				<t:listComponents fileStructure="root" />
+			</t:if>
 
 			<footer role="contentinfo">
 				<ul class="index">
@@ -91,6 +104,9 @@
 							Kawwa</a></li>
 					<li><a t:type="pagelink" t:page="Templates">Example
 							Templates</a></li>
+					<t:if t:test="isAtos()">
+						<li><a t:type="pagelink" t:page="documentation">Documentation</a></li>
+					</t:if>
 					<li><a t:type="pagelink" t:page="download">Download</a></li>
 					<li><a t:type="pagelink" t:page="components">Components</a></li>
 					<li><a t:type="pagelink" t:page="faq">FAQ</a></li>
@@ -98,14 +114,14 @@
 				<section class="contact">
 					<h2>Contact us</h2>
 					<p>
-						Your bug-repports, comments, suggestions, questions and feedbacks
-						are welcome! Please feel free to send us a mail to our
-						distribution list at <a href="mailto:dl-kawwa@atos.net">dl-kawwa@atos.net</a>.
-						We'll do our best to get back to you as soon as we can.
+						Be welcome to use our <a href="#contact-modal"
+							class="k-modal-trigger">contact form</a> to send us your
+						comments, suggestions and questions.
 					</p>
+					<p>We'll do our best to get back to you as soon as we can.</p>
 				</section>
 				<p class="community">
-					<img src="${twitterImg}" alt=""></img>
+					<a href="https://twitter.com/kawwalibrary" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @kawwalibrary</a>
 				</p>
 				<p class="k-copyright">&copy; KAWWA, 2013</p>
 			</footer>
@@ -118,6 +134,32 @@
 		</t:if>
 
 	</div>
-
+	<t:if t:test="newTheme()">
+	<!-- Modal -->
+	<div id="contact-modal" class="k-modal">
+		<h3 class="modal-header">Contact form</h3>
+		<div class="content">
+			<form t:type="form"	t:id="contextForm" t:clientValidation="false" t:autofocus="false">
+				
+				<p>
+					<label for="namecontact">Name</label> <input t:type="textfield" required="true" t:value="namecontact"
+						id="namecontact" name="namecontact" type="text"></input>
+				</p>
+				<p>
+					<label for="emailcontact">Email</label> <input t:type="textfield" required="true" t:value="emailcontact"
+						t:id="emailcontact" name="emailcontact" type="text"></input>
+				</p>
+				<p>
+					<label for="bodycontact">Message</label>
+					<textarea t:type="textarea" required="true" cols="60" rows="10" id="bodycontact" t:value="bodycontact"
+						name="bodycontact"></textarea>
+				</p>
+				<p>
+					<input value="Submit" id="submit_1" name="submit_0" type="submit"></input>
+				</p>
+			</form>
+		</div>
+	</div>
+	</t:if>
 </body>
 </html>

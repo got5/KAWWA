@@ -2,7 +2,7 @@
      		
      <p>
      	<t:label t:for="date1">Enter a date:</t:label>
-     	<input t:type="datefield" t:id="date1" class="k-datepick" t:value="date1" 
+     	<input t:type="datefield" t:id="date1" class="k-datepick" t:name="date1" 
     	t:mixins="jquery/CustomDatepicker" t:params="options"/>
 	</p>
 	

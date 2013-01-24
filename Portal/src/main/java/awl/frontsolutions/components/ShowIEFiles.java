@@ -49,7 +49,7 @@ public class ShowIEFiles {
 		writer.element("div","class","k-panel exception");
 		
         writer.element("h3", "class", "control");
-        writer.write("IE hacks");
+        writer.write("IE Backward Compatibility");
         writer.end();//h2
         
         writer.element("div","class","content");

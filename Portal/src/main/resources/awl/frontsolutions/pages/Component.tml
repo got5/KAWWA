@@ -21,12 +21,12 @@
 					      <li>Version: ${componentInfo?.version}</li>
 					      <t:if test="hasJqueryTag">
 					      	<li>
-						    	<img alt="jQuery" src="${asset:context:img/jquery-trans.png}" /> jQuery Interactive feature
+						    	<img alt="jQuery" src="${jQueryPath}" /> jQuery Interactive feature
 						    </li>
 			              </t:if>
 			              <t:if test="hasTapestryTag">
 			              	<li>
-		                 		<img alt="Tapestry" src="${asset:context:img/tapestry-small.png}" /> Tapestry Integration
+		                 		<img alt="Tapestry" src="${tapestryPath}" /> Tapestry Integration
 		                 	</li>
 		                 </t:if>
 					</ul>

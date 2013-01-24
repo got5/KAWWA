@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
@@ -345,4 +346,13 @@ public class Component {
 	}
 	
 	public boolean newTheme(){ return !currentTheme.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);}
+	
+	public Asset getTapestryPath(){
+		return this.assetSource.getContextAsset(String.format("img/%s/jquery-trans.png", currentTheme.getDir()), null);
+	}
+	
+	public Asset getJQueryPath(){
+		return this.assetSource.getContextAsset(String.format("img/%s/tapestry-small.png", currentTheme.getDir()), null);
+	}
+	
 }

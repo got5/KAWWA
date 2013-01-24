@@ -9,16 +9,13 @@
 
 			<div class="k-intro">
 
-			    <p>Are you starting a new web project? Would you like to see the Kawwa Components in action, in "real world" HTML Pages? Then the Example Templates are what you need.</p>
+			    <p>Are you starting a new web project? Would you like to see the Kawwa Components in action, in "real world" HTML Pages? Then the Example Templates are what you need.
+The Example Templates are grouped in the "Template Pack" and they comprise seven pages gathering all of Kawwa components.
+You may download the Example Templates pack on our "<a t:type="pagelink" t:page="download">Downloads</a>" page.</p>
 
 			</div>
 
-		    <p>The Example Templates are grouped in the "Template Pack" and they comprise seven pages gathering all of Kawwa2 components.</p>
-
-		    <p>You may download the Example Templates pack on our "<a t:type="pageLink" t:page="Download">Downloads</a>" page.</p>
-
-			
-
+		   
 			<div id="theTemplates" class="k-tabbed-data">
 
 				<ul class="tabs">

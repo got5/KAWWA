@@ -6,7 +6,7 @@
         <fieldset>
         	<legend>You need to login</legend>
                     
-			<p><t:label t:for="das"/><t:textfield t:id="das"/></p>
+			<p><t:label t:for="das"/><t:textfield t:id="das" t:validate="required"/></p>
             <p><t:label t:for="password"/><t:passwordfield t:id="password"/></p>
             <p><t:submit value="Submit"/></p>
                      

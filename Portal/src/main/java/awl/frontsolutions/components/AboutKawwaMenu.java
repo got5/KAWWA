@@ -11,11 +11,16 @@ import org.apache.tapestry5.annotations.BeginRender;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+import awl.frontsolutions.services.AtosService;
+
 public class AboutKawwaMenu {
 	
 	private Map<String, String> presentation = new LinkedHashMap<String, String>();
 	private Map<String, String> component = new LinkedHashMap<String, String>();
 	private Map<String, String> guidelines = new LinkedHashMap<String, String>();
+	
+	@Inject
+	private AtosService atos;
 	
 	@Inject 
 	private ComponentResources cr;
@@ -23,8 +28,10 @@ public class AboutKawwaMenu {
 	@SetupRender
 	public void populatePage(){
 		
-		presentation.put("AboutKawwa", "The Kawwa2 Project");
+		
 		presentation.put("KawwaPortal", "The Kawwa Portal");
+		
+		if(atos.isAtosMember()) presentation.put("AboutKawwa", "The Kawwa2 Project");
 		
 		component.put("ComponentApproach", "The Kawwa Components");
 		component.put("HowTo", "How to work with components");

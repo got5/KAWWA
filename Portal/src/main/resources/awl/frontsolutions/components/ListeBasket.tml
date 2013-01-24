@@ -5,7 +5,7 @@
 	<form t:type="form" id="downloadListForm" t:autofocus="false">
 		
 		<div id="downloadList" class="k-basket k-panel">
-			<h3 class="control ui-state-active" title="Click to fold/unfold block">Download List (${number} components)</h3>
+			<h3 class="control ui-state-active" title="Click to fold/unfold block">Download List (${number})</h3>
 
 			<div class="content">
 			

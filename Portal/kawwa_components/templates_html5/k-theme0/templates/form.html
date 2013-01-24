@@ -1,0 +1,204 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+	<link rel="shortcut icon" href="../img/k-theme0/favicon.png" />
+	<title>Atos Worldline - KAWWA2 &raquo; </title>
+	<!-- STYLESHEET -->
+	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/k-theme0.css" rel="stylesheet" type="text/css" title="Default Theme" media="all" />
+	<!--[if lt IE 9]><link href="../css/iehacks0.css" rel="stylesheet" type="text/css" /><![endif]-->
+	<!-- SCRIPTS -->
+	<!--[if lt IE 9]>
+		<script src="../js/html5shiv.js"></script>
+		<script src="../js/ieGeneralFix.js">
+	<![endif]-->
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<!-- Here go your plug-ins -->
+	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.position.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.dialog.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.button.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.panel.awl.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.tabs.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.autocomplete.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.tipsy.js"></script>
+	<script type="text/javascript" src="../js/k-general.js"></script>
+	<script type="text/javascript" src="../js/k-load.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+
+	<header role="banner">
+		<h1>KAWWA <small>Markup Pattern Library</small></h1>
+		<div class="k-tools">
+			<form class="k-language" method="post" action="">
+				<p><select id="language-select" name="language-select" title="Choose preferred language:">
+					<option value="en">English version</option>
+					<option value="fr" lang="fr" xml:lang="fr">Version française</option>
+					<option value="de" lang="de" xml:lang="de">Deutsch version</option>
+				</select></p>
+			</form>
+		</div>
+		<p id="loginLink"><a href="#login">Please, sign-in</a></p>
+		<form id="login" class="k-login collapsible" method="post" action="">
+			<fieldset>
+				<legend>Sign in</legend>
+	        	<p><label for="userid-tag">User identifier</label> 
+	        		<input type="text" id="userid-tag" name="userid-tag" /></p>
+	          			<p><label for="password-tag">Password</label> 
+	              			<input type="password" class="k-field-comment" id="password-tag" name="password-tag" title="Password must include a digit and a special character" /> 
+							<span class="lost-password"><a href="#">Forgot your password?</a></span></p>
+						<p><input type="submit" value="ok" /></p>
+        	</fieldset>
+			<p class="to-register"><strong>Not registered yet ?</strong> &raquo; <a href="#">Register now</a></p>
+		</form>
+	</header>
+
+	<nav>
+		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+		<div id="navbar">
+			<p class="k-skip"><a href="#wrapper">Skip this menu</a></p>
+			<ul class="k-navbar">
+				<li class="home"><a href="../index.html">Home</a></li>
+				<li class="active"><strong>Form elements</strong></li>
+			</ul>
+			<p class="k-breadcrumbs"><a href="#">Home</a> &gt; Form elements</p>
+		</div>
+	</nav>
+	
+	<hr />
+		
+	<div id="wrapper">
+
+		<div id="main" role="main">
+			<h2>Form elements</h2>
+			
+			<form id="example-form" method="post" action="">
+				
+				<ul class="k-form-steps">
+					<li class="past">Step 1: <strong>Title of past step</strong></li>
+					<li class="active">Step 2: <strong>Title of active step</strong></li>
+					<li>Step 3: <strong>Title of future step</strong></li>
+				</ul>
+				
+				<p class="k-mandatory">fields marked by a <img src="../img/k-theme0/bg_required.png" alt="Asterisk" /> are mandatory</p>
+				
+				<div class="k-error-messages">
+					<h3>Error</h3>
+					<p>The following fields present an error:</p>
+					<ul>
+						<li><strong>Error field 1:</strong> it is a mandatory field</li>
+						<li><strong>Error field 2:</strong> wrong characters found (only numbers are allowed)</li>
+					</ul>
+				</div>
+				
+				<div class="k-confirm-messages">
+					<h3>Confirm</h3>
+					<p>Your account has been created.</p>
+					<p><strong>You will receive an email for confirmation at the address example@email.com</strong></p>
+				</div>
+				
+				<fieldset>
+					<legend>Fieldset legend</legend>
+					<fieldset class="k-radio">
+						<legend>Choose version:</legend>
+							<p><label for="xhtml">
+								<input type="radio" id="xhtml" value="xhtml" name="dt-version" checked="checked" />
+								XHTML Strict</label> 
+							<label for="html5">
+								<input type="radio" id="html5" value="html5" name="dt-version" disabled="disabled" />
+								HTML5</label></p>
+					</fieldset>
+					<p><label for="field1">* E-mail:</label>
+						<input class="k-field-comment k-required" type="email" id="field1" name="field1" pattern="[a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4}" size="60" title="A valid email must not contain spaces or special characters" /></p>
+					<p><label for="field2">Phone number:</label>
+						<input class="k-field-error k-field-comment" type="tel" id="field2" name="field2" pattern="[0-9]{10,20}" size="20" title="Enter only digits, without white spaces" />
+						<span class="k-contextual-error">A comment about the error</span></p>
+					<p><label for="date1">Enter a date:</label>
+						<input type="date" class="k-datepick" id="date1" name="date1" /></p>
+					<p><label for="i-theme">Choose from the list:</label>
+						<select name="i-theme" id="i-theme">
+							<option value="item1">Item 1</option>
+							<option value="item2">Item 2</option>
+						</select></p>
+					<p class="k-check">
+						<input type="checkbox" id="add-templates" name="add-templates" value="yes" checked="checked" /> 
+						<label for="add-templates">Check this option</label> 
+						<a href="#example-modal" class="k-field-help" title="About checking this option">
+							<img src="../img/k-theme0/pic_help.png" alt="[ Help ]" /></a></p>
+				</fieldset>
+				<fieldset class="to-left">
+					<legend>Fieldset set to left</legend>
+					<fieldset class="k-radio">
+						<legend>* Choose between two things: </legend>
+							<ul>
+								<li><span class="k-contextual-error">This field is mandatory</span></li>
+								<li><label for="t1" class="k-field-error">
+									<input type="radio" id="t1" value="t1" name="other" />
+									Thing 1</label></li>
+								<li><label for="t2" class="k-field-error">
+									<input type="radio" id="t2" value="t2" name="other" />
+									Thing 2</label></li>
+							</ul>
+					</fieldset>
+				</fieldset>
+				<fieldset class="to-right">
+					<legend>Fieldset set to right</legend>
+					<fieldset class="k-check">
+						<legend>* Choose another thing:</legend>
+							<ul>
+								<li><label for="t13">
+									<input type="checkbox" id="t13" value="t1" name="other" />
+									Thing 1</label></li>
+								<li><label for="t23">
+									<input type="checkbox" id="t23" value="t2" name="other" />
+									Thing 2</label></li>
+							</ul>
+					</fieldset>
+				</fieldset>
+					
+					<div class="k-buttons-bar">
+						<p><input type="submit" value="Confirm" /> 
+							<input type="submit" class="optional" value="Confirm with option" />
+							<input type="submit" disabled="disabled" value="Disabled" />
+							<input type="reset" value="Cancel" /></p>
+						<!-- IF TYPE "button" 
+						<p><input type="button" value="Confirm" /> 
+							<input type="button" class="optional" value="Confirm with option" />
+							<input type="button" disabled="disabled" value="Disabled" />
+							<input type="button" class="reset" value="Cancel" /></p>-->
+					</div>
+					<!-- IF LINK 
+					<ul class="k-buttons-bar">
+						<li><a href="#" class="k-button">Confirm</a></li>
+						<li><a href="#" class="k-button optional">Confirm with option</a></li>
+						<li><span class="k-disabled">Disabled</span></li>
+						<li><a href="#" class="k-button reset">Cancel</a></li>
+					</ul>-->
+			</form>
+		</div>
+		<div id="example-modal" class="k-modal">
+			<h3 class="modal-header">This is the title</h3>
+			<div class="content">
+				<p>Here goes a help text about the associated field</p>
+			</div>
+		</div>
+	</div>
+	
+	<footer role="contentinfo">
+		<p class="k-copyright">&copy; Your copyright, 2013</p>
+	</footer>
+	
+</div>
+
+
+</body>
+</html>
+

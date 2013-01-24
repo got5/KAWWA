@@ -1,7 +1,7 @@
 <t:layout t:activeMenu="3" t:title="Download" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"  xmlns:p="tapestry:parameter">
 
 	<h2>Downloads</h2>
-	<h3>Custom Download</h3>
+	
 	<div class="k-intro">
 		<p>Use this form to download a customized zip file with only the elements you will need to start or to complete your web project.</p>
 	</div>
@@ -19,7 +19,7 @@
 			<t:componentFormList t:source="fileStructure" />
 		</fieldset>
 		
-		<div class="aside">
+		<div class="configure">
 			<fieldset id="group-basics">
 				<legend>Select basic configuration</legend>
 				<fieldset class="k-radio">
@@ -52,7 +52,7 @@
 			</fieldset>
 			<fieldset id="group-followUp">
 				<legend>Follow-up</legend>
-				<p>Entering your e-mail address here below will allow us to keep you updated about all Kawwa2 upgrades, bug fixes and follow-ups:</p>
+				<p>Entering your e-mail address here below will allow us to keep you updated about all Kawwa upgrades, bug fixes and follow-ups:</p>
 				<p><label for="email">Your e-mail:</label> <input t:type="textfield" t:id="email" name="email" /></p>
 			</fieldset>
 			<p><input class="major-action" type="submit" value="Download" /></p>

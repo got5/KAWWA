@@ -11,6 +11,7 @@ import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.AssetSource;
 import org.got5.tapestry5.jquery.ImportJQueryUI;
@@ -18,12 +19,14 @@ import org.got5.tapestry5.jquery.ImportJQueryUI;
 import awl.frontsolutions.entities.ChoosenTheme;
 import awl.frontsolutions.entities.DASUser;
 import awl.frontsolutions.entities.Panier;
+import awl.frontsolutions.services.AtosService;
 import awl.frontsolutions.services.FileSystemIndexer;
+import awl.frontsolutions.services.MailService;
 import awl.frontsolutions.services.stack.ThemeStack;
 import awl.frontsolutions.treeDescription.TreeNode;
 
 
-@ImportJQueryUI(value={"jquery.ui.tabs","jquery.ui.button","jquery.ui.accordion"})
+@ImportJQueryUI(value={"jquery.ui.tabs","jquery.ui.button","jquery.ui.accordion", "jquery.ui.position", "jquery.ui.dialog"})
 @Import(library={"context:js/plugins/ZeroClipboard.js","context:js/ui/jquery.ui.panel.awl.js"})
 public class Layout
 {
@@ -61,6 +64,9 @@ public class Layout
     
     @Inject
 	private FileSystemIndexer indexer;
+	
+	@Inject
+	private AtosService atos;
 	
     public String getClassForPageName()
     {
@@ -111,4 +117,37 @@ public class Layout
 		
 	}
 	
+	
+	@Property
+	@Validate(value="required")
+	private String bodycontact;
+	
+	@Property
+	@Validate(value="required")
+	private String namecontact;
+	
+	@Property
+	@Validate(value="required,email")
+	private String emailcontact;
+	
+	@Inject
+	private MailService mail;
+	
+	public void onSubmit(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Name : " + namecontact).append("\n");
+		sb.append("Message : ").append("\n");
+		sb.append(bodycontact);
+		
+		mail.sendMailToAdmin(emailcontact, "Contact Form", sb.toString());
+		
+	}
+	
+	public Boolean getHideListComponents(){
+		return title.equalsIgnoreCase("Login");
+	}
+	
+	public Boolean isAtos(){
+		return atos.isAtosMember();
+	}
 }
