@@ -8,7 +8,7 @@
 
 /* --- HOME PAGE --- */
 
-#container {min-width: 800px;} /*temp*/
+#container {min-width: 800px;}/* temp*/
 
 #home #wrapper {
 	overflow: auto;
@@ -55,7 +55,7 @@
 		padding-right: 25px;
 	}
 	
-#home .k-login-data {width: auto; margin-top: 8.5em;}
+#home p.k-login-data {width: auto; background: transparent; margin-top: 8.5em;}
 	
 #components-list {
 	clear: both;
@@ -744,6 +744,7 @@ input.major-action {
 
 #email {width: 90%; margin-top: 5px;}
 #downloadForm #theme {width: 90%; margin-top: 5px;}
+#templates-info {clear: both;}
 
 
 /* --- ABOUT KAWWA PAGES --- */
@@ -799,6 +800,8 @@ dl.i-doc-list {margin-bottom: 2em;}
 
 #i-component div.k-article {background: #FFF;}	
 
+#i-component fieldset.k-sub-group legend {color: #000;}	
+
 /* Tools */
 #i-component .k-tools {position: static;}
 #i-component ul.k-tools-list {max-width: 100%; width: 100%;}
@@ -823,7 +826,7 @@ dl.i-doc-list {margin-bottom: 2em;}
 	color: #000;
 	background-color: #FFF;
 }
-form.k-login.collapsible {position: static;}
+#i-component form.k-login.collapsible {position: static;}
 #i-component p.k-login-data {position: static;}
 
 #i-component .action-context {font-size: 0.7em;}
@@ -833,23 +836,57 @@ form.k-login.collapsible {position: static;}
 	#i-component ul.k-sitemap li {width: 20%;}
 		#i-component ul.k-sitemap li li {width: 100%; padding: 0.5em 0;}
 		
+/* White background for demos */
+
+#i-component .k-article {background: rgba(255,255,255,.7); padding: 2%;}
+#i-component .k-entry {background: #FFF;}
+#i-component .k-breadcrumbs, #i-component .k-tree-grid {background: rgba(255,255,255,.7);}
+#i-component fieldset.k-check, #i-component fieldset.k-radio {background: rgba(255,255,255,.7);}
+#i-component .k-mandatory {background: rgba(255,255,255,.7);}
+#i-component ul.k-tools-list {background: #000; padding: 0 0 0 21px;}
+#i-component .k-carousel {background: rgba(255,255,255,.7);}
+#i-component .jcarousel-item-horizontal img {display: block;}
+
+#i-component .k-product {overflow: auto; background: rgba(255,255,255,.7);}
+#i-component .k-review {background: rgba(255,255,255,.7);}
+#i-component p.k-basket-sum a, #i-component p.k-basket-sum a:link, p.k-basket-sum a:visited {padding-left: 40px;}
 
 
 /*-------------------------------------------- MEDIA QUERIES ---------------------------------------------- */
 
-/* Middle Res --------------------------------------------- */
-@media only screen and (max-width : 1200px) {
+@media only screen and (max-width : 1360px) {
+	#home p.k-login-data, p.k-login-data {top: 0.5em; color: #FFF; background: #000; margin: 0;}
+}
+@media only screen and (max-width : 1220px) {
 	/*Home*/
-	#home .k-login-data {top: 0.5em; color: #FFF; background: #000; margin: 0;}
 	#home #wrapper #main:first-child {width: 60%;}
 	#home aside[role=complementary] {float: right; clear: none; width: 30%;}
 	#home #main .k-info-block {float: none; width: 100%; margin: 0 0 1em;}
 	#home .k-info-block .content {padding-bottom: 2%;}
+	
+	div.i-change-style, aside[role=complementary] .k-info-block {
+		float: left;
+		clear: none;
+		width: 41%;
+		padding: 1px 2% 5px;
+	}
+	
+	#home div.i-change-style {
+		float: none;
+		clear: both;
+		width: 90%;
+		padding: 1px 5% 5px;
+	}
+
+	#downloadListForm {float: right; clear: none; width: 45%;}
 		
 	#group-components {width: 55%;}
 	div.configure {width: 35%;}
 	
 	#components-list h3 {font-size: 0.8em;}
+	
+	#complete-selection p {clear: both; float: none; padding-left: 25px;}
+	#complete-selection label {padding: 0 0 1em;}
 }
 @media only screen and (max-width : 1130px) {
 	/*Home*/

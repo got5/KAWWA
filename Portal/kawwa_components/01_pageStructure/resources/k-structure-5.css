@@ -1,6 +1,8 @@
 /* -------------------------------------------------------------------- 
-            KAWWA 2 - HTML5 Page Structure
+               KAWWA 2 - Page Structure
           By Le Studio, Atos Worldline, 2011
+          
+          		Version 3 (02/2013)
 -------------------------------------------------------------------- */
 
 /* ------------------------------ RESET ---------------------------- */
@@ -16,14 +18,17 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;
 	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-audio, canvas, video {display: inline-block;}
+html {overflow-y: scroll;}
 
-blockquote, q {quotes: none;}
+blockquote, q {
+	quotes: none;
+}
 blockquote:before, blockquote:after, q:before, q:after {
 	content: '';
 	content: none;
@@ -37,7 +42,7 @@ table {
 
 hr {display: none;}
 
-img {border: 0; max-width: 100%;}
+img {border: 0;}
 
 
 /* -------------------------- STRUCTURE ------------------------ */
@@ -50,7 +55,6 @@ img {border: 0; max-width: 100%;}
 #container {
 	position: relative;
 	width: 97%;
-	min-width: 865px;
 	max-width: 1240px;
 	margin: 0 auto 20px;
 }
@@ -63,10 +67,7 @@ header[role=banner] {
 }
 
 /* -------------------------- 3 / NAVBAR --------------------------- */
-nav {
-	overflow: hidden;
-	width: 100%;
-}
+nav {}
 
 /* -------------------------- 4 / WRAPPER --------------------------- */
 #wrapper { 
@@ -81,9 +82,9 @@ nav {
 aside[role=complementary] {float: right; width: 20%;}
 
 /* Conditions based on columns number */
-#wrapper div:first-child[id=main] {width: 78%; margin-left: 0;}
-#wrapper div:last-child[id=main] {width: 83%;}
-#wrapper div:only-child[id=main] {width: 100%;}
+#wrapper #main:first-child {width: 78%; margin-left: 0;}
+#wrapper #main:last-child {width: 83%;}
+#wrapper #main:only-child {width: 100%;}
 
 
 /* -------------------------- 6 / FOOTER --------------------------- */

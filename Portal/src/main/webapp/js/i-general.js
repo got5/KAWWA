@@ -16,8 +16,10 @@
                   }
             });
             var zLink = $(this).children('p.go-top').children('a');
-            var point = $(this).offset();
+            var zThis = $(this);
+            var point;
             $('.compo-entry').bind('click', function(event) {
+                  point = zThis.offset();
                   $(zLink).focus();
                   $('html, body').animate({
                         scrollTop : point.top
@@ -32,8 +34,8 @@
                   event.preventDefault();
             });
       };
-		
-	   //Code for twitter      
+      
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 })( jQuery );
+
 

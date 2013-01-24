@@ -109,7 +109,7 @@ var dTest = dateTest();
 			});*/
 			jQuery( "input.k-datepick" ).datepicker({
 				showOn: "button",
-				buttonImage: "../img/k-theme1/pic_calendar.gif",
+				buttonImage: "../img/pic_calendar.gif",
 				buttonImageOnly: true,
 				buttonText: "Click to open/close the calendar"
 			});
@@ -222,10 +222,6 @@ function supports_input_placeholder() {
  // PRINT -------------------------------
     
     toPrint();
-    
-    // PORTAL DOWNLOAD PAGE ------------------------------
- 
- 	if(jQuery('#downloadForm')) {selectAll();}
           
 //OPEN NEW WINDOW LINK -------------------------------
     
@@ -273,6 +269,11 @@ function supports_input_placeholder() {
 			jQuery('input[type=number]').css('width', '3em');
 		}
 	}
+	
+	
+// CATALOG VIEW SWITCHER -------------------------------
+
+	if(jQuery.fn.switchView) {jQuery('catalog-view').switchView();}	
 	
 	
 // PRODUCT GALLERY -------------------------------

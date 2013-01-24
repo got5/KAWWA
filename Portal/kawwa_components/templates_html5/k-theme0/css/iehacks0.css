@@ -10,12 +10,12 @@
 
 /* --- PAGE RESTRUCTURE --- */
 
-#container {*max-width: 1280px; *min-width: 800px;}
+#container {max-width: 1280px; min-width: 800px;}
 header[role=banner], #header {*height: 60px;}
-aside[role=complementary], #sidebar {*width: 18%;*border: none;}
+aside[role=complementary], #sidebar {width: 18%;border: none;}
 aside[role=complementary] > h2 {display: none;}
 
-#wrapper {_display: inline; *width: 100%; *padding: 0;}
+#wrapper {_display: inline; width: 100%; padding: 0;}
 #main {*width: 100%; *margin: 0; *padding: 0;}
 #main-all {float: left; width: 59%; padding: 0 2%;} /* 3 cols */
 #main-menu {float: right; width: 83%;} /* with menu only */
@@ -27,7 +27,14 @@ div.k-catalog .k-product {display: inline;}
 div.i-topics div.k-info-block {display: inline;}
 
 /* --- PORTAL HOME PAGE ---*/
-#highlight li {*float: left; *width: auto;background: #000}
+#home header[role=banner] {*height: 10em;}
+#highlight li {*float: left; *width: auto;}
+dl.legend dt, dl.legend dd {*display: inline;}
+dl.legend dt {*padding-right: 5px;}
+#download-entry a, #download-entry a:link, #download-entry a:visited {padding-left: 5%;}
+
+#download-entry a:after {width: 0; height: 0;} 
+#download-entry a:before {content: "";}
 
 /* ------------------------ GENERAL FIXES ------------------------- */
 
@@ -40,7 +47,7 @@ ul.k-navbar a, ul.k-navbar a:visited, ul.k-navbar li.active strong {_display: in
 ul.k-navbar .dropdown li {float: left; width: 100%;}
 p.view-all a {_float: left; _width: 100%;}
 
-p.k-breadcrumbs {*padding: 0.5em 0;}
+p.k-breadcrumbs {padding: 0.5em 0;}
 
 /* --- FORMS --- */
 input[type=radio], input[type=checkbox] {border: none;}
@@ -222,6 +229,9 @@ div.dataTables_info {*position: static;}
 
 
 /* --- E-COMMERCE --- */
+
+.k-quantity span {vertical-align: -9px;}
+.k-basket .k-quantity span {vertical-align: -6px;}
 
 /* ZOOM */
 

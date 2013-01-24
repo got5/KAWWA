@@ -123,12 +123,11 @@
 				<p class="community">
 					<a href="https://twitter.com/kawwalibrary" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @kawwalibrary</a>
 				</p>
-				<p class="k-copyright">&copy; KAWWA, 2013</p>
+				<p class="k-copyright">&copy; Except where otherwise noted, content on this site is licensed under a <a href="https://github.com/got5/KAWWA/blob/master/Portal/Licence.md">MIT License</a></p>
 			</footer>
 			<p:else>
 				<div id="footer">
-					<p class="k-copyright">&copy; The Studio/WebPlatform, Atos
-						Worldline, ${currentYear}</p>
+					<p class="k-copyright">&copy; Except where otherwise noted, content on this site is licensed under a <a href="https://github.com/got5/KAWWA/blob/master/Portal/Licence.md">MIT License</a></p>
 				</div>
 			</p:else>
 		</t:if>
