@@ -1,12 +1,15 @@
 package awl.frontsolutions.components;
 
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Persist;
+import org.apache.tapestry5.func.F;
+import org.apache.tapestry5.func.Worker;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.AssetSource;
 import org.apache.tapestry5.services.PageRenderLinkSource;
@@ -54,7 +57,7 @@ public class ComponentList {
 		writer.end();
 	}
 
-	private void listDirectory(TreeNode fileStructure, MarkupWriter writer, int level) {
+	private void listDirectory(TreeNode fileStructure, final MarkupWriter writer, final int level) {
 		writer.element("li");
 		if (fileStructure.getNodeType().equals(NodeType.GROUP)) {
 			if(level>0){
@@ -63,9 +66,24 @@ public class ComponentList {
 				writer.end();
 			}
 			writer.element("ul");
-			for (TreeNode subMenu : fileStructure.getChildren()) {
-				listDirectory(subMenu, writer, level+1);
-			}
+			
+			F.flow(fileStructure.getChildren())
+					.sort(new Comparator<TreeNode>() {
+
+						@Override
+						public int compare(TreeNode o1, TreeNode o2) {
+							return o1.getNodeName().compareToIgnoreCase(
+									o2.getNodeName());
+						}
+					}).each(new Worker<TreeNode>() {
+
+						@Override
+						public void work(TreeNode element) {
+							listDirectory(element, writer, level+1);
+
+						}
+					});
+		
 			writer.end();
 			
 		}

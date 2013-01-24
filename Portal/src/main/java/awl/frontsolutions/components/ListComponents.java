@@ -1,5 +1,6 @@
 package awl.frontsolutions.components;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +8,8 @@ import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.func.F;
+import org.apache.tapestry5.func.Worker;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.AssetSource;
 import org.apache.tapestry5.services.PageRenderLinkSource;
@@ -99,8 +102,8 @@ public class ListComponents {
 
 	}
 
-	private void listDirectory(TreeNode fileStructure, MarkupWriter writer,
-			int level) {
+	private void listDirectory(TreeNode fileStructure, final MarkupWriter writer,
+			final int level) {
 
 		if (fileStructure.getNodeType().equals(NodeType.GROUP)) {
 			writer.element("section");
@@ -121,16 +124,31 @@ public class ListComponents {
 				writer.end();
 			}
 
-			for (TreeNode subMenu : fileStructure.getChildren()) {
-				writer.element("ul");
-				listDirectory(subMenu, writer, level + 1);
-				writer.end();
-			}
+			F.flow(fileStructure.getChildren())
+					.sort(new Comparator<TreeNode>() {
+
+						@Override
+						public int compare(TreeNode o1, TreeNode o2) {
+							return o1.getNodeName().compareToIgnoreCase(
+									o2.getNodeName());
+						}
+					}).each(new Worker<TreeNode>() {
+
+						@Override
+						public void work(TreeNode element) {
+							writer.element("ul");
+							listDirectory(element, writer, level + 1);
+							writer.end();
+
+						}
+					});
+
+			
 			writer.end();
 		} else if (fileStructure.getNodeType().equals(NodeType.COMPONENT)) {
-			if (level == 1 ) {
+			if (level == 1) {
 				writer.element("section");
-			
+
 				writer.element("h3");
 				String nameFile = null;
 
@@ -143,33 +161,35 @@ public class ListComponents {
 										.replaceAll("\\s", "")), null)
 								.toClientURL(), "alt", "");
 				writer.end();
-				
+
 				writer.end();
-				
+
 				writer.element("ul");
-				
+
 				writer.element("li");
 				writer.element("a", "href", pageRender
 						.createPageRenderLinkWithContext(Component.class,
 								fileStructure.getUrlParam()));
 				writer.write("HTML5 Page Structure");
-				writer.element("img", "src", tapestryIconUrl, "alt", "Tapestry Integration");
+				writer.element("img", "src", tapestryIconUrl, "alt",
+						"Tapestry Integration");
 				writer.end();
 				writer.end();
 				writer.end();
-				
+
 				writer.element("li");
 				writer.element("a", "href", pageRender
 						.createPageRenderLinkWithContext(Component.class,
 								fileStructure.getUrlParam()));
 				writer.write("XHTML Page Structure");
-				writer.element("img", "src", tapestryIconUrl, "alt", "Tapestry Integration");
+				writer.element("img", "src", tapestryIconUrl, "alt",
+						"Tapestry Integration");
 				writer.end();
 				writer.end();
 				writer.end();
-				
+
 				writer.end();
-				
+
 				writer.end();
 			} else {
 				writer.element("li");
