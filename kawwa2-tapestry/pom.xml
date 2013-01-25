@@ -20,7 +20,7 @@
 		<dependency>
 	        <groupId>org.got5</groupId>
 	        <artifactId>tapestry5-jquery</artifactId>
-	        <version>3.3.5-SNAPSHOT</version>
+	        <version>3.3.5</version>
    		 </dependency>
         <dependency>
             <groupId>org.apache.tapestry</groupId>
