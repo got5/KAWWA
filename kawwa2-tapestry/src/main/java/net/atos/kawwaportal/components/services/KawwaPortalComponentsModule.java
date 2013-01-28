@@ -37,7 +37,7 @@ public class KawwaPortalComponentsModule
     public static void contributeSymboleProvider(MappedConfiguration<String, String> configuration)
     {
 		configuration.add(KawwaConstants.KAWWA_COOKIE_ENABLE,"true");
-		configuration.add(KawwaConstants.KAWWA_IMG_PATH,"classpath:net/atos/kawwaportal/components/theme/img/k-theme1");
+		configuration.add(KawwaConstants.KAWWA_IMG_PATH,"classpath:net/atos/kawwaportal/components/theme/img/k-theme0");
 		configuration.add(KawwaConstants.KAWWA_INCLUDE_STACK, "true");
 		configuration.override(JQuerySymbolConstants.JQUERY_UI_DEFAULT_THEME, "classpath:net/atos/kawwaportal/components/css/library.css");
 	}
@@ -53,7 +53,7 @@ public class KawwaPortalComponentsModule
 	 */
 	public static void contributeJavaScriptStackSource(MappedConfiguration<String, JavaScriptStack> configuration)
     {
-    	configuration.addInstance(KawwaConstants.STACK_ID, Theme1Stack.class);
+    	configuration.addInstance(KawwaConstants.STACK_ID, Theme0Stack.class);
     }
 	
 	public static void contributeClasspathAssetAliasManager(MappedConfiguration<String, String> configuration)
