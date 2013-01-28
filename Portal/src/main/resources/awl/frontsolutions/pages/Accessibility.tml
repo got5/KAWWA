@@ -11,11 +11,11 @@
 						web site may present.</p>
 					<p>From the choice of respecting the web standards to the way our components were created, we've 
 tried our best to introduce the highest level of the W3C/WAI (Web Accessibility Initiative) 
-accessibility recommendations to the future teams that will use Kawwa2 to develop their sites.</p>
+accessibility recommendations to the future teams that will use Kawwa to develop their sites.</p>
     			</div>
 					
 				<div class="k-notes">
-					<p>Please notice that Kawwa2 just introduces and proposes 
+					<p>Please notice that Kawwa just introduces and proposes 
 					the accessibility recommendations, and that that alone cannot assure the level of accessibility of the  
 					developed site. That doesn't mean either that the Kawwa components 
 					are covering all of the accessibility requirements. 
@@ -44,10 +44,7 @@ loose information if she cannot access the non-textual content in a proper way.
 For the Kawwa components, we followed some simple rules to respond to that:</p>
 
 				<ul>
-					<li>Each and every image has an alternative given by the alt attribute: for example, in 
-the case of the application logo, we've added an alt attribute to the <span class="i-code">&lt;img&gt;</span> tag which 
-value is "Atos Worldline: Kawwa2 Portal". Of course, this value must be changed to the 
-name of your application; </li>
+					<li>Each and every image has an alternative given by the alt attribute; </li>
 					<li>The alternative gives the meaning of the image, as in the pagination component: </li>
 				</ul>
 				
@@ -136,7 +133,7 @@ the browser's window size or screen-resolution.</li>
 			
 			<p>Providing keyboard access is an important requirement that allows users not to be completely "mouse-dependent". 
 				This is especially important for client-side scripts that usually rely too much on mouse events.</p> 
-			<p>Kawwa2 introduce keyboard access to all Kawwa Components.</p>
+			<p>Kawwa introduces keyboard access to all Kawwa Components.</p>
            	
            	<h4>Providing help to site navigation</h4>
            	
