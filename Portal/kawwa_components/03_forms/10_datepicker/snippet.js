@@ -13,6 +13,7 @@ $(document).ready(function(){
 		if (!dTest) {
 			if (jQuery.ui && jQuery.ui.datepicker) {
 				jQuery('input[type=date]').attr('class','k-datepick');
+				
 				/* Use the commented code below to apply translation initialisation
 				 jQuery(function($){
 					jQuery.datepicker.regional['fr'] = {
@@ -33,7 +34,7 @@ $(document).ready(function(){
 				});*/
 				jQuery( "input.k-datepick" ).datepicker({
 					showOn: "button",
-					buttonImage: "../img/k-theme1/pic_calendar.gif",
+					buttonImage: "../img/[[THEME_IMG]]/pic_calendar.gif",
 					buttonImageOnly: true,
 					buttonText: "Click to open/close the calendar"
 				});

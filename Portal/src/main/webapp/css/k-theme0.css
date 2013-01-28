@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------- 
+/*--------------------------------------------------------------------
           	  	 KAWWA2 - Theme 0
 	          	 Default OS Theme
           By Le Studio, Atos Worldline, 2012
@@ -549,7 +549,7 @@ fieldset.k-sub-group {
 	fieldset.k-sub-group legend {
 		font-size: 1em;
 		text-align: left;
-		color: #FFF;
+		color: #000;
 		background: #EEE;
 		padding: 0.2em 1em 0.5em;
 		margin: 0;
@@ -1230,7 +1230,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em 57px;}
 		}
 		ul.k-navbar li.active a.hasdropdown:hover, ul.k-navbar li.active a.hasdropdown:focus {
 			color: #FFF;
-			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+			background: #808080 url(../imgk-theme0//bg_hasdropdown_on.png) right bottom no-repeat;
 		}
 	
 		/* Specifics for superfish plugin */
@@ -3035,7 +3035,7 @@ div.rating-cancel, div.star-rating {
 
 	/* Product's title */
 		
-	.k-product-sheet .k-product-data .name {
+	.k-product-sheet div.product-data .name {
 		font-size: 2.5em;
 		margin: 0 0 0.3em;
 	}
@@ -3355,12 +3355,12 @@ p.k-basket-sum {
 	border-right: 1px solid #808080;
 }
 	
-	p.k-basket-sum a, p.k-basket-sum a:link {
+	p.k-basket-sum a, p.k-basket-sum a:link, p.k-basket-sum a:visited {
 		display: block;
 		text-decoration: none;
 		color: #FFF;
 		background: transparent;
-		padding: 0.5em 8px 0.5em 30px;
+		padding: 0.5em 8px 0.5em 40px;
 	}
 
 /* CE/ basketSum */

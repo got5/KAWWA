@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------- 
+/*--------------------------------------------------------------------
           	  	 KAWWA2 - Theme 0
 	          	 Default OS Theme
           By Le Studio, Atos Worldline, 2012
@@ -3035,7 +3035,7 @@ div.rating-cancel, div.star-rating {
 
 	/* Product's title */
 		
-	.k-product-sheet .k-product-data .name {
+	.k-product-sheet div.product-data .name {
 		font-size: 2.5em;
 		margin: 0 0 0.3em;
 	}

@@ -2,10 +2,10 @@
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
 	xmlns:p="tapestry:parameter" t:title="Index">
 	<t:if t:test="newTheme()">
-		<div id="main">
+		<div id="main" role="main">
 
 
-			<div id="main" role="main">
+			
 				<div class="k-info-block">
 					<header>
 						<h3>Inside Tapestry Projects</h3>
@@ -56,7 +56,7 @@
 					<t:themeswitcher />
 				</div>
 			</aside>
-		</div>
+	
 		<p:else>
 			<div id="main">
 				<div id="ie-warning">
