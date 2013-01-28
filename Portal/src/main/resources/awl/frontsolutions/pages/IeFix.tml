@@ -9,7 +9,7 @@
 
 		<div class="k-intro">
 			<p>Caring for the way your pages will display content in old, buggy browsers means you care for your users.</p>
-			<p>Here we explain how Kawwa2 fixes the gap between modern, standard browsers and Internet Explorer versions prior to 9.</p>
+			<p>Here we explain how Kawwa fixes the gap between modern, standard browsers and Internet Explorer versions prior to 9.</p>
 		</div>
 
 <p>The web technologies are evolving fast and in such a positive way that we simply can't ignore it. From powerful, optimizing CSS selectors to the 
@@ -30,7 +30,7 @@
 
                 
 
-                <p class="k-quote">For Kawwa2, our approach is to use the state of art of web features and apply <strong>reasonable efforts</strong> to supply Internet Explorer with the fixes 
+                <p class="k-quote">For Kawwa, our approach is to use the state of art of web features and apply <strong>reasonable efforts</strong> to supply Internet Explorer with the fixes 
 
                 	needed to assure that the content is kept accessible and readable.</p>
 
