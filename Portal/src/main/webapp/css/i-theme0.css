@@ -8,7 +8,7 @@
 
 /* --- HOME PAGE --- */
 
-#container {min-width: 800px;}/* temp*/
+#container {min-width: 760px;}/* temp*/
 
 #home #wrapper {
 	overflow: auto;
