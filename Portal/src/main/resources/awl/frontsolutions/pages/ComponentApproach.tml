@@ -8,7 +8,7 @@
 		<h2>The Kawwa Components</h2>
 
 		<div class="k-intro">
-			<p>With Kawwa2, we're introducing the "Kawwa Components" approach, a flexible new way to build and enhance 
+			<p>With Kawwa, we're introducing the "Kawwa Components" approach, a flexible new way to build and enhance 
 			your web pages.</p>
 		</div>
 
@@ -30,13 +30,13 @@
 
 		<h4>The Code</h4>
 		<p>Each Kawwa Component presents a HTML code snippet that is unique to the component.</p>
-		<p>Today the Kawwa Portal offers you about 50 Kawwa Components in XHTML Strict version, but the HTML 5 version will soon follow, 
-		as will the version of some of the components that were integrated into the Tapestry 5 framework.</p> 
+		<p>Today the Kawwa Portal offers you about 50 Kawwa Components in HTML5 version, but you may find the XHTML Strict version where needed. 
+		Also, some of the components were integrated into the Tapestry 5 framework.</p> 
 		<p>The principal characteristics to this code snippet are:</p>
 		
 		<ul>
 			<li>it respects strictly the web standards</li>
-			<li>it follows the Studio best practices</li>
+			<li>it follows the general web best practices</li>
 			<li>it respects the W3C/WAI accessibility recommendations</li>
 			<li>it is fully semantic</li>
 		</ul>
@@ -51,7 +51,7 @@
 			<p>The CSS declarations of a Kawwa component have the following characteristics:</p>
 
 			<ul>
-				<li>they follow the Studio Best Practices</li>
+				<li>they follow the general web Best Practices</li>
 
 				<li>they respect the web standards</li>
 
@@ -81,7 +81,7 @@
 
 			<ul>
 
-				<li>it follows the Studio Best Practices</li>
+				<li>it follows the general web Best Practices</li>
 
 				<li>it respects the web standards</li>
 
@@ -102,8 +102,6 @@
 		<ul class="k-actions">
 
 			<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
-
-			<li><a href="#" class="bt-email" title="Send this article by e-mail">Email</a></li>
 
 		</ul>
 
