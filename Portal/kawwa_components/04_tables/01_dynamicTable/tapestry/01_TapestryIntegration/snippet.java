@@ -101,7 +101,8 @@ public class DataTables
 	
 	public JSONObject getOptions(){
 		
-		JSONObject json = new JSONObject("bJQueryUI", "true", "bStateSave", "true", "sDom", "TC<\"clear\">Rlfrtip");
+		JSONObject json = new JSONObject("bStateSave", "true", "sDom", "TC<\"clear\">Rlfrtip");
+		json.put("bJQueryUI", false);
 		return json;
 	}
 	
