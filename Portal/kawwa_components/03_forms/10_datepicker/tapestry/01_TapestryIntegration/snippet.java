@@ -16,9 +16,9 @@ public class DateField {
 		
 		return new JSONObject()
 				.put("showOn", "button")
-				.put("buttonImage", as.getClasspathAsset("net/atos/kawwaportal/components/theme/img/k-theme1/pic_calendar.gif").toClientURL())
+				.put("buttonImage", as.getClasspathAsset("${kawwa2.img-path}/pic_calendar.gif").toClientURL())
 				.put("buttonImageOnly", true)
-				.put("buttonText", "Click to open/close the calendat")
+				.put("buttonText", "Click to open/close the calendar")
 				.put("dateFormat", "dd/mm/yy");
 	}
 }
