@@ -23,7 +23,8 @@ Although, as mentioned before, Kawwa goal is not to spread graphical themes, you
 
 ##Getting started
 
-The anatomy of Kawwa Components and the logical architecture of the Kawwa Portal are described in the document “Kawwa Reference” (PDF, 134 Kb).
+The anatomy of Kawwa Components and the logical architecture of the Kawwa Portal are described in the document [“Kawwa Reference” (PDF, 134 Kb)](http://fr.slideshare.net/AngelaRicci1/kawwa-reference-230113 
+).
 Before getting started, please refer to this document.
 
 ##Contribution requirements
