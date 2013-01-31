@@ -14,13 +14,13 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>5.12.1</version>
+            <version>${testng-version}</version>
             <scope>test</scope>
         </dependency>
 		<dependency>
 	        <groupId>org.got5</groupId>
 	        <artifactId>tapestry5-jquery</artifactId>
-	        <version>3.3.6-SNAPSHOT</version>
+	        <version>${tapestry-jquery-version}</version>
    		 </dependency>
         <dependency>
             <groupId>org.apache.tapestry</groupId>
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <version>${servlet-version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -138,5 +138,8 @@
 	</distributionManagement>	
     <properties>
         <tapestry-release-version>5.3.6</tapestry-release-version>
+        <testng-version>5.12.1</testng-version>
+        <tapestry-jquery-version>3.3.6-SNAPSHOT</tapestry-jquery-version>
+        <servlet-version>2.5</servlet-version>
     </properties>
 </project>

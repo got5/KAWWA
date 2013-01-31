@@ -12,39 +12,39 @@
 		<dependency>
 			<groupId>net.atos.tapestry</groupId>
 			<artifactId>tapestry5-kawwa-components</artifactId>
-			<version>2.0.3</version>
+			<version>${kawwa-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
+			<version>${commons-logging-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.api-client</groupId>
 			<artifactId>google-api-client</artifactId>
-			<version>1.10.3-beta</version>
+			<version>${google-api-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-			<version>1.4.3</version>
+			<version>${javax-mail-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.jwebunit</groupId>
 			<artifactId>jwebunit-htmlunit-plugin</artifactId>
-			<version>3.0</version>
+			<version>${html-unit-version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.4</version>
+			<version>${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xerces</artifactId>
-			<version>2.4.0</version>
+			<version>${xerces-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tapestry</groupId>
@@ -54,7 +54,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<version>${servlet-version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -146,6 +146,14 @@
 
 	<properties>
 		<tapestry-release-version>5.3.6</tapestry-release-version>
+		<kawwa-version>2.0.3</kawwa-version>
+		<commons-logging-version>1.1.1</commons-logging-version>
+		<google-api-version>1.10.3-beta</google-api-version>
+		<javax-mail-version>1.4.3</javax-mail-version>
+		<html-unit-version>3.0</html-unit-version>
+		<junit-version>4.4</junit-version>
+		<xerces-version>2.4.0</xerces-version>
+		<servlet-version>2.5</servlet-version>
 	</properties>
 
 </project>
