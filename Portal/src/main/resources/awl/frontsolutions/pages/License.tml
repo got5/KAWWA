@@ -1,0 +1,55 @@
+<t:layout t:activeMenu="3" t:title="License"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+	<div id="main" role="main">
+
+		<article class="k-article">
+			<h2>Licenses</h2>
+
+			<h3>Kawwa &amp; The Kawwa Logo</h3>
+
+			<p>
+				The Kawwa Library and the Kawwa Portal, including the HTML snippets,
+				images and style-sheets are licensed under a <a
+					href="https://github.com/got5/KAWWA/blob/master/Portal/Licence.md">MIT
+					License</a>.
+			</p>
+			<p>
+				<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The
+					Kawwa Logo</span> is licensed under a <a rel="license"
+					href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative
+					Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.
+			</p>
+			<p>
+				<a rel="license"
+					href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img
+					alt="Creative Commons License" style="border-width: 0"
+					src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a>
+			</p>
+
+			<h3>Web Fonts</h3>
+
+			<p>The End-User License Agreement - EULA - for the web fonts used
+				in the Kawwa's default theme can be consulted hereafter:</p>
+
+			<ul>
+				<li><a
+					href="http://www.fontsquirrel.com/license/novecento-wide">Novecento
+						Wide</a></li>
+				<li><a href="http://www.fontsquirrel.com/license/PT-Sans">PT
+						Sans</a></li>
+			</ul>
+
+			<h3>jQuery and jQuery plugins</h3>
+
+			<p>
+				The jQuery library is owned by the jQuery Project and is provided
+				under the <a href="http://jquery.org/license/">MIT or GPL
+					License</a>.
+			</p>
+			<p>The licenses for functions or plugins used in Kawwa are
+				presented on their own files.</p>
+		</article>
+	</div>
+
+</t:layout>
