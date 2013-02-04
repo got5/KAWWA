@@ -109,7 +109,7 @@ var dTest = dateTest();
 			});*/
 			jQuery( "input.k-datepick" ).datepicker({
 				showOn: "button",
-				buttonImage: "../img/pic_calendar.gif",
+				buttonImage: "../img/k-theme0/pic_calendar.gif",
 				buttonImageOnly: true,
 				buttonText: "Click to open/close the calendar"
 			});

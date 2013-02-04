@@ -1,22 +1,22 @@
-<!DOCTYPE html>  
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-	<link rel="shortcut icon" href="../img/favicon.png" />
-	<title>[KAWWA2 &raquo; Articles]</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="shortcut icon" href="../img/k-theme0/favicon.png" />
+	<title>[KAWWA &raquo; List of Articles]</title>
 	<!-- STYLESHEET -->
-	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" />
 	<link href="../css/k-theme0.css" rel="stylesheet" type="text/css" title="Default Theme" media="all" />
 	<!--[if lt IE 9]><link href="../css/iehacks0.css" rel="stylesheet" type="text/css" /><![endif]-->
 	<!-- SCRIPTS -->
-	<!--[if lt IE 9]><script src="../js/html5shiv.js"></script><![endif]-->
 	<script type="text/javascript" src="../js/jquery.js"></script>
-	<!-- Here go your plug-ins -->
 	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.position.min.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.button.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.autocomplete.min.js"></script>
 	<script type="text/javascript" src="../js/plugins/superfish.js"></script>
 	<script type="text/javascript" src="../js/k-general.js"></script>
 	<script type="text/javascript" src="../js/k-load.js"></script>
@@ -26,7 +26,7 @@
 
 <div id="container">
 
-	<header role="banner">
+	<div id="header">
 		<h1>KAWWA <small>Markup Pattern Library</small></h1>
 		<div class="k-tools">
 			<form class="k-language" method="post" action="">
@@ -48,110 +48,109 @@
 			</ul>
 		</div>
 		<p class="k-login-data">Welcome, John SMITH [<strong><a href="#">Logout</a></strong>]</p>
-	</header>
+	</div>
 
-	<nav>
-		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+	<div id="navbar">
+		<p class="k-skip"><a href="#wrapper">Skip this menu</a></p>
 		<ul class="k-navbar">
 			<li class="home"><a href="../index.html">Home</a></li>
 			<li class="active"><a href="#">Articles</a>
 				<ul class="dropdown">
-					<li class="active"><a href="#">About Books</a></li>
-					<li><a href="#">About Browsers</a></li>
+					<li><a href="treeview.html">About Browsers</a></li>
+					<li><a href="form.html">About Worlds</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Other</a>
+				<ul class="dropdown">
+					<li><a href="treeview.html">About Browsers</a></li>
+					<li><a href="form.html">About Worlds</a></li>
 				</ul>
 			</li>
 		</ul>
-	</nav>
+	</div>
+	<p class="k-breadcrumbs"><a href="#">Home</a> &gt; Articles</p>
 	
-	<p class="k-breadcrumbs">
-		<a href="#">Home</a> &gt; 
-		<a href="#">Articles</a> &gt; 
-		Articles About Books</p>
 	<hr />
 		
 	<div id="wrapper">
-		
-		<div id="main" role="main">
 			
+		<div id="main">
 			<h2>Articles About Books</h2>
-
-			<article class="k-article k-entry hentry hfeed">
-			    <h3 class="entry-title"><a href="#" title="Read this article">A Princess of Mars</a></h3>
-			    <ul class="entry-info">
-			        <li><time class="published" datetime="2013-07-14">July 14th, 2013</time></li>
-			        <li>
-			        	by 
-			            <address class="vcard author">
-			                <a class="url fn" href="#">Edgar Rice Burroughs</a>
-			            </address>
-			        </li>
-			    </ul>
-			    <div class="content entry-content">
-			        <p><strong>Article summary...</strong> As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
-			            approached me on his way from the audience chamber. His demeanor toward me 
-			            was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
-			        <p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
-			    </div>
-			</article>
-			<article class="k-article k-entry hentry hfeed">
-			    <h3 class="entry-title"><a href="#" title="Read this article">Alice in Wonderland</a></h3>
-			    <ul class="entry-info">
-			        <li><time class="published" datetime="2013-07-14">July 14th, 2013</time></li>
-			        <li>
-			        	by 
-			            <address class="vcard author">
-			                <a class="url fn" href="#">Lewis Carroll</a>
-			            </address>
-			        </li>
-			    </ul>
-			    <div class="content entry-content">
-			        <p><strong>Article summary...</strong> As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
-			            approached me on his way from the audience chamber. His demeanor toward me 
-			            was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
-			        <p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
-			    </div>
-			</article>
-			<article class="k-article k-entry hentry hfeed">
-			    <h3 class="entry-title"><a href="#" title="Read this article">Sense &amp; Sensibility</a></h3>
-			    <ul class="entry-info">
-			        <li><time class="published" datetime="2013-07-14">July 14th, 2013</time></li>
-			        <li>
-			        	by 
-			            <address class="vcard author">
-			                <a class="url fn" href="#">Jane Austen</a>
-			            </address>
-			        </li>
-			    </ul>
-			    <div class="content entry-content">
-			        <p><strong>Article summary...</strong> As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
-			            approached me on his way from the audience chamber. His demeanor toward me 
-			            was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
-			        <p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
-			    </div>
-			</article>
-
-		</div><!-- /main -->
 			
-		<aside role="complementary">
-			<h2 class="k-skip">Transversal content</h2>
-			<ul class="k-actions">
-				<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
-				<li><a href="#" class="bt-email" title="Send this article by e-mail">Email</a></li>
-			</ul>
+			<div class="k-article k-entry hentry hfeed">
+    			<h3 class="entry-title"><a href="#" title="Read this article">Article title</a></h3>
+			    <ul class="entry-info">
+			        <li><span class="published" title="2011-07-14T14:07:00-07:00">July 14th, 2011</span></li>
+			        <li>
+			        	by 
+			            <address class="vcard author">
+			                <a class="url fn" href="#">Author's name</a>
+			            </address>
+			        </li>
+			    </ul>
+			    <div class="content entry-content">
+			        <p><strong>Article summary...</strong> As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
+			            approached me on his way from the audience chamber. His demeanor toward me 
+			            was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+			        <p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
+			    </div>
+			</div>
 			
-			<div class="k-info-block">
-				<div class="hgroup">
-					<h3>Related articles</h3>
-				</div>
-				<div class="content">
-					<ul class="k-links-list">
-						<li><a href="#">Browser Wars</a></li>
-						<li><a href="#">The War of the Worlds</a></li>
-					</ul>
+			<div class="k-article k-entry hentry hfeed">
+				<h3 class="entry-title"><a href="#" title="Read this article">Article title</a></h3>
+                <ul class="entry-info">
+                    <li><span class="published" title="2011-07-14T14:07:00-07:00">July 14th, 2011</span></li>
+                    <li>by <address class="vcard author"><a class="url fn" href="#">H. G. Wells</a></address></li>
+                </ul>
+				<div class="content entry-content">
+					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
+					approached me on his way from the audience chamber. His demeanor toward me 
+					was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+					<p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
 				</div>
 			</div>
-		</aside>
+			<div class="k-article k-entry hentry hfeed">
+				<h3 class="entry-title"><a href="#" title="Read this article">Article title</a></h3>
+                <ul class="entry-info">
+                    <li><span class="published" title="2011-07-14T14:07:00-07:00">July 14th, 2011</span></li>
+                    <li>by <address class="vcard author"><a class="url fn" href="#">H. G. Wells</a></address></li>
+                </ul>
+				<div class="content entry-content">
+					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
+					approached me on his way from the audience chamber. His demeanor toward me 
+					was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+					<p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
+				</div>
+			</div>
+			<div class="k-article k-entry hentry hfeed">
+				<h3 class="entry-title"><a href="#" title="Read this article">Article title</a></h3>
+                <ul class="entry-info">
+                    <li><span class="published" title="2011-07-14T14:07:00-07:00">July 14th, 2011</span></li>
+                    <li>by <address class="vcard author"><a class="url fn" href="#">H. G. Wells</a></address></li>
+                </ul>
+				<div class="content entry-content">
+					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
+					approached me on his way from the audience chamber. His demeanor toward me 
+					was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+					<p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
+				</div>
+			</div>
+			<div class="k-article k-entry hentry hfeed">
+				<h3 class="entry-title"><a href="#" title="Read this article">Article title</a></h3>
+                <ul class="entry-info">
+                    <li><span class="published" title="2011-07-14T14:07:00-07:00">July 14th, 2011</span></li>
+                    <li>by <address class="vcard author"><a class="url fn" href="#">H. G. Wells</a></address></li>
+                </ul>
+				<div class="content entry-content">
+					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
+					approached me on his way from the audience chamber. His demeanor toward me 
+					was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+					<p class="k-readmore"><a href="#" title="Read more about Article title...">Read more...</a></p>
+				</div>
+			</div>
 			
+		</div>
+		
 	</div>
 	
 	<div id="footer">
