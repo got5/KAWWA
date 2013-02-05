@@ -8,18 +8,35 @@
 
 
 (function($) {
-      $.fn.libraryControl = function () {
-            $(this).masonry({
-                  itemSelector : 'section',
-                  columnWidth : function(containerWidth) {
-                        return containerWidth / 5;
-                  }
-            });
-            var zLink = $(this).children('p.go-top').children('a');
-            var zThis = $(this);
+	  var pluginName = 'libraryControl', defaults = {
+		  	masonry: {
+	        	itemSelector : 'section',
+	            columnWidth : function(containerWidth) { return containerWidth / 5; }
+	        }
+	  };
+	  
+	  
+	  function LibraryControlPlugin(element, options){
+	  
+	  		this.element = element;
+	  		this.options = $.extend({}, defaults, options);
+	  		
+	  		this._defaults = defaults;
+	  		this._name = pluginName;
+	  		
+	  		this.init();
+	  }
+	  
+	  LibraryControlPlugin.prototype.init = function(){
+	  		component = this.element;
+	  		
+	  		component.masonry(this.options.masonry);
+            
+            var zLink = component.children('p.go-top').children('a');
+            //var zThis = $(this);
             var point;
             $('.compo-entry').bind('click', function(event) {
-                  point = zThis.offset();
+                  point = component.offset();
                   $(zLink).focus();
                   $('html, body').animate({
                         scrollTop : point.top
@@ -33,9 +50,18 @@
                   }, 1500);
                   event.preventDefault();
             });
-      };
-      
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	  }
+	  
+	  $.fn[pluginName] = function( options ){
+	  	return this.each(function() {
+	  		if(!$.data(this, 'plugin_' + pluginName)){
+	  			$.data(this, 'plugin_' + pluginName,
+	  			new LibraryControlPlugin($(this), options));
+	  		}
+	  	});
+	  }
+	   
 })( jQuery );
 
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
