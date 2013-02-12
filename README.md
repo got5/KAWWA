@@ -19,7 +19,7 @@ You may contribute:
 -	By proposing and/or pulling new components;
 -	By giving us feed-back on issues or bugs, or by giving us tips to improve existing components.
 
-Although, as mentioned before, Kawwa goal is not to spread graphical themes, your designs would be equally welcome.
+Although, as mentioned before, Kawwa goal is not to spread graphical themes, your designs would be equally welcome. We'll add instructions about how you can do it asap.
 
 ##Getting started
 
