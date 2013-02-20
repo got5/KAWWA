@@ -88,7 +88,7 @@ var dTest = dateTest();
 
 	if (!dTest) {
 		if (jQuery.ui && jQuery.ui.datepicker) {
-			jQuery('input[type=date]').attr('class','k-datepick');
+			jQuery('input[type=date]').addClass('k-datepick');
 			/* Use the commented code below to apply translation initialisation
 			 jQuery(function($){
 				jQuery.datepicker.regional['fr'] = {
