@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+﻿<!DOCTYPE html>  
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="../js/ui/jquery.ui.tabs.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.accordion.js"></script>
 	<script type="text/javascript" src="../js/plugins/jquery.jcarousel.js"></script>
-	<script type="text/javascript" src="../js/plugins/superfish.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.kawwa.nav.js"></script>
 	<script type="text/javascript" src="../js/plugins/jquery.uppydowner.js"></script>
 	<script type="text/javascript" src="../js/plugins/jquery.jqzoom-core.js"></script>
 	<script type="text/javascript" src="../js/plugins/jquery.rating.pack.js"></script>
@@ -38,34 +38,36 @@
 	<header role="banner">
 		<h1>KAWWA <small>Markup Pattern Library</small></h1>
 		<div class="k-tools">
+			<form class="k-language" method="post" action="">
+				<fieldset class="k-radio">
+					<legend>Choose preferred language:</legend>
+					<p>
+					    <input type="radio" id="en" value="en" name="language" checked="checked" />
+					    <label for="en" title="English version">EN</label>
+					    <input type="radio" id="fr" value="fr" name="language" />
+					    <label for="fr" lang="fr" title="Version française">FR</label>
+					    <input type="radio" id="de" value="de" name="language" />
+					    <label for="de" lang="de" title="Deutsch version">DE</label>
+			  		</p>
+				</fieldset>
+			</form>
 			<ul class="k-tools-list">
 				<li><a href="tools/faq.html">FAQ</a></li>
 				<li><a href="tools/contact.html">Contact us</a></li>
 			</ul>
 		</div>
-		<p class="k-login-data">Welcome, John SMITH [<strong><a href="#">Logout</a></strong>]</p>
 	</header>
 
 	<nav>
+		<p class="control"><a href="#" title="Click to open/close menu"><img src="../img/k-theme0/nav_control.png" alt="Menu" /></a></p>
 		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
-		<ul class="k-navbar">
+		<ul class="k-navbar" role="menubar">
 			<li class="home"><a href="../index.html">Home</a></li>
 			<li class="active"><a href="#">Products</a>
-				<ul class="dropdown big-menu">
-					<li>
-						<div>
-							<ul>
-								<li><a href="#">Sub item 1</a></li>
-								<li><a href="#">Sub item 2</a></li>
-							</ul>
-							<ul>
-								<li><a href="#">Sub item 3</a></li>
-								<li><a href="#">Sub item 4</a></li>
-							</ul>
-							<p class="view-all"><a href="#">View all</a></p>
-						</div>
-					</li>
-				</ul>
+					<ul role="menu">
+						<li><a href="#">Sub item 1</a></li>
+						<li><a href="#">Sub item 2</a></li>
+					</ul>
 			</li>
 		</ul>
 		<p class="k-breadcrumbs"><a href="#">Home</a> &gt; Products: Product sheet</p>
@@ -198,7 +200,7 @@
 							<li><a href="#tab2">Customers Who Bought This Item Also Bought</a></li>
 						</ul>
 						<section id="tab1" class="content">
-							<h3 class="k-skip">To Complete Your Outfit</h3>
+							<h3 class="k-no-display">To Complete Your Outfit</h3>
 							<div class="k-carousel">
 							  	<ul>
 								    <li><a href="#" title="Consult this article"><img src="../img/image_examples/product_01.png" alt="" /> Product title <strong class="price">10,10 &euro;</strong></a></li>
@@ -212,7 +214,7 @@
 							</div>
 						</section>
 						<section id="tab2" class="content">
-							<h3 class="k-skip">Customers Who Bought This Item Also Bought</h3>
+							<h3 class="k-no-display">Customers Who Bought This Item Also Bought</h3>
 							<ul class="k-product">
 								<li class="hproduct">
 									<dl>
@@ -298,7 +300,7 @@
 		</div><!-- /main -->
 		
 		<aside role="complementary">
-			<h2>Transversal content</h2>
+			<h2 class="k-no-display">Transversal content</h2>
 			<section class="k-basket k-panel">
 				<h3 class="control ui-state-active"><a href="#" title="Click to fold/unfold block">Basket (3)</a></h3>
 				<div class="content">

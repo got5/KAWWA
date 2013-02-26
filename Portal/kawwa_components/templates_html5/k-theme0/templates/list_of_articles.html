@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+﻿<!DOCTYPE html>  
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.button.min.js"></script>
-	<script type="text/javascript" src="../js/plugins/superfish.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.kawwa.nav.js"></script>
 	<script type="text/javascript" src="../js/k-general.js"></script>
 	<script type="text/javascript" src="../js/k-load.js"></script>
 </head>
@@ -36,9 +36,9 @@
 					    <input type="radio" id="en" value="en" name="language" checked="checked" />
 					    <label for="en" title="English version">EN</label>
 					    <input type="radio" id="fr" value="fr" name="language" />
-					    <label for="fr" lang="fr" xml:lang="fr" title="Version française">FR</label>
+					    <label for="fr" lang="fr" title="Version française">FR</label>
 					    <input type="radio" id="de" value="de" name="language" />
-					    <label for="de" lang="de" xml:lang="de" title="Deutsch version">DE</label>
+					    <label for="de" lang="de" title="Deutsch version">DE</label>
 			  		</p>
 				</fieldset>
 			</form>
@@ -47,15 +47,15 @@
 				<li><a href="tools/contact.html">Contact us</a></li>
 			</ul>
 		</div>
-		<p class="k-login-data">Welcome, John SMITH [<strong><a href="#">Logout</a></strong>]</p>
 	</header>
 
 	<nav>
+		<p class="control"><a href="#" title="Click to open/close menu"><img src="../img/k-theme0/nav_control.png" alt="Menu" /></a></p>
 		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
-		<ul class="k-navbar">
+		<ul class="k-navbar" role="menubar">
 			<li class="home"><a href="../index.html">Home</a></li>
-			<li class="active"><a href="#">Articles</a>
-				<ul class="dropdown">
+			<li class="active"><a href="#" title="Click to open/close dropdown">Articles</a>
+				<ul role="menu">
 					<li class="active"><a href="#">About Books</a></li>
 					<li><a href="#">About Browsers</a></li>
 				</ul>
@@ -133,7 +133,7 @@
 		</div><!-- /main -->
 			
 		<aside role="complementary">
-			<h2 class="k-skip">Transversal content</h2>
+			<h2 class="k-no-display">Transversal content</h2>
 			<ul class="k-actions">
 				<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
 				<li><a href="#" class="bt-email" title="Send this article by e-mail">Email</a></li>

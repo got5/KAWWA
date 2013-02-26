@@ -4,10 +4,11 @@
 
 
 	<nav>
-		<div id="navbar">
-			<p class="k-skip">
+		
+			<p class="control"><a href="#" title="Click to open/close menu"><img src="${urlImg}" alt="Menu"/></a></p>
+			<h2 class="k-skip">
 				<a href="#wrapper">Skip this menu</a>
-			</p>
+			</h2>
 			<ul class="k-navbar">
 				<li class="${getClass(0)}"><t:if t:test="${isActive(0)}">
 						<strong title="Current Section">Home</strong>
@@ -62,7 +63,7 @@
 				</t:if>
 
 			</ul>
-		</div>
+
 	</nav>
 
 

@@ -1,24 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+﻿<!DOCTYPE html>  
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 	<link rel="shortcut icon" href="../img/k-theme1/favicon.png" />
-	<title>Atos Worldline - KAWWA Portal &raquo; Article template</title>
+	<title>[KAWWA &raquo; Article Template]</title>
 	<!-- STYLESHEET -->
-	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" />
-	<link href="../css/k-theme1.css" rel="stylesheet" type="text/css" title="Default Theme" media="screen" />
-	<link href="../css/k-print1.css" rel="stylesheet" type="text/css" media="print" />
+	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/k-theme1.css" rel="stylesheet" type="text/css" title="Default Theme" media="all" />
 	<!--[if lt IE 9]><link href="../css/iehacks1.css" rel="stylesheet" type="text/css" /><![endif]-->
 	<!-- SCRIPTS -->
+	<!--[if lt IE 9]><script src="../js/html5shiv.js"></script><![endif]-->
 	<script type="text/javascript" src="../js/jquery.js"></script>
+	<!-- Here go your plug-ins -->
 	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
-	<script type="text/javascript" src="../js/ui/jquery.ui.position.min.js"></script>
-	<script type="text/javascript" src="../js/ui/jquery.ui.accordion.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.button.min.js"></script>
-	<script type="text/javascript" src="../js/ui/jquery.ui.autocomplete.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.kawwa.nav.js"></script>
 	<script type="text/javascript" src="../js/k-general.js"></script>
 	<script type="text/javascript" src="../js/k-load.js"></script>
 </head>
@@ -27,8 +26,8 @@
 
 <div id="container">
 
-	<div id="header">
-		<h1><img src="../img/k-theme1/logo_Graphikawwa-trans.png" alt="Atos Worldline: KAWWA Portal" /></h1>
+	<header role="banner">
+		<h1>KAWWA <small>Markup Pattern Library</small></h1>
 		<div class="k-tools">
 			<form class="k-language" method="post" action="">
 				<fieldset class="k-radio">
@@ -49,37 +48,37 @@
 			</ul>
 		</div>
 		<p class="k-login-data">Welcome, John SMITH [<strong><a href="#">Logout</a></strong>]</p>
-	</div>
+	</header>
 
-	<div id="navbar">
-		<p class="k-skip"><a href="#wrapper">Skip this menu</a></p>
-		<ul class="k-navbar subnavbar">
+	<nav>
+		<p class="control"><a href="#" title="Click to open/close menu"><img src="../img/k-theme1/nav_control.png" alt="Menu" /></a></p>
+		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+		<ul class="k-navbar" role="menubar">
 			<li class="home"><a href="../index.html">Home</a></li>
 			<li class="active"><a href="#">Articles</a>
-				<ul>
+				<ul role="menu">
 					<li class="active"><a href="#">About browsers</a></li>
 					<li><a href="#">About Worlds</a></li>
 				</ul>
 			</li>
 		</ul>
-		<p class="k-breadcrumbs">
-			<a href="#">Home</a> &gt; 
-			<a href="#">Articles</a> &gt; 
-			<a href="#">About browsers</a> &gt; 
-			Article Title</p>
-	</div>
+	</nav>
 	
+	<p class="k-breadcrumbs">
+		<a href="#">Home</a> &gt; 
+		<a href="#">Articles</a> &gt; 
+		<a href="#">About browsers</a> &gt; 
+		Article Title</p>
 	<hr />
 		
 	<div id="wrapper">
 		
-		<div id="main">
-			<div class="k-article hentry">
-				
+		<div id="main" role="main">
+			<article class="k-article hentry">				
 				<h2 class="entry-title">Article title</h2>
                 <ul class="entry-info">
-                    <li><span class="published" title="2011-07-14T14:07:00-07:00">July 14th, 2011</span></li>
-                    <li>by <address class="vcard author"><a class="url fn" href="#">H. G. Wells</a></address></li>
+                    <li><time class="published" datetime="2011-07-14">Month 14th, 2011</time></li>
+                    <li>by <address class="vcard author"><a class="url fn" href="#">Edgar Rice Burroughs</a></address></li>
                 </ul>
 								
 				<div class="content entry-content">
@@ -91,30 +90,42 @@
 						those brave frontier women of my lost land, who took their own lives rather than 
 						fall into the hands of the Indian braves.</p>
 					</div>
-				   
-				    <div class="k-illustration-block to-right">
-						<p class="illustration"><img src="../img/image_examples/example_figure2.jpg" alt="" /> <span class="caption">The figure caption goes here</span></p>
-					</div>
-					
-					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+				   					
+					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. 
+						His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. 
+						His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+						
 					
 					<h3>Sub-title</h3>
 					<p>"I have selected none," I replied. "It seemed best that I quartered either by myself or among the other warriors, and I was awaiting an opportunity to ask your advice. As you know," and I smiled, "I am not yet familiar with all the customs of the Tharks."</p>
 		            <p>"Come with me," he directed, and together we moved off across the plaza to a building which I was glad to see adjoined that occupied by Sola and her charges.</p>
 		            <p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal atavism started the cold sweat upon me. Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
-
+					
+					<figure class="k-illustration-block to-right">
+						<img src="../img/image_examples/css3_logo.png" alt="" /> 
+						<figcaption>The figure caption goes here</figcaption>
+					</figure>
+					
 					<h4>Sub-sub-title</h4>
 					<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
 		            <p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal atavism started the cold sweat upon me. Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
 		            
-					<p class="k-quote">My quarters are on the first floor of this building and the second floor also is fully occupied by warriors, but the third floor and the floors above are vacant; you may take your choice of these.</p>
+					<blockquote>
+		            	<p>As I wandered about the plaza lost in my gloomy forebodings Tars 
+		            		Tarkas approached me on his way from the audience chamber. His demeanor 
+		            		toward me was unchanged, and he greeted me as though we had not just 
+		            		parted a few moments before.</p>
+		            	<p class="citation"><cite>A Princess of Mars</cite>, Edgar Rice Burroughs</p>
+		            </blockquote>
 					
 					<h5>Title level 5</h5>
 		            <p>"My quarters are on the first floor of this building," he said, "and the second floor also is fully occupied by warriors, but the third floor and the floors above are vacant; you may take your choice of these.</p>
 					
-					<div class="k-illustration-block">
-						<p class="illustration"><img src="../img/image_examples/example_figure.jpg" alt="" /> <span class="caption">The figure caption goes here</span></p>
-					</div>
+					<figure class="k-illustration-block">
+						<img src="../img/image_examples/html5-tech-logos.png" alt="" /> 
+						<figcaption>The figure caption goes here</figcaption>
+					</figure>
 					
 					<p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal atavism started the cold sweat upon me. Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
 		            <p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
@@ -125,11 +136,21 @@
 						<li>The thought that the divine Dejah Thoris</li>
 					</ul>
 					
-					<div class="k-illustration-block to-left">
-						<p class="illustration"><img src="../img/image_examples/example_figure3.jpg" alt="" /> <span class="caption">The figure caption goes here</span></p>
-					</div>
+					<figure class="k-illustration-block to-left">
+						<img src="../img/image_examples/html5_logo.png" alt="" /> 
+						<figcaption>The figure caption goes here</figcaption>
+					</figure>
+					
 					<p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal atavism started the cold sweat upon me. Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
 		            <p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+	             	<p>Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
+		            <p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal atavism started the cold sweat upon me. Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
+		            <p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+		            
+		            <div class="k-highlight-block">
+						<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
+					</div>
+		            
 		            <p>The thought that the divine Dejah Thoris might fall into the clutches of such an abysmal atavism started the cold sweat upon me. Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
 		            <p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas approached me on his way from the audience chamber. His demeanor toward me was unchanged, and he greeted me as though we had not just parted a few moments before.</p>
 	             	<p>Far better that we save friendly bullets for ourselves at the last moment, as did those brave frontier women of my lost land, who took their own lives rather than fall into the hands of the Indian braves.</p>
@@ -145,10 +166,11 @@
 					</div>
 					
 				</div>
-			</div>
+			</article>
 		</div><!-- /main -->
 			
-		<div id="sidebar">
+		<aside role="complementary">
+			<h2 class="k-no-display">Transversal content</h2>
 			<ul class="k-actions">
 				<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
 				<li><a href="#" class="bt-email" title="Send this article by e-mail">Email</a></li>
@@ -165,14 +187,13 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</aside>
 			
-		
 	</div>
 	
-	<div id="footer">
-		<p class="k-copyright">&copy; Le Studio/Web Platform, Atos Worldline, 2011</p>
-	</div>
+	<footer role="contentinfo">
+		<p class="k-copyright">&copy; Your copyright, 2013</p>
+	</footer>
 	
 </div>
 

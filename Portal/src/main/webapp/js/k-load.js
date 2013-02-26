@@ -1,6 +1,40 @@
 // Le Studio, Atos Worldline, 2011
 // Groups all functions to be loaded on page loading
-// Version 1.1
+// Version 1.2 - 02/2013
+
+// ----------------------------------------------------------
+// A short snippet for detecting versions of IE in JavaScript
+// without resorting to user-agent sniffing
+// ----------------------------------------------------------
+// If you're not in IE (or IE version is less than 5) then:
+//     ie === undefined
+// If you're in IE (>=5) then you can determine which version:
+//     ie === 7; // IE7
+// Thus, to detect IE:
+//     if (ie) {}
+// And to detect the version:
+//     ie === 6 // IE6
+//     ie > 7 // IE8, IE9 ...
+//     ie < 9 // Anything less than IE9
+// ----------------------------------------------------------
+
+// UPDATE: Now using Live NodeList idea from @jdalton
+
+var ie = (function(){
+
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+    
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+        all[0]
+    );
+    
+    return v > 4 ? v : undef;
+
+}());
 
 
 // Identifies IE version
@@ -12,24 +46,20 @@
 
 window.onload = function(e) {
 	
-    if (ie6) {
-        jQuery("#ie-warning").css("display", "block");
-    }
-
-	if (ie6 || ie7) {
+    if (ie < 8) {
 		inputFix();
+		selectorFix();
 		fixStructure();
 	}
 	
-	if (ie8) {
+	if (ie === 8) {
 		fixStructure();
 	}
 	
 // RESPONSIVE MENU ----------------------------------	
-// windowWidth is the width defined by the @media
 	
-	if(jQuery.fn.rTNav) {
-		jQuery('nav').rTNav('windowWidth', 675);
+	if(jQuery.fn.flexNav) {
+		$('.k-navbar').flexNav();
 	}
 	
 	
@@ -39,13 +69,6 @@ window.onload = function(e) {
 		window.scrollTo(0, 1);
 	}
 	
-// MAIN NAVIGATION/DROPDOWN MENU ----------------------------------
-
-	if (jQuery("ul").hasClass("k-navbar")) {
-	    menuManager();
-	}
-
-
 // TREEVIEW ----------------------------------
 	
 	if(jQuery.fn.jstree) {

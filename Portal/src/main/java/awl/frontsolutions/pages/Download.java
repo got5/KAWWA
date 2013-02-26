@@ -200,7 +200,7 @@ public class Download {
 
 		if (panier.isIncludeTemplate()) {
 			zipFiller.fillWithThemeTemplate(zos, panier.getTheme(),
-					panier.getDoctype());
+					DownloadDocType.HTML5);
 		} else {
 			zipFiller.fillWithThemeCSS(zos, panier.getTheme());
 			zipFiller.fillWithThemeJs(zos, panier.getTheme());

@@ -22,7 +22,7 @@
 							and can be used in your application, in order to make the
 							development phase easier.</p>
 						<p class="k-readmore">
-							If you want to know more, consult our "<a href="/tapestry">Tapestry
+							If you want to know more, consult our "<a t:type="pagelink" t:page="tapestry">Tapestry
 								Integration</a>" page.
 						</p>
 					</div>
@@ -37,6 +37,17 @@
 							requests for new components or to improve the existing ones.</p>
 						<p class="k-readmore">
 							Feel free to add features to our <a href="https://github.com/got5/KAWWA">Kawwa Project</a>.
+						</p>
+					</div>
+				</div>
+				<div class="k-info-block">
+					<header>
+						<h3>Last Updates</h3>
+					</header>
+					<div class="content">
+						<p>You may check the latest updates of the February 25th.</p>
+						<p class="k-readmore">
+							<a t:type="pagelink" t:page="updates">Updates</a> page.
 						</p>
 					</div>
 				</div>

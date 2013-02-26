@@ -30,7 +30,8 @@
 	  LibraryControlPlugin.prototype.init = function(){
 	  		component = this.element;
 	  		
-	  		component.masonry(this.options.masonry);
+	  		if(ie && ie < 8)
+	  			component.masonry(this.options.masonry);
             
             var zLink = component.children('p.go-top').children('a');
             //var zThis = $(this);

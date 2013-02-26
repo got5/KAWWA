@@ -1,9 +1,42 @@
-// Le Studio, Atos Worldline, 2011
+﻿// Le Studio, Atos Worldline, 2011
 // Groups all functions to be loaded on page loading
-// Version 1.1
+// Version 1.2 - 02/2013
 
+// ----------------------------------------------------------
+// A short snippet for detecting versions of IE in JavaScript
+// without resorting to user-agent sniffing
+// ----------------------------------------------------------
+// If you're not in IE (or IE version is less than 5) then:
+//     ie === undefined
+// If you're in IE (>=5) then you can determine which version:
+//     ie === 7; // IE7
+// Thus, to detect IE:
+//     if (ie) {}
+// And to detect the version:
+//     ie === 6 // IE6
+//     ie > 7 // IE8, IE9 ...
+//     ie < 9 // Anything less than IE9
+// ----------------------------------------------------------
 
-// Identifies IE version
+// UPDATE: Now using Live NodeList idea from @jdalton
+
+var ie = (function(){
+
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+    
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+        all[0]
+    );
+    
+    return v > 4 ? v : undef;
+    
+}());
+
+// Identifies IE version - only for tests on X-UA-Compatible 
 	var ie6 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 6.0") != -1);
 	var ie7 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 7.0") != -1);
 	var ie8 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 8.0") != -1);
@@ -12,24 +45,20 @@
 
 window.onload = function(e) {
 
-    if (ie6) {
-        jQuery("#ie-warning").css("display", "block");
-    }
-
-	if (ie6 || ie7) {
+	if (ie < 8) {
 		inputFix();
+		selectorFix();
 		fixStructure();
 	}
 	
-	if (ie8) {
+	if (ie === 8) {
 		fixStructure();
 	}
 	
 // RESPONSIVE MENU ----------------------------------	
-// windowWidth is the width defined by the @media
 	
-	if(jQuery.fn.rTNav) {
-		jQuery('nav').rTNav('windowWidth', 675);
+	if(jQuery.fn.flexNav) {
+		$('.k-navbar').flexNav();
 	}
 	
 	
@@ -86,9 +115,9 @@ function dateTest() {
 }
 var dTest = dateTest();
 
-	if (!dTest) {
+	if (!dTest || ie<8) {
 		if (jQuery.ui && jQuery.ui.datepicker) {
-			jQuery('input[type=date]').attr('class','k-datepick');
+			jQuery('input[type=date]').addClass('k-datepick');
 			/* Use the commented code below to apply translation initialisation
 			 jQuery(function($){
 				jQuery.datepicker.regional['fr'] = {
@@ -230,7 +259,7 @@ function supports_input_placeholder() {
 	
 // IMAGE CAROUSEL ----------------------------------
  
- 	if (!(ie6 || ie7)) {
+ 	if (!(ie<8)) {
  		if(jQuery.fn.jcarousel) {
  			if (jQuery(window).width()>=700) {
 	 			jQuery('.k-carousel').jcarousel({
@@ -263,7 +292,7 @@ function supports_input_placeholder() {
 
 	if (jQuery.fn.uppydowner) {
 		if(!incTest) {
-			jQuery('input[type=number]').attr('class', 'uppydowner');
+			jQuery('input[type=number]').addClass('uppydowner');
 			jQuery('input.uppydowner').uppydowner();
 		} else {
 			jQuery('input[type=number]').css('width', '3em');
@@ -300,6 +329,7 @@ function supports_input_placeholder() {
 	if(jQuery.fn.rating) {
 		jQuery('fieldset.k-rating input').rating();
 	}
+	
 //----------------------------------------------------
 }	//close function
 	

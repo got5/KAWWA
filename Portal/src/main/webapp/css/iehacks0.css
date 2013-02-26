@@ -10,26 +10,27 @@
 
 /* --- PAGE RESTRUCTURE --- */
 
-#container {*max-width: 1280px; *min-width: 800px;}
-header[role=banner], #header {*height: 60px;}
-aside[role=complementary], #sidebar {*width: 18%;*border: none;}
-aside[role=complementary] > h2 {display: none;}
+#container {width: 1280px; max-width: 1280px; min-width: 800px;}
+header[role=banner], #header {*height: 60px; float: left; background: #000;}
+aside[role=complementary], #sidebar {*padding-left: 40px; _padding-left: 20px;}
+aside[role=complementary] h2.k-skip, #sidebar h2.k-skip {display: none;}
 
-#wrapper {_display: inline; *width: 100%; *padding: 0;}
-#main {*width: 100%; *margin: 0; *padding: 0;}
-#main-all {float: left; width: 59%; padding: 0 2%;} /* 3 cols */
+#wrapper {_float: left; _width: 99%;}
+#main-alone {float: left; width: 100%;} /* alone */
 #main-menu {float: right; width: 83%;} /* with menu only */
-#main-aside {float: left; width: 78%;} /* with sidebar only */
+#main-aside {float: left; width: 76%; margin-left: 0;} /* with sidebar only */
 
+#footer {*float: left; *width: 94%;}
 
 /* --- DOUBLE MARGIN BUG --- */
-div.k-catalog .k-product {display: inline;}
-div.i-topics div.k-info-block {display: inline;}
+div.k-catalog .k-product {_display: inline;}
+div.i-topics div.k-info-block {_display: inline;}
 
-/* --- PORTAL HOME PAGE ---*/
-#highlight li {*float: left; *width: auto;background: #000}
+
 
 /* ------------------------ GENERAL FIXES ------------------------- */
+
+body {_line-height: 1.5;}
 
 h1 {_display: inline;}
 legend {margin-bottom: 21px;}
@@ -40,12 +41,22 @@ ul.k-navbar a, ul.k-navbar a:visited, ul.k-navbar li.active strong {_display: in
 ul.k-navbar .dropdown li {float: left; width: 100%;}
 p.view-all a {_float: left; _width: 100%;}
 
-p.k-breadcrumbs {*padding: 0.5em 0;}
+p.k-breadcrumbs {padding: 0.5em 4%;}
 
 /* --- FORMS --- */
+
 input[type=radio], input[type=checkbox] {border: none;}
 
-.k-radio legend {margin-bottom: 0;}
+fieldset.k-check legend, fieldset.k-radio legend {
+	_float: none;
+	_width: auto;
+	_text-align: left;
+	_padding: 0;
+}
+fieldset.k-check p {}
+ul.actions a, ul.actions a:link, ul.actions a:visited {
+	_width: 45px;
+}
 
 /* Buttons (ie6 only) */
 input.btSubmit {
@@ -95,7 +106,6 @@ input.btOptional {
 	cursor: pointer;
 }
 
-
 form.k-language {*width: 6em; *text-align: right;}
 
 p.k-login-data {_position: relative; _width: 40em; _top: -2.5em;}
@@ -103,17 +113,9 @@ p.k-login-data {_position: relative; _width: 40em; _top: -2.5em;}
 ul.k-tools-list li {*padding-top: 1.5em; *border-left: 1px solid #FFF;}
 
 /* Search form */
-#k-search input.btSubmit {
-	height: 2em;
-	font-size: 90%;
-    color: #FFF;
-    background: #000;
-    padding: 0;
-    margin: 0 0 0 -5px;
-	border-color: #000;
+.k-search input.btSubmit {
+	font-size: 12px;
 }
-#k-search p {*padding-top: 3px;}
-#search-tag {*height: 1.5em; *vertical-align: middle;}
 
 /* Login form */
 #k-login input.btSubmit {_margin-top: 10px}
@@ -151,19 +153,21 @@ div.k-tree li, div.k-tree li ins {_background: none; cursor: pointer;}
 div.k-tree li.jstree-leaf, div.k-tree li.jstree-leaf ins {_cursor: default;}
 
 /* --- TABS --- */
-div.k-tabbed-data div.content {
-		float: left;
-		width: 96%;
-		padding: 2%;
-		margin-bottom: 20px;
-		color: #000;
-		background: #FFF;
-		border: 1px solid #808080;
-	}
-	
-/* --- PRODUCT --- */
 
-.k-product-sheet {_width: 95%;}
+div.k-tabbed-data .content {
+	*float: left;
+	*width: 100%; 
+	*margin-bottom: 2em; 
+	*border: 1px solid #000;
+}
+
+	
+/* --- EDITORIAL --- */
+
+.k-intro {*width: 40em;}
+blockquote {padding-bottom: 2em;}
+
+
 	
 /* --- CAROUSEL --- */
 .k-carousel li {
@@ -222,6 +226,24 @@ div.dataTables_info {*position: static;}
 
 
 /* --- E-COMMERCE --- */
+
+/* No choice between list or blocks for IE6 and 7 */
+
+ul.catalog-view {*display: none;}
+.k-catalog .hproduct {*float: none; *width: 94%; *padding: 2% 3%;}
+.k-catalog div.photo-data {*float: left; *width: 30%;}
+.k-catalog div.product-data {*float: right; *width: 65%;}
+.k-catalog .name {*height: auto; *padding-right: 15%;}
+
+.k-product-sheet .price {font-size: 100%;}
+.k-product-sheet div.product-data .price {font-size: 210%;}
+.k-product-sheet div.photo-data {width: 35%;}
+.k-product-sheet div.product-data {width: 58%;}
+
+
+/* quantity */
+.k-quantity span {*height: 20px; *font-size: 16px; *vertical-align: 3px;}
+.k-basket span {*height: 16px; *vertical-align: 0;}
 
 /* ZOOM */
 

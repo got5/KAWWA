@@ -1,14 +1,16 @@
 package awl.frontsolutions.components;
 
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.AssetSource;
 
 import awl.frontsolutions.entities.ChoosenTheme;
 import awl.frontsolutions.services.AtosService;
 import awl.frontsolutions.services.stack.ThemeStack;
 
-
+@Import(library="context:js/plugins/jquery.kawwa.nav.js")
 public class TopMenu {
 
 	@Parameter
@@ -44,4 +46,10 @@ public class TopMenu {
 		return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
 	}
 	
+	@Inject 
+	private AssetSource as;
+	
+	public String getUrlImg(){
+		return as.getContextAsset(String.format("img/%s/nav_control.png", choosen.getDir()), null).toClientURL();
+	}
 }

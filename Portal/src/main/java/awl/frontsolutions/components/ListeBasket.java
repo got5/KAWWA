@@ -75,7 +75,7 @@ public class ListeBasket {
 		ZipOutputStream zos = new ZipOutputStream(out);
 		
 		if(panier.isIncludeTemplate()){
-			zipFiller.fillWithThemeTemplate(zos, panier.getTheme(), panier.getDoctype());
+			zipFiller.fillWithThemeTemplate(zos, panier.getTheme(), DownloadDocType.HTML5);
 		}
 		else{
 			zipFiller.fillWithThemeCSS(zos, panier.getTheme());

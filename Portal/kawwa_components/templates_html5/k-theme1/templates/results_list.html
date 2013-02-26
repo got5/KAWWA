@@ -1,16 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>  
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 	<link rel="shortcut icon" href="../img/k-theme1/favicon.png" />
-<title>Atos Worldline - KAWWA2 &raquo; Results List</title>
+	<title>[KAWWA &raquo; Results List]</title>
 	<!-- STYLESHEET -->
-	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" />
-	<link href="../css/k-theme1.css" rel="stylesheet" type="text/css" title="Default Theme" media="screen" />
+	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/k-theme1.css" rel="stylesheet" type="text/css" title="Default Theme" media="all" />
 	<!--[if lt IE 9]><link href="../css/iehacks1.css" rel="stylesheet" type="text/css" /><![endif]-->
 	<!-- SCRIPTS -->
+	<!--[if lt IE 9]><script src="../js/html5shiv.js"></script><![endif]-->
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
@@ -28,8 +29,8 @@
 
 <div id="container">
 
-	<div id="header">
-		<h1><img src="../img/k-theme1/logo_Graphikawwa-trans.png" alt="Atos Worldline: KAWWA Portal" /></h1>
+	<header role="banner">
+		<h1>KAWWA <small>Markup Pattern Library</small></h1>
 		<div class="k-tools">
 			<ul class="k-tools-list">
 				<li><a href="tools/faq.html">FAQ</a></li>
@@ -38,22 +39,24 @@
 			</ul>
 		</div>
 		<p class="k-login-data">Welcome, John SMITH [<strong><a href="#">Logout</a></strong>]</p>
-	</div>
+	</header>
 
-	<div id="navbar">
-		<p class="k-skip"><a href="#wrapper">Skip this menu</a></p>
-		<ul class="k-navbar">
-			<li class="home active"><a href="../index.html">Home</a></li>
-			<li><a href="#">Management</a></li>
-		</ul>
-		<p class="k-breadcrumbs"><a href="#">Home</a> &gt; </p>
-	</div>
+	<nav>
+		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+		<div id="navbar">
+			<ul class="k-navbar">
+				<li class="home active"><strong>Home</strong></li>
+				<li><a href="#">Management</a></li>
+			</ul>
+			<p class="k-breadcrumbs"><a href="#">Home</a> &gt; Form elements</p>
+		</div>
+	</nav>
 	
 	<hr />
 		
 	<div id="wrapper">
 
-		<div id="main">
+		<div id="main" role="main">
 			<h2>Page Title</h2>
 			
 			<div class="k-actions-block">
@@ -65,7 +68,7 @@
 				</ul>
 			</div>
 			
-			<form id="filter" method="post" action="">
+			<form id="filter" method="post" action="#">
 				<fieldset class="k-panel ui-state-active">
 					<legend class="control ui-state-active"><a href="#" title="Click to fold/unfold">Search filter</a></legend>
 					<fieldset class="content">						
@@ -77,9 +80,9 @@
 								<label for="t2"><input type="radio" id="t2" value="t2" name="other" /> Option 2</label></p>
 						</fieldset>
 						<p><label for="field2">Enter something:</label>
-							<input type="text" class="k-field-comment" id="field2" name="field2" title="These are the fields comments" /></p>
+							<input type="text" class="k-field-comment" id="field2" name="field2" title="This is a field comment" /></p>
 						<p><label for="date1">Enter a date:</label>
-							<input type="text" class="k-datepick" id="date1" name="date1" /> 
+							<input type="date" id="date1" name="date1" /> 
 							<label for="place1" class="k-online">And a place:</label>
 							<input type="text" id="place1" name="place1" /></p>
 						<p class="k-check">
@@ -94,9 +97,8 @@
 					</fieldset>
 				</fieldset>
 			</form>
-		
 			<div class="k-pagination">
-				<form id="pagination" method="post" action="">
+				<form id="pagination" method="post" action="#">
 					<p class="lines-to-display">
 						<label>Display  
 							<select name="display-value">
@@ -116,7 +118,7 @@
 				</p>
 			</div>
 		
-			<form id="form-example" method="post" action="">
+			<form id="form-example" method="post" action="#">
 				<table id="example" summary="Here you explain table data">
 					<caption>Table's title</caption>
 					<thead>
@@ -170,28 +172,13 @@
 				<p class="go-back"><a href="#" title="Go back to previous page">Back</a></p>
 				<p class="go-top"><a href="#container" title="Go to the top of the page">Top</a></p>
 			</div>
-		
+			
 		</div>
-		
-		<div id="archive-info" class="k-modal">
-			<h3 class="modal-header">About the archive files</h3>
-			<div class="content">
-				<p>As I wandered about the plaza lost in my gloomy forebodings Tars Tarkas 
-				approached me on his way from the audience chamber. His demeanor toward me was 
-				unchanged, and he greeted me as though we had not just parted a few moments before.</p>    
-				<ul>
-					<li>My quarters are on the first floor</li>
-					<li>Dejah Thoris might fall into the clutches</li>
-					<li>The thought that the divine Dejah Thoris</li>
-				</ul>
-			</div>
-		</div>
-		
 	</div>
 	
-	<div id="footer">
-		<p class="k-copyright">&copy; Le Studio/Web Platform, Atos Worldline, 2011</p>
-	</div>
+	<footer role="contentinfo">
+		<p class="k-copyright">&copy; Your copyright, 2013</p>
+	</footer>
 	
 </div>
 
