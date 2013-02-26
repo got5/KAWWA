@@ -1,6 +1,6 @@
 Kawwa, the Markup Pattern Library
 =====
-Kawwa is an initiative to promote semantic, standard and accessible HTML code throughout an online markup library of more than 50 components (https://kawwa.atosworldline.com/).
+Kawwa is an initiative to promote semantic, standard and accessible HTML code through an online markup library of more than 50 components (https://kawwa.atosworldline.com/).
 A Kawwa component is an identified web interface element made of:
 -  An HTML template, or snippet (it can be either XHTML Strict or HTML5);
 -	Related CSS declarations and, eventually,
@@ -19,7 +19,7 @@ You may contribute:
 -	By proposing and/or pulling new components;
 -	By giving us feed-back on issues or bugs, or by giving us tips to improve existing components.
 
-Although, as mentioned before, Kawwa goal is not to spread graphical themes, your designs would be equally welcome.
+Although, as mentioned before, Kawwa goal is not to spread graphical themes, your designs would be equally welcome. We'll add instructions about how you can do it asap.
 
 ##Getting started
 
