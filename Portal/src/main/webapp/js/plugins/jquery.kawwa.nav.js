@@ -61,12 +61,12 @@
 		});
 
 		// Toggle for nav menu
-		$this.siblings('p.control').find("a").click(function() {
+		$this.siblings('p.control').children('a').click(function() {
 			$this.slideToggle(settings.animationSpeed);
 		});
 
 		// Toggle click for sub-menus on touch and or small screens
-		$this.find('.dropdown').click(function() {
+		$this.children('.dropdown').click(function() {
 			$(this).find('ul').slideToggle(settings.animationSpeed, function(){
 				var isExpanded = $(this).css("display") === "block";
 				$(this).attr('aria-expanded', isExpanded);

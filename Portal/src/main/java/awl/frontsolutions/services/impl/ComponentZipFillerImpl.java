@@ -99,7 +99,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 			fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
 					content.getSnippetHTML5(themeDir));
 			fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
-					content.getSnippetJS(themeDir));
+					content.getSnippetJS5(themeDir));
 		}
 
 		fillWithFile(zos, path + "README.html", getNotes(componentInfo, dlType));
@@ -441,6 +441,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 	 */
 	private void fillWithFile(ZipOutputStream zos, String filename,
 			String content) throws IOException {
+		System.out.println(filename);
 		if (StringUtils.isNotEmpty(content)) {
 			ZipEntry entry = new ZipEntry(filename);
 			zos.putNextEntry(entry);

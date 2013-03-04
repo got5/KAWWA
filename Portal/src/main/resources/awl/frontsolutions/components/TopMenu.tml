@@ -9,7 +9,7 @@
 			<h2 class="k-skip">
 				<a href="#wrapper">Skip this menu</a>
 			</h2>
-			<ul class="k-navbar">
+			<ul class="i-navbar">
 				<li class="${getClass(0)}"><t:if t:test="${isActive(0)}">
 						<strong title="Current Section">Home</strong>
 						<p:else>

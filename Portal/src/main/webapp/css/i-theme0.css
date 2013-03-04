@@ -1,14 +1,114 @@
-/*--------------------------------------------------------------------
+﻿/*--------------------------------------------------------------------
 	          	  KAWWA - Theme 0
 	   	      PORTAL SPECIFIC INTERFACE
           By Le Studio, Atos Worldline, 2013
 -------------------------------------------------------------------- */
 
+/* --- NAVIGATION --- */
 
+ul.i-navbar {padding: 0; margin: 4px 4% 2em 57px;}
+
+	ul.i-navbar li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+		margin: 0 1px;
+	}
+	
+		ul.i-navbar a, ul.i-navbar a:visited {
+			display: block;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			padding: 0.5em;
+		}
+		ul.i-navbar a:hover, ul.i-navbar a:focus {
+			color: #FFF;
+			background: #808080;
+		}
+		
+		/* Active section / no link */
+		ul.i-navbar li.active strong {
+			display: block;
+			font-family: NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: normal;
+			text-transform: uppercase;
+			color: #FFF;
+			background-color: #808080;
+			padding: 0.5em;
+		}
+		
+		/* Active section / with link */
+		ul.i-navbar li.active a, ul.i-navbar li.active a:link, ul.i-navbar li.active a:visited {
+			color: #FFF;
+			background-color: #808080;
+		}
+
+		
+		/* If section has dropdown */
+		ul.i-navbar a.hasdropdown, ul.i-navbar a.hasdropdown:visited {
+			color: #FFF;
+			background: #000 url(../img/k-theme0/bg_hasdropdown.png) right bottom no-repeat;
+			padding-right: 20px;
+		}
+		ul.i-navbar a.hasdropdown:hover, ul.i-navbar a.hasdropdown:focus {
+			color: #FFF;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		}
+		ul.i-navbar li.active a.hasdropdown, ul.i-navbar li.active a.hasdropdown:visited {
+			color: #FFF;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		}
+		ul.i-navbar li.active a.hasdropdown:hover, ul.i-navbar li.active a.hasdropdown:focus {
+			color: #FFF;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		}
+		
+		
+/* SECOND LEVEL UL - Dropdown menu */
+.dropdown ul {
+	display: none;
+	position: absolute;
+	width: 25em;
+	color: #FFF;
+	background: #808080;
+	padding: 0;
+	box-shadow: 0 2px 2px rgba(0,0,0,.5);
+	z-index: 2000;
+}
+
+ul.i-navbar .dropdown li {
+	float: none;
+	padding: 0.2em;
+	margin: 0;
+	border-bottom: 1px dotted #FFF;
+	border-right: none;
+}
+	ul.i-navbar .dropdown li:last-child {border: none;}
+
+	ul.i-navbar .dropdown li a, ul.i-navbar .dropdown li a:link, ul.i-navbar .dropdown li a:visited {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		background: none;
+		padding: 0.3em;
+	}
+
+	ul.i-navbar .dropdown li a:hover, ul.i-navbar .dropdown li a:focus {
+		text-shadow: none;
+		color: #000;
+		background: #808080;
+	}
+	ul.i-navbar .dropdown li.active a:hover, ul.i-navbar .dropdown li.active a:focus {
+		text-shadow: none;
+		color: #000;
+		background: #808080;
+	}
 
 /* --- HOME PAGE --- */
-
-#container {min-width: 320px;}/* temp*/
 
 #home #wrapper {
 	overflow: auto;
@@ -45,7 +145,7 @@
 	}
 
 #home nav {padding-left: 122px; margin-left: 5%;}
-#home ul.k-navbar {width: 85%; margin: 0;}
+#home ul.i-navbar {margin: 0;}
 #home nav li li:first-child {margin-left: 0;}
 
 	nav li.compo-entry a, nav li.compo-entry a:link, nav li.compo-entry a:visited {
@@ -55,10 +155,10 @@
 		padding-right: 25px;
 	}
 	
-#home p.k-login-data {width: auto; background: transparent; margin-top: 8.5em;}
 	
 #components-list {
 	clear: both;
+	width: 92%;
 	position: relative;
 	background: #FFF;
 	padding: 10em 4% 2%;
@@ -106,10 +206,10 @@
 	
 	#components-list section {
 		float: left;
-		width: 11%;
+		width: 160px;
 		background: rgba(0,0,0,.15);
-		padding: 1%;
-		margin: 0 2% 2%;
+		padding: 10px 15px;
+		margin: 0 5px 20px;
 	}	
 
 	#components-list h3 img {display: block; margin: 0 auto 5px;}
@@ -134,8 +234,33 @@
 		background: #000;
 	}
 	
+.transitions-enabled.masonry,
+.transitions-enabled.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.transitions-enabled.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.transitions-enabled.masonry  .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+	
 #home form.k-search {float: none; width: 100%; text-align: left;}
-#home form.k-search p {margin-top: 0;}
+#home form.k-search p {margin: 0;}
 #home #search-tag {font-size: 80%;}
 
 form.k-search {float: right; width: 20em; text-align: right;}
@@ -215,7 +340,6 @@ div.baseline small {display: block; font-size: 60%; padding-top: 1em;}
 #download-entry a, #download-entry a:link, #download-entry a:visited {
 	position: relative;
 	display: block;
-	max-width: 12em;
 	text-transform: uppercase;
 	text-decoration: none;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
@@ -255,7 +379,7 @@ div.baseline small {display: block; font-size: 60%; padding-top: 1em;}
 	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* List of templates */
+/* --- LIST OF TEMPLATES --- */
 
 
 #templates-list {
@@ -363,12 +487,11 @@ footer[role=contentinfo] a:hover {
 	background: #000;
 }
 
-
 ul.index {
 	float: left;
 	width: 30%;
 	list-style-type: none;
-	padding: 0 5% 1em 0;
+	padding: 0 5% 2em 0;
 	border-right: 1px solid #CCC;
 }
 
@@ -384,6 +507,11 @@ section.contact {
 	section.contact h2 {font-size: 1.5em;}
 
 p.community {float: left; width: 50%; padding-left: 5%; margin-top: 2em;}
+p.k-copyright {
+	width: 28%;
+	text-indent: -1.1em;
+	margin-left: 1.1em;
+}
 
 /* --- INDEX OF COMPONENTS --- */
 
@@ -644,6 +772,8 @@ p.aid {
 
 
 /* --- COMPONENT DEMO --- */
+
+h2 + .i-section {border-top: 4px solid #000;}
 
 /* Component data */
 
@@ -987,15 +1117,17 @@ input.major-action {
 
 .stressed {color: #C00;}
 
-ul.i-menu {padding: 0;}
+ul.i-menu {background: #EEE; padding: 0 10%;}
+	ul.i-menu ul.level2 {padding-left: 1em;}
+
 	ul.i-menu li {
-		font: 1em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		list-style-type: none;
 		padding: 0.4em 0; 
 		border-bottom: 1px dashed #888;
-		}
+	}
 		ul.i-menu li li {
-			font: 0.9em PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font: 0.9em/1.2 PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 			border-bottom: none;
 		}
 	
@@ -1027,6 +1159,10 @@ dl.i-doc-list {margin-bottom: 2em;}
 	dl.i-doc-list a {float: left; width: 60%;}
 
 /* --- LOCAL ADJUSTEMENTS FOR COMPONENTS --- */
+
+#i-component p.control {position: static; width: 100%; text-align: right; clear: both;}
+.sm-screen #i-component ul.k-navbar {border: none;}
+
 #i-component #language-choice label {padding-bottom: 4px;}
 
 #i-component p.k-readmore {
@@ -1088,12 +1224,8 @@ dl.i-doc-list {margin-bottom: 2em;}
 #i-component p.k-basket-sum a, #i-component p.k-basket-sum a:link, p.k-basket-sum a:visited {padding-left: 40px;}
 
 
-
 /*-------------------------------------------- MEDIA QUERIES ---------------------------------------------- */
 
-@media only screen and (max-width : 1360px) {
-	#home p.k-login-data, p.k-login-data {top: 0.5em; color: #FFF; background: #000; margin: 0;}
-}
 @media only screen and (max-width : 1220px) {
 	/*Home*/
 	#home #wrapper #main:first-child {width: 60%;}
@@ -1101,19 +1233,7 @@ dl.i-doc-list {margin-bottom: 2em;}
 	#home #main .k-info-block {float: none; width: 100%; margin: 0 0 1em;}
 	#home .k-info-block .content {padding-bottom: 2%;}
 	
-	div.i-change-style, aside[role=complementary] .k-info-block {
-		float: left;
-		clear: none;
-		width: 41%;
-		padding: 1px 2% 5px;
-	}
-	
-	#home div.i-change-style {
-		float: none;
-		clear: both;
-		width: 90%;
-		padding: 1px 5% 5px;
-	}
+	#home div.i-change-style {width: 100%;}
 
 	#downloadListForm {float: right; clear: none; width: 45%;}
 		
@@ -1125,10 +1245,11 @@ dl.i-doc-list {margin-bottom: 2em;}
 	#complete-selection p {clear: both; float: none; padding-left: 25px;}
 	#complete-selection label {padding: 0 0 1em;}
 }
+
 @media only screen and (max-width : 1130px) {
 	/*Home*/
 	#home h1 {
-		width: 30%;
+		width: 70%;
 		font-size: 1.5em;
 		background: url(../img/k-theme0/kawweagle_small.png) -1px 10px no-repeat;
 		padding: 0.5em 0 0.3em 70px;
@@ -1145,34 +1266,85 @@ dl.i-doc-list {margin-bottom: 2em;}
 	#highlight ul li:first-child {padding-left: 70px;}
 }
 
+
+@media only screen and (max-width : 1100px) {
+	.sm-screen p.control {display: block;}
+	.sm-screen ul.i-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
+	.sm-screen .i-navbar li {float: none; clear: both; padding: 0 0 1px; }
+	.sm-screen .i-navbar a {display: block;}
+	.dropdown ul {position: static; width: 100%;}	
+	ul.i-navbar .dropdown li {padding-left: 25px;}
+	
+	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
+	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
+	.sm-screen .k-navbar a {display: block;}
+	ul.k-navbar .dropdown li {padding-left: 25px;}
+
+	header[role=banner] {width: 100%; padding-right: 0;}
+	
+	div.k-tools {
+		float: left;
+		width: 100%;
+		background: #303030 url(../img/k-theme0/bowtie_small_full.png) no-repeat;
+		border-top: 1px solid #FFF;
+	}
+	form.k-search {float: none; text-align: left; margin-left: 71px;}
+	#home form.k-search {margin: 0;}
+	form.k-search p {margin: 0.3em 0;}
+	form.k-search input {margin: 0;}
+	
+	p.k-login-data {
+		color: #FFF;
+		background: transparent;
+		padding: 0.5em 0 0;
+		border: none;
+	}
+	p.k-login-data a, p.k-login-data a:link {color: #FFF; padding: 0 5px;}
+	#home p.k-login-data {color: #000;}
+	#home p.k-login-data a, #home p.k-login-data a:link {color: #000;}
+}
+
 @media only screen and (max-width : 975px) {
 	/*Home*/
 	#home #wrapper {margin-top: 3em;}
 	div.baseline p {font-size: 1.8em; padding: 1.6em 0 1em 130px;}
 	#highlight li {font-size: 1.2em;}
-		
+	ul.component-info {display: none}
+	#toBasket {float: left; margin: 0 0 1.5em;}
+	div.i-section .k-notes {margin-bottom: 1.5em;}
 }
 
 @media only screen and (max-width : 820px) {
-
-	/*Home*/
-	#home #highlight {clear: none; width: auto; padding: 4em 0 0 240px;}
-	#highlight ul, #highlight ul li:first-child {padding-left: 0;}
-	#home div.baseline p {width: 90%; padding: 1.4em 0 0.5em 0;}
-	
-	#highlight li {display: block; padding-top: 0.5em;}
+	/*Home*/	
+	#highlight li {display: block; padding: 0.5em 0 0 70px;}
 	#highlight li:after {content: "";}
+	#highlight ul {padding: 0; margin: 0;}
 	#highlight ul a, #highlight ul a:link {display: inline-block;}
 	#highlight li small {display: inline;}
 	#download-entry {font-size: 0.75em;}
 	#download-entry a, #download-entry a:link, #download-entry a:visited {padding-left: 15px;}
 	#download-entry a:after, #download-entry a:before {content: none;}
-	#home form.k-search input[type="submit"] {display: block;}
-	#home #search-tag {width: 96%;}
 	#home div.i-change-style label {font-size: 0.7em;}
-
-	form.k-search p {margin: 8px 4% 0;}
 	
+	p.k-login-data {
+		position: absolute;
+		width: 15%;
+		font-size: 11px;
+		color: #FFF;
+		background: transparent;
+		padding-right: 0;
+	}
+	
+	p.k-copyright {
+		width: 100%;
+		text-align: center;
+		padding-top: 1em;
+		margin: 0;
+		border-top: 1px solid #CCC;
+	}
+
+	ul.i-menu {padding: 10px 5%; margin-bottom: 3em;}
+
 	/*Error page*/
 	#error #container {max-width: 100%; min-width: 250px; width: 94%; padding: 0 3%;}
 	#error h2 {
@@ -1185,7 +1357,49 @@ dl.i-doc-list {margin-bottom: 2em;}
 	#error .content {width: 80%; margin: 0 10% 2em;}
 }
 
+@media only screen and (max-width : 800px) {
+	p.k-login-data {top: 6.3em;}
+}
+
+@media only screen and (max-width : 670px) {
+	/* Cancels masonry */
+	#components-list section {float: none; clear: both; width: 85%; margin: 0.5em 0 0.5em 0;}
+}
+
 @media only screen and (max-width : 610px) {
+	#home #wrapper #main:first-child {float: none; clear: both; width: 100%;}
+	#home .k-info-block .illustration {display: none;}
+	#home aside[role="complementary"] {float: left; width: 96%;}
+	p.k-breadcrumbs {padding-left: 4%;}
+	
+	dl.legend dd {font-size: 13px;}
+	#components-list {padding-top: 8em;}
+	#components-list h2 {font-size: 2em; padding-right: 60px;}
+	#components-list p.go-top {top: 1em;}
+	
 	#error h1 {font-size: 2em; background-size: 400px; padding-bottom: 420px;} 
 	#error h2 {top: 1em; left: auto; right: 0;}
+}
+
+@media only screen and (max-width : 590px) {
+	div.k-tools {background-image: none;}
+	form.k-search {margin-left: 4%;}
+	#search-tag {width: 60%;}
+	p.k-login-data {display: block;}
+}
+
+@media only screen and (max-width : 580px) {
+	#home div.baseline p {width: 100%; padding-left: 0;}
+	#highlight ul li:first-child, #highlight ul li {padding-left: 0;}
+	
+	ul.index {float: none; width: 100%; text-align: center; padding: 0 0 1.5em; border: none;}
+	ul.index li {display: inline-block; font-size: 13px;}
+	section.contact {width: 100%; text-align: center; padding: 0 0 1em;}
+	section.contact h2 {font-size: 14px;}
+	section.contact p {font-size: 12px;}
+	p.community {float: none; width: 100%; text-align: center; padding: 0.5em 0; margin: 0;}
+}
+
+@media only screen and (max-width : 380px) {
+	dl.legend dd {font-size: 11px;}
 }

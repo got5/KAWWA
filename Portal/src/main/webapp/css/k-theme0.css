@@ -1,9 +1,10 @@
-﻿/*-------------------------------------------------------------------- 
-          	  	 KAWWA2 - Theme 0
+﻿/*--------------------------------------------------------------------
+          	  	 KAWWA - Default Theme
 	          	 Default OS Theme
           By Le Studio, Atos Worldline, 2012
           
 				Version 1.0 (09/2012)
+				   Updated 02/2013
 -------------------------------------------------------------------- */
 
 
@@ -38,12 +39,13 @@
 		NEW WINDOW LINK
 		SITEMAP 
 		TOOLS LINKS
+		SEARCH 
 		LANGUAGE CHOICE
 		LOGIN 
 		LOGIN DATA
-		SEARCH 
 		ACTION BUTTONS BAR
 		ACTION BUTTONS
+		ICON BUTTONS
 		PAGINATION 
 		MODAL 
 		ORIENTATION AID
@@ -67,13 +69,12 @@
 		PRODUCT QUANTITY
 		PRODUCT REVIEW
 		PRODUCT RATING
-		PRODUCT GALLERY
 		CATALOG
 		PRODUCT SHEET
+		PRODUCT GALLERY
 		PRODUCT OPTIONS
 		BASKET
 		BASKET SUMMARY
-		BASKET DETAILS
 	PRINT STYLES
 	MEDIA QUERIES
 */
@@ -92,9 +93,32 @@
          url('PTS55F-webfont.woff') format('woff'),
          url('PTS55F-webfont.ttf') format('truetype'),
          url('PTS55F-webfont.svg#PTSansRegular') format('svg');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    font-family: 'PTSansCaptionBold';
+    src: url('PTS75F-webfont.eot');
+    src: url('PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS75F-webfont.woff') format('woff'),
+         url('PTS75F-webfont.ttf') format('truetype'),
+         url('PTS75F-webfont.svg#PTSansCaptionBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansCaptionItalic';
+    src: url('PTS56F-webfont.eot');
+    src: url('PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS56F-webfont.woff') format('woff'),
+         url('PTS56F-webfont.ttf') format('truetype'),
+         url('PTS56F-webfont.svg#PTSansCaptionItalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* NovecentoWide is a font by Jan Tonellato http://typography.synthview.com
+*  License URL: http://www.fontspring.com/fflicense/synthview */
 
 @font-face {
     font-family: 'NovecentowideBook';
@@ -103,7 +127,17 @@
          url('Novecentowide-Book-webfont.woff') format('woff'),
          url('Novecentowide-Book-webfont.ttf') format('truetype'),
          url('Novecentowide-Book-webfont.svg#NovecentowideBook') format('svg');
-    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NovecentowideMedium';
+    src: url('Novecentowide-Medium-webfont.eot');
+    src: url('Novecentowide-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Novecentowide-Medium-webfont.woff') format('woff'),
+         url('Novecentowide-Medium-webfont.ttf') format('truetype'),
+         url('Novecentowide-Medium-webfont.svg#NovecentowideMedium') format('svg');
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -114,9 +148,6 @@ body {
 	font: 100%/1.3 PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #050505;
 	background: #FFF;
-	-moz-text-rendering: optimizelegibility;
-	-webkit-text-rendering: optimizelegibility;
-	text-rendering: optimizelegibility;
 	-webkit-text-size-adjust: 100%; /* iPhone */
 }
 
@@ -124,6 +155,7 @@ h1 {
 	float: left;
 	width: 30%;
 	font: 1.5em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 	background: url(../img/k-theme0/kawweagle_small.png) -1px 10px no-repeat;
 	padding: 0.5em 0 0.3em 70px;
 }
@@ -145,32 +177,31 @@ h1 {
 	}
 
 h2 {
-	font: 3em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 3em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 0.5em;
 }
 
 h3 {
-	font: 2.5em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 2.5em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	padding: 5px 0;
 	margin-bottom: 0.5em;
 }
 	
 h4 {
-	font: 2em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 2em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 	padding: 5px 0 5px 10px;
 	margin: 1em 0 0.5em;
 }
 
 h5 {
-	font-size: 1.5em;
-	font-weight: bold;
+	font: 1.3em PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0.5em 0;
 }
 h6 {
-	font-size: 1em;
-	font-weight: bold;
+	font: 1em PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0.5em 0;
 }
 	
@@ -198,6 +229,18 @@ hr {display: none;}
 
 img {max-width: 100%; border: 0;}
 
+strong {
+	font-family: PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+em {
+	font-family: PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+
 /* ------------------------------------------------------------- BLOCK QUOTE */
 /* CB/ quote */
 
@@ -205,7 +248,7 @@ blockquote, .k-quote {
 	position: relative;
 	width: 50%;
 	max-width: 40em;
-	font-style: italic;
+	
 	color: #000;
 	background: #FFF;
 	padding: 0 0 0 2em;
@@ -221,14 +264,19 @@ blockquote, .k-quote {
 		color: #808080;
 		background: inherit;
 	}
-	blockquote p, .k-quote p {font-size: 0.85em; text-indent: 0;}
+		
+	blockquote p, .k-quote p {
+		font: 0.85em PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-indent: 0;
+	}
 		
 	blockquote p.citation, .k-quote p.citation {
 		font-size: 0.7em;
-		font-style: normal;
 		padding-top: 1em;
 	}
 		blockquote p.citation:before, .k-quote p.citation:before {content: "\2500 \00A0 ";}
+		
+	cite {font-family: PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;}
 		
 /* CE/ quote */
 
@@ -256,19 +304,25 @@ fieldset {
 	fieldset ul {margin: 0 0 20px 20px;}
 
 legend {
-	font: 1.5em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 0 8px 1em;margin: 1em 0 0 -1em
+	font: 1.5em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	padding: 0 8px 1em;
+	margin: 1em 0 0 -1em
 }
 
 label {
 	float: left;
 	width: 15em;
-	font-family: NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: bold;
+	font-family: NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 	text-align: right;
 	padding-right: 15px;
 }
-	label em {color: #F00; background: transparent;}
+	label em {
+		font-family: PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #F00;
+		background: transparent;
+	}
 	label.simple {
 		float: none;
 		display: block;
@@ -295,7 +349,7 @@ input[type=checkbox]:focus, input[type=radio]:focus {
 }
 	
 input[type=text]:disabled, input[type=text]:disabled:hover {
-	font-style: italic;
+	font-family: PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #000;
 	background: #CCC;
 	border-color: #CCC;
@@ -327,7 +381,7 @@ table {
 p + table {margin-top: 1em;}
 
 caption {
-	font: bold 1.5em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 1.5em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #FFF;
@@ -372,6 +426,7 @@ th a.ascending, th a:link.ascending, th a:visited.ascending {
 #container {
 	width: 100%;
 	max-width: 100%;
+	min-width: 320px;
 	margin: 0 auto;
 }
 
@@ -410,7 +465,6 @@ aside[role=complementary], #sidebar {
 	width: 20%;
 	padding-left: 2%;
 	margin-bottom: 2em;
-	border-left: 1px solid #808080;
 }
 	aside[role=complementary] > h2 {position: absolute; text-indent: -9999px;}
 
@@ -502,7 +556,7 @@ div.dataTables_paginate {float: right; width: auto; font-size: 0.9em; padding-to
 		cursor: default;
 	}
 	div.dataTables_paginate .paginate_active {
-		font-weight: bold;
+		font-family: PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;;
 		color: #000;
 		cursor: default;
 	}
@@ -568,7 +622,8 @@ fieldset.k-check {clear: both; padding: 0; margin: 0; border: none;}
 	fieldset.k-check legend {
 		float: left;
 		width: 15.7em; /* gets the same width from default lable width */
-		font: bold 0.95em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 0.95em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		text-align: right;
 		padding: 8px 15px 0 0;
 		margin: 0;
@@ -577,7 +632,7 @@ fieldset.k-check {clear: both; padding: 0; margin: 0; border: none;}
 		float: none;
 		display: inline;
 		font-family: PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-weight: normal;
+		text-transform: capitalize;
         text-align: left;
 		padding-right: 1.5em;
 	}
@@ -623,7 +678,8 @@ fieldset.k-radio {padding: 0; margin: 0; border: none;}
 	fieldset.k-radio legend {
 		float: left;
 		width: 15.7em; /* gets the same width from default lable width */
-		font: bold 0.95em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 0.95em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		text-align: right;
 		padding: 8px 15px 0 0;
 		margin: 0;
@@ -632,7 +688,7 @@ fieldset.k-radio {padding: 0; margin: 0; border: none;}
 		float: none;
 		display: inline;
 		font-family: PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-weight: normal;
+		text-transform: capitalize;
 		padding-right: 1.5em;
 	}
 	
@@ -652,8 +708,7 @@ fieldset.k-radio {padding: 0; margin: 0; border: none;}
 
 p.k-mandatory {
 	clear: both;
-	font-size: 0.8em;
-	font-weight: bold;
+	font: 0.8em PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;;
 	text-align: right;
 	color: #000;
 	background: transparent;
@@ -819,8 +874,7 @@ label.k-field-error {
 
 /* Contextual field error message */
 .k-contextual-error {
-	font-size: 90%;
-	font-weight: bold;
+	font: 90% PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #C00;
 	background: transparent;
 	padding-left: 5px;
@@ -842,7 +896,7 @@ div.k-error-messages {
 	text-align: center;
 	color: #C00;
 	background: #FFF url(../img/k-theme0/bg_error_message.png);
-	padding: 10px 0;
+	padding: 10px;
 	margin-bottom: 2em;
 }
 	div.k-error-messages h3 {
@@ -866,7 +920,7 @@ div.k-confirm-messages {
 	text-align: center;
 	color: #363;
 	background: #FFF url(../img/k-theme0/bg_confirm_message.png);
-	padding: 10px 0;
+	padding: 10px;
 	margin-bottom: 2em;
 }
 	div.k-confirm-messages h3 {
@@ -903,7 +957,7 @@ div.k-confirm-messages {
 
 /* Valid actions - must duplicate declarations for IE6!!*/
 input[type=button], input[type=submit] {
-	font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 100% NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 	color: #FFF;
@@ -917,7 +971,7 @@ input[type=button], input[type=submit] {
 }
 .k-button, a.k-button, a.k-button:link, a.k-button:visited {
 	display: inline-block;
-	font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 100% NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
 	text-transform: uppercase;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
@@ -951,7 +1005,7 @@ input[type=button], input[type=submit] {
 	}
 	.k-disabled {
 		display: inline-block;
-		font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 100% NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 		text-shadow: none;
 		color: #999;
@@ -984,7 +1038,7 @@ a.k-button.optional, a.k-button.optional:link, a.k-button.optional:visited {
 	
 /* Reset Actions */
 input[type=button].reset, input[type=reset] {
-	font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 100% NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 	color: #FFF;
@@ -1041,8 +1095,8 @@ td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today 
 .ui-datepicker table {margin: 0;}
 .ui-datepicker tr:nth-child(even) td {color: #000; background: #FFF;}
 .ui-datepicker th {
-	font: 0.65em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: bold;
+	font: 0.65em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 	text-align: right;
 	color: #FFF;
 	background: #808080;
@@ -1067,8 +1121,8 @@ td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today 
 
 /* Month/Year title */
 .ui-datepicker .ui-datepicker-title {
-	font: 0.75em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: bold;
+	font: 0.75em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 	text-align: center;
 	color: #FFF;
 	background: #000;
@@ -1117,43 +1171,72 @@ td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today 
 /* -------------------------------------------------------- FORM WIZARD */
 /* CB/ formWizard */
 
-ul.k-form-steps {clear: both; margin-bottom: 1em; padding: 0;}
+
+ul.k-form-steps {
+	position: relative;
+	clear: both;
+	margin-bottom: 1em;
+	padding: 0 0 0 10px;
+	border-left: 1px solid #000;
+}
+	ul.k-form-steps:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: " ";
+		width: 15px;
+		height: 1px;
+		background: #000;
+	}
+	ul.k-form-steps:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		content: " ";
+		width: 15px;
+		height: 1px;
+		background: #000;
+	}
 	
 	ul.k-form-steps li {
 		position: relative;
 		display: inline-block;
 		list-style-type: none;
-		font: 1em NovecentowideBook;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		color: #BBB;
-		background: #FFF;
-		margin-right: 2%;
-		padding-left: 2.5em;
+		background: #F3F3F3;
+		margin: 10px 0;
+		padding: 10px 10px 10px 3em;
 	}
-	ul.k-form-steps strong {display: block; font: 120% NovecentowideBook;}
+	ul.k-form-steps strong {
+		display: block;
+		font: 120% NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
 	
 	/* States */
-	ul.k-form-steps li.past {color: #000; background: #FFF;}
-    ul.k-form-steps li.active {color: #A40800; background: #FFF;}
+	ul.k-form-steps li.past {color: #000; background: #F3F3F3;}
+    ul.k-form-steps li.active {color: #A40800; background: #F3F3F3;}
 	   
 	ul.k-form-steps li:nth-child(1):before {
 		position: absolute;
 		width: 1em;
 		content: "\2776 \00A0";
-		left: 0;
+		left: 10px;
 		font: 160% sans-serif;
 	}
 	ul.k-form-steps li:nth-child(2):before {
 		position: absolute;
 		width: 1em;
 		content: "\2777 \00A0";
-		left: 0;
+		left: 10px;
 		font-size: 160%;
 	}
 	ul.k-form-steps li:nth-child(3):before {
 		position: absolute;
 		width: 1em;
 		content: "\2778 \00A0";
-		left: 0;
+		left: 10px;
 		font-size: 160%;
 	}
 
@@ -1184,7 +1267,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em 57px;}
 		float: left;
 		width: auto;
 		list-style-type: none;
-		font: 1em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 		margin: 0 1px;
@@ -1205,6 +1288,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em 57px;}
 		/* Active section / no link */
 		ul.k-navbar li.active strong {
 			display: block;
+			font-family: NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: normal;
 			text-transform: uppercase;
 			color: #FFF;
@@ -1301,8 +1385,6 @@ ul.k-navbar .dropdown li {
 	/* "View all" link */
     p.view-all {
         clear: both;
-        font-size: 0.85em;
-        font-weight: bold;
         text-transform: uppercase;
         text-align: center;
         background: #000;
@@ -1372,7 +1454,7 @@ ul.k-menu {
 	ul.k-menu li {
 		float: left;
 		width: 100%;
-		font-family: NovecentowideBook;
+		font-family: NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 		padding: 0 0 0.5em;
 		list-style-type: none;
@@ -1441,12 +1523,14 @@ ul.k-menu {
 			
 		/* Active section */
 		ul.k-menu ul.level2 li.active a, ul.k-menu ul.level2 li.active a:link, ul.k-menu ul.level2 li.active a:visited {
-			font-weight: bold;
+			font-family: NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
 			color: #000;
 			background: #FFF;
 		}
 		ul.k-menu li.active strong {
-			font-weight: bold;
+			font-family: NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
 			color: #000;
 			background: #FFF;
 		}
@@ -1470,12 +1554,13 @@ ul.k-menu {
 
 /* CE/ skip */
 
+
 /* ----------------------------------------------------- BREADCRUMBS */
 /* CB/ breadcrumbs */
 
 p.k-breadcrumbs {
 	clear: both;
-    font: 0.7em NovecentowideBook;
+    font: 0.7em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 2em 4% 0;
 }
 
@@ -1568,7 +1653,6 @@ div.k-tree-grid {
 /* --------------------------------------------------------------------------- */
 
 
-
 /* ----------------------------------------------------- NO DISPLAY */
 /* CB/ noDisplay */
 
@@ -1616,7 +1700,7 @@ ul.k-sitemap {float: left; width: 100%; margin-bottom: 2em;}
 	
 		ul.k-sitemap li strong {
 			display: block;
-			font: normal 0.8em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font: 0.8em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 			color: #FFF;
 			background: #000;
 			padding: 0.5em 0.5em;
@@ -1655,7 +1739,7 @@ ul.k-tools-list {
 		
 	ul.k-tools-list li {
 		display: inline;
-		font: 0.65em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 0.65em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 		color: #999;
 		background: transparent;
@@ -1787,7 +1871,10 @@ p.to-register {
 
 	
 	/* Collapsible form */
-	#loginLink {font: 0.8em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+	#loginLink {
+		font: 0.8em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+	}
 		#loginLink a, #loginLink a:link, #loginLink a:visited {
 			position: absolute;
 			top: 6em;
@@ -1831,7 +1918,7 @@ p.k-login-data {
 	font-size: 0.8em;
 	text-align: right;
 	color: #000;
-	background: #FFF;
+	background: transparent;
 	padding: 0.8em 0.5em 0 0;
 	border-right: 1px solid #000;
 }
@@ -1848,24 +1935,23 @@ div.k-actions-block {
 	float: left;
 	width: 100%;
 	color: #000;
-	background: #FFF;
+	background: #CCC;
 	margin: 0 0 1em;
-	border-top: 2px solid #000;
-	border-bottom: 1px solid #000;
+	border-top: 4px solid #000;
 }
 
 	/* Optional text */
 	.action-context {
 		float: left;
 		width: 25%;
-		font-size: 0.8em;
+		font-size: 0.9em;
 		color: #000;
-		background: #FFF;
+		background: #CCC;
 		padding: 0.7em 1em 0;
 		margin: 0;
 		border: none;
 	}
-		.action-context + ul.k-actions {float: right; width: 70%; margin-top: 0;}
+		.action-context + ul.k-actions {float: right; width: 70%; margin: 0;}
 	
 	
 /* CE/ actionButtonsBar */
@@ -1879,7 +1965,7 @@ ul.k-actions {text-align: right; padding: 0; margin-bottom: 2em;}
 	ul.k-actions li {
 		display: inline;
 		list-style-type: none;
-		font: 0.9em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 0.9em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 	}
 	
@@ -1908,7 +1994,6 @@ ul.k-actions {text-align: right; padding: 0; margin-bottom: 2em;}
 		display: inline-block;
 		height: 2em;
 		line-height: 2em;
-		font-weight: bold;
 		text-decoration: none;
 		color: #000;
 		background: #FFF url(../img/k-theme0/sprites-trans.png) no-repeat 4px 30px;
@@ -1990,10 +2075,10 @@ div.k-pagination {
 	border-top: 4px solid #000;
 	border-bottom: 1px dashed #666;
 }
-
 	
 	div.k-pagination p {
-		font: 0.75em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 0.75em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		margin: 0;
 	}
 	p.lines-to-display {float: left; width: 45%; padding-top: 0.6em;}
@@ -2006,7 +2091,7 @@ div.k-pagination {
 		display: inline-block;
 		width: 2em;
 		height: 2em;
-		font-weight: bold;
+		font-family: PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;;
 		text-align: center;
 		text-decoration: none;
 		color: #000;
@@ -2078,7 +2163,10 @@ div.k-orientation-aid {
 	margin-top: 1em;
 }
 
-	div.k-orientation-aid p {font: 0.8em NovecentowideBook; text-transform: uppercase;}
+	div.k-orientation-aid p {
+		font: 0.8em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+	}
 	
 	p.go-back {float: left; width: 45%;}
 	p.go-top {float: right; width: 45%; text-align: right;}
@@ -2109,7 +2197,7 @@ p + div.k-tabbed-data {margin-top: 1em;}
 		float: left;
 		width: auto;
 		list-style-type: none;
-		font-family: NovecentowideBook;
+		font-family: NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 		padding: 0;
 		margin-right: 5px;
@@ -2306,7 +2394,8 @@ p + .k-accordion {margin-top: 1em;}
 	}
 	.k-accordion .control {
 		clear: both;
-		font: 1em NovecentowideBook;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		color: #FFF;
 		background: #000 url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
 		padding: 0.2em 25px 0.2em 0.8em;
@@ -2355,8 +2444,8 @@ p + .k-accordion {margin-top: 1em;}
 }
 	
 	.k-article h2 + ul.entry-info {margin-top: -1.5em;}
-	.k-article h3 {margin: 2em 0 1em;}
-	.k-article h4 {padding: 0; margin: 1.5em 0 0.7em;}
+	.k-article h3 {margin: 1.2em 0 0.6em;}
+	.k-article h4 {padding: 0; margin: 1.2em 0 0.6em;}
 	.k-article ul, .k-article ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
 	
 	.k-article p {line-height: 1.7;}
@@ -2370,7 +2459,10 @@ p + .k-accordion {margin-top: 1em;}
 		ul.entry-info li {display: inline; list-style-type: none; line-height: 1.7;}
 		
 		ul.entry-info + div.content {margin: 2.5em 0 0;}
-		ul.entry-info address {display: inline;}
+		ul.entry-info address {
+			display: inline;
+			font-family: PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
 		
 
 .published:after {
@@ -2454,13 +2546,13 @@ div.k-intro {
 	div.k-intro p {font-size: 1.2em; text-indent: 0;}
 	div.k-intro p:first-child:first-letter {
 		line-height: 0.5;
-		font: 200% NovecentowideBook;
+		font: 200% NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #000;
 		background: #FFF;
 	}
 	
 	/* Exceptions */
-	div.k-article div.k-intro {width: 33em;}
+	div.k-article div.k-intro {max-width: 33em;}
 	ul.k-form-steps + div.k-intro {margin: 2em 0;}
 		
 /* CE/ introduction */
@@ -2480,8 +2572,7 @@ div.k-highlight-block {
 	border-bottom: 1px dashed #999;
 }
 	div.k-highlight-block p {
-		font-size: 0.8em;
-		font-style: italic;
+		font: 0.8em PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-indent: 0;
 	}
 
@@ -2514,8 +2605,7 @@ div.k-highlight-block {
 
 	figcaption, .caption {
 		display: block;
-		font-size: 0.8em;
-		font-style: italic;
+		font: 0.8em PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		margin: 5px auto 0;
 	}
 	
@@ -2550,10 +2640,6 @@ div.k-notes {
 	margin-bottom: 1em;
 	border-bottom: 2px solid #808080;
 }
-	.k-info-block header {
-		color: #FFF;
-		background: #000;
-	}
 	.k-info-block h2, .k-info-block h3 {
 		font-size: 1em;
 		line-height: 1;
@@ -2676,13 +2762,14 @@ p.all-prices {}
 	text-decoration: line-through;
 }
 .price {
-	font: 1.5em NovecentowideBook;
+	font: 1.5em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	white-space: nowrap;
 }
 
 
 /* Sale product */
 
-p.sale {font: 2em NovecentowideBook;}
+p.sale {font: 2em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .sale {color: #C60;}
 p.extra.sale {
 	position: absolute;
@@ -2697,7 +2784,7 @@ p.extra.sale {
 }
 
 /* New product */
-p.new {font: 2em NovecentowideBook;}
+p.new {font: 2em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .new {color: #690;}
 p.extra.new {
 	position: absolute;
@@ -2726,7 +2813,7 @@ p.buy {
 }
 	p.buy a, p.buy a:link, p.buy a:visited {
 		display: inline-block;
-		font: 130% NovecentowideBook;
+		font: 130% NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-decoration: none;
 		text-transform: uppercase;
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
@@ -2764,7 +2851,7 @@ li.hproduct {
 	}
 	
 	li.hproduct dt {margin-bottom: 0.5em;}
-	li.hproduct dd.price {font-weight: bold;}
+	li.hproduct dd.price {}
 
 
 /* CE/ hproduct */
@@ -2855,7 +2942,8 @@ dl.hreview {
 	
 		
 p.average {
-	font: 1em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
 	margin: 0.5em 0;
 }
 
@@ -2957,7 +3045,8 @@ div.rating-cancel, div.star-rating {
 	.k-catalog p.lines-to-display label {margin: 0;}
 	
 	ul.catalog-view {
-		font: 0.95em NovecentowideBook;
+		font: 0.95em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		text-align: center;
 		color: #06A;
 		background: #FFF;
@@ -3045,8 +3134,8 @@ div.rating-cancel, div.star-rating {
 	}
 	
 	.k-product-sheet div.product-data {
-		float: left;
-		width: 64%;
+		float: right;
+		width: 60%;
 		padding: 1em 2% 0 5%;
 		margin-bottom: 2em;
 	}
@@ -3060,7 +3149,8 @@ div.rating-cancel, div.star-rating {
 	}
 
 	.k-product-sheet .category {
-		font: 1em NovecentowideBook;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
 		padding: 5px 0;
 		margin: 0 0 3em;
 	}
@@ -3086,7 +3176,13 @@ div.rating-cancel, div.star-rating {
 	.k-product-sheet  div.product-data .old-price {font-size: 150%;}
 	.k-product-sheet  div.product-data p.buy {font-size: 95%; margin-top: 1em;}
 	
-	.k-product-sheet .k-actions-block {margin: 0; border: none; border-bottom: 1px solid #808080;}
+	.k-product-sheet .k-actions-block {
+		background: #FFF;
+		margin: 0;
+		border: none;
+		border-bottom: 1px solid #808080;
+	}
+	.k-product-sheet .action-context {background: #FFF;}
 	
 	/* Buy zone */
 	.k-product-sheet div.buyZone {
@@ -3333,7 +3429,13 @@ dl.new-item {background: #EFEFEF;}
 		dl.basket-item img {max-width: 100%; border: 1px solid #000;}
 		
 	dl.basket-item dd {overflow: visible; height: auto; font-size: 0.75em; margin: 0;}
-	dl.basket-item dd.price {font-weight: bold; text-align: right; padding: 1em 1em 0 0;}
+		
+	dl.basket-item dd.price {
+		font-family: NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-align: right;
+		padding: 1em 1em 0 0;
+	}
+
 	
 /* Total */
 p.basket-total {
@@ -3366,8 +3468,8 @@ p.k-basket-sum {
 	position: absolute;
 	top: 1.5em;
 	right: 4%;
-	width: 13em;
-	font: 0.8em NovecentowideBook;
+	width: 16.5em;
+	font: 0.8em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: right;
 	color: #FFF;
 	background: #000 url(../img/k-theme0/bg_basket-sum.png) 5px 2px no-repeat;
@@ -3402,7 +3504,7 @@ p.k-basket-sum {
 	
 	a, a:link, a:visited {text-decoration: none;}
 	p.k-readmore a:after {
-		font-style: italic;
+		font-family: PTSansCaptionItalic, "Helvetica Neue", Helvetica, Arial, sans-serif;
 		content: " (http://kawwa.worldline.com/"attr(href) ")";
 	}
 	/* E-commerce */
@@ -3451,7 +3553,7 @@ p.k-basket-sum {
 
 @media only screen and (max-width: 1400px) {
 	/* Products*/
-	.k-product-sheet div.product-data {width: 54%; padding: 1em 2% 0 10%;}
+	.k-product-sheet div.product-data {padding: 1em 2% 0 10%;}
 	.k-product-sheet .price-data {width: 100%;}
 }
 
@@ -3511,15 +3613,27 @@ p.k-basket-sum {
 
 }
 
+@media only screen and (max-width : 870px) {
+	ul.k-form-steps li {width: 85%; padding: 10px 3% 10px 3em;}
+}
+
 @media only screen and (max-width : 800px) {
 	
 	h1 {width: 70%;}
 	
 	header[role=banner] {width: 100%; padding: 0;}
-	div.k-tools {float: left; width: 100%; background: #303030;}
-	ul.k-tools-list {padding: 6px 25px 6px 0;}
+	h1:before {content: "";}
+	
+	div.k-tools {
+		float: left;
+		width: 100%;
+		background: #303030 url(../img/k-theme0/bowtie_small_full.png) no-repeat;
+		border-top: 1px solid #FFF;
+	}
+
+	ul.k-tools-list {padding: 3px 25px 0 0;}
 	form.k-language fieldset.k-radio {background: transparent;}
-	form.k-language fieldset.k-radio label {padding: 10px 15px;}
+	form.k-language fieldset.k-radio label {padding: 8px 15px;}
 	form.k-language select {position: absolute; top: 0; right: 4%; width: 10em;}
 	
 	p.k-login-data {
@@ -3541,7 +3655,7 @@ p.k-basket-sum {
 		text-align: left;
 		padding: 0;
 	}
-  label.k-online {padding: 0;}
+  	label.k-online {padding: 0;}
 	p.k-check {padding: 1em 0 0 0;}
 	
 	.k-buttons-bar {text-align: center;}
@@ -3553,13 +3667,11 @@ p.k-basket-sum {
 	.dropdown ul {position: static; width: 100%;}	
 	ul.k-navbar .dropdown li {padding-left: 25px;}
 	
-	.k-catalog.list-view div.photo-data {width: 30%;}
-	.k-catalog.list-view div.product-data {width: 40%;}
-	.k-catalog.list-view div.buyZone p {font-size: 0.6em;}
+	.k-catalog .k-product {width: 41%;}
 	
 	p.k-basket-sum {
 		overflow: hidden;
-		width: 4em;
+		width: 2em;
 		height: 27px;
 		line-height: 2;
 		padding: 0 0 0 35px;
@@ -3580,7 +3692,7 @@ p.k-basket-sum {
 	
 	.to-left, .to-right {float: none; width: 100%;}
 
-  li.hproduct:first-child, li.hproduct {
+  	li.hproduct:first-child, li.hproduct {
 		width: 96%;
 		padding: 15px 2%;
 		border: none;
@@ -3588,16 +3700,23 @@ p.k-basket-sum {
 	}
   	li.hproduct dt {float: left; width: 30%;}
   	li.hproduct dd {float: left; width: 65%; padding-left: 5%;}
+  	
+  	.k-catalog .k-product {width: 96%; margin-right: 0;}
 
-	.action-context, .action-context + ul.k-actions {float: none; clear: both; width: 100%;}
-
+	.action-context + ul.k-actions {float: none; clear: both; width: 100%;}
+	.action-context {width: 10em;}
+	.k-product-sheet .action-context {position: relative; top: 2em;}
 	
 } /* max 675 */
 
 @media only screen and (max-width : 590px) {	
-	h1 {background: #000; padding-left: 4%;}
-	h1:before {content: none;}
+	h1 {background: #050505; padding-left: 4%;}
+	
+	div.k-tools {background-image: none;}
+	
 	h2 {font-size: 2em; line-height: 1;}
+	h3 {font-size: 1.5em;}
+	h4 {font-size: 1.2em;}
 	
 	ul.k-navbar {margin: 4px 4% 2em 4%;}
 	
@@ -3610,32 +3729,26 @@ p.k-basket-sum {
 	.k-entry ul.entry-info li:last-child {display: inline;}
 	.k-entry .content {float: none; width: 100%;}
 	
-	.k-catalog .k-product {width: 40%;}
-	
 	.k-pagination {padding-top: 0;}
 	p.lines-to-display {float: none; width: 100%; padding-bottom: 1em;}
 	p.lines-to-display label {text-align: center; background: #EEE;}
 	p.page-numbers {float: none; width: 100%; text-align: center;}
 
 	dl.hreview dt {float: none; width: 100%; margin-bottom: 0.5em;}
-  dl.hreview dd {float: none; width: 100%;}
-
+  	dl.hreview dd {float: none; width: 100%;}
 } 
 
 @media only screen and (max-width : 440px) {
-	.k-catalog .k-product {width: 95%; margin-right: 0;}
 
-  .k-article p {line-height: 1.5;}
+  	.k-article p {line-height: 1.5;}
 	.k-article h3 {margin: 1em 0 0.5em;}
 	div.k-intro {margin-left: 0;}
-  div.k-highlight-block {margin: 1.5em 0;}
+  	div.k-highlight-block {margin: 1.5em 0;}
 	blockquote {margin: 1.5em 0;}
 
-	.k-illustration-block.to-left {padding: 15px 30px 15px 0;}
-	.k-illustration-block.to-right {padding: 15px 0 15px 30px;}
+	.k-illustration-block.to-left, .k-illustration-block.to-right {float: none; width: 90%; padding: 20px 0;}
 
 } 
-
 
 
 

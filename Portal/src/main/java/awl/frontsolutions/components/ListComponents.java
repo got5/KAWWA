@@ -55,7 +55,7 @@ public class ListComponents {
 
 		linkToResources = new HashMap<String, String>();
 
-		writer.element("section", "id", "components-list");
+		writer.element("section", "id", "components-list", "class", "transitions-enabled");
 		writer.element("h2");
 		writer.write("List of Components");
 		writer.end();

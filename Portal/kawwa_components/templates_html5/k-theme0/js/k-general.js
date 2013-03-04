@@ -1,5 +1,4 @@
-// KAWWA2
-// Le Studio/Web Platform, Atos Worldline, 2011 - 2013
+// KAWWA, 2011 - 2013
 // General functions definitions - used all over the site
 // v. 1.5
 

@@ -2,7 +2,7 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
 	xmlns:p="tapestry:parameter">
 <head>
-<title>[ Atos Worldline - KAWWA PORTAL ] ${title}</title>
+<title>[ KAWWA PORTAL ] ${title}</title>
 <link rel="icon" type="image/png" href="${faviconUrl}" />
 </head>
 
@@ -16,16 +16,19 @@
 				<h1>
 					KAWWA <small>Markup Pattern Library</small>
 				</h1>
-				<t:if t:test="loggedUserExists">
-					<p class="k-login-data">
-						[<strong><a t:type="eventlink" t:event="logout">Logout</a></strong>]
-					</p>
-					<p:else>
+				<div class="k-tools">
+					<t:if t:test="isIndex()" t:negate="true"><t:searchbox /></t:if>
+					<t:if t:test="loggedUserExists">
 						<p class="k-login-data">
-							[<strong><a t:type="pagelink" t:page="login">Login</a></strong>]
+							[<strong><a t:type="eventlink" t:event="logout">Logout</a></strong>]
 						</p>
-					</p:else>
-				</t:if>
+						<p:else>
+							<p class="k-login-data">
+								[<strong><a t:type="pagelink" t:page="login">Login</a></strong>]
+							</p>
+						</p:else>
+					</t:if>
+				</div>
 			</header>
 			<t:topmenu t:id="topmenu" t:activeMenu="prop:activeMenu" />
 			<p:else>
@@ -35,22 +38,19 @@
 					</h1>
 					<div class="k-tools">
 
-						<t:searchbox />
-
-						<ul class="k-tools-list">
-
-							<li><a t:type="pageLink" t:page="Faq">FAQ</a></li>
-							<li><a t:type="pageLink" t:page="Contact">Contact us</a></li>
-
-							<t:if t:test="loggedUserExists">
-								<li><a t:type="eventlink" t:event="logout">Logout</a></li>
+						<t:if t:test="isIndex()" t:negate="true"><t:searchbox /></t:if>
+						
+						<p class="k-login-data">
+													<t:if t:test="loggedUserExists">
+								<a t:type="eventlink" t:event="logout">Logout</a>
 								<p:else>
-									<li><a t:type="pagelink" t:page="Login">Login</a></li>
+									<a t:type="pagelink" t:page="Login">Login</a>
 								</p:else>
 							</t:if>
 
-						</ul>
+						</p>
 					</div>
+					
 					<t:topmenu t:id="topmenu2" t:activeMenu="prop:activeMenu" />
 				</div>
 

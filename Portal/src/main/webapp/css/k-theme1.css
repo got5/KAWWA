@@ -1,4 +1,4 @@
-﻿/*-------------------------------------------------------------------- 
+/*-------------------------------------------------------------------- 
           	  	 KAWWA - Theme 1
 	          	Default Atos Theme
           By Le Studio, Atos Worldline, 2011
@@ -111,7 +111,7 @@ h1 {
 	height: 2.5em;
 	font: 1.3em StagBook, Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
 	background: url(../img/k-theme1/logo_aw.png) no-repeat;
-	padding-left: 120px;
+	padding: 0 0 15px 120px;
 	margin-left: 2%;
 }
 	h1 small {display: block; font-size: 70%;}
@@ -1070,7 +1070,7 @@ p.control {
 	display: none;
 	position: absolute;
 	top: 20px;
-	right: 3%;
+	right: 2%;
 	width: 45px;
 }
 	p.control a {display: block}
@@ -1561,7 +1561,6 @@ div.k-tools {
 	height: 1.6em;
 	color: #000;
 	background: #66A3C7;
-	margin-top: 13px;
 	border-bottom: 2px solid #FFF;
 }
 
@@ -2350,7 +2349,6 @@ div.k-intro {
 	}
 	
 	/* Exceptions */
-	div.k-article div.k-intro {width: 33em;}
 	ul.k-form-steps + div.k-intro {margin: 2em 0;}
 		
 /* CE/ introduction */
@@ -3348,7 +3346,6 @@ p.k-basket-sum {
 
 /* General  --------------------------------------------- */
 @media only screen and (max-width : 1000px) {
-	#container {min-width: 98%;}
 	#main {width: 83%;}
 	#sidebar, aside[role=complementary] {width: 96%; background: #D7E4EE; padding: 2%; margin-top: 2em;}
 	#wrapper #main:first-child {width: 98%;}
@@ -3356,7 +3353,7 @@ p.k-basket-sum {
 	#loginLink {position: relative; top: -18px;}
 
 	/* Components */
-	div.k-article p {max-width: 100%;}
+	.k-article p {max-width: 100%;}
 	.jcarousel-item {height: 14em;}
 	div.dataTables_info {width: 10em; text-align: center;}
 	table.k-data-table {margin-top: 0.7em;}
@@ -3380,7 +3377,8 @@ p.k-basket-sum {
 	h2 {width: 60%;}
 	select {font-size: 100%;}
 
-	#container {width: 100%; min-width: 0; max-width: 100%;}
+	#container {width: 100%; max-width: 100%;}
+	p.k-breadcrumbs {width: 98%; padding-left : 2%;}
 
 	#menu, #secondary {width: 100%; padding-bottom: 20px;}
 	#menu p.aid, #secondary p.aid {display: block; width: 100%; text-align: center;}
@@ -3397,31 +3395,34 @@ p.k-basket-sum {
 
 	.sm-screen p.control {display: block;}
 	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
-	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
-	.sm-screen .k-navbar a {display: block; padding: 10px 15px;}
+	.sm-screen .k-navbar li {
+		float: none;
+		clear: both;
+		padding: 2px 0;
+		border: none;
+		border-bottom: 1px solid #FFF;
+	}
+	.sm-screen .k-navbar a, .sm-screen .k-navbar li.active a, 
+		.sm-screen .k-navbar li.active strong {display: block; padding: 10px;}
 	.dropdown ul {position: static; width: 100%;}
 
-	ul.k-menu, p.k-breadcrumbs {display: none;}
+	ul.k-menu {display: none;}
 
 	/* Components */
 
-	.k-login-data {display: none;}
 	div.k-tools {position: static;}
 	ul.k-tools-list {float: left; max-width: 60%; padding: 0 0 0 2%;}
 	form.k-language {position: static; float: right;}
 		form.k-language select {margin: 0.3em 0 0.1em;}
 		form.k-language label {height: 1.5em; padding: 0.5em;}
-	.k-search {display: none;}
 
 	.k-info-block {background: #FFF;}
 
-	.k-article p {max-width: 100%;}
 	.k-intro {width: 90%;}
 	.k-article.k-entry ul.entry-info {width: 20%;}
 	.k-entry h2 {width: 100%;}
 	.k-entry div.content {width: 73%;}
-  div.k-highlight-block, blockquote {width: 70%;}
-
+  	div.k-highlight-block, blockquote {width: 70%;}
 
 	div.k-pagination p {font-size: 11pt;}
 	div.k-pagination p.lines-to-display {display: block; width: 100%;}
@@ -3451,7 +3452,7 @@ p.k-basket-sum {
 
 	.k-catalog ul.catalog-view {display: none;}
 	.k-catalog .k-product {width: 92%;}
-  .k-catalog .product-data {float: left; width: 55%; height: auto; margin-bottom: 1em;}
+  	.k-catalog .product-data {float: left; width: 55%; height: auto; margin-bottom: 1em;}
 	.k-catalog .photo-data {float: left; width: 30%; padding-right: 5%; margin-bottom: 1em;}
 	.k-catalog div.price-data {}
 
@@ -3470,7 +3471,7 @@ p.k-basket-sum {
 		div.dataTables_length label {float: none; width: auto; padding: 0;}
 	div.dataTables_info {position: static; width: 100%; text-align: center; padding-bottom: 10px;}
 	div.dataTables_filter {float: left; width: 100%; text-align: center;}
-		div.dataTables_filter label {float: none; width: auto; text-align: left; padding: none;}
+		div.dataTables_filter label {float: none; width: auto; text-align: left; padding: 0;}
 
 	div.k-tree-grid div.tree-content {
 		overflow: visible;
