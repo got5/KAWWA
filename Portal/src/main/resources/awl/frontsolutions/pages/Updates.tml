@@ -16,6 +16,11 @@
 							Notice that the "Main Navigation" component is still available but it is now deprecated.</li>
 						<li><strong>Hiding content</strong>: This new component, <code>k-no-display</code>, will hide content from display only (so it will still be available for screen readers), 
 							but it does not include links that need to be revealed by keyboard (like in <code>k-skip</code>).	</li>
+						<li><strong>Form fields snippets</strong>: We've added three new components with simple HTML5 snippets to help you assemble your forms. The 
+							<code>emailField</code> and <code>phoneField</code> components have regular expression patterns (defined by the <code>"pattern"</code> attribute)
+							 to validate input entries for emails and telephone numbers. Besides, the <code>datalist</code> component introduces the <code>"datalist"</code> 
+							 HTML5 element, that allows you to add a handy autocomplete function to any input element. 
+						</li>
 					</ul>
 					<h5>Improvements and Fixes</h5>
 					<ul>
