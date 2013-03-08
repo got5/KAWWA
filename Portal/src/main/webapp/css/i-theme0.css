@@ -4,6 +4,26 @@
           By Le Studio, Atos Worldline, 2013
 -------------------------------------------------------------------- */
 
+/* --- SPECIFIC --- */
+
+
+h1 {
+	background: url(../img/k-theme0/kawweagle.png) -1px 10px no-repeat;
+	background-size: 60px 58px;
+	padding: 0.5em 0 0.3em 70px;
+}
+	h1:before {
+		position: absolute;
+		width: 63px;
+		top: 2.5em;
+		left: 0;
+		content: url(../img/k-theme0/bowtie_small.png);
+		padding-left: 15px;
+		z-index: 10;
+	}
+
+
+
 /* --- NAVIGATION --- */
 
 ul.i-navbar {padding: 0; margin: 4px 4% 2em 57px;}
@@ -1315,6 +1335,17 @@ dl.i-doc-list {margin-bottom: 2em;}
 }
 
 @media only screen and (max-width : 820px) {
+	
+	header[role=banner] {width: 100%; padding: 0;}
+	h1:before {content: "";}
+	
+	div.k-tools {
+		float: left;
+		width: 100%;
+		background: #303030 url(../img/k-theme0/bowtie_small_full.png) no-repeat;
+		border-top: 1px solid #FFF;
+	}
+	
 	/*Home*/	
 	#highlight li {display: block; padding: 0.5em 0 0 70px;}
 	#highlight li:after {content: "";}
@@ -1382,6 +1413,7 @@ dl.i-doc-list {margin-bottom: 2em;}
 }
 
 @media only screen and (max-width : 590px) {
+	h1 {background-image: none; padding-left: 4%;}
 	div.k-tools {background-image: none;}
 	form.k-search {margin-left: 4%;}
 	#search-tag {width: 60%;}

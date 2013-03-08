@@ -154,10 +154,10 @@ body {
 h1 {
 	float: left;
 	width: 30%;
+	min-height: 1.5em;
 	font: 1.5em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
-	background: url(../img/k-theme0/kawweagle_small.png) -1px 10px no-repeat;
-	padding: 0.5em 0 0.3em 70px;
+	padding: 0.5em 0 0.3em 4%;
 }
 	h1 small {
 		display: block;
@@ -165,15 +165,6 @@ h1 {
 		color: #888;
 		background: #000;
 		padding-left: 0.1em;
-	}
-	h1:before {
-		position: absolute;
-		width: 63px;
-		top: 2.5em;
-		left: 0;
-		content: url(../img/k-theme0/bowtie_small.png);
-		padding-left: 15px;
-		z-index: 10;
 	}
 
 h2 {
@@ -1255,13 +1246,13 @@ ul.k-form-steps {
 p.control {
 	display: none;
 	position: absolute;
-	top: 10px;
+	top: 5px;
 	right: 3%;
 	width: 45px;
 } 
 	p.control a {display: block}
 
-ul.k-navbar {padding: 0; margin: 4px 4% 2em 57px;}
+ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 
 	ul.k-navbar li {
 		float: left;
@@ -1918,7 +1909,6 @@ p.k-login-data {
 	font-size: 0.8em;
 	text-align: right;
 	color: #000;
-	background: transparent;
 	padding: 0.8em 0.5em 0 0;
 	border-right: 1px solid #000;
 }
@@ -3493,8 +3483,6 @@ p.k-basket-sum {
 
 @media print {
 	#wrapper, #main {float: none;}
-	h1 {float: none; background-image: none; padding: 0 0 3em;}
-	h1:before {content: "";}
 	.k-tools, .k-login-data, .k-search, nav, .k-breadcrumbs {display: none;}
 	aside[role=complementary] {display: none;}
 	.k-pagination {display: none;}
@@ -3622,12 +3610,11 @@ p.k-basket-sum {
 	h1 {width: 70%;}
 	
 	header[role=banner] {width: 100%; padding: 0;}
-	h1:before {content: "";}
 	
 	div.k-tools {
 		float: left;
 		width: 100%;
-		background: #303030 url(../img/k-theme0/bowtie_small_full.png) no-repeat;
+		background: #303030;
 		border-top: 1px solid #FFF;
 	}
 
@@ -3655,7 +3642,7 @@ p.k-basket-sum {
 		text-align: left;
 		padding: 0;
 	}
-  	label.k-online {padding: 0;}
+  label.k-online {padding: 0;}
 	p.k-check {padding: 1em 0 0 0;}
 	
 	.k-buttons-bar {text-align: center;}
@@ -3707,10 +3694,11 @@ p.k-basket-sum {
 	.action-context {width: 10em;}
 	.k-product-sheet .action-context {position: relative; top: 2em;}
 	
+	form.k-login.collapsible {width: 93%;}
+	
 } /* max 675 */
 
-@media only screen and (max-width : 590px) {	
-	h1 {background: #050505; padding-left: 4%;}
+@media only screen and (max-width : 590px) {
 	
 	div.k-tools {background-image: none;}
 	

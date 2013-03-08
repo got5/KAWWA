@@ -27,6 +27,7 @@ div.k-catalog .k-product {_display: inline;}
 div.i-topics div.k-info-block {_display: inline;}
 
 /* --- PORTAL HOME PAGE ---*/
+
 #home h1 {width: 50%;}
 #home #header {*height: 10em; _height: 8em;}
 #home #wrapper {float: left; overflow: visible;}
@@ -50,7 +51,7 @@ dl.legend dt {*padding-right: 5px;}
 
 body {_line-height: 1.5;}
 
-h1 {_display: inline;}
+h1 {_display: inline; background: url(../img/k-theme0/kawweagle_small.png) -1px 10px no-repeat;}
 legend {margin-bottom: 21px;}
 
 /* --- NAVIGATON --- */
@@ -60,6 +61,8 @@ ul.k-navbar .dropdown li {float: left; width: 100%;}
 p.view-all a {_float: left; _width: 100%;}
 
 p.k-breadcrumbs {padding: 0.5em 4%;}
+
+ul.i-menu li li {line-height: 1.2;}
 
 /* --- FORMS --- */
 
@@ -125,8 +128,6 @@ input.btOptional {
 }
 
 form.k-language {*width: 6em; *text-align: right;}
-
-p.k-login-data {_position: relative; _width: 40em; _top: -2.5em;}
 
 ul.k-tools-list li {*padding-top: 1.5em; *border-left: 1px solid #FFF;}
 
