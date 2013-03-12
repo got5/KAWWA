@@ -1429,6 +1429,20 @@ ul.subnavbar {
 		background: #000;
 		border: 1px solid #000;
 	}
+	
+/* Media queries for responsive navigation -
+Uncomment and place declarations at the end of the CSS file -
+Modify max-width value to match your needs
+
+@media only screen and (max-width : 800px) {
+	.sm-screen p.control {display: block;}
+	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
+	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
+	.sm-screen .k-navbar a {display: block;}
+	.dropdown ul {position: static; width: 100%;}	
+	ul.k-navbar .dropdown li {padding-left: 25px;}
+}
+*/
 		
 /* CE/ mainNav */
 
@@ -3632,7 +3646,7 @@ p.k-basket-sum {
 		background: #FFF;
 		padding-right: 15px;
 	}
-  #loginLink {position: relative; top: 2em;}
+	#loginLink {position: relative; top: 2em;}
 	form.k-login.collapsible {top: 7.8em;}
 
 	label, fieldset.k-radio legend, fieldset.k-check legend {
@@ -3642,17 +3656,10 @@ p.k-basket-sum {
 		text-align: left;
 		padding: 0;
 	}
-  label.k-online {padding: 0;}
+	label.k-online {padding: 0;}
 	p.k-check {padding: 1em 0 0 0;}
 	
 	.k-buttons-bar {text-align: center;}
-	
-	.sm-screen p.control {display: block;}
-	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
-	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
-	.sm-screen .k-navbar a {display: block;}
-	.dropdown ul {position: static; width: 100%;}	
-	ul.k-navbar .dropdown li {padding-left: 25px;}
 	
 	.k-catalog .k-product {width: 41%;}
 	
