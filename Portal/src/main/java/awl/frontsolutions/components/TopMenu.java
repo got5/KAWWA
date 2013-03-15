@@ -43,7 +43,8 @@ public class TopMenu {
 	}	
 	
 	public Boolean newTheme(){
-		return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+	//	return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+		return true;
 	}
 	
 	@Inject 

@@ -1,4 +1,4 @@
-﻿/*--------------------------------------------------------------------
+/*--------------------------------------------------------------------
           	  	 KAWWA - Default Theme
 	          	 Default OS Theme
           By Le Studio, Atos Worldline, 2012
@@ -1240,7 +1240,7 @@ ul.k-form-steps {
 /* --------------------------------------------------------------------------- */
 
 /* ------------------------------------------------------ MAIN NAV/FIRST LEVEL */
-/* CB/ mainNav */
+/* CB/ ResponsiveMainNav */
 
 /* Navigation control */
 p.control {
@@ -1252,6 +1252,127 @@ p.control {
 } 
 	p.control a {display: block}
 
+ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
+
+	ul.k-navbar li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+		margin: 0 1px;
+	}
+	
+		ul.k-navbar a, ul.k-navbar a:visited {
+			display: block;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			padding: 0.5em;
+		}
+		ul.k-navbar a:hover, ul.k-navbar a:focus {
+			color: #FFF;
+			background: #808080;
+		}
+		
+		/* Active section / no link */
+		ul.k-navbar li.active strong {
+			display: block;
+			font-family: NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: normal;
+			text-transform: uppercase;
+			color: #FFF;
+			background-color: #808080;
+			padding: 0.5em;
+		}
+		
+		/* Active section / with link */
+		ul.k-navbar li.active a, ul.k-navbar li.active a:link, ul.k-navbar li.active a:visited {
+			color: #FFF;
+			background-color: #808080;
+		}
+
+		
+		/* If section has dropdown */
+		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
+			color: #FFF;
+			background: #000 url(../img/k-theme0/bg_hasdropdown.png) right bottom no-repeat;
+			padding-right: 20px;
+		}
+		ul.k-navbar a.hasdropdown:hover, ul.k-navbar a.hasdropdown:focus {
+			color: #FFF;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		}
+		ul.k-navbar li.active a.hasdropdown, ul.k-navbar li.active a.hasdropdown:visited {
+			color: #FFF;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		}
+		ul.k-navbar li.active a.hasdropdown:hover, ul.k-navbar li.active a.hasdropdown:focus {
+			color: #FFF;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		}
+		
+		
+/* SECOND LEVEL UL - Dropdown menu */
+.dropdown ul {
+	display: none;
+	position: absolute;
+	width: 25em;
+	color: #FFF;
+	background: #808080;
+	padding: 0;
+	box-shadow: 0 2px 2px rgba(0,0,0,.5);
+	z-index: 2000;
+}
+
+ul.k-navbar .dropdown li {
+	float: none;
+	padding: 0.2em;
+	margin: 0;
+	border-bottom: 1px dotted #FFF;
+	border-right: none;
+}
+	ul.k-navbar .dropdown li:last-child {border: none;}
+
+	ul.k-navbar .dropdown li a, ul.k-navbar .dropdown li a:link, ul.k-navbar .dropdown li a:visited {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		background: none;
+		padding: 0.3em;
+	}
+
+	ul.k-navbar .dropdown li a:hover, ul.k-navbar .dropdown li a:focus {
+		text-shadow: none;
+		color: #000;
+		background: #808080;
+	}
+	ul.k-navbar .dropdown li.active a:hover, ul.k-navbar .dropdown li.active a:focus {
+		text-shadow: none;
+		color: #000;
+		background: #808080;
+	}
+
+/* Media queries for responsive navigation -
+Uncomment and place declarations at the end of the CSS file -
+Modify max-width value to match your needs
+
+@media only screen and (max-width : 800px) {
+	.sm-screen p.control {display: block;}
+	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
+	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
+	.sm-screen .k-navbar a {display: block;}
+	.dropdown ul {position: static; width: 100%;}	
+	ul.k-navbar .dropdown li {padding-left: 25px;}
+}
+*/
+		
+/* CE/ ResponsiveMainNav */
+
+/* CB/ mainNav */
+
+/* Navigation control */
 ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 
 	ul.k-navbar li {
@@ -1430,20 +1551,6 @@ ul.subnavbar {
 		border: 1px solid #000;
 	}
 	
-/* Media queries for responsive navigation -
-Uncomment and place declarations at the end of the CSS file -
-Modify max-width value to match your needs
-
-@media only screen and (max-width : 800px) {
-	.sm-screen p.control {display: block;}
-	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
-	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
-	.sm-screen .k-navbar a {display: block;}
-	.dropdown ul {position: static; width: 100%;}	
-	ul.k-navbar .dropdown li {padding-left: 25px;}
-}
-*/
-		
 /* CE/ mainNav */
 
 

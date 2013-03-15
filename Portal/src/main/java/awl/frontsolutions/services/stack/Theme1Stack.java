@@ -24,7 +24,8 @@ public class Theme1Stack extends ThemeStack{
 		addStyleSheet(new StylesheetLink(expand("context:css/k-theme1.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/iehacks1.css"),new StylesheetOptions("all").withCondition("lt IE 9")));
 		
-		
+		addLibrary(expand("context:js/plugins/jquery.masonry.min.js"));
+		addLibrary(expand("context:js/i-general.js"));
 		addLibrary(expand("context:js/k-general.js"));
 		addLibrary(expand("context:js/k-load.js"));
 		

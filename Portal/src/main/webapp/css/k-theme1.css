@@ -1063,7 +1063,8 @@ ul.k-form-steps {clear: both; margin-bottom: 1em; padding: 0;}
 /* --------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------- MAIN NAV/FIRST LEVEL */
-/* CB/ mainNav */
+
+/* CB/ ResponsiveMainNav */
 
 /* Navigation control */
 p.control {
@@ -1075,6 +1076,117 @@ p.control {
 }
 	p.control a {display: block}
 
+#navbar {clear: both;}
+
+ul.k-navbar {
+		float:left;
+		width: 98%; 
+		color: #FFF;
+		background: #000;
+		padding-left: 2%; 
+		margin: 0;
+	}
+	ul.k-navbar li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		padding: 0 0.7em;
+		margin: 3px 0;
+		border-right: 1px solid #FFF;
+	}
+	
+		ul.k-navbar a, ul.k-navbar a:visited {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			padding: 0 0.5em;
+		}
+		ul.k-navbar a:hover, ul.k-navbar a:focus {
+			color: #000;
+			background: #BFBFBF;
+		}
+		
+		/* If section has dropdown */
+		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
+			color: #FFF;
+			background: #000 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar a.hasdropdown:hover, ul.k-navbar a.hasdropdown:focus {
+			color: #000;
+			background: #BFBFBF url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+		ul.k-navbar li.active a.hasdropdown, ul.k-navbar li.active a.hasdropdown:visited {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar li.active a.hasdropdown:hover, ul.k-navbar li.active a.hasdropdown:focus {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+
+		/* For deprecated superfish menu */
+		.sf-sub-indicator {display: none;}
+		
+		/* Active section / no link */
+		ul.k-navbar li.active strong {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			color: #FFF;
+			background: #F60;
+			padding: 0 0.5em;
+			margin: 0 0.5em;
+		}
+		
+		/* Active section / with link */
+		ul.k-navbar li.active a, ul.k-navbar li.active a:visited {
+			color: #FFF;
+			background: #F60;
+		}
+
+/* SECOND LEVEL UL - Dropdown menu */
+.dropdown ul {
+	display: none;
+	position: absolute;
+	width: 25em;
+	color: #000;
+	background: #BFBFBF;
+	padding: 0;
+	z-index: 200;
+}
+ul.dropdown {width: 18em; padding: 0;}
+
+ul.k-navbar .dropdown li {
+	float: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px dotted #FFF;
+	border-right: none;
+}
+
+ul.k-navbar .dropdown li a, ul.k-navbar .dropdown li a:visited {
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #000;
+	background: #BFBFBF;
+}
+
+ul.k-navbar .dropdown li a:hover, ul.k-navbar .dropdown li a:focus {
+	color: #FFF;
+	background: #F60;
+}
+
+		
+/* CE/ ResponsiveMainNav */
+
+/* CB/ mainNav */
+
+/* Navigation control */
 #navbar {clear: both;}
 
 ul.k-navbar {

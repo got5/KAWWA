@@ -105,7 +105,8 @@ public class Layout
 	}
 	
 	public Boolean newTheme(){
-		return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+		//return choosen.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
+		return true;
 	}
 	
 	public TreeNode getRoot() {
