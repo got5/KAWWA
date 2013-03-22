@@ -1370,9 +1370,9 @@ Modify max-width value to match your needs
 		
 /* CE/ ResponsiveMainNav */
 
+/*------------------------------------------------------*/
 /* CB/ mainNav */
 
-/* Navigation control */
 ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 
 	ul.k-navbar li {
@@ -1434,9 +1434,11 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
 		}
 		
+		.sf-sub-indicator {display: none;}
+		
 		
 /* SECOND LEVEL UL - Dropdown menu */
-.dropdown ul {
+ul.dropdown {
 	display: none;
 	position: absolute;
 	width: 25em;
@@ -1447,16 +1449,16 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 	z-index: 2000;
 }
 
-ul.k-navbar .dropdown li {
+ul.k-navbar ul.dropdown li {
 	float: none;
 	padding: 0.2em;
 	margin: 0;
 	border-bottom: 1px dotted #FFF;
 	border-right: none;
 }
-	ul.k-navbar .dropdown li:last-child {border: none;}
+	ul.k-navbar ul.dropdown li:last-child {border: none;}
 
-	ul.k-navbar .dropdown li a, ul.k-navbar .dropdown li a:link, ul.k-navbar .dropdown li a:visited {
+	ul.k-navbar ul.dropdown li a, ul.k-navbar .dropdown li a:link, ul.k-navbar .dropdown li a:visited {
 		display: block;
 		text-decoration: none;
 		color: #FFF;
@@ -1464,12 +1466,12 @@ ul.k-navbar .dropdown li {
 		padding: 0.3em;
 	}
 
-	ul.k-navbar .dropdown li a:hover, ul.k-navbar .dropdown li a:focus {
+	ul.k-navbar ul.dropdown li a:hover, ul.k-navbar ul.dropdown li a:focus {
 		text-shadow: none;
 		color: #000;
 		background: #808080;
 	}
-	ul.k-navbar .dropdown li.active a:hover, ul.k-navbar .dropdown li.active a:focus {
+	ul.k-navbar ul.dropdown li.active a:hover, ul.k-navbar ul.dropdown li.active a:focus {
 		text-shadow: none;
 		color: #000;
 		background: #808080;
