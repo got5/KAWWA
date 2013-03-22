@@ -66,7 +66,8 @@
 		});
 
 		// Toggle click for sub-menus on touch and or small screens
-		$this.children('.dropdown').click(function() {
+		$this.children('.dropdown').click(function(event) {
+			event.preventDefault();
 			$(this).find('ul').slideToggle(settings.animationSpeed, function(){
 				var isExpanded = $(this).css("display") === "block";
 				$(this).attr('aria-expanded', isExpanded);
