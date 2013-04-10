@@ -77,8 +77,8 @@ public class KawwaPortalComponentsModule
      */
     public static void contributeMarkupRenderer(OrderedConfiguration<MarkupRendererFilter> configuration, 
     		final Environment environment, final JavaScriptSupport js, 
-    		@Symbol(KawwaConstants.KAWWA_INCLUDE_STACK) Boolean flag, 
-    		RequestGlobals response){
+    		final @Symbol(KawwaConstants.KAWWA_INCLUDE_STACK) Boolean flag, 
+    		final RequestGlobals response){
     	
     	MarkupRendererFilter validationDecorator = new MarkupRendererFilter() { 
 
@@ -112,7 +112,12 @@ public class KawwaPortalComponentsModule
     	{
             public void renderMarkup(MarkupWriter writer, MarkupRenderer renderer)
             {
-            	js.importStack(KawwaConstants.STACK_ID);
+            	/**
+                 * We do not include the Kawwa Stack for the Exception Report Page
+                 */
+            	if(flag && !response.getHTTPServletResponse().containsHeader("X-Tapestry-ErrorMessage")) {
+            		js.importStack(KawwaConstants.STACK_ID);
+            	}
                 
                 renderer.renderMarkup(writer);
             }
@@ -120,13 +125,7 @@ public class KawwaPortalComponentsModule
             
         configuration.add("KawwaValidationDecorator", validationDecorator, "after:*");
         configuration.add("meta", rendererFilter, "before:*"); 
-    	 
-    	
-        /**
-         * We do not include the Kawwa Stack for the Exception Report Page
-         */
-    	if(flag && !response.getHTTPServletResponse().containsHeader("X-Tapestry-ErrorMessage")) 
-    		configuration.add("injectKawwaStylesheet", injectKawwaStylesheet, "after:InjectDefaultStyleheet");
+    	configuration.add("injectKawwaStylesheet", injectKawwaStylesheet, "after:InjectDefaultStyleheet");
     }
     
     @Contribute(WidgetParams.class)
