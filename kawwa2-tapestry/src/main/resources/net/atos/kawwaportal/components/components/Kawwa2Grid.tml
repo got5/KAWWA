@@ -23,12 +23,14 @@
 	  </t:block>
 	  
 	  <t:block t:id="pager">
-	
-		<t:kawwa2.Kawwa2Nav t:id="nav" t:rowsPerPage="rowsPerPage" t:source="prop:cachedSource" 
+		
+		<t:if t:test="empty" negate="true">
+			<t:kawwa2.Kawwa2Nav t:id="nav" id="nav" t:rowsPerPage="rowsPerPage" t:source="prop:cachedSource" 
 	  					   t:currentpage="currentPage"
 						   t:zone="rowPerPageZone"
 						   t:navigatorOptions="options" 
 						   t:inplace="inherit:inplace" />
+		</t:if>
 	
 	  </t:block>
 </t:container>

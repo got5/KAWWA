@@ -116,6 +116,22 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
 		checkNumbRows("10");
     }
 	
+	@Test(dependsOnMethods="testSort")
+	public void testEmpty(){
+		
+		open("Kawwa2Grid?empty=true");
+		
+		checkIsEmpty();
+    }
+	
+	@Test(dependsOnMethods="testEmpty")
+	public void testEmptyInPlace(){
+		
+		open("Kawwa2Grid/true?empty=true");
+		
+		checkIsEmpty();
+    }
+	
 	private void checkNumbRows(final String expected){
 		
 		new Wait()
@@ -160,4 +176,15 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
 		        "selenium.browserbot.getCurrentWindow().jQuery.active == 0",
 		        "5000l");
 	}
+	
+	private void checkIsEmpty(){
+		checkNumbRows("0");
+		
+		/**
+		 * check that the pagination is not displayed
+		 * */
+		assertFalse(isElementPresent("//div[@class='k-pagination']"), "Kawwa2Grid should not contain pagination where source is empty");
+
+	}
+	
 }

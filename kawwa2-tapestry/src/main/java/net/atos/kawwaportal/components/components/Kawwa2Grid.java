@@ -393,5 +393,7 @@ public class Kawwa2Grid implements ClientElement {
 		return "5,10,15,20";
 	}
 
-	
+	public boolean isEmpty(){
+		return this.source == null || this.availableRows == 0;
+	}
 }
