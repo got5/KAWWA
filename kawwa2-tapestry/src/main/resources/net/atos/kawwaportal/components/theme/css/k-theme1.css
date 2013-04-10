@@ -1,9 +1,9 @@
 /*-------------------------------------------------------------------- 
-          	  	 KAWWA2 - Theme 1
+          	  	 KAWWA - Theme 1
 	          	Default Atos Theme
           By Le Studio, Atos Worldline, 2011
           
-				Version 1.1 (02/2012)
+				Version 1.5 (02/2013)
 -------------------------------------------------------------------- */
 
 /* INHERIT FROM: "k-structure.css" */
@@ -23,6 +23,7 @@
 		FIELD COMMENT
 		ERROR FIELD
 		ERROR MESSAGES
+		CONFIRMATION MESSAGES
 		FORM BUTTONS
 		DATEPICKER 
 		FORM WIZARD
@@ -34,6 +35,8 @@
 		TREE-VIEW
 		TREE-VIEW GRID
 	SITE UTILITIES
+		NO DISPLAY
+		NEW WINDOW LINK
 		SITEMAP 
 		TOOLS LINKS
 		LANGUAGE CHOICE
@@ -42,6 +45,7 @@
 		SEARCH 
 		ACTION BUTTONS BAR
 		ACTION BUTTONS
+		ICON BUTTONS
 		PAGINATION 
 		MODAL 
 		ORIENTATION AID
@@ -103,14 +107,17 @@ body {
 
 h1 {
 	float: left;
-	width: 322px;
-	height: 53px;
+	width: 40%;
+	height: 2.5em;
+	font: 1.3em StagBook, Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: url(../img/k-theme1/logo_aw.png) no-repeat;
+	padding: 0 0 15px 120px;
 	margin-left: 2%;
 }
-	h1 img {max-width: 100%;}
+	h1 small {display: block; font-size: 70%;}
 
 h2 {
-	font: bold 1.5em StagBook, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font: bold 1.5em StagBook, Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
 	color: #F60;
 	background: #FFF;
 	margin-bottom: 1.5em;
@@ -161,6 +168,8 @@ a:visited {color: #555; background: transparent;}
 a:hover, a:focus {text-decoration: none;}
 
 abbr {border-bottom: 1px dashed #CCC;}
+
+img {max-width: 100%;}
 
 /* ------------------------------------------------------------- BLOCK QUOTE */
 /* CB/ quote */
@@ -309,12 +318,12 @@ th a.ascending, th a:link.ascending, th a:visited.ascending {
 /*                           (rewrite k-structure.css)                         */
 /* --------------------------------------------------------------------------- */
 
-#header {
+header[role=banner], #header {
 	float: left;
+	width: 100%;
 	color: #FFF;
 	background: #06A;
 	padding: 13px 0 0;
-	z-index: 100;
 }
 
 #wrapper {
@@ -324,13 +333,15 @@ th a.ascending, th a:link.ascending, th a:visited.ascending {
 	padding: 2% 0;
 }
 	
-#footer {text-align: center; color: #FFF; background: #06A;}
+footer[role=contentinfo], #footer {text-align: center; color: #FFF; background: #06A;}
 
-	#footer p.k-copyright {
+	p.k-copyright {
 		clear: both;
 		font-size: 0.65em;
 		padding: 3px 0;
 	}
+	
+	
 
 
 /* --------------------------------------------------------------------------- */
@@ -729,7 +740,7 @@ div.k-error-messages {
 	font-weight: bold;
 	color: #C00;
 	background: #FFF url(../img/k-theme1/bg_error_message.png);
-	padding: 10px 0;
+	padding: 10px;
 	margin-bottom: 25px;
 	border: 1px solid #C00;
 }
@@ -744,6 +755,37 @@ div.k-error-messages {
   		margin: 3px auto;
 	}
 	div.k-error-messages p {
+  		width: 60%;
+  		margin: 3px auto;
+	}
+	
+/* CE/ errorMessages */	
+
+
+/* ------------------------------------------------------------- ERROR MESSAGES */
+/* CB/ errorMessages */
+
+div.k-confirm-messages {
+	clear: both;
+	font-weight: bold;
+	color: #FFF;
+	background: #990;
+	padding: 10px;
+	margin-bottom: 25px;
+	border: 1px solid #990;
+}
+	div.k-confirm-messages h3 {
+  		width: 60%;
+  		color: #FFF;
+		background: transparent;
+  		margin: 0 auto 21px;
+		border-color: #FFF;
+	}
+	div.k-confirm-messages ul {
+  		width: 60%;
+  		margin: 3px auto;
+	}
+	div.k-confirm-messages p {
   		width: 60%;
   		margin: 3px auto;
 	}
@@ -778,7 +820,6 @@ input[type=button], input[type=submit] {
 	color: #FFF;
 	background: #F60;
 	padding: 2px 5px 3px;
-	margin: 0 5px;
 	border: 1px #F60 solid;
 	cursor: pointer;
 }
@@ -792,7 +833,6 @@ input[type=button], input[type=submit] {
 	color: #FFF;
 	background: #F60;
 	padding: 2px 5px 3px;
-	margin: 0 5px;
 	border: 1px #F60 solid;
 	cursor: pointer;
 }
@@ -826,7 +866,6 @@ input[type=button], input[type=submit] {
 		color: #999;
 		background: #CCC;
 		padding: 2px 5px 3px;
-		margin: 0 5px;
 		border: 1px solid #CCC;
 		cursor: default;
 	}
@@ -868,7 +907,6 @@ input[type=button].reset, input[type=reset] {
 	color: #FFF;
 	background: #808080;
 	padding: 2px 5px 3px;
-	margin: 0 5px;
 	border: 1px solid #808080;
 	cursor: pointer;
 }
@@ -1025,7 +1063,18 @@ ul.k-form-steps {clear: both; margin-bottom: 1em; padding: 0;}
 /* --------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------- MAIN NAV/FIRST LEVEL */
-/* CB/ mainNav */
+
+/* CB/ ResponsiveMainNav */
+
+/* Navigation control */
+p.control {
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 2%;
+	width: 45px;
+}
+	p.control a {display: block}
 
 #navbar {clear: both;}
 
@@ -1079,7 +1128,8 @@ ul.k-navbar {
 			color: #FFF;
 			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
 		}
-		
+
+		/* For deprecated superfish menu */
 		.sf-sub-indicator {display: none;}
 		
 		/* Active section / no link */
@@ -1100,17 +1150,129 @@ ul.k-navbar {
 		}
 
 /* SECOND LEVEL UL - Dropdown menu */
-.dropdown {
+.dropdown ul {
 	display: none;
 	position: absolute;
 	width: 25em;
 	color: #000;
 	background: #BFBFBF;
+	padding: 0;
 	z-index: 200;
 }
 ul.dropdown {width: 18em; padding: 0;}
 
-ul.k-navbar ul.dropdown li {
+ul.k-navbar .dropdown li {
+	float: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px dotted #FFF;
+	border-right: none;
+}
+
+ul.k-navbar .dropdown li a, ul.k-navbar .dropdown li a:visited {
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #000;
+	background: #BFBFBF;
+}
+
+ul.k-navbar .dropdown li a:hover, ul.k-navbar .dropdown li a:focus {
+	color: #FFF;
+	background: #F60;
+}
+
+		
+/* CE/ ResponsiveMainNav */
+
+/* CB/ mainNav */
+
+/* Navigation control */
+#navbar {clear: both;}
+
+ul.k-navbar {
+		float:left;
+		width: 98%; 
+		color: #FFF;
+		background: #000;
+		padding-left: 2%; 
+		margin: 0;
+	}
+	ul.k-navbar li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		padding: 0 0.7em;
+		margin: 3px 0;
+		border-right: 1px solid #FFF;
+	}
+	
+		ul.k-navbar a, ul.k-navbar a:visited {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			padding: 0 0.5em;
+		}
+		ul.k-navbar a:hover, ul.k-navbar a:focus {
+			color: #000;
+			background: #BFBFBF;
+		}
+		
+		/* If section has dropdown */
+		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
+			color: #FFF;
+			background: #000 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar a.hasdropdown:hover, ul.k-navbar a.hasdropdown:focus {
+			color: #000;
+			background: #BFBFBF url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+		ul.k-navbar li.active a.hasdropdown, ul.k-navbar li.active a.hasdropdown:visited {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar li.active a.hasdropdown:hover, ul.k-navbar li.active a.hasdropdown:focus {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+
+		/* For deprecated superfish menu */
+		.sf-sub-indicator {display: none;}
+		
+		/* Active section / no link */
+		ul.k-navbar li.active strong {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			color: #FFF;
+			background: #F60;
+			padding: 0 0.5em;
+			margin: 0 0.5em;
+		}
+		
+		/* Active section / with link */
+		ul.k-navbar li.active a, ul.k-navbar li.active a:visited {
+			color: #FFF;
+			background: #F60;
+		}
+
+/* SECOND LEVEL UL - Dropdown menu */
+.dropdown ul {
+	display: none;
+	position: absolute;
+	width: 25em;
+	color: #000;
+	background: #BFBFBF;
+	padding: 0;
+	z-index: 200;
+}
+ul.dropdown {width: 18em; padding: 0;}
+
+ul.k-navbar .dropdown li {
 	float: none;
 	padding: 0;
 	margin: 0;
@@ -1319,11 +1481,17 @@ ul.k-menu {
 /* ----------------------------------------------------- SKIP MENU LINK */
 /* CB/ skip */
 
-.k-skip a {
-	position: absolute;
-	top: -5000px;	
-}
-	.k-skip a:focus {position: static;}
+.k-skip {display: inline;}
+	
+	.k-skip a {
+		position: absolute;
+		overflow: hidden;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+	}
+	.k-skip a:focus {position: static; width: auto; height: auto;}
 
 /* CE/ skip */
 
@@ -1396,7 +1564,7 @@ div.k-tree-grid {
 		height: 25em;
 		padding: 0 0 2%;
 	}
-	div.k-tree-grid div.tree-content {
+	div.k-tree-grid .tree-content {
 		float: right;
 		overflow: auto;
 		width: 74%;
@@ -1423,6 +1591,21 @@ div.k-tree-grid {
 /* --------------------------------------------------------------------------- */
 /* ------------------------------ SITE UTILITIES ----------------------------- */
 /* --------------------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------- NO DISPLAY */
+/* CB/ noDisplay */
+
+.k-no-display {
+	position: absolute;
+	overflow: hidden;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+}
+
+/* CE/ noDisplay */
 
 /* ----------------------------------------------------------- NEW WINDOW LINK --- */
 /* CB/ newWindowLink */
@@ -1490,7 +1673,6 @@ div.k-tools {
 	height: 1.6em;
 	color: #000;
 	background: #66A3C7;
-	margin-top: 13px;
 	border-bottom: 2px solid #FFF;
 }
 
@@ -1515,6 +1697,21 @@ ul.k-tools-list {
 		padding-left: 10px;
 	}
 	ul.k-tools-list a:hover, ul.k-tools-list a:focus {text-decoration: underline;}
+	
+	/* Exceptions */
+		
+	footer[role=contentinfo] ul.k-tools-list, #footer ul.k-tools-list {
+		float: none;
+		width: 95%;
+		max-width: 100%;
+		text-align: center;
+		padding: 5px 0;
+		margin: 10px 2.5% 5px;
+		border-bottom: 1px dotted #FFF;
+	}
+	footer[role=contentinfo] ul.k-tools-list a, #footer ul.k-tools-list a:link {
+		background-color: transparent;
+	}
 
 /* CE/ toolslinks */
 
@@ -1760,6 +1957,44 @@ ul.k-actions {text-align: right; padding: 0;}
 /* CE/ actionButtons */
 
 
+/* --------------------------------------------------------- ICON BUTTONS --- */
+/* CB/ iconButtons */
+
+ul.actions {}
+
+		ul.actions li {
+			display: inline-block;
+			list-style-type: none;
+		}
+		ul.actions a, ul.actions a:link, ul.actions a:visited {
+			overflow: hidden;
+			display: inline-block;
+			width: 1px;
+			height: 2em;
+			line-height: 2em;
+			text-decoration: none;
+			color: #FFF;
+			background: #000 url(../img/k-theme1/sprites-trans.png) 0 0 no-repeat;
+			margin: 0 0.5em;
+			border: 1px solid #000;
+		}
+		
+		ul.actions a:hover {color: #FFF; background-color: #999;}
+		
+	
+	/* Icons sprite */
+	ul.actions a.bt-print {background-position: 6px 2px; padding-left: 35px;}
+	ul.actions a.bt-download {background-position: 6px -71px; padding-left: 35px;}
+	ul.actions a.bt-edit {background-position: 6px -143px; padding-left: 35px;}
+	ul.actions a.bt-view {background-position: 6px -211px; padding-left: 35px;}
+	ul.actions a.bt-email {background-position: 6px -275px; padding-left: 35px;}
+	ul.actions a.bt-search {background-position: 6px -344px; padding-left: 35px;}
+	ul.actions a.bt-new {background-position: 6px -416px; padding-left: 35px;}
+	ul.actions a.bt-del {background-position: 6px -488px; padding-left: 35px;}
+
+/* CE/ iconButtons */
+
+
 /* --------------------------------------------------------- PAGINATION --- */
 /* CB/ pagination */
 
@@ -1862,10 +2097,10 @@ div.k-orientation-aid {
 /* ---------------------------------------------------------------------- TABS */
 /* CB/ tabs */
 
-p + div.k-tabbed-data {margin-top: 21px;}
+p + .k-tabbed-data {margin-top: 21px;}
 
 	ul.tabs {float: left; width: 100%; padding: 0;}
-	div.k-tabbed-data .ui-tabs-hide {display: none;}  /* required */
+	.k-tabbed-data .ui-tabs-hide {display: none;}  /* required */
 	ul.tabs li {
 		float: left;
 		width: auto;
@@ -1897,7 +2132,7 @@ p + div.k-tabbed-data {margin-top: 21px;}
 		background: #000;
 	}
 	
-	div.k-tabbed-data > div.content {
+	.k-tabbed-data > .content {
 		float: left;
 		width: 96%;
 		color: #000;
@@ -2172,29 +2407,29 @@ div.k-article, article.k-article {
 /* --------------------------------------------------------- ARTICLE ENTRY --- */
 /* CB/ articleEntry */
 
-div.k-entry {float: left; width: 100%;}
-	div.k-entry h2 {text-transform: none; padding: 0; margin-bottom: 0.5em;}
-		div.k-entry h2 a, div.k-entry h2 a:link {
+.k-entry {float: left; width: 100%;}
+	.k-entry .entry-title {text-transform: none; padding: 0; margin-bottom: 0.5em;}
+		.k-entry  .entry-title a, .k-entry  .entry-title a:link {
 			display: block;
 			color: #000;
 			background: #BFBFBF url(../img/k-theme1/bg_entry.png) right no-repeat;
 			text-decoration: none;
 			padding: 0.2em 0.4em; 
 		}
-		div.k-entry h2 a:visited {color: #444; background-color: #DDD;}
-		div.k-entry h2 a:hover, div.k-entry h2 a:focus {color: #FFF; background-color: #66A3C7;}
+		.k-entry .entry-title a:visited {color: #444; background-color: #DDD;}
+		.k-entry .entry-title a:hover, .k-entry .entry-title a:focus {color: #FFF; background-color: #66A3C7;}
 
 	/* Exceptions for entry level */	
-	div.k-article.k-entry ul.entry-info {float: left; width: 8%; margin: 0;}
-	div.k-entry div.content {float: right; width: 89%; margin: 0;}
+	.k-article.k-entry ul.entry-info {float: left; width: 8%; margin: 0;}
+	.k-entry div.content {float: right; width: 89%; margin: 0;}
 	
-	div.k-entry ul.entry-info {
+	.k-entry ul.entry-info {
 		text-align: center;
 		color: #000;
 		background: #BFBFBF;
 		padding: 0.5em;
 	}
-	div.k-entry .published {
+	.k-entry .published {
 		display: block;
 		font-size: 120%;
 		font-weight: bold;
@@ -2203,7 +2438,7 @@ div.k-entry {float: left; width: 100%;}
 		padding: 0.2em;
 		margin-bottom: 0.5em;
 	}
-	div.k-entry address {display: block;}
+	.k-entry address {display: block;}
 
 /* CE/ articleEntry */
 
@@ -2211,7 +2446,7 @@ div.k-entry {float: left; width: 100%;}
 /* CB/ introduction */
 
 div.k-intro {
-	width: 33em;
+	max-width: 33em;
 	background: #FFF;
 	color: #369;
 	font-weight: bold;
@@ -2226,7 +2461,6 @@ div.k-intro {
 	}
 	
 	/* Exceptions */
-	div.k-article div.k-intro {width: 33em;}
 	ul.k-form-steps + div.k-intro {margin: 2em 0;}
 		
 /* CE/ introduction */
@@ -2256,29 +2490,29 @@ div.k-highlight-block {
 /* --------------------------------------------------------- ILLUSTRATION --- */
 /* CB/ illustration */
 
-div.k-illustration-block {
+.k-illustration-block {
 	padding: 2em 0;
 	margin: 0 auto;
 }
-	div.k-illustration-block.to-right {
+	.k-illustration-block.to-right {
 		float: right;
 		width: 30%;
 		padding: 2% 0 2% 4%;
 	}
-	div.k-illustration-block.to-left {
+	.k-illustration-block.to-left {
 		float: left;
 		width: 30%;
 		padding: 2% 4% 2% 0;
 	}
 
-	div.k-illustration-block p.illustration {text-indent: 0;}
-	div.k-illustration-block p.illustration img {
+	.k-illustration-block p.illustration {text-indent: 0;}
+	.k-illustration-block p.illustration img {
 		max-width: 100%;
 		border: 4px solid #E8E8E8;
 		outline: 1px solid #BFBFBF;
 	}
 
-	.caption {
+	figcaption, .caption {
 		display: block; 
 		font-weight: bold;
 		padding: 5px;
@@ -2382,7 +2616,7 @@ ul.k-links-list {margin: 0 0 15px 15px;}
 /* --------------------------------------------------------- HPRODUCT --- */
 /* CB/ hproduct */
 
-div.k-product {
+.k-product {
 	position: relative;
 	width: 96%;
 	padding: 0 2% 2%;
@@ -2392,54 +2626,50 @@ div.k-product {
 	
 	/* Product's title */
 	.name {  
-		min-height: 2em;
-		line-height: 1;
+		min-height: 2.4em;
+		line-height: 1.2;
 		font-size: 0.8em;
 		padding: 0;
 		margin: 1.7em 0 0;
 		border: none;
 	}
-	p.extra {min-height: 1.5em;}
-	.extra + .name {margin: 0;}
+	p.extra {
+		position: absolute;
+		top: 60px;
+		right: 0;
+		font-size: 0.8em;
+		font-weight: bold;
+		text-align: right;
+		padding: 2px 10px 2px 0;
+		-moz-border-radius-topleft: 1em;
+		-moz-border-radius-bottomleft: 1em;
+		-webkit-border-top-left-radius: 1em;
+		-webkit-border-bottom-left-radius: 1em;
+		border-top-left-radius: 1em;
+		border-bottom-left-radius: 1em;
+	}
 	.category {font-size: 0.7em; font-weight: normal;}
 	
 
 /* Discount */
-.discount {
-	position: absolute;
-	top: 60px;
-	right: 0;
-	width: 4em;
-	padding: 2px 10px 2px 0;
-	font-size: 1em;
-	font-weight: bold;
-	text-align: right;
-	color: #FFF;
-	background: #F60;
-	-moz-border-radius-topleft: 1em;
-	-moz-border-radius-bottomleft: 1em;
-	-webkit-border-top-left-radius: 1em;
-	-webkit-border-bottom-left-radius: 1em;
-	border-top-left-radius: 1em;
-	border-bottom-left-radius: 1em;
-}
+.discount {}
 
 
 /* Sale product */
-p.sale {font-size: 1em; font-weight: bold;}
+p.sale {width: 6.5em; font-weight: bold; color: #FFF; background: #F60;}
 .sale {color: #F60;}
 
 /* New product */
-p.new {font-size: 1em; font-weight: bold; color: #990;}
+p.new {width: 3em; font-weight: bold; color: #FFF; background: #990;}
 .new {color: #990;}
 
 	
 /* Ratings */
 .rating {
-	font-size: 0.65em;
 	padding-left: 65px;
 	margin: 10px 0;
 }
+p.rating {font-size: 0.65em;}
 .rating a:link {color: #777; background: #FFF;}
 .five {
 	color: #000;
@@ -2550,7 +2780,7 @@ li.hproduct {
 /* CB/ productQtty */
 
 .k-quantity {float: left; width: auto; background: #FFF;}
-	div.k-catalog .k-quantity {margin-top: 10px;}
+	.k-catalog .k-quantity {margin-top: 10px;}
 
 	.k-quantity span {
 		display: inline-block;
@@ -2679,32 +2909,34 @@ div.rating-cancel, div.star-rating {
 /* Notice that the min-width of the hproduct depends on the width of 
  * the product's image, which must be standardized */
 	
-div.k-catalog {}
-	div.k-catalog .k-product {
+.k-catalog {}
+	.k-catalog .k-product {
 		float: left;
 		width: 25%;
 		margin: 0 2% 2em;
 		border: 1px solid #CCC;
 	}
 	
-	div.k-catalog .photo-data {padding-top: 10px;}
-	div.k-catalog .rating {padding-bottom: 10px;}
+	.k-catalog .photo-data {padding-top: 10px;}
+	.k-catalog .rating {padding-bottom: 10px;}
 	
-	div.k-catalog div.price-data {width: 45%; height: 2.5em;}	
-	div.k-catalog p.all-prices {width: 100%;}
+	.k-catalog .product-data {height: 4em;}
 	
-	div.k-catalog p.buy {width: 12em; margin-top: 10px;}
+	.k-catalog div.price-data {width: 45%; height: 2.5em;}	
+	.k-catalog p.all-prices {width: 100%;}
 	
-	div.k-catalog div.k-pagination {
+	.k-catalog p.buy {width: 12em; margin-top: 10px;}
+	
+	.k-catalog div.k-pagination {
 		width: 96%;
 		background: #E8E8E8;
 		padding: 0.3em 2%;
 		margin: 0 0 1em;;
 		border: none;
 	}
-	div.k-catalog p {margin-top: 0.3em;}
-	div.k-catalog p.lines-to-display {margin: 0;}
-	div.k-catalog p.lines-to-display label {margin: 0;}
+	.k-catalog p {margin-top: 0.3em;}
+	.k-catalog p.lines-to-display {margin: 0;}
+	.k-catalog p.lines-to-display label {margin: 0;}
 	
 	ul.catalog-view {
 		text-align: center;
@@ -2738,7 +2970,7 @@ div.k-catalog {}
 	
 /* --- LIST VIEW --- */
 
-div.k-catalog.list-view .k-product {
+.k-catalog.list-view .k-product {
 		float: left;
 		width: 96%;
 		padding: 1% 2%;
@@ -2747,21 +2979,20 @@ div.k-catalog.list-view .k-product {
 		border-bottom-color: #808080;
 	}
 	
-	div.k-catalog.list-view div.photo-data {float: left; width: 20%; padding: 0 4% 0 0;}
+	.k-catalog.list-view div.photo-data {float: left; width: 20%; padding: 0 4% 0 0;}
 
-	div.k-catalog.list-view div.product-data {
+	.k-catalog.list-view div.product-data {
 		float: left;
 		width: 50%;
 	}
 	
-	div.k-catalog.list-view div.buyZone {float: right; width: 15%; padding: 1em 2%; margin: 1em 0;}
-		div.k-catalog.list-view div.buyZone p {float: none; text-align: center;}
-		div.k-catalog.list-view div.buyZone p.k-quantity {text-align: center; margin-bottom: 3em;}
+	.k-catalog.list-view div.buyZone {float: right; width: 15%; padding: 1em 2%; margin: 1em 0;}
+		.k-catalog.list-view div.buyZone p {float: none; width: auto; text-align: center;}
+		.k-catalog.list-view div.buyZone p.k-quantity {text-align: center; margin-bottom: 3em;}
 	
-	div.k-catalog.list-view p.rating {position: absolute; width: 20%; left: 2%; bottom: 2%;}
-	
-	div.k-catalog.list-view .discount {top: 1em; left: 16%;}
-	
+	.k-catalog.list-view p.rating {position: absolute; width: auto; left: 2%; bottom: 2%;}
+		
+ .k-catalog.list-view p.extra {top: 1em;}
 
 /* CE/ catalog */
 
@@ -2769,49 +3000,51 @@ div.k-catalog.list-view .k-product {
 /* --------------------------------------------------------- PRODUCT SHEET --- */
 /* CB/ productSheet */
 	
-div.k-product-sheet div.k-product {float: left; width: 100%; padding: 0 0 2%; border: none;}
-	div.k-product-sheet div.photo-data {
+.k-product-sheet .k-product {float: left; width: 100%; padding: 0 0 2%; border: none;}
+	.k-product-sheet .photo-data {
 		float: left;
 		width: 30%;
 		padding: 0 2% 0 0;
+		margin-bottom: 2em;
 		border-right: 1px solid #CCC;
 	}
-	div.k-product-sheet div.product-data {
+	.k-product-sheet .product-data {
 		float: left;
 		width: 65%;
 		padding-left: 2%;
+		margin-bottom: 2em;
 	}
 
 	/* Product's title */
-	div.k-product-sheet .name {min-height: 0; font-size: 1em; margin: 0;}
-	div.k-product-sheet .category {padding: 5px 0; margin: 0 0 2em;}
+	.k-product-sheet .name {min-height: 0; font-size: 1em; margin: 0;}
+	.k-product-sheet .category {padding: 5px 0; margin: 0 0 2em;}
 	
 	/* Positions */
-	div.k-product-sheet .rating {
-		float: right;
-		width: auto;
-		text-align: right;
-		margin-top: -4em;
+	.product-data .rating {}
+	div.k-product-sheet .product-data p.extra {
+		top: 4em;
+		right: auto;
+		left: 30%;
+		margin-left: -6.5em;
+		z-index: 150;
 	}
-	div.k-product-sheet .discount {top: 1em; right: 68%; z-index: 150;}
 	
+	.k-product-sheet .product-data .price-data {width: 40%;}
+	.k-product-sheet .product-data .price {font-size: 220%;}
+	.k-product-sheet .product-data .old-price {font-size: 150%;}
+	.k-product-sheet .product-data p.buy {font-size: 100%; margin-top: 1em;}
 	
-	div.k-product-sheet .price-data {width: 40%;}
-	div.k-product-sheet .price {font-size: 220%;}
-	div.k-product-sheet .old-price {font-size: 150%;}
-	div.k-product-sheet p.buy {font-size: 100%; margin-top: 1em;}
-	
-	div.k-product-sheet .k-actions-block {border: none; border-bottom: 1px solid #CCC;}
+	.k-product-sheet .k-actions-block {border: none; border-bottom: 1px solid #CCC;}
 	
 	/* Buy zone */
-	div.k-product-sheet div.buyZone {
+	.k-product-sheet div.buyZone {
 		float: right;
     	width: 65%;
 		background: none;
     	padding: 0 0 0 2%;
 		margin: 0;
 	}
-	div.k-product-sheet .availability {text-align: right;}
+	.k-product-sheet .availability {text-align: right;}
 	
 
 /* CE/ productSheet */
@@ -2819,18 +3052,6 @@ div.k-product-sheet div.k-product {float: left; width: 100%; padding: 0 0 2%; bo
 
 /* --------------------------------------------------------- PRODUCT GALLERY --- */
 /* CB/ productGallery */
-
-div.k-product-gallery:after {
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	width: 30px;
-	height: 30px;
-	content: "icon";
-	text-indent: -9999px;
-	background: transparent url(../img/k-theme1/bg_zoom.png) no-repeat;
-	z-index: 1000;
-}
 
 /* LIST OF THUMBS */
 
@@ -2848,8 +3069,8 @@ ul.thumblist {clear: both; padding: 0;}
 			border: 1px solid #CCC;
 		}
 		ul.thumblist li a:hover, ul.thumblist li a.zoomThumbActive {
-			background: #F60;
-			border: 1px solid #F60;
+			background: #000;
+			border: 1px solid #000;
 		}
 		ul.thumblist img {vertical-align: bottom;}
 
@@ -2871,7 +3092,7 @@ ul.thumblist {clear: both; padding: 0;}
    text-decoration: none;
    text-align:center;
    color: #333;
-   background: #FFF url(../img/k-theme1/zoomloader.gif) 43px 30px no-repeat;
+   background: #FFF url(../img/k-theme0/zoomloader.gif) 43px 30px no-repeat;
    padding: 8px;
    border: 1px solid #CCC;
    opacity: 0.8;
@@ -2881,16 +3102,20 @@ ul.thumblist {clear: both; padding: 0;}
 .zoomPup {
 	overflow: hidden;
 	position: absolute;
-	background: #EEE;
+	background: #FFF;
 	opacity: 0.5;
-	border: 1px solid #CCC;
+	outline: 1px solid #FFF;
+	box-shadow: 0 0 2px #000;
 	z-index: 120;
     z-index: 101;
 	cursor: crosshair;
-	outline: 4px solid #FFF;
 }
+	.zoomPup:after {
+		content: " ";
+		width: 40px;
+	}
 
-.zoomOverlay{ 
+.zoomOverlay{
 	display: none;
 	position: absolute;
 	left: 0;
@@ -2928,6 +3153,7 @@ ul.thumblist {clear: both; padding: 0;}
 	.zoomWrapperImage img {
 	  display: block;
 	  position: absolute;
+	  max-width: 2000px; /*cancels max-width 100%*/
 	  border: 0;
 	  z-index:101;
 	}
@@ -3107,7 +3333,7 @@ p.k-basket-sum {
 @media print {
 		
 	/* --- Things that should not be printed --- */
-	#navbar, #menu, #sidebar {display:none;}
+	#navbar, #menu, #sidebar, aside[role=complementary] {display:none;}
 	.k-tools, .k-login, .k-login-data {display:none;}
 	.k-actions-block {display:none;}
 	.k-carousel, .k-pagination {display: none;}
@@ -3159,16 +3385,16 @@ p.k-basket-sum {
 	#wrapper div:only-child[id=main] {width: 100%;}
 	
 	.k-article p {max-width: 98%;}
-		div.k-article div.k-intro {width: 100%;}
+		.k-article div.k-intro {width: 100%;}
 	
-	div.k-notes {max-width: 100%; padding: 0;}
-	div.k-illustration-block p.illustration img {max-width: 90%;}
+	.k-notes {max-width: 100%; padding: 0;}
+	.k-illustration-block p.illustration img {max-width: 90%;}
 	
 	
 /* List of articles */
 	div.k-entry h2 {margin: 0;}
 	div.k-entry h2 a, div.k-entry h2 a:link {padding: 0;}
-	div.k-article.k-entry ul.entry-info, ul.entry-info {
+	.k-article.k-entry ul.entry-info, ul.entry-info {
 		float: none;
 		width: auto;
 		text-align: left;
@@ -3176,9 +3402,9 @@ p.k-basket-sum {
 		padding: 0 0 20px;
 	}
 	ul.entry-info li {display: inline; padding: 0;}
-	div.k-entry .published {display: inline; font-size: 11pt; padding: 0; margin: 0;}
-	div.k-entry address {display: inline; font-size: 11pt;}
-	div.k-entry div.content {float: none;}
+	.k-entry .published {display: inline; font-size: 11pt; padding: 0; margin: 0;}
+	.k-entry address {display: inline; font-size: 11pt;}
+	.k-entry div.content {float: none;}
 	
 	p.k-readmore {padding: 0;}
 	p.k-readmore a:after {
@@ -3188,7 +3414,7 @@ p.k-basket-sum {
 	
 /* E-commerce */
 	p.buy, .rating, ul.catalog-view, p.k-quantity, ul.thumblist {display: none;}
-	div.k-catalog div.k-product {
+	.k-catalog .k-product {
 		float: none;
 		width: 100%;
 		padding: 0 0 15px;
@@ -3197,12 +3423,12 @@ p.k-basket-sum {
 		border-bottom: 1px solid #CCC;
 	}
 
-	div.k-catalog div.price-data {float: none; width: auto; height: auto;}
+	.k-catalog div.price-data {float: none; width: auto; height: auto;}
 	p.all-prices {float: none;}
 	.discount {position: static;}
 	#push-data, #comments {display: none;}
 	
-	div.k-product-sheet div.photo-data:after {display: none;}
+	.k-product-sheet div.photo-data:after {display: none;}
 	
 	
 /* Collapsible panels */
@@ -3232,71 +3458,87 @@ p.k-basket-sum {
 
 /* General  --------------------------------------------- */
 @media only screen and (max-width : 1000px) {
-	body {font-size: 90%;}
-	#container {min-width: 98%;}
 	#main {width: 83%;}
-	#sidebar {width: 96%; background: #D7E4EE; padding: 2%; margin-top: 2em;}
-	#wrapper div[id="main"]:first-child {width: 98%;}
-	
+	#sidebar, aside[role=complementary] {width: 96%; background: #D7E4EE; padding: 2%; margin-top: 2em;}
+	#wrapper #main:first-child {width: 98%;}
+	h1 {min-height: 50px;}
+	#loginLink {position: relative; top: -18px;}
+
 	/* Components */
-	div.k-article p {max-width: 100%;}
+	.k-article p {max-width: 100%;}
 	.jcarousel-item {height: 14em;}
 	div.dataTables_info {width: 10em; text-align: center;}
 	table.k-data-table {margin-top: 0.7em;}
+
+	div.k-tree-grid div.tree {float: none; clear: both; width: 100%; height: auto;}
+  div.k-tree-grid .tree-content {
+		float: none;
+		clear: both;
+		width: 100%;
+		padding: 25px 0;
+		border: none;
+		border-top: 1px solid #000;
+	}
+
 }
 
 
 /* Middle resolutions --------------------------------------------- */
-@media only screen and (max-width : 760px) {
-	h1 {width: 50%; height: auto;}
+@media only screen and (max-width : 800px) {
+	h1 {width: 50%;}
 	h2 {width: 60%;}
-	p, li, dt, dd, td, th {font-size: 10pt;}
 	select {font-size: 100%;}
-	fieldset.k-radio legend {font-size: 10pt;}
-	
-	#container {width: 100%; min-width: 0; max-width: 100%;}
-	
+
+	#container {width: 100%; max-width: 100%;}
+	p.k-breadcrumbs {width: 98%; padding-left : 2%;}
+
 	#menu, #secondary {width: 100%; padding-bottom: 20px;}
 	#menu p.aid, #secondary p.aid {display: block; width: 100%; text-align: center;}
-	
-	/* Conditions based on columns number */
-	#main {
-		width: 98%;
-		min-height: 0;
-		margin-left: 0;
-	} /* with three columns */
-	#wrapper div:first-child[id=main] {width: 98%;}
-	#wrapper div:last-child[id=main] {width: 98%;}
-	#wrapper div:only-child[id=main] {width: 98%;}
-	#sidebar {width: 96%; padding: 2%; border-top: 2px solid #000;}
+
+	/* Conditions based on number of columns */
+	#main {width: 100%; margin: 1em 0;} /* with three columns */
+	#wrapper #main:first-child {width: 100%;}
+	#wrapper #main:last-child {width: 100%;}
+	#wrapper #main:only-child {width: 100%;}
+	#sidebar, aside[role=complementary] {width: 96%; padding: 2%; border-top: 2px solid #000;}
 	#wrapper {width: 96%; padding-top: 20px; margin: 0 2%;}
-	
+
+	/* Navigation */
+
+	.sm-screen p.control {display: block;}
+	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
+	.sm-screen .k-navbar li {
+		float: none;
+		clear: both;
+		padding: 2px 0;
+		border: none;
+		border-bottom: 1px solid #FFF;
+	}
+	.sm-screen .k-navbar a, .sm-screen .k-navbar li.active a, 
+		.sm-screen .k-navbar li.active strong {display: block; padding: 10px;}
+	.dropdown ul {position: static; width: 100%;}
+
+	ul.k-menu {display: none;}
+
 	/* Components */
-	
-	ul.k-navbar {width: 100%; padding: 0;}
-	ul.k-navbar li {float: none; padding: 0; border: 0;}
-	ul.k-navbar a, ul.k-navbar li.active strong {padding: 5px 0.4em;}
-	ul.subnavbar ul {position: static; padding: 5px 3%; border: none;}
-		ul.subnavbar ul li {border: none; border-left: 1px dashed #FFF;}
-	
-	ul.k-menu, p.k-breadcrumbs {display: none;}
-	.k-login-data {display: none;}
+
 	div.k-tools {position: static;}
 	ul.k-tools-list {float: left; max-width: 60%; padding: 0 0 0 2%;}
 	form.k-language {position: static; float: right;}
 		form.k-language select {margin: 0.3em 0 0.1em;}
 		form.k-language label {height: 1.5em; padding: 0.5em;}
-	.k-search {display: none;}
-	
-	div.k-info-block {background: #FFF;}
-	
-	div.k-article p {max-width: 100%;}
-	div.k-intro {width: 90%;}
-	div.k-article.k-entry ul.entry-info {width: 20%;}
-	div.k-entry h2 {width: 100%;} 
-	div.k-entry div.content {width: 73%;} 
-	
-	p.lines-to-display {float: left; width: 55%; text-align: center;}
+
+	.k-info-block {background: #FFF;}
+
+	.k-intro {width: 90%;}
+	.k-article.k-entry ul.entry-info {width: 20%;}
+	.k-entry h2 {width: 100%;}
+	.k-entry div.content {width: 73%;}
+  	div.k-highlight-block, blockquote {width: 70%;}
+
+	div.k-pagination p {font-size: 11pt;}
+	div.k-pagination p.lines-to-display {display: block; width: 100%;}
+	div.k-pagination p.total-pages {float: none; display: block; width: 100%; text-align: left; padding: 30px 0 5px;}
 	div.k-pagination p.page-numbers {
 		clear: both;
 		width: 100%;
@@ -3305,43 +3547,44 @@ p.k-basket-sum {
 		padding-top: 0.5em;
 		border-top: 1px solid #FFF;
 	}
-	div.k-pagination p.total-pages {float: right; width: 40%; text-align: right;}
-	
+	div.k-pagination p.page-numbers a, div.k-pagination p.page-numbers a:link, div.k-pagination p.page-numbers a:visited {
+		display: inline-block;
+		width: 2em;
+		font-size: 12px;
+		padding: 0.8em;
+		border: 1px solid #CCC;
+	}
+	div.k-pagination p.page-numbers a:hover {border-color: #F60;}
 
 	.action-context {display: none;}
-	div.k-product-sheet .rating {width: 61px; text-align: center; padding: 13px 0 0; margin-top: -60px;}
-	div.k-product-sheet p.all-prices {width: 150px;}
-	div.k-product-sheet div.photo-data {clear: both; width: 100%; text-align: center; padding: 0 0 25px;}
-	div.k-product-sheet div.product-data {width: 100%; padding: 0; border: none;} 
-	
-	div.k-catalog .k-product {width: 92%;}
-	div.k-catalog ul.catalog-view {display: none;}
-	div.k-catalog .photo-data {float: left; width: 20%;}
-	div.k-catalog p.extra, div.k-catalog .name, div.k-catalog p.rating {float: left; width: 45%; margin-left: 4%;}
-	div.k-catalog div.price-data {float: left; width: 45%; padding-bottom: 20px; margin-left: 4%;}
-	
+	.k-product-sheet .rating {width: auto; margin: 0 0 1em;}
+	.k-product-sheet p.all-prices {width: 150px;}
+	.k-product-sheet div.photo-data {clear: both; width: 100%; text-align: center; padding: 0 0 25px;}
+	.k-product-sheet div.product-data {width: 100%; padding: 0; border: none;}
+
+	.k-catalog ul.catalog-view {display: none;}
+	.k-catalog .k-product {width: 92%;}
+  	.k-catalog .product-data {float: left; width: 55%; height: auto; margin-bottom: 1em;}
+	.k-catalog .photo-data {float: left; width: 30%; padding-right: 5%; margin-bottom: 1em;}
+	.k-catalog div.price-data {}
+
 	dl.basket-item dd {font-size: 11px;}
-	
-	.action-context + ul.k-actions {width: 100%;}
-	div.k-tree-grid div.tree {float: none; width: 100%; height: 200px;}
-	div.k-tree-grid div.tree-content {float: none; width: 100%; border: none;}
-	
+
 	ul.k-sitemap {padding: 0;}
 	ul.k-sitemap li {width: 90%; padding-left: 25px;}
 	ul.k-sitemap li.one-level {padding-bottom: 0.5em;}
-	
+
 	.to-right, .to-left, div.k-illustration-block.to-right, div.k-illustration-block.to-left {
 		float: none;
 		width: auto;
-		padding: 0;
 	}
-		
+
 	div.dataTables_length {text-align: center; width: 100%; padding-bottom: 5px; border-bottom: 1px solid #CCC;}
 		div.dataTables_length label {float: none; width: auto; padding: 0;}
 	div.dataTables_info {position: static; width: 100%; text-align: center; padding-bottom: 10px;}
 	div.dataTables_filter {float: left; width: 100%; text-align: center;}
-		div.dataTables_filter label {float: none; width: auto; text-align: left; padding: none;}
-		
+		div.dataTables_filter label {float: none; width: auto; text-align: left; padding: 0;}
+
 	div.k-tree-grid div.tree-content {
 		overflow: visible;
 		float: none;
@@ -3350,7 +3593,7 @@ p.k-basket-sum {
 		padding: 0;
 		border: none;
 	}
-	
+
 	.jcarousel-item-horizontal {margin: 0 5px;}
 	.k-carousel .price {font-size: 10pt;}
 	.k-carousel li {font-size: 10pt; text-align: center;}
@@ -3364,24 +3607,38 @@ p.k-basket-sum {
 	}
 }
 
+@media only screen and (max-width : 700px) {
 
+	label, fieldset.k-radio legend, fieldset.k-check legend {
+		float: none;
+		width: auto;
+		display: block;
+		text-align: left;
+		padding: 0;
+	}
+  label.k-online {padding: 0;}
+	p.k-check {width: 100%; padding: 1em 0 0 0;}
+	p.k-check label {display: inline-block; padding-right: 15px;}
 
-/* Small resolutions --------------------------------------------- */
+	p.k-basket-sum {overflow: hidden; width: 5em;}
+
+}
+
 @media only screen and (max-width : 480px) {
-	body {font-size: 90%;}
+	h1 {width: 40%; min-height: auto; background-size: 80px; padding-left: 90px;}
+	h1 small {font-size: 11px;}
+
 	label {width: 8em;}
-	
-	/* Components */
-	ul.k-navbar li {float: none; width: 100%; padding: 0; border-bottom: 1px solid #FFF;}
-	ul.k-navbar a, ul.k-navbar li.active strong {padding: 8px 0.4em;}
-	ul.subnavbar ul {position: static; padding: 0;}
-	
+
 	#loginLink a, #loginLink a:link, #loginLink a:visited {top: 64px;}
-		
+
 	ul.k-form-steps li {font-size: 12px; width: 20%;}
 
-	div.k-entry h2 {margin: 0;}
-	div.k-article.k-entry ul.entry-info, ul.entry-info {
+	.k-entry {margin: 0;}
+	.k-entry .entry-title {margin: 0;}
+  .k-entry div.content {width: 100%; margin: 0;}
+  ul.entry-info + div.content {margin: 0;}
+	.k-article.k-entry ul.entry-info, ul.entry-info {
 		float: none;
 		width: auto;
 		text-align: left;
@@ -3392,29 +3649,20 @@ p.k-basket-sum {
 	div.k-entry .published {display: inline; font-size: 11pt; padding: 0; margin: 0;}
 	div.k-entry address {display: inline; font-size: 11pt;}
 	div.k-entry div.content {float: none; width: 100%;}
-	
-	div.k-pagination p {font-size: 11pt;}
-	div.k-pagination p.lines-to-display {display: block; width: 100%;}
-	div.k-pagination p.total-pages {float: none; display: block; width: 100%; text-align: left; padding: 30px 0 5px;}
-	div.k-pagination p.page-numbers a, div.k-pagination p.page-numbers a:link, div.k-pagination p.page-numbers a:visited {
-		display: inline-block;
-		width: 2em;
-		font-size: 12px;
-		padding: 0.8em;
-		border: 1px solid #CCC;
-	}
-	div.k-pagination p.page-numbers a:hover {border-color: #F60;}
-	
+
 	dl.basket-item dd {font-size: 10pt;}
 	dl.basket-item dd {font-size: 10pt; width: 30%;}
 	dl.basket-item .name {width: 60%; margin: 0;}
 	dl.basket-item .price {width: 30%;}
 	.k-basket .control {font-size: 10pt;}
 	.k-basket .k-buttons-bar li {font-size: 11pt;}
-		
+
 	div.k-product-sheet .discount {top: 0; right: 0;}
 	div.k-product-sheet .k-actions-block {display: none;}
-	
+
+  .k-catalog .product-data {float: none; width: 100%;}
+	.k-catalog .photo-data {float: none; width: 100%; padding: 15px 15px 15px 0;}
+
 	ul.k-sitemap a {display: block;}
 }
 
