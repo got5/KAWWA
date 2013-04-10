@@ -53,7 +53,7 @@ public class KawwaPortalComponentsModule
 	 */
 	public static void contributeJavaScriptStackSource(MappedConfiguration<String, JavaScriptStack> configuration)
     {
-    	configuration.addInstance(KawwaConstants.STACK_ID, Theme0Stack.class);
+    	configuration.addInstance(KawwaConstants.STACK_ID, Theme1Stack.class);
     }
 	
 	public static void contributeClasspathAssetAliasManager(MappedConfiguration<String, String> configuration)
