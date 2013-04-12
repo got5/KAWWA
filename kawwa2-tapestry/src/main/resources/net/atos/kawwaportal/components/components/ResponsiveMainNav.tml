@@ -1,0 +1,25 @@
+<t:container
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+	
+	<t:block t:id="control">
+		<p class="control">
+			<a href="#" title="Click to open/close menu"><img
+				src="${asset:classpath:net/atos/kawwaportal/components/theme/img/k-theme0/nav_control.png}" alt="Menu" /></a>
+		</p>
+	</t:block>
+	<t:block id="skip">
+		<h2 class="k-skip">
+			<a href="#wrapper">Main navigation (Skip it)</a>
+		</h2>
+	</t:block>
+	
+	<t:block id="items"></t:block>
+	
+	<t:delegate t:to="dcontrol" />
+	<t:delegate t:to="dskip" />
+	<ul id="${id}">
+		<t:delegate t:to="ditems" />
+	</ul>
+
+</t:container>

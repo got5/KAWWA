@@ -11,6 +11,9 @@
     	panel: function(specs){
             $("#" + specs.id).panel(specs.options);
         }, 
+        responsiveMainNav: function(specs){
+        	$("#" + specs.id).addClass("k-navbar").flexNav();
+        },
         mainNav: function(specs) {
         	$("#" + specs.id+" > li > div, #" + specs.id+" > li > ul").addClass("dropdown");
         	
