@@ -1,0 +1,3682 @@
+/*-------------------------------------------------------------------- 
+          	  	 KAWWA - Theme 1
+	          	Default Atos Theme
+          By Le Studio, Atos Worldline, 2011
+          
+				Version 1.5 (02/2013)
+-------------------------------------------------------------------- */
+
+/* INHERIT FROM: "k-structure.css" */
+
+/* CSS index:
+	THEME'S DEFAULT VALUES
+	RE STRUCTURATION
+	TABLE SPECIFICS
+		DYNAMIC TABLES
+	FORM SPECIFICS
+		SUB-FIELDSETS
+		CHECKBOXES 
+		RADIOS 
+		MANDATORY INFO
+		REQUIRED FIELD
+		INPUT HELP
+		FIELD COMMENT
+		ERROR FIELD
+		ERROR MESSAGES
+		CONFIRMATION MESSAGES
+		FORM BUTTONS
+		DATEPICKER 
+		FORM WIZARD
+	NAVIGATION 
+		MAIN NAV/FIRST LEVEL
+		VERTICAL MENU
+		SKIP MENU LINK
+		BREADCRUMBS 
+		TREE-VIEW
+		TREE-VIEW GRID
+	SITE UTILITIES
+		NO DISPLAY
+		NEW WINDOW LINK
+		SITEMAP 
+		TOOLS LINKS
+		LANGUAGE CHOICE
+		LOGIN 
+		LOGIN DATA
+		SEARCH 
+		ACTION BUTTONS BAR
+		ACTION BUTTONS
+		ICON BUTTONS
+		PAGINATION 
+		MODAL 
+		ORIENTATION AID
+	BLOCKS 
+		TABS
+		IMAGE CAROUSEL
+		COLLAPSIBLE PANELS
+		ACCORDION
+	EDITORIAL
+		ARTICLE
+		ARTICLE ENTRY
+		INTRODUCTION
+		HIGHLIGHT BLOCK
+		ILLUSTRATION
+		NOTES
+		INFO BLOCK
+		READ MORE LINK
+		LIST OF LINKS
+	E-COMMERCE
+		HPRODUCT (product template)
+		PRODUCT QUANTITY
+		PRODUCT REVIEW
+		PRODUCT RATING
+		PRODUCT GALLERY
+		CATALOG
+		PRODUCT SHEET
+		PRODUCT OPTIONS
+		BASKET
+		BASKET SUMMARY
+		BASKET DETAILS
+	PRINT STYLES
+	MEDIA QUERIES
+*/
+
+
+/* --------------------------------------------------------------------------- */
+/* -------------------------- THEME'S DEFAULT VALUES ------------------------- */
+/* --------------------------------------------------------------------------- */
+
+
+/* --- FONT FACE DECLARATIONS --- */
+
+@font-face {
+	font-family: 'StagBook';
+	src: url('stag-book-webfont.eot'); /* IE9 Compat Modes */
+	src: url('stag-book-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('stag-book-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('stag-book-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('stag-book-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+body {
+	font: 100%/1.3 Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #000;
+	background: #FFF;
+	-webkit-text-size-adjust: 100%; /* iPhone */
+}
+
+h1 {
+	float: left;
+	width: 40%;
+	height: 2.5em;
+	font: 1.3em StagBook, Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: url(../img/k-theme1/logo_aw.png) no-repeat;
+	padding: 0 0 15px 120px;
+	margin-left: 2%;
+}
+	h1 small {display: block; font-size: 70%;}
+
+h2 {
+	font: bold 1.5em StagBook, Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #F60;
+	background: #FFF;
+	margin-bottom: 1.5em;
+}
+
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	color: #06A;
+	background: #FFF;
+	padding: 5px 0;
+	margin-bottom: 1.5em;
+	border-bottom: 1px dashed #66A3C7;
+}
+	h3 img {margin-top: -8px;}
+	
+h4 {
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #06A;
+	background: #FFF;
+	padding: 5px 0 5px 10px;
+	margin: 1em 0 0.5em;
+}
+
+h5 {
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #000;
+	background: #FFF;
+	margin: 0.5em 0;
+}
+	
+p, li, dt, dd {font-size: 0.7em;}
+ul, ol {padding-left: 21px;}
+li {line-height: 1.3; padding: 3px 0;}
+li li {font-size: 100%;}
+li dt, li dd {font-size: 100%;}
+
+td p, td li {font-size: 100%;}
+
+p + ul {margin: 0.5em 0;}
+
+code {font-size: 120%;}
+
+a, a:link {color: #000; background: transparent;}
+a:visited {color: #555; background: transparent;}
+a:hover, a:focus {text-decoration: none;}
+
+abbr {border-bottom: 1px dashed #CCC;}
+
+img {max-width: 100%;}
+
+/* ------------------------------------------------------------- BLOCK QUOTE */
+/* CB/ quote */
+
+blockquote, .k-quote {
+	width: 50%;
+	max-width: 40em;
+	font-style: italic;
+	color: #000;
+	background: transparent url(../img/k-theme1/bg_quotes.png) 0 0 no-repeat;
+	padding: 9px 0 0 38px;
+	margin: 2em;
+}
+	blockquote p, .k-quote p {font-size: 0.85em; text-indent: 0;}
+		
+	blockquote p.citation, .k-quote p.citation {
+		font-size: 0.7em;
+		font-style: normal;
+		padding-top: 1em;
+	}
+		blockquote p.citation:before, .k-quote p.citation:before {content: "\2500 \00A0 ";}
+		
+/* CE/ quote */
+
+
+/* --- FORM ELEMENTS --- */
+
+form p {margin: 8px 0;}
+form p.highlight {background: #E8E8E8; padding: 1em 0 0.5em;}
+
+	form table {float: left;}
+
+fieldset {
+	clear: both;
+	color: #333;
+	background: #FFF;
+	padding: 1% 2%;
+	margin-bottom: 1em;
+	border: 1px solid #990;
+}
+	fieldset fieldset {
+		clear: none;
+		padding: 0;
+		margin: 0;
+		border: none;
+	}
+	fieldset ul {margin: 0 0 20px 20px;}
+	fieldset p {float: left; width: 100%;}
+
+legend {
+	font-size: 0.95em;
+	font-weight: bold;
+	color: #000;
+	background: #FFF url(../img/k-theme1/sprite_arrows.png) 5px -328px no-repeat;
+	padding: 0 8px 0 15px;
+}
+label {
+	float: left;
+	width: 15em;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 15px;
+}
+	label em {color: #F00; background: transparent;}
+
+/* General inputs */
+input {
+	font: 103% Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	padding: 0 0 2px 2px;
+	margin: 0 0 5px 0;
+	border: 1px solid #999;
+}
+
+input[type=checkbox], input[type=radio] {
+	background: #FFF;
+	border: none;
+	vertical-align: -0.2em;
+}
+
+input:focus, select:focus, textarea:focus {background: #F2F2F2; border: 1px solid #990;}
+input[type=checkbox]:focus, input[type=radio]:focus {
+	outline: 2px solid #990;
+}
+	
+input[type=text]:disabled, input[type=text]:disabled:hover {
+	font-style: italic;
+	color: #000;
+	background: #CCC;
+	border-color: #CCC;
+	cursor: default;
+}
+
+select {
+	font-size: 90%;
+	padding: 2px;
+	border: 1px solid #CCC;
+}		
+textarea {
+	font-size: 120%;
+	padding: 0 0 2px 2px;
+	border: 1px solid #999;
+}
+
+
+table {color: #000; background: #FFF; margin-bottom: 20px;}
+p + table {margin-top: 1em;}
+
+caption {
+	font-size: 0.75em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #FFF;
+	background: #000;
+	padding: 5px 8px;
+}
+
+tr:nth-child(even) {color: #000; background: #E8E8E8;}
+
+th, td {
+	font-size: 0.75em;
+	text-align: left;
+	padding: 5px 8px;
+	border-bottom: 1px solid #BFBFBF;
+}
+
+th {
+	color: #FFF;
+	background: #808080;
+	border-top: 1px solid #FFF;
+	border-bottom: 2px solid #BFBFBF;
+}
+
+th a, th a:link, th a:visited {color: #FFF; background: #808080; padding-right: 20px;}
+
+th a.descending, th a:link.descending, th a:visited.descending {
+	background: #808080 url(../img/k-theme1/sort_desc.png) right no-repeat;
+}
+th a.ascending, th a:link.ascending, th a:visited.ascending {
+	background: #808080 url(../img/k-theme1/sort_asc.png) right no-repeat;
+}
+
+
+/* --------------------------------------------------------------------------- */
+/* ----------------------------- RE STRUCTURATION ---------------------------- */
+/*                           (rewrite k-structure.css)                         */
+/* --------------------------------------------------------------------------- */
+
+header[role=banner], #header {
+	float: left;
+	width: 100%;
+	color: #FFF;
+	background: #06A;
+	padding: 13px 0 0;
+}
+
+#wrapper {
+	width: 100%;
+	color: #000;
+	background: #FFF;
+	padding: 2% 0;
+}
+	
+footer[role=contentinfo], #footer {text-align: center; color: #FFF; background: #06A;}
+
+	p.k-copyright {
+		clear: both;
+		font-size: 0.65em;
+		padding: 3px 0;
+	}
+	
+	
+
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------ TABLE SPECIFICS ---------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* General */
+.money-cell {text-align: right;}
+
+/* ------------------------------------------------------------- DYNAMIC TABLES */
+/* CB/ dynamicTables */
+
+table.k-data-table {clear: both; border-top: 1px dashed #CCC;}
+div.dataTables_wrapper {
+	position: relative;
+	padding-top: 5px;
+	border-top: 1px dashed #CCC;
+}
+
+	th.sorting {
+		background: #808080 url(../img/k-theme1/sort_both.png) right no-repeat;
+		cursor: pointer;
+	}
+	th.sorting_asc {
+		background: #808080 url(../img/k-theme1/sort_asc.png) right no-repeat;
+		cursor: pointer;
+	}
+	th.sorting_desc {
+		background: #808080 url(../img/k-theme1/sort_desc.png) right no-repeat;
+		cursor: pointer;
+	}
+	
+/* Data table lines */
+div.dataTables_length {float: left; width: 25%; min-width: 10em;}
+	div.dataTables_length label {font-size: 0.7em; width: auto;}
+	
+/* Data table filter */
+div.dataTables_filter {}
+	div.dataTables_filter label {
+		float: right;
+		width: 45%;
+		font-size: 0.7em;
+		text-align: right;
+	}
+	
+/* Data table info */	
+div.dataTables_info {
+	position: absolute;
+	width: 30%;
+	top: 7px;
+	left: 28%;
+	font-size: 0.7em;
+	text-align: center;
+}
+
+/* Dynamic pagination */
+div.dataTables_paginate {float: right; width: auto; font-size: 0.7em;}
+
+	div.dataTables_paginate span {padding: 0 1em;}
+	div.dataTables_paginate .paginate_button {cursor: pointer;}
+	div.dataTables_paginate .paginate_button_disabled {
+		color: #999;
+		cursor: default;
+	}
+	div.dataTables_paginate .paginate_active {
+		font-weight: bold;
+		color: #F60;
+		cursor: default;
+	}
+
+
+/* CE/ dynamicTables */
+
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------ FORM SPECIFICS ----------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/*  For fields in the same paragraph */
+label.k-online {float: none; width: auto; text-align: left; padding-left: 2em;}
+
+/* For side-to-side fielsets */
+.to-left {
+	clear: none;
+	float: left;
+	width: 45%;
+}
+.to-right {
+	clear: none;
+	float: right;
+	width: 45%;
+}
+
+
+/* For clearly divided sub-fieldsets */
+/* ------------------------------------------------------------- SUB-FIELDSETS */
+/* CB/ subFieldsets */
+
+fieldset.k-sub-group {
+	padding: 10px 20px 10px;
+	margin-bottom: 20px;
+	border-top: 1px solid #CCC;
+}
+	fieldset.k-sub-group legend {
+		height: 2em;
+		line-height: 2em;
+		text-align: left;
+		color: #000;
+		background: #EEE;
+		padding-left: 0.4em;
+		border: 1px solid #CCC;
+	}
+	fieldset.k-sub-group legend label {
+		width: auto;
+		text-align: left;
+	}
+	
+/* CE/ subFieldsets */
+
+/* ------------------------------------------------------------- CHECKBOXES */
+/* CB/ checkboxes */
+
+/* In a fieldset */
+fieldset.k-check {clear: both; padding: 0; margin: 0; border: none;}
+	
+	fieldset.k-check legend {
+		float: left;
+		width: 15em; /* gets the same width from default lable width */
+		font-size: 0.7em;
+		text-align: right;
+		color: #000;
+		background: none;
+		padding: 0.6em 1em 0 0;
+	}
+	fieldset.k-check label {
+		float: none;
+		display: inline;
+		font-weight: normal;
+		padding-right: 1.5em;
+	}
+	
+	fieldset.k-check p {float: left; width: auto;}
+    fieldset.k-check ul {
+        float: left;
+        width: auto;
+        list-style-type: none;
+		padding: 0;
+        margin: 0.3em 0 0;
+    }
+
+/* Applied to paragraphs */
+p.k-check {width: auto; padding-left: 16.3em;}
+	p.k-check label {
+	    float: none;
+	    width: auto;
+	    font-weight: normal;
+	    text-align: left;
+	}
+
+/* Unique labels */
+label.k-check {float: none; width: auto; font-weight: normal; text-align: left;}
+
+/* List of inputs */
+ul.k-check {margin: 0;}
+	ul.k-check li {display: inline-block; padding: 0 2% 0 0;}
+    ul.k-check label {
+        float: none;
+        width: auto;
+        font-weight: normal;
+        text-align: left;
+    }
+
+/* CE/ checkboxes */
+
+
+/* ------------------------------------------------------------- RADIOS */
+/* CB/ radios */
+
+/* Fieldset elements for radios */
+fieldset.k-radio {clear: both; padding: 0; margin: 0; border: none;}
+	
+	fieldset.k-radio legend {
+		float: left;
+		width: 15em; /* gets the same width from default lable width */
+		font-size: 0.7em;
+		text-align: right;
+		color: #000;
+		background: none;
+		padding: 0.6em 1em 0 0;
+	}
+	fieldset.k-radio label {
+		float: none;
+		display: inline;
+		font-weight: normal;
+		padding-right: 1.5em;
+	}
+	
+	fieldset.k-radio p {float: left; width: auto;}
+    fieldset.k-radio ul {
+        float: left;
+        width: auto;
+        list-style-type: none;
+		padding: 0;
+        margin: 0.3em 0 0;
+    }
+
+/* CE/ radios */
+
+/* ------------------------------------------------------------- MANDATORY INFO */
+/* CB/ mandatoryInfo */
+
+p.k-mandatory {
+	clear: both;
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align: right;
+	color: #06A;
+	background: transparent;
+	padding-right: 5px;
+	margin-bottom: 1em;
+} 
+	
+/* CE/ mandatoryInfo */
+
+/* ------------------------------------------------------------- REQUIRED FIELD */
+/* CB/ requiredField */
+
+input.k-required {
+	background: #FFF url(../img/k-theme1/bg_required.png) 0.2em 0.3em no-repeat;
+	padding-left: 1.2em;
+} 
+	
+/* CE/ requiredField */
+
+/* ------------------------------------------------------------- INPUT HELP */
+/* CB/ inputHelp */
+
+.k-field-help {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 0.5em;
+    vertical-align: -3px;
+}
+	label + .k-field-help {padding-left: 0; margin-left: -12px;}
+	
+/* CE/ inputHelp */
+
+/* ------------------------------------------------------------- FIELD COMMENT --- */
+/* CB/ fieldComment */
+
+.tipsy {
+	position: absolute;
+	font-size: 0.65em;
+	background-repeat: no-repeat;
+	background-image: url(../img/k-theme1/tipsy.gif);
+    padding: 5px;
+	z-index: 100000;
+}
+.tipsy-north {background-position: top center;}
+.tipsy-south {background-position: bottom center;}
+.tipsy-east {background-position: right center;}
+.tipsy-west {background-position: left center;}
+
+.tipsy-inner {
+	background-color: #000;
+	color: #FFF;
+	max-width: 200px;
+	padding: 5px 8px 4px 8px;
+	text-align: center;
+}
+.tipsy-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border: 5px dashed #000;
+}
+
+/* Rules to colour arrows */
+.tipsy-arrow-n {
+	border-bottom-color: #000;
+}
+.tipsy-arrow-s {
+	border-top-color: #000;
+}
+.tipsy-arrow-e {
+	border-left-color: #000;
+}
+.tipsy-arrow-w {
+	border-right-color: #000;
+}
+.tipsy-n .tipsy-arrow {
+	top: 0px;
+	left: 50%;
+	margin-left: -5px;
+	border-bottom-style: solid;
+	border-top: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.tipsy-nw .tipsy-arrow {
+	top: 0;
+	left: 10px;
+	border-bottom-style: solid;
+	border-top: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.tipsy-ne .tipsy-arrow {
+	top: 0;
+	right: 10px;
+	border-bottom-style: solid;
+	border-top: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.tipsy-s .tipsy-arrow {
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-top-style: solid;
+	border-bottom: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.tipsy-sw .tipsy-arrow {
+	bottom: 0;
+	left: 10px;
+	border-top-style: solid;
+	border-bottom: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.tipsy-se .tipsy-arrow {
+	bottom: 0;
+	right: 10px;
+	border-top-style: solid;
+	border-bottom: none;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.tipsy-e .tipsy-arrow {
+	right: 0;
+	top: 50%;
+	margin-top: -5px;
+	border-left-style: solid;
+	border-right: none;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+.tipsy-w .tipsy-arrow {
+	left: 0;
+	top: 50%;
+	margin-top: -5px;
+	border-right-style: solid;
+	border-left: none;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+
+
+/* CE/ fieldComment */
+
+/* ------------------------------------------------------------- ERROR FIELD */
+/* CB/ errorField */
+
+/* Field error */
+input.k-field-error {
+	color: #FFF;
+	background-color: #C00;
+}
+
+label.k-field-error {
+	color: #C00;
+	background-color: #FFF;
+}
+
+/* Contextual field error message */
+.k-contextual-error {
+	font-size: 90%;
+	font-weight: bold;
+	color: #C00;
+	background: transparent;
+	padding-left: 5px;
+	vertical-align: 4px;
+}
+
+/* CE/ errorField */
+
+/* ------------------------------------------------------------- ERROR MESSAGES */
+/* CB/ errorMessages */
+
+div.k-error-messages {
+	clear: both;
+	font-weight: bold;
+	color: #C00;
+	background: #FFF url(../img/k-theme1/bg_error_message.png);
+	padding: 10px;
+	margin-bottom: 25px;
+	border: 1px solid #C00;
+}
+	div.k-error-messages h3 {
+  		width: 60%;
+		background: transparent;
+  		margin: 0 auto 21px;
+		border-color: #C00;
+	}
+	div.k-error-messages ul {
+  		width: 60%;
+  		margin: 3px auto;
+	}
+	div.k-error-messages p {
+  		width: 60%;
+  		margin: 3px auto;
+	}
+	
+/* CE/ errorMessages */	
+
+
+/* ------------------------------------------------------------- ERROR MESSAGES */
+/* CB/ errorMessages */
+
+div.k-confirm-messages {
+	clear: both;
+	font-weight: bold;
+	color: #FFF;
+	background: #990;
+	padding: 10px;
+	margin-bottom: 25px;
+	border: 1px solid #990;
+}
+	div.k-confirm-messages h3 {
+  		width: 60%;
+  		color: #FFF;
+		background: transparent;
+  		margin: 0 auto 21px;
+		border-color: #FFF;
+	}
+	div.k-confirm-messages ul {
+  		width: 60%;
+  		margin: 3px auto;
+	}
+	div.k-confirm-messages p {
+  		width: 60%;
+  		margin: 3px auto;
+	}
+	
+/* CE/ errorMessages */	
+
+/* ------------------------------------------------------------- FORM BUTTONS */
+/* CB/ inputButtons */
+/* CB/ linkButtons */
+
+/* Buttons bar for inputs */
+.k-buttons-bar {
+    clear: both;
+    text-align: right;
+    padding: 0;
+    margin: 0 0 20px;
+    border: none;
+}
+
+	/* Buttons bar for links */
+	.k-buttons-bar li {
+		display: inline;
+		font-size: 0.8em;
+		list-style-type: none;
+	}
+
+/* Valid actions - must duplicate declarations for IE6!!*/
+input[type=button], input[type=submit] {
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #F60;
+	padding: 2px 5px 3px;
+	border: 1px #F60 solid;
+	cursor: pointer;
+}
+.k-button, a.k-button, a.k-button:link, a.k-button:visited {
+	display: inline-block;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #F60;
+	padding: 2px 5px 3px;
+	border: 1px #F60 solid;
+	cursor: pointer;
+}
+	/*hover*/
+	input[type=button]:hover, input[type=submit]:hover, a.k-button:hover {
+		color: #FFF;
+		background: #000;
+		border-color: #000;
+	}
+	/*focus*/
+	input[type=button]:focus, input[type=submit]:focus, a.k-button:focus {
+		color: #FFF;
+		background: #000;
+		border-color: #000;
+	}
+
+/* Disabled actions */
+
+	input[type=submit]:disabled, input[type=button]:disabled {
+		color: #999;
+		background: #CCC;
+		border: 1px solid #CCC;
+		cursor: default;
+	}
+	.k-disabled {
+		display: inline-block;
+		height: 1.5em;
+		line-height: 1.5em;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #999;
+		background: #CCC;
+		padding: 2px 5px 3px;
+		border: 1px solid #CCC;
+		cursor: default;
+	}
+		
+/* Optional actions */
+input[type=button].optional, input[type=submit].optional {
+	color: #FFF;
+	background: #990;
+	border: 1px #990 solid;
+	cursor: pointer;
+}
+a.k-button.optional, a.k-button.optional:link, a.k-button.optional:visited {
+	display: inline-block;
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #FFF;
+	background: #990;
+	border: 1px #990 solid;
+	cursor: pointer;
+}
+	/*hover*/
+	input[type=button].optional:hover, input[type=submit].optional:hover, a.k-button.optional:hover {
+		color: #FFF;
+		background: #000;
+		border-color: #000;
+	}
+	/*focus*/
+	input[type=button].optional:focus, input[type=submit].optional:focus, a.k-button.optional:focus {
+		color: #FFF;
+		background: #000;
+		border-color: #000;
+	}
+	
+/* Reset Actions */
+input[type=button].reset, input[type=reset] {
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #808080;
+	padding: 2px 5px 3px;
+	border: 1px solid #808080;
+	cursor: pointer;
+}
+a.k-button.reset, a.k-button.reset:link, a.k-button.reset:visited {
+	display: inline-block;
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #FFF;
+	background: #808080;
+	border: 1px solid #808080;
+}
+	
+	/* Hover/Focus */
+	input[type=button].reset:hover, input[type=reset]:hover, a.k-button.reset:hover {
+		color: #FFF;
+		background: #000;
+		border-color: #000;
+	}
+	input[type=button]:focus, input[type=reset]:focus, a.k-button.reset:focus {
+		color: #FFF;
+		background: #000;
+		border-color: #000;
+	}
+		
+
+/* CE/ linkButtons */	
+/* CE/ inputButtons */
+
+
+/* ------------------------------------------------------------- DATEPICKER */
+/* CB/ datepicker */
+
+input.k-datepick {width: 6.7em; text-align: center;}
+
+/* Calendar button */
+img.ui-datepicker-trigger {padding: 0 5px; vertical-align: top; cursor: pointer;}
+
+/* Today's date link */
+td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today a:visited {
+	color: #FFF;
+	background: #990;
+}
+
+/* Values for calendar table */
+.ui-datepicker {
+	display: none;
+	margin: 0;
+	background: #F2F2F2;
+	border: 1px solid #808080;
+}
+.ui-datepicker table {margin: 0;}
+.ui-datepicker tr:nth-child(even) td {color: #000; background: #FFF;}
+.ui-datepicker th {
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align: right;
+	color: #FFF;
+	background: #66A3C7;
+	padding: 0.2em;
+}
+.ui-datepicker td {
+	font-size: 0.7em;
+	text-align: right;
+	padding: 0.1em;
+	border: none;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+	display: block;
+	text-decoration: none; 
+	padding: 0 0.2em;
+}
+.ui-datepicker td a:hover {
+	color: #FFF;
+	background: #990;
+}
+
+/* Month/Year title */
+.ui-datepicker .ui-datepicker-title {
+	font-size: 0.75em;
+	font-weight: bold;
+	text-align: center;
+	color: #FFF;
+	background: #000;
+	padding: 0.3em 0;
+}
+
+/* Prev/Next Arrows */
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 23px;
+	height: 23px; 
+}
+
+.ui-datepicker .ui-icon {
+	display: block;
+	overflow: hidden;
+	text-indent: -99999px;
+	cursor: pointer;
+}
+.ui-icon-circle-triangle-w {
+	width: 16px;
+	height: 16px;
+	background: transparent url(../img/k-theme1/date_prev.gif) 0 2px no-repeat;
+}
+.ui-icon-circle-triangle-e {
+	width: 16px;
+	height: 16px;
+	background: transparent url(../img/k-theme1/date_next.gif) right 2px no-repeat;
+}
+
+.ui-datepicker .ui-datepicker-prev {left: 2px;}
+.ui-datepicker .ui-datepicker-next {right: 2px;}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;  
+}
+
+/* CE/ datepicker */
+
+
+/* -------------------------------------------------------- FORM WIZARD */
+/* CB/ formWizard */
+
+ul.k-form-steps {clear: both; margin-bottom: 1em; padding: 0;}
+	
+	ul.k-form-steps li {
+		display: inline-block;
+		list-style-type: none;
+		font: 1em StagBook, Arial, "Helvetica Neue", Helvetica, sans-serif;
+		color: #BBB;
+		background: #FFF;
+		margin-right: 5%;
+	}
+	ul.k-form-steps strong {display: block; font-size: 120%;}
+	
+	/* States */
+	ul.k-form-steps li.past {color: #000; background: #FFF;}
+    ul.k-form-steps li.active {
+        color: #F60;
+        background: #FFF url(../img/k-theme1/bg_step.gif) 0 0.3em no-repeat;
+        padding-left: 10px;
+    }
+
+/* CE/ formWizard */
+
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------- NAVIGATION -------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------- MAIN NAV/FIRST LEVEL */
+
+/* CB/ ResponsiveMainNav */
+
+/* Navigation control */
+p.control {
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 2%;
+	width: 45px;
+}
+	p.control a {display: block}
+
+#navbar {clear: both;}
+
+ul.k-navbar {
+		float:left;
+		width: 98%; 
+		color: #FFF;
+		background: #000;
+		padding-left: 2%; 
+		margin: 0;
+	}
+	ul.k-navbar li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		padding: 0 0.7em;
+		margin: 3px 0;
+		border-right: 1px solid #FFF;
+	}
+	
+		ul.k-navbar a, ul.k-navbar a:visited {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			padding: 0 0.5em;
+		}
+		ul.k-navbar a:hover, ul.k-navbar a:focus {
+			color: #000;
+			background: #BFBFBF;
+		}
+		
+		/* If section has dropdown */
+		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
+			color: #FFF;
+			background: #000 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar a.hasdropdown:hover, ul.k-navbar a.hasdropdown:focus {
+			color: #000;
+			background: #BFBFBF url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+		ul.k-navbar li.active a.hasdropdown, ul.k-navbar li.active a.hasdropdown:visited {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar li.active a.hasdropdown:hover, ul.k-navbar li.active a.hasdropdown:focus {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+
+		/* For deprecated superfish menu */
+		.sf-sub-indicator {display: none;}
+		
+		/* Active section / no link */
+		ul.k-navbar li.active strong {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			color: #FFF;
+			background: #F60;
+			padding: 0 0.5em;
+			margin: 0 0.5em;
+		}
+		
+		/* Active section / with link */
+		ul.k-navbar li.active a, ul.k-navbar li.active a:visited {
+			color: #FFF;
+			background: #F60;
+		}
+
+/* SECOND LEVEL UL - Dropdown menu */
+.dropdown ul {
+	display: none;
+	position: absolute;
+	width: 25em;
+	color: #000;
+	background: #BFBFBF;
+	padding: 0;
+	z-index: 200;
+}
+ul.dropdown {width: 18em; padding: 0;}
+
+ul.k-navbar .dropdown li {
+	float: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px dotted #FFF;
+	border-right: none;
+}
+
+ul.k-navbar .dropdown li a, ul.k-navbar .dropdown li a:visited {
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #000;
+	background: #BFBFBF;
+}
+
+ul.k-navbar .dropdown li a:hover, ul.k-navbar .dropdown li a:focus {
+	color: #FFF;
+	background: #F60;
+}
+
+		
+/* CE/ ResponsiveMainNav */
+
+/* CB/ mainNav */
+
+/* Navigation control */
+#navbar {clear: both;}
+
+ul.k-navbar {
+		float:left;
+		width: 98%; 
+		color: #FFF;
+		background: #000;
+		padding-left: 2%; 
+		margin: 0;
+	}
+	ul.k-navbar li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		padding: 0 0.7em;
+		margin: 3px 0;
+		border-right: 1px solid #FFF;
+	}
+	
+		ul.k-navbar a, ul.k-navbar a:visited {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			text-decoration: none;
+			color: #FFF;
+			background: #000;
+			padding: 0 0.5em;
+		}
+		ul.k-navbar a:hover, ul.k-navbar a:focus {
+			color: #000;
+			background: #BFBFBF;
+		}
+		
+		/* If section has dropdown */
+		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
+			color: #FFF;
+			background: #000 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar a.hasdropdown:hover, ul.k-navbar a.hasdropdown:focus {
+			color: #000;
+			background: #BFBFBF url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+		ul.k-navbar li.active a.hasdropdown, ul.k-navbar li.active a.hasdropdown:visited {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+			padding-right: 25px;
+		}
+		ul.k-navbar li.active a.hasdropdown:hover, ul.k-navbar li.active a.hasdropdown:focus {
+			color: #FFF;
+			background: #F60 url(../img/k-theme1/bg_hasdropdown.png) right 0.6em no-repeat;
+		}
+
+		/* For deprecated superfish menu */
+		.sf-sub-indicator {display: none;}
+		
+		/* Active section / no link */
+		ul.k-navbar li.active strong {
+			display: block;
+			height: 1.5em;
+			line-height: 1.5em;
+			color: #FFF;
+			background: #F60;
+			padding: 0 0.5em;
+			margin: 0 0.5em;
+		}
+		
+		/* Active section / with link */
+		ul.k-navbar li.active a, ul.k-navbar li.active a:visited {
+			color: #FFF;
+			background: #F60;
+		}
+
+/* SECOND LEVEL UL - Dropdown menu */
+.dropdown ul {
+	display: none;
+	position: absolute;
+	width: 25em;
+	color: #000;
+	background: #BFBFBF;
+	padding: 0;
+	z-index: 200;
+}
+ul.dropdown {width: 18em; padding: 0;}
+
+ul.k-navbar .dropdown li {
+	float: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px dotted #FFF;
+	border-right: none;
+}
+
+ul.k-navbar .dropdown li a, ul.k-navbar .dropdown li a:visited {
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #000;
+	background: #BFBFBF;
+}
+
+ul.k-navbar .dropdown li a:hover, ul.k-navbar .dropdown li a:focus {
+	color: #FFF;
+	background: #F60;
+}
+
+	/* If it is a large dropdown  */
+	div.big-menu {
+		width: 300px;
+		background: #BFBFBF;
+	}
+	div.big-menu ul {
+		float: left;
+		width: 40%;
+		padding: 0.5em 0;
+		border-right: 1px dotted #FFF;
+	}
+    ul.k-navbar div.big-menu li {
+        font-size: 95%;
+        text-align: left;
+		padding: 0;
+		border: none;
+    }
+	ul.k-navbar div.big-menu a {min-width: 0; font-weight: normal;}
+	
+	/* "View all" link */
+    p.view-all {
+        clear: both;
+        font-size: 0.85em;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+		padding: 2px 0;
+		border-top: 1px solid #000;
+    }
+    p.view-all a, p.view-all a:link, p.view-all a:visited {
+        color: #000;
+        background: #990;
+    }
+	p.view-all a:hover, p.view-all a:focus {color: #FFF; background: #F60;}
+
+/* --- SECOND LEVEL UL - Opened second level */
+
+ul.subnavbar {
+	position: relative;
+	float: left;
+	padding-bottom: 1.5em;
+}
+	ul.subnavbar ul {
+		position: absolute;
+		float: left;
+		width: 94%;
+		top: 2em;
+		left: 2%;
+		padding: 2px 0;
+		border-top: 1px solid #FFF;
+	}
+	ul.subnavbar ul li {
+		font-size: 90%;
+		font-weight: normal;
+		padding: 0 5px;
+		margin: 0;
+		border-right: 1px solid #FFF;
+	}
+	ul.subnavbar li.active ul a, ul.subnavbar li.active ul a:visited {
+		height: 1.5em;
+		line-height: 1.5em;
+		color: #FFF;
+		background: #000;
+		border: 1px solid #000;
+	}
+	ul.subnavbar li.active ul a:hover, ul.subnavbar li.active ul a:focus {
+		color: #FFF;
+		background: #F60;
+		border: 1px solid #F60;
+	}
+	
+	/* Active sub-section section */
+	ul.subnavbar li.active ul li.active a, ul.subnavbar li.active ul li.active a:visited {
+		color: #FFF;
+		background: #F60;
+		border: 1px solid #F60;
+	}
+		
+/* CE/ mainNav */
+
+
+/* ------------------------------------------------------------ VERTICAL MENU */
+/* CB/ vmenu */
+
+p.aid {
+	display: none;
+	font-weight: bold;
+	padding: 3px;
+}
+	#menu p.aid a, #menu p.aid a:link, #menu p.aid a:visited {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		background: #F60;
+		padding: 0.2em 5px.5em;
+	}
+	#menu p.aid a:before {content: "<< ";}
+	#menu p.aid a:hover, #menu p.aid a:focus {
+		color: #FFF;
+		background: #000;
+	}
+
+ul.k-menu { 
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px dashed #CCC;
+}
+	ul.k-menu li {
+		float: left;
+		width: 100%;
+		padding: 0 0 11px;
+		list-style-type: none;
+	}
+	
+	ul.k-menu a, ul.k-menu a:link, ul.k-menu a:visited {
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+		color: #FFF;
+		background: #808080 url(../img/k-theme1/unfold-trans.png) right 0.3em no-repeat;
+		padding: 3px 28px 3px 4%;
+		cursor: pointer;
+	}
+	ul.k-menu a:focus {
+		color: #FFF;
+		background: #F60 url(../img/k-theme1/unfold-trans.png) right 0.3em no-repeat;
+	}
+	ul.k-menu a.ui-state-active, ul.k-menu a.ui-state-active:link, ul.k-menu a.ui-state-active:visited {
+		color: #FFF;
+		background: #F60 url(../img/k-theme1/fold-trans.png) right 0.3em no-repeat;
+	}
+	
+	/* If there's no sub-menu */
+	ul.k-menu a.one-level, ul.k-menu a.one-level:link, ul.k-menu a.one-level:visited {
+		background-image: none;
+	}
+	ul.k-menu a.one-level:focus {background-image: none;}
+	
+	ul.k-menu li.active a.one-level, ul.k-menu li.active a.one-level:link, ul.k-menu li.active a.one-level:visited {
+		background: #F60;
+	}
+		
+	/* Level 2 */
+	ul.k-menu ul.level2 {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		float: left;
+		width: 100%;
+		padding: 0;
+		border: 1px solid #BFBFBF;
+	}
+		ul.k-menu ul.level2 li {
+			width: 94%;
+			font-size: 90%;
+			padding: 0.5em 2% 0.5em 4%;
+			border-top: 1px dashed #CCC;
+		}
+		ul.k-menu ul.level2 li:first-child {border: none;}
+		ul.k-menu ul.level2 a, ul.k-menu ul.level2 a:link, ul.k-menu ul.level2 a:visited { 
+			font-weight: normal;
+			text-decoration: none;
+			color: #555;
+			background: #FFF;
+			padding-left: 0;
+		}
+		ul.k-menu ul.level2 a:hover, ul.k-menu ul.level2 a:focus {text-decoration: underline;}
+	
+			ul.k-menu ul.level2 ul li {list-style-type: disc; padding: 0; border: none;}
+			
+		/* Active section */
+		ul.k-menu ul.level2 li.active a, ul.k-menu ul.level2 li.active a:link, ul.k-menu ul.level2 li.active a:visited {
+			font-weight: bold;
+			color: #F60;
+			background: #FFF;
+		}
+		ul.k-menu li.active strong {
+			font-weight: bold;
+			color: #F60;
+			background: #FFF;
+		}
+			
+/* CE/ vmenu */
+
+/* ----------------------------------------------------- SKIP MENU LINK */
+/* CB/ skip */
+
+.k-skip {display: inline;}
+	
+	.k-skip a {
+		position: absolute;
+		overflow: hidden;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+	}
+	.k-skip a:focus {position: static; width: auto; height: auto;}
+
+/* CE/ skip */
+
+/* ----------------------------------------------------- BREADCRUMBS */
+/* CB/ breadcrumbs */
+
+p.k-breadcrumbs {
+    float: left;
+    width: 100%;
+    font-size: 0.65em;
+    color: #A626AA;
+    background: #FFF;
+    margin: 0.5em 0 0 0;
+}
+
+/* CE/ breadcrumbs */
+
+/* ----------------------------------------------------- TREE-VIEW */
+/* CB/ treeview */
+
+div.k-tree {}
+
+	div.k-tree li {list-style-type: none; background: #FFF url(../img/k-theme1/tree_sprite.gif) -90px 0 repeat-y;}
+	div.k-tree li.jstree-last {background: none;}
+	div.k-tree li ins {background: transparent url(../img/k-theme1/tree_sprite.gif) -90px 0 repeat-y;}
+
+	div.k-tree li.jstree-leaf > ins {background-position: -36px 0;}
+	div.k-tree li.jstree-closed > ins {background-position: -54px 0;}
+	div.k-tree li.jstree-open > ins {background-position: -72px 0;}
+	div.k-tree a .jstree-icon {background-position: -56px -19px;}
+	
+	div.k-tree a, div.k-tree a:link {
+		display: inline-block;
+		color: #000;
+		background: #FFF;
+	}
+	div.k-tree a:hover {
+		color: #000;
+		background: #DFEFF6;
+	}
+	div.k-tree a:focus {
+		color: #000;
+		background: #DFEFF6;
+		border: 1px solid #F60;
+	}
+	div.k-tree a.jstree-clicked {
+		color: #000;
+		background: #DFEFF6;
+	}
+
+/* CE/ treeview */
+
+
+/* ----------------------------------------------------- TREE-VIEW GRID */
+/* CB/ treeviewGrid */
+
+div.k-tree-grid {
+	float: left;
+	width: 100%;
+	padding: 1em 0;
+	margin-bottom: 1em;
+	border-top: 2px solid #06A;
+	border-bottom: 2px solid #06A;
+}
+
+	div.k-tree-grid div.tree {
+		float: left;
+		overflow: auto;
+		width: 20%;
+		height: 25em;
+		padding: 0 0 2%;
+	}
+	div.k-tree-grid .tree-content {
+		float: right;
+		overflow: auto;
+		width: 74%;
+		height: 25em;
+		padding: 2%;
+		border-left: 1px dashed #06A; 
+	}
+	
+	div.k-tree-grid ul.actions {
+		padding: 2px 5px 0;
+		margin: 0 0 1em;
+		background: #EFEFEF;
+	}
+		div.k-tree-grid ul.actions li {
+			display: inline-block;
+			list-style-type: none;
+		}
+	
+
+/* CE/ treeviewGrid */
+
+
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------ SITE UTILITIES ----------------------------- */
+/* --------------------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------- NO DISPLAY */
+/* CB/ noDisplay */
+
+.k-no-display {
+	position: absolute;
+	overflow: hidden;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+}
+
+/* CE/ noDisplay */
+
+/* ----------------------------------------------------------- NEW WINDOW LINK --- */
+/* CB/ newWindowLink */
+
+a.k-new-window, a.k-new-window:link {
+	color: #000;
+	background: transparent url(../img/k-theme1/pic_newwindow.gif) right no-repeat;
+	padding-right: 13px;
+}
+
+
+/* CE/ newWindowLink */
+
+
+
+/* ----------------------------------------------------------- SITEMAP --- */
+/* CB/ sitemap */
+
+ul.k-sitemap {float: left; width: 100%; margin-bottom: 2em;}
+	ul.k-sitemap ul {margin-bottom: 2em;}
+		
+	ul.k-sitemap li {
+		float: left;
+		width: 15%;
+		list-style-type: none;
+		padding-left: 2%;
+		margin-right: 2%;
+		border-left: 1px solid #CCC;
+	}
+	ul.k-sitemap li:first-child {padding: 0; margin: 0; border-left: none;}
+	
+		ul.k-sitemap li strong {
+			display: block;
+			color: #FFF;
+			background: #06A;
+			padding: 0.5em 0.5em;
+		}
+		ul.k-sitemap li ul {padding: 0;}
+		ul.k-sitemap li li {
+			float: none;
+			width: auto;
+			padding: 0.5em 0.3em;
+			border: none;
+			border-bottom: 1px dashed #CCC;
+		}
+		ul.k-sitemap li li:first-child {padding: 1em 0.3em 0.5em;}
+		
+		/* Third level */
+		ul.k-sitemap li li ul {padding: 0.5em 0; margin-top: 0.5em;}
+		ul.k-sitemap li li li, ul.k-sitemap li li li:first-child {
+			border: none;
+			border-left: 1px solid #CCC;
+		}
+		ul.k-sitemap li li li a {padding-left: 1em;}
+
+/* CE/ sitemap */
+
+
+/* ----------------------------------------------------------- TOOLS LINKS --- */
+/* CB/ toolslinks */
+
+div.k-tools {
+	float: left;
+	width: 100%;
+	height: 1.6em;
+	color: #000;
+	background: #66A3C7;
+	border-bottom: 2px solid #FFF;
+}
+
+ul.k-tools-list {
+	float: right;
+	width: auto;
+	max-width: 30%;
+	text-align: right;
+	padding-right: 2%;
+	margin-bottom: 5px;
+}
+	ul.k-tools-list li {
+		display: inline;
+		padding: 0 0 0 10px;
+		font-size: 0.65em;
+	}
+	ul.k-tools-list li:first-child {border: none;}
+	ul.k-tools-list a, ul.k-tools-list a:link {font-weight: bold;
+		text-decoration: none;
+		color: #FFF;
+		background: #66A3C7 url(../img/k-theme1/sprite_arrows.png) 0 -567px no-repeat;
+		padding-left: 10px;
+	}
+	ul.k-tools-list a:hover, ul.k-tools-list a:focus {text-decoration: underline;}
+	
+	/* Exceptions */
+		
+	footer[role=contentinfo] ul.k-tools-list, #footer ul.k-tools-list {
+		float: none;
+		width: 95%;
+		max-width: 100%;
+		text-align: center;
+		padding: 5px 0;
+		margin: 10px 2.5% 5px;
+		border-bottom: 1px dotted #FFF;
+	}
+	footer[role=contentinfo] ul.k-tools-list a, #footer ul.k-tools-list a:link {
+		background-color: transparent;
+	}
+
+/* CE/ toolslinks */
+
+
+/* --------------------------------------------------------- LANGUAGE CHOICE --- */
+/* CB/ language */
+
+form.k-language {
+    position: absolute;
+    width: auto;
+    top: 20px;
+    right: 2%;
+}
+	form.k-language fieldset {color: #FFF; background: #06A;}
+	form.k-language legend {position: absolute; left: -9000px;}
+	form.k-language input {position: absolute; left: -9000px;}
+	form.k-language p {font-size: 0.65em; margin: 0;}
+
+	form.k-language label {
+		float: left;
+		width: 2.5em;
+		list-style-type: none;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FFF;
+		background: #66A3C7;
+		padding: 3px 0 2px;
+		border-left: 1px solid #06A;
+		border-right: 1px solid #06A;
+		cursor: pointer;
+	}
+	form.k-language .ui-corner-left {
+		border-left: none;
+	}
+	form.k-language .ui-corner-right {
+		border-right: none;
+	}
+	/* Active/Hover States */
+	form.k-language .ui-state-active, form.k-language label:hover, form.k-language label:focus {
+		color: #FFF;
+		background: #F60;
+	}
+	
+/* CE/ language */
+
+/* -------------------------------------------------------------------- LOGIN */
+/* CB/ loginForm */
+
+form.k-login {width: 100%; border-bottom: 5px solid #FFF;}
+	form.k-login p {
+		float: left;
+		width: auto;
+		padding-right: 2em;
+	}
+	
+	form.k-login label {
+		float: none;
+		display: block;
+		width: auto;
+		text-align: left;
+	}
+	
+	form.k-login input[type=submit] {margin-top: 1em;}
+
+.lost-password {display: block; font-size: 80%;}
+ 
+p.to-register {
+    color: #FFF;
+    background: #990;
+    padding: 0.5em 2%;
+    margin: -17px 0 0;
+}
+	p.to-register a, p.to-register a:link, p.to-register a:visited {color: #FFF; background: #990;}
+	
+	/* Collapsible form */
+	#loginLink a, #loginLink a:link, #loginLink a:visited {
+		position: absolute;
+		top: 84px;
+		left: 2%;
+		width: auto;
+		max-width: 40%;
+		font-weight: bold;
+		text-decoration: none;
+		color: #FFF;
+		background: transparent url(../img/k-theme1/sprite_arrows.png) left -566px no-repeat;
+		padding-left: 10px;
+	}
+	form.k-login.collapsible {float: left; width: 100%; background: #FFF;}
+	form.k-login.collapsible p.to-register {float: none; border: 1px solid #990;}
+
+/* CE/ loginForm */
+
+/* ------------------------------------------------------------ LOGIN DATA --- */
+/* CB/ loginData */
+
+p.k-login-data {
+	position: absolute;
+	top: 84px;
+	left: 2%;
+	max-width: 30%;
+	font-size: 0.6em;
+	padding-left: 3px;
+}
+	p.k-login-data a, p.k-login-data a:link, p.k-login-data a:visited {
+		color: #FFF;
+		background: #66A3C7;
+	}
+
+/* CE/ loginData */
+
+/* -------------------------------------------------------------------- SEARCH */
+/* CB/ siteSearch */
+
+form.k-search {float: right; width: auto; padding-right: 2%;}
+
+	form.k-search p {padding: 0.4em 0 0; margin: 0;}
+	#searchTag {width: 15em; height: 1.2em; vertical-align: bottom;}
+	form.k-search input[type = submit] {
+	    font-size: 90%;
+		text-transform: none;
+	    color: #FFF;
+	    background: #000;
+	    padding: 0 2px;
+	    margin: 0 0 0 -5px;
+		border-color: #000;
+		border-bottom: 3px solid #000;
+		outline: none;
+		vertical-align: top;
+	}
+
+.ui-autocomplete {
+    position: absolute;
+    color: #555;
+    background: #FFF;
+	padding: 0;
+    border: 1px solid #BFBFBF;
+    cursor: default;
+}
+
+	.ui-autocomplete li {
+	    list-style-type: none;
+		padding: 0;
+	}
+	
+	.ui-autocomplete a, .ui-autocomplete a:link, .ui-autocomplete a:visited {
+	    display: block;
+	    padding: 2px 8px;
+	}
+	.ui-autocomplete a:hover {color: #FFF; background: #66A3C7;}	
+	form.k-search .ui-state-hover, form.k-search .ui-state-focus {
+	    color: #FFF;
+	    background: #66A3C7;
+	}
+
+/* CE/ siteSearch */
+
+/* ------------------------------------------------------------ ACTION BUTTONS BAR */
+/* CB/ actionButtonsBar */
+
+div.k-actions-block {
+	float: left;
+	width: 100%;
+	color: #000;
+	background: #FFF;
+	margin: 0 0 1em;
+	border: 1px solid #BFBFBF;
+}
+
+	/* Optional text */
+	.action-context {
+		float: left;
+		width: 25%;
+		font-size: 0.8em;
+		font-weight: bold;
+		color: #000;
+		background: #FFF;
+		padding: 0.7em 1em 0;
+		margin: 0;
+		border: none;
+	}
+		.action-context + ul.k-actions {float: right; width: 70%; margin-top: 0;}
+	
+	
+/* CE/ actionButtonsBar */
+
+
+/* ------------------------------------------------------------ ACTION BUTTONS */
+/* CB/ actionButtons */
+
+ul.k-actions {text-align: right; padding: 0;}
+
+	ul.k-actions li {
+		display: inline;
+		list-style-type: none;
+	}
+	
+	ul.k-actions a, ul.k-actions a:link, ul.k-actions a:visited {
+		display: inline-block;
+		height: 2em;
+		line-height: 2em;
+		font-weight: bold;
+		text-decoration: none;
+		color: #FFF;
+		background: #000 url(../img/k-theme1/sprites-trans.png) no-repeat 4px 30px;
+		margin: 0.5em;
+		padding: 0 10px;
+		border: 1px #000 solid;
+	}
+	/*hover*/
+	ul.k-actions a:hover, ul.k-actions a:focus {
+		color: #000;
+		background-color: #FFF;
+		background-image: url(../img/k-theme1/sprites_on-trans.png);
+	}
+	
+	/* active */
+	ul.k-actions strong {
+		display: inline-block;
+		height: 2em;
+		line-height: 2em;
+		font-weight: bold;
+		text-decoration: none;
+		color: #000;
+		background: #FFF url(../img/k-theme1/sprites-trans.png) no-repeat 4px 30px;
+		margin: 0.5em;
+		padding: 0 10px;
+		border: 1px #000 solid;
+	}
+	
+	/* Icons sprite */
+	ul.k-actions a.bt-print {background-position: 6px 2px; padding-left: 35px;}
+	ul.k-actions a.bt-download {background-position: 6px -71px; padding-left: 35px;}
+	ul.k-actions a.bt-edit {background-position: 6px -143px; padding-left: 35px;}
+	ul.k-actions a.bt-view {background-position: 6px -211px; padding-left: 35px;}
+	ul.k-actions a.bt-email {background-position: 6px -275px; padding-left: 35px;}
+	ul.k-actions a.bt-search {background-position: 6px -344px; padding-left: 35px;}
+	ul.k-actions a.bt-new {background-position: 6px -416px; padding-left: 35px;}
+	ul.k-actions a.bt-del {background-position: 6px -488px; padding-left: 35px;}
+	
+	/* Exceptions */
+	#sidebar ul.k-actions {text-align: center; margin-bottom: 1em;}
+	
+/* CE/ actionButtons */
+
+
+/* --------------------------------------------------------- ICON BUTTONS --- */
+/* CB/ iconButtons */
+
+ul.actions {}
+
+		ul.actions li {
+			display: inline-block;
+			list-style-type: none;
+		}
+		ul.actions a, ul.actions a:link, ul.actions a:visited {
+			overflow: hidden;
+			display: inline-block;
+			width: 1px;
+			height: 2em;
+			line-height: 2em;
+			text-decoration: none;
+			color: #FFF;
+			background: #000 url(../img/k-theme1/sprites-trans.png) 0 0 no-repeat;
+			margin: 0 0.5em;
+			border: 1px solid #000;
+		}
+		
+		ul.actions a:hover {color: #FFF; background-color: #999;}
+		
+	
+	/* Icons sprite */
+	ul.actions a.bt-print {background-position: 6px 2px; padding-left: 35px;}
+	ul.actions a.bt-download {background-position: 6px -71px; padding-left: 35px;}
+	ul.actions a.bt-edit {background-position: 6px -143px; padding-left: 35px;}
+	ul.actions a.bt-view {background-position: 6px -211px; padding-left: 35px;}
+	ul.actions a.bt-email {background-position: 6px -275px; padding-left: 35px;}
+	ul.actions a.bt-search {background-position: 6px -344px; padding-left: 35px;}
+	ul.actions a.bt-new {background-position: 6px -416px; padding-left: 35px;}
+	ul.actions a.bt-del {background-position: 6px -488px; padding-left: 35px;}
+
+/* CE/ iconButtons */
+
+
+/* --------------------------------------------------------- PAGINATION --- */
+/* CB/ pagination */
+
+div.k-pagination {
+	float: left;
+	width: 100%;
+	color: #000;
+	background: #FFF;
+	margin-bottom: 21px;
+	padding: 0.5em 0;
+	border-top: 1px dashed #CCC;
+	border-bottom: 1px dashed #CCC;
+}
+	div.k-pagination p {font-size: 0.7em; margin: 0;}
+	
+	p.lines-to-display {float: left; width: 40%;}
+	p.total-pages {float: left; width: 20%; text-align: center;}
+		p.lines-to-display label {width: auto; font-weight: normal; margin-top: -0.3em;}
+	p.page-numbers {float: right; width: 40%; text-align: right;}
+
+
+/* CE/ pagination */
+
+
+/* ------------------------------------------------------------- MODAL --- */
+/* CB/ modal */
+
+div.k-modal {
+	color: #444;
+	background: #FFF;
+	margin: 0 2% 2%;
+	border: 2px solid #808080;
+	outline: 1px solid #BFBFBF;
+}
+	div.k-modal .modal-header {
+		color: #FFF;
+		background: #808080;
+		padding: 0.2em 0.5em;
+		margin: 1px;
+		border: none;
+	}
+	div.k-modal .content {padding: 2% 3%;}
+	
+	div.k-modal .k-buttons-bar {text-align: center; margin-top: 2em;}
+
+    .ui-widget-overlay {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+        background: #CCC;
+        opacity: .8;
+    }
+
+	.ui-icon-closethick {
+		position: absolute;
+		text-indent: -9000px;
+	}
+
+/* Close button */
+	a.ui-dialog-titlebar-close, a:link.ui-dialog-titlebar-close, a:visited.ui-dialog-titlebar-close {
+		float: right;
+		position: relative;
+		top: 4px;
+		left: 11px;
+		width: 17px;
+		height: 17px;
+		background: url(../img/k-theme1/pic_close.png) bottom right no-repeat;
+	}
+
+/* CE/ modal */
+
+/* ------------------------------------------------------------- ORIENTATION AID --- */
+/* CB/ orientationAid */
+
+div.k-orientation-aid {
+	float: left;
+	width: 100%;
+	margin-top: 1em;
+}
+	p.go-back {float: left; width: 45%;}
+	p.go-top {float: right; width: 45%; text-align: right;}
+	
+		p.go-back a, p.go-back a:link, p.go-back a:visited {
+			background: #FFF url(../img/k-theme1/sprite_arrows.png) 0 -222px no-repeat;
+			padding-left: 10px;
+		}
+		p.go-top a, p.go-top a:link, p.go-top a:visited {
+			background: #FFF url(../img/k-theme1/sprite_arrows.png) 0 -449px no-repeat;
+			padding-left: 10px;
+		}
+
+
+/* CE/ orientationAid */
+
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------------- BLOCKS --------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------- TABS */
+/* CB/ tabs */
+
+p + .k-tabbed-data {margin-top: 21px;}
+
+	ul.tabs {float: left; width: 100%; padding: 0;}
+	.k-tabbed-data .ui-tabs-hide {display: none;}  /* required */
+	ul.tabs li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		padding: 0;
+		margin-right: 5px;
+	}
+	ul.tabs a, ul.tabs a:link, ul.tabs a:visited {
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+		color: #06A;
+		background: #FFF;
+		padding: 5px 10px;
+		border: 1px solid #808080;
+		border-bottom: none;
+	}
+	ul.tabs a:hover {color: #FFF; background: #808080;}
+	ul.tabs a:focus {color: #FFF; background: #000;}
+
+/* Selected tab */
+	ul.tabs li.ui-state-active a, ul.tabs li.ui-state-active a:link, ul.tabs li.ui-state-active a:visited {
+		color: #FFF;
+		background: #808080;
+		border: 1px solid #808080;
+	}
+	ul.tabs li.ui-state-active a:focus {
+		color: #FFF;
+		background: #000;
+	}
+	
+	.k-tabbed-data > .content {
+		float: left;
+		width: 96%;
+		color: #000;
+		background: #FFF;
+		padding: 2%;
+		margin-bottom: 20px;
+		border: 1px solid #808080;
+	}
+	
+		
+/* Link for tabs container */
+p.tabs-link {
+	float: left;
+	width: 96%;
+	font-weight: bold;
+	text-align: right;
+	color: #FFF;
+	background: #808080;
+	margin-top: 20px;
+	padding: 0.5em 2%;
+}
+	p.tabs-link a, p.tabs-link a:link, p.tabs-link a:visited {
+		color: #FFF;
+		background: #808080;
+	}
+
+	
+/* CE/ tabs */
+
+/* -------------------------------------------------------- IMAGE CAROUSEL */
+/* CB/ carousel */
+
+.k-carousel {
+	float: left;
+	width: 80%;
+	padding: 15px 10%;
+	margin: 0 auto;
+}
+	.k-carousel ul {padding: 0;}
+	.k-carousel .price {display: block;}
+	.k-carousel a, .k-carousel a:link, .k-carousel a:visited {text-decoration: none;}
+	
+	.k-carousel button {border: none;}
+	
+	.jcarousel-item {
+	    width: 20%;
+	    height: 12.5em;
+	    text-align: left;
+	    padding: 0;
+	}
+	
+	.jcarousel-item-horizontal {margin: 0 10px;}
+		.jcarousel-item-horizontal img {
+			max-width: 100%;
+			border-top: 1px solid #CCC;
+			border-right: 1px solid #666;
+			border-bottom: 1px solid #666;
+			border-left: 1px solid #CCC;
+		}
+
+	.jcarousel-prev {
+		display: none; 
+		position: absolute;
+		top: 40px;
+		left: 10px;
+		width: 47px;
+		height: 47px;
+		background: url(../img/k-theme1/bt_prev.png) no-repeat;
+		cursor: pointer;
+	}
+	.jcarousel-next {
+		display: none;
+		position: absolute;
+		top: 40px;
+		right: 10px;
+		width: 47px;
+		height: 47px;
+		background: url(../img/k-theme1/bt_next.png) no-repeat;
+		cursor: pointer;
+	}
+	
+	.jcarousel-prev-disabled, .jcarousel-prev-disabled-horizontal {
+		background: url(../img/k-theme1/bt_prev_off.png) no-repeat;
+		cursor: default;
+	}
+	.jcarousel-next-disabled, .jcarousel-next-disabled-horizontal {
+		background: url(../img/k-theme1/bt_next_off.png) no-repeat;
+		cursor: default;
+	}
+
+/* CE/ carousel */
+
+		
+/* ---------------------------------------- COLLAPSIBLE PANELS --- */
+/* CB/ collapsiblePanel */
+
+.k-panel {
+	clear: both;
+	overflow: auto;
+    margin-bottom: 20px;
+    border: 1px solid #808080;
+}
+fieldset.k-panel {padding: 0;}
+	fieldset.k-panel legend.control {width: 99%; padding: 0.3em 0 0.3em 1%; border-right: 1px solid #808080;}
+p + .k-panel {margin-top: 1em;}
+
+	.k-panel .control {
+		font-size: 0.8em;
+		color: #FFF;
+		background: #808080 url(../img/k-theme1/unfold-trans.png) right 0.3em no-repeat;
+		padding: 3px 15px 4px 10px;
+		margin: 0;
+		cursor: pointer;
+	}
+	.k-panel h3.control {border: none;}
+	
+	.k-panel .ui-state-hover, .k-panel .ui-state-focus {
+		background-color: #990;
+	}
+	.k-panel .ui-state-active {
+		background: #990 url(../img/k-theme1/fold-trans.png) right 0.3em no-repeat;
+	}
+	.k-panel .control a, .k-panel .control a:link, .k-panel .control a:visited {
+		text-decoration: none;
+		color: #FFF;
+		background: transparent;
+	}
+	.k-panel .control a:hover, .k-panel .control a:focus {
+		text-decoration: none;
+		color: #FFF;
+		background: transparent;
+	}
+	
+	.k-panel .content {
+		float: left;
+		width: 96%;
+		color: #000;
+		background: #FFF;
+		padding: 1em 2%;
+		border: none;
+	}
+	
+		.k-panel .content h3:first-child, .k-panel .content h4:first-child {
+			padding: 0 0 0.5em;
+			margin: 0;
+		}
+		
+	.k-panel.exception .control {
+		color: #FFF;
+		background-color: #D21241;
+	}
+	.k-panel.exception .control a, .k-panel.exception .control a:link, .k-panel.exception .control a:visited {
+		color: #FFF;
+		background: #D21241;
+	}
+	
+/* CE/ collapsiblePanel */
+
+		
+/* ---------------------------------------- ACCORDION --- */
+/* CB/ accordion */
+
+.k-accordion {
+	clear: both;
+	overflow: auto;
+    margin-bottom: 20px;
+    border: 1px solid #808080;
+}
+
+p + .k-accordion {margin-top: 1em;}
+
+	.k-accordion ul.k-links-list {
+	    margin-left: 25px;
+	    padding: 0;
+	}
+	.k-accordion p {
+		line-height: 1.2;
+		padding: 0 10px 8px;
+	}
+	.k-accordion .control {
+		clear: both;
+		font-size: 0.75em;
+		color: #FFF;
+		background: #808080 url(../img/k-theme1/unfold-trans.png) right 0.3em no-repeat;
+		padding: 3px 15px 4px 10px;
+		margin: 0;
+		border-top: 1px solid #FFF;
+		border-bottom: none;
+		cursor: pointer;
+	}
+	.k-accordion .control:first-child {border-top: none;}
+	
+	.k-accordion .ui-state-hover, .k-accordion .ui-state-focus, 
+		.k-accordion .control:focus, .k-accordion .control:hover {
+			background-color: #990;
+	}
+	.k-accordion .ui-state-active {
+		background: #808080 url(../img/k-theme1/fold-trans.png) right 0.3em no-repeat;
+	}
+	.k-accordion .control a, .k-accordion .control a:link, .k-accordion .control a:visited {
+		text-decoration: none;
+		color: #FFF;
+		background: transparent;
+	}
+	.k-accordion .control a:hover, .k-accordion .control a:focus {
+		text-decoration: none;
+		color: #FFF;
+		background: transparent;
+	}
+	
+	.k-accordion .content {
+		float: left;
+		width: 100%;
+		color: #000;
+		background: #FFF;
+		padding: 0.5em 0;
+	}
+	
+/* CE/ accordion */
+
+/* --------------------------------------------------------------------------- */
+/* -------------------------------- EDITORIAL -------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------- ARTICLE --- */
+/* CB/ article */
+
+div.k-article, article.k-article {
+	float: left;
+	width: 100%;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px dashed #CCC;
+}
+	
+	.k-article h2 + ul.entry-info {margin-top: -1.5em;}
+	.k-article h3 {margin: 2em 0 1em; border: none;}
+	.k-article h4 {padding: 0; margin: 1.5em 0 0.7em;}
+	.k-article ul, .k-article ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
+	
+	.k-article p {max-width: 60em; line-height: 1.7;}
+	.k-article p.illustration {max-width: 100%;}
+	.k-article p + p {text-indent: 1em;}
+	.k-article p + p.k-readmore {text-indent: 0;}
+	
+	.k-article li {line-height: 1.7;}
+	
+	.k-article ul.entry-info {padding: 0; margin: 0 0 1.5em;}
+	ul.entry-info + div.content {margin: 2.5em 0 0;}
+	ul.entry-info address {display: inline;}
+	ul.entry-info li {list-style-type: none; line-height: 1.7;}
+	
+	/* Exceptions */
+	.k-article div.k-pagination {
+		width: 96%;
+		background: #E8E8E8;
+		padding: 0.3em 2%;
+		margin-top: 1em;
+	}
+	
+    #sidebar p.page-numbers, aside[role=complementary] p.page-numbers {
+        width: 100%;
+        background: #E8E8E8;
+        padding: 2% 0;
+        text-align: center;
+    }
+	.k-article ul.tabs {max-width: 100%; margin: 0;}
+
+/* CE/ article */
+
+/* --------------------------------------------------------- ARTICLE ENTRY --- */
+/* CB/ articleEntry */
+
+.k-entry {float: left; width: 100%;}
+	.k-entry .entry-title {text-transform: none; padding: 0; margin-bottom: 0.5em;}
+		.k-entry  .entry-title a, .k-entry  .entry-title a:link {
+			display: block;
+			color: #000;
+			background: #BFBFBF url(../img/k-theme1/bg_entry.png) right no-repeat;
+			text-decoration: none;
+			padding: 0.2em 0.4em; 
+		}
+		.k-entry .entry-title a:visited {color: #444; background-color: #DDD;}
+		.k-entry .entry-title a:hover, .k-entry .entry-title a:focus {color: #FFF; background-color: #66A3C7;}
+
+	/* Exceptions for entry level */	
+	.k-article.k-entry ul.entry-info {float: left; width: 8%; margin: 0;}
+	.k-entry div.content {float: right; width: 89%; margin: 0;}
+	
+	.k-entry ul.entry-info {
+		text-align: center;
+		color: #000;
+		background: #BFBFBF;
+		padding: 0.5em;
+	}
+	.k-entry .published {
+		display: block;
+		font-size: 120%;
+		font-weight: bold;
+		color: #000;
+		background: #FFF;
+		padding: 0.2em;
+		margin-bottom: 0.5em;
+	}
+	.k-entry address {display: block;}
+
+/* CE/ articleEntry */
+
+/* --------------------------------------------------------- INTRODUCTION --- */
+/* CB/ introduction */
+
+div.k-intro {
+	max-width: 33em;
+	background: #FFF;
+	color: #369;
+	font-weight: bold;
+	line-height: 1.58;
+	margin-bottom: 20px;
+}
+	div.k-intro p:first-child:first-letter {
+		line-height: 0.5;
+		font-size: 30px;
+		color: #990;
+		background: #FFF;
+	}
+	
+	/* Exceptions */
+	ul.k-form-steps + div.k-intro {margin: 2em 0;}
+		
+/* CE/ introduction */
+
+
+/* --------------------------------------------------------- HIGHLIGHT BLOCK --- */
+/* CB/ highlightBlock */
+
+div.k-highlight-block {
+	width: 50%;
+	max-width: 40em;
+	color: #444;
+	background: #FFF;
+	padding: 0.5em;
+	margin: 2em;
+	border-top: 1px dashed #999;
+	border-bottom: 1px dashed #999;
+}
+	div.k-highlight-block p {
+		font-size: 0.8em;
+		font-style: italic;
+		text-indent: 0;
+	}
+
+/* CE/ highlightBlock */
+
+/* --------------------------------------------------------- ILLUSTRATION --- */
+/* CB/ illustration */
+
+.k-illustration-block {
+	padding: 2em 0;
+	margin: 0 auto;
+}
+	.k-illustration-block.to-right {
+		float: right;
+		width: 30%;
+		padding: 2% 0 2% 4%;
+	}
+	.k-illustration-block.to-left {
+		float: left;
+		width: 30%;
+		padding: 2% 4% 2% 0;
+	}
+
+	.k-illustration-block p.illustration {text-indent: 0;}
+	.k-illustration-block p.illustration img {
+		max-width: 100%;
+		border: 4px solid #E8E8E8;
+		outline: 1px solid #BFBFBF;
+	}
+
+	figcaption, .caption {
+		display: block; 
+		font-weight: bold;
+		padding: 5px;
+	}
+	
+/* CE/ illustration */
+	
+/* ----------------------------------------------------------------- NOTES --- */
+/* CB/ notes */
+
+div.k-notes {
+	clear: both;
+	max-width: 50em;
+	color: #000;
+	background: #E4E9F1;
+	padding: 2%;
+	margin-bottom: 20px;
+}
+	div.k-notes p {margin: 5px 0;}
+	div.k-notes ul {margin: 10px 20px;}
+	
+	p + div.k-notes {margin-top: 1em;}
+	
+		div.k-article div.k-notes p {margin: 0.18em 0; text-indent: 0;}
+	
+/* CE/ notes */
+
+
+/* ----------------------------------------------------------- INFO BLOCK --- */
+/* CB/ infoBlock */
+
+div.k-info-block {
+	clear: both;
+	padding-bottom: 0.4em;
+	margin-bottom: 1em;
+	border: 1px solid #808080;
+}
+	div.k-info-block .hgroup {
+		color: #FFF;
+		background: #808080;
+		margin: 0 0 5px;
+	}
+	div.k-info-block h2, div.k-info-block h3 {
+		line-height: 1;
+		font: bold 0.8em Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+		text-transform: none;
+		color: #FFF;
+		background: #808080;
+		padding: 5px 10px;
+		margin-bottom: 10px;
+		border: none;
+	}
+	
+	div.k-info-block {word-wrap: break-word;}
+	
+	div.k-info-block p {line-height: 1.38; margin: 0 10px 8px;}
+	div.k-info-block p:last-child {padding-bottom: 10px;}
+	
+	div.k-info-block ul {padding: 0; margin-left: 25px; margin-right: 10px;}
+	
+
+/* CE/ infoBlock */
+
+
+/* ------------------------------------------------------------- READ MORE LINK --- */
+/* CB/ readMore */
+
+p.k-readmore {
+	clear: both;
+	color: #000;
+	background: url(../img/k-theme1/sprite_arrows.png) 0 4px no-repeat;
+	padding: 0 0 0 10px;
+}
+	p + p.k-readmore {margin-top: 1em; text-indent: 0;}
+	
+	p.k-readmore img {
+	    float: left;
+	    width: auto;
+	    padding: 0 10px 10px 0;
+	    vertical-align: middle;
+	}
+
+/* CE/ readMore */
+
+
+/* --------------------------------------------------------- LIST OF LINKS --- */
+/* CB/ linksList */
+
+ul.k-links-list {margin: 0 0 15px 15px;}
+	ul.k-links-list li {list-style-type: square;}
+
+/* CE/ linksList */
+
+
+
+/* --------------------------------------------------------------------------- */
+/* -------------------------------- E-COMMERCE ------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------- HPRODUCT --- */
+/* CB/ hproduct */
+
+.k-product {
+	position: relative;
+	width: 96%;
+	padding: 0 2% 2%;
+	margin: 0 0 2em;
+	border-top: 1px solid #DDD;
+}
+	
+	/* Product's title */
+	.name {  
+		min-height: 2.4em;
+		line-height: 1.2;
+		font-size: 0.8em;
+		padding: 0;
+		margin: 1.7em 0 0;
+		border: none;
+	}
+	p.extra {
+		position: absolute;
+		top: 60px;
+		right: 0;
+		font-size: 0.8em;
+		font-weight: bold;
+		text-align: right;
+		padding: 2px 10px 2px 0;
+		-moz-border-radius-topleft: 1em;
+		-moz-border-radius-bottomleft: 1em;
+		-webkit-border-top-left-radius: 1em;
+		-webkit-border-bottom-left-radius: 1em;
+		border-top-left-radius: 1em;
+		border-bottom-left-radius: 1em;
+	}
+	.category {font-size: 0.7em; font-weight: normal;}
+	
+
+/* Discount */
+.discount {}
+
+
+/* Sale product */
+p.sale {width: 6.5em; font-weight: bold; color: #FFF; background: #F60;}
+.sale {color: #F60;}
+
+/* New product */
+p.new {width: 3em; font-weight: bold; color: #FFF; background: #990;}
+.new {color: #990;}
+
+	
+/* Ratings */
+.rating {
+	padding-left: 65px;
+	margin: 10px 0;
+}
+p.rating {font-size: 0.65em;}
+.rating a:link {color: #777; background: #FFF;}
+.five {
+	color: #000;
+	background: #FFF url(../img/k-theme1/bg_ratings.png) 0 -340px no-repeat;
+}
+.four {
+	color: #000;
+	background: #FFF url(../img/k-theme1/bg_ratings.png) 0 -262px no-repeat;
+}
+.three {
+	color: #000;
+	background: #FFF url(../img/k-theme1/bg_ratings.png) 0 -193px no-repeat;
+}
+.two {
+	color: #000;
+	background: #FFF url(../img/k-theme1/bg_ratings.png) 0 -127px no-repeat;
+}
+.one {
+	color: #000;
+	background: #FFF url(../img/k-theme1/bg_ratings.png) 0 -60px no-repeat;
+}
+.zero {
+	color: #000;
+	background: #FFF url(../img/k-theme1/bg_ratings.png) 0 1px no-repeat;
+}
+
+/* Hidden content */
+.hidden {display: none;}
+
+/* Price data */
+div.price-data {
+	float: left;
+	width: 100%;
+}
+
+p.all-prices {
+	float: left;
+	width: auto;
+	line-height: 1.2;
+}
+.old-price {
+	color: inherit;
+	text-decoration: line-through;
+}
+.price {
+	font-size: 1.5em;
+}
+
+/* Add to basket link */
+
+div.buyZone {
+	float: left;
+	width: 92%;
+	background: transparent url(../img/k-theme1/bg_buyZone.gif);
+	padding: 0 4%;
+	margin-top: 10px;
+}
+
+p.buy {
+	float: right;
+	width: auto;
+	text-align: right;
+}
+	p.buy a, p.buy a:link {
+		display: inline-block;
+		font-weight: bold;
+		text-decoration: none;
+		color: #FFF;
+		background: #F60;
+		padding: 0.5em 1em;
+	}
+	p.buy a:visited {color: #FFF; background: #F60;}
+	p.buy a:hover, p.buy a:focus {color: #FFF; background: #000;}
+
+
+/* Product Image data */
+/* Product's photo */
+	
+div.photo-data {padding-top: 1em;}
+	div.photo-data p {margin: 0;}
+img.photo {max-width: 100%;}
+	
+/* Product info list */
+.product-info {margin: 1em 0 2em;}
+
+/* Product simple display */
+ul.k-product {padding: 0;}
+li.hproduct {
+	float: left;
+	width: 21%;
+	list-style-type: none;
+	padding: 15px 2%;
+	border-left: 1px solid #CCC;
+}
+	li.hproduct:first-child {
+		padding-left: 0;
+		border-left: 0;
+	}
+	
+	li.hproduct dt {margin-bottom: 0.5em;}
+	li.hproduct dd.price {font-weight: bold;}
+
+
+/* CE/ hproduct */
+
+
+/* --------------------------------------------------------- PRODUCT QUANTITY --- */
+/* CB/ productQtty */
+
+.k-quantity {float: left; width: auto; background: #FFF;}
+	.k-catalog .k-quantity {margin-top: 10px;}
+
+	.k-quantity span {
+		display: inline-block;
+		width: 1em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		color: #FFF;
+		background: #808080;
+		padding: 0 5px;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+
+input.uppydowner {width: 2em; text-align: center; padding: 0; margin: 0; border: none;}
+
+/* Exceptions for inBasket */
+
+div.k-basket .k-quantity {clear: both; padding: 0 5px;}
+div.k-basket .k-quantity span {
+	width: 0.5em;
+	height: 1em;
+	line-height: 1em;
+	color: #FFF;
+	background: #000;
+	padding: 0 6px 0 4px;
+}
+
+/* CE/ productQtty */
+
+/* --------------------------------------------------------- PRODUCT REVIEW --- */
+/* CB/ hreview */
+
+div.k-review {
+	overflow: auto;
+	width: 100%;
+	height: 230px;
+}
+dl.hreview {
+	float: left;
+	width: 95%;
+	padding: 10px 0;
+	border-top: 1px solid #CCC;
+}
+	
+	dl.hreview dt {
+		float: left;
+		width: 20%;
+		padding: 0 2% 0 0;
+		word-wrap: break-word;
+	}
+		dl.hreview dt span {
+			display: block;
+			padding-top: 15px;
+		}
+	
+	dl.hreview dd {
+		float: right;
+		width: 76%;
+		padding-right: 2%;
+		word-wrap: break-word;
+	}
+
+/* CE/ hreview */
+
+
+/* --------------------------------------------------------- PRODUCT RATING --- */
+/* CB/ rating */
+
+fieldset.k-rating {
+	background: #EEE;
+	padding: 0.3em 4% 0;
+	border: none;
+}
+	fieldset.k-rating legend {
+		float: left;
+		width: 12em;
+		font-size: 0.7em;
+		background: none;
+    	padding: 0.6em 0 0;
+	}
+	fieldset.k-rating p {
+		float: left;
+		width: 50%;
+	}
+	
+div.rating-cancel, div.star-rating {
+	overflow: hidden;
+	display: block;
+	float: left;
+	width: 20px;
+	height: 20px;
+	text-indent: -999em;
+	background: transparent;
+	cursor: pointer;
+}
+
+	div.rating-cancel, div.rating-cancel a {
+		background: url(../img/k-theme1/delete.png) no-repeat 0 0;
+	}
+	div.star-rating, div.star-rating a {
+		background: url(../img/k-theme1/stars.png) no-repeat 0 0;
+	}
+	div.rating-cancel a, div.star-rating a {
+		display: block;
+		width: 15px;
+		height: 100%;
+		background-position: 0 0;
+		border: 0;
+	}
+	div.star-rating-on a {background-position: 0 -53px;}
+	div.star-rating-hover a {background-position: 0 -53px;}
+	
+	/* Read Only CSS */
+	div.star-rating-readonly a {cursor: default !important;}
+	
+	/* Partial Star CSS */
+	div.star-rating {overflow: hidden; background: transparent;}
+
+/* CE/ rating */
+
+
+/* --------------------------------------------------------- CATALOG --- */
+/* CB/ catalog */
+
+/* Notice that the min-width of the hproduct depends on the width of 
+ * the product's image, which must be standardized */
+	
+.k-catalog {}
+	.k-catalog .k-product {
+		float: left;
+		width: 25%;
+		margin: 0 2% 2em;
+		border: 1px solid #CCC;
+	}
+	
+	.k-catalog .photo-data {padding-top: 10px;}
+	.k-catalog .rating {padding-bottom: 10px;}
+	
+	.k-catalog .product-data {height: 4em;}
+	
+	.k-catalog div.price-data {width: 45%; height: 2.5em;}	
+	.k-catalog p.all-prices {width: 100%;}
+	
+	.k-catalog p.buy {width: 12em; margin-top: 10px;}
+	
+	.k-catalog div.k-pagination {
+		width: 96%;
+		background: #E8E8E8;
+		padding: 0.3em 2%;
+		margin: 0 0 1em;;
+		border: none;
+	}
+	.k-catalog p {margin-top: 0.3em;}
+	.k-catalog p.lines-to-display {margin: 0;}
+	.k-catalog p.lines-to-display label {margin: 0;}
+	
+	ul.catalog-view {
+		text-align: center;
+		color: #06A;
+		background: #FFF;
+		margin-bottom: 1em;
+	}
+		ul.catalog-view li {
+			display: inline;
+			list-style-type: none;
+			margin: 0 5px;
+		}
+		ul.catalog-view li a, ul.catalog-view li a:link, ul.catalog-view li a:visited {
+			display: inline-block;
+			text-decoration: none;
+			color: #808080;
+			background: #FFF;
+			padding: 2px 5px;
+			border: 1px solid #808080;
+		}
+		ul.catalog-view li a:hover {
+			color: #FFF;
+			background: #808080;
+		}
+		
+		ul.catalog-view li.active a, ul.catalog-view li.active a:link, ul.catalog-view li.active a:visited {
+			color: #FFF;
+			background: #808080;
+		}
+		
+	
+/* --- LIST VIEW --- */
+
+.k-catalog.list-view .k-product {
+		float: left;
+		width: 96%;
+		padding: 1% 2%;
+		margin: 0 0 2em;
+		border: 1px solid #CCC;
+		border-bottom-color: #808080;
+	}
+	
+	.k-catalog.list-view div.photo-data {float: left; width: 20%; padding: 0 4% 0 0;}
+
+	.k-catalog.list-view div.product-data {
+		float: left;
+		width: 50%;
+	}
+	
+	.k-catalog.list-view div.buyZone {float: right; width: 15%; padding: 1em 2%; margin: 1em 0;}
+		.k-catalog.list-view div.buyZone p {float: none; width: auto; text-align: center;}
+		.k-catalog.list-view div.buyZone p.k-quantity {text-align: center; margin-bottom: 3em;}
+	
+	.k-catalog.list-view p.rating {position: absolute; width: auto; left: 2%; bottom: 2%;}
+		
+ .k-catalog.list-view p.extra {top: 1em;}
+
+/* CE/ catalog */
+
+
+/* --------------------------------------------------------- PRODUCT SHEET --- */
+/* CB/ productSheet */
+	
+.k-product-sheet .k-product {float: left; width: 100%; padding: 0 0 2%; border: none;}
+	.k-product-sheet .photo-data {
+		float: left;
+		width: 30%;
+		padding: 0 2% 0 0;
+		margin-bottom: 2em;
+		border-right: 1px solid #CCC;
+	}
+	.k-product-sheet .product-data {
+		float: left;
+		width: 65%;
+		padding-left: 2%;
+		margin-bottom: 2em;
+	}
+
+	/* Product's title */
+	.k-product-sheet .name {min-height: 0; font-size: 1em; margin: 0;}
+	.k-product-sheet .category {padding: 5px 0; margin: 0 0 2em;}
+	
+	/* Positions */
+	.product-data .rating {}
+	div.k-product-sheet .product-data p.extra {
+		top: 4em;
+		right: auto;
+		left: 30%;
+		margin-left: -6.5em;
+		z-index: 150;
+	}
+	
+	.k-product-sheet .product-data .price-data {width: 40%;}
+	.k-product-sheet .product-data .price {font-size: 220%;}
+	.k-product-sheet .product-data .old-price {font-size: 150%;}
+	.k-product-sheet .product-data p.buy {font-size: 100%; margin-top: 1em;}
+	
+	.k-product-sheet .k-actions-block {border: none; border-bottom: 1px solid #CCC;}
+	
+	/* Buy zone */
+	.k-product-sheet div.buyZone {
+		float: right;
+    	width: 65%;
+		background: none;
+    	padding: 0 0 0 2%;
+		margin: 0;
+	}
+	.k-product-sheet .availability {text-align: right;}
+	
+
+/* CE/ productSheet */
+
+
+/* --------------------------------------------------------- PRODUCT GALLERY --- */
+/* CB/ productGallery */
+
+/* LIST OF THUMBS */
+
+ul.thumblist {clear: both; padding: 0;}
+
+	ul.thumblist li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		margin-right: 5px;
+	}
+		ul.thumblist li a, ul.thumblist li a:link, ul.thumblist li a:visited {
+			display: block;
+			padding: 1px;
+			border: 1px solid #CCC;
+		}
+		ul.thumblist li a:hover, ul.thumblist li a.zoomThumbActive {
+			background: #000;
+			border: 1px solid #000;
+		}
+		ul.thumblist img {vertical-align: bottom;}
+
+/* ZOOM */
+
+.zoomPad {
+	position: relative;
+	float: left;
+	cursor: crosshair;
+	z-index: 99;
+}
+
+.zoomPreload {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 90px;
+   height: 43px;
+   text-decoration: none;
+   text-align:center;
+   color: #333;
+   background: #FFF url(../img/k-theme0/zoomloader.gif) 43px 30px no-repeat;
+   padding: 8px;
+   border: 1px solid #CCC;
+   opacity: 0.8;
+   z-index: 110;
+}
+
+.zoomPup {
+	overflow: hidden;
+	position: absolute;
+	background: #FFF;
+	opacity: 0.5;
+	outline: 1px solid #FFF;
+	box-shadow: 0 0 2px #000;
+	z-index: 120;
+    z-index: 101;
+	cursor: crosshair;
+}
+	.zoomPup:after {
+		content: " ";
+		width: 40px;
+	}
+
+.zoomOverlay{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background:#FFF;
+	/*opacity:0.5;*/
+	z-index:5000;
+	z-index: 101;
+}
+
+.zoomWindow {
+	position: absolute;
+	top: 40px;
+	left: 110%;
+	height: auto;
+	background: #FFF;
+	box-shadow: 0 0 3px #999;
+ 	z-index: 10000;
+}
+.zoomWrapper {
+	position: relative;
+	border: 1px solid #999;
+  	z-index: 110;
+}
+.zoomWrapperTitle {display: none;}
+
+.zoomWrapperImage {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	z-index: 110;
+}
+	.zoomWrapperImage img {
+	  display: block;
+	  position: absolute;
+	  max-width: 2000px; /*cancels max-width 100%*/
+	  border: 0;
+	  z-index:101;
+	}
+
+.zoomIframe {
+  position: absolute;
+  display: block;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* CE/ productGallery */
+
+
+/* --------------------------------------------------------- PRODUCT OPTIONS --- */
+/* CB/ productOptions */
+
+
+div.k-product-options {
+	float: left;
+	width: 96%;
+	padding: 0.8em 2% 0;
+	margin-bottom: 2em;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+		
+	div.k-product-options fieldset {
+		clear: none;
+		float: left;
+		width: 45%;
+		padding: 0;
+		border: none;
+	}
+	
+	div.k-product-options legend {
+		font-size: 0.7em;
+		background: none;
+		padding: 0 0 8px 0;
+	}
+	div.k-product-options input {position: absolute; left: -9000px;}
+	div.k-product-options p {
+		font-size: 0.65em;
+		margin: 0;
+	}
+
+	div.k-product-options label {
+		float: left;
+		width: 2em;
+		list-style-type: none;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000;
+		background: #CCC;
+		padding: 2px 0;
+		margin-right: 5px;
+		cursor: pointer;
+	}
+		div.k-product-options label img {
+			vertical-align: bottom;
+		}
+
+	/* Active/Hover States */
+	div.k-product-options .ui-state-active, div.k-product-options label:hover, div.k-product-options label:focus {
+		color: #FFF;
+		background: #F60;
+		border-color: #F60;
+	}
+	
+/* Exception for color */
+	div.k-product-options .color label {
+		width: auto;
+		color: #000;
+		background: #FFF;
+		padding: 0;
+		border: 2px solid #CCC;
+	}
+	/* Active/Hover States */
+	div.k-product-options .color .ui-state-active, div.k-product-options .color label:hover, div.k-product-options .color label:focus {
+		color: #FFF;
+		background: #F60;
+		border-color: #F60;
+	}
+	
+
+/* CE/ productOptions */
+
+
+/* --------------------------------------------------------- BASKET --- */
+/* CB/ basket */
+
+.k-basket {border-color: #F60;}
+	.k-basket .control {
+		font-size: 0.7em;
+		background-color: #F60;
+		border-bottom: none;
+	}
+	.k-basket div.content {width: 100%; padding: 0;}
+	
+	
+dl.basket-item {
+	position: relative; 
+	float: left;
+	width: 100%;
+	padding: 5px 0;
+	margin-bottom: 5px;
+	border-bottom: 1px dashed #CCC;
+}
+dl.new-item {background: #EFEFEF;}
+
+	dl.basket-item dt {
+		float: left;
+		width: 55px;
+		padding: 0 5px;
+	}
+		dl.basket-item img {max-width: 100%; border: 1px solid #000;}
+		
+	dl.basket-item dd {font-size: 0.65em; line-height: 1.2; margin: 0;}
+	dl.basket-item dd.price {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		width: 10em;
+		font-weight: bold;
+		text-align: right;
+	}
+	
+/* Total */
+p.basket-total {
+	clear: both;
+	text-align: right;
+	color: #FFF;
+	background: #808080;
+	padding: 5px;
+	margin: 5px;
+}
+
+/* Exceptions */
+	
+	.k-basket .k-buttons-bar {text-align: center; margin-bottom: 0.5em;}
+	.k-basket .k-buttons-bar li {font-size: 0.7em;}
+
+/* CE/ basket */
+
+
+/* --------------------------------------------------------- BASKET SUMMARY --- */
+/* CB/ basketSum */
+
+p.k-basket-sum {
+	position: absolute;
+	top: 1.5em;
+	right: 2%;
+	width: auto;
+	height: 2.5em;
+	line-height: 2.5em;
+	text-align: center;
+	color: #FFF;
+	background: #F60 url(../img/k-theme1/bg_basket-sum.png) 5px 2px no-repeat;
+	border: 1px solid #FFF;
+}
+	
+	p.k-basket-sum a, p.k-basket-sum a:link {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		background: transparent;
+		padding: 0 8px 0 35px;
+	}
+
+/* CE/ basketSum */
+
+
+/* --------------------------------------------------------------------------- */
+/* -------------------------------- PRINT STYLES ----------------------------- */
+/* --------------------------------------------------------------------------- */
+
+@media print {
+		
+	/* --- Things that should not be printed --- */
+	#navbar, #menu, #sidebar, aside[role=complementary] {display:none;}
+	.k-tools, .k-login, .k-login-data {display:none;}
+	.k-actions-block {display:none;}
+	.k-carousel, .k-pagination {display: none;}
+	p.tabs-link {display: none;}
+	.k-language, .k-breadcrumbs {display: none;}
+
+	div.k-orientation-aid {display: none;}
+	table input {display: none;}
+	
+		
+	/* --- DEFAULTS --- */
+		
+	h1 {
+		clear: both;
+		float: none;
+		width: auto;
+		height: auto;
+		text-align: center;
+		padding: 20px;
+		margin: 0 0 50pt;
+		border-top: 1px dashed #CCC;
+		border-bottom: 1px dashed #CCC;
+		page-break-after: avoid;
+	}
+
+	h1 img {display: none;}
+	
+	h1:after {
+		font-size: 24pt;
+		content: "AtosWorldline: kawwaPortal";
+	}
+
+	h2 {font-size: 22pt;}
+	h3 {font-size: 18pt; page-break-after: avoid;}
+	h4 {font-size: 14pt; page-break-after: avoid;}
+	p {font-size: 12pt;}
+	ul {margin: 1em;}
+	li {font-size: 12pt; padding: 0.3em 1em;}
+	dt {margin: 1em 0;}
+	img {max-width: 90%;}	
+	a, a:link, a:visited {text-decoration: none;}
+	footer, #footer {margin-top: 2em;}
+	
+	/* --- EXCEPTIONS --- */
+	#wrapper {float: none;}
+	#main {width: 100%;}
+	#wrapper div:first-child[id=main] {width: 100%; margin-left: 0;}
+	#wrapper div:last-child[id=main] {width: 100%;}
+	#wrapper div:only-child[id=main] {width: 100%;}
+	
+	.k-article p {max-width: 98%;}
+		.k-article div.k-intro {width: 100%;}
+	
+	.k-notes {max-width: 100%; padding: 0;}
+	.k-illustration-block p.illustration img {max-width: 90%;}
+	
+	
+/* List of articles */
+	div.k-entry h2 {margin: 0;}
+	div.k-entry h2 a, div.k-entry h2 a:link {padding: 0;}
+	.k-article.k-entry ul.entry-info, ul.entry-info {
+		float: none;
+		width: auto;
+		text-align: left;
+		background: #FFF;
+		padding: 0 0 20px;
+	}
+	ul.entry-info li {display: inline; padding: 0;}
+	.k-entry .published {display: inline; font-size: 11pt; padding: 0; margin: 0;}
+	.k-entry address {display: inline; font-size: 11pt;}
+	.k-entry div.content {float: none;}
+	
+	p.k-readmore {padding: 0;}
+	p.k-readmore a:after {
+		font-style: italic;
+		content: " (http://kawwa.worldline.com/"attr(href) ")";
+	}
+	
+/* E-commerce */
+	p.buy, .rating, ul.catalog-view, p.k-quantity, ul.thumblist {display: none;}
+	.k-catalog .k-product {
+		float: none;
+		width: 100%;
+		padding: 0 0 15px;
+		margin: 0 0 15px;
+		border: none;
+		border-bottom: 1px solid #CCC;
+	}
+
+	.k-catalog div.price-data {float: none; width: auto; height: auto;}
+	p.all-prices {float: none;}
+	.discount {position: static;}
+	#push-data, #comments {display: none;}
+	
+	.k-product-sheet div.photo-data:after {display: none;}
+	
+	
+/* Collapsible panels */
+	.k-panel .content {float: none; width: 100%; padding: 0; border: none;}
+	.k-panel .control {font-size: 14pt; color: #000; background: #FFF; padding: 0 0 20px;}
+	
+/* Results list / treegrid / datatables */
+	#filter {display: none;} /* You may want to hide general forms otherwise */
+	div.tree {display: none;}
+	
+	div.k-tree-grid div.tree-content {
+		overflow: visible;
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 0;
+		border: none;
+	}
+	div.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {display: none;}
+
+}
+
+
+/* --------------------------------------------------------------------------- */
+/* -------------------------------- MEDIA QUERIES ------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* General  --------------------------------------------- */
+@media only screen and (max-width : 1000px) {
+	#main {width: 83%;}
+	#sidebar, aside[role=complementary] {width: 96%; background: #D7E4EE; padding: 2%; margin-top: 2em;}
+	#wrapper #main:first-child {width: 98%;}
+	h1 {min-height: 50px;}
+	#loginLink {position: relative; top: -18px;}
+
+	/* Components */
+	.k-article p {max-width: 100%;}
+	.jcarousel-item {height: 14em;}
+	div.dataTables_info {width: 10em; text-align: center;}
+	table.k-data-table {margin-top: 0.7em;}
+
+	div.k-tree-grid div.tree {float: none; clear: both; width: 100%; height: auto;}
+  div.k-tree-grid .tree-content {
+		float: none;
+		clear: both;
+		width: 100%;
+		padding: 25px 0;
+		border: none;
+		border-top: 1px solid #000;
+	}
+
+}
+
+
+/* Middle resolutions --------------------------------------------- */
+@media only screen and (max-width : 800px) {
+	h1 {width: 50%;}
+	h2 {width: 60%;}
+	select {font-size: 100%;}
+
+	#container {width: 100%; max-width: 100%;}
+	p.k-breadcrumbs {width: 98%; padding-left : 2%;}
+
+	#menu, #secondary {width: 100%; padding-bottom: 20px;}
+	#menu p.aid, #secondary p.aid {display: block; width: 100%; text-align: center;}
+
+	/* Conditions based on number of columns */
+	#main {width: 100%; margin: 1em 0;} /* with three columns */
+	#wrapper #main:first-child {width: 100%;}
+	#wrapper #main:last-child {width: 100%;}
+	#wrapper #main:only-child {width: 100%;}
+	#sidebar, aside[role=complementary] {width: 96%; padding: 2%; border-top: 2px solid #000;}
+	#wrapper {width: 96%; padding-top: 20px; margin: 0 2%;}
+
+	/* Navigation */
+
+	.sm-screen p.control {display: block;}
+	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
+	.sm-screen .k-navbar li {
+		float: none;
+		clear: both;
+		padding: 2px 0;
+		border: none;
+		border-bottom: 1px solid #FFF;
+	}
+	.sm-screen .k-navbar a, .sm-screen .k-navbar li.active a, 
+		.sm-screen .k-navbar li.active strong {display: block; padding: 10px;}
+	.dropdown ul {position: static; width: 100%;}
+
+	ul.k-menu {display: none;}
+
+	/* Components */
+
+	div.k-tools {position: static;}
+	ul.k-tools-list {float: left; max-width: 60%; padding: 0 0 0 2%;}
+	form.k-language {position: static; float: right;}
+		form.k-language select {margin: 0.3em 0 0.1em;}
+		form.k-language label {height: 1.5em; padding: 0.5em;}
+
+	.k-info-block {background: #FFF;}
+
+	.k-intro {width: 90%;}
+	.k-article.k-entry ul.entry-info {width: 20%;}
+	.k-entry h2 {width: 100%;}
+	.k-entry div.content {width: 73%;}
+  	div.k-highlight-block, blockquote {width: 70%;}
+
+	div.k-pagination p {font-size: 11pt;}
+	div.k-pagination p.lines-to-display {display: block; width: 100%;}
+	div.k-pagination p.total-pages {float: none; display: block; width: 100%; text-align: left; padding: 30px 0 5px;}
+	div.k-pagination p.page-numbers {
+		clear: both;
+		width: 100%;
+		font-size: 12px;
+		text-align: center;
+		padding-top: 0.5em;
+		border-top: 1px solid #FFF;
+	}
+	div.k-pagination p.page-numbers a, div.k-pagination p.page-numbers a:link, div.k-pagination p.page-numbers a:visited {
+		display: inline-block;
+		width: 2em;
+		font-size: 12px;
+		padding: 0.8em;
+		border: 1px solid #CCC;
+	}
+	div.k-pagination p.page-numbers a:hover {border-color: #F60;}
+
+	.action-context {display: none;}
+	.k-product-sheet .rating {width: auto; margin: 0 0 1em;}
+	.k-product-sheet p.all-prices {width: 150px;}
+	.k-product-sheet div.photo-data {clear: both; width: 100%; text-align: center; padding: 0 0 25px;}
+	.k-product-sheet div.product-data {width: 100%; padding: 0; border: none;}
+
+	.k-catalog ul.catalog-view {display: none;}
+	.k-catalog .k-product {width: 92%;}
+  	.k-catalog .product-data {float: left; width: 55%; height: auto; margin-bottom: 1em;}
+	.k-catalog .photo-data {float: left; width: 30%; padding-right: 5%; margin-bottom: 1em;}
+	.k-catalog div.price-data {}
+
+	dl.basket-item dd {font-size: 11px;}
+
+	ul.k-sitemap {padding: 0;}
+	ul.k-sitemap li {width: 90%; padding-left: 25px;}
+	ul.k-sitemap li.one-level {padding-bottom: 0.5em;}
+
+	.to-right, .to-left, div.k-illustration-block.to-right, div.k-illustration-block.to-left {
+		float: none;
+		width: auto;
+	}
+
+	div.dataTables_length {text-align: center; width: 100%; padding-bottom: 5px; border-bottom: 1px solid #CCC;}
+		div.dataTables_length label {float: none; width: auto; padding: 0;}
+	div.dataTables_info {position: static; width: 100%; text-align: center; padding-bottom: 10px;}
+	div.dataTables_filter {float: left; width: 100%; text-align: center;}
+		div.dataTables_filter label {float: none; width: auto; text-align: left; padding: 0;}
+
+	div.k-tree-grid div.tree-content {
+		overflow: visible;
+		float: none;
+		width: 100%;
+		height: auto;
+		padding: 0;
+		border: none;
+	}
+
+	.jcarousel-item-horizontal {margin: 0 5px;}
+	.k-carousel .price {font-size: 10pt;}
+	.k-carousel li {font-size: 10pt; text-align: center;}
+	.jcarousel-item img {max-width: 60%;}
+	.k-carousel button {
+		-moz-transform: scale(0.7);
+		-ms-transform: scale(0.7);
+		-o-transform: scale(0.7);
+		-webkit-transform: scale(0.7);
+		transform: scale(0.7);
+	}
+}
+
+@media only screen and (max-width : 700px) {
+
+	label, fieldset.k-radio legend, fieldset.k-check legend {
+		float: none;
+		width: auto;
+		display: block;
+		text-align: left;
+		padding: 0;
+	}
+  label.k-online {padding: 0;}
+	p.k-check {width: 100%; padding: 1em 0 0 0;}
+	p.k-check label {display: inline-block; padding-right: 15px;}
+
+	p.k-basket-sum {overflow: hidden; width: 5em;}
+
+}
+
+@media only screen and (max-width : 480px) {
+	h1 {width: 40%; min-height: auto; background-size: 80px; padding-left: 90px;}
+	h1 small {font-size: 11px;}
+
+	label {width: 8em;}
+
+	#loginLink a, #loginLink a:link, #loginLink a:visited {top: 64px;}
+
+	ul.k-form-steps li {font-size: 12px; width: 20%;}
+
+	.k-entry {margin: 0;}
+	.k-entry .entry-title {margin: 0;}
+  .k-entry div.content {width: 100%; margin: 0;}
+  ul.entry-info + div.content {margin: 0;}
+	.k-article.k-entry ul.entry-info, ul.entry-info {
+		float: none;
+		width: auto;
+		text-align: left;
+		background: #FFF;
+		padding: 0 0 20px;
+	}
+	ul.entry-info li {display: inline; padding: 0;}
+	div.k-entry .published {display: inline; font-size: 11pt; padding: 0; margin: 0;}
+	div.k-entry address {display: inline; font-size: 11pt;}
+	div.k-entry div.content {float: none; width: 100%;}
+
+	dl.basket-item dd {font-size: 10pt;}
+	dl.basket-item dd {font-size: 10pt; width: 30%;}
+	dl.basket-item .name {width: 60%; margin: 0;}
+	dl.basket-item .price {width: 30%;}
+	.k-basket .control {font-size: 10pt;}
+	.k-basket .k-buttons-bar li {font-size: 11pt;}
+
+	div.k-product-sheet .discount {top: 0; right: 0;}
+	div.k-product-sheet .k-actions-block {display: none;}
+
+  .k-catalog .product-data {float: none; width: 100%;}
+	.k-catalog .photo-data {float: none; width: 100%; padding: 15px 15px 15px 0;}
+
+	ul.k-sitemap a {display: block;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../plugins/jquery-star-rating-plugin.js"></script>
+    <script type="text/javascript" src="../kawwa-angular.js"></script>
+    <link type="text/css" rel="stylesheet" href="theme/css/k-theme0.css"/>
+</head>
+<body>
+<div ng-controller="TestCtrl">
+
+    <form>
+        <fieldset class="k-rating">
+            <legend>Rate this article: {{raty}}</legend>
+            <p kawwa-raty kawwa-rating-json="{'value': 'test'}" ng-model="raty">
+                <input name="star1" type="radio" value="1" />
+                <input name="star1" type="radio" value="2" />
+                <input name="star1" type="radio" value="3" />
+                <input name="star1" type="radio" value="4" />
+                <input name="star1" type="radio" value="5" />
+            </p>
+        </fieldset>
+
+
+    </form>
+
+</div>
+
+
+<script type="text/javascript">
+
+    var myAppModule = angular.module('MyApp', ['kawwa'])
+
+    function TestCtrl($scope) {
+        $scope.yourName = "Emmanuel DEMEY";
+        $scope.raty = 2;
+        $scope.json={value: "test"};
+    }
+
+</script>
+</body>
+</html>
