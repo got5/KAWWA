@@ -18,7 +18,6 @@ public class Theme2Stack extends ThemeStack{
 			@Inject final ThreadLocale threadLocale) {
 		super(assetSource, productionMode, symbolSource, threadLocale);
 		
-		addStyleSheet(new StylesheetLink(expand("context:css/k-structure.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/i-theme2.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/k-theme2.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/iehacks2.css"),new StylesheetOptions("all").withCondition("lt IE 9")));

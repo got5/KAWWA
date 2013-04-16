@@ -19,7 +19,6 @@ public class Theme1Stack extends ThemeStack{
 		super(assetSource, productionMode, symbolSource, threadLocale);
 		
 
-		addStyleSheet(new StylesheetLink(expand("context:css/k-structure.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/i-theme1.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/k-theme1.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/iehacks1.css"),new StylesheetOptions("all").withCondition("lt IE 9")));

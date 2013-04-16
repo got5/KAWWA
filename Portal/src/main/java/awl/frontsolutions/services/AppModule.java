@@ -1,13 +1,16 @@
 package awl.frontsolutions.services;
 
 import java.io.IOException;
+import java.util.List;
 
 import net.atos.kawwaportal.components.KawwaConstants;
 
+import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.dom.Element;
+import org.apache.tapestry5.internal.services.javascript.CoreJavaScriptStack;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
@@ -26,7 +29,9 @@ import org.apache.tapestry5.services.RequestExceptionHandler;
 import org.apache.tapestry5.services.ResponseRenderer;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
+import org.apache.tapestry5.services.javascript.StylesheetLink;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
+import org.got5.tapestry5.jquery.services.javascript.FormSupportStack;
 import org.slf4j.Logger;
 
 import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
@@ -39,6 +44,8 @@ import awl.frontsolutions.services.impl.DASSecurityManagerImpl;
 import awl.frontsolutions.services.impl.DefaultMailServiceImpl;
 import awl.frontsolutions.services.impl.FileSystemIndexerImpl;
 import awl.frontsolutions.services.impl.TopComponentImpl;
+import awl.frontsolutions.services.stack.OverrideFormSupportStack;
+import awl.frontsolutions.services.stack.OverridePrototypeStack;
 import awl.frontsolutions.services.stack.Theme0Stack;
 import awl.frontsolutions.services.stack.Theme1Stack;
 import awl.frontsolutions.services.stack.Theme2Stack;
@@ -66,7 +73,7 @@ public class AppModule {
 
 		configuration.add(SymbolConstants.APPLICATION_VERSION, "0.0.2-SNAPSHOT");
 		
-		configuration.add(JQuerySymbolConstants.JQUERY_UI_DEFAULT_THEME,"classpath:org/got5/tapestry5/jquery/themes/jquery-ui.css");
+		configuration.add(JQuerySymbolConstants.JQUERY_UI_DEFAULT_THEME,"context:css/k-structure.css");
 		
 		configuration.add(KawwaConstants.KAWWA_INCLUDE_STACK, "false");
 		
@@ -89,6 +96,10 @@ public class AppModule {
 		configuration.addInstance(ThemeStack.DEFAULT_THEME, Theme0Stack.class);
 		configuration.addInstance(ThemeStack.PREFIX+"k-theme1", Theme1Stack.class);
 		//configuration.addInstance(ThemeStack.PREFIX+"k-theme2", Theme2Stack.class);
+		
+		
+		configuration.overrideInstance(JQuerySymbolConstants.PROTOTYPE_STACK, OverridePrototypeStack.class);
+		configuration.overrideInstance(FormSupportStack.STACK_ID, OverrideFormSupportStack.class);
 	}
 
 
