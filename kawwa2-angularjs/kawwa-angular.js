@@ -1,5 +1,10 @@
 var isotopeApp = angular.module('kawwa', []);
 
+function incrementTest() {
+	var i = document.createElement('input');
+	i.setAttribute('type', 'number');
+	return i.type !== 'text';
+}
 
 function putObject(path, object, value) {
     var modelPath = path.split(".");
@@ -17,6 +22,44 @@ function putObject(path, object, value) {
     }
     fill(object, modelPath, 0, value);
 }
+
+/**
+ * Product Quantity
+ */
+angular.module('kawwa').directive('productQuantity', function () {
+    return {
+        restrict: 'A',
+
+        link:function (scope, element, attrs, controller) {
+            
+            var json = jQuery.extend({}, scope.$eval(attrs.productQuantity))
+            
+            if(incrementTest()) {
+                jQuery(element).addClass('uppydowner');
+		jQuery(element).uppydowner();
+            } else {
+                jQuery(element).css('width', '3em');
+            }
+            
+        }
+    };
+});
+
+/**
+ * ProductOptions
+ */
+angular.module('kawwa').directive('productOptions', function () {
+    return {
+        restrict: 'A',
+
+        link:function (scope, element, attrs, controller) {
+            
+            var json = jQuery.extend({}, scope.$eval(attrs.productOptions))
+            
+            jQuery(element).buttonset(json);
+        }
+    };
+});
 
 /**
  * Field Comment
