@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="MyApp">
+<html data-ng-app="MyApp">
 <head>
     <title></title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../plugins/jquery-star-rating-plugin.js"></script>
+    <script type="text/javascript" src="../plugins/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="../plugins/jquery.jcarousel.js"></script>
     <script type="text/javascript" src="../kawwa-angular.js"></script>
     <link type="text/css" rel="stylesheet" href="theme/css/k-theme0.css"/>
 </head>
 <body>
-<div ng-controller="TestCtrl">
-
+<div data-ng-controller="TestCtrl">
+    
+    
     <form>
+        <p><label for="field1">Enter something:</label>
+	<input class="k-field-comment" type="text" id="field1" name="field1" data-field-Comment="{'gravity': 'w'}"
+               title="A short comment about this field" /></p>
+
         <fieldset class="k-rating">
             <legend>Rate this article: {{raty}}</legend>
-            <p kawwa-raty kawwa-rating-json="{'value': 'test'}" ng-model="raty">
+            <p data-kawwa-raty data-kawwa-rating-json="{'value': 'test'}" ng-model="raty">
                 <input name="star1" type="radio" value="1" />
                 <input name="star1" type="radio" value="2" />
                 <input name="star1" type="radio" value="3" />

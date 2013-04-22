@@ -18,6 +18,29 @@ function putObject(path, object, value) {
     fill(object, modelPath, 0, value);
 }
 
+/**
+ * Field Comment
+ */
+angular.module('kawwa').directive('fieldComment', function () {
+    return {
+        restrict: 'A',
+
+        link:function (scope, element, attrs, controller) {
+            
+            var json = jQuery.extend({
+			gravity: 'w',
+			fade: true, 
+			trigger: 'focus'
+		}, scope.$eval(attrs.fieldComment))
+            
+            jQuery(element).tipsy(json);
+        }
+    };
+});
+
+/**
+ * Raty
+ */
 angular.module('kawwa').directive('kawwaRaty', function () {
     return {
         restrict: 'A',
@@ -25,7 +48,7 @@ angular.module('kawwa').directive('kawwaRaty', function () {
         link:function (scope, element, attrs, controller) {
             var json = jQuery.extend({
                 callback: function(value){
-                    putObject(jQuery(element).attr('ng-model'), scope, value);
+                    putObject(attrs.ngModel, scope, value);
                     if(!scope.$$phase) scope.$apply();
                 }
             }, scope.$eval(attrs.kawwaRatingJson))
