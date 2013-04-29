@@ -98,12 +98,17 @@ public class KawwaPortalComponentsModule
     	MarkupRendererFilter rendererFilter = new MarkupRendererFilter() { 
     		public void renderMarkup(MarkupWriter writer,MarkupRenderer renderer) { 
     			
-    			renderer.renderMarkup(writer); 
-    			Element el = writer.getDocument().getRootElement().find("head");
-    			if(el!=null){
-    				el.elementAt(0, "meta", "content", "IE=edge", "http-equiv" , "X-UA-Compatible");
-    				el.elementAt(1, "meta", "content", "text/html; charset=utf-8", "http-equiv" , "Content-Type");
-    				el.elementAt(2, "meta", "name", "viewport", "content" , "width=device-width, initial-scale=1.0");
+    			try{
+    				renderer.renderMarkup(writer); 
+    				Element el = writer.getDocument().getRootElement().find("head");
+    				if(el!=null){
+    					el.elementAt(0, "meta", "content", "IE=edge", "http-equiv" , "X-UA-Compatible");
+    					el.elementAt(1, "meta", "content", "text/html; charset=utf-8", "http-equiv" , "Content-Type");
+    					el.elementAt(2, "meta", "name", "viewport", "content" , "width=device-width, initial-scale=1.0");
+    				}
+    			}
+    			catch(NullPointerException ex) {
+    				throw new NullPointerException("Can you check that your page have template file.");
     			}
     		} 
     		
