@@ -1,16 +1,13 @@
 package awl.frontsolutions.services;
 
 import java.io.IOException;
-import java.util.List;
 
 import net.atos.kawwaportal.components.KawwaConstants;
 
-import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.dom.Element;
-import org.apache.tapestry5.internal.services.javascript.CoreJavaScriptStack;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
@@ -29,13 +26,11 @@ import org.apache.tapestry5.services.RequestExceptionHandler;
 import org.apache.tapestry5.services.ResponseRenderer;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
-import org.apache.tapestry5.services.javascript.StylesheetLink;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.got5.tapestry5.jquery.services.javascript.FormSupportStack;
 import org.slf4j.Logger;
 
 import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
-import awl.frontsolutions.services.atos.AtosModule;
 import awl.frontsolutions.services.impl.AtosServiceDefaultImpl;
 import awl.frontsolutions.services.impl.AuthentificationDefaultImpl;
 import awl.frontsolutions.services.impl.ComponentUtilsImpl;
@@ -48,15 +43,14 @@ import awl.frontsolutions.services.stack.OverrideFormSupportStack;
 import awl.frontsolutions.services.stack.OverridePrototypeStack;
 import awl.frontsolutions.services.stack.Theme0Stack;
 import awl.frontsolutions.services.stack.Theme1Stack;
-import awl.frontsolutions.services.stack.Theme2Stack;
 import awl.frontsolutions.services.stack.ThemeStack;
 import awl.frontsolutions.services.stack.ThemeSwitcherStack;
 
-@SubModule(AtosModule.class)
+//@SubModule(AtosModule.class)
 public class AppModule {
 	
 	@Startup
-	public static void parseComponents(FileSystemIndexer indexer, TopComponent topComponent){
+	public static void parseComponens(FileSystemIndexer indexer, TopComponent topComponent){
 		topComponent.setTopComponent();
 	}
 	

@@ -145,8 +145,8 @@
 
 
 	<properties>
-		<tapestry-release-version>5.3.6</tapestry-release-version>
-		<kawwa-version>2.0.3</kawwa-version>
+		<tapestry-release-version>5.3.7</tapestry-release-version>
+		<kawwa-version>2.0.5-SNAPSHOT</kawwa-version>
 		<commons-logging-version>1.1.1</commons-logging-version>
 		<google-api-version>1.10.3-beta</google-api-version>
 		<javax-mail-version>1.4.3</javax-mail-version>
