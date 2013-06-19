@@ -6,3 +6,4 @@ Portal/src/main/java/awl/frontsolutions/services/atos
 .classpath
 target/
 out/
+.DS_Store
