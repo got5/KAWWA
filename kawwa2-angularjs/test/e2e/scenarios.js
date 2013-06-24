@@ -11,7 +11,8 @@ describe('Demo App', function() {
 
        it('should displays the bigger image when clicked on thumber',function() {
 
-           expect(repeater('.thumblist li').count()).toBe(3);
+
+          expect(element('.zoomWrapperImage img')).not.toBe(null);
        });
 
    });

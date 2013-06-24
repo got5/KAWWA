@@ -1,6 +1,6 @@
 'use strict';
 
-/* jasmine specs for directives go here */
+/* Dumb test, for exemple purpose only */
 
 describe('kawwa', function() {
     describe('kawwaProductGallery',function(){
