@@ -1,1 +1,9 @@
 Portal/src/main/java/awl/frontsolutions/services/atos
+*.iml
+.idea/
+.project
+.settings/
+.classpath
+target/
+out/
+.DS_Store

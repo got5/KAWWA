@@ -1,9 +1,9 @@
-var isotopeApp = angular.module('kawwa', []);
+var kawwa = angular.module('kawwa', []);
 
 function incrementTest() {
 	var i = document.createElement('input');
 	i.setAttribute('type', 'number');
-	return i.type !== 'text';
+	return i.type === 'text';
 }
 
 function putObject(path, object, value) {
@@ -23,15 +23,21 @@ function putObject(path, object, value) {
     fill(object, modelPath, 0, value);
 }
 
+kawwa.run(function($templateCache) {
+    $templateCache.put("ProductGallery",
+        "<div class=\"k-product-gallery photo-data\">\n    <p>\n        <a class=\"jqzoom\" rel=\"{{title}}\" href=\"{{gallery[0].hd}}\" title=\"{{gallery[0].title}}\">\n            <img class=\"photo\" ng-src=\"{{gallery[0].small}}\" alt=\"{{gallery[0].title}}\"/>\n        </a>\n    </p>\n    <ul class=\"thumblist\">    \n        <li ng-repeat=\"image in gallery\" ng-class=\"{zoomThumbActive : $index==0}\">\n            <a  href=\"#\" rel=\"{gallery: \'{{title}}\', smallimage:\'{{image.small}}\',largeimage:\'{{image.hd}}\'}\">\n            <img ng-src=\"{{image.thumb}}\" alt=\"{{image.title}}\"/></a></li>\n    </ul>\n</div>\n\n\n")
+})
+
 /**
  * Product Quantity
  */
-angular.module('kawwa').directive('productQuantity', function () {
+kawwa.directive('productQuantity', function () {
+
     return {
         restrict: 'A',
 
         link:function (scope, element, attrs, controller) {
-            
+
             var json = jQuery.extend({}, scope.$eval(attrs.productQuantity))
             
             if(incrementTest()) {
@@ -48,7 +54,7 @@ angular.module('kawwa').directive('productQuantity', function () {
 /**
  * ProductOptions
  */
-angular.module('kawwa').directive('productOptions', function () {
+kawwa.directive('productOptions', function () {
     return {
         restrict: 'A',
 
@@ -64,7 +70,7 @@ angular.module('kawwa').directive('productOptions', function () {
 /**
  * Field Comment
  */
-angular.module('kawwa').directive('fieldComment', function () {
+kawwa.directive('fieldComment', function () {
     return {
         restrict: 'A',
 
@@ -84,7 +90,7 @@ angular.module('kawwa').directive('fieldComment', function () {
 /**
  * Raty
  */
-angular.module('kawwa').directive('kawwaRaty', function () {
+kawwa.directive('kawwaRaty', function () {
     return {
         restrict: 'A',
 
@@ -104,6 +110,47 @@ angular.module('kawwa').directive('kawwaRaty', function () {
         }
     };
 });
+
+
+/**
+ * Product Gallery
+ */
+kawwa.directive('kawwaProductGallery', function ($templateCache,$timeout) {
+
+    return {
+
+        restrict: 'A',
+        template: $templateCache.get("ProductGallery"),
+        replace:true,
+        scope:{
+          options:"=",
+          title:"@",
+          gallery:"="
+        },
+        link: function(scope, element, attrs, controller) {
+            if(!scope.title){
+                scope.title="gal1";
+            }
+            console.log(scope.options);
+            console.log(scope.title);
+            if(!scope.options){
+                scope.options =  {
+                    zoomType:'standard',
+                    lens: true,
+                    preloadImages: true,
+                    alwaysOn: false
+                };
+            }
+            $timeout(function(){
+                if(jQuery.fn.jqzoom) {
+                    element.children(0).children(0).jqzoom(scope.options);
+                }
+            },0)
+        }
+    }
+});
+
+
 
 
 
