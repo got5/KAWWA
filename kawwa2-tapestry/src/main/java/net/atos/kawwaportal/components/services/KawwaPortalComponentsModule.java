@@ -1,5 +1,6 @@
 package net.atos.kawwaportal.components.services;
 
+import net.atos.kawwaportal.components.Kawwa2ComponentParameterConstants;
 import net.atos.kawwaportal.components.KawwaConstants;
 import net.atos.kawwaportal.components.services.breadcrumb.BreadcrumbListProvider;
 import net.atos.kawwaportal.components.services.breadcrumb.BreadcrumbListProviderSource;
@@ -34,12 +35,14 @@ public class KawwaPortalComponentsModule
 {
 	@Contribute(SymbolProvider.class)
     @FactoryDefaults
-    public static void contributeSymboleProvider(MappedConfiguration<String, String> configuration)
+    public static void contributeSymboleProvider(MappedConfiguration<String, Object> configuration)
     {
-		configuration.add(KawwaConstants.KAWWA_COOKIE_ENABLE,"true");
+		configuration.add(KawwaConstants.KAWWA_COOKIE_ENABLE,true);
 		configuration.add(KawwaConstants.KAWWA_IMG_PATH,"classpath:net/atos/kawwaportal/components/theme/img/k-theme0");
-		configuration.add(KawwaConstants.KAWWA_INCLUDE_STACK, "true");
+		configuration.add(KawwaConstants.KAWWA_INCLUDE_STACK, true);
 		configuration.override(JQuerySymbolConstants.JQUERY_UI_DEFAULT_THEME, "classpath:net/atos/kawwaportal/components/css/library.css");
+		
+		configuration.add(Kawwa2ComponentParameterConstants.KAWWA2GRIDPAGER_PAGE_RANGE, 5);
 	}
 	
 	@Contribute(BreadcrumbListProviderSource.class)

@@ -1,10 +1,12 @@
 package net.atos.kawwaportal.components.components;
 
+import net.atos.kawwaportal.components.Kawwa2ComponentParameterConstants;
 import net.atos.kawwaportal.components.KawwaConstants;
-import net.atos.kawwaportal.components.KawwaUtils;
 import net.atos.kawwaportal.components.KawwaEventsConstants;
+import net.atos.kawwaportal.components.KawwaUtils;
 
 import org.apache.tapestry5.Asset;
+import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.Link;
@@ -13,13 +15,13 @@ import org.apache.tapestry5.annotations.Environmental;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.grid.GridDataSource;
 import org.apache.tapestry5.internal.InternalConstants;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.ClientBehaviorSupport;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-import org.apache.tapestry5.dom.Element;
 
 public class Kawwa2Pager {
 	/**
@@ -52,7 +54,7 @@ public class Kawwa2Pager {
 	@Property
 	private int currentPage;
 	
-	@Parameter("5")
+	@Parameter(BindingConstants.SYMBOL + ":" + Kawwa2ComponentParameterConstants.KAWWA2GRIDPAGER_PAGE_RANGE)
 	private int range;
 	
 	@Inject
