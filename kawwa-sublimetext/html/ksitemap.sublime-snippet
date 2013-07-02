@@ -1,0 +1,48 @@
+<snippet>
+	<content><![CDATA[
+    <ul class="k-sitemap">
+    	<li class="one-level"><a href="#">Page Structure</a></li>
+    	<li><strong>Navigation</strong>
+    		<ul class="level2">
+    			<li><a href="#">Main navigation</a>
+    				<ul class="level3">
+    					<li><a href="#">Dropdown</a></li>
+    					<li><a href="#">Two levels</a></li>
+    				</ul>
+    			</li>
+    			<li><a href="#">Vertical Menu</a></li>
+    			<li><a href="#">Breadcrumbs</a></li>
+    			<li><a href="#">Skip navigation link</a></li>
+    			<li><a href="#">Treeview</a></li>
+    			<li><a href="#">Treeview Grid</a></li>
+    		</ul>
+    	</li>
+    	<li><strong>Forms</strong>
+    		<ul class="level2">
+    			<li><a href="#">Sub-fieldsets</a></li>
+    			<li><a href="#">Checkboxes</a></li>
+    			<li><a href="#">Radios</a></li>
+    			<li><a href="#">Mandatory Info</a></li>
+    			<li><a href="#">Required field</a></li>
+    			<li><a href="#">Input Help</a></li>
+    			<li><a href="#">Field Comment</a></li>
+    			<li><a href="#">Error Field</a></li>
+    			<li><a href="#">Error Messages</a></li>
+    		</ul>
+    	</li>
+    	<li><strong>Blocks</strong>
+    		<ull class="level2">
+    			<li><a href="#">Tabs</a></li>
+    			<li><a href="#">Collapsible Panel</a></li>
+    			<li><a href="#">Accordion</a></li>
+    			<li><a href="#">Carousel</a></li>
+    			<li><a href="#">Info Block</a></li>
+    		</ul>
+    	</li>
+    </ul>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ksitemap</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

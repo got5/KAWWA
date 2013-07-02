@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+<!doctype html>
+<html>
+	<head>
+		<title>${1}</title>
+	</head>
+	<body>
+		<div id="container">
+			<header>${2}</header>
+			<nav>${3}</nav>
+			<div id="wrapper">
+				<div id="secondary">${4}</div>
+				<div id="main">${5}</div>
+				<aside>${6}</aside>
+			</div>
+			<footer>${7}</footer>
+		</div>
+	</body>
+</html>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>klayout</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>text.html</scope> -->
+</snippet>

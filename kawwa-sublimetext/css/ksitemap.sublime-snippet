@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+ul.k-sitemap {float: left; width: 100%; margin-bottom: 2em;}
+ul.k-sitemap ul {margin-bottom: 2em;}
+ul.k-sitemap li {
+	float: left;
+	width: 20%;
+	list-style-type: none;
+	padding-left: 2%;
+	margin-right: 2%;
+	border-left: 1px solid #CCC;
+}
+ul.k-sitemap li:first-child {padding: 0; margin: 0; border-left: none;}
+ul.k-sitemap li strong {
+	display: block;
+	font: 0.8em NovecentowideMedium, PTSansCaptionBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #FFF;
+	background: #000;
+	padding: 0.5em 0.5em;
+}
+ul.k-sitemap li ul {padding: 0;}
+ul.k-sitemap li li {
+	float: none;
+	width: auto;
+	padding: 0.5em 0.3em;
+	border: none;
+	border-bottom: 1px dashed #CCC;
+}
+ul.k-sitemap li li:first-child {padding: 1em 0.3em 0.5em;}
+
+/* Third level */
+ul.k-sitemap li li ul {padding: 0.5em 0; margin-top: 0.5em;}
+ul.k-sitemap li li li, ul.k-sitemap li li li:first-child {
+	border: none;
+	border-left: 1px solid #CCC;
+}
+ul.k-sitemap li li li a {padding-left: 1em;}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ksitemap</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+</snippet>

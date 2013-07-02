@@ -1,0 +1,48 @@
+<snippet>
+	<content><![CDATA[
+div.k-tools {}
+ul.k-tools-list {
+	float: right;
+	width: auto;
+	padding: 1em 2% 0;
+}
+
+ul.k-tools-list li {
+	display: inline;
+	font: 0.65em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	background: transparent;
+	padding: 2em 0.2em 0.3em;
+}
+
+ul.k-tools-list li:before {content: "\25CF \00A0 \00A0 ";}
+
+ul.k-tools-list a, ul.k-tools-list a:link {
+	color: #FFF;
+	background: transparent;
+	text-decoration: none;
+}
+
+ul.k-tools-list a:hover, ul.k-tools-list a:focus {text-decoration: underline;}
+
+/* Exceptions */
+footer[role=contentinfo] ul.k-tools-list, #footer ul.k-tools-list {
+	float: none;
+	padding: 0.5em 0 1em 0.5em;
+	margin: -1em 0 1em;
+	border-left: 1px solid #FFF;
+}
+
+footer[role=contentinfo] ul.k-tools-list li, #footer ul.k-tools-list li {
+	display: block;
+	padding-top: 0.5em;
+}
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ktoolslinks</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+</snippet>
