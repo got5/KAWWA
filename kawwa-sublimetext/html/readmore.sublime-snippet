@@ -1,0 +1,6 @@
+<snippet>
+  <content><![CDATA[<p class="k-readmore">This is an example of text with a link to <a href="#">some content</a>.</p>
+]]></content>
+  <tabTrigger>readmore</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

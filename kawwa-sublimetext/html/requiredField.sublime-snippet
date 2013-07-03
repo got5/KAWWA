@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[<p><label for="field1">* Enter something:</label>
+	<input type="text" id="field1" name="field1" required /></p>
+]]></content>
+  <tabTrigger>requiredField</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[<p class="k-breadcrumbs">
+	<a href="#">Home</a> &gt; 
+	<a href="#">Components</a> &gt; 
+	Category name: Component name</p>]]></content>
+  <tabTrigger>breadcrumbs</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

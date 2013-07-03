@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[// ACTIONS DROPDOWN ----------------------------------	
+
+jQuery(document).ready(function(){
+	if(jQuery.fn.actionsDd) {
+		jQuery('.k-actions-dropdown').actionsDd();
+	}
+});]]></content>
+  <tabTrigger>actionsDropDown</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

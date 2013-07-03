@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[<p><label for="field2">Enter something:</label>
+	<input class="k-field-error" type="text" id="field2" name="field2" />
+	<span class="k-contextual-error">A comment about the error</span></p>
+]]></content>
+  <tabTrigger>errorField</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[jQuery(document).ready(function(){
+	if (jQuery.fn.tipsy) {
+		jQuery('.k-field-comment').tipsy({
+			gravity: 'w',
+			fade: true, 
+			trigger: 'focus'
+		});
+	}
+});
+]]></content>
+  <tabTrigger>fieldComment</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

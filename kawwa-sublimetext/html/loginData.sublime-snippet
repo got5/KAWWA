@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<p class="k-login-data">Welcome, <span id="user-name">John Smith</span> [<strong><a href="#">Logout</a></strong>]</p>]]></content>
+  <tabTrigger>loginData</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<h3 class="k-no-display">Tab Title</h3>]]></content>
+  <tabTrigger>noDisplay</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

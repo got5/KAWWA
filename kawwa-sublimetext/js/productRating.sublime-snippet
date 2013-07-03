@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[jQuery(document).ready(function(){
+	if(jQuery.fn.rating) {
+		jQuery('fieldset.k-rating input').rating();
+	}
+});]]></content>
+  <tabTrigger>productRating</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

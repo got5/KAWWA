@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[<fieldset class="k-sub-group">
+    <legend>
+        Title of sub-group of fields
+    </legend>
+    <ul class="k-check">
+        <li><input type="checkbox" id="theid1" name="theid1" value="true" />
+            <label for="theid1">One option</label></li>
+        <li><input type="checkbox" id="theid2" name="theid2" value="true" />
+            <label for="theid2">Other option</label></li>
+    </ul>
+</fieldset>
+]]></content>
+  <tabTrigger>subFieldsets</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

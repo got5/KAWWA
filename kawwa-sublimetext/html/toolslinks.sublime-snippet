@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[<!-- This block may be placed on the "k-tools" block -->
+<ul class="k-tools-list">
+	<li><a href="#">Contact us</a></li>
+	<li><a href="#">FAQ</a></li>
+	<li><a href="#">Site map</a></li>
+</ul>
+]]></content>
+  <tabTrigger>toolslinks</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

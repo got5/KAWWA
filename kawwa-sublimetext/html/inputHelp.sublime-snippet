@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[<p><label for="field1">Enter something:</label>
+	<input type="text" id="field1" name="field1" />
+	<a href="#field-info-example" class="k-field-help" title="About the field Enter something">
+		<img src="../img/[[THEME_IMG]]/pic_help.png" alt="[ Help ]" /></a></p>
+
+<!-- MODAL / place in the end file -->
+<div id="field-info-example" class="k-modal">
+	<h3 class="modal-header">About Enter something</h3>
+	<div class="content">
+		<p>Here goes a detailed explanation of the field...</p>
+	</div>
+</div>
+]]></content>
+  <tabTrigger>inputHelp</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

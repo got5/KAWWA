@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<a href="http://get.adobe.com/fr/reader/" class="k-new-window" title="Opens in a new window or tab">Adobe Reader</a>]]></content>
+  <tabTrigger>newWindowLink</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

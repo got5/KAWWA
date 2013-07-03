@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[function toPrint() {
+	if (jQuery("a.bt-print")) {
+		jQuery("a.bt-print").click (function(){
+			window.print();	
+			return false;
+		});
+	}
+}
+
+
+jQuery(document).ready(function(){
+	toPrint();
+});]]></content>
+  <tabTrigger>iconButtons</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

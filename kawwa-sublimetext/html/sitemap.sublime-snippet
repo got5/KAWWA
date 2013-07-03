@@ -1,0 +1,44 @@
+<snippet>
+  <content><![CDATA[<ul class="k-sitemap">
+	<li class="one-level"><a href="/component/pageStructure">Page Structure</a></li>
+	<li><strong>Navigation</strong>
+		<ul class="level2">
+			<li><a href="/component/mainNav">Main navigation</a>
+				<ul class="level3">
+					<li><a href="#">Dropdown</a></li>
+					<li><a href="#">Two levels</a></li>
+				</ul>
+			</li>
+			<li><a href="/component/vmenu">Vertical Menu</a></li>
+			<li><a href="/component/breadcrumbs">Breadcrumbs</a></li>
+			<li><a href="/component/skip">Skip navigation link</a></li>
+			<li><a href="/component/treeview">Treeview</a></li>
+			<li><a href="/component/treeviewGrid">Treeview Grid</a></li>
+		</ul>
+	</li>
+	<li><strong>Forms</strong>
+		<ul class="level2">
+			<li><a href="/component/subFieldsets">Sub-fieldsets</a></li>
+			<li><a href="/component/checkboxes">Checkboxes</a></li>
+			<li><a href="/component/radios">Radios</a></li>
+			<li><a href="/component/mandatoryInfo">Mandatory Info</a></li>
+			<li><a href="/component/requiredField">Required field</a></li>
+			<li><a href="/component/inputHelp">Input Help</a></li>
+			<li><a href="/component/fieldComment">Field Comment</a></li>
+			<li><a href="/component/errorField">Error Field</a></li>
+			<li><a href="/component/errorMessages">Error Messages</a></li>
+		</ul>
+	</li>
+	<li><strong>Blocks</strong>
+		<ull class="level2">
+			<li><a href="/component/tabs">Tabs</a></li>
+			<li><a href="/component/collapsiblePanel">Collapsible Panel</a></li>
+			<li><a href="/component/accordion">Accordion</a></li>
+			<li><a href="/component/carousel">Carousel</a></li>
+			<li><a href="/component/infoBlock">Info Block</a></li>
+		</ul>
+	</li>
+</ul>]]></content>
+  <tabTrigger>sitemap</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[<fieldset class="k-radio">
+	<legend>Choose between:</legend>
+	<ul>
+		<li><label for="t1"><input type="radio" id="t1" value="t1" name="other" /> Thing 1</label></li>
+		<li><label for="t2"><input type="radio" id="t2" value="t2" name="other" /> Thing 2</label></li>
+	</ul>
+	<!-- Options may appear side by side
+	<p><label for="t1">
+		<input type="radio" id="t1" value="t1" name="other" checked="checked" />Thing 1</label> 
+		<label for="t2">
+		<input type="radio" id="t2" value="t2" name="other" disabled="disabled" />Thing 2</label></p>
+	-->
+</fieldset>
+]]></content>
+  <tabTrigger>radios</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

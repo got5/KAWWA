@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[<div class="k-intro">
+    <p>Example of introductory paragraph... You may add as much paragraphs as you need to.</p>
+    <p>Far better that we save friendly bullets for ourselves at the last moment, as did  
+        those brave frontier women of my lost land, who took their own lives rather than 
+        fall into the hands of the Indian braves.
+    </p>
+</div>
+]]></content>
+  <tabTrigger>introduction</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

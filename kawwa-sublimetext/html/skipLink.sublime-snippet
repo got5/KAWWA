@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<p class="k-skip"><a href="#wrapper">Skip this menu</a></p>]]></content>
+  <tabTrigger>skipLink</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

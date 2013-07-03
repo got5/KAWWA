@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[<ul class="k-buttons-bar">
+	<li><a href="#" class="k-button">Confirm</a></li>
+	<li><a href="#" class="k-button optional">Optional Action</a></li>
+	<li><span class="k-disabled">Disabled</span></li>
+	<li><a href="#" class="k-button reset">Cancel</a></li>
+</ul>]]></content>
+  <tabTrigger>linkButtons</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<p class="k-quantity"><input type="number" value="1" title="Define quantity to add to basket"/></p>]]></content>
+  <tabTrigger>productQuantity</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[<p><label for="phone">Phone:</label>
+	<input type="text" id="phone" name="phone" pattern="(\+?\d[- .]*){7,13}" title="International, national or local phone number only"/>
+</p>]]></content>
+  <tabTrigger>phoneField</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[<div class="k-orientation-aid">
+	<p class="go-back"><a href="#" title="Go back to previous page">Back</a></p>
+	<p class="go-top"><a href="#container" title="Go to the top of the page">Top</a></p>
+</div>]]></content>
+  <tabTrigger>orientationAid</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

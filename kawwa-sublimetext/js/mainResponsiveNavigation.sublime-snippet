@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[/* Responsive Main Navigation call */
+jQuery(document).ready(function(){
+	if(jQuery.fn.flexNav) {
+		$('.k-navbar').flexNav();
+	}
+});
+]]></content>
+  <tabTrigger>mainResponsiveNavigation</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

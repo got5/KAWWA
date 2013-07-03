@@ -1,0 +1,24 @@
+<snippet>
+  <content><![CDATA[<p class="k-skip"><a href="#">To navigate through the tree, use up/down arrows to jump nodes and left/right arrows to close/open them</a></p>
+<div class="k-tree">
+	<ul>
+		<li><a href="#">Declined</a>
+			<ul>
+				<li> <a href="#">John Doe</a> </li>
+				<li> <a href="#">Jack Smith</a> </li>
+				<li> <a href="#">Hannah Boyd</a> </li>
+				<li> <a href="#">Reconsider?</a>
+					<ul>
+						<li> <a href="#">Sandra johnson</a> </li>
+						<li> <a href="#">Dan Smith</a> </li>
+						<li> <a href="#">Jason Bourne</a> </li>
+						<li> <a href="#">Jason Maple</a> </li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>]]></content>
+  <tabTrigger>treeview</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[<p class="k-basket-sum"><a href="#" title="See basket details"><strong>0</strong> items in your basket</a></p>]]></content>
+  <tabTrigger>basketSummary</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

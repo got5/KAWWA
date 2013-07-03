@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[/* You may pass the target name as a variable / defaults to "_blank" */
+function openNewWindow(windowName) {
+	if (jQuery("a.k-new-window")) {
+		jQuery("a.k-new-window").click (function(){
+			var zeName = (windowName)? windowName : "_blank";
+			var zeTarget = jQuery(this).attr("href");
+			window.open(zeTarget, zeName);	
+			return false;
+		});
+	}
+}
+
+jQuery(document).ready(function(){
+	openNewWindow();
+});
+]]></content>
+  <tabTrigger>newWindowLink</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

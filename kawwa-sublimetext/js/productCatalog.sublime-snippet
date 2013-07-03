@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[jQuery(document).ready(function(){
+	if(jQuery.fn.switchView) {
+		jQuery('.catalog-view').switchView();
+	}	
+});
+]]></content>
+  <tabTrigger>productCatalog</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

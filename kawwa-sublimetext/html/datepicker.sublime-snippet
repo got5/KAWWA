@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[<p><label for="date1">Enter a date:</label>
+	<input type="date" id="date1" name="date1" /></p>
+]]></content>
+  <tabTrigger>datepicker</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[<form class="k-search" method="post" action="">
+	<p><input type="search" class="k-autocomplete" id="search-tag" name="search-tag" placeholder="Search..." /> 
+		<input type="submit" value="go" /></p>
+</form>
+]]></content>
+  <tabTrigger>siteSearch</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

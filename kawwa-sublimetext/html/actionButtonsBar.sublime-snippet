@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[<div class="k-actions-block">
+	<p class="action-context">Some optional text or title</p>
+	<ul class="k-actions">
+		<li><a href="#" class="bt-print">print</a></li>
+	</ul>
+</div>]]></content>
+  <tabTrigger>actionButtonsBar</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

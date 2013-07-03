@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[<div class="k-notes">
+	<p>This is an example of a note...</p>
+	<p>You may use this block to highlight important content.</p>
+</div>
+]]></content>
+  <tabTrigger>notes</tabTrigger>
+  <scope>text.html</scope>
+</snippet>

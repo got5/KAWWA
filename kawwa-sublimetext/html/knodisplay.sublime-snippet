@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<h3 class="k-no-display">${1}</h3>
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>knodisplay</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>text.html</scope>
-</snippet>

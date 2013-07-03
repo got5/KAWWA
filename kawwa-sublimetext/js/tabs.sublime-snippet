@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[jQuery(document).ready(function(){
+	if(jQuery.ui && jQuery.ui.tabs) {
+		$('.k-tabbed-data').tabs();
+	}
+});
+]]></content>
+  <tabTrigger>tabs</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
