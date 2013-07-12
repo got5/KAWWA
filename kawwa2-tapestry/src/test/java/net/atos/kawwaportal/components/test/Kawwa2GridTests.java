@@ -3,7 +3,6 @@ package net.atos.kawwaportal.components.test;
 import org.apache.tapestry5.test.SeleniumTestCase;
 import org.testng.annotations.Test;
 
-import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.Wait;
 
 public class Kawwa2GridTests  extends SeleniumTestCase{

@@ -1,36 +1,57 @@
 <t:container
-      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
-      xmlns:p="tapestry:parameter">
-    
-    <t:zone t:id="rowPerPageZone" id="${rowPerPageZone}" t:update="show">
-    	<t:delegate t:to="blockToDisplay" />
-    	
-    </t:zone>
-    
-    <t:block t:id="gridBlock">
-    	
-    	<t:delegate t:to="pagerTop" />
-		
-		<t:Grid t:id="idKawwaGrid" 
-			t:source="inherit:source"							
-			t:rowsPerPage="rowsPerPage"
-			t:pagerPosition="none"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<t:zone t:id="rowPerPageZone" id="${rowPerPageZone}" t:update="show">
+		<t:delegate t:to="blockToDisplay" />
+
+	</t:zone>
+
+	<t:block t:id="gridBlock">
+
+
+		<t:if test="filter">
+
+			<div t:type="kawwa2/collapsiblePanel" t:header="prop:filterHeader"
+				t:autoOpen="literal:true">
+
+				<t:form t:id="filterForm">
+					<fieldset class="fsMain" id="fsSearch">
+						<t:beaneditor t:object="inherit:criterium" t:overrides="this" />
+					</fieldset>
+					<div class="k-buttons-bar">
+						<p>
+							<input t:type="submit" t:id="filter" value="prop:submitLabel"
+								t:context="literal:Filter" class="btsubmit" /> <input
+								t:type="submit" t:id="cancel" value="prop:resetLabel"
+								t:context="literal:Cancel" class="reset" />
+						</p>
+					</div>
+				</t:form>
+
+			</div>
+		</t:if>
+
+
+		<t:delegate t:to="pagerTop" />
+
+		<t:Grid t:id="idKawwaGrid" t:source="inherit:source"
+			t:rowsPerPage="rowsPerPage" t:pagerPosition="none"
 			t:class="prop:tableClass">
 		</t:Grid>
-		
+
 		<t:delegate t:to="pagerBottom" />
-		
-	  </t:block>
-	  
-	  <t:block t:id="pager">
-		
+
+	</t:block>
+
+	<t:block t:id="pager">
+
 		<t:if t:test="empty" negate="true">
-			<t:kawwa2.Kawwa2Nav t:id="nav" id="nav" t:rowsPerPage="rowsPerPage" t:source="prop:cachedSource" 
-	  					   t:currentpage="currentPage"
-						   t:zone="rowPerPageZone"
-						   t:navigatorOptions="options" 
-						   t:inplace="inherit:inplace" />
+			<t:kawwa2.Kawwa2Nav t:id="nav" id="nav" t:rowsPerPage="rowsPerPage"
+				t:source="prop:cachedSource" t:currentpage="currentPage"
+				t:zone="rowPerPageZone" t:navigatorOptions="options"
+				t:inplace="inherit:inplace" />
 		</t:if>
-	
-	  </t:block>
+
+	</t:block>
 </t:container>

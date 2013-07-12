@@ -1,19 +1,22 @@
 package net.atos.kawwaportal.components.test.pages;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
+import net.atos.kawwaportal.components.KawwaEventsConstants;
 import net.atos.kawwaportal.components.test.data.Celebrity;
-import net.atos.kawwaportal.components.test.data.Occupation;
+import net.atos.kawwaportal.components.test.data.CelebrityCriterium;
+import net.atos.kawwaportal.components.test.data.CelebritySource;
+import net.atos.kawwaportal.components.test.data.MockDataSource;
 
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.EventContext;
 import org.apache.tapestry5.annotations.ActivationRequestParameter;
 import org.apache.tapestry5.annotations.OnEvent;
+import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.beaneditor.BeanModel;
+import org.apache.tapestry5.grid.GridDataSource;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.BeanModelSource;
 import org.got5.tapestry5.jquery.internal.TableInformation;
@@ -29,11 +32,21 @@ public class Kawwa2Grid {
 	@Property
 	private boolean inplace;
 
+	@Persist
+	@Property
+	private CelebrityCriterium critere;
 	/**
 	 * is the source populated or empty
 	 * */
 	@ActivationRequestParameter 
 	private boolean empty;
+	
+	@SessionState
+	private MockDataSource dataSource;
+	
+	@Persist
+	@Property
+	private CelebritySource gridDataSourceToDisplay;
 	
 	/**
 	 * we add a param in url (true/false) to activate or not thekawwa2Grid's inplace parameter
@@ -45,27 +58,21 @@ public class Kawwa2Grid {
 		}
 	}
 	
-	public List<Celebrity> getAllCelebrities() {
+	@SetupRender
+	public void setupRender(){
+		if(critere  == null)
+			critere = new CelebrityCriterium();
 		
-		List<Celebrity> celebrities = new ArrayList<Celebrity>();
-		if(!empty){
-			celebrities.add(new Celebrity("Britney", "Spearce", new Date(), Occupation.SINGER));
-			celebrities.add(new Celebrity("Bill", "Clinton", new Date(), Occupation.POLITICIAN));
-			celebrities.add(new Celebrity("Placido", "Domingo", new Date(), Occupation.SINGER));
-			celebrities.add(new Celebrity("Albert", "Einstein", new Date(), Occupation.SCIENTIST));
-			celebrities.add(new Celebrity("Ernest", "Hemingway", new Date(), Occupation.WRITER));
-			celebrities.add(new Celebrity("Luciano", "Pavarotti", new Date(), Occupation.SINGER));
-			celebrities.add(new Celebrity("Ronald", "Reagan", new Date(), Occupation.POLITICIAN));
-			celebrities.add(new Celebrity("Pablo", "Picasso", new Date(), Occupation.ARTIST));
-			celebrities.add(new Celebrity("Blaise", "Pascal", new Date(), Occupation.SCIENTIST));
-			celebrities.add(new Celebrity("Isaac", "Newton", new Date(), Occupation.SCIENTIST));
-			celebrities.add(new Celebrity("Antonio", "Vivaldi", new Date(), Occupation.COMPOSER));
-			celebrities.add(new Celebrity("Niccolo", "Paganini", new Date(), Occupation.MUSICIAN));
-			celebrities.add(new Celebrity("Johannes", "Kepler", new Date(), Occupation.SCIENTIST));
-			celebrities.add(new Celebrity("Franz", "Kafka", new Date(), Occupation.WRITER));
-			celebrities.add(new Celebrity("George", "Gershwin", new Date(), Occupation.COMPOSER));
+		if (gridDataSourceToDisplay == null) {
+			gridDataSourceToDisplay = new CelebritySource<MockDataSource>(
+					dataSource);
+			
 		}
-		return celebrities;
+		
+	}
+	
+	public GridDataSource getAllCelebrities() {
+		return gridDataSourceToDisplay;
 	}
 	
 	@Inject
@@ -101,5 +108,16 @@ public class Kawwa2Grid {
 				return null;
 			}
 		};
+	}
+	
+	@OnEvent(value = KawwaEventsConstants.UPDATE_GRID_DATA_SOURCE)
+	public void filter(){
+		gridDataSourceToDisplay.setFilter(critere.toString());
+	}
+	
+	@OnEvent(value = KawwaEventsConstants.RESET_GRID_DATA_SOURCE_FILTER)
+	public void resetFilter(){
+		critere = new CelebrityCriterium();
+		gridDataSourceToDisplay.setFilter(critere.toString());
 	}
 }

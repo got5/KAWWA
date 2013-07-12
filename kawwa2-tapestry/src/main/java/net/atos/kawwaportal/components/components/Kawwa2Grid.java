@@ -32,6 +32,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.services.ComponentEventResultProcessor;
 import org.apache.tapestry5.services.Cookies;
+import org.apache.tapestry5.services.FormSupport;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.got5.tapestry5.jquery.internal.TableInformation;
@@ -42,14 +43,24 @@ import org.got5.tapestry5.jquery.internal.TableInformation;
 public class Kawwa2Grid implements ClientElement {
 
 	public static final String GRID_EVENT_ROW_PER_PAGE_SELECT = "rowPerPageSelectionEvent";
-	
+
 	/**
 	 * Defines where the pager (used to navigate within the "pages" of results)
 	 * should be displayed: "top", "bottom", "both" or "none".
 	 */
 	@Parameter(value = "both", defaultPrefix = BindingConstants.LITERAL)
 	private GridPagerPosition pagerPosition;
-
+	
+	/**
+	 * This object is used to create a filter form that can be used to filter
+	 * available rows. If null then no filter form is created. When the form will be submitted,
+	 * Tapestry will propagate 2 events : KawwaEventsConstants.UPDATE_GRID_DATA_SOURCE and 
+	 * KawwaEventsConstants.RESET_GRID_DATA_SOURCE_FILTER. You can create method catching these
+	 * events, and filter your data source.
+	 */
+	@Parameter
+	private Object criterium;
+	
 	/**
 	 * Contains the information for which the grid table is to be created.
 	 */
@@ -97,7 +108,6 @@ public class Kawwa2Grid implements ClientElement {
 	@Parameter
 	private TableInformation information;
 
-	
 	/**
 	 * if true, then the Kawwa2Grid is plainly ajax (pagination and sort)
 	 * */
@@ -110,54 +120,74 @@ public class Kawwa2Grid implements ClientElement {
 
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
 	private String clientId;
-
+	
+	
+	//Parameters for the Filter 
+	/**
+	 * Header of the block containing the Filter form
+	 */
+	@Property	@Parameter(value = "message:filterHeader")
+	private String filterHeader;
+	
+	/**
+	 * Value for the submit input of the Filter form
+	 */
+	@Property	@Parameter(value = "message:submitLabel") 
+	private String submitLabel;
+	
+	/**
+	 * Value for the reset input of the Filter form
+	 */
+	@Property	@Parameter(value = "message:resetLabel")
+	private String resetLabel;
+	
 	@InjectComponent("rowPerPageZone")
 	private Zone zone;
-	
+
 	/**
 	 * Set up via the traditional or Ajax component event request handler
 	 */
 	@Environmental
 	private ComponentEventResultProcessor componentEventResultProcessor;
-	
+
 	@Inject
 	@Symbol(KawwaConstants.KAWWA_COOKIE_ENABLE)
 	private boolean cookieEnabled;
 
 	@Inject
 	private JavaScriptSupport support;
-	
+
 	@Inject
 	private Cookies cookies;
 
 	@Inject
 	private ComponentResources resources;
-	
+
 	@Inject
 	private Block pager;
-	
+
 	@Inject
 	private Request request;
-	
+
 	@Inject
 	private Block gridBlock;
 
 	@Inject
 	private ComponentResources cr;
-	
+
 	@Component(publishParameters = "range")
 	private Kawwa2Nav nav;
 
 	@Component(id = "idKawwaGrid", inheritInformalParameters = true, parameters = "inplace=inplace", publishParameters = "model,include,exclude,reorder,row,add,overrides,encoder,empty")
 	private Grid kGrid;
-	
+
 	@Persist
 	@Property
 	private String rowPerPageZone;
 
 	@Property
 	private GridDataSource cachedSource;
-	
+
 	@Persist
 	private Integer rowsPerPage;
 
@@ -166,7 +196,7 @@ public class Kawwa2Grid implements ClientElement {
 	private int availableRows;
 
 	private String uniqueId;
-	
+
 	static class CachingDataSource implements GridDataSource {
 
 		private final GridDataSource delegate;
@@ -212,14 +242,16 @@ public class Kawwa2Grid implements ClientElement {
 	public void initSource(MarkupWriter writer) {
 		setupDataSource();
 
-		//We add a Listener for adding the caption element and the summary attribute to the table
+		// We add a Listener for adding the caption element and the summary
+		// attribute to the table
 		writer.addListener(new MarkupWriterListener() {
 
 			public void elementDidStart(Element element) {
 				if (element.getName().equalsIgnoreCase("table")) {
-					
-					if(cr.isBound("information")){
-						element.forceAttributes("summary", information.getTableSummary());
+
+					if (cr.isBound("information")) {
+						element.forceAttributes("summary",
+								information.getTableSummary());
 						Element caption = element.element("caption");
 						caption.text(information.getTableCaption());
 					}
@@ -230,7 +262,7 @@ public class Kawwa2Grid implements ClientElement {
 			public void elementDidEnd(Element element) {
 			}
 		});
-		
+
 		if (clientId != null && !"".equals(clientId)) {
 			uniqueId = support.allocateClientId(clientId);
 
@@ -354,7 +386,7 @@ public class Kawwa2Grid implements ClientElement {
 		return uniqueId;
 	}
 
-		/**
+	/**
 	 * This method returns true if pagerPosition is top or both otherwise false.
 	 * 
 	 * @return boolean
@@ -393,7 +425,53 @@ public class Kawwa2Grid implements ClientElement {
 		return "5,10,15,20";
 	}
 
-	public boolean isEmpty(){
+	public boolean isEmpty() {
 		return this.source == null || this.availableRows == 0;
 	}
+
+	// Filter
+	
+	/**
+	 * Verify if the filter form must be displayed.
+	 * 
+	 * @return boolean
+	 */
+	@Environmental(false)
+	private FormSupport formSupport;
+	
+	public boolean isFilter() {
+		boolean result;
+		boolean bound = resources.isBound("criterium")
+				&& this.criterium != null;
+
+		if (bound && formSupport == null) {
+			result = true;
+
+		} else {
+			result = false;
+		}
+		return result;
+	}
+	
+	/**
+	 * Citerium is null by default but must be bound.
+	 */
+	public Object getCriterium() {
+		
+		return criterium;
+	}
+	
+	public void onSelected(String raisedEvent) {
+		/**
+		 * Raising events have unique id as well so that there is a different
+		 * catcher that catches event for more than 1 usage of this components
+		 */
+
+		if ("filter".equalsIgnoreCase(raisedEvent)) {
+			resources.triggerEvent(KawwaEventsConstants.UPDATE_GRID_DATA_SOURCE,null, null);
+		} else if ("cancel".equalsIgnoreCase(raisedEvent)) {
+			resources.triggerEvent(KawwaEventsConstants.RESET_GRID_DATA_SOURCE_FILTER, null,null);
+		}
+	}
+
 }

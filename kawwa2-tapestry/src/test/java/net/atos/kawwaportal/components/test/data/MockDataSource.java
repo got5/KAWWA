@@ -6,44 +6,33 @@ import java.util.List;
 public class MockDataSource implements IDataSource {
 	private List<Celebrity> celebrities = new ArrayList<Celebrity>();
 
+	public static String noValuebyClient = "noValue";
+
+	/**
+	 * Add Objects to List
+	 *
+	 */
 	public MockDataSource() {
-		addCelebrity(new Celebrity("Britney", "Spearce", Formats
-				.parseDate("12/02/1981"), Occupation.SINGER));
-		addCelebrity(new Celebrity("Bill", "Clinton", Formats
-				.parseDate("08/19/1946"), Occupation.POLITICIAN));
-		addCelebrity(new Celebrity("Placido", "Domingo", Formats
-				.parseDate("01/21/1941"), Occupation.SINGER));
-		addCelebrity(new Celebrity("Albert", "Einstein", Formats
-				.parseDate("03/14/1879"), Occupation.SCIENTIST));
-		addCelebrity(new Celebrity("Ernest", "Hemingway", Formats
-				.parseDate("07/21/1899"), Occupation.WRITER));
-		addCelebrity(new Celebrity("Luciano", "Pavarotti", Formats
-				.parseDate("10/12/1935"), Occupation.SINGER));
-		addCelebrity(new Celebrity("Ronald", "Reagan", Formats
-				.parseDate("02/06/1911"), Occupation.POLITICIAN));
-		addCelebrity(new Celebrity("Pablo", "Picasso", Formats
-				.parseDate("10/25/1881"), Occupation.ARTIST));
-		addCelebrity(new Celebrity("Blaise", "Pascal", Formats
-				.parseDate("06/19/1623"), Occupation.SCIENTIST));
-		addCelebrity(new Celebrity("Isaac", "Newton", Formats
-				.parseDate("01/04/1643"), Occupation.SCIENTIST));
-		addCelebrity(new Celebrity("Antonio", "Vivaldi", Formats
-				.parseDate("03/04/1678"), Occupation.COMPOSER));
-		addCelebrity(new Celebrity("Niccolo", "Paganini", Formats
-				.parseDate("10/27/1782"), Occupation.MUSICIAN));
-		addCelebrity(new Celebrity("Johannes", "Kepler", Formats
-				.parseDate("12/27/1571"), Occupation.SCIENTIST));
-		addCelebrity(new Celebrity("Franz", "Kafka", Formats
-				.parseDate("07/03/1883"), Occupation.WRITER));
-		addCelebrity(new Celebrity("George", "Gershwin", Formats
-				.parseDate("09/26/1898"), Occupation.COMPOSER));
+		for (int i = 0; i < 10; i++) {
+			addObject(new Celebrity("Bill"+i, "Clinton"+i, Formats
+					.parseDate("08/19/1946"), Occupation.POLITICIAN));
+			addObject(new Celebrity("Placido"+i, "Domingo"+i, Formats
+					.parseDate("01/21/1941"), Occupation.SINGER));
+			addObject(new Celebrity("Albert"+i, "Einstein"+i, Formats
+					.parseDate("03/14/1879"), Occupation.SCIENTIST));
+			addObject(new Celebrity("Ernest"+i, "Hemingway"+i, Formats
+					.parseDate("07/21/1899"), Occupation.WRITER));
+			addObject(new Celebrity("Nusrat"+i, "Khan"+i, Formats
+					.parseDate("08/21/1899"), Occupation.MUSICIAN));
+		}
+
 	}
 
-	public List<Celebrity> getAllCelebrities() {
+	public List<Celebrity> getAllObjects() {
 		return celebrities;
 	}
 
-	public Celebrity getCelebrityById(long id) {
+	public Celebrity getObjectById(long id) {
 		for (Celebrity c : celebrities) {
 			if (c.getId() == id)
 				return c;
@@ -51,17 +40,139 @@ public class MockDataSource implements IDataSource {
 		return null;
 	}
 
-	public void addCelebrity(Celebrity c) {
+	public void addObject(Object c) {
 		long newId = celebrities.size();
-		c.setId(newId);
-		celebrities.add(c);
+		((Celebrity) c).setId(newId + 1);
+		celebrities.add(((Celebrity) c));
 	}
 
-	public List<Celebrity> getRange(int indexFrom, int indexTo) {
-		List<Celebrity> result = new ArrayList<Celebrity>();
-		for (int i = indexFrom; i <= indexTo; i++) {
-			result.add(celebrities.get(i));
+	public List<Celebrity> getFilteredRange(String filterQuery) {
+
+		List<Celebrity> filteredcelebrities = new ArrayList<Celebrity>();
+
+		String[] filterQuerySplit = filterQuery.split(",");
+
+		String id = filterQuerySplit[0];
+		String firstName = filterQuerySplit[1];
+		String lastName = filterQuerySplit[2];
+		List<Celebrity> filteredIdcelebrities = new ArrayList<Celebrity>();
+		List<Celebrity> filteredFirstNameCelebrities = new ArrayList<Celebrity>();
+		List<Celebrity> filteredLastNameCelebrities = new ArrayList<Celebrity>();
+
+		//When no value is entered by the client
+		if((noValuebyClient.equals(id))&&(noValuebyClient.equals(firstName))
+				&&(noValuebyClient.equals(lastName))){
+			
+			IDataSource mockDataSource = new MockDataSource();			
+			return mockDataSource.getAllObjects();
+			 
+			
 		}
-		return result;
+		filteredIdcelebrities = getListFromIdSearch(id);
+		filteredFirstNameCelebrities = getListFromFirstNameSearch(firstName,
+				filteredIdcelebrities);
+		filteredLastNameCelebrities = getListFromLastNameSearch(lastName,
+				filteredFirstNameCelebrities);
+
+		filteredcelebrities = (List) ((ArrayList<Celebrity>) filteredLastNameCelebrities)
+				.clone();
+
+		// Collections.copy(filteredcelebrities,filteredLastNameCelebrities);	
+		return filteredcelebrities;
+
+	}// getFilteredRange ends
+
+	private List<Celebrity> getListFromLastNameSearch(String lastName,
+			List<Celebrity> filteredFirstNameCelebrities) {
+
+
+		List<Celebrity> filteredLastNameCelebrities = 
+			(List) ((ArrayList<Celebrity>) filteredFirstNameCelebrities).clone();
+		/*
+		 *  if Id and/or FirstName search gaveout some results, then use the same
+		 list to iterate through and remove the last name objects that are not
+		 found in the list that came as a result of Id and/or 
+		 FirstName search above i.e.  filteredcelebrities list
+		 * 
+		 */
+		if (filteredFirstNameCelebrities.size() != 0) {
+			if (!lastName.equals(noValuebyClient)) {
+				for (Celebrity filteredcelebrity : filteredFirstNameCelebrities) {
+					if (!filteredcelebrity.getLastName().contains(lastName)) {
+						filteredLastNameCelebrities.remove(filteredcelebrity);
+					}
+				}
+
+			}
+		} else {
+			for (Celebrity celebrity : celebrities) {
+				/*
+				 *  if Id and/or FirstName search yielded nothing then adding
+				 then conducting a fresh search on lastname and addding 
+				 the results to filteredcelebrities list
+				 * 
+				 */
+				if (celebrity.getLastName().contains(lastName)) {
+					filteredLastNameCelebrities.add(celebrity);
+				}
+			}
+
+		}		
+		
+		return filteredLastNameCelebrities;
 	}
-}
+
+	
+	private List<Celebrity> getListFromFirstNameSearch(String firstName,
+			List<Celebrity> filteredIdCelebrities) {
+		
+		/*
+		 * if Id search gaveout some results, then use the contents of list to
+		 iterate through and remove the first name objects that are not found 
+		 in the list that came as a result of Id search above i.e. filteredcelebrities list
+		 */
+
+		List<Celebrity> filteredFirstNameCelebrities = (List) ((ArrayList<Celebrity>) filteredIdCelebrities)
+				.clone();
+		if (filteredIdCelebrities.size() != 0) {
+			if (!firstName.equals(noValuebyClient)) {
+				for (Celebrity filteredcelebrity : filteredIdCelebrities) {
+					if (!filteredcelebrity.getFirstName().contains(firstName)) {
+						filteredFirstNameCelebrities.remove(filteredcelebrity);
+					}
+				}
+			}
+		} else {
+			for (Celebrity celebrity : celebrities) {
+				/*
+				 *  if Id search yielded nothing then adding then conducting
+				 a fresh search on firstname and addding the results to
+				 filteredcelebrities list
+				 * 
+				 */
+				if (celebrity.getFirstName().contains(firstName)) {
+					filteredFirstNameCelebrities.add(celebrity);
+				}
+			}
+
+		}	
+
+		return filteredFirstNameCelebrities;
+
+	}
+
+	private List<Celebrity> getListFromIdSearch(String id) {
+		List<Celebrity> filteredIdcelebrities = new ArrayList<Celebrity>();
+		for (Celebrity celebrity : celebrities) {
+			// if Id contains some value only then add the contents to fiteredlist
+			if (!id.equals(noValuebyClient)
+					&& (celebrity.getId() + "").contains(id)) {
+				filteredIdcelebrities.add(celebrity);
+			}
+		}		
+		return filteredIdcelebrities;
+
+	}
+
+}// Class Ends
+

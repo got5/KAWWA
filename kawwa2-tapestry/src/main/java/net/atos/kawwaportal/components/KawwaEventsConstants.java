@@ -20,5 +20,11 @@ public class KawwaEventsConstants {
 	 */
 	public static final String FOCUS_MIXIN_EVENT_ONCLICK = "focusMixinEventOnclick";
 
+	/** Trigger by the kawwa grid when the filter form is submitted */
+	public static final String UPDATE_GRID_DATA_SOURCE = "updateGridDataSource";
+
+	/** Trigger by the kawwa grid when the filter form is reset */
+	public static final String RESET_GRID_DATA_SOURCE_FILTER = "resetGridDataSourceFilter";
+
 	
 }

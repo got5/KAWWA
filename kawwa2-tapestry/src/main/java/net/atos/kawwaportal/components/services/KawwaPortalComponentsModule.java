@@ -115,7 +115,6 @@ public class KawwaPortalComponentsModule {
 
 				try {
 					renderer.renderMarkup(writer);
-					System.out.println(writer.getDocument().toString());
 					Element el = writer.getDocument().getRootElement()
 							.find("head");
 					if (el != null) {

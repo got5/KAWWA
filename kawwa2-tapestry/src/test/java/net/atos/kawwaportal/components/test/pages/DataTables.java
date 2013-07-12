@@ -31,11 +31,7 @@ public class DataTables {
 		return celebritySource;
 	}
 
-	public List<Celebrity> getAllCelebrities() {
-		System.out.println("Getting all celebrities...");
-		return dataSource.getAllCelebrities();
-	}
-
+	
 	public Celebrity getCelebrity() {
 		return celebrity;
 	}
