@@ -26,5 +26,6 @@ public class KawwaEventsConstants {
 	/** Trigger by the kawwa grid when the filter form is reset */
 	public static final String RESET_GRID_DATA_SOURCE_FILTER = "resetGridDataSourceFilter";
 
-	
+	/** Trigger by the kawwa ActionsDropDown when an item is selected */
+	public static final String ACTIONSDROPDOWN_SELECT  = "actionsDropDownSelect";
 }

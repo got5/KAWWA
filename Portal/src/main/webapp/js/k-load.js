@@ -253,7 +253,13 @@ function supports_input_placeholder() {
 	if(jQuery.fn.rating) {
 		jQuery('fieldset.k-rating input').rating();
 	}
- 		
+// ACTIONS DROPDOWN ----------------------------------	
+
+	if(jQuery.fn.actionsDd) {
+
+		jQuery('.k-actions-dropdown').actionsDd();
+	}
+
 // PORTAL ONLY***************** -------------------------------
 
 	//if(document.getElementById('components-list')) {libraryControl();}

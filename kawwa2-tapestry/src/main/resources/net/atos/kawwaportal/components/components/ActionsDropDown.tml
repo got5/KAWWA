@@ -1,0 +1,15 @@
+<t:loop t:source="keys" t:value="key"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+	<p>${key}</p>
+	
+	<ul>
+		<li t:type="loop" t:source="items.get(key)" t:value="item">
+			<t:delegate t:to="itemBlock"/>
+		</li>
+	</ul>
+	
+	<t:block t:id="defaultBlock">	
+			<a href="${url}">${item}</a>
+	</t:block>
+</t:loop>
