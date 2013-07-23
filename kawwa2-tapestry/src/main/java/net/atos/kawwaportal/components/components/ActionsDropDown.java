@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 import net.atos.kawwaportal.components.KawwaEventsConstants;
+import net.atos.kawwaportal.components.KawwaUtils;
 
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.Block;
@@ -93,27 +94,12 @@ public class ActionsDropDown {
 		
 	}
 	
-	public static String camelCase(String... args) {
-		if (args == null || args.length == 0) {
-			return null;
-		}
-		StringBuilder buf = new StringBuilder();
-		buf.append(args[0]);
-		for (int i = 1; i < args.length; i++) {
-			String arg = args[i];
-			if (arg != null && arg.length() > 0) {
-				buf.append(Character.toUpperCase(arg.charAt(0)));
-				buf.append(arg.substring(1));
-			}
-		}
-		return buf.toString();
-	}
-	
+		
 	public String getCamelKey(){
-		return camelCase(key.split("\\s+"));
+		return KawwaUtils.camelCase(key.split("\\s+"));
 	}
 	public String getCamelItem(){
-		return camelCase(item.split("\\s+"));
+		return KawwaUtils.camelCase(item.split("\\s+"));
 	}
 	public String getUrl(){
 		return resources.createEventLink(KawwaEventsConstants.ACTIONSDROPDOWN_SELECT, getCamelKey(), getCamelItem()).toAbsoluteURI();

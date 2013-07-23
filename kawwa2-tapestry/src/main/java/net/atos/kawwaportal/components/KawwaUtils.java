@@ -34,4 +34,19 @@ public class KawwaUtils {
 		
 	}
 	
-}
+	public static String camelCase(String... args) {
+		if (args == null || args.length == 0) {
+			return null;
+		}
+		StringBuilder buf = new StringBuilder();
+		buf.append(args[0]);
+		for (int i = 1; i < args.length; i++) {
+			String arg = args[i];
+			if (arg != null && arg.length() > 0) {
+				buf.append(Character.toUpperCase(arg.charAt(0)));
+				buf.append(arg.substring(1));
+			}
+		}
+		return buf.toString();
+	}
+}	

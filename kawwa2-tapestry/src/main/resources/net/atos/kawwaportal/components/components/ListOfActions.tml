@@ -1,0 +1,30 @@
+<t:container
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"  xmlns:p="tapestry:parameter">
+	
+	<t:if t:test="withBar">
+		<div class="k-actions-block">
+			<p class="action-context">${barTitle}</p>
+			<t:delegate t:to="block" />
+		</div>
+		
+		<p:else>
+			<t:delegate t:to="block" />
+		</p:else>
+	</t:if>
+	<t:block t:id="block">
+		<ul class="${cssClass}">
+			<li t:type="loop" t:source="items" t:value="current">
+				<t:delegate t:to="itemBlock" />
+			</li>
+		</ul>
+	</t:block>
+	<t:block t:id="itemBlock">
+		<t:if t:test="current.disabled">
+			<span class="${current.classe}-disabled">${current.label}</span>
+			<p:else>
+				<a href="${current.url}" class="${current.classe}">${current.label}</a>
+			</p:else>
+		</t:if>
+		
+	</t:block>
+</t:container>

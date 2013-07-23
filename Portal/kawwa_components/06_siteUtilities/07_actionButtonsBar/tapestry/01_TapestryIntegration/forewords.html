@@ -1,0 +1,45 @@
+<p>
+	Components used to display a list of links. It will implement 3 Kawwa components : ActionButtons, ActionButtonsBar and iconButtons 
+</p>
+<p>
+	By default, the component will render a link for each item of your list. But you can override the rendering, by providing
+	block parameters. If you want to override the rendering of the item with an id="i1", you should define a block parameter &lt;p:i1&gt;...&lt;/p:i1&gt; 
+</p>
+<table summary="This table shows the parameters needed for the ListOfActions Component">
+	<caption>ProductGallery parameters</caption>
+   		<tr>
+           	<th scope="col"> Name </th>
+               <th scope="col"> Required </th>
+               <th scope="col"> Java Type </th>
+               <th scope="col"> Default Prefix </th>
+               <th scope="col"> Default Value </th>
+               <th scope="col"> Description </th>
+		</tr>
+        <tr>
+           	   <td> items </td>
+			   <td> true </td>
+               <td> Map&lt;ListOfActionsItem&gt;</td>
+               <td> prop </td>
+               <td> Actions</td>
+               <td> 
+               Actions you want to display with this component. You will need to create a List of ListOfActionsItem. 
+	 		   If the onlyIcon parameter is set to true, every ListOfActionsItem item should have a value for its classe attribute. 
+	 		   </td>
+		</tr>
+		<tr>
+           	   <td> items </td>
+			   <td> false </td>
+               <td> Boolean </td>
+               <td> prop </td>
+               <td> false</td>
+               <td> If set to true, the list of actions will be surround by a bar.  </td>
+		</tr>
+		<tr>
+           	   <td> items </td>
+			   <td> false </td>
+               <td> Boolean </td>
+               <td> prop </td>
+               <td> false</td>
+               <td> If set to true, your list will display only the icon of each item. The label associated to your link will be hidden. </td>
+		</tr>
+</table>

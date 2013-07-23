@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+ 
+<body>
+	
+	<div id="sample1">
+	<t:kawwa2.listOfActions t:items="items" withBar="false" onlyIcon="false"/>
+	</div>
+	
+	<div id="sample2">
+	<t:kawwa2.listOfActions t:items="items" withBar="true" onlyIcon="false"/>
+	</div>
+	
+	<div id="sample3">
+	<t:kawwa2.listOfActions t:items="items" withBar="false" onlyIcon="true"/>
+	</div>
+	
+	<div id="sample4">
+	<t:kawwa2.listOfActions t:items="items" withBar="false" onlyIcon="false">
+		<p:print>
+			<t:actionLink class="bt-edit">Override Action</t:actionLink>
+		</p:print>
+	</t:kawwa2.listOfActions>
+	</div>
+</body>
+</html>
