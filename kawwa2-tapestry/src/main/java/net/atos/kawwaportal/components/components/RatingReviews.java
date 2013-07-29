@@ -30,6 +30,8 @@ import org.apache.tapestry5.annotations.Property;
  * 			<li>t:criteriasDefinition="&lt;&lt;!&gt;&gt;" ==> This parameter is Mandatory. Replace &lt;&lt;!&gt;&gt; by the list of CriteriaDefinition that will define the criterias passed with the instance of ratingReviews.</li>
  * 		</ul>
  * </p>
+ * 
+ * @tapestrydoc
  */
 
 @Import(stylesheet = "classpath:/net/atos/kawwaportal/components/assets/ratings/ratings.css")

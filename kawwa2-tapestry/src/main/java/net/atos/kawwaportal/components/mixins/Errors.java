@@ -7,11 +7,13 @@ import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.func.Predicate;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 
-/*
+/**
  * Errors is a mixin that is automatically added to all core/Errors components
  * This is done through the ErrorTransformWorker.
  * You can disable it by using the disableKawwaErrors parameter 
  * on the error component.
+ * 
+ * @tapestrydoc
  */
 public class Errors {
 

@@ -8,6 +8,11 @@ import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 public class Mandatory {
 
 	@Parameter(value="message:mandatory-field")

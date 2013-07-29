@@ -19,6 +19,10 @@ import org.apache.tapestry5.services.PersistentLocale;
 import org.apache.tapestry5.services.javascript.InitializationPriority;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
+/**
+ * @tapestrydoc
+ *
+ */
 @Events(EventConstants.PROVIDE_COMPLETIONS)
 @Import(library = "classpath:/net/atos/kawwaportal/components/assets/kawwa.js")
 public class SiteSearch {

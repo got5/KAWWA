@@ -38,6 +38,8 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * 			<li>maxValue: &lt;&lt;!&gt;&gt; ==> Replace &lt;&lt;!&gt;&gt; by the maximum value wanted for the input</li>
  * 		</ul>
  * </p>
+ * 
+ * @tapestrydoc
  */
 
 @MixinAfter

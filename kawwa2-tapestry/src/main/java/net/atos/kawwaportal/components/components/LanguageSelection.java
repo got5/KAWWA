@@ -33,6 +33,11 @@ import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.got5.tapestry5.jquery.ImportJQueryUI;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 @ImportJQueryUI("jquery.ui.button")
 public class LanguageSelection {

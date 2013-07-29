@@ -37,6 +37,8 @@ import net.atos.kawwaportal.components.data.articleOrganizer.TabArticleDetail;
  * 			<li>t:tabOptions="&lt;&lt;!&gt;&gt;" ==> Replace &lt;&lt;!&gt;&gt; by the JSONObject that will configure the tab component.</li>
  * 		</ul>
  * </p>
+ * 
+ * @tapestrydoc
  */
 
 public class ArticleOrganizer {

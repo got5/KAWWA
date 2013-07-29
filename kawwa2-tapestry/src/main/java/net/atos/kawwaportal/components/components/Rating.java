@@ -37,6 +37,8 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * 			<li>t:renderMode="&lt;&lt;!&gt;&gt;" ==> Replace &lt;&lt;!&gt;&gt; by the boolean that will determine if the RadioGroup is fixed or not.</li>
  * 		</ul>
  * </p>
+ * 
+ * @tapestrydoc
  */
 
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/ratings/jquery.rating.pack.js",

@@ -61,6 +61,7 @@ import org.got5.tapestry5.jquery.JQuerySymbolConstants;
  * Tree as necessary.
  * 
  * @since 5.3
+ * @tapestrydoc
  */
 @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 @Events({ TreeConstants.NODE_SELECTED, TreeConstants.NODE_UNSELECTED })

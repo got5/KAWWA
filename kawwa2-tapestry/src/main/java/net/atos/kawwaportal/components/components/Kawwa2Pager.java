@@ -23,6 +23,11 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.ClientBehaviorSupport;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 public class Kawwa2Pager {
 	/**
 	 * The source of the data displayed by the grid (this is used to determine

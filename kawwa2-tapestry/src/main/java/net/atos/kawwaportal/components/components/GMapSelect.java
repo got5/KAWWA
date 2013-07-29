@@ -36,6 +36,8 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  *			<li>&lt;&lt;2&gt;&gt; : The name of the location reference variable returned on submit</li>
  *		</ul>
  * </p>
+ * 
+ * @tapestrydoc
  */
 
 @Import(library = "classpath:net/atos/kawwaportal/components/assets/gmapselect/GMapSelect.js")

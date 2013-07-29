@@ -18,7 +18,11 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.FormSupport;
 
-
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 public class Kawwa2Nav {
 
 	/**

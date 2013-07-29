@@ -3,6 +3,11 @@ package net.atos.kawwaportal.components.components;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.annotations.Parameter;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 public class Layout {
 	
 	@Parameter(defaultPrefix=BindingConstants.LITERAL)

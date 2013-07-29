@@ -17,6 +17,11 @@ import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/jquery.ui.panel.awl.js",
 		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 public class CollapsiblePanel {

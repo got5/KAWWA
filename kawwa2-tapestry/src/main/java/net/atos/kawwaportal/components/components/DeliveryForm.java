@@ -46,6 +46,8 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  *			<li>&lt;&lt;4&gt;&gt; : The optional JSON Object that will parameter the gmap plugin</li>
  *		</ul>
  * </p>
+ * 
+ * @tapestrydoc
  */
 
 @Import(library = "classpath:net/atos/kawwaportal/components/assets/deliveryform/DeliveryForm.js")

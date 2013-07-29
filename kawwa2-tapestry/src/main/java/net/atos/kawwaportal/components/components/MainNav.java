@@ -11,6 +11,11 @@ import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/superfish.js", 
 		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 public class MainNav {

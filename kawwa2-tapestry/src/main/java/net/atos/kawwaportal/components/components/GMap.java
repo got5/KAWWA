@@ -27,7 +27,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  *			<li>&lt;&lt;1&gt;&gt; : An array of JSON objects to configure the gmap3 according to the functionnalities of the jquery plugin "gmap3"</li>
  *		</ul>
  * </p>
- * 
+ * @tapestrydoc
  * @deprecated This component will be removed in a future version compatible with Tapestry 5.4. We will use the component available in Tapestry5-jQuery
  */
 

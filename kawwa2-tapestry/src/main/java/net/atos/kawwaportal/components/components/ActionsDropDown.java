@@ -22,8 +22,10 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
-
-
+/**
+* Test
+* @tapestrydoc
+*/
 @SupportsInformalParameters
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/actiondropdown/jquery.kawwa.actionsDd.js",
 		"classpath:/net/atos/kawwaportal/components/assets/actiondropdown/actionsdropdown.js"})

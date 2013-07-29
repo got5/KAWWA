@@ -16,6 +16,11 @@ import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/flexnav.js", 
 		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 @SupportsInformalParameters

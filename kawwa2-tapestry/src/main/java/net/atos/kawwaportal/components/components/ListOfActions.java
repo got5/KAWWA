@@ -23,7 +23,8 @@ import org.apache.tapestry5.ioc.internal.util.InternalUtils;
  * @see <a href="https://kawwa.atosworldline.com/component/actionButtons">actionButtons</a>
  * @see <a href="https://kawwa.atosworldline.com/component/actionButtonsBar">ActionButtonsBar</a>
  * @see <a href="https://kawwa.atosworldline.com/component/iconButtons">iconButtons</a>
- * @author Emmanuel DMEEY
+ * @author Emmanuel DEMEY
+ * @tapestrydoc
  *
  */
 @SupportsInformalParameters

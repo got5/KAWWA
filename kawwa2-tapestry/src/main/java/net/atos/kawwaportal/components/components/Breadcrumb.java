@@ -14,6 +14,11 @@ import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 public class Breadcrumb {
 
 	@Inject

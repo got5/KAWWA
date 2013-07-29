@@ -9,6 +9,11 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.got5.tapestry5.jquery.mixins.ui.Widget;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 public class JsTree extends Widget{
 	
 	@Parameter(value="false")

@@ -37,9 +37,13 @@ import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.got5.tapestry5.jquery.internal.TableInformation;
 
+/**
+ * 
+ * @tapestrydoc
+ *
+ */
 @SupportsInformalParameters
-// TODO Externalize this event as a constant
-@Events("rowPerPageSelectionEvent")
+@Events(Kawwa2Grid.GRID_EVENT_ROW_PER_PAGE_SELECT)
 public class Kawwa2Grid implements ClientElement {
 
 	public static final String GRID_EVENT_ROW_PER_PAGE_SELECT = "rowPerPageSelectionEvent";
@@ -73,7 +77,7 @@ public class Kawwa2Grid implements ClientElement {
 	 * (normally) provide a pager to allow the user to navigate within the
 	 * overall result set.
 	 */
-	@Parameter("10")
+	@Parameter(value = "10")
 	private int defaultRowPerPage;
 
 	/**
@@ -110,10 +114,12 @@ public class Kawwa2Grid implements ClientElement {
 
 	/**
 	 * if true, then the Kawwa2Grid is plainly ajax (pagination and sort)
-	 * */
-	// We had to declare a parameter instead of using the kgrid component's
-	// published parameter "inplace" because we had to pass this param to an
-	// inner component (Kawwa2Nav)
+	 * 
+	 * We had to declare a parameter instead of using the kgrid component's
+	 * published parameter "inplace" because we had to pass this param to an
+	 * inner component (Kawwa2Nav)
+	 * 
+	 */
 	@Parameter
 	@Property
 	private boolean inPlace;
@@ -121,8 +127,7 @@ public class Kawwa2Grid implements ClientElement {
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
 	private String clientId;
 	
-	
-	//Parameters for the Filter 
+	 
 	/**
 	 * Header of the block containing the Filter form
 	 */
@@ -175,9 +180,9 @@ public class Kawwa2Grid implements ClientElement {
 	@Inject
 	private ComponentResources cr;
 
-	@Component(publishParameters = "range")
+	@Component(publishParameters = "rowsPerPage")
 	private Kawwa2Nav nav;
-
+	
 	@Component(id = "idKawwaGrid", inheritInformalParameters = true, parameters = "inplace=inplace", publishParameters = "model,include,exclude,reorder,row,add,overrides,encoder,empty")
 	private Grid kGrid;
 
@@ -431,14 +436,14 @@ public class Kawwa2Grid implements ClientElement {
 
 	// Filter
 	
+	@Environmental(false)
+	private FormSupport formSupport;
+	
 	/**
 	 * Verify if the filter form must be displayed.
 	 * 
 	 * @return boolean
 	 */
-	@Environmental(false)
-	private FormSupport formSupport;
-	
 	public boolean isFilter() {
 		boolean result;
 		boolean bound = resources.isBound("criterium")
