@@ -1,44 +1,87 @@
 Kawwa2 AngularJS
 ================
 
+Note to users : __Not ready for use__
 
-Run the Tests
--------------
+If you still want to use it, get the directive files you need and add  the kawwa dependance to your application.  
+	
+	var myAppModule = angular.module('myApp', ['kawwa']);
+
+
+
+
+Install
+-------
 
 ### Requirement
 
-* [node]
-* [karma]
+* [NodeJS][node]
+* [Ruby][ruby]
+* [PhantomJS][phantomjs] \(optional\)
+* [Karma][karma]
+* [Grunt][grunt]
+* [Bower][bower]
 
+Some of those can be install from Node.
+
+	sudo npm install -g grunt-cli bower karma
+
+### Download dependencies from package.json
+	
+	npm install
+	bower install
+
+Running & Tests
+-----
+
+### Running the app
+	
+	grunt server	
 
 ### Running Unit Tests
 
-    karma start config/karma-unit.conf.js
+    grunt test:unit
 
 ### Running E2E Tests
 
-* A web server must be running.
+Close the web server before or configure the karma proxy
 
-        karma start config/karma-e2e.conf.js
+	grunt test:e2e
 
-* Navigate to  [http://localhost:8000/test/e2e/runner.html](http://localhost:8000/test/e2e/runner.html)
+### Running Midway Tests
 
+If you don't know what midway test is, go check this out : [ngMidwayTest][midway]	
 
-Run the Demo
+	grunt test:midway
+
+Want to add some contents ?
 ------------
 
+You will need [Yeoman][yo] to continue.
 
-Some directives need  a web server to be run properly.
+ 	sudo npm install -g yo 
+ 	sudo npm install -g generator-angular generator-karma
 
-There is one available in the scripts directory (require [node]). Launch it from the *[kawwa-angular]* directory :
+When you will create a directive, a route, controller or your unit tests, __you will have to create it from__ [Yeoman][yo]
 
-    ./scripts/web-server.js
+example : For creating the Raty directive
 
-Go to : [http://localhost:8000/demo/index.html](http://localhost:8000/demo/index.html)
+	yo angular:directive raty
+
+This will create the files, include it in HTML when necessary. It will also create the associate unit test.
+
+See [generator-angular] web site for the  full doc.
+
 
 
 
 
 [node]: http://nodejs.org "NodeJs"
+[ruby]: http://www.ruby-lang.org/fr/ "Ruby"
 [karma]: http://karma-runner.github.io "Karma"
-[kawwa-angular]: https://github.com/got5/KAWWA/tree/master/kawwa2-angularjs "kawwa2-angularjs"
+[phantomjs]: http://phantomjs.org/ "PhantomJS"
+[yo]: http://yeoman.io/ "Yeoman"
+[grunt]: http://gruntjs.com/ "Grunt"
+[bower]: https://github.com/bower/bower "Bower"
+[generator-angular]: https://github.com/yeoman/generator-angular 
+[midway]: https://github.com/yearofmoo/ngMidwayTester
