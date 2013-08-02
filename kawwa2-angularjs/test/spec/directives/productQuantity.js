@@ -3,7 +3,7 @@
 describe('Directive: productQuantity', function () {
   beforeEach(module('kawwa'));
 
-   var element,scope,input;
+  var element,scope,input;
 
   beforeEach(inject(function ($rootScope, $compile) {
     
@@ -15,18 +15,18 @@ describe('Directive: productQuantity', function () {
     scope.$digest();
     
     input = element.find('input');
-   
-}));
-
- it('must be rend correctly',inject(function ($rootScope, $compile) {
- 	expect(input.attr("value")).toBe("1"); 
- 	if(input.attr("type") !== "number"){
- 		expect(element.find('span')).toBe(2);
- 		expect(input.attr("class")).toBe("uppydowner");
- 	}
-  	 
-	
+    
   }));
+
+  it('must be rend correctly',inject(function ($rootScope, $compile) {
+    expect(input.attr("value")).toBe("1"); 
+    if(input.attr("type") !== "number"){
+     expect(element.find('span')).toBe(2);
+     expect(input.attr("class")).toBe("uppydowner");
+   }
+   
+   
+ }));
 
   
 

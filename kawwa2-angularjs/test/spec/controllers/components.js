@@ -6,7 +6,7 @@ describe('Controller: ComponentsCtrl', function () {
   beforeEach(module('kawwa'));
 
   var ComponentsCtrl,
-    scope;
+  scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {

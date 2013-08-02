@@ -4,3 +4,6 @@ dist
 .sass-cache
 app/components
 npm-debug.log
+demo/node_modules
+demo/dist
+demo/app/components

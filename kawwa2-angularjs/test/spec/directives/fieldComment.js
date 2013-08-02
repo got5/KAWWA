@@ -3,7 +3,7 @@
 describe('Directive: fieldComment', function () {
   beforeEach(module('kawwa'));
 
-   var element,scope,input;
+  var element,scope,input;
 
   beforeEach(inject(function ($rootScope, $compile) {
     
@@ -16,15 +16,15 @@ describe('Directive: fieldComment', function () {
     
     input = element.find('input');
     
-   
-}));
+    
+  }));
  //need to execute the test in document
  it('must display the tooltip',inject(function ($rootScope, $compile) {
   //input[0].focus(); 
   //var tipsy = element.find('div.tipsy');
   //expect(tipsy.count()).toBe(1); 
   // div.tipsy is add at the beginning of <body> how to test it ?
-       
-  }));
+  
+}));
 
 });

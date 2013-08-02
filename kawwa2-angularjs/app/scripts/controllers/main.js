@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('kawwa')
-  .controller('MainCtrl', function ($scope) {
-   
-  });
+.controller('MainCtrl', function ($scope) {
+	
+});

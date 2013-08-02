@@ -19,7 +19,8 @@ module.exports = function (grunt) {
   // configurable paths
   var yeomanConfig = {
     app: 'app',
-    dist: 'dist'
+    dist: 'dist',
+    demo: 'demo'
   };
 
   try {
@@ -30,28 +31,28 @@ module.exports = function (grunt) {
     yeoman: yeomanConfig,
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee:dist']
-      },
-      coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
-        tasks: ['coffee:test']
-      },
-      livereload: {
-        options: {
-          livereload: LIVERELOAD_PORT
-        },
-        files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
-      }
+      files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+      tasks: ['coffee:dist']
     },
-    connect: {
-      options: {
-        port: 9000,
+    coffeeTest: {
+    files: ['test/spec/{,*/}*.coffee'],
+    tasks: ['coffee:test']
+  },
+  livereload: {
+    options: {
+      livereload: LIVERELOAD_PORT
+    },
+    files: [
+  '<%= yeoman.app %>/{,*/}*.html',
+'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+' {.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+]
+}
+},
+connect: {
+  options: {
+    port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost'
       },
@@ -59,9 +60,9 @@ module.exports = function (grunt) {
         options: {
           middleware: function (connect) {
             return [
-              lrSnippet,
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+            lrSnippet,
+            mountFolder(connect, '.tmp'),
+            mountFolder(connect, yeomanConfig.app)
             ];
           }
         }
@@ -70,8 +71,8 @@ module.exports = function (grunt) {
         options: {
           middleware: function (connect) {
             return [
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'test')
+            mountFolder(connect, '.tmp'),
+            mountFolder(connect, 'test')
             ];
           }
         }
@@ -80,7 +81,7 @@ module.exports = function (grunt) {
         options: {
           middleware: function (connect) {
             return [
-              mountFolder(connect, yeomanConfig.dist)
+            mountFolder(connect, yeomanConfig.dist)
             ];
           }
         }
@@ -96,258 +97,282 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
-            '<%= yeoman.dist %>/*',
-            '!<%= yeoman.dist %>/.git*'
+          '.tmp',
+          '<%= yeoman.dist %>/*',
+          '!<%= yeoman.dist %>/.git*'
           ]
         }]
       },
+
       server: '.tmp'
+      ,
+      demo:{
+        files: [{
+          dot: true,
+          src: [
+          '<%= yeoman.demo %>/app/lib/kawwa/directives/*',
+          '<%= yeoman.demo %>/app/theme/*',
+          '<%= yeoman.demo %>/app/img/*',
+          '<%= yeoman.demo %>/app/views/*',
+          '<%= yeoman.demo %>/app/scripts/controllers/*'
+          ]
+        }]
+      }
     },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
       },
       all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
-      ]
-    },
-    coffee: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/scripts',
-          src: '{,*/}*.coffee',
-          dest: '.tmp/scripts',
-          ext: '.js'
-        }]
-      },
-      test: {
-        files: [{
-          expand: true,
-          cwd: 'test/spec',
-          src: '{,*/}*.coffee',
-          dest: '.tmp/spec',
-          ext: '.js'
-        }]
-      }
-    },
-    // not used since Uglify task does concat,
-    // but still available if needed
-    /*concat: {
-      dist: {}
-    },*/
-    rev: {
-      dist: {
-        files: {
-          src: [
-            '<%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/styles/fonts/*'
-          ]
-        }
-      }
-    },
-    useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
-      options: {
-        dest: '<%= yeoman.dist %>'
-      }
-    },
-    usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-      options: {
-        dirs: ['<%= yeoman.dist %>']
-      }
-    },
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
-    cssmin: {
-      // By default, your `index.html` <!-- Usemin Block --> will take care of
-      // minification. This option is pre-configured if you do not wish to use
-      // Usemin blocks.
-      // dist: {
-      //   files: {
-      //     '<%= yeoman.dist %>/styles/main.css': [
-      //       '.tmp/styles/{,*/}*.css',
-      //       '<%= yeoman.app %>/styles/{,*/}*.css'
-      //     ]
-      //   }
-      // }
-    },
-    htmlmin: {
-      dist: {
-        options: {
-          /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
-          dest: '<%= yeoman.dist %>'
-        }]
-      }
-    },
+      'Gruntfile.js',
+    '<%= yeoman.app %>/scripts/{,*/}*.js'
+    ]
+  },
+  coffee: {
+    dist: {
+      files: [{
+        expand: true,
+        cwd: '<%= yeoman.app %>/scripts',
+      src: '{,*/}*.coffee',
+      dest: '.tmp/scripts',
+      ext: '.js'
+    }]
+  },
+  test: {
+    files: [{
+      expand: true,
+      cwd: 'test/spec',
+    src: '{,*/}*.coffee',
+    dest: '.tmp/spec',
+    ext: '.js'
+  }]
+}
+},
+concat: {
+  options: {
+    separator: ';'
+  },
+  only: {
+    src: [ '<%= yeoman.app %>/scripts/kawwa.js',
+    '<%= yeoman.app %>/scripts/directives/*.js'],
+    dest: '<%= yeoman.dist %>/kawwa-directives-only.js'
+  },
+  full: {
+    src: ['<%= yeoman.app %>/scripts/kawwa.js',
+    '<%= yeoman.app %>/lib/jquery-ui/*',
+    '<%= yeoman.app %>/plugins/*.js',
+    '<%= yeoman.app %>/scripts/directives/*.js'],
+    dest: '<%= yeoman.dist %>/kawwa-directives-full.js'
+  }
+
+},
+rev: {
+  dist: {
+    files: {
+      src: [
+    '<%= yeoman.dist %>/scripts/{,*/}*.js'
+    ]
+  }
+}
+},
     // Put files not handled in other tasks here
     copy: {
-      dist: {
+      basic: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/scripts',
+          dest: '<%= yeoman.dist %>',
+          src: [
+          'directives/**/*'
+
+          ]
+        }]
+      },
+      plugin: {
         files: [{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            'components/**/*',
-            'images/{,*/}*.{gif,webp}',
-            'styles/fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: [
-            'generated/*'
+          'plugins/*'
           ]
         }]
-      }
-    },
-    concurrent: {
-      server: [
-        'coffee:dist'
-      ],
-      test: [
-        'coffee'
-      ],
-      dist: [
-        'coffee',
-        'imagemin',
-        'svgmin',
-        'htmlmin'
-      ]
-    },
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
       },
-      e2e: {
-        configFile: 'karma-e2e.conf.js',
-        singleRun: true
-      },
-      midway: {
-        configFile: 'karma-midway.conf.js',
-        autoWatch: false,
-        singleRun: true
-      }
-    },
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
-      }
-    },
-    ngmin: {
-      dist: {
+
+      theme:{
         files: [{
           expand: true,
-          cwd: '<%= yeoman.dist %>/scripts',
-          src: '*.js',
-          dest: '<%= yeoman.dist %>/scripts'
+          dot: true,
+          cwd: '<%= yeoman.app %>/theme',
+          dest: '<%= yeoman.demo %>/app/theme',
+          src: [
+          '*','**/*'
+          ]
         }]
+      },
+      directives:{
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.dist %>',
+          dest: '<%= yeoman.demo %>/app/lib/kawwa/scripts/',
+          src: [
+          '*','**/*'
+          ]
+        }]
+      },
+      images:{
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.demo %>/app',
+          src: [
+          'img/*','img/**/*'
+          ]
+        }]
+      },
+      demo:{
+       files: [{
+        expand: true,
+        dot: true,
+        process:function(src){
+          return  src.replace("angular.module('kawwa'","angular.module('demoApp'");
+        },
+        cwd: '<%= yeoman.app %>',
+        dest: '<%= yeoman.demo %>/app',
+        src: [
+        'views/*',
+        'scripts/controllers/*'
+        ]
+      }]
+    },
+    declaremodule: {
+      files: [{
+        expand: true,
+        dot: true,
+        process:function(src){
+          return "try{\nangular.module(\"kawwa\");   \n}catch(err){\nangular.module('kawwa',[]);\n}\n"
+          + '\n' + src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
+        },
+        cwd: '<%= yeoman.dist %>',
+        dest: '<%= yeoman.dist %>',
+        src: [
+        '/app/lib/kawwa/scripts/directives'
+        ]
+      }]
+    }
+
+  },
+
+  karma: {
+    laurent: {
+      configFile: 'karma.conf.js',
+      singleRun: true
+    },
+    e2e: {
+      configFile: 'karma-e2e.conf.js',
+      singleRun: true
+    },
+    midway: {
+      configFile: 'karma-midway.conf.js',
+      autoWatch: false,
+      singleRun: true
+    }
+  },
+  ngmin: {
+    dist: {
+      files: [{
+        expand: true,
+        cwd: '<%= yeoman.dist %>',
+        src: '*.js',
+        dest: '<%= yeoman.dist %>'
+      }]
+    }
+  },
+  uglify: {
+    only: {
+      files: {
+        '<%= yeoman.dist %>/kawwa-directives-only.min.js': [
+        '<%= yeoman.dist %>/kawwa-directives-only.js'
+        ]
       }
     },
-    uglify: {
-      dist: {
-        files: {
-          '<%= yeoman.dist %>/scripts/scripts.js': [
-            '<%= yeoman.dist %>/scripts/scripts.js'
-          ]
-        }
+    full: {
+      files: {
+        '<%= yeoman.dist %>/kawwa-directives-full.min.js': [
+        '<%= yeoman.dist %>/kawwa-directives-full.js'
+        ]
       }
     }
-  });
+  },
+  zip:{
+    'kawwa-release.zip':['<%= yeoman.dist %>/*','<%= yeoman.dist %>/**/*']
+  }
+  
+});
 
-  grunt.registerTask('server', function (target) {
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-    }
+grunt.registerTask('server', function (target) {
+  if (target === 'dist') {
+    return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+  }
 
-    grunt.task.run([
-      'clean:server',
-      'concurrent:server',
-      'connect:livereload',
-      'open',
-      'watch'
-    ]);
-  });
-
-  grunt.registerTask('test:unit', [
+  grunt.task.run([
     'clean:server',
-    'connect:test',
-    'karma:unit'
+   // 'concurrent:server',
+   'connect:livereload',
+   'open',
+   'watch'
+   ]);
+});
+
+grunt.registerTask('test:unit', [
+  'clean:server',
+  'connect:test',
+  'karma:laurent'
   ]);
 
 grunt.registerTask('test:e2e', [
-    'clean:server',
+  'clean:server',
     //'livereload-start',
     'connect:livereload',
     'karma:e2e'
-  ]);
+    ]);
 
 grunt.registerTask('test:midway', [
-    'clean:server',
-    'connect:test',
-    'karma:midway'
+  'clean:server',
+  'connect:test',
+  'karma:midway'
   ]);
 
 
-  grunt.registerTask('build', [
-    'clean:dist',
-    'useminPrepare',
-    'concurrent:dist',
-    'concat',
-    'copy',
-    'cdnify',
-    'ngmin',
-    'cssmin',
-    'uglify',
-    'rev',
-    'usemin'
+grunt.registerTask('build', [
+  'clean:dist',
+  'clean:demo',
+  'concat',
+  'copy:basic',
+  'copy:plugin',
+  'ngmin',
+  'uglify',
+  //'rev',
+  'copy:demo',
+  'copy:theme',
+  'copy:directives',
+  'copy:images',
+  'copy:declaremodule'
   ]);
 
-  grunt.registerTask('default', [
-    'jshint',
-    'test',
+grunt.registerTask('release', [
+    'build',
+    'zip'
+    ]);
+grunt.registerTask('default', [
+
+  'test:unit',
+    //'test:e2e',
+    //'test:midway',
     'build'
-  ]);
+    ]);
 };

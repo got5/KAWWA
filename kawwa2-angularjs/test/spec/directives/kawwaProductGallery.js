@@ -1,11 +1,11 @@
 'use strict';
 
 describe('Directive: kawwaProductGallery', function () {
-  beforeEach(module('kawwa'));
+	beforeEach(module('kawwa'));
 
-  var element;
+	var element;
 
-  it('should make hidden element visible', inject(function ($rootScope, $compile) {
+	it('should make hidden element visible', inject(function ($rootScope, $compile) {
    // not implemented
-  }));
+}));
 });
