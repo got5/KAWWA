@@ -129,4 +129,4 @@ See [generator-angular] web site for the  full doc.
 [bower]: https://github.com/bower/bower "Bower"
 [generator-angular]: https://github.com/yeoman/generator-angular 
 [midway]: https://github.com/yearofmoo/ngMidwayTester
-[release]: https://github.com/got5/KAWWA/tree/master/kawwa2-angularjs/blob/master/kawwa-release.zip?raw=true
+[release]: https://github.com/got5/KAWWA/blob/master/kawwa2-angularjs/kawwa-release.zip?raw=true
