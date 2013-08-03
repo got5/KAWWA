@@ -101,6 +101,10 @@ Then, in demo/ run the server
 	cd demo
 	grunt server
 
+if you didn't install the demo app yet, don't forget to 
+
+	npm install
+	bower install
 
 Want to add some contents ?
 ------------
