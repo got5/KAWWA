@@ -268,7 +268,7 @@ rev: {
   },
 
   karma: {
-    laurent: {
+    unit: {
       configFile: 'karma.conf.js',
       singleRun: true
     },
@@ -331,7 +331,7 @@ grunt.registerTask('server', function (target) {
 grunt.registerTask('test:unit', [
   'clean:server',
   'connect:test',
-  'karma:laurent'
+  'karma:unit'
   ]);
 
 grunt.registerTask('test:e2e', [
