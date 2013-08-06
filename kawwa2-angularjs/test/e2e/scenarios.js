@@ -1,6 +1,6 @@
 'use strict';
 
-describe('kawwa app', function() {
+describe('kawwa2 app', function() {
 
     beforeEach(function() {
         browser().navigateTo('/');

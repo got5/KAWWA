@@ -21,7 +21,7 @@
 
       <fieldset class="k-rating">
         <legend>Rate this article: {{raty}}</legend>
-        <p data-kawwa-raty data-kawwa-rating-json="{'value': 'test'}" ng-model="raty">
+        <p data-raty data-rating-options="{'value': 'test'}" ng-model="raty">
             <input name="star1" type="radio" value="1"/>
             <input name="star1" type="radio" value="2"/>
             <input name="star1" type="radio" value="3"/>
@@ -37,6 +37,7 @@
     <input class="k-field-comment" type="text" id="field1" name="field1" data-field-comment="{'gravity': 'w'}"
     title="A short comment about this field" />
 </p>
+
 <div class="content">
- <div data-title="gal1" data-kawwa-product-gallery data-gallery="gallery" data-options="galleryOptions"/>
+ <div data-title="gal1" data-product-gallery data-gallery="gallery" data-options="galleryOptions"/>
 </div>

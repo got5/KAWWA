@@ -1,12 +1,16 @@
 'use strict';
 
-angular.module('kawwa').run(function($templateCache) {
+angular.module('kawwa2').run(function($templateCache) {
     $templateCache.put("ProductGallery",
         "<div class=\"k-product-gallery photo-data\">\n    <p>\n        <a class=\"jqzoom\" rel=\"{{title}}\" href=\"{{gallery[0].hd}}\" title=\"{{gallery[0].title}}\">\n            <img class=\"photo\" ng-src=\"{{gallery[0].small}}\" alt=\"{{gallery[0].title}}\"/>\n        </a>\n    </p>\n    <ul class=\"thumblist\">    \n        <li ng-repeat=\"image in gallery\" ng-class=\"{zoomThumbActive : $index==0}\">\n            <a  href=\"#\" rel=\"{gallery: \'{{title}}\', smallimage:\'{{image.small}}\',largeimage:\'{{image.hd}}\'}\">\n            <img ng-src=\"{{image.thumb}}\" alt=\"{{image.title}}\"/></a></li>\n    </ul>\n</div>\n\n\n")
 })
 
-angular.module('kawwa')
-.directive('kawwaProductGallery', function ($templateCache,$timeout) {
+
+/*
+* @ngdoc directive
+* @name kawwaProductGallery*/
+angular.module('kawwa2')
+.directive('productGallery', function ($templateCache,$timeout) {
 
     return {
 
@@ -18,7 +22,7 @@ angular.module('kawwa')
           title:"@",
           gallery:"="
       },
-      link: function(scope, element, attrs, controller) {
+      link: function(scope, element) {
         if(!scope.title){
             scope.title="gal1";
         }

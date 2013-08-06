@@ -1,5 +1,5 @@
 try{
-	angular.module("kawwa");	
+	angular.module("kawwa2");
 }catch(err){
-	angular.module('kawwa',[]);
+	angular.module('kawwa2',[]);
 }

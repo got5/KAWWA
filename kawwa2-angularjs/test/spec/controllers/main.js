@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('kawwa'));
+  beforeEach(module('kawwa2'));
 
   var MainCtrl,
   scope;

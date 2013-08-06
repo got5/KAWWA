@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Directive: kawwaRaty', function () {
-  beforeEach(module('kawwa'));
+describe('Directive: raty', function () {
+  beforeEach(module('kawwa2'));
 
   var element,scope;
 
@@ -20,7 +20,7 @@ describe('Directive: kawwaRaty', function () {
 
   it('initial value is 2',inject(function ($rootScope, $compile) {
     
-  	expect(scope.raty).toBe("2"); 
+  	expect(scope.raty).toBe(2);
   	//expect(element.find('.star-rating').length).toBe(2);
   	//doesn't work ? say 0
    

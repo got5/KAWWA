@@ -1,5 +1,17 @@
 'use strict';
 
+/**
+ * @ngdoc directive
+ * @name kawwa2.directive:raty
+ * @description
+ * Create a Rating widget from radio input. It uses the rating jquery plugin.
+ *
+ *
+ * @param {number} ngModel Assignable angular rating to data-bind to.
+ * @param {Object=} ratingOptions  allows you to overload the rating jquery plugin
+ * @restrict A
+ * @element ANY
+ */
 function putObject(path, object, value) {
     var modelPath = path.split(".");
 
@@ -17,18 +29,18 @@ function putObject(path, object, value) {
     fill(object, modelPath, 0, value);
 }
 
-angular.module('kawwa')
-.directive('kawwaRaty', function () {
+angular.module('kawwa2')
+.directive('raty', function () {
     return {
         restrict: 'A',
 
-        link:function (scope, element, attrs, controller) {
+        link:function (scope, element, attrs) {
             var json = jQuery.extend({
                 callback: function(value){
                     putObject(attrs.ngModel, scope, value);
                     if(!scope.$$phase) scope.$apply();
                 }
-            }, scope.$eval(attrs.kawwaRatingJson))
+            }, scope.$eval(attrs.ratingOptions))
             jQuery(element).children("input").rating(json);
 
             scope.$watch(attrs.ngModel, function(value){

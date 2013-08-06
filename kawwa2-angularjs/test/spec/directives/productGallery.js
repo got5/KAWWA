@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Directive: kawwaProductGallery', function () {
-	beforeEach(module('kawwa'));
+describe('Directive: productGallery', function () {
+	beforeEach(module('kawwa2'));
 
 	var element;
 

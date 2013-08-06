@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kawwa')
+angular.module('kawwa2')
 .controller('ComponentsCtrl', function ($scope) {
    $scope.raty = 2;
    $scope.json={value: "test"};

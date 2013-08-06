@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Directive: fieldComment', function () {
-  beforeEach(module('kawwa'));
+  beforeEach(module('kawwa2'));
 
   var element,scope,input;
 

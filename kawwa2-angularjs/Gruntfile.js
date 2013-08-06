@@ -20,7 +20,8 @@ module.exports = function (grunt) {
   var yeomanConfig = {
     app: 'app',
     dist: 'dist',
-    demo: 'demo'
+    demo: 'demo',
+    doc: 'doc'
   };
 
   try {
@@ -53,6 +54,7 @@ module.exports = function (grunt) {
 connect: {
   options: {
     port: 9000,
+
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost'
       },
@@ -85,11 +87,20 @@ connect: {
             ];
           }
         }
+      },
+      doc: {
+          options: {
+              port:8000,
+              base:'docs'
+          }
       }
     },
     open: {
       server: {
         url: 'http://localhost:<%= connect.options.port %>'
+      },
+      doc:{
+          url: 'http://localhost:<%= connect.doc.options.port %>'
       }
     },
     clean: {
@@ -115,6 +126,16 @@ connect: {
           '<%= yeoman.demo %>/app/img/*',
           '<%= yeoman.demo %>/app/views/*',
           '<%= yeoman.demo %>/app/scripts/controllers/*'
+          ]
+        }]
+      },
+      doc:{
+        files: [{
+          dot: true,
+          src: [
+            'docs/**/*',
+            'docs/**/**/*',
+            'docs/*'
           ]
         }]
       }
@@ -239,7 +260,7 @@ rev: {
         expand: true,
         dot: true,
         process:function(src){
-          return  src.replace("angular.module('kawwa'","angular.module('demoApp'");
+          return  src.replace("angular.module('kawwa2'","angular.module('demoApp'");
         },
         cwd: '<%= yeoman.app %>',
         dest: '<%= yeoman.demo %>/app',
@@ -254,7 +275,7 @@ rev: {
         expand: true,
         dot: true,
         process:function(src){
-          return "try{\nangular.module(\"kawwa\");   \n}catch(err){\nangular.module('kawwa',[]);\n}\n"
+          return "try{\nangular.module(\"kawwa2\");   \n}catch(err){\nangular.module('kawwa2',[]);\n}\n"
           + '\n' + src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
         },
         cwd: '<%= yeoman.dist %>',
@@ -266,7 +287,6 @@ rev: {
     }
 
   },
-
   karma: {
     unit: {
       configFile: 'karma.conf.js',
@@ -308,22 +328,38 @@ rev: {
       }
     }
   },
-  zip:{
+  zip: {
     'kawwa-release.zip':['<%= yeoman.dist %>/*','<%= yeoman.dist %>/**/*']
+  },
+  ngdocs: {
+    options:{
+      scripts:['app/components/angular/angular.js',
+          'app/lib/jquery/jquery-1.8.3.js',
+          'app/lib/jquery-ui/jquery.ui.core.js',
+          'app/lib/jquery-ui/jquery.ui.widget.js',
+          'dist/kawwa-directives-full.js'
+      ],
+      dest:'docs',
+      html5Mode:true
+    },
+    api:{
+      src:['app/scripts/directives/*.js'],
+      title: 'API Documentation'
+    }
   }
   
 });
 
 grunt.registerTask('server', function (target) {
   if (target === 'dist') {
-    return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+    return grunt.task.run(['build', 'open:server', 'connect:dist:keepalive']);
   }
 
   grunt.task.run([
     'clean:server',
    // 'concurrent:server',
    'connect:livereload',
-   'open',
+   'open:server',
    'watch'
    ]);
 });
@@ -364,9 +400,22 @@ grunt.registerTask('build', [
   'copy:declaremodule'
   ]);
 
-grunt.registerTask('release', [
+grunt.registerTask('doc', [
+
     'build',
-    'zip'
+    'clean:doc',
+    'ngdocs',
+    'open:doc',
+    'connect:doc:keepalive'
+
+]);
+
+
+grunt.registerTask('release', [
+    'clean:doc',
+    'build',
+    'zip',
+    'ngdocs'
     ]);
 grunt.registerTask('default', [
 

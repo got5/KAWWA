@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demoApp', ['kawwa'])
+angular.module('demoApp', ['kawwa2'])
 .config(function ($routeProvider) {
   $routeProvider
   .when('/', {

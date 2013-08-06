@@ -3,7 +3,7 @@ describe("Midway: Testing fieldComment", function() {
   var test, $injector;
 
   beforeEach(function(done) {
-    ngMidwayTester.register('kawwa', function(instance) {
+    ngMidwayTester.register('kawwa2', function(instance) {
       test = instance;
       done();
     });

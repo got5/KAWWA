@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Directive: productOptions', function () {
-  beforeEach(module('kawwa'));
+  beforeEach(module('kawwa2'));
 
   var element,scope,titles;
 
