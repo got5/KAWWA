@@ -11,6 +11,35 @@
  * @param {Object=} ratingOptions  allows you to overload the rating jquery plugin
  * @restrict A
  * @element ANY
+ *
+ * @example
+ <doc:example module="app">
+ <doc:source>
+ <script>
+ var module = angular.module('app',['kawwa2']);
+ module.controller('myCtrl',function($scope){
+
+                $scope.raty = 2;
+
+  });
+
+ </script>
+
+ <fieldset class="k-rating">
+ <legend>Rate this article: {{raty}}</legend>
+ <p data-raty data-rating-options="{'value': 'test'}" ng-model="raty">
+ <input name="star1" type="radio" value="1"/>
+ <input name="star1" type="radio" value="2"/>
+ <input name="star1" type="radio" value="3"/>
+ <input name="star1" type="radio" value="4"/>
+ <input name="star1" type="radio" value="5"/>
+ </p>
+ </fieldset>
+
+
+ </doc:source>
+
+ </doc:example>
  */
 function putObject(path, object, value) {
     var modelPath = path.split(".");

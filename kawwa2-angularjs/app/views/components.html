@@ -5,15 +5,10 @@
     </p>
 
     <div class="k-product-options">
-        <fieldset class="color" data-product-options="{}">
+        <fieldset class="color">
             <legend>Choose your color : {{selected}}</legend>
-            <p><input data-ng-model="selected" type="radio" id="palette01" value="palette01" name="palette"
-              checked="checked"/>
-              <label for="palette01"><img src="theme/img/k-theme0/palette01.png" alt="Black"/></label>
-              <input data-ng-model="selected" type="radio" id="palette02" value="palette02" name="palette"/>
-              <label for="palette02"><img src="theme/img/k-theme0/palette02.png" alt="Dark Blue"/></label>
-              <input data-ng-model="selected" type="radio" id="palette03" value="palette03" name="palette"/>
-              <label for="palette03"><img src="theme/img/k-theme0/palette03.png" alt="White"/></label></p>
+            <p data-product-options="{}" data-products="products" data-name="palette">
+            </p>
           </fieldset>
       </div>
 

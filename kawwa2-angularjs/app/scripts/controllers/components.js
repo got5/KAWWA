@@ -4,7 +4,27 @@ angular.module('kawwa2')
 .controller('ComponentsCtrl', function ($scope) {
    $scope.raty = 2;
    $scope.json={value: "test"};
+
+
    $scope.selected="";
+   $scope.products = [
+        {
+            name:"palette01",
+            img:"theme/img/k-theme0/palette01.png",
+            rel:"Black"
+        },
+        {
+            name:"palette02",
+            img:"theme/img/k-theme0/palette02.png",
+            rel:"Dark Blue"
+        },
+        {
+            name:"palette01",
+            img:"theme/img/k-theme0/palette01.png",
+            rel:"Black"
+        }
+    ];
+
 
    var baseImagePath = '/'
    $scope.gallery = [

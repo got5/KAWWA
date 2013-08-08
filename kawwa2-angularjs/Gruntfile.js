@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     app: 'app',
     dist: 'dist',
     demo: 'demo',
-    doc: 'doc'
+    doc: 'docs'
   };
 
   try {
@@ -134,7 +134,6 @@ connect: {
           dot: true,
           src: [
             'docs/**/*',
-            'docs/**/**/*',
             'docs/*'
           ]
         }]
@@ -222,7 +221,7 @@ rev: {
         }]
       },
 
-      theme:{
+      themeDemo:{
         files: [{
           expand: true,
           dot: true,
@@ -233,7 +232,7 @@ rev: {
           ]
         }]
       },
-      directives:{
+      directivesDemo:{
         files: [{
           expand: true,
           dot: true,
@@ -244,7 +243,7 @@ rev: {
           ]
         }]
       },
-      images:{
+      imagesDemo:{
         files: [{
           expand: true,
           dot: true,
@@ -255,7 +254,7 @@ rev: {
           ]
         }]
       },
-      demo:{
+      ctrlDemo:{
        files: [{
         expand: true,
         dot: true,
@@ -284,6 +283,29 @@ rev: {
         '/app/lib/kawwa/scripts/directives'
         ]
       }]
+    },
+    imageDoc:{
+        files: [{
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.doc %>',
+            src: [
+                'img/*','img/**/*'
+            ]
+        }]
+    },
+    imageThemeDoc:{
+        files: [{
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>/theme/img',
+
+            dest: '<%= yeoman.doc %>/img',
+            src: [
+                '*','**/*'
+            ]
+        }]
     }
 
   },
@@ -333,11 +355,14 @@ rev: {
   },
   ngdocs: {
     options:{
-      scripts:['app/components/angular/angular.js',
-          'app/lib/jquery/jquery-1.8.3.js',
-          'app/lib/jquery-ui/jquery.ui.core.js',
-          'app/lib/jquery-ui/jquery.ui.widget.js',
-          'dist/kawwa-directives-full.js'
+      scripts:['<%= yeoman.app %>/lib/jquery/jquery-1.8.3.js',
+          '<%= yeoman.app %>/components/angular/angular.js',
+          '<%= yeoman.app %>/lib/jquery-ui/jquery.ui.core.js',
+          '<%= yeoman.app %>/lib/jquery-ui/jquery.ui.widget.js',
+          '<%= yeoman.dist %>/kawwa-directives-full.js'
+      ],
+      styles:['<%= yeoman.app %>/theme/css/k-theme0.css',
+              'util/reset.css'
       ],
       dest:'docs',
       html5Mode:true
@@ -346,7 +371,21 @@ rev: {
       src:['app/scripts/directives/*.js'],
       title: 'API Documentation'
     }
+  },
+  replace:{
+    doc:{
+        src:['<%= yeoman.doc %>/index.html'],
+        overwrite:true,
+        replacements:[{
+            from: "addTag('link', {rel: 'stylesheet', href: 'css/reset.css', type: 'text/css'}, sync);",
+            to: function(matchedWord){
+                return matchedWord + '\n' +  '\t\t\t' +
+                    "addTag('link', {rel: 'stylesheet', href: 'css/bootstrap.min.css', type: 'text/css'});"
+            }
+        }]
+    }
   }
+
   
 });
 
@@ -383,28 +422,33 @@ grunt.registerTask('test:midway', [
   'karma:midway'
   ]);
 
+grunt.registerTask('demo', [
+    'clean:demo',
+    'copy:ctrlDemo',  //copy kawwa to the demo
+    'copy:themeDemo', //copy the theme to the demo
+    'copy:directivesDemo',//copy the directive directory to the demo
+    'copy:imagesDemo'
+]);
+
 
 grunt.registerTask('build', [
-  'clean:dist',
-  'clean:demo',
-  'concat',
-  'copy:basic',
-  'copy:plugin',
+  'clean:dist',  //clean kawwa
+  'concat',      //concat the directives with the plugins
+  'copy:basic',  //copy kawwa  to dist
+  'copy:plugin', //copy the plugins to dist
   'ngmin',
   'uglify',
   //'rev',
-  'copy:demo',
-  'copy:theme',
-  'copy:directives',
-  'copy:images',
   'copy:declaremodule'
   ]);
 
 grunt.registerTask('doc', [
 
-    'build',
     'clean:doc',
     'ngdocs',
+    'copy:imageDoc',
+    'copy:imageThemeDoc',
+    'replace',
     'open:doc',
     'connect:doc:keepalive'
 
@@ -414,8 +458,9 @@ grunt.registerTask('doc', [
 grunt.registerTask('release', [
     'clean:doc',
     'build',
+    'demo',
     'zip',
-    'ngdocs'
+    'doc'
     ]);
 grunt.registerTask('default', [
 

@@ -2495,6 +2495,7 @@ angular.module('kawwa2').directive('productGallery', [
         }, scope.options);
         $timeout(function () {
           if (jQuery.fn.jqzoom) {
+            console.log(element.children(0).children(0));
             element.children(0).children(0).jqzoom(scope.options);
           }
         }, 0);

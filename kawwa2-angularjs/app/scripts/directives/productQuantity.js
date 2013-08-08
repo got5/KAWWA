@@ -15,6 +15,24 @@ function incrementTest() {
  * @param {Object=} productQuantity  allow you to overload the uppydowner jquery plugin
  * @element input
  * @restrict A
+ *
+ *
+ * @example
+ <doc:example module="app">
+ <doc:source>
+ <script>
+ var module = angular.module('app',['kawwa2']);
+ module.controller('myCtrl',function($scope){
+
+ });
+ </script>
+    <p class="k-quantity">
+        <input type="number" value="1" title="Define quantity to add to basket" data-product-quantity="{}"/>
+    </p>
+
+ </doc:source>
+
+ </doc:example>
  */
 
 angular.module('kawwa2')
