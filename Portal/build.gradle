@@ -36,7 +36,7 @@ task deleteAngularDocs(type: Delete) {
 }
 task compileTapestryLib(type: Exec)  {
     workingDir = file('../kawwa2-tapestry')
-	commandLine 'cmd', '/c', 'mvn', 'site'
+	commandLine 'cmd', '/c', 'mvn', 'site', '-o'
 	standardOutput = new ByteArrayOutputStream()
     
 }
@@ -58,6 +58,7 @@ task copyAngularDocs(type: Copy) {
 task generateSublimeTextSnippets(type: Exec) {
 	workingDir = file('../kawwa2-sublimetext')
 	commandLine 'cmd', '/c', 'node', 'script.js'
+	standardOutput = new ByteArrayOutputStream()
 }
 
 task copyThemesForAngular << {
