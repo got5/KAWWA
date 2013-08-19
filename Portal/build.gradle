@@ -4,7 +4,7 @@ apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'jetty'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.6
 
 version = '2.0.5-SNAPSHOT'
 
@@ -28,38 +28,46 @@ repositories {
 	maven {url 'http://nexus.devlab722.net/nexus/content/repositories/snapshots/'}
 }
 
-task copyTapestryDocs(type: Copy)  {
-	from '../kawwa2-tapestry/target/site/apidocs'
-	into 'src/main/webapp/apis/tapestry'
-}
-task copyAngularDocs(type: Copy) {
-	
-}
 task deleteTapestryDocs(type: Delete) {
 	delete 'src/main/webapp/apis/tapestry/'
 }
 task deleteAngularDocs(type: Delete) {
 	delete 'src/main/webapp/apis/angular/'	
 }
-task copyCSSTheme(type: Copy) {
-	
-}
-
-
 task compileTapestryLib(type: Exec)  {
     workingDir = file('../kawwa2-tapestry')
-	commandLine 'cmd', '/c', 'mvn', 'clean', 'install', '-DskipTests'
+	commandLine 'cmd', '/c', 'mvn', 'site'
+	standardOutput = new ByteArrayOutputStream()
+    
+}
+task compileAngularLib(type: Exec)  {
+	workingDir = file('../kawwa2-angularjs')
+	commandLine 'cmd', '/c', 'grunt', 'doc'
     standardOutput = new ByteArrayOutputStream()
+    ignoreExitValue = true
+}
+task copyTapestryDocs(type: Copy)  {
+	from '../kawwa2-tapestry/target/site/apidocs'
+	into 'src/main/webapp/apis/tapestry'
+}
+task copyAngularDocs(type: Copy) {
+	from '../kawwa2-angularjs/docs'
+	into 'src/main/webapp/apis/angular'
 }
 
-task compileAngularLib <<  {
-	
+task generateSublimeTextSnippets(type: Exec) {
+	workingDir = file('../kawwa2-sublimetext')
+	commandLine 'cmd', '/c', 'node', 'script.js'
 }
 
+task copyThemesForAngular << {
+}
+task copyThemesForTapestry << {
+}
 copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs")
 copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
 
 
-processResources.dependsOn("copyTapestryLib")
-processResources.dependsOn("copyAngularLib")
-processResources.dependsOn("copyCSSTheme")
+processResources.dependsOn("copyTapestryDocs")
+processResources.dependsOn("copyAngularDocs")
+processResources.dependsOn("generateSublimeTextSnippets	")
