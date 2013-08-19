@@ -70,4 +70,9 @@ copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
 
 processResources.dependsOn("copyTapestryDocs")
 processResources.dependsOn("copyAngularDocs")
-processResources.dependsOn("generateSublimeTextSnippets	")
+processResources.dependsOn("generateSublimeTextSnippets")
+assemble.dependsOn("wrapper")
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.7'
+}

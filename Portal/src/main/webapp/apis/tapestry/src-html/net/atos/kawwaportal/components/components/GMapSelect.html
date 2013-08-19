@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="fr">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>package net.atos.kawwaportal.components.components;<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>import java.util.List;<a name="line.3"></a>
+<span class="sourceLineNo">004</span><a name="line.4"></a>
+<span class="sourceLineNo">005</span>import net.atos.kawwaportal.components.data.GMapSelectLocation;<a name="line.5"></a>
+<span class="sourceLineNo">006</span><a name="line.6"></a>
+<span class="sourceLineNo">007</span>import org.apache.tapestry5.annotations.AfterRender;<a name="line.7"></a>
+<span class="sourceLineNo">008</span>import org.apache.tapestry5.annotations.Import;<a name="line.8"></a>
+<span class="sourceLineNo">009</span>import org.apache.tapestry5.annotations.InjectComponent;<a name="line.9"></a>
+<span class="sourceLineNo">010</span>import org.apache.tapestry5.annotations.Parameter;<a name="line.10"></a>
+<span class="sourceLineNo">011</span>import org.apache.tapestry5.annotations.Property;<a name="line.11"></a>
+<span class="sourceLineNo">012</span>import org.apache.tapestry5.corelib.components.RadioGroup;<a name="line.12"></a>
+<span class="sourceLineNo">013</span>import org.apache.tapestry5.internal.services.StringValueEncoder;<a name="line.13"></a>
+<span class="sourceLineNo">014</span>import org.apache.tapestry5.ioc.annotations.Inject;<a name="line.14"></a>
+<span class="sourceLineNo">015</span>import org.apache.tapestry5.json.JSONArray;<a name="line.15"></a>
+<span class="sourceLineNo">016</span>import org.apache.tapestry5.json.JSONObject;<a name="line.16"></a>
+<span class="sourceLineNo">017</span>import org.apache.tapestry5.services.javascript.JavaScriptSupport;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>/**<a name="line.19"></a>
+<span class="sourceLineNo">020</span> * &lt;p&gt;<a name="line.20"></a>
+<span class="sourceLineNo">021</span> *              This Component is used to generate a location form that will provide:<a name="line.21"></a>
+<span class="sourceLineNo">022</span> *              &lt;ul&gt;<a name="line.22"></a>
+<span class="sourceLineNo">023</span> *                      &lt;li&gt;A delivery location radio list&lt;/li&gt;<a name="line.23"></a>
+<span class="sourceLineNo">024</span> *                      &lt;li&gt;A google map linked to the location radio list&lt;/li&gt;<a name="line.24"></a>
+<span class="sourceLineNo">025</span> *              &lt;/ul&gt;<a name="line.25"></a>
+<span class="sourceLineNo">026</span> * &lt;/p&gt;<a name="line.26"></a>
+<span class="sourceLineNo">027</span> * &lt;p&gt;<a name="line.27"></a>
+<span class="sourceLineNo">028</span> *              To use it, call the component as the following:<a name="line.28"></a>
+<span class="sourceLineNo">029</span> *              &lt;br/&gt;<a name="line.29"></a>
+<span class="sourceLineNo">030</span> *              "&amp;lt;div t:type="kawwa2/GMapSelect" t:currentGMapSelectLocationsList="&amp;lt;&amp;lt;1&amp;gt;&amp;gt;" <a name="line.30"></a>
+<span class="sourceLineNo">031</span> *                      t:gMapSelectLocationSelected="prop:&amp;lt;&amp;lt;2&amp;gt;&amp;gt;"/&amp;gt;"<a name="line.31"></a>
+<span class="sourceLineNo">032</span> *              &lt;br/&gt;&lt;br/&gt;<a name="line.32"></a>
+<span class="sourceLineNo">033</span> *              The fields must be filled with:<a name="line.33"></a>
+<span class="sourceLineNo">034</span> *              &lt;ul&gt;<a name="line.34"></a>
+<span class="sourceLineNo">035</span> *                      &lt;li&gt;&amp;lt;&amp;lt;1&amp;gt;&amp;gt; : The list of GMapSelectLocation objects&lt;/li&gt;<a name="line.35"></a>
+<span class="sourceLineNo">036</span> *                      &lt;li&gt;&amp;lt;&amp;lt;2&amp;gt;&amp;gt; : The name of the location reference variable returned on submit&lt;/li&gt;<a name="line.36"></a>
+<span class="sourceLineNo">037</span> *              &lt;/ul&gt;<a name="line.37"></a>
+<span class="sourceLineNo">038</span> * &lt;/p&gt;<a name="line.38"></a>
+<span class="sourceLineNo">039</span> * <a name="line.39"></a>
+<span class="sourceLineNo">040</span> * @tapestrydoc<a name="line.40"></a>
+<span class="sourceLineNo">041</span> */<a name="line.41"></a>
+<span class="sourceLineNo">042</span><a name="line.42"></a>
+<span class="sourceLineNo">043</span>@Import(library = "classpath:net/atos/kawwaportal/components/assets/gmapselect/GMapSelect.js")<a name="line.43"></a>
+<span class="sourceLineNo">044</span>public class GMapSelect {<a name="line.44"></a>
+<span class="sourceLineNo">045</span>        <a name="line.45"></a>
+<span class="sourceLineNo">046</span>        @Parameter(required = true)<a name="line.46"></a>
+<span class="sourceLineNo">047</span>        @Property<a name="line.47"></a>
+<span class="sourceLineNo">048</span>        private List&lt;GMapSelectLocation&gt; currentGMapSelectLocationsList;<a name="line.48"></a>
+<span class="sourceLineNo">049</span>        <a name="line.49"></a>
+<span class="sourceLineNo">050</span>        @Parameter<a name="line.50"></a>
+<span class="sourceLineNo">051</span>        @Property<a name="line.51"></a>
+<span class="sourceLineNo">052</span>        @SuppressWarnings("unused")<a name="line.52"></a>
+<span class="sourceLineNo">053</span>        private String gMapSelectLocationSelected;<a name="line.53"></a>
+<span class="sourceLineNo">054</span>        <a name="line.54"></a>
+<span class="sourceLineNo">055</span>        @Property<a name="line.55"></a>
+<span class="sourceLineNo">056</span>        @SuppressWarnings("unused")<a name="line.56"></a>
+<span class="sourceLineNo">057</span>        private GMapSelectLocation currentGMapSelectLocation;<a name="line.57"></a>
+<span class="sourceLineNo">058</span>        <a name="line.58"></a>
+<span class="sourceLineNo">059</span>        @Inject<a name="line.59"></a>
+<span class="sourceLineNo">060</span>        private JavaScriptSupport javaScriptSupport;<a name="line.60"></a>
+<span class="sourceLineNo">061</span>        <a name="line.61"></a>
+<span class="sourceLineNo">062</span>        @Property<a name="line.62"></a>
+<span class="sourceLineNo">063</span>        @SuppressWarnings("unused")<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        private final StringValueEncoder stringEncoder = new StringValueEncoder();<a name="line.64"></a>
+<span class="sourceLineNo">065</span>        <a name="line.65"></a>
+<span class="sourceLineNo">066</span>        @InjectComponent<a name="line.66"></a>
+<span class="sourceLineNo">067</span>        private RadioGroup gMapSelectLocationRadio;<a name="line.67"></a>
+<span class="sourceLineNo">068</span>        <a name="line.68"></a>
+<span class="sourceLineNo">069</span>        @InjectComponent<a name="line.69"></a>
+<span class="sourceLineNo">070</span>        private GMap gmap;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>        <a name="line.71"></a>
+<span class="sourceLineNo">072</span>        @AfterRender<a name="line.72"></a>
+<span class="sourceLineNo">073</span>        public void afterRender() {<a name="line.73"></a>
+<span class="sourceLineNo">074</span>                <a name="line.74"></a>
+<span class="sourceLineNo">075</span>                String locationName = gMapSelectLocationRadio.getControlName();<a name="line.75"></a>
+<span class="sourceLineNo">076</span>                <a name="line.76"></a>
+<span class="sourceLineNo">077</span>                String gmapId = gmap.getClientId();<a name="line.77"></a>
+<span class="sourceLineNo">078</span>                <a name="line.78"></a>
+<span class="sourceLineNo">079</span>                JSONArray gmapMarkers = new JSONArray();<a name="line.79"></a>
+<span class="sourceLineNo">080</span>                <a name="line.80"></a>
+<span class="sourceLineNo">081</span>                for (GMapSelectLocation currentGMapSelectLocation : currentGMapSelectLocationsList) {<a name="line.81"></a>
+<span class="sourceLineNo">082</span>                        JSONObject address = new JSONObject();<a name="line.82"></a>
+<span class="sourceLineNo">083</span>                        address.put("address", currentGMapSelectLocation.getAddress());<a name="line.83"></a>
+<span class="sourceLineNo">084</span>                        address.put("data", currentGMapSelectLocation.getAddress());<a name="line.84"></a>
+<span class="sourceLineNo">085</span>                        address.put("tag", currentGMapSelectLocation.getRef());<a name="line.85"></a>
+<span class="sourceLineNo">086</span>                        gmapMarkers.put(address);<a name="line.86"></a>
+<span class="sourceLineNo">087</span>                }<a name="line.87"></a>
+<span class="sourceLineNo">088</span>                <a name="line.88"></a>
+<span class="sourceLineNo">089</span>                JSONObject opt = new JSONObject();<a name="line.89"></a>
+<span class="sourceLineNo">090</span>            opt.put("locationName", locationName);<a name="line.90"></a>
+<span class="sourceLineNo">091</span>            opt.put("gmapId", gmapId);<a name="line.91"></a>
+<span class="sourceLineNo">092</span>            opt.put("gmapMarkers", gmapMarkers);<a name="line.92"></a>
+<span class="sourceLineNo">093</span>            <a name="line.93"></a>
+<span class="sourceLineNo">094</span>                javaScriptSupport.addInitializerCall("gmapselect", opt);<a name="line.94"></a>
+<span class="sourceLineNo">095</span>        }<a name="line.95"></a>
+<span class="sourceLineNo">096</span>}<a name="line.96"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

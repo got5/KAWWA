@@ -1,0 +1,74 @@
+<h1><code ng:non-bindable="">productOptions</code>
+<span class="hint">(directive in module <code ng:non-bindable="">kawwa2</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>Enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.
+Use the widget button from jQuery-UI</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY product-options="{Object}"
+     name="{String}"
+     products="{Array of Object}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="Parameters">Parameters</h3>
+<ul class="parameters"><li><code ng:non-bindable="">productOptions<i>(optional)</i> – {Object=} – </code>
+<p>allows you to overload the button widget</p></li>
+<li><code ng:non-bindable="">name – {String} – </code>
+<p>is the attribut name use for the submission.</p></li>
+<li><code ng:non-bindable="">products – {Array of Object} – </code>
+<p>contains the infos for each buttons you want. These infos are
+- name {string} will be the value of the element selected
+- img {string} the path to the image
+-rel {string}  for the img tag</p></li>
+</ul>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="app" source-edit-deps="angular.js script.js" source-edit-html="index.html-3" source-edit-css="" source-edit-js="script.js-2" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-3" ng-html-wrap-loaded="app angular.js script.js"></pre>
+<script type="text/ng-template" id="index.html-3">
+
+<div class="k-product-options">
+   <fieldset class="color">
+       <legend>Choose your color : {{selected}}</legend>
+           <p data-product-options="{}" data-products="products" data-name="palette">
+           </p>
+   </fieldset>
+</div>
+
+
+
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-2"></pre>
+<script type="text/ng-template" id="script.js-2">
+var module = angular.module('app',['kawwa2']);
+module.controller('myCtrl',function($scope){
+     $scope.selected="";
+
+     $scope.products = [
+       {
+           name:"palette01",
+           img:"theme/img/k-theme0/palette01.png",
+           rel:"Black"
+       },
+       {
+           name:"palette02",
+           img:"theme/img/k-theme0/palette02.png",
+           rel:"Dark Blue"
+       },
+       {
+           name:"palette01",
+           img:"theme/img/k-theme0/palette01.png",
+           rel:"Black"
+       }
+     ];
+  });
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="app" ng-set-html="index.html-3" ng-eval-javascript="script.js-2"></div></div>
+</div>
