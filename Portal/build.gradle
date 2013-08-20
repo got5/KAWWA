@@ -17,9 +17,10 @@ dependencies {
  compile group: 'org.apache.tapestry', name: 'tapestry-core', version: '5.3.7'
  providedCompile  group: 'javax.servlet', name: 'servlet-api', version: '2.5'
  
+ groovy "org.codehaus.groovy:groovy-all:1.8.6"
  
+ testCompile "org.spockframework:spock-core:0.6-groovy-1.8" 
  testCompile group: 'junit', name: 'junit', version: '4.+'
- testCompile 'org.codehaus.groovy:groovy-all:2.0.5'
 }
 
 repositories {
@@ -65,6 +66,7 @@ task copyThemesForAngular << {
 }
 task copyThemesForTapestry << {
 }
+
 copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs")
 copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
 
