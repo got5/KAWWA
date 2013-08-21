@@ -131,9 +131,6 @@ task zipComp(type: Zip) {
 	destinationDir = file("/target")
 }
 
-task overrideWebXml << {
-	
-}
 
 copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs")
 copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
@@ -142,7 +139,8 @@ copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
 processResources.dependsOn("copyTapestryDocs")
 processResources.dependsOn("copyAngularDocs")
 processResources.dependsOn("generateSublimeTextSnippets")
-processResources.dependsOn("overrideWebXml")
+processResources.dependsOn("copyThemesForAngular")
+processResources.dependsOn("copyThemesForTapestry")
 processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
 
