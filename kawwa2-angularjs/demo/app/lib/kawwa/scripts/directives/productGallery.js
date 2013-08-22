@@ -25,7 +25,6 @@
               var module = angular.module('app',['kawwa2']);
               module.controller('myCtrl',function($scope){
 
-                //var baseImagePath = 'https://raw.github.com/got5/KAWWA/master/kawwa2-angularjs/app/';
                 var baseImagePath ='';
                 $scope.gallery = [
                     {
@@ -61,6 +60,8 @@
 
       </doc:source>
       <doc:scenario>
+        it('should initialize to model',function(){
+            expect(binding('gallery[0].title')).toEqual('first image');
 
       </doc:scenario>
   </doc:example>
@@ -104,7 +105,6 @@ angular.module('kawwa2')
         
         $timeout(function(){
             if(jQuery.fn.jqzoom) {
-               console.log(element.children(0).children(0));
                element.children(0).children(0).jqzoom(scope.options);
             }
         },0)

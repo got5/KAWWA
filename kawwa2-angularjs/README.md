@@ -92,9 +92,10 @@ This will also prepare the demo app
 
 This app is the same as the kawwa app except that this one use it as a dependency.
 
-You first need to run the following command in the kawwa2-angular directory
+You first need to run the following commands in the kawwa2-angular directory
 	
-	grunt
+	grunt build
+	grunt demo
 
 Then, in demo/ run the server
 
@@ -106,7 +107,20 @@ if you didn't install the demo app yet, don't forget to
 	npm install
 	bower install
 
-Want to add some contents ?
+### Generate de doc
+
+	grunt doc
+
+### Package the library in a zip file
+	
+	grunt build
+	grunt zip
+
+### Do it all 
+
+	grunt release
+
+Want to contribute ?
 ------------
 
 

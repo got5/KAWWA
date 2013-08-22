@@ -362,7 +362,8 @@ rev: {
           '<%= yeoman.dist %>/kawwa-directives-full.js'
       ],
       styles:['<%= yeoman.app %>/theme/css/k-theme0.css',
-              'util/reset.css'
+              'util/reset.css',
+              'util/kawwa-bootstrap-fix.min.css'
       ],
       dest:'docs',
       html5Mode:true
@@ -377,10 +378,9 @@ rev: {
         src:['<%= yeoman.doc %>/index.html'],
         overwrite:true,
         replacements:[{
-            from: "addTag('link', {rel: 'stylesheet', href: 'css/reset.css', type: 'text/css'}, sync);",
+            from: "addTag('link', {rel: 'stylesheet', href: 'css/bootstrap.min.css', type: 'text/css'});",
             to: function(matchedWord){
-                return matchedWord + '\n' +  '\t\t\t' +
-                    "addTag('link', {rel: 'stylesheet', href: 'css/bootstrap.min.css', type: 'text/css'});"
+                return "";
             }
         }]
     }
@@ -442,13 +442,18 @@ grunt.registerTask('build', [
   'copy:declaremodule'
   ]);
 
-grunt.registerTask('doc', [
-
+grunt.registerTask('doc-build',[
+    'build',
     'clean:doc',
     'ngdocs',
     'copy:imageDoc',
     'copy:imageThemeDoc',
-    'replace',
+    'replace:doc'
+
+]);
+
+grunt.registerTask('doc', [
+    'doc-build',
     'open:doc',
     'connect:doc:keepalive'
 
@@ -460,7 +465,7 @@ grunt.registerTask('release', [
     'build',
     'demo',
     'zip',
-    'doc'
+    'doc-build'
     ]);
 grunt.registerTask('default', [
 

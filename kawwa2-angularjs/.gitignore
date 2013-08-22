@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 dist
 .tmp
 .sass-cache
@@ -7,3 +7,4 @@ npm-debug.log
 demo/node_modules
 demo/dist
 demo/app/components
+docs/

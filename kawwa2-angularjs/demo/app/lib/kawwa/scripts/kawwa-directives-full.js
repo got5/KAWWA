@@ -2495,7 +2495,6 @@ angular.module('kawwa2').directive('productGallery', [
         }, scope.options);
         $timeout(function () {
           if (jQuery.fn.jqzoom) {
-            console.log(element.children(0).children(0));
             element.children(0).children(0).jqzoom(scope.options);
           }
         }, 0);
@@ -2505,15 +2504,30 @@ angular.module('kawwa2').directive('productGallery', [
 ]);
 ;
 'use strict';
-angular.module('kawwa2').directive('productOptions', function () {
-  return {
-    restrict: 'A',
-    link: function (scope, element, attrs) {
-      var json = jQuery.extend({}, scope.$eval(attrs.productOptions));
-      jQuery(element).buttonset(json);
-    }
-  };
-});
+angular.module('kawwa2').run([
+  '$templateCache',
+  function ($templateCache) {
+    $templateCache.put('ProductOptions', '<p>\n    <!-- directive: ng-repeat product in products -->\n    <input data-ng-model="selected" type="radio" id="{{product.name}}" value="{{product.name}}" name="{{name}}" checked="{checked : $index==0}"/>\n    <label for="{{product.name}}"><img ng-src="{{product.img}}" alt="{{product.alt}}"/></label>\n    <!-- /ng-repeat -->\n</p>\n       \n\n');
+  }
+]);
+angular.module('kawwa2').directive('productOptions', [
+  '$templateCache',
+  function ($templateCache) {
+    return {
+      restrict: 'A',
+      template: $templateCache.get('ProductOptions'),
+      replace: true,
+      scope: {
+        name: '@',
+        products: '='
+      },
+      link: function (scope, element, attrs) {
+        var json = jQuery.extend({}, scope.$eval(attrs.productOptions));
+        jQuery(element).buttonset(json);
+      }
+    };
+  }
+]);
 ;
 'use strict';
 function incrementTest() {
