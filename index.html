@@ -1,79 +1,214 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ng-app: docsApp;" lang="en" ng-controller="DocsController"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ng-app: docsApp;" lang="en" ng-controller="DocsController"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ng-app: docsApp;" lang="en" ng-controller="DocsController"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ng-app: docsApp;" lang="en" ng-controller="DocsController"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="Description"
+        content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!">
+  <meta name="fragment" content="!">
+  <title ng-bind-template="Doc: {{partialTitle}}">Docs</title>
+  <script type="text/javascript">
+    // dynamically add base tag as well as css and javascript files.
+    // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
+    // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
+    (function() {
+      var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+          rUrl = /(#!\/|api|index[^\.]*\.html).*$/,
+          baseUrl = location.href.replace(rUrl, indexFile),
+          headEl = document.getElementsByTagName('head')[0],
+          sync = true;
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Kawwa : " />
+      addTag('base', {href: baseUrl});
+      
+      addTag('link', {rel: 'stylesheet', href: 'css/font-awesome.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/docs.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/animations.css', type: 'text/css'});
+      
+         addTag('link', {rel: 'stylesheet', href: 'css/k-theme0.css', type: 'text/css'}, sync);
+      
+         addTag('link', {rel: 'stylesheet', href: 'css/reset.css', type: 'text/css'}, sync);
+      
+         addTag('link', {rel: 'stylesheet', href: 'css/kawwa-bootstrap-fix.min.css', type: 'text/css'}, sync);
+      
+      
+        addTag('script', {src: 'grunt-scripts/jquery-1.8.3.js'}, sync);
+      
+        addTag('script', {src: 'grunt-scripts/angular.js'}, sync);
+      
+        addTag('script', {src: 'grunt-scripts/jquery.ui.core.js'}, sync);
+      
+        addTag('script', {src: 'grunt-scripts/jquery.ui.widget.js'}, sync);
+      
+        addTag('script', {src: 'grunt-scripts/kawwa-directives-full.js'}, sync);
+      
+      addTag('script', {src: 'js/angular-bootstrap.min.js'}, sync);
+      addTag('script', {src: 'js/angular-bootstrap-prettify.min.js'}, sync);
+      addTag('script', {src: 'js/docs-setup.js'}, sync);
+      addTag('script', {src: 'js/docs.js'}, sync);
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+      function addTag(name, attributes, sync) {
+        var el = document.createElement(name),
+            attrName;
 
-    <title>Kawwa</title>
-  </head>
+        for (attrName in attributes) {
+          el.setAttribute(attrName, attributes[attrName]);
+        }
 
-  <body>
+        sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+      }
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/got5/KAWWA">View on GitHub</a>
+      function outerHTML(node){
+        // if IE, Chrome take the internal method otherwise build one
+        return node.outerHTML || (
+            function(n){
+                var div = document.createElement('div'), h;
+                div.appendChild(n);
+                h = div.innerHTML;
+                div = null;
+                return h;
+            })(node);
+      }
+    })();
 
-          <h1 id="project_title">Kawwa</h1>
-          <h2 id="project_tagline"></h2>
+  </script>
+</head>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/got5/KAWWA/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/got5/KAWWA/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+<body>
+  <header class="header">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          
+          <ul class="nav">
+            <li ng-repeat="(url, name) in sections" ng-class="{active: isActivePath(url)}">
+              <a ng-href="{{url}}"><i class="icon-book icon-white"></i> {{name}}</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div role="main" class="container">
+    <div class="row clear-navbar"></div>
+
+    <div class="row">
+      <div class="span12">
+        <!--[if lt IE 7]>
+        <p class="alert alert-error">Your browser is <em>ancient!</em>
+          <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+          <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to
+          experience this site.
+        </p>
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+        <div class="alert">
+          You are using an old version of Internet Explorer.
+          For better and safer browsing experience please <a href="http://www.microsoft.com/IE9">upgrade IE</a>
+          or install <a href="http://google.com/chrome">Google Chrome browser</a>.
+        </div>
+        <![endif]-->
+      </div>
+
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+    <div class="row">
+      <div class="span3">
+        <form class="form-search" ng-submit="submitForm()">
+          <div class="dropdown search"
+               ng-class="{open: focused && bestMatch.rank > 0 && bestMatch.page != currentPage}">
+            <input type="text" ng-model="search" placeholder="search the docs"
+                   tabindex="1" accesskey="s" class="search-query" focused="focused">
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{bestMatch.page.url}}">{{bestMatch.page.shortName}}</a>
+              </li>
+            </ul>
+          </div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+          <div class="spacer"></div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+          <ul class="nav nav-list well" ng-show="pages">
+            <li ng-repeat="page in pages" ng-class="navClass(page)" class="api-list-item">
+              <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+            </li>
+          </ul>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+          <ul class="nav nav-list well" ng-repeat="module in modules" class="api-list-item">
+            <li class="nav-header module">
+              <a class="guide">module</a>
+              <a class="code" href="{{module.url}}">{{module.name}}</a>
+            </li>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+            <li ng-repeat="page in module.others" ng-class="navClass(page)" class="api-list-item">
+              <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+            </li>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+            <li class="nav-header section" ng-show="module.directives">
+              <a class="guide">directive</a>
+            </li>
+            <li ng-repeat="page in module.directives" ng-class="navClass(page)" class="api-list-item">
+              <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+            </li>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+            <li class="nav-header section" ng-show="module.filters">
+              <a class="guide">filter</a>
+            </li>
+            <li ng-repeat="page in module.filters" ng-class="navClass(page)" class="api-list-item">
+              <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+            </li>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+            <li class="nav-header section" ng-show="module.services">
+              <a class="guide">service</a>
+            </li>
+            <li ng-repeat="service in module.services" ng-class="navClass(service.instance, service.provider)" class="api-list-item">
+              <a ng-show="service.provider" class="pull-right" href="{{service.provider.url}}" tabindex="2"><i class="icon-cog"></i></a>
+              <a href="{{service.instance.url}}" tabindex="2">{{service.name}}</a>
+            </li>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+            <li class="nav-header section" ng-show="module.types">
+              <a class="guide">Types</a>
+            </li>
+            <li ng-repeat="page in module.types" ng-class="navClass(page)" class="api-list-item">
+              <a href="{{page.url}}" tabindex="2">{{page.shortName}}</a>
+            </li>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+            <li class="nav-header section" ng-show="module.globals">
+              <a class="global guide">global APIs</a>
+              &nbsp;
+            </li>
+            <li ng-repeat="page in module.globals" ng-class="navClass(page)" class="api-list-item">
+              <a href="{{page.url}}" tabindex="2">{{page.id}}</a>
+            </li>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+          </ul>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+        </form>
+      </div>
+      <div class="span9">
+
+        <ul class="breadcrumb">
+          <li ng-repeat="crumb in breadcrumb">
+            <span ng-hide="crumb.url">{{crumb.name}}</span>
+            <a ng-show="crumb.url" href="{{crumb.url}}">{{crumb.name}}</a>
+            <span ng-show="crumb.url" class="divider">/</span>
+          </li>
+        </ul>
+
+        <div id="loading" ng-show="loading">Loading...</div>
+
+        <div ng-hide="loading" ng-include src="currentPage.partialUrl" onload="afterPartialLoaded()" autoscroll class="content" ng-animate="{enter: 'slide-reveal'}" ></div>
+
+      </div>
     </div>
+  </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Kawwa maintained by <a href="https://github.com/got5">got5</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+</body>
 </html>
