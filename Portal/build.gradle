@@ -8,11 +8,16 @@ sourceCompatibility = 1.6
 
 version = '2.0.5-SNAPSHOT'
 
-ext.drivers = ["firefox", "chrome"]
+//ext.drivers = ["firefox", "chrome"]
+ext.drivers = ["chrome",]
+
+configurations {
+    testCompile.transitive = true
+}
 
 dependencies {
- def gebVersion = "0.9.0-RC-3"
- def seleniumVersion = "2.30.0"
+ def gebVersion = "0.9.0"
+ def seleniumVersion = "2.26.0"
  
  compile group: 'net.atos.tapestry', name: 'tapestry5-kawwa-components', version: '2.0.5-SNAPSHOT'
  compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
@@ -35,6 +40,8 @@ dependencies {
  drivers.each { driver ->
      testCompile "org.seleniumhq.selenium:selenium-$driver-driver:$seleniumVersion"
  }
+
+ testRuntime "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
 }
 
 drivers.each { driver ->
@@ -45,15 +52,16 @@ drivers.each { driver ->
         systemProperty "geb.build.reportsDir", reporting.file("$name/geb")
         systemProperty "geb.env", driver
 
-        // If you wanted to set the baseUrl in your build…
+        // If you wanted to set the baseUrl in your buildï¿½
         // systemProperty "geb.build.baseUrl", "http://myapp.com"
     }
 }
 
-test {
+/*test {
 	dependsOn drivers.collect { tasks["${it}Test"] }
 	enabled = false
-}
+} */
+
 repositories {
 	mavenCentral()
 	mavenLocal()
