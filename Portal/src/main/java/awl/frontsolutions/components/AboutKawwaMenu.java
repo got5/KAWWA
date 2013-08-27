@@ -32,7 +32,8 @@ public class AboutKawwaMenu {
 		presentation.put("KawwaPortal", "The Kawwa Portal");
 		
 		if(atos.isAtosMember()) presentation.put("AboutKawwa", "The Kawwa2 Project");
-		
+        presentation.put("Releases", "Release Notes");
+
 		component.put("ComponentApproach", "The Kawwa Components");
 		component.put("HowTo", "How to work with components");
 		component.put("Accessibility", "Kawwa and accessibility");
