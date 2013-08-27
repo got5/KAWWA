@@ -21,7 +21,7 @@
 			<ul class="k-links-list">
 				<li><a t:type="pagelink" t:page="aboutkawwa">Discover <small>all about Kawwa</small></a></li>
 				<li class="compo-entry"><a t:type="pagelink" t:page="index" t:anchor="components-list">Explore <small>the components</small></a></li>
-				<li><a t:type="pagelink" t:page="templates">Try-out <small>with our templates</small></a></li>
+				<li><a t:type="pagelink" t:page="templates">Try-out <small>our templates</small></a></li>
 				<li><a t:type="pagelink" t:page="download">Download <small>only what you need</small></a></li>
 			</ul>
 		</div>
