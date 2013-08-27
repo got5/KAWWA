@@ -49,6 +49,10 @@
 					<t:checkbox t:id="tapestry" t:value="panier.includeTapestry" />
 					<label for="tapestry">Include Tapestry Snippets</label> 
 				</p>
+                <p class="k-check">
+                    <t:checkbox t:id="angular" t:value="panier.includeAngular" />
+                    <label for="angular">Include Angular Snippets</label>
+                </p>
 			</fieldset>
 			<fieldset id="group-followUp">
 				<legend>Follow-up</legend>

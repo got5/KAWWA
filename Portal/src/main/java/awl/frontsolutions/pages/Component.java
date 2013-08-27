@@ -249,7 +249,10 @@ public class Component {
 	public boolean getHasTapestryTag(){
 		return componentInfo.containsTag(ComponentConstants.TAG_TAPESTRY);
 	}
-	
+    public boolean getHasAngularTag(){
+        return componentInfo.containsTag(ComponentConstants.TAG_ANGULAR);
+    }
+
 	
 	private String getThemeCode(){
 		return messages.get(currentTheme.getThemeName().substring(ThemeStack.PREFIX.length())+"-theme-code");
@@ -354,5 +357,7 @@ public class Component {
 	public Asset getJQueryPath(){
 		return this.assetSource.getContextAsset(String.format("img/%s/tapestry-small.png", currentTheme.getDir()), null);
 	}
-	
+    public Asset getAngularPath(){
+        return this.assetSource.getContextAsset(String.format("img/%s/angular-small.png", currentTheme.getDir()), null);
+    }
 }

@@ -221,7 +221,8 @@ public class Download {
 							messages.get(panier.getTheme().substring(
 									ThemeStack.PREFIX.length())
 									+ "-asset-subdir"),
-							panier.isIncludeTapestry());
+							panier.isIncludeTapestry(),
+                            panier.isIncludeAngular());
 				}
 			}
 		}

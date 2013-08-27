@@ -18,6 +18,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import awl.frontsolutions.entities.*;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tapestry5.func.F;
@@ -31,11 +32,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.apache.tapestry5.services.javascript.StylesheetLink;
 import org.slf4j.Logger;
 
-import awl.frontsolutions.entities.ComponentContent;
-import awl.frontsolutions.entities.Documentation;
-import awl.frontsolutions.entities.HTML5Documentation;
-import awl.frontsolutions.entities.JSDependency;
-import awl.frontsolutions.entities.TapestryDocumentation;
 import awl.frontsolutions.internal.ComponentConstants;
 import awl.frontsolutions.services.ComponentUtils;
 import awl.frontsolutions.services.FileSystemIndexer;
@@ -283,6 +279,8 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 
 		readTapestryDirectory(retour, basedir);
 
+        readAngularDirectory(retour, basedir);
+
 		readDocumentationDirectory(basedir, retour);
 
 		return retour;
@@ -440,6 +438,54 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 		}
 	}
 
+    private void readAngularDirectory(ComponentContent retour, String basedir) {
+        File AngularDirectory = new File(basedir
+                + ComponentConstants.ANGULAR_FOLDER + File.separator);
+
+        Map<String, AngularDocumentation> docs = new HashMap<String, AngularDocumentation>();
+
+        if (AngularDirectory.exists()) {
+            for (File subDir : AngularDirectory.listFiles()) {
+                if (subDir.isDirectory() && !subDir.getName().startsWith(".")) {
+
+                    AngularDocumentation doc = new AngularDocumentation(
+                            subDir.getName());
+                    Object[] js = readFile(subDir + File.separator
+                            + ComponentConstants.SNIPPET_HTML);
+
+                    if (js != null) {
+                        doc.setHtml((String) js[0]);
+                        doc.setEscapedHtml((List<String>) js[1]);
+                    }
+
+                    js = readFile(subDir + File.separator
+                            + ComponentConstants.SNIPPET_JS);
+                    if (js != null) {
+                        doc.setJs((String) js[0]);
+                        doc.setEscapedJs((List<String>) js[1]);
+                    }
+
+                    js = readFile(subDir + File.separator
+                            + ComponentConstants.FOREWORDS);
+                    if (js != null)
+                        doc.setForewords((String) js[0]);
+
+                    js = readFile(subDir + File.separator
+                            + ComponentConstants.READMORE_TML);
+                    if (js != null)
+                        doc.setReadmeTemplate((String) js[0]);
+
+                    js = readFile(subDir + File.separator
+                            + ComponentConstants.READMORE_JS);
+                    if (js != null)
+                        doc.setReadmeJs((String) js[0]);
+
+                    docs.put(subDir.getName(), doc);
+                }
+            }
+        }
+        retour.setAngular(docs);
+    }
 	/**
 	 * Method used to read all the Tapestry documentation for a Component
 	 * 

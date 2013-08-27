@@ -11,6 +11,8 @@ public class ComponentContent {
 
 	private Map<String, TapestryDocumentation> Tapestry;
 
+    private Map<String, AngularDocumentation> Angular;
+
 	private HTML5Documentation html5;
 
 	private XHTMLDocumentation xhtml;
@@ -37,9 +39,17 @@ public class ComponentContent {
 		return Tapestry;
 	}
 
-	public void setTapestry(Map<String, TapestryDocumentation> tapestry) {
-		Tapestry = tapestry;
+	public void setAngular(Map<String, AngularDocumentation> angular) {
+		Angular = angular;
 	}
+
+    public Map<String, AngularDocumentation> getAngular() {
+        return Angular;
+    }
+
+    public void setTapestry(Map<String, TapestryDocumentation> tapestry) {
+        Tapestry = tapestry;
+    }
 
 	public HTML5Documentation getHtml5() {
 		return this.html5;

@@ -10,6 +10,10 @@ public class Panier {
 	private List<String> listeComponent = new ArrayList<String>();
 
 	private boolean includeTapestry;
+
+
+
+    private boolean includeAngular;
 	
 	private boolean includeTemplate;
 	
@@ -62,4 +66,12 @@ public class Panier {
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}
+
+    public boolean isIncludeAngular() {
+        return includeAngular;
+    }
+
+    public void setIncludeAngular(boolean includeAngular) {
+        this.includeAngular = includeAngular;
+    }
 }

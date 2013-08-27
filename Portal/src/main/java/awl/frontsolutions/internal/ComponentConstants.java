@@ -15,6 +15,7 @@ public class ComponentConstants {
     public static final String TAG_JQUERY = "jquery";
     public static final String TAG_HTML5 = "html5";
     public static final String TAG_TAPESTRY = "tapestry";
+    public static final String TAG_ANGULAR = "angular";
     
 	public static final String DEPENDENCIES_DIR = "dependencies";
 	public static final String RESOURCES_DIR = "resources";
@@ -52,6 +53,7 @@ public class ComponentConstants {
 	
 	public static final String THEME_IMG_DIR = "[[THEME_IMG]]";
 	public static final String TAPESTRY_FOLDER = "tapestry";
+    public static final String ANGULAR_FOLDER = "angular";
 	public static final String HTML5_FOLDER = "html5";
 	public static final String XHTML_FOLDER = "xhtml";
 }

@@ -38,6 +38,8 @@ public class ListComponents {
 
 	private String tapestryIconUrl;
 
+    private String angularIconUrl;
+
 	@SessionState
 	private ChoosenTheme theme;
 
@@ -53,6 +55,9 @@ public class ListComponents {
 				String.format("img/%s/tapestry-small.png", theme.getDir()),
 				null).toClientURL();
 
+        angularIconUrl = assetSource.getContextAsset(
+                String.format("img/%s/angular-small.png", theme.getDir()),
+                null).toClientURL();
 		linkToResources = new HashMap<String, String>();
 
 		writer.element("section", "id", "components-list", "class", "transitions-enabled");
@@ -209,6 +214,12 @@ public class ListComponents {
 							"Tapestry", "title", "Tapestry Integration");
 					writer.end();
 				}
+                if (fileStructure.containsTag(ComponentConstants.TAG_ANGULAR)) {
+                    writer.write(" ");
+                    writer.element("img", "src", angularIconUrl, "alt",
+                            "Angular", "title", "ANGULARIntegration");
+                    writer.end();
+                }
 				writer.end();
 				writer.end();
 			}

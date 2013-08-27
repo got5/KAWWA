@@ -95,7 +95,7 @@ public class ListeBasket {
 							false,
 							panier.getTheme(),
 							messages.get(currentTheme.getThemeName().substring(ThemeStack.PREFIX
-									.length()) + "-asset-subdir"), panier.isIncludeTapestry());
+									.length()) + "-asset-subdir"), panier.isIncludeTapestry(), panier.isIncludeAngular());
 				}
 			}
 		}

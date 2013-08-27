@@ -32,7 +32,7 @@ import org.got5.tapestry5.jquery.services.javascript.FormSupportStack;
 import org.slf4j.Logger;
 
 import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
-import awl.frontsolutions.services.atos.AtosModule;
+//import awl.frontsolutions.services.atos.AtosModule;
 import awl.frontsolutions.services.impl.AtosServiceDefaultImpl;
 import awl.frontsolutions.services.impl.AuthentificationDefaultImpl;
 import awl.frontsolutions.services.impl.ComponentUtilsImpl;
@@ -48,7 +48,7 @@ import awl.frontsolutions.services.stack.Theme1Stack;
 import awl.frontsolutions.services.stack.ThemeStack;
 import awl.frontsolutions.services.stack.ThemeSwitcherStack;
 
-@SubModule(AtosModule.class)
+//@SubModule(AtosModule.class)
 public class AppModule {
 
 	@Startup

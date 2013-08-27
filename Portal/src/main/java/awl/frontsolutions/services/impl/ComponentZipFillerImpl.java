@@ -67,7 +67,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 	 */
 	public void fillWithComponent(ZipOutputStream zos, String urlTag,
 			DownloadDocType dlType, boolean dlExamples, String themeName,
-			String themeDir, boolean tapestry) throws IOException {
+			String themeDir, boolean tapestry, boolean angular) throws IOException {
 
 		TreeNode componentInfo = fileSystemIndexer.getLinkToComponent().get(
 				urlTag);
@@ -128,6 +128,11 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 			parcourirFolder(zos, new File(componentInfo.getPath()
 					+ "/tapestry/"), path + "tapestry/");
 		}
+
+        if(angular) {
+            parcourirFolder(zos, new File(componentInfo.getPath()
+                    + "/angular/"), path + "angular/");
+        }
 	}
 
 	/* (non-Javadoc)

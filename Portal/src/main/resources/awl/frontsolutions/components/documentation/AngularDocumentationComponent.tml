@@ -1,0 +1,24 @@
+<t:container xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+    <div class="content" id="angular">
+    	<t:loop t:source="AngularDirectory" t:value="directory" t:index="directoryIndex">
+    		<h4>${directoryName}</h4>
+    		<t:if test="showFile(forewordsAngular, true)">
+              <div class="k-notes">
+                  <t:outputraw value="forewordsAngular" />
+              </div>
+          	</t:if>
+     		<t:if test="showFile(snippetAngularHtml)">
+            	<t:showSource t:type="${directoryWithouNumber}_html" t:title="The Template" t:escapedCode="escapedSnippetAngularHtml" t:readMore="readMoreAngularHtml" />
+            </t:if>
+            <t:if test="showFile(snippetAngularJS)">
+            	<t:showSource t:type="${directoryWithouNumber}_js" t:title="The JavaScript" t:escapedCode="escapedSnippetAngularJS" t:readMore="readMoreAngularJs" />
+            </t:if>
+            <t:if t:test="lastDirectory">
+            	<hr />
+            </t:if>
+        </t:loop>   
+    </div>
+</t:container>	

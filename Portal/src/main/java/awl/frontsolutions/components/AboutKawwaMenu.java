@@ -38,6 +38,7 @@ public class AboutKawwaMenu {
 		component.put("Accessibility", "Kawwa and accessibility");
 		
 		guidelines.put("Tapestry", "Tapestry Integration");
+        guidelines.put("Angular", "Angular Integration");
 		guidelines.put("IeFix", "Support for Internet Explorer");
 		guidelines.put("UnobtrusiveApproach", "Unobtrusive JavaScript Approch");
 		

@@ -29,6 +29,11 @@
 		                 		<img alt="Tapestry" src="${tapestryPath}" /> Tapestry Integration
 		                 	</li>
 		                 </t:if>
+                        <t:if test="hasAngularTag">
+                            <li>
+                                <img alt="Angular" src="${angularPath}" /> Angular Integration
+                            </li>
+                        </t:if>
 					</ul>
 
 		            <p id="toBasket" class="buy">
@@ -116,6 +121,11 @@
                             <a href="#tapestry">Tapestry Integration</a>
                         </li>
                     </t:if>
+                    <t:if test="hasAngularTag">
+                        <li>
+                            <a href="#angular">Angular Integration</a>
+                        </li>
+                    </t:if>
                 </ul>
                 <t:if test="hasHtml5Tag">
                     <div class="content" id="html5">
@@ -160,6 +170,9 @@
                 <t:if test="hasTapestryTag">
                 	<t:documentation.TapestryDocumentationComponent t:tapestry="componentInfo.content.tapestry" t:urlParam="componentInfo.urlParam"/>
                 </t:if>
+            <t:if test="hasAngularTag">
+                <t:documentation.AngularDocumentationComponent t:angular="componentInfo.content.angular" t:urlParam="componentInfo.urlParam"/>
+            </t:if>
             </div>
     </t:block>
     
