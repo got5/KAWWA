@@ -1,4 +1,4 @@
-﻿// Le Studio, Atos Worldline, 2011
+// Le Studio, Atos Worldline, 2011
 // Groups all functions to be loaded on page loading
 // Version 1.2 - 02/2013
 
@@ -245,7 +245,9 @@ function supports_input_placeholder() {
 	
 	
 // MODAL WINDOW ----------------------------------
-	opensModal();
+	if(jQuery.ui && jQuery.ui.dialog) {
+		opensModal();
+	}
 	
  	
  // PRINT -------------------------------

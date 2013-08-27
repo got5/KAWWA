@@ -245,7 +245,9 @@ function supports_input_placeholder() {
 	
 	
 // MODAL WINDOW ----------------------------------
-	opensModal();
+	if(jQuery.ui && jQuery.ui.dialog) {
+		opensModal();
+	}
 	
  	
  // PRINT -------------------------------
