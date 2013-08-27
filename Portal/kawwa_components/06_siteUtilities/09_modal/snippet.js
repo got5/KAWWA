@@ -29,5 +29,7 @@ function opensModal() {
 
 /* Call */
 $(document).ready(function(){
-	opensModal();
+	if(jQuery.ui && jQuery.ui.dialog) {
+		opensModal();
+	}
 });
