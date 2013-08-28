@@ -1,3 +1,4 @@
+	
 /* Based on FlexNav.js 0.3.2
  * Copyright 2013, Jason Weaver http://jasonweaver.name
  * Released under the WTFPL license
@@ -67,6 +68,7 @@
 
 		// Toggle for nav menu
 		$this.siblings('p.control').children('a').click(function(event) {
+			event.preventDefault();
 			$this.slideToggle(settings.animationSpeed);
 		});
 
