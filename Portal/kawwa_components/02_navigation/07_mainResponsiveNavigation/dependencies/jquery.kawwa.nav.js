@@ -8,6 +8,11 @@
  *	Modified variables / 
  *	Replaced resize method for jQuery version 1.7
  * 
+ * Modified for Kawwa - May 2013
+ * Added fix to correctly positions dropdown if parent's 
+ * too close to right edge
+ * Added missing prevent.default
+ * 
  * 'breakpoint' is the breakpoint width defined by the @media
  */
 
@@ -61,13 +66,23 @@
 		});
 
 		// Toggle for nav menu
-		$this.siblings('p.control').children('a').click(function() {
+		$this.siblings('p.control').children('a').click(function(event) {
+			event.preventDefault();
 			$this.slideToggle(settings.animationSpeed);
 		});
 
 		// Toggle click for sub-menus on touch and or small screens
-		$this.children('.dropdown').click(function(event) {
+		$this.children('.dropdown').click(function(event) {			
 			event.preventDefault();
+			//Check dropdown position and fix it
+			var zDiff = $(window).width() - $(this).offset().left;
+			var zDDWidth = $(this).children('ul').css('width').replace('px', '');
+			
+			if(zDDWidth > zDiff) {
+				$(this).children('ul').css('right', 0);
+			}
+			
+			// Toggles dropdown
 			$(this).find('ul').slideToggle(settings.animationSpeed, function(){
 				var isExpanded = $(this).css("display") === "block";
 				$(this).attr('aria-expanded', isExpanded);
