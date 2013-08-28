@@ -30,7 +30,9 @@ function opensModal() {
 
 /* Call */
 jQuery(document).ready(function(){
-	opensModal();
+	if(jQuery.ui && jQuery.ui.dialog) {
+		opensModal();
+	}
 });
 ]]></content>
   <tabTrigger>modal</tabTrigger>
