@@ -2461,6 +2461,17 @@ angular.module('kawwa2').directive('fieldComment', function () {
 });
 ;
 'use strict';
+angular.module('kawwa2').directive('kawwaHeader', function () {
+  console.log('test');
+  return {
+    template: '<head ng-transclude>\n    <meta charset="utf-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\n    <title></title>\n    <meta name="viewport" content="width=device-width">\n    <link type="text/css" rel="stylesheet" href="theme/css/k-theme0.css"/>\n</head>',
+    transclude: true,
+    replace: true,
+    restrict: 'A'
+  };
+});
+;
+'use strict';
 angular.module('kawwa2').run([
   '$templateCache',
   function ($templateCache) {

@@ -131,6 +131,7 @@ task copyThemesForTapestry << {
 	}
 }
 
+
 task zipComp(type: Zip) {
     from('/kawwa_components')
     baseName = 'Component'
@@ -143,15 +144,15 @@ task zipComp(type: Zip) {
 copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs")
 copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
 
-
-//processResources.dependsOn("copyTapestryDocs")
+/*
+processResources.dependsOn("copyTapestryDocs")
 //processResources.dependsOn("copyAngularDocs")
-//processResources.dependsOn("generateSublimeTextSnippets")
-//processResources.dependsOn("copyThemesForAngular")
-//processResources.dependsOn("copyThemesForTapestry")
-//processResources.dependsOn("zipComp")
+processResources.dependsOn("generateSublimeTextSnippets")
+processResources.dependsOn("copyThemesForAngular")
+processResources.dependsOn("copyThemesForTapestry")
+processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
-
+*/
 task wrapper(type: Wrapper) {
     gradleVersion = '1.7'
 }

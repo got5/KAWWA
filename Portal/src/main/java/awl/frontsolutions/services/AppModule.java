@@ -1,9 +1,10 @@
 package awl.frontsolutions.services;
 
-import java.io.IOException;
-
+import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
+import awl.frontsolutions.services.atos.AtosModule;
+import awl.frontsolutions.services.impl.*;
+import awl.frontsolutions.services.stack.*;
 import net.atos.kawwaportal.components.KawwaConstants;
-
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
@@ -12,43 +13,21 @@ import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
-import org.apache.tapestry5.ioc.annotations.Contribute;
-import org.apache.tapestry5.ioc.annotations.Local;
-import org.apache.tapestry5.ioc.annotations.Startup;
-import org.apache.tapestry5.ioc.annotations.SubModule;
-import org.apache.tapestry5.ioc.annotations.Symbol;
+import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
-import org.apache.tapestry5.services.ComponentSource;
-import org.apache.tapestry5.services.Environment;
-import org.apache.tapestry5.services.MarkupRenderer;
-import org.apache.tapestry5.services.MarkupRendererFilter;
-import org.apache.tapestry5.services.RequestExceptionHandler;
-import org.apache.tapestry5.services.ResponseRenderer;
+import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.got5.tapestry5.jquery.services.javascript.FormSupportStack;
 import org.slf4j.Logger;
 
-import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
-//import awl.frontsolutions.services.atos.AtosModule;
-import awl.frontsolutions.services.impl.AtosServiceDefaultImpl;
-import awl.frontsolutions.services.impl.AuthentificationDefaultImpl;
-import awl.frontsolutions.services.impl.ComponentUtilsImpl;
-import awl.frontsolutions.services.impl.ComponentZipFillerImpl;
-import awl.frontsolutions.services.impl.DASSecurityManagerImpl;
-import awl.frontsolutions.services.impl.DefaultMailServiceImpl;
-import awl.frontsolutions.services.impl.FileSystemIndexerImpl;
-import awl.frontsolutions.services.impl.TopComponentImpl;
-import awl.frontsolutions.services.stack.OverrideFormSupportStack;
-import awl.frontsolutions.services.stack.OverridePrototypeStack;
-import awl.frontsolutions.services.stack.Theme0Stack;
-import awl.frontsolutions.services.stack.Theme1Stack;
-import awl.frontsolutions.services.stack.ThemeStack;
-import awl.frontsolutions.services.stack.ThemeSwitcherStack;
+import java.io.IOException;
 
-//@SubModule(AtosModule.class)
+//import awl.frontsolutions.services.atos.AtosModule;
+
+@SubModule(AtosModule.class)
 public class AppModule {
 
 	@Startup
