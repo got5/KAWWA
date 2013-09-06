@@ -13,29 +13,14 @@
  * @element ANY
  *
  * @example
- <doc:example module="app">
+ <doc:example module="moduleApp">
  <doc:source>
  <script>
- var module = angular.module('app',['kawwa2']);
- module.controller('myCtrl',function($scope){
 
-                $scope.raty = 2;
-
-  });
+ include "../controllers/raty.js"
 
  </script>
-
- <fieldset class="k-rating">
- <legend>Rate this article: {{raty}}</legend>
- <p data-raty data-rating-options="{'value': 'test'}" ng-model="raty">
- <input name="star1" type="radio" value="1"/>
- <input name="star1" type="radio" value="2"/>
- <input name="star1" type="radio" value="3"/>
- <input name="star1" type="radio" value="4"/>
- <input name="star1" type="radio" value="5"/>
- </p>
- </fieldset>
-
+ include "../../views/raty.html"
 
  </doc:source>
 

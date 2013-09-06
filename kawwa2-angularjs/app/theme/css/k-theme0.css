@@ -27,7 +27,6 @@
 		FORM BUTTONS
 		DATEPICKER 
 		FORM WIZARD
-		ACTIONS DROPDOWN
 	NAVIGATION 
 		MAIN NAV/FIRST LEVEL
 		VERTICAL MENU
@@ -1234,71 +1233,6 @@ ul.k-form-steps {
 
 
 /* CE/ formWizard */
-
-/* ------------------------------------------------------ ACTIONS DROPDOWN */
-/* CB/ actionsDd */
-
-/* Width of k-actions-dropdown must be locally defined */
-.k-actions-dropdown {position: relative; width: 10em;}
-	
-	
-	.k-actions-dropdown button {
-		position: relative;
-		color: #FFF;
-		background: #000;
-		padding-right: 25px;
-		border: none;
-		cursor: pointer;
-	}
-	.k-actions-dropdown button:after {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 20px;
-		content: "\25BC";
-		color: #FFF;
-		background: #000;
-		z-index: 50;
-	}
-		
-	.k-actions-dropdown div.content {
-		position: absolute;
-		top: 1.5em;
-		left: 0;
-		width: 100%;
-		color: #000;
-		background: #FFF;
-		padding: 0;
-		border: 1px solid #000;
-		z-index: 50;
-	}
-
-	.k-actions-dropdown li { }
-	.k-actions-dropdown p {
-		color: #FFF;
-		background: #808080;
-		padding: 0.2em 0 0.2em 0.8em;
-	}
-	
-	.k-actions-dropdown ul {padding: 0;}
-		
-	.k-actions-dropdown li {
-		list-style-type: none;
-		margin: 0.2em 0;
-		border-bottom: 1px dashed #000;
-	}
-
-	.k-actions-dropdown a, .k-actions-dropdown a:link, .k-actions-dropdown a:visited {
-		display: block;
-		text-decoration: none;
-		padding: 0.2em 0 0.2em 0.8em;
-	}
-	.k-actions-dropdown a:hover, .k-actions-dropdown a:focus {
-		background: #DFEFF6;
-	}
-		
-
-/* CE/ actionsDd */
 
 
 /* --------------------------------------------------------------------------- */

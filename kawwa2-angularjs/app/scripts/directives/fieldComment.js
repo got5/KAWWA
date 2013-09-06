@@ -11,20 +11,14 @@
  * @param {String} title The content of the tooltip
  *
  * @example
- <doc:example module="app">
+ <doc:example module="moduleApp">
  <doc:source>
  <script>
- var module = angular.module('app',['kawwa2']);
- module.controller('myCtrl',function($scope){
 
-              });
+ include "../controllers/fieldComment.js"
+
  </script>
-
- <p><label for="field1">Enter something:</label>
- <input class="k-field-comment" type="text" id="field1" name="field1" data-field-comment="{'gravity': 'w'}"
- title="A short comment about this field" />
- </p>
-
+ include "../../views/fieldComment.html"
 
  </doc:source>
 

@@ -1,0 +1,1 @@
+angular.module('moduleApp', ['kawwa2']);

@@ -18,17 +18,14 @@ function incrementTest() {
  *
  *
  * @example
- <doc:example module="app">
+ <doc:example module="moduleApp">
  <doc:source>
  <script>
- var module = angular.module('app',['kawwa2']);
- module.controller('myCtrl',function($scope){
 
- });
+ include "../controllers/fieldComment.js"
+
  </script>
-    <p class="k-quantity">
-        <input type="number" value="1" title="Define quantity to add to basket" data-product-quantity="{}"/>
-    </p>
+ include "../../views/productQuantity.html"
 
  </doc:source>
 

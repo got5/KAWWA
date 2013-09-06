@@ -1,0 +1,14 @@
+<div class="k-product-gallery photo-data">
+    <p>
+        <a class="jqzoom" rel="{{title}}" href="{{gallery[0].hd}}" title="{{gallery[0].title}}">
+            <img class="photo" ng-src="{{gallery[0].small}}" alt="{{gallery[0].title}}"/>
+        </a>
+    </p>
+    <ul class="thumblist">
+        <li ng-repeat="image in gallery" ng-class="{zoomThumbActive : $index==0}">
+            <a  href="#" rel="{gallery: '{{title}}', smallimage:'{{image.small}}',largeimage:'{{image.hd}}'}">
+                <img ng-src="{{image.thumb}}" alt="{{image.title}}"/></a></li>
+    </ul>
+</div>
+
+
