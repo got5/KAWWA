@@ -20,7 +20,7 @@
 			<p>Yeah.. Something went very wrong! But don't worry, you can find your way again in one of this sections:</p>
 			<ul class="k-links-list">
 				<li><a t:type="pagelink" t:page="aboutkawwa">Discover <small>all about Kawwa</small></a></li>
-				<li class="compo-entry"><a t:type="pagelink" t:page="index" t:anchor="components-list">Explore <small>the components</small></a></li>
+				<li><a t:type="pagelink" t:page="index" t:anchor="components-list">Explore <small>the components</small></a></li>
 				<li><a t:type="pagelink" t:page="templates">Try-out <small>our templates</small></a></li>
 				<li><a t:type="pagelink" t:page="download">Download <small>only what you need</small></a></li>
 			</ul>

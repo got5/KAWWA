@@ -67,7 +67,6 @@
 
 		// Toggle for nav menu
 		$this.siblings('p.control').children('a').click(function(event) {
-			event.preventDefault();
 			$this.slideToggle(settings.animationSpeed);
 		});
 
