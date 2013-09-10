@@ -2,6 +2,8 @@
         		KAWWA2 - Theme 0
       	  Hacks for Internet Explorer (< v9)
           By Le Studio, Atos Worldline, 2013
+          
+          Last update: 09/2013
 -------------------------------------------------------------------- */
 
 /*  "*" is for IE6 and 7 */
@@ -127,6 +129,16 @@ ul.k-form-steps li {
 	*width: auto;
 }
 ul.k-form-steps li.active {background-position: 0 0.4em;}
+
+
+/* Actions dropdown */
+.k-actions-dropdown button {
+	background: #000 url(../img/k-theme0/unfold-trans.png) right 10px no-repeat;
+	padding: 3px 35px 3px 8px;
+	*padding: 3px 25px 3px 0;
+}
+.k-actions-dropdown button:after {border: none;}
+
 
 /* --- BLOCKS --- */
 
