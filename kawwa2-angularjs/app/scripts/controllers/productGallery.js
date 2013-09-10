@@ -3,6 +3,7 @@
 angular.module('moduleApp')
   .controller('ProductGalleryCtrl', function ($scope) {
         var baseImagePath = '/'
+
         $scope.gallery = [
             {
                 title: "first image",

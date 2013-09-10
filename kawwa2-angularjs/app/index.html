@@ -17,7 +17,9 @@
     <!-- Place favicon.ico  root directory -->
 
 
-    <link type="text/css" rel="stylesheet" href="theme/css/k-theme0.css"/>
+    <link type="text/css" rel="stylesheet" href="components/kawwa/css/k-structure.css"/>
+    <link type="text/css" rel="stylesheet" href="components/kawwa/css/k-theme0.css"/>
+    <link type="text/css" rel="stylesheet" href="css/demo.css"/>
 
     <!-- endbuild -->
 </head>
@@ -30,8 +32,8 @@
 <![endif]-->
 
 <!--[if lt IE 9]>
-<script src="bower_components/es5-shim/es5-shim.js"></script>
-<script src="bower_components/json3/lib/json3.min.js"></script>
+<script src="components/es5-shim/es5-shim.js"></script>
+<script src="components/json3/lib/json3.min.js"></script>
 <![endif]-->
 
 <div class="container">
@@ -49,13 +51,6 @@
         <h2 class="k-skip">
             <a shape="rect" href="#wrapper">Skip this menu</a>
         </h2>
-        <ul class="i-navbar">
-            <li class="home active" role="presentation">
-                <strong title="Current Section">Home</strong>
-
-            </li>
-
-        </ul>
 
     </nav>
     <hr>
@@ -64,11 +59,20 @@
 
     <div class="kawwa2-directives">
         <form action="">
-            <div ui-view="productQuantity"></div>
-            <div ui-view="raty"></div>
-            <div ui-view="fieldComment"></div>
-            <div ui-view="productOptions"></div>
-            <div ui-view="productGallery"></div>
+
+            <section class="demo" ui-view="productQuantity"></section>
+
+            <section class="demo" ui-view="raty"></section>
+
+            <section class="demo" ui-view="rating"></section>
+
+            <section class="demo" ui-view="fieldComment"></section>
+
+            <section class="demo" ui-view="productOptions"></section>
+
+            <section class="demo" ui-view="productGallery"></section>
+
+            <section class="demo" ui-view="productCatalog"></section>
         </form>
 
 
@@ -98,26 +102,33 @@
 <!-- build:js scripts/modules.js -->
 <script src="components/angular-resource/angular-resource.js"></script>
 <script src="components/angular-ui-router/release/angular-ui-router.js"></script>
-<!--<script src="components/angular-route/angular-route.js"></script>-->
 <script src="components/angular-cookies/angular-cookies.js"></script>
 <script src="components/angular-sanitize/angular-sanitize.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/kawwa.js"></script>
 
-<script src="scripts/controllers/productQuantity.js"></script>
+<script src="scripts/kawwa.js"></script>
 <script src="scripts/directives/productQuantity.js"></script>
 <script src="scripts/directives/productOptions.js"></script>
 <script src="scripts/directives/fieldComment.js"></script>
 <script src="scripts/directives/raty.js"></script>
 <script src="scripts/directives/productGallery.js"></script>
+<script src="scripts/directives/productCatalog.js"></script>
+
 <script src="scripts/controllers/productGallery.js"></script>
 <script src="scripts/controllers/fieldComment.js"></script>
 <script src="scripts/controllers/raty.js"></script>
+<script src="scripts/controllers/productQuantity.js"></script>
 <script src="scripts/controllers/productOptions.js"></script>
+<script src="scripts/directives/rating.js"></script>
+<script src="scripts/controllers/rating.js"></script>
+<script src="scripts/controllers/productCatalog.js"></script>
 <!-- endbuild -->
+
+
 
 </body>
 </html>
+

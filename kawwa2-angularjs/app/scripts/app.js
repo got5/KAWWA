@@ -26,10 +26,19 @@ angular.module('moduleApp', ['kawwa2','ui.router'])
                     templateUrl:"views/raty.html",
                     controller:"RatyCtrl"
                 },
+                "rating":{
+                    templateUrl:"views/rating.html",
+                    controller:"RatingCtrl"
+                },
                 "productOptions":{
                     templateUrl:"views/productOptions.html",
                     controller:"ProductOptionsCtrl"
+                },
+                "productCatalog":{
+                    templateUrl:"views/productCatalog.html",
+                    controller:"ProductCatalogCtrl"
                 }
+
             }
         });
 

@@ -112,7 +112,7 @@ module.exports = function (grunt) {
             only: {
                 src: [ '<%= yeoman.app %>/scripts/kawwa.js',
                     '<%= yeoman.app %>/scripts/temp/scripts/templates.js',
-                    '<%= yeoman.app %>/scripts/temp/scripts/directives/*.js'],
+                    '<%= yeoman.app %>/scripts/directives/*.js'],
                 dest: '<%= yeoman.dist %>/kawwa-directives-only.js'
             },
             full: {
@@ -121,7 +121,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.core.js',
                     '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.widget.js',
                     '<%= yeoman.app %>/plugins/*.js',
-                    '<%= yeoman.app %>/scripts/ctemp/scripts/directives/*.js'],
+                    '<%= yeoman.app %>/scripts/directives/*.js'],
                 dest: '<%= yeoman.dist %>/kawwa-directives-full.js'
             }
 
@@ -142,7 +142,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         dot: true,
-                        cwd: '<%= yeoman.app %>/scripts/temp/scripts/',
+                        cwd: '<%= yeoman.app %>/scripts/',
                         dest: '<%= yeoman.dist %>',
                         src: [
                             'directives/**/*'
@@ -215,7 +215,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         dot: true,
-                        cwd: '<%= yeoman.app %>/theme/img',
+                        cwd: '<%= yeoman.app %>/components/kawwa/img',
 
                         dest: '<%= yeoman.doc %>/img',
                         src: [
@@ -272,11 +272,13 @@ module.exports = function (grunt) {
                 scripts: ['<%= yeoman.app %>/components/jquery/jquery.min.js',
                     '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.core.js',
                     '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.widget.js',
-                    'angular.js',
+                    'util/angular.min.js',
                     'util/moduleApp.js',
                     '<%= yeoman.dist %>/kawwa-directives-full.js'
                 ],
-                styles: ['<%= yeoman.app %>/theme/css/k-theme0.css',
+                styles: [
+                    '<%= yeoman.app %>/components/kawwa/css/k-structure.css',
+                    '<%= yeoman.app %>/components/kawwa/css/k-theme0.css',
                     'util/reset.css',
                     'util/kawwa-bootstrap-fix.min.css'
                 ],
@@ -284,7 +286,7 @@ module.exports = function (grunt) {
                 html5Mode: true
             },
             api: {
-                src: ['app/scripts/directives/*.js'],
+                src: ['app/scripts/temp/scripts/directives/*.js'],
                 title: 'API Documentation'
             }
         },
@@ -364,8 +366,8 @@ module.exports = function (grunt) {
         'ngmin',
         'uglify',
         //'rev',
-        'copy:declaremodule',
-        'clean:ngdocexample'
+        'copy:declaremodule'
+
     ]);
 
     grunt.registerTask('doc-build', [
@@ -374,7 +376,8 @@ module.exports = function (grunt) {
         'ngdocs',
         'copy:imageDoc',
         'copy:imageThemeDoc',
-        'replace:doc'
+        'replace:doc',
+        //'clean:ngdocexample'
     ]);
 
     grunt.registerTask('doc', [

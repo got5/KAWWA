@@ -34,20 +34,27 @@
 
 
 angular.module('kawwa2')
-.directive('productOptions', function ($templateCache) {
+.directive('productOptions', function ($templateCache,$timeout) {
 	return {
 		restrict: 'A',
         templateUrl: 'tpl/productOptions.html',
         replace:true,
         scope:{
            name:'@',
-           products:'='
+           products:'=',
+           selected:'='
         },
 		link:function (scope, element, attrs) {
 			
 			var json = jQuery.extend({}, scope.$eval(attrs.productOptions))
-			
-			jQuery(element).buttonset(json);
+           $timeout(function(){
+               $(element).buttonset();
+           },10)
+
+
+
+
+
 		}
 	};
 });

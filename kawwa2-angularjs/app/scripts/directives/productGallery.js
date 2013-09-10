@@ -15,7 +15,7 @@
  *   - small: the path to the small image
  *   - hd: the path to the big image
  *
- * @param {Object} targets a variable from the scope of the controller. It allows you to overload the jqzoom jQuery plugin.
+ * @param {Object} options a variable from the scope of the controller. It allows you to overload the jqzoom jQuery plugin.
  * @element ANY
  *
  * @example

@@ -1,10 +1,6 @@
 'use strict';
 
-function incrementTest() {
-	var i = document.createElement('input');
-	i.setAttribute('type', 'number');
-	return i.type === 'text';
-}
+
 
 /**
  * @ngdoc directive
@@ -31,6 +27,12 @@ function incrementTest() {
 
  </doc:example>
  */
+
+function incrementTest() {
+    var i = document.createElement('input');
+    i.setAttribute('type', 'number');
+    return i.type === 'text';
+}
 
 angular.module('kawwa2')
 .directive('productQuantity', function () {
