@@ -1,0 +1,6 @@
+<p>
+    <input  data-ng-repeat-start="product in products" data-ng-model="selected" type="radio" id="{{product.name}}" name="{{name}}" checked="{checked:$index === 0}"/>
+    <label data-ng-repeat-end for="{{product.name}}"><img data-ng-src="{{product.img}}" alt="{{product.alt}}"/></label>
+</p>
+       
+

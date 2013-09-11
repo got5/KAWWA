@@ -1,0 +1,35 @@
+<article class="k-product hproduct">
+    <div class="photo-data">
+        <p>
+            <a href="#">
+                <img class="photo" ng-src="{{options.urlImage}}/{{product.id}}.jpg" />
+            </a>
+        </p>
+    </div>
+
+    <p class="extra new" ng-if="product.isNew">{{options.newText}}</p>
+
+    <h3 class="fn name">
+        <a ng-href="{{options.urlProduct}}/{{product.id}}" title="See Product sheet">{{product.name}}</a>
+    </h3>
+
+    <p data-rating="options.rating(product)">
+				<span ng-show="product.comments">
+					<a ng-href="{{options.urlComment}}/{{product.id}}">{{product.length}} {{options.commentText}}</a>
+				</span>
+				<span ng-hide="product.comments">
+					{{options.noCommentText}}
+				</span>
+    </p>
+
+    <div class="price-data">
+        <p class="all-prices">
+            <strong class="price new">{{product.price | currency:options.currency}}</strong>
+        </p>
+    </div>
+    <div class="buyZone">
+        <p class="buy">
+            <a ng-click="options.add(product)">{{options.basketText}}</a>
+        </p>
+    </div>
+</article>

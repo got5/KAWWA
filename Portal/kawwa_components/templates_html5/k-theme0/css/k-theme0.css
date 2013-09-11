@@ -4,7 +4,7 @@
           By Le Studio, Atos Worldline, 2012
           
 				Version 1.0 (09/2012)
-				   Updated 02/2013
+				   Updated 09/2013
 -------------------------------------------------------------------- */
 
 
@@ -27,6 +27,7 @@
 		FORM BUTTONS
 		DATEPICKER 
 		FORM WIZARD
+		ACTIONS DROPDOWN
 	NAVIGATION 
 		MAIN NAV/FIRST LEVEL
 		VERTICAL MENU
@@ -1233,6 +1234,80 @@ ul.k-form-steps {
 
 
 /* CE/ formWizard */
+
+
+/* ------------------------------------------------------ ACTIONS DROPDOWN */
+/* CB/ actionsDd */
+
+.k-actions-dropdown {position: relative; width: 10em;}
+	
+	.k-actions-dropdown button {
+		position: relative;
+		font: 100% PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		color: #FFF;
+		background: #000;
+		padding: 4px 25px 4px 8px;
+		border: none;
+		cursor: pointer;
+	}
+	.k-actions-dropdown button:after {
+		position: absolute;
+		bottom: 1px;
+		right: 1px;
+		width: 1px;
+		height: 1px;
+		content: "";
+		background: transparent;
+		z-index: 50;
+		border-top: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 5px solid #EEE;
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+	}
+		
+	.k-actions-dropdown div.content {
+		position: absolute;
+		top: 2.1em;
+		left: 0;
+		width: 100%;
+		color: #000;
+		background: #FFF;
+		padding: 0;
+		border: 1px solid #000;
+		z-index: 50;
+	}
+
+	.k-actions-dropdown p {
+		color: #FFF;
+		background: #808080;
+		padding: 0.2em 0 0.2em 0.8em;
+	}
+	
+	.k-actions-dropdown ul {padding: 0;}
+		
+	.k-actions-dropdown li {
+		list-style-type: none;
+		margin: 0.2em 0;
+		border-bottom: 1px dashed #CCC;
+	}
+
+	.k-actions-dropdown a, .k-actions-dropdown a:link, .k-actions-dropdown a:visited {
+		display: block;
+		text-decoration: none;
+		padding: 0.2em 0 0.2em 0.8em;
+	}
+	.k-actions-dropdown a:hover, .k-actions-dropdown a:focus {
+		background: #DFEFF6;
+	}
+		
+
+/* CE/ actionsDd */
 
 
 /* --------------------------------------------------------------------------- */
