@@ -1,30 +1,29 @@
 package net.atos.kawwaportal.components.test.pages;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 import net.atos.kawwaportal.components.KawwaEventsConstants;
 
+import net.atos.kawwaportal.components.data.ActionsDropDownItem;
 import org.apache.tapestry5.annotations.OnEvent;
 
 public class ActionsDropDown {
-	
-	public Map<String, List<String>> getItems(){
-		Map<String, List<String>> items = new TreeMap<String, List<String>>();
-		List<String> list = new ArrayList<String>();
-		list.add("Option1");
-		list.add("Option2");
-		list.add("Option3");
-		
-		items.put("CardHolder", list);
-		items.put("Card Account", list);
-		items.put("Plastic", list);
-				
-		
-		return items;
-	}
+    public List<ActionsDropDownItem> getItems(){
+        List<ActionsDropDownItem> item = new ArrayList<ActionsDropDownItem>();
+        item.add(new ActionsDropDownItem("Option1", "CardHolder"));
+        item.add(new ActionsDropDownItem("Option2", "CardHolder"));
+        item.add(new ActionsDropDownItem("Option3", "CardHolder"));
+
+        item.add(new ActionsDropDownItem("Option1", "Card Account"));
+        item.add(new ActionsDropDownItem("Option2", "Card Account"));
+        item.add(new ActionsDropDownItem("Option3", "Card Account"));
+
+        item.add(new ActionsDropDownItem("Option1", "Plastic"));
+        item.add(new ActionsDropDownItem("Option2", "Plastic"));
+        item.add(new ActionsDropDownItem("Option3", "Plastic"));
+        return item;
+    }
+
 	
 	@OnEvent(value = KawwaEventsConstants.ACTIONSDROPDOWN_SELECT)
 	public void getEvent(String parent, String child){
