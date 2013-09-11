@@ -19,6 +19,7 @@
 
     <link type="text/css" rel="stylesheet" href="components/kawwa/css/k-structure.css"/>
     <link type="text/css" rel="stylesheet" href="components/kawwa/css/k-theme0.css"/>
+    <link type="text/css" rel="stylesheet" href="css/kawwa-directive-fix.css"/>
     <link type="text/css" rel="stylesheet" href="css/demo.css"/>
 
     <!-- endbuild -->
@@ -60,19 +61,23 @@
     <div class="kawwa2-directives">
         <form action="">
 
+            <section class="demo" ui-view="accordion"></section>
             <section class="demo" ui-view="productQuantity"></section>
 
             <section class="demo" ui-view="raty"></section>
 
-            <section class="demo" ui-view="rating"></section>
+            <section class="demo" ui-view="productRating"></section>
 
             <section class="demo" ui-view="fieldComment"></section>
+
+            <section class="demo" ui-view="kButton"></section>
 
             <section class="demo" ui-view="productOptions"></section>
 
             <section class="demo" ui-view="productGallery"></section>
 
             <section class="demo" ui-view="productCatalog"></section>
+
         </form>
 
 
@@ -104,6 +109,10 @@
 <script src="components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="components/angular-cookies/angular-cookies.js"></script>
 <script src="components/angular-sanitize/angular-sanitize.js"></script>
+
+<script src="components/angular-ui-bootstrap-bower/ui-bootstrap.js"></script>
+
+
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -114,17 +123,20 @@
 <script src="scripts/directives/productOptions.js"></script>
 <script src="scripts/directives/fieldComment.js"></script>
 <script src="scripts/directives/raty.js"></script>
+<script src="scripts/directives/productRating.js"></script>
 <script src="scripts/directives/productGallery.js"></script>
 <script src="scripts/directives/productCatalog.js"></script>
 
-<script src="scripts/controllers/productGallery.js"></script>
-<script src="scripts/controllers/fieldComment.js"></script>
-<script src="scripts/controllers/raty.js"></script>
 <script src="scripts/controllers/productQuantity.js"></script>
 <script src="scripts/controllers/productOptions.js"></script>
-<script src="scripts/directives/rating.js"></script>
-<script src="scripts/controllers/rating.js"></script>
+<script src="scripts/controllers/fieldComment.js"></script>
+<script src="scripts/controllers/raty.js"></script>
+<script src="scripts/controllers/productRating.js"></script>
+<script src="scripts/controllers/productGallery.js"></script>
 <script src="scripts/controllers/productCatalog.js"></script>
+
+<script src="scripts/controllers/kButton.js"></script>
+<script src="scripts/controllers/accordion.js"></script>
 <!-- endbuild -->
 
 

@@ -41,7 +41,7 @@ angular.module('kawwa2')
     return {
 
         restrict: 'A',
-        templateUrl:'tpl/productGallery.html' ,
+        templateUrl:'template/productGallery.html' ,
         replace:true,
         scope:{
           options:"=",

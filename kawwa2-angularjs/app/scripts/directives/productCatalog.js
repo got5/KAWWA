@@ -44,7 +44,7 @@
 angular.module('moduleApp')
   .directive('productCatalog', function () {
     return {
-      templateUrl: 'tpl/productCatalog.html',
+      templateUrl: 'template/productCatalog.html',
       restrict: 'A',
       replace:'true',
       scope:{

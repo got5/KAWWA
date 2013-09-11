@@ -13,10 +13,10 @@
     <doc:source>
         <script>
 
-        include "../controllers/rating.js"
+        include "../controllers/productRating.js"
 
         </script>
-    include "../../views/rating.html"
+    include "../../views/productRating.html"
 
     </doc:source>
 
@@ -26,18 +26,16 @@
 
 
 angular.module('kawwa2')
-  .directive('rating', function () {
+  .directive('productRating', function () {
     return {
       restrict: 'A',
       template:'<p ng-class="getRatingCss()" ng-transclude></p>',
       transclude:true,
       replace:true,
-      scope:{
-          rating:'='
-      },
       controller:function($scope,$element,$attrs){
+          var rate = $scope.$eval($attrs.productRating);
           $scope.getRatingCss = function(){
-              var rating = Math.floor($scope.rating);
+              var rating = Math.floor(rate);
               var cssClass = {rating: true };
 
               if(rating){

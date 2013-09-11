@@ -1,0 +1,23 @@
+<h4>Button (from angular-ui-bootstrap)</h4>
+<h5>Simple Check Box</h5>
+        <pre>{{model}}</pre>
+<form action="">
+    <input type="submit" class="optional" btn-checkbox ng-model="model" value="Optional Action" />
+</form>
+<h5>CheckBox Button</h5>
+
+        <pre>{{checkModel |json}}</pre>
+<form action="">
+    <input type="submit" class="optional" btn-checkbox ng-model="checkModel.left" value="Left" />
+    <input type="submit" class="optional" btn-checkbox ng-model="checkModel.center" value="Center" />
+    <input type="submit" class="optional" btn-checkbox ng-model="checkModel.right" value="Right" />
+</form>
+
+<h5>Radio Button</h5>
+
+<pre>{{radioModel |json}}</pre>
+<form action="">
+    <input type="submit" class="optional" btn-radio="radioValues.left" ng-model="radioModel" value="Left" />
+    <input type="submit" class="optional" btn-radio="radioValues.center" ng-model="radioModel" value="Center" />
+    <input type="submit" class="optional" btn-radio="radioValues.right" ng-model="radioModel" value="Right" />
+</form>

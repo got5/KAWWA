@@ -34,28 +34,30 @@
 
 
 angular.module('kawwa2')
-.directive('productOptions', function ($templateCache,$timeout) {
-	return {
-		restrict: 'A',
-        templateUrl: 'tpl/productOptions.html',
-        replace:true,
-        scope:{
-           name:'@',
-           products:'=',
-           selected:'='
-        },
-		link:function (scope, element, attrs) {
-			
-			var json = jQuery.extend({}, scope.$eval(attrs.productOptions))
-           $timeout(function(){
-               $(element).buttonset();
-           },10)
+.directive('productOptions', function () {
+        var activeClass = 'ui-state-active';
+        var toggleEvent = 'click';
 
+        return {
 
+            require:'ngModel',
+            link:function (scope, element, attrs, ngModelCtrl) {
 
+                //model -> UI
+                ngModelCtrl.$render = function () {
+                    element.next().toggleClass(activeClass, angular.equals(ngModelCtrl.$modelValue, scope.$eval(attrs.productOptions)));
+                };
 
-
-		}
+                //ui->model
+                element.next().bind(toggleEvent, function () {
+                    if (!element.next().hasClass(activeClass)) {
+                        scope.$apply(function () {
+                            ngModelCtrl.$setViewValue(scope.$eval(attrs.productOptions));
+                            ngModelCtrl.$render();
+                        });
+                    }
+                });
+            }
 	};
 });
 

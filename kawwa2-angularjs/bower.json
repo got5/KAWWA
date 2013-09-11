@@ -11,6 +11,8 @@
     "angular-sanitize": "1.2",
     "angular-mocks": "1.2",
     "angular-ui-router": "~0.2.0",
-    "kawwa": "~2.0.5"
+    "kawwa": "~2.0.5",
+    "angular-ui-bootstrap": "0.6.0",
+    "angular-ui-bootstrap-bower": "~0.6.0"
   }
 }

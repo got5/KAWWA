@@ -13,7 +13,7 @@
         <a ng-href="{{options.urlProduct}}/{{product.id}}" title="See Product sheet">{{product.name}}</a>
     </h3>
 
-    <p data-rating="options.rating(product)">
+    <p data-product-rating="options.rating(product)">
 				<span ng-show="product.comments">
 					<a ng-href="{{options.urlComment}}/{{product.id}}">{{product.length}} {{options.commentText}}</a>
 				</span>

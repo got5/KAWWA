@@ -26,9 +26,9 @@ angular.module('moduleApp', ['kawwa2','ui.router'])
                     templateUrl:"views/raty.html",
                     controller:"RatyCtrl"
                 },
-                "rating":{
-                    templateUrl:"views/rating.html",
-                    controller:"RatingCtrl"
+                "productRating":{
+                    templateUrl:"views/productRating.html",
+                    controller:"ProductRatingCtrl"
                 },
                 "productOptions":{
                     templateUrl:"views/productOptions.html",
@@ -37,6 +37,14 @@ angular.module('moduleApp', ['kawwa2','ui.router'])
                 "productCatalog":{
                     templateUrl:"views/productCatalog.html",
                     controller:"ProductCatalogCtrl"
+                },
+                "kButton":{
+                    templateUrl:"views/kButton.html",
+                    controller:"KButtonCtrl"
+                },
+                "accordion":{
+                    templateUrl:"views/accordion.html",
+                    controller:"AccordionCtrl"
                 }
 
             }

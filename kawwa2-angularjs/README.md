@@ -22,6 +22,16 @@ In the app.js of your application, just add kawwa to your dependencies like this
 
 	angular.module('demoApp', ['kawwa'])
 
+	### Requirement
+
+    * Jquery 1.8.3
+    * Jquery-ui
+    * [Karma][karma]
+    * [Grunt][grunt]
+    * [Bower][bower]
+    * [Yeoman][yo]
+
+
 
 Contribute to Kawwa
 -------------------
@@ -38,7 +48,6 @@ Install
 
 * [NodeJS][node]
 * [Ruby][ruby]
-* [PhantomJS][phantomjs] \(optional\)
 * [Karma][karma]
 * [Grunt][grunt]
 * [Bower][bower]
@@ -75,12 +84,6 @@ Close the web server before or configure the karma proxy
 
 	grunt test:e2e
 
-### Running Midway Tests
-
-If you don't know what midway test is, go check this out : [ngMidwayTest][midway]	
-
-	grunt test:midway
-
 
 ### Build Kawwa angular
 
@@ -88,24 +91,6 @@ If you don't know what midway test is, go check this out : [ngMidwayTest][midway
 
 This will also prepare the demo app	
 
-### Run the Demo App
-
-This app is the same as the kawwa app except that this one use it as a dependency.
-
-You first need to run the following commands in the kawwa2-angular directory
-	
-	grunt build
-	grunt demo
-
-Then, in demo/ run the server
-
-	cd demo
-	grunt server
-
-if you didn't install the demo app yet, don't forget to 
-
-	npm install
-	bower install
 
 ### Generate de doc
 
@@ -119,22 +104,6 @@ if you didn't install the demo app yet, don't forget to
 ### Do it all 
 
 	grunt release
-
-Want to contribute ?
-------------
-
-
-When you will create a directive, a route, controller or your unit tests, __you will have to create it from__ [Yeoman][yo]
-
-example : For creating the Raty directive
-
-	yo angular:directive raty
-
-This will create the files, include it in HTML when necessary. It will also create the associate unit test.
-
-See [generator-angular] web site for the  full doc.
-
-
 
 
 

@@ -32,6 +32,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
+                    '<%= yeoman.app %>/template/{,*/}*.html',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     ' {.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -110,16 +111,18 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             only: {
-                src: [ '<%= yeoman.app %>/scripts/kawwa.js',
+                src: [
+                    '<%= yeoman.dist %>/lib/*',
+                    '<%= yeoman.app %>/scripts/kawwa.js',
                     '<%= yeoman.app %>/scripts/temp/scripts/templates.js',
                     '<%= yeoman.app %>/scripts/directives/*.js'],
                 dest: '<%= yeoman.dist %>/kawwa-directives-only.js'
             },
             full: {
-                src: ['<%= yeoman.app %>/scripts/kawwa.js',
+                src: [
+                    '<%= yeoman.dist %>/lib/*',
+                    '<%= yeoman.app %>/scripts/kawwa.js',
                     '<%= yeoman.app %>/scripts/temp/scripts/templates.js',
-                    '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.core.js',
-                    '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.widget.js',
                     '<%= yeoman.app %>/plugins/*.js',
                     '<%= yeoman.app %>/scripts/directives/*.js'],
                 dest: '<%= yeoman.dist %>/kawwa-directives-full.js'
@@ -159,8 +162,21 @@ module.exports = function (grunt) {
                         cwd: '<%= yeoman.app %>/',
                         dest: '<%= yeoman.dist %>/directives',
                         src: [
-                            'tpl/*'
+                            'template/*'
 
+                        ]
+                    }
+                ]
+            },
+            lib:{
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>/components/angular-ui-bootstrap-bower/',
+                        dest: '<%= yeoman.dist %>/lib',
+                        src: [
+                            'ui-bootstrap.js'
                         ]
                     }
                 ]
@@ -186,7 +202,7 @@ module.exports = function (grunt) {
                         expand: true,
                         dot: true,
                         process: function (src) {
-                            return "try{\nangular.module(\"kawwa2\");   \n}catch(err){\nangular.module('kawwa2',[]);\n}\n"
+                            return "try{\nangular.module(\"kawwa2\");   \n}catch(err){\nangular.module(\'kawwa2\',[]);\n//angular.module(\'kawwa2\',[\'ui.bootstrap\']);\n}\n"
                                 + '\n' + src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
                         },
                         cwd: '<%= yeoman.dist %>',
@@ -310,7 +326,7 @@ module.exports = function (grunt) {
               trim:'app/'
             },
             files:{
-                src:['<%= yeoman.app %>/tpl/**/*.html'],
+                src:['<%= yeoman.app %>/template/**/*.html'],
                 dest:'<%= yeoman.app %>/scripts/temp/scripts/templates.js'
             }
         },
@@ -359,10 +375,11 @@ module.exports = function (grunt) {
         'clean:dist',
         'ngTemplateCache',
         'includes:ngdocexample',
-        'concat',      //concat the directives with the plugins
         'copy:basic',  //copy kawwa  to dist
+        'copy:lib',  //copy kawwa  to dist
         'copy:template',
         'copy:plugin', //copy the plugins to dist
+        'concat',      //concat the directives with the plugins
         'ngmin',
         'uglify',
         //'rev',
