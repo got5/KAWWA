@@ -13,7 +13,7 @@
 
                                                var $zControl = $(this).children('button');
                                
-                                               var zListId = 'list' + Math.floor(Math.random()*11); 
+                                               var zListId = 'list' + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
                                                var zList = '#' + zListId;
 
                                                // ARIA
