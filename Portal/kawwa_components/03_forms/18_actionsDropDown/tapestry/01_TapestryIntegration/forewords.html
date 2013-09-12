@@ -1,14 +1,16 @@
 <p>
-	The Actions dropdown component is an easy way to create a drop down list of actions. You just need to give a Map&lt;String, List&lt;String&gt;&gt;  Object to this component.
-	The component will use the keys of this Map for the category of actions (associated to the associated list). 
+    The Actions dropDown component is an easy way to create a drop down list of actions. You just need to
+    give a list of ActionsDropDownItem objects to this component.
 </p>
 <p>
-	By default, an eventLink will be displayed, triggering a KawwaEventsConstants.ACTIONSDROPDOWN_SELECT event. You can catch this event, and the corresponding 
-	method will have two parameters : the category and the selected item (formatted in a camel-case way).
+    By default, an eventLink will be displayed, triggering a KawwaEventsConstants.ACTIONSDROPDOWN_SELECT event.
+    You can catch this event, and the corresponding method will have one or two parameters : the category (if setted) and
+    the selected item (formatted in a camel-case way).
 </p>
 <p>
-	You can override the rendering of each item, by defining a block parameter. The name of block should follow this rule : 
-	(category formatted in a camel-case way)_(item formatted in a camel-case way)
+    You can override the rendering of each item, by defining a block parameter. The name of block should follow
+    this rule : (category formatted in a camel-case way)_(item formatted in a camel-case way)  or (item formatted in a camel-case way)
+    if the category is null.
 </p>
 <table summary="This table shows the parameters needed for the Actions dropdown Component">
 	<caption>Actions dropdown parameters</caption>
@@ -31,7 +33,7 @@
 		<tr>
            	   <td> items </td>
 			   <td> true </td>
-               <td> Map&lt;String, List&lt;String&gt;&gt; </td>
+               <td> List&lt;ActionsDropDownItem&gt; </td>
                <td> prop </td>
                <td> </td>
                <td> The List of items your dropdown menu should display. </td>
