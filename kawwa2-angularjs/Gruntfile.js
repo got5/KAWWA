@@ -33,6 +33,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
                     '<%= yeoman.app %>/template/{,*/}*.html',
+                    '<%= yeoman.app %>/css/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     ' {.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -226,16 +227,30 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            imageThemeDoc: {
+            imageThemeDoc1: {
                 files: [
                     {
                         expand: true,
                         dot: true,
-                        cwd: '<%= yeoman.app %>/components/kawwa/img',
+                        cwd: '<%= yeoman.app %>',
 
-                        dest: '<%= yeoman.doc %>/img',
+                        dest: '<%= yeoman.doc %>',
                         src: [
-                            '*', '**/*'
+                             'components/kawwa/img/**/palette*.png'
+                        ]
+                    }
+                ]
+            },
+            imageThemeDoc2: {
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>/components/kawwa',
+
+                        dest: '<%= yeoman.doc %>',
+                        src: [
+                            'img/*', 'img/**/*'
                         ]
                     }
                 ]
@@ -295,11 +310,12 @@ module.exports = function (grunt) {
                 styles: [
                     '<%= yeoman.app %>/components/kawwa/css/k-structure.css',
                     '<%= yeoman.app %>/components/kawwa/css/k-theme0.css',
+                    '<%= yeoman.app %>/css/kawwa-directive-fix.css',
                     'util/reset.css',
                     'util/kawwa-bootstrap-fix.min.css'
                 ],
                 dest: 'docs',
-                html5Mode: true
+                html5Mode: false
             },
             api: {
                 src: ['app/scripts/temp/scripts/directives/*.js'],
@@ -392,9 +408,10 @@ module.exports = function (grunt) {
         'clean:doc',
         'ngdocs',
         'copy:imageDoc',
-        'copy:imageThemeDoc',
-        'replace:doc',
-        //'clean:ngdocexample'
+        'copy:imageThemeDoc1',
+        'copy:imageThemeDoc2',
+        'replace:doc'
+        //,'clean:ngdocexample'
     ]);
 
     grunt.registerTask('doc', [

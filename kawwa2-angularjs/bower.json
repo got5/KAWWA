@@ -4,15 +4,13 @@
   "dependencies": {
     "jquery-ui": "~1.10.3",
     "jquery": "1.8.3",
-    "angular": "1.2",
-    "angular-resource": "1.2",
-    "angular-cookies": "1.2",
-    "angular-route": "1.2",
-    "angular-sanitize": "1.2",
-    "angular-mocks": "1.2",
+    "angular": "1.0.8",
+    "angular-resource": "1.0.8",
+    "angular-cookies": "1.0.8",
+    "angular-sanitize": "1.0.8",
+    "angular-mocks": "1.0.8",
     "angular-ui-router": "~0.2.0",
     "kawwa": "~2.0.5",
-    "angular-ui-bootstrap": "0.6.0",
-    "angular-ui-bootstrap-bower": "~0.6.0"
+    "angular-ui-bootstrap": "0.6.0"
   }
 }

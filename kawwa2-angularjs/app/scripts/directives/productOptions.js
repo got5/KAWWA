@@ -8,12 +8,8 @@
  *
  * @element ANY
  * @restrict A
- * @param {Object=} productOptions  allows you to overload the button widget
- * @param {String} name is the attribut name use for the submission.
- * @param {Array of Object} products contains the infos for each buttons you want. These infos are
- *    - name {string} will be the value of the element selected
- *    - img {string} the path to the image
- *    -rel {string}  for the img tag
+ * @ngModel model  result of the radio selected. Has to Be a js object if you used the directive in a loop
+ * @param {Object=} productOptions value of the radio button
  *
  *
  * @example

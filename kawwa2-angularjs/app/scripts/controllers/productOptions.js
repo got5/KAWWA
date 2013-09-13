@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('moduleApp')
   .controller('ProductOptionsCtrl', function ($scope) {
         $scope.products = [

@@ -1,5 +1,7 @@
 'use strict';
-/* @name kawwa2.directive:rating
+/**
+ *@ngdoc directive
+* @name kawwa2.directive:productRating
 * @description
 * Add the specific css class to render some star to rate a product .
 *

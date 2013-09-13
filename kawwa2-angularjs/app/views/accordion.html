@@ -1,24 +1,24 @@
-<h4>Accordion</h4>
-<article class="k-article">
+<h4>Accordion (from angular-ui)</h4>
+<article data-ng-controller="AccordionCtrl" class="k-article">
     <label class="checkbox">
         <input type="checkbox" ng-model="oneAtATime">
         Open only one at a time
     </label>
 
-    <div accordion close-others="oneAtATime">
-        <div accordion-group heading="Static Header">
+    <div data-accordion data-close-others="oneAtATime">
+        <div data-accordion-group data-heading="Static Header">
             This content is straight in the template.
         </div>
-        <div accordion-group heading="Dynamic Body Content">
+        <div data-accordion-group data-heading="Dynamic Body Content">
             <p>The body of the accordion group grows to fit the contents</p>
             <button class="btn btn-small" ng-click="addItem()">Add Item</button>
             <div ng-repeat="item in items">{{item}}</div>
         </div>
-        <div accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+        <div data-accordion-group data-heading="{{group.title}}" data-ng-repeat="group in groups">
             {{group.content}}
         </div>
-        <div accordion-group>
-            <div accordion-heading>
+        <div data-accordion-group>
+            <div data-accordion-heading>
                 I can have markup, too! <i class="icon-check"></i>
             </div>
             This is just some content to illustrate fancy headings.

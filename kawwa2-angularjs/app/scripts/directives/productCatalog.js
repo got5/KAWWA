@@ -6,6 +6,7 @@
  * @description
  * template for displaying a product.
  * Contain:
+ *
  *  - an image
  *  - link to the detail product page
  *  - rating
@@ -14,6 +15,7 @@
  * @restrict A
  * @param {Object} product an complex object containing some of the property : see below
  * @param {Object} options Some options to configure the template:
+ *
  *   - urlImage: the base url to the products images
  *   - urlProduct: the base url to the products details page
  *   - urlComment: the base url to the products comments page

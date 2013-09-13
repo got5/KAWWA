@@ -1,6 +1,6 @@
 <div>
-  <h3 class="control ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" ng-click="isOpen = !isOpen" accordion-transclude="heading" >{{heading}}</h3>
+  <h3 class="control" ng-click="isOpen = !isOpen" accordion-transclude="heading" >{{heading}}</h3>
   <div collapse="!isOpen">
-    <div class="content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" ng-transclude></div>
+    <div class="content" ng-transclude></div>
   </div>
 </div>
