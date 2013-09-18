@@ -1,7 +1,5 @@
-'use strict';
-
 angular.module('moduleApp')
-  .controller('RatingCtrl', function ($scope) {
+  .controller('ProductRatingCtrl', function ($scope) {
         $scope.rating = 2;
         
     });

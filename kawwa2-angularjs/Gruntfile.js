@@ -32,6 +32,8 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
+                    '<%= yeoman.app %>/template/{,*/}*.html',
+                    '<%= yeoman.app %>/css/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     ' {.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -110,16 +112,18 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             only: {
-                src: [ '<%= yeoman.app %>/scripts/kawwa.js',
+                src: [
+                    '<%= yeoman.dist %>/lib/*',
+                    '<%= yeoman.app %>/scripts/kawwa.js',
                     '<%= yeoman.app %>/scripts/temp/scripts/templates.js',
                     '<%= yeoman.app %>/scripts/directives/*.js'],
                 dest: '<%= yeoman.dist %>/kawwa-directives-only.js'
             },
             full: {
-                src: ['<%= yeoman.app %>/scripts/kawwa.js',
+                src: [
+                    '<%= yeoman.dist %>/lib/*',
+                    '<%= yeoman.app %>/scripts/kawwa.js',
                     '<%= yeoman.app %>/scripts/temp/scripts/templates.js',
-                    '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.core.js',
-                    '<%= yeoman.app %>/components/jquery-ui/ui/jquery.ui.widget.js',
                     '<%= yeoman.app %>/plugins/*.js',
                     '<%= yeoman.app %>/scripts/directives/*.js'],
                 dest: '<%= yeoman.dist %>/kawwa-directives-full.js'
@@ -159,8 +163,21 @@ module.exports = function (grunt) {
                         cwd: '<%= yeoman.app %>/',
                         dest: '<%= yeoman.dist %>/directives',
                         src: [
-                            'tpl/*'
+                            'template/*'
 
+                        ]
+                    }
+                ]
+            },
+            lib:{
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>/components/angular-ui-bootstrap-bower/',
+                        dest: '<%= yeoman.dist %>/lib',
+                        src: [
+                            'ui-bootstrap.js'
                         ]
                     }
                 ]
@@ -186,7 +203,7 @@ module.exports = function (grunt) {
                         expand: true,
                         dot: true,
                         process: function (src) {
-                            return "try{\nangular.module(\"kawwa2\");   \n}catch(err){\nangular.module('kawwa2',[]);\n}\n"
+                            return "try{\nangular.module(\"kawwa2\");   \n}catch(err){\nangular.module(\'kawwa2\',[]);\n//angular.module(\'kawwa2\',[\'ui.bootstrap\']);\n}\n"
                                 + '\n' + src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
                         },
                         cwd: '<%= yeoman.dist %>',
@@ -210,16 +227,30 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            imageThemeDoc: {
+            imageThemeDoc1: {
                 files: [
                     {
                         expand: true,
                         dot: true,
-                        cwd: '<%= yeoman.app %>/components/kawwa/img',
+                        cwd: '<%= yeoman.app %>',
 
-                        dest: '<%= yeoman.doc %>/img',
+                        dest: '<%= yeoman.doc %>',
                         src: [
-                            '*', '**/*'
+                             'components/kawwa/img/**/palette*.png'
+                        ]
+                    }
+                ]
+            },
+            imageThemeDoc2: {
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>/components/kawwa',
+
+                        dest: '<%= yeoman.doc %>',
+                        src: [
+                            'img/*', 'img/**/*'
                         ]
                     }
                 ]
@@ -279,11 +310,12 @@ module.exports = function (grunt) {
                 styles: [
                     '<%= yeoman.app %>/components/kawwa/css/k-structure.css',
                     '<%= yeoman.app %>/components/kawwa/css/k-theme0.css',
+                    '<%= yeoman.app %>/css/kawwa-directive-fix.css',
                     'util/reset.css',
                     'util/kawwa-bootstrap-fix.min.css'
                 ],
                 dest: 'docs',
-                html5Mode: true
+                html5Mode: false
             },
             api: {
                 src: ['app/scripts/temp/scripts/directives/*.js'],
@@ -310,7 +342,7 @@ module.exports = function (grunt) {
               trim:'app/'
             },
             files:{
-                src:['<%= yeoman.app %>/tpl/**/*.html'],
+                src:['<%= yeoman.app %>/template/**/*.html'],
                 dest:'<%= yeoman.app %>/scripts/temp/scripts/templates.js'
             }
         },
@@ -359,10 +391,11 @@ module.exports = function (grunt) {
         'clean:dist',
         'ngTemplateCache',
         'includes:ngdocexample',
-        'concat',      //concat the directives with the plugins
         'copy:basic',  //copy kawwa  to dist
+        'copy:lib',  //copy kawwa  to dist
         'copy:template',
         'copy:plugin', //copy the plugins to dist
+        'concat',      //concat the directives with the plugins
         'ngmin',
         'uglify',
         //'rev',
@@ -375,9 +408,10 @@ module.exports = function (grunt) {
         'clean:doc',
         'ngdocs',
         'copy:imageDoc',
-        'copy:imageThemeDoc',
-        'replace:doc',
-        //'clean:ngdocexample'
+        'copy:imageThemeDoc1',
+        'copy:imageThemeDoc2',
+        'replace:doc'
+        //,'clean:ngdocexample'
     ]);
 
     grunt.registerTask('doc', [

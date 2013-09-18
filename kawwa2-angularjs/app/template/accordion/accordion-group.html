@@ -1,0 +1,6 @@
+<div>
+  <h3 class="control" ng-click="isOpen = !isOpen" accordion-transclude="heading" >{{heading}}</h3>
+  <div collapse="!isOpen">
+    <div class="content" ng-transclude></div>
+  </div>
+</div>

@@ -1,8 +1,41 @@
 <h4>Product Options</h4>
-<div class="k-product-options">
+<div datang-controller="ProductOptionsCtrl" class="k-product-options">
     <fieldset class="color">
         <legend>Choose your color : {{selected}}</legend>
-        <p data-product-options="{}" data-products="products" name="palette" selected="selected">
+        <p>
+            <input  data-product-options="products[0].name" data-ng-model="selected"  id="{{products[0].name}}"/>
+            <label for="{{products[0].name}}"><img data-ng-src="{{products[0].colorImg}}" alt="{{products[0].color}}"/></label>
+            <input  data-product-options="products[1].name" data-ng-model="selected"  id="{{products[1].name}}"/>
+            <label for="{{products[1].name}}"><img data-ng-src="{{products[1].colorImg}}" alt="{{products[1].color}}"/></label>
+            <input  data-product-options="products[2].name" data-ng-model="selected"  id="{{products[2].name}}"/>
+            <label for="{{products[2].name}}"><img data-ng-src="{{products[2].colorImg}}" alt="{{products[2].color}}"/></label>
+
         </p>
+
     </fieldset>
+    <p>Within data-ng-repeat directive</p>
+    <fieldset class="color">
+        <legend>Choose your color : {{selected2.name}}</legend>
+        <p >
+            <span data-ng-repeat="product in products">
+            <input data-ng-model="selected2.name" data-product-options="product.name" id="{{product.name}}"/>
+            <label  for="{{product.name}}"><img data-ng-src="{{product.colorImg}}" alt="{{product.color}}"/></label>
+            </span>
+        </p>
+
+    </fieldset>
+
+    <div class="k-product-options">
+        <fieldset class="size">
+            <legend>Choose your size: {{selected3.name}}</legend>
+
+            <p>
+                <span data-ng-repeat="product in products">
+                <input   data-ng-model="selected3.name" data-product-options="product.name" id="s{{product.name}}"/>
+                <label  for="s{{product.name}}">{{product.size}}</label>
+                </span>
+            </p>
+
+        </fieldset>
+    </div>
 </div>

@@ -1,0 +1,8 @@
+<div class="k-tabbed-data">
+    <ul class="tabs">
+        <li ng-repeat="pane in panes" ng-class="{'ui-state-active':pane.selected}">
+            <a href="#" ng-click="select(pane)">{{pane.title}}</a>
+        </li>
+    </ul>
+    <section class="content" ng-transclude></section>
+</div>

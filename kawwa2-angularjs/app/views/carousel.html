@@ -1,0 +1,29 @@
+<h4>Carousel From Angular-ui  (not integreted)</h4>
+
+
+    <div data-ng-controller="CarouselCtrl" class="k-intro">
+    <div data-carousel interval="myInterval">
+        <div  data-slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+                <h4>Slide {{$index}}</h4>
+                <p>{{slide.text}}</p>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div>
+            <ul class="k-links-list">
+                <li ng-repeat="slide in slides">
+                    <input type="submit" class="optional" ng-class="{'btn-info': !slide.active, 'btn-success': slide.active}" ng-disabled="slide.active" ng-click="slide.active = true" value="select"/>
+                    {{$index}}: {{slide.text}}
+                </li>
+            </ul>
+            <input type="submit" class="optional" ng-click="addSlide()" value="Add Slide">
+        </div>
+        <div>
+            Interval, in milliseconds: <input type="number" ng-model="myInterval">
+            <br />Enter a negative number to stop the interval.
+        </div>
+    </section>
+</div>

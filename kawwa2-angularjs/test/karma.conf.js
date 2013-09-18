@@ -23,7 +23,7 @@ module.exports = function (config) {
             'components/angular-*/*min.js',
             'scripts/**/*.js',
             '../test/unit/**/*.js',
-            'tpl/*.html'
+            '../app/template/*.html'
         ],
 
         preprocessors: {

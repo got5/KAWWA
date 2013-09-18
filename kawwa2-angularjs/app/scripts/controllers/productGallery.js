@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('moduleApp')
   .controller('ProductGalleryCtrl', function ($scope) {
         var baseImagePath = '/'

@@ -1,5 +1,7 @@
 'use strict';
-/* @name kawwa2.directive:rating
+/**
+ *@ngdoc directive
+* @name kawwa2.directive:productRating
 * @description
 * Add the specific css class to render some star to rate a product .
 *
@@ -13,10 +15,18 @@
     <doc:source>
         <script>
 
-        include "../controllers/rating.js"
+        angular.module('moduleApp')
+          .controller('ProductRatingCtrl', function ($scope) {
+                $scope.rating = 2;
+                
+            });
+
 
         </script>
-    include "../../views/rating.html"
+    <h4>Product Rating</h4>
+    <div data-ng-controller="ProductRatingCtrl" class="product-data">
+        <p data-product-rating="rating"><a href="#">900 comment(s)</a></p>
+    </div>
 
     </doc:source>
 
@@ -26,18 +36,16 @@
 
 
 angular.module('kawwa2')
-  .directive('rating', function () {
+  .directive('productRating', function () {
     return {
       restrict: 'A',
       template:'<p ng-class="getRatingCss()" ng-transclude></p>',
       transclude:true,
       replace:true,
-      scope:{
-          rating:'='
-      },
       controller:function($scope,$element,$attrs){
+          var rate = $scope.$eval($attrs.productRating);
           $scope.getRatingCss = function(){
-              var rating = Math.floor($scope.rating);
+              var rating = Math.floor(rate);
               var cssClass = {rating: true };
 
               if(rating){

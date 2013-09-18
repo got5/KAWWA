@@ -1,6 +1,8 @@
 <h4>Product Catalog</h4>
-<div class="k-catalog">
+<div data-ng-controller="ProductCatalogCtrl">
+    <div  class="k-catalog">
     <article data-product-catalog data-product="product" data-options="options" data-view="view"></article>
+    </div>
+
+    Basket: <p ng-repeat="b in basket"> product: {{b.name}} <b ng-show="b.quantity > 1"> | quantity : {{b.quantity}}</b>  </p>
 </div>
-        
-Basket: <p ng-repeat="b in basket"> product: {{b.name}} <b ng-show="b.quantity > 1"> | quantity : {{b.quantity}}</b>  </p>
