@@ -18,7 +18,7 @@ public class DateField {
 				.put("showOn", "button")
 				.put("buttonImage", as.getClasspathAsset("${kawwa2.img-path}/pic_calendar.gif").toClientURL())
 				.put("buttonImageOnly", true)
-				.put("buttonText", "Click to open/close the calendar")
-				.put("dateFormat", "dd/mm/yy");
+				.put("buttonText", "Click to open/close the calendar");
+
 	}
 }

@@ -12,3 +12,8 @@
 	to the parameters of the jQuery UI widget.  You will find more information on the
 	Tapestry5-jQuery website : http://tapestry5-jquery.com/docs/mixins/customdatepicker 
 </p>
+<p>
+    You should not use the dateFormat parameter of the jQuery UI widget. The Java and jQuery formats
+    are not the same. We have created an utility method, that will convert a Java format into a jQuery one.
+    If you need to specify a specific format, you should use the format parameter of the datefield component.
+</p>
