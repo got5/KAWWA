@@ -47,7 +47,7 @@
        <tapestry-release-version>5.2.6</tapestry-release-version>
    </properties>
   <modules>
-    <module>tapestry5-kawwa-archetype</module>
-    <module>tapestry5-kawwa</module>
+    <module>kawwa2-archetype-maven</module>
+    <module>kawwa2-tapestry</module>
   </modules>
 </project>
