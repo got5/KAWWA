@@ -115,29 +115,43 @@ task zipComp(type: Zip) {
 	destinationDir = file("/target")
 }
 
-//1. Aggregate SASS files into src/main/webapp/k-theme0.scss, ...
-task aggregateSASSFiles(){
 
-    FileTree tree = fileTree(dir: 'kawwa_components')
-    ["k-theme0", "k-theme1", "k-theme2"].each {String theme ->
 
-        tree.include "**/" + theme + ".scss"
-        tree.each {File file ->
-            //println file
-        }
-        tree.exclude "**/" + theme + ".scss"
-    }
-
-}
-
-//2. Compile SASS files into CSS
+//1. Compile SASS files into CSS
 compass {
     cssDir = file('kawwa_components')
     sassDir = file('kawwa_components')
-    importPath =  files('src/main/webapp/css')
+    debugInfo = false
+    outputStyle = "nested"
 }
-compileSass.dependsOn aggregateSASSFiles
 
+//2. Aggregate SASS files into src/main/webapp/k-theme0.scss, ...
+task aggregateSASSFiles << {
+
+    FileTree tree = fileTree(dir: 'kawwa_components')
+
+    File gfile = null;
+    ["k-theme0","k-theme1", "k-theme2","i-theme0","i-theme1", "i-theme2"].each {String theme ->
+
+        gfile = new File("src/main/webapp/css/generated_"+theme+".css")
+        gfile.withWriter {it << "/*"+theme+"*/\n"}
+
+        tree.exclude "documentation/"
+        tree.exclude "templates_html5/"
+
+        tree.include "**/" + theme + ".css"
+        tree.each {File file ->
+           print file.getText()
+           gfile.withWriterAppend{it << file.getText()}
+           gfile.withWriterAppend{it << "\n"}
+        }
+
+
+        tree.exclude "**/" + theme + ".css"
+    }
+}
+//aggregateSASSFiles.dependsOn  compileSass
+compileSass.finalizedBy aggregateSASSFiles
 
 //3. Sync Tapestry Lib
 task copyThemesForTapestry << {
@@ -157,7 +171,7 @@ task copyThemesForTapestry << {
         into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/css'
     }
 }
-copyThemesForTapestry.dependsOn compileSass
+copyThemesForTapestry.dependsOn aggregateSASSFiles
 
 //4. Sync Angular Lib
 task copyThemesForAngular(type: Copy) {
@@ -169,7 +183,7 @@ task copyThemesForAngular(type: Copy) {
 
     into '../kawwa2-angularjs/app/theme'
 }
-copyThemesForAngular.dependsOn compileSass
+copyThemesForAngular.dependsOn aggregateSASSFiles
 
 //5. Sync Sublime Snippets
 task generateSublimeTextSnippets(type: Exec) {
@@ -177,7 +191,7 @@ task generateSublimeTextSnippets(type: Exec) {
     commandLine 'cmd', '/c', 'node', 'script.js'
     standardOutput = new ByteArrayOutputStream()
 }
-generateSublimeTextSnippets.dependsOn compileSass
+generateSublimeTextSnippets.dependsOn aggregateSASSFiles
 
 
 
@@ -185,7 +199,7 @@ copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs", "copyThem
 copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs", "copyThemesForAngular")
 
 
-processResources.dependsOn compileSass
+processResources.dependsOn aggregateSASSFiles
 
 /*
 processResources.dependsOn("copyTapestryDocs")
