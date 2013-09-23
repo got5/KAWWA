@@ -3,6 +3,7 @@ apply plugin: 'groovy'
 apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'jetty'
+apply plugin: 'compass'
 
 sourceCompatibility = 1.6
 
@@ -14,6 +15,17 @@ ext.drivers = ["chrome",]
 configurations {
     testCompile.transitive = true
 }
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+    }
+    dependencies {
+        classpath 'org.gradle.plugins:gradle-compass:1.0.7'
+    }
+}
+
+
 
 dependencies {
  def gebVersion = "0.9.0"
@@ -95,43 +107,6 @@ task copyAngularDocs(type: Copy) {
 	into 'src/main/webapp/apis/angular'
 }
 
-task generateSublimeTextSnippets(type: Exec) {
-	workingDir = file('../kawwa2-sublimetext')
-	commandLine 'cmd', '/c', 'node', 'script.js'
-	standardOutput = new ByteArrayOutputStream()
-}
-
-task copyThemesForAngular(type: Copy) {
-	from 'src/main/webapp/'
-	
-	include 'css/**', 'img/k-theme0/**', 'img/k-theme0/**', 'img/k-theme2/**'
-	
-	exclude 'css/i-theme*'
-	
-	into '../kawwa2-angularjs/app/theme'
-	
-	
-	
-}
-task copyThemesForTapestry << {
-	copy {
-		from 'src/main/webapp/'
-		include 'css/**', 'img/k-theme0/**', 'img/k-theme1/**', 'img/k-theme2/**'
-		exclude 'css/i-theme*'
-		into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/theme'
-	}
-	copy {
-		from 'src/main/webapp/'
-		include 'img/k-theme0/**', 'img/k-theme1/**', 'img/k-theme2/**'
-		into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components'
-	}
-	copy {
-		from 'src/main/webapp/css/k-structure.css'
-		into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/css'
-	}
-}
-
-
 task zipComp(type: Zip) {
     from('/kawwa_components')
     baseName = 'Component'
@@ -140,19 +115,86 @@ task zipComp(type: Zip) {
 	destinationDir = file("/target")
 }
 
+//1. Aggregate SASS files into src/main/webapp/k-theme0.scss, ...
+task aggregateSASSFiles(){
 
-copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs")
-copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
+    FileTree tree = fileTree(dir: 'kawwa_components')
+    ["k-theme0", "k-theme1", "k-theme2"].each {String theme ->
+
+        tree.include "**/" + theme + ".scss"
+        tree.each {File file ->
+            //println file
+        }
+        tree.exclude "**/" + theme + ".scss"
+    }
+
+}
+
+//2. Compile SASS files into CSS
+compass {
+    cssDir = file('kawwa_components')
+    sassDir = file('kawwa_components')
+    importPath =  files('src/main/webapp/css')
+}
+compileSass.dependsOn aggregateSASSFiles
+
+
+//3. Sync Tapestry Lib
+task copyThemesForTapestry << {
+    copy {
+        from 'src/main/webapp/'
+        include 'css/**', 'img/k-theme0/**', 'img/k-theme1/**', 'img/k-theme2/**'
+        exclude 'css/i-theme*'
+        into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/theme'
+    }
+    copy {
+        from 'src/main/webapp/'
+        include 'img/k-theme0/**', 'img/k-theme1/**', 'img/k-theme2/**'
+        into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components'
+    }
+    copy {
+        from 'src/main/webapp/css/k-structure.css'
+        into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/css'
+    }
+}
+copyThemesForTapestry.dependsOn compileSass
+
+//4. Sync Angular Lib
+task copyThemesForAngular(type: Copy) {
+    from 'src/main/webapp/'
+
+    include 'css/**', 'img/k-theme0/**', 'img/k-theme0/**', 'img/k-theme2/**'
+
+    exclude 'css/i-theme*'
+
+    into '../kawwa2-angularjs/app/theme'
+}
+copyThemesForAngular.dependsOn compileSass
+
+//5. Sync Sublime Snippets
+task generateSublimeTextSnippets(type: Exec) {
+    workingDir = file('../kawwa2-sublimetext')
+    commandLine 'cmd', '/c', 'node', 'script.js'
+    standardOutput = new ByteArrayOutputStream()
+}
+generateSublimeTextSnippets.dependsOn compileSass
+
+
+
+copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs", "copyThemesForTapestry")
+copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs", "copyThemesForAngular")
+
+
+processResources.dependsOn compileSass
 
 /*
 processResources.dependsOn("copyTapestryDocs")
-//processResources.dependsOn("copyAngularDocs")
+processResources.dependsOn("copyAngularDocs")
 processResources.dependsOn("generateSublimeTextSnippets")
-processResources.dependsOn("copyThemesForAngular")
-processResources.dependsOn("copyThemesForTapestry")
 processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
 */
 task wrapper(type: Wrapper) {
     gradleVersion = '1.7'
 }
+
