@@ -131,7 +131,7 @@ task aggregateSASSFiles << {
     FileTree tree = fileTree(dir: 'kawwa_components')
 
     File gfile = null;
-    ["k-theme0","k-theme1", "k-theme2","i-theme0","i-theme1", "i-theme2"].each {String theme ->
+    ["k-theme0","k-theme1", "k-theme2","iehacks0","iehacks1", "iehacks2"].each {String theme ->
 
         gfile = new File("src/main/webapp/css/generated_"+theme+".css")
         gfile.withWriter {it << "/*"+theme+"*/\n"}
@@ -150,8 +150,8 @@ task aggregateSASSFiles << {
         tree.exclude "**/" + theme + ".css"
     }
 }
-//aggregateSASSFiles.dependsOn  compileSass
-compileSass.finalizedBy aggregateSASSFiles
+aggregateSASSFiles.dependsOn  compileSass
+
 
 //3. Sync Tapestry Lib
 task copyThemesForTapestry << {
