@@ -12,7 +12,9 @@
 				The WebPlatform Team provide the tapestry5-kawwa-components project, 
 				where you will find most of the kawwa components. In the portal, 
 				you will find all the informations about them. 
-			</p>				
+			</p>
+
+
 		</div>
 
 		
@@ -24,8 +26,20 @@
 		<t:showSource t:type="xml" t:title="POM.XML" t:autoOpen="true"
 								t:escapedCode="snippet" 
 								t:readMore="readmore" class="ui-state-active"/>
-	
-		<h3>The Tapestry5-jQuery project</h3>
+
+        <p>
+            You can also create a new Kawwa2 Application by using the new Maven archetype we have created. With
+            your IDE or the command line :
+        </p>
+        <t:showSource t:type="text" t:title="Maven Archetype" t:autoOpen="true"
+                      t:escapedCode="archetype"
+                      t:readMore="readmore" class="ui-state-active"/>
+        <p>
+            The version of this archetype will follow the version of all our sub-projects (Portal, Tapestry and AngularJS Integration)
+            You should use the latest version (${message:tapestry-library-component}).
+        </p>
+
+        <h3>The Tapestry5-jQuery project</h3>
 		
 		<p>In this project, we use one of our open-source project: <strong>Tapestry5-jQuery</strong>. 
 			This project aims to make it possible to replace the Prototype/Scriptaculous 

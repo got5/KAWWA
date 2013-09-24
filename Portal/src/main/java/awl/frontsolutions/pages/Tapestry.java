@@ -37,4 +37,13 @@ public class Tapestry {
 		
 		return snippet;
 	}
+
+    public List<String> getArchetype() throws MalformedURLException{
+        List<String> snippet = new ArrayList<String>();
+
+        snippet.add("");
+        snippet.add("mvn archetype:generate -DarchetypeCatalog=http://nexus.devlab722.net/nexus/content/repositories/releases/");
+
+        return snippet;
+    }
 }
