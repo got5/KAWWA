@@ -80,12 +80,6 @@ repositories {
 	maven {url 'http://nexus.devlab722.net/nexus/content/repositories/snapshots/'}
 }
 
-task deleteTapestryDocs(type: Delete) {
-	delete 'src/main/webapp/apis/tapestry/'
-}
-task deleteAngularDocs(type: Delete) {
-	delete 'src/main/webapp/apis/angular/'	
-}
 task compileTapestryLib(type: Exec)  {
     workingDir = file('../kawwa2-tapestry')
 	commandLine 'cmd', '/c', 'mvn', 'site', '-o'
@@ -195,9 +189,10 @@ generateSublimeTextSnippets.dependsOn aggregateSASSFiles
 
 
 
-copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs", "copyThemesForTapestry")
-copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs", "copyThemesForAngular")
-
+copyTapestryDocs.dependsOn("compileTapestryLib", "copyThemesForTapestry")
+copyAngularDocs.dependsOn("compileAngularLib", "copyThemesForAngular")
+compileTapestryLib.dependsOn("copyThemesForTapestry")
+compileAngularLib.dependsOn("copyThemesForAngular")
 
 processResources.dependsOn aggregateSASSFiles
 
