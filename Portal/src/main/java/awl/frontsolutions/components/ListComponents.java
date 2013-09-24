@@ -98,6 +98,15 @@ public class ListComponents {
 		writer.write("Tapestry integration");
 		writer.end();
 
+        writer.element("dt");
+        writer.element("img", "src", angularIconUrl, "alt",
+                "AngularJS Integration");
+        writer.end();
+        writer.end();
+        writer.element("dd");
+        writer.write("AngularJS integration");
+        writer.end();
+
 		writer.end();
 
 		for (TreeNode subMenu : fileStructure.getChildren()) {
