@@ -12,7 +12,7 @@ import org.got5.tapestry5.jquery.mixins.ui.Widget;
 /**
  * 
  * @tapestrydoc
- *
+ * @component_version 1.1
  */
 public class JsTree extends Widget{
 	

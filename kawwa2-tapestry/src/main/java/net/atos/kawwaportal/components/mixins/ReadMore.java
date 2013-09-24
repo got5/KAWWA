@@ -15,7 +15,7 @@ import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 /**
  * 
  * @tapestrydoc
- *
+ * @component_version 1.0
  */
 @Import(library = "classpath:/net/atos/kawwaportal/components/assets/readMore.js")
 public class ReadMore {

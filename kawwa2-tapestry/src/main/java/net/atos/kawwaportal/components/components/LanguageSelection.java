@@ -36,6 +36,7 @@ import org.got5.tapestry5.jquery.ImportJQueryUI;
 /**
  * 
  * @tapestrydoc
+ * @component_version 1.1
  *
  */
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})

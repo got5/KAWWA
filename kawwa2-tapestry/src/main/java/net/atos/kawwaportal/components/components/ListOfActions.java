@@ -25,6 +25,7 @@ import org.apache.tapestry5.ioc.internal.util.InternalUtils;
  * @see <a href="https://kawwa.atosworldline.com/component/iconButtons">iconButtons</a>
  * @author Emmanuel DEMEY
  * @tapestrydoc
+ * @component_version 1.0
  *
  */
 @SupportsInformalParameters

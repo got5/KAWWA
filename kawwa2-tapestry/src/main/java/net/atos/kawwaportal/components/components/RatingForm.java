@@ -41,6 +41,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
  * </p>
  * 
  * @tapestrydoc
+ * @component_version 1.0
  */
 
 @Import(stylesheet = "classpath:/net/atos/kawwaportal/components/assets/ratings/ratings.css")

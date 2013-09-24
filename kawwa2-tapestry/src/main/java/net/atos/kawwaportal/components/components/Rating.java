@@ -39,6 +39,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * </p>
  * 
  * @tapestrydoc
+ * @component_version 1.0
  */
 
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/ratings/jquery.rating.pack.js",

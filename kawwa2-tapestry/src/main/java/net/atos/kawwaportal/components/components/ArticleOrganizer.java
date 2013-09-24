@@ -39,6 +39,7 @@ import net.atos.kawwaportal.components.data.articleOrganizer.TabArticleDetail;
  * </p>
  * 
  * @tapestrydoc
+ * @component_version 1.0
  */
 
 public class ArticleOrganizer {

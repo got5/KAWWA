@@ -14,6 +14,7 @@ import org.apache.tapestry5.ioc.internal.util.InternalUtils;
  * on the error component.
  * 
  * @tapestrydoc
+ * @component_version 1.0
  */
 public class Errors {
 

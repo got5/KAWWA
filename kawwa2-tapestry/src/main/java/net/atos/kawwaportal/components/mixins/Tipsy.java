@@ -6,7 +6,7 @@ import org.got5.tapestry5.jquery.mixins.ui.Widget;
 /**
  * 
  * @tapestrydoc
- *
+ * @component_version 1.1
  */
 @Import(library = "classpath:/net/atos/kawwaportal/components/assets/jquery.tipsy.js")
 public class Tipsy extends Widget{

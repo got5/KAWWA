@@ -17,6 +17,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 /**
  * 
  * @tapestrydoc
+ * @component_version 1.0
  *
  */
 public class Breadcrumb {

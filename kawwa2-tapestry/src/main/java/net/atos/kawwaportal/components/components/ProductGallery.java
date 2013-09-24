@@ -17,6 +17,7 @@ import org.got5.tapestry5.jquery.utils.JQueryUtils;
 
 /**
  * @tapestrydoc
+ * @component_version 1.0
  */
 @Import(library = {"classpath:net/atos/kawwaportal/components/assets/productgallery/jquery.jqzoom-core.js",
 		"classpath:net/atos/kawwaportal/components/assets/productgallery/productGallery.js" })

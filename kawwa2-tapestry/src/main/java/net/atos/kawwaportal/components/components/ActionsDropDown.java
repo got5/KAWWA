@@ -29,6 +29,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  *
  * @author Emmanuel DEMEY
  * @tapestrydoc
+ * @component_version 1.0    
  *
  * @see net.atos.kawwaportal.components.data.ActionsDropDownItem
 */

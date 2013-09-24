@@ -40,6 +40,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * </p>
  * 
  * @tapestrydoc
+ * @component_version 1.3
  */
 
 @MixinAfter

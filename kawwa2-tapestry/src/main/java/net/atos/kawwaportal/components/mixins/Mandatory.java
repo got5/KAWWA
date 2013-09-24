@@ -11,7 +11,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 /**
  * 
  * @tapestrydoc
- *
+ * @component_version 1.1
  */
 public class Mandatory {
 
