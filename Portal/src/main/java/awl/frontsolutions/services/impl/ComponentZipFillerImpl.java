@@ -35,7 +35,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 
 	private JavaScriptStackSource stackSource;
 
-	private AssetSource assetSource;
+    private AssetSource assetSource;
 
 	private FileSystemIndexer fileSystemIndexer;
 
@@ -135,61 +135,89 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
         }
 	}
 
-	/* (non-Javadoc)
-	 * @see awl.frontsolutions.services.ComponentZipFiller#fillWithThemeCSS(java.util.zip.ZipOutputStream, java.lang.String)
-	 */
+    /**
+     *
+     * @param link
+     * @param destination
+     * @param zos
+     */
+    private void copyThemeCSSFilesIntoZip(StylesheetLink link, String destination, ZipOutputStream zos) throws IOException {
+        String[] urlTree = link.getURL().split("/");
+        // On supprime les 4 premiers dossiers
+        StringBuilder sb = new StringBuilder();
+
+        Boolean flag = false;
+        for (int i = 0; i < urlTree.length; i++) {
+            if (urlTree[i].equalsIgnoreCase("css"))
+                flag = true;
+            if (flag) {
+                sb.append("/");
+                sb.append(urlTree[i]);
+            }
+
+        }
+        String ctxPath = "context:" + sb.toString().substring(1);
+
+        String comment = null;
+        if (link.getOptions() != null) {
+            if (link.getOptions().getMedia() != null) {
+                comment += "media='" + link.getOptions().getMedia()
+                        + "', ";
+            }
+            if (link.getOptions().getCondition() != null) {
+                comment += "condition='"
+                        + link.getOptions().getCondition() + "'";
+            }
+        }
+
+        copyThemeCSSFilesIntoZip(assetSource.getExpandedAsset(ctxPath), destination, zos, comment);
+    }
+
+    /**
+     *
+     * @param link
+     * @param destination
+     * @param zos
+     */
+    private void copyThemeCSSFilesIntoZip(Asset asset, String destination, ZipOutputStream zos, String comment) throws IOException {
+        ZipEntry entry = new ZipEntry(destination);
+        zos.putNextEntry(entry);
+
+        Resource r = asset.getResource();
+        InputStream is = r.openStream();
+        IOUtils.copy(is, zos);
+        is.close();
+
+        if (StringUtils.isNotEmpty(comment)) {
+            entry.setComment(comment);
+        }
+
+        zos.closeEntry();
+
+    }
 	public void fillWithThemeCSS(ZipOutputStream zos, String themeName)
-			throws IOException {
-		List<StylesheetLink> cssFiles = stackSource.getStack(themeName)
-				.getStylesheets();
-		for (StylesheetLink cssFile : cssFiles) {
-			String url = cssFile.getURL();
-			String[] urlPath = url.split("/");
-			String zipEntryName = "Theme_" + getThemeLabel(themeName) + "/css/"
-					+ urlPath[urlPath.length - 1];
-			ZipEntry entry = new ZipEntry(zipEntryName);
-			zos.putNextEntry(entry);
-			String[] urlTree = cssFile.getURL().split("/");
-			// On supprime les 4 premiers dossiers
-			StringBuilder sb = new StringBuilder();
+            throws IOException {
 
-			Boolean flag = false;
-			for (int i = 0; i < urlTree.length; i++) {
-				if (urlTree[i].equalsIgnoreCase("css"))
-					flag = true;
-				if (flag) {
-					sb.append("/");
-					sb.append(urlTree[i]);
-				}
+        fillWithThemeCSS(zos, themeName, "Theme_" + getThemeLabel(themeName) + "/css/");
+    }
 
-			}
-			String ctxPath = "context:" + sb.toString().substring(1);
-			Asset a = assetSource.getExpandedAsset(ctxPath);
+    public void fillWithThemeCSS(ZipOutputStream zos, String themeName, String path)
+            throws IOException {
+        List<StylesheetLink> cssFiles = stackSource.getStack(themeName)
+                .getStylesheets();
 
-			Resource r = a.getResource();
-			InputStream is = r.openStream();
-			IOUtils.copy(is, zos);
-			is.close();
-			String comment = "";
-			if (cssFile.getOptions() != null) {
-				if (cssFile.getOptions().getMedia() != null) {
-					comment += "media='" + cssFile.getOptions().getMedia()
-							+ "', ";
-				}
-				if (cssFile.getOptions().getCondition() != null) {
-					comment += "condition='"
-							+ cssFile.getOptions().getCondition() + "'";
-				}
-			}
-			if (StringUtils.isNotEmpty(comment)) {
-				entry.setComment(comment);
-			}
+        for (StylesheetLink cssFile : cssFiles) {
+            String url = cssFile.getURL();
+            String[] urlPath = url.split("/");
+            if(!urlPath[urlPath.length - 1].startsWith("i-theme"))
+                copyThemeCSSFilesIntoZip(cssFile, path + urlPath[urlPath.length - 1], zos);
+        }
 
-			zos.closeEntry();
-
-		}
-
-	}
+        //Add k-structure
+        String[] urlPath = assetSource.getExpandedAsset("${jquery.ui.default-theme.path}").toClientURL().split("/");
+        copyThemeCSSFilesIntoZip(assetSource.getExpandedAsset("${jquery.ui.default-theme.path}"),
+                path + urlPath[urlPath.length - 1], zos, null);
+    }
 
 	/**
 	 * 
@@ -218,21 +246,17 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 	public void fillWithThemeTemplate(ZipOutputStream zos, String themeName,
 			DownloadDocType doctype) throws IOException {
 
-		File templateRoot = new File(root);
-
 		String themeDir = messages.get(getThemeLabel(themeName)
 				+ "-asset-subdir");
-		File file = null;
-		if (doctype == DownloadDocType.XHTML)
-			file = new File(templateRoot.getAbsolutePath() + "/templates/"
-					+ themeDir + "/");
-		else
-			file = new File(templateRoot.getAbsolutePath()
+
+        File file = new File(new File(root).getAbsolutePath()
 					+ "/templates_html5/" + themeDir + "/");
 
 		parcourirFolder(zos, file, "Templates_" + getThemeLabel(themeName)
 				+ "/");
 
+        //Add CSS files
+        fillWithThemeCSS(zos, themeName, "Templates_" + getThemeLabel(themeName) + "/css/");
 	}
 
 	/**

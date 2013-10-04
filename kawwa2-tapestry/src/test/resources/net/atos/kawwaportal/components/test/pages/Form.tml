@@ -4,11 +4,15 @@
 	xmlns:p="tapestry:parameter">
 	
 	<body>
-	 	<t:form t:clientValidation="false" t:id="form">
+	 	<t:form  t:id="form">
 	 		<t:errors t:banner="literal:test"/>
 	 		<t:label t:for="value" /><t:textfield t:id="value" t:validate="required"/><br />
 	 		<t:label t:for="second" /><t:passwordfield t:id="second" t:validate="required"/><br />
-	 		
+            <t:label t:for="third" /><t:select t:id="third" model="literal:opt1,opt12,opt3" blankOption="always"
+                                               t:validate="required"/><br />
+
+
+            <input t:type="Upload" t:id="doDigestPathFile" t:value="file" t:validate="required" />
 	 		
 	 		<fieldset class="k-radio">
 				<legend>Choose between:</legend>

@@ -57,7 +57,8 @@ public class KawwaValidationDecorator implements ValidationDecorator{
 	}
 
 	public void insideField(Field field) {
-		
+
+        System.out.println(field.getClass().getCanonicalName()+" "+ field.isRequired());
 		if(field==null) return;
 		
 		Element e = markupWriter.getElement();
@@ -71,9 +72,9 @@ public class KawwaValidationDecorator implements ValidationDecorator{
 			
 			e.addClassName(KawwaConstants.CSS_CLASS_ERROR);
 		}
-		
+
 		if(field.isRequired()){
-			
+            System.out.println("ajout class " +field.getClass().getCanonicalName());
 			e.addClassName(KawwaConstants.CSS_CLASS_REQUIRED);
 		}
 	}

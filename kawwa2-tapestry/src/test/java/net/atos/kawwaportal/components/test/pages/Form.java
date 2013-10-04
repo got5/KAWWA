@@ -7,6 +7,7 @@ import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Checkbox;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
+import org.apache.tapestry5.upload.services.UploadedFile;
 
 public class Form {
 	@Property
@@ -14,7 +15,10 @@ public class Form {
 	
 	@Property
 	private String second;
-	
+
+    @Property
+    private String third;
+
 	@Property 
 	private String test;
 	
@@ -26,14 +30,18 @@ public class Form {
     private CardType type;
 	
 	@InjectComponent
-	private org.apache.tapestry5.corelib.components.Form form;
+	private org.apache.tapestry5.corelib.comp
+    onents.Form form;
 	
 	@Property
 	private Boolean v1, v2;
 	
 	@InjectComponent(value="t1")
 	private Checkbox c;
-	
+
+    @Property
+    private UploadedFile file;
+
 	public CardType getMasterCard() { return CardType.MASTER_CARD; }
 
     public CardType getVisa() { return CardType.VISA; }
