@@ -1,0 +1,6 @@
+<snippet>
+  <content><![CDATA[Please note that the CSS code <strong>is the same</strong> for all form buttons types (validation, optional, etc.), 
+and either for <span class="i-code">input</span> or <span class="i-code">a</span> tags.]]></content>
+  <tabTrigger>linkButtons_readmore</tabTrigger>
+  <scope>source.css</scope>
+</snippet>

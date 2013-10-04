@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[//k-theme0 for verticalNavigation]]></content>
+  <tabTrigger>verticalNavigation_k-theme0</tabTrigger>
+  <scope>source.scss</scope>
+</snippet>

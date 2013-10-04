@@ -1,0 +1,5 @@
+<snippet>
+  <content><![CDATA[//k-theme0 for mainNavigation]]></content>
+  <tabTrigger>mainNavigation_k-theme0</tabTrigger>
+  <scope>source.scss</scope>
+</snippet>

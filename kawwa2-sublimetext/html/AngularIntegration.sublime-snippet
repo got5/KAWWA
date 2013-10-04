@@ -1,0 +1,30 @@
+<snippet>
+  <content><![CDATA[<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/jquery-1.8.3.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/angular.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/jquery.ui.core.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/jquery.ui.widget.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/kawwa-directives-full.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="content" ng-controller="myCtrl">
+    <div data-title="gal1" data-product-gallery data-gallery="gallery" data-options="galleryOptions"></div>
+</div>
+</body>
+</html>]]></content>
+  <tabTrigger>AngularIntegration</tabTrigger>
+  <scope>text.html</scope>
+</snippet>
+name="star1" type="radio" value="3"/>
+        <input name="star1" type="radio" value="4"/>
+        <input name="star1" type="radio" value="5"/>
+    </p>
+</fieldset>
+</body>
+</html>]]></content>
+  <tabTrigger>AngularIntegration</tabTrigger>
+  <scope>text.html</scope>
+</snippet>
