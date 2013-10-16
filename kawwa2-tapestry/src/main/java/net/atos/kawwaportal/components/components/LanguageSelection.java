@@ -173,7 +173,7 @@ public class LanguageSelection {
 		js.addInitializerCall("languageSelection", 
 							new JSONObject("id", idForm, 
 										   "mode", mode.toString(), 
-										   "url", cr.createEventLink(KawwaEventsConstants.LANGUAGE_SELECTED, null).toAbsoluteURI()));
+										   "url", cr.createEventLink(KawwaEventsConstants.LANGUAGE_SELECTED, null).toURI()));
 		
 	}
 	

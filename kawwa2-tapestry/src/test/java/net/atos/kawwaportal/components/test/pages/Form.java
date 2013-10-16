@@ -30,8 +30,7 @@ public class Form {
     private CardType type;
 	
 	@InjectComponent
-	private org.apache.tapestry5.corelib.comp
-    onents.Form form;
+	private org.apache.tapestry5.corelib.components.Form form;
 	
 	@Property
 	private Boolean v1, v2;
