@@ -180,8 +180,9 @@ public class Kawwa2Grid implements ClientElement {
 	@Inject
 	private ComponentResources cr;
 
-	@Component(publishParameters = "rowsPerPage")
-	private Kawwa2Nav nav;
+	//@Component(publishParameters = "rowsPerPage")
+    @Component(parameters = "rowsPerPage=prop:rowsPerPage")
+    private Kawwa2Nav nav;
 	
 	@Component(id = "idKawwaGrid", inheritInformalParameters = true, parameters = "inplace=inplace", publishParameters = "model,include,exclude,reorder,row,add,overrides,encoder,empty")
 	private Grid kGrid;
@@ -190,11 +191,13 @@ public class Kawwa2Grid implements ClientElement {
 	@Property
 	private String rowPerPageZone;
 
+
 	@Property
 	private GridDataSource cachedSource;
 
-	@Persist
-	private Integer rowsPerPage;
+	@Parameter()
+	//private Integer rowsPerPage;
+    private Integer rowsPerPage;
 
 	private int index = 0;
 
@@ -278,6 +281,7 @@ public class Kawwa2Grid implements ClientElement {
 
 		this.rowPerPageZone = "rowPerPageZone_" + getClientId();
 
+
 		try {
 			if (cookieEnabled) {
 
@@ -293,6 +297,9 @@ public class Kawwa2Grid implements ClientElement {
 				rowsPerPage = defaultRowPerPage;
 			}
 		}
+        System.out.println("============================");
+        System.out.println(defaultRowPerPage);
+        System.out.println(rowsPerPage);
 	}
 
 	public Integer getRowsPerPage() {

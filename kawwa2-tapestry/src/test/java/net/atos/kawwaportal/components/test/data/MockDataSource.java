@@ -13,7 +13,7 @@ public class MockDataSource implements IDataSource {
 	 *
 	 */
 	public MockDataSource() {
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 1000; i++) {
 			addObject(new Celebrity("Bill"+i, "Clinton"+i, Formats
 					.parseDate("08/19/1946"), Occupation.POLITICIAN));
 			addObject(new Celebrity("Placido"+i, "Domingo"+i, Formats

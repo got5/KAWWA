@@ -32,6 +32,8 @@ public class Kawwa2Grid {
 	@Property
 	private boolean inplace;
 
+    @Property
+    private Integer rows;
 	@Persist
 	@Property
 	private CelebrityCriterium critere;
@@ -59,7 +61,7 @@ public class Kawwa2Grid {
 	}
 	
 	@SetupRender
-	public void setupRender(){
+	public void setupRender(){   rows = 20;
 		if(critere  == null)
 			critere = new CelebrityCriterium();
 		

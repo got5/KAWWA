@@ -4,9 +4,10 @@
  
 <body>
 
-	<table t:type="kawwa2/Kawwa2Grid" t:source="allCelebrities" t:rowsPerPage="5" 
+	<table t:type="kawwa2/Kawwa2Grid" t:source="allCelebrities" t:rowsPerPage="rows"
         t:exclude="id, biography, birthDateVerified"
-		t:reorder="lastName,firstName,occupation,dateOfBirth" t:model="model" t:row="current" t:inplace="inplace" t:criterium="critere">
+		t:reorder="lastName,firstName,occupation,dateOfBirth" t:model="model" t:row="current"
+        t:criterium="critere">
 	</table> 
 	
 	
