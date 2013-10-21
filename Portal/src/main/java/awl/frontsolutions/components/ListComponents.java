@@ -137,7 +137,7 @@ public class ListComponents {
 				writer.write(fileStructure.getNodeName());
 				writer.end();
 			}
-
+            writer.element("ul");
 			F.flow(fileStructure.getChildren())
 					.sort(new Comparator<TreeNode>() {
 
@@ -150,14 +150,14 @@ public class ListComponents {
 
 						@Override
 						public void work(TreeNode element) {
-							writer.element("ul");
+
 							listDirectory(element, writer, level + 1);
-							writer.end();
+
 
 						}
 					});
 
-			
+            writer.end();
 			writer.end();
 		} else if (fileStructure.getNodeType().equals(NodeType.COMPONENT)) {
 			if (level == 1) {
@@ -178,7 +178,7 @@ public class ListComponents {
 
 				writer.end();
 
-				writer.element("ul");
+                        writer.element("ul");
 
 				writer.element("li");
 				writer.element("a", "href", pageRender
