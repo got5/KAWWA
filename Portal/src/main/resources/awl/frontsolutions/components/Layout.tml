@@ -142,7 +142,7 @@
 				
 				<p>
 					<label for="namecontact">Name</label> <input t:type="textfield" required="true" t:value="namecontact"
-						id="namecontact" name="namecontact" type="text"></input>
+						t:id="namecontact" name="namecontact" type="text"></input>
 				</p>
 				<p>
 					<label for="emailcontact">Email</label> <input t:type="textfield" required="true" t:value="emailcontact"
@@ -150,7 +150,7 @@
 				</p>
 				<p>
 					<label for="bodycontact">Message</label>
-					<textarea t:type="textarea" required="true" cols="60" rows="10" id="bodycontact" t:value="bodycontact"
+					<textarea t:type="textarea" required="true" cols="60" rows="10" t:id="bodycontact" t:value="bodycontact"
 						name="bodycontact"></textarea>
 				</p>
 				<p>
