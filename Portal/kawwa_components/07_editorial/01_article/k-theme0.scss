@@ -1,0 +1,36 @@
+/* ----------------------------- ARTICLE ------------------------------- */
+
+.k-article {
+	max-width: 45em;
+	margin: 0 0 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px dashed #CCC;
+	
+	.p-name + ul.entry-info {margin-top: -1.5em;}
+	
+	ul, ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
+	
+	p {line-height: 1.5;}
+	p + p {text-indent: 1.5em;}
+	p + p.k-readmore {text-indent: 0;}
+	
+	li {line-height: 1.5;}
+}
+	
+ul.entry-info {
+	padding: 0;
+	margin: 0 0 1.5em;
+	
+	li {display: inline; list-style-type: none; line-height: 1.7; font-size: 0.8em;}
+}
+ul.entry-info + .e-content {margin: 2.5em 0 0;}
+
+.dt-published::after {
+	content: "\2609";
+	font-size: 150%;
+	padding: 0 0.5em 0 0.7em;
+	vertical-align: -3px;
+	color: #999;
+}
+
+
