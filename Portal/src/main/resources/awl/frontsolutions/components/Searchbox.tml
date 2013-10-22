@@ -9,7 +9,8 @@
 					class="k-autocomplete"
 					placeholder="Search a Component..."
 					t:mixins="jquery/autocomplete" 
-					size="30"/>
+					size="30"
+                    type="search"/>
 			<input	type="submit" value="go" />
 		</p>
 </t:form>
