@@ -35,7 +35,7 @@
 			</p>
 			<p>
 				<t:label t:for="emailcontact">* Email</t:label>
-				<t:textfield t:id="emailcontact" />
+				<t:textfield t:id="emailcontact" type="email"/>
 			</p>
 			<p>
 				<t:label t:for="bodycontact">* Message</t:label>

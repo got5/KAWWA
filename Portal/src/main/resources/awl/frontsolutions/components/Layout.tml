@@ -141,12 +141,14 @@
 			<form t:type="form"	t:id="contextForm" t:clientValidation="false" t:autofocus="false">
 				
 				<p>
-					<label for="namecontact">Name</label> <input t:type="textfield" required="true" t:value="namecontact"
+					<label for="namecontact">Name</label>
+                    <input t:type="textfield" required="true" t:value="namecontact"
 						t:id="namecontact" name="namecontact" type="text"></input>
 				</p>
 				<p>
-					<label for="emailcontact">Email</label> <input t:type="textfield" required="true" t:value="emailcontact"
-						t:id="emailcontact" name="emailcontact" type="text"></input>
+					<label for="emailcontact">Email</label>
+                    <input t:type="textfield" required="true" t:value="emailcontact"
+						t:id="emailcontact" name="emailcontact" type="email"></input>
 				</p>
 				<p>
 					<label for="bodycontact">Message</label>

@@ -57,7 +57,10 @@
 			<fieldset id="group-followUp">
 				<legend>Follow-up</legend>
 				<p>Entering your e-mail address here below will allow us to keep you updated about all Kawwa upgrades, bug fixes and follow-ups:</p>
-				<p><label for="email">Your e-mail:</label> <input t:type="textfield" t:id="email" name="email" /></p>
+				<p>
+                    <label for="email">Your e-mail:</label>
+                    <input t:type="textfield" t:id="email" type="email"  name="email" />
+                </p>
 			</fieldset>
 			<p><input class="major-action" type="submit" value="Download" /></p>
 		</div>
