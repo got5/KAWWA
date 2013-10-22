@@ -3,7 +3,7 @@
 	xmlns:p="tapestry:parameter">
 
 
-	<nav>
+	<nav role="navigation">
 		
 			<p class="control"><a href="#" title="Click to open/close menu"><img src="${urlImg}" alt="Menu"/></a></p>
 			<h2 class="k-skip">
