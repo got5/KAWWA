@@ -1,12 +1,12 @@
 /* ------------------------------------- HIGHLIGHT TEXTUAL BLOCK ---------------------------------- */
 
+
 div.k-highlight-block {
-	width: 90%;
 	max-width: 40em;
 	color: #444;
 	background: #FFF;
-	padding: 0.5em;
-	margin: 2em;
+	padding: 0.5em 3%;
+	margin: 2em auto;
 	border-top: 1px dashed $neutral_clr;
 	border-bottom: 1px dashed $neutral_clr;
 	
@@ -15,6 +15,13 @@ div.k-highlight-block {
 		font-style: italic;
 		text-indent: 0;
 	}
+	
+	@media screen and (min-width: 500px) {
+		width: 80%;
+		padding: 0.5em 5%;
+		margin: 2em 5%;
+	}
+	
 }
 
 
