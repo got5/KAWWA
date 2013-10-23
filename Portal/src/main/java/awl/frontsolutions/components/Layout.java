@@ -6,11 +6,7 @@ import java.util.Date;
 
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.ComponentResources;
-import org.apache.tapestry5.annotations.Import;
-import org.apache.tapestry5.annotations.OnEvent;
-import org.apache.tapestry5.annotations.Parameter;
-import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.AssetSource;
@@ -55,7 +51,9 @@ public class Layout
     @SessionState
     private Panier panier;
 
-    
+    @Parameter(defaultPrefix = BindingConstants.LITERAL)
+    private String breadcrumb;
+
     @Inject
     private ComponentResources resources;
     

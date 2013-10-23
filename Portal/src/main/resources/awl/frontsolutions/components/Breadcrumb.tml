@@ -7,6 +7,9 @@
 	<t:if test="showComponents">
 		<t:pagelink t:page="components">Components</t:pagelink> &gt;
 	</t:if>
+    <t:if test="showAboutKawwa">
+        <t:pagelink t:page="kawwaportal">All About Kawwa</t:pagelink> &gt;
+    </t:if>
 	${pageName}
 </p>
 

@@ -1,4 +1,4 @@
-<t:layout t:activeMenu="4" t:title="All About Kawwa: The Kawwa Portal" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+<t:layout t:activeMenu="4" t:title="All About Kawwa: Unobstrusive JavaScript Approach" t:breadcrumb="Unobstrusive JavaScript Approach" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
 	
 <t:AboutKawwaMenu />
 		

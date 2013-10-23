@@ -1,4 +1,4 @@
-<t:layout t:activeMenu="4" t:title="All About Kawwa" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+<t:layout t:activeMenu="4" t:title="All About Kawwa: How to work with Kawwa Components" t:breadcrumb="How to work with Kawwa Components" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
 
 <t:AboutKawwaMenu />
 

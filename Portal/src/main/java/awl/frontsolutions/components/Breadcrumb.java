@@ -2,6 +2,7 @@ package awl.frontsolutions.components;
 
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.annotations.InjectPage;
+import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import awl.frontsolutions.internal.KawwaPortalConstants;
@@ -10,6 +11,9 @@ import awl.frontsolutions.treeDescription.TreeNode;
 
 public class Breadcrumb {
 
+    @Parameter
+    private String page;
+
 	@Inject
 	private ComponentResources resources;
 	
@@ -17,7 +21,9 @@ public class Breadcrumb {
 	private Component component;
 	
 	public String getPageName(){
-		
+
+        if(resources.isBound("page")) return page;
+
 		String breadcrumb = resources.getPageName();
 		
 		if(breadcrumb.equalsIgnoreCase(KawwaPortalConstants.COMPONENT_PAGE)){
@@ -36,4 +42,15 @@ public class Breadcrumb {
 	public boolean getShowComponents(){
 		return resources.getPageName().equalsIgnoreCase(KawwaPortalConstants.COMPONENT_PAGE);
 	}
+
+    public boolean getShowAboutKawwa(){
+        String pageName = resources.getPageName();
+        return pageName.equalsIgnoreCase("HowTo") || pageName.equalsIgnoreCase("Accessibility") ||
+                pageName.equalsIgnoreCase("Tapestry") || pageName.equalsIgnoreCase("Angular") ||
+                pageName.equalsIgnoreCase("IeFix") || pageName.equalsIgnoreCase("UnobstrusiveApproach") ||
+                pageName.equalsIgnoreCase("KawwaPortal") || pageName.equalsIgnoreCase("Releases") ||
+                pageName.equalsIgnoreCase("ComponentApproach");
+
+
+    }
 }

@@ -58,7 +58,7 @@
 
 		</t:if>
 		<t:if t:test="isNewIndex()" t:negate="true">
-			<t:breadcrumb />
+			<t:breadcrumb t:page="inherit:breadcrumb"/>
 		</t:if>
 
 
