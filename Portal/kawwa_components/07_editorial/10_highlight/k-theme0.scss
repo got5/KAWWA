@@ -3,18 +3,18 @@
 div.k-highlight-block {
 	width: 90%;
 	max-width: 40em;
-	color: $text_clr;
+	color: #444;
 	background: #FFF;
 	padding: 0.5em;
 	margin: 2em;
 	border-top: 1px dashed $neutral_clr;
 	border-bottom: 1px dashed $neutral_clr;
 	
-	p {text-indent: 0;}
+	p {
+		font-weight: bold;
+		font-style: italic;
+		text-indent: 0;
+	}
 }
 
-
-
-	
-	
 
