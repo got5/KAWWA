@@ -1,0 +1,28 @@
+/* ----------------------------- INTRODUCTION ------------------------------- */
+
+div.k-intro {
+	margin: 0 0 2em;
+	
+	p {font-size: 1.2em; text-indent: 0;}
+	
+	p:first-child:first-letter {
+		line-height: 0.5;
+		font: 200% $title_stack;
+		color: #000;
+		background: #FFF;
+	}
+
+	// QUERIES
+	@media screen and (min-width: 640px) {
+		max-width: 33em;
+		line-height: 1.58;
+		color: #303030;
+		background: #FFF;
+		padding-left: 1em;
+		margin: 0 0 2em 2em;
+		border-left: 1px solid #C0C0C0;
+	} 
+	
+}
+
+
