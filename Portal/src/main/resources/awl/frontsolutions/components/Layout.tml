@@ -104,9 +104,9 @@
 							Kawwa</a></li>
 					<li><a t:type="pagelink" t:page="Templates">Example
 							Templates</a></li>
-					<t:if t:test="isAtos()">
+					<!--t:if t:test="isAtos()">
 						<li><a t:type="pagelink" t:page="documentation">Documentation</a></li>
-					</t:if>
+					</t:if-->
 					<li><a t:type="pagelink" t:page="download">Download</a></li>
 					<li><a t:type="pagelink" t:page="components">Components</a></li>
 					<li><a t:type="pagelink" t:page="faq">FAQ</a></li>
