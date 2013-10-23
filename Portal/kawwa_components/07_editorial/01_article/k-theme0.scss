@@ -9,7 +9,7 @@
 	ul, ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
 	
 	p {line-height: 1.6;}
-	p + p {text-indent: 1.5em;}
+	p + p, figure + p {text-indent: 1.5em;}
 	
 	li {line-height: 1.5;}
 }
