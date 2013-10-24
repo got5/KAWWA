@@ -6,16 +6,16 @@
 	padding-bottom: 1em;
 	border-bottom: 1px dashed #CCC;
 	
-	.p-name + ul.entry-info {margin-top: -1.5em;}
-	
 	ul, ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
 	
-	p {line-height: 1.5;}
-	p + p {text-indent: 1.5em;}
-	p + p.k-readmore {text-indent: 0;}
+	p {line-height: 1.6;}
+	p + p, figure + p {text-indent: 1.5em;}
 	
 	li {line-height: 1.5;}
 }
+	
+p + p.k-readmore {text-indent: 0;}
+.p-name + ul.entry-info {margin-top: -1.5em;}
 	
 ul.entry-info {
 	padding: 0;

@@ -1,0 +1,28 @@
+/* ----------------------------- BLOCKQUOTE ------------------------------- */
+
+blockquote {
+	position: relative;
+	width: 60%;
+	max-width: 40em;
+	color: #000;
+	background: #FFF;
+	padding: 0 0 0 3em;
+	margin: 2em;
+	
+	p {text-indent: 0;}
+
+}
+	blockquote::before {
+		position: absolute;
+		top: -10px;
+		left: 0;
+		width: 0.5em;
+		content:"“";
+		font: 500% Georgia, Times, "Times New Roman", serif;
+		color: $neutral_clr;
+		background: transparent;
+	}
+
+	.citation {font-size: 0.75em; padding-top: 1em;}
+	cite.author {font-style: normal;}
+		
