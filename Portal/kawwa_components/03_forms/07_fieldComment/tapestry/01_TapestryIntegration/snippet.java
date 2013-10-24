@@ -9,7 +9,7 @@ public class Form {
 	private String value;
 	
 	public JSONObject getOptions(){
-		return new JSONObject("gravity", "n");
+		return new JSONObject("gravity", "n", "trigger", "focus");
 		
 	}
 }
