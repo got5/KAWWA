@@ -297,9 +297,6 @@ public class Kawwa2Grid implements ClientElement {
 				rowsPerPage = defaultRowPerPage;
 			}
 		}
-        System.out.println("============================");
-        System.out.println(defaultRowPerPage);
-        System.out.println(rowsPerPage);
 	}
 
 	public Integer getRowsPerPage() {
