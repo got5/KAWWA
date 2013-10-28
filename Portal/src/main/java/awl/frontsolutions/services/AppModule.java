@@ -9,12 +9,15 @@ import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.dom.Element;
+import org.apache.tapestry5.internal.services.PageContentTypeAnalyzer;
+import org.apache.tapestry5.internal.services.RequestPageCache;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
+import org.apache.tapestry5.ioc.services.ServiceOverride;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
@@ -93,7 +96,15 @@ public class AppModule {
 		binder.bind(AtosService.class, AtosServiceDefaultImpl.class);
 		binder.bind(Authentification.class, AuthentificationDefaultImpl.class);
 		binder.bind(MailService.class, DefaultMailServiceImpl.class);
+        binder.bind(MarkupWriterFactory.class, Html5MarkupWriterFactory.class).withId("Html5MarkupWriterFactory");
 	}
+
+    @Contribute(ServiceOverride.class)
+    public static void setupApplicationServiceOverrides(MappedConfiguration<Class,Object> configuration,
+                @Local MarkupWriterFactory override)
+    {
+        configuration.add(MarkupWriterFactory.class, override);
+    }
 
 	@Contribute(MarkupRenderer.class)
 	public static void addMetaRenderFilter(
