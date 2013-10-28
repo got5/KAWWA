@@ -10,6 +10,7 @@ import org.apache.tapestry5.Block;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.*;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 import org.apache.tapestry5.json.JSONObject;
@@ -74,6 +75,7 @@ public class ActionsDropDown {
      */
 	@Inject private Block defaultBlock;
 
+    private Messages messages;
     /**
      * Store the previous category, in order to know if we have or not to display a new "p" element
      */
@@ -86,6 +88,8 @@ public class ActionsDropDown {
      */
 	@SetupRender
 	void setupRender(MarkupWriter writer) {
+        messages = resources.getContainerMessages();
+
         previousCategory = null;
 		id = javaScriptSupport.allocateClientId(resources);
 
@@ -110,7 +114,8 @@ public class ActionsDropDown {
             }
 
             writer.element("p");
-            writer.write(item.getCategory());
+
+            writer.write(messages.contains(getCamelCategory()) ? messages.get(getCamelCategory()) : item.getCategory());
             writer.end();
 
 
