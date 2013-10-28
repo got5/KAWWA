@@ -15,7 +15,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * 
  * @tapestrydoc
  * @component_version 1.1
- *
+ * @deprecated
  */
 @Import(library = {"classpath:/net/atos/kawwaportal/components/assets/superfish.js", 
 		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
