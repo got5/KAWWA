@@ -38,4 +38,18 @@ public class ActionsDropDownTest extends SeleniumTestCase{
 			}
 		}.wait("The div element with the 'content' CSS class should be visible'", 5000l);
 	}
+
+    @Test
+    public void testPropertyFile(){
+
+        open("ActionsDropDown");
+
+        new Wait() {
+            @Override
+            public boolean until() {
+                return isTextPresent("Yo Yo Plastic");
+            }
+        }.wait("The 'Plastic' should be overriden by the Property file");
+
+    }
 }
