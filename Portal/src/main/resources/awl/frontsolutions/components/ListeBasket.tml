@@ -23,7 +23,7 @@
 				<t:if t:test="data">
 					<fieldset>
 						<legend>Basic configuration</legend>
-						<fieldset class="k-radio">
+						<!--fieldset class="k-radio">
 							<legend>Choose a DOCTYPE version :</legend>
 							
 								<t:radiogroup t:id="doctype" value="panier.doctype">
@@ -31,7 +31,7 @@
 			               			<p><t:label for="xhtmlFlag"><t:radio t:id="xhtmlFlag"/> XHTML Strict</t:label></p>
 			          			</t:radiogroup>
 							
-						</fieldset>
+						</fieldset-->
 						
 						<p class="k-check">
 							<t:checkbox t:id="examples" id="examples" t:value="panier.includeTemplate" />	

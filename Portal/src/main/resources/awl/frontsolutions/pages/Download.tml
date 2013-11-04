@@ -22,7 +22,7 @@
 		<div class="configure">
 			<fieldset id="group-basics">
 				<legend>Select basic configuration</legend>
-				<fieldset class="k-radio">
+				<!--fieldset class="k-radio">
 					<legend>Choose a DOCTYPE version :</legend>
 					<p>
 						<t:radiogroup t:id="doctype" t:value="panier.doctype">
@@ -30,7 +30,7 @@
 	               			<label for="xhtml"><t:radio t:id="xhtml"/> XHTML Strict</label>
           				 </t:radiogroup>
 					</p>
-				</fieldset>
+				</fieldset-->
 				<p>
 					<label for="theme">Choose a graphic theme:</label>
 					<t:select t:id="theme" model="themeModel" t:blankOption="NEVER" t:value="panier.theme"/>
