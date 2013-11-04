@@ -173,7 +173,7 @@ public class ListComponents {
 								String.format("img/%s/icon_%s.png", theme
 										.getDir(), fileStructure.getNodeName()
 										.replaceAll("\\s", "")), null)
-								.toClientURL(), "alt", "");
+								.toClientURL(), "alt", "Page Structure");
 				writer.end();
 
 				writer.end();
