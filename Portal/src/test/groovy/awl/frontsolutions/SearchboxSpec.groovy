@@ -5,11 +5,12 @@ import spock.lang.Unroll
 
 class SearchboxSpec extends GebSpec{
     @Unroll
-    def "nav should have role=navigation for #page"(){
+    def "nav should have role=navigation and role=searchfor #page"(){
         setup:
         go page
 
         expect:
+        $("form[role='search']") .size() >= 1
         $("input[type='search']") .size() >= 1
 
         where:
