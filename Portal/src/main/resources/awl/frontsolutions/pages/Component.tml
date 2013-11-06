@@ -15,26 +15,7 @@
         	<p:else>
         		<div class="i-section">
         	
-		            <h3>${componentTitle} <a href="#"><img alt="Component Information" src="${asset:context:img/info.png}" /></a></h3>
-					<ul class="component-info">
-					      <li>Class name: <em>${componentCssClass}</em></li>
-					      <li>Version: ${componentInfo?.version}</li>
-					      <t:if test="hasJqueryTag">
-					      	<li>
-						    	<img alt="jQuery" src="${jQueryPath}" /> jQuery Interactive feature
-						    </li>
-			              </t:if>
-			              <t:if test="hasTapestryTag">
-			              	<li>
-		                 		<img alt="Tapestry" src="${tapestryPath}" /> Tapestry Integration
-		                 	</li>
-		                 </t:if>
-                        <t:if test="hasAngularTag">
-                            <li>
-                                <img alt="Angular" src="${angularPath}" /> Angular Integration
-                            </li>
-                        </t:if>
-					</ul>
+		            <h3>${componentTitle}</h3>
 
 		            <p id="toBasket" class="buy">
 		            	<t:actionLink t:zone="zoneBasket" t:id="panier" t:context="componentInfo.urlParam" title="Add this component to download list">Add to list</t:actionLink>

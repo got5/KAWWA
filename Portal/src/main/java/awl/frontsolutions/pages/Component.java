@@ -349,15 +349,4 @@ public class Component {
 	}
 	
 	public boolean newTheme(){ return !currentTheme.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);}
-	
-	public Asset getTapestryPath(){
-		return this.assetSource.getContextAsset(String.format("img/%s/jquery-trans.png", currentTheme.getDir()), null);
-	}
-	
-	public Asset getJQueryPath(){
-		return this.assetSource.getContextAsset(String.format("img/%s/tapestry-small.png", currentTheme.getDir()), null);
-	}
-    public Asset getAngularPath(){
-        return this.assetSource.getContextAsset(String.format("img/%s/angular-small.png", currentTheme.getDir()), null);
-    }
 }
