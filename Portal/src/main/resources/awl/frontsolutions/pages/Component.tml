@@ -108,15 +108,13 @@
                 <ul class="tabs">
                     <t:if test="hasHtml5Tag">
                         <li>
+                            <a href="#demo">Demo</a>
+                        </li>
+                        <li>
                             <a href="#html5">HTML5 version</a>
                         </li>
                     </t:if>
-                	<t:if test="hasHtml">
-	                    <li>
-	                        <a href="#xhtml">XHTML version</a>
-	                    </li>
-                    </t:if>
-                    <t:if test="hasTapestryTag">
+                	<t:if test="hasTapestryTag">
                         <li>
                             <a href="#tapestry">Tapestry Integration</a>
                         </li>
@@ -128,11 +126,13 @@
                     </t:if>
                 </ul>
                 <t:if test="hasHtml5Tag">
+                    <div class="content" id="demo">
+                        <div id="i-component" class="content">
+                            <t:outputRaw t:value="snippetHTML5"/>
+                        </div>
+                    </div>
                     <div class="content" id="html5">
-                    	<div id="i-component" class="content">
-                			<t:outputRaw t:value="snippetHTML5"/>
-           				</div>
-                        <t:if test="showFile(componentInfo.content.html5.snippetHTML5)">
+                    	<t:if test="showFile(componentInfo.content.html5.snippetHTML5)">
                             <t:showSource t:type="html5" t:title="HTML5 Plain Code" t:escapedCode="escapedSnippetHTML5" t:readMore="componentInfo.content.html5.readMoreHTML5" />
 							<hr/>
                         </t:if>
@@ -146,27 +146,6 @@
 	                    <t:showIEFiles t:xhtml="false"/>
                     </div>
                 </t:if>
-                <t:if test="hasHtml">
-	                <div class="content" id="xhtml">
-	                	<div id="i-component" class="content">
-	                		<t:outputRaw t:value="snippetHTML"/>
-	           			</div>
-	                    <t:if test="showFile(componentInfo.content.snippetHTML)">
-	                    	<t:showSource t:type="html" t:title="HTML Plain Code" t:escapedCode="escapedSnippetHTML" t:readMore="componentInfo.content.readMoreHTML" />
-							<hr/>
-	                    </t:if>
-	                    <t:if test="showFile(snippetCSS)">
-	                    	<t:showSource t:type="css" t:title="CSS Code" t:escapedCode="escapedSnippetCSS" t:readMore="componentInfo.content.readMoreCSS" />
-	                        <hr/>
-	                    </t:if>
-	                    <t:if test="showFile(componentInfo.content.snippetJS)">
-	                    	<t:showSource t:type="js" t:title="How to apply" t:escapedCode="escapedSnippetJS" t:readMore="componentInfo.content.readMoreJS" />
-	                    </t:if>
-	                    
-	                    <t:showIEFiles t:xhtml="true"/>
-	                </div>
-                </t:if>
-                
                 <t:if test="hasTapestryTag">
                 	<t:documentation.TapestryDocumentationComponent t:tapestry="componentInfo.content.tapestry" t:urlParam="componentInfo.urlParam"/>
                 </t:if>
