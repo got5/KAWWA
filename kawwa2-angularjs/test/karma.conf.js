@@ -21,13 +21,14 @@ module.exports = function (config) {
             'components/angular-ui-router/release/angular-ui-router.js',
             'components/angular-mocks/angular-mocks.js',
             'components/angular-*/*min.js',
+            'scripts/kawwa.js',
             'scripts/**/*.js',
-            '../test/unit/**/*.js',
-            '../app/template/*.html'
+            '../test/unit/**/*.js'
+
         ],
 
         preprocessors: {
-            'tpl/*.html': 'ng-html2js'
+            'template/*.html': 'ng-html2js'
         },
 
         // list of files to exclude
