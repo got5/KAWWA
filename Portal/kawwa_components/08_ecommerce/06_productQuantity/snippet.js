@@ -10,7 +10,7 @@ $(document).ready(function(){
 	var incTest = incrementTest();
 
 	if (jQuery.fn.uppydowner) {
-		if(incTest) {
+		if(!incTest) {
 			jQuery('input[type=number]').addClass('uppydowner');
 			jQuery('input.uppydowner').uppydowner();
 		} else {
