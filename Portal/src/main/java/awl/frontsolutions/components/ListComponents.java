@@ -176,6 +176,8 @@ public class ListComponents {
 								.toClientURL(), "alt", "Page Structure");
 				writer.end();
 
+                writer.write("Page Structure");
+
 				writer.end();
 
                         writer.element("ul");
