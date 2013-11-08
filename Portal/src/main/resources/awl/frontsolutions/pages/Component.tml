@@ -18,7 +18,7 @@
 		            <h3>${componentTitle}</h3>
 
 		            <p id="toBasket" class="buy">
-		            	<t:actionLink t:zone="zoneBasket" t:id="panier" t:context="componentInfo.urlParam" title="Add this component to download list">Add to list</t:actionLink>
+		            	<t:actionLink t:zone="zoneBasket" t:id="panier" t:context="componentInfo.urlParam" title="Add this component to download list" role="button">Add to list</t:actionLink>
 		            </p>
 		            
 		            <t:delegate t:to="forewords" />
