@@ -1,0 +1,61 @@
+/* -------------------------- FORM MULTIPLE STEPS ------------------------ */
+
+ol.k-form-steps {
+  position: relative;
+  clear: both;
+  counter-reset: step;
+	margin-bottom: 1em;
+	padding: 0 0 0 10px;
+	border-left: 1px solid $text_clr;
+	
+	li {
+	  position: relative;
+    display: inline-block;
+		list-style-type: none;
+		font: 1.3em $title_stack;
+		text-transform: uppercase;
+		color: lighten($text_clr, 60%);
+		background: $neutral_lgt_clr;
+		margin: 10px 0;
+		padding: 0.7em 1em;
+	}
+	li::before {
+		display: inline-block;
+		width: 1.5em;
+		height: 1.5em;
+		content: counter(step);
+		counter-increment: step;
+		text-align: center;
+		color: $neutral_lgt_clr;
+		background: lighten($text_clr, 60%);
+		margin-right: 0.5em;
+		border-radius: 1.5em;
+	}
+	
+	li.past {color: $text_clr; background: $neutral_lgt_clr;}
+	li.past::before {color: $neutral_lgt_clr; background: $text_clr;}
+	
+  li.active {color: $hot_clr; background: $neutral_lgt_clr;}
+  li.active::before {color: $neutral_lgt_clr; background: $hot_clr;}
+}
+
+ol.k-form-steps:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 15px;
+	height: 1px;
+	background: $text_clr;
+}
+
+ol.k-form-steps:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: "";
+	width: 15px;
+	height: 1px;
+	background: $text_clr;
+}
+
