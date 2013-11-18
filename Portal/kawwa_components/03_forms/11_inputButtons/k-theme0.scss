@@ -1,0 +1,90 @@
+/* -------------------------- FORM CONTROLS BUTTONS ------------------------ */
+
+/* Buttons bar for inputs */
+.k-buttons-bar {
+    clear: both;
+    text-align: right;
+    padding: 0;
+    margin: 0 0 1em;
+    border: none;
+    
+    li {
+			display: inline;
+			font-size: 0.95em;
+			list-style-type: none;
+		}
+}
+
+/* Valid actions */
+input[type=button], input[type=submit] {
+	font: 100% $title_stack;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	background: $secondary_clr;
+	padding: 0.3em 1em;
+	margin: 0 0.3em 0.5em;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+
+/*hover*/
+input[type=button]:hover, input[type=submit]:hover {
+	color: #FFF;
+	background: $identity_clr;
+}
+
+/*focus*/
+input[type=button]:focus, input[type=submit]:focus {
+	color: #FFF;
+	background: $identity_clr;
+}
+
+
+/* Disabled actions */
+
+input[type=submit]:disabled, input[type=button]:disabled {
+	text-shadow: none;
+	color: $neutral_drk_clr;
+	background: $neutral_md_clr;
+	box-shadow: none;
+	cursor: default;
+}
+	
+/* Optional actions */
+input[type=button].optional, input[type=submit].optional {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+	color: #FFF;
+	background: $neutral_drk_clr;
+}
+
+/*hover*/
+input[type=button].optional:hover, input[type=submit].optional:hover {
+	color: #FFF;
+	background: $identity_clr;
+}
+
+/*focus*/
+input[type=button].optional:focus, input[type=submit].optional:focus {
+	color: #FFF;
+	background: $identity_clr;
+}
+	
+/* Reset Actions */
+input[type=button].reset, input[type=reset] {
+	@extend input[type=submit];
+	background: $neutral_drk_clr;
+}
+	
+/* Hover/Focus */
+input[type=button].reset:hover, input[type=reset]:hover {
+	color: #FFF;
+	background: $identity_clr;
+}
+
+input[type=button].reset:focus, input[type=reset]:focus {
+	color: #FFF;
+	background: $identity_clr;
+}
