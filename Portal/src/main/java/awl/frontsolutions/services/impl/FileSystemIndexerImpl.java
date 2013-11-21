@@ -21,9 +21,7 @@ import java.util.regex.Pattern;
 import awl.frontsolutions.entities.*;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.tapestry5.func.F;
-import org.apache.tapestry5.func.Flow;
-import org.apache.tapestry5.func.Predicate;
+import org.apache.tapestry5.func.*;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 import org.apache.tapestry5.ioc.services.ThreadLocale;
@@ -246,37 +244,20 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 		return retour;
 	}
 
-	private Map<String, String> getComponentCSS(String urlParam) {
-		Map<String, String> retour = new HashMap<String, String>();
-		String rgxp = "/\\* CB/\\s*" + urlParam
-				+ "\\s*\\*/\\s*(.*)\\s*/\\* CE/\\s*" + urlParam + "\\s*\\*/";
-		Pattern p = Pattern.compile(rgxp, Pattern.DOTALL);
-		Set<String> themes = componentStyles.keySet();
-		for (String theme : themes) {
-			String style = componentStyles.get(theme);
-			Matcher m = p.matcher(style);
-			while (m.find()) {
-				retour.put(theme, m.group(1));
-			}
-		}
-
-		return retour;
-	}
-
-	private ComponentContent getComponentContent(File rootFile, String urlParam) {
+private ComponentContent getComponentContent(File rootFile, String urlParam) throws IOException {
 
 		String basedir = rootFile.getPath() + File.separator;
 
+        System.out.println(basedir);
+        System.out.println(urlParam);
 		ComponentContent retour = new ComponentContent();
 
 		readAfterBeforeWords(retour, basedir);
 
-		readHtml5Directory(retour, basedir, rootFile);
+		readHtml5Directory(retour, basedir, rootFile, urlParam);
 
 		readJsDependencies(retour, basedir);
 		
-		readXhtmlDirectory(retour, urlParam, basedir);
-
 		readTapestryDirectory(retour, basedir);
 
         readAngularDirectory(retour, basedir);
@@ -353,56 +334,6 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 		} catch (IOException e) {
 			logger.error("Error while reading documentation", e);
 		}
-	}
-
-	private ComponentContent readXhtmlDirectory(ComponentContent retour,
-			String urlParam, String root) {
-
-		String basedir = root + ComponentConstants.XHTML_FOLDER
-				+ File.separator;
-
-		Object[] obj = readFile(basedir + ComponentConstants.SNIPPET_HTML);
-		if (obj != null) {
-			retour.setSnippetHTML((String) obj[0]);
-			retour.setEscapedSnippetHTML((List<String>) obj[1]);
-		}
-
-		obj = readFile(basedir + ComponentConstants.SNIPPET_JS);
-		if (obj != null) {
-			retour.setSnippetJS((String) obj[0]);
-			retour.setEscapedSnippetJS((List<String>) obj[1]);
-		}
-
-		// css reading
-		Map<String, String> styles = getComponentCSS(urlParam);
-		Set<String> themes = styles.keySet();
-		for (String theme : themes) {
-			// logger.info("adding CSS for theme '{}'",theme);
-			try {
-				String cssContent = styles.get(theme);
-				retour.addSnippetCSS(theme, cssContent);
-				List<String> escaped = new ArrayList<String>();
-				InputStreamReader isr = new InputStreamReader(
-						IOUtils.toInputStream(cssContent));
-				BufferedReader br = new BufferedReader(isr);
-				String s;
-				while ((s = br.readLine()) != null) {
-					escaped.add(s);
-				}
-				isr.close();
-				retour.addEscapedSnippetCSS(theme, escaped);
-			} catch (IOException e) {
-				// logger.info("Impossible to read CSS");
-			}
-
-		}
-
-		
-		retour.setReadMoreHTML((String) readFile(basedir + ComponentConstants.READMORE_HTML)[0]);
-		retour.setReadMoreCSS((String) readFile(basedir + ComponentConstants.READMORE_CSS)[0]);
-		retour.setReadMoreJS((String) readFile(basedir + ComponentConstants.READMORE_JS)[0]);
-		
-		return retour;
 	}
 
 	private void readJsDependencies(ComponentContent retour, String basedir) {
@@ -555,7 +486,7 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 	}
 
 	private void readHtml5Directory(ComponentContent retour, String basedir,
-			File rootFile) {
+			File rootFile, String urlParam) throws IOException {
 
 		HTML5Documentation html5 = new HTML5Documentation();
 
@@ -565,23 +496,50 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 		html5.setSnippetHTML5((String) code[0]);
 		html5.setEscapedSnippetHTML5((List<String>) code[1]);
 
-		// css3 reading
-		File[] fileArray = rootFile.listFiles(new FileFilter() {
-			public boolean accept(File filename) {
-				return filename.getName().startsWith("snippet")
-						&& filename.getName().endsWith(".css");
-			}
-		});
-		for (File file : fileArray) {
-			code = readFile(basedir + file.getName());
-			html5.getSnippetsCSS3().put(file.getName(), (String) code[0]);
-			html5.getEscapedSnippetsCSS3().put(file.getName(),
-					(List<String>) code[1]);
-		}
+
+        Map<String, String> styles = new HashMap<String, String>();
+        for (String stackName : stackSource.getStackNames()) {
+            if(stackName.startsWith(ThemeStack.PREFIX)){
+                JavaScriptStack stack = stackSource.getStack(stackName);
+                String theme_name = F.flow(stack.getStylesheets()).map(new Mapper<StylesheetLink, String>() {
+                    @Override
+                    public String  map(StylesheetLink first) {
+                        String[] path = first.getURL().split("/");
+                        return path[path.length - 1];
+                    }
+                }).filter(new Predicate<String>() {
+                    @Override
+                    public boolean accept(String element) {
+                        return element.startsWith("k-theme");
+                    }
+                }).first();
+
+
+                try {
+                    Object[] cssContent = componentUtils.readAndEscapeFile(basedir + theme_name);
+                    html5.addSnippetCSS3(stackName, (String) cssContent[0]);
+                    html5.addEscapedSnippetCSS3(stackName, (List<String>) cssContent[1]);
+                } catch (Exception e) {
+                    logger.info("Impossible to read CSS");
+                }
+
+                try {
+                    System.out.println(basedir + theme_name.subSequence(0, theme_name.indexOf("."))+".scss");
+
+                    Object[] cssContent = componentUtils.readAndEscapeFile(basedir + theme_name.subSequence(0, theme_name.indexOf("."))+".scss");
+                    System.out.println(cssContent[0]);
+                    System.out.println(cssContent[1]);
+                    html5.addSnippetSASS(stackName, (String) cssContent[0]);
+                    html5.addEscapedSnippetSASS(stackName, (List<String>) cssContent[1]);
+                } catch (Exception e) {
+                    logger.info("Impossible to read SASS");
+                }
+            }
+        }
+
 
 		code = readFile(basedir + ComponentConstants.SNIPPET_JS);
-
-		html5.setSnippetJS5((String) code[0]);
+        html5.setSnippetJS5((String) code[0]);
 		html5.setEscapedSnippetJS5((List<String>) code[1]);
 		html5.setReadMoreHTML5((String) readFile(basedir
 				+ ComponentConstants.READMORE_HTML)[0]);

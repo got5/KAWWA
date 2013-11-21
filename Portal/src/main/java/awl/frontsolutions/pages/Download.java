@@ -201,11 +201,11 @@ public class Download {
 		if (panier.isIncludeTemplate()) {
 			zipFiller.fillWithThemeTemplate(zos, panier.getTheme(),
 					DownloadDocType.HTML5);
-		} else {
+		} /*else {
 			zipFiller.fillWithThemeCSS(zos, panier.getTheme());
 			zipFiller.fillWithThemeJs(zos, panier.getTheme());
 			zipFiller.fillWithThemeImg(zos, panier.getTheme());
-		}
+		} */
 
 		if (StringUtils.isNotEmpty(componentList)) {
 

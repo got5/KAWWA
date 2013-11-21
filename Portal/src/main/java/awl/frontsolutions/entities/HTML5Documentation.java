@@ -1,6 +1,7 @@
 package awl.frontsolutions.entities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,11 +12,43 @@ public class HTML5Documentation {
 	private List<String> escapedSnippetHTML5;
 	private Map<String, String> snippetsCSS3;
 	private Map<String, List<String>> escapedSnippetsCSS3;
-	private String snippetJS5;
-	private List<String> EscapedSnippetJS5;
+    private Map<String, String> snippetsSASS;
+    private Map<String, List<String>> escapedSnippetsSASS;
+
+
+
+    private String snippetJS5;
+	private List<String> escapedSnippetJS5;
 	private String readMoreHTML5;
 	private String readMoreCSS3;
 	private String readMoreJS5;
+
+    public HTML5Documentation() {
+        escapedSnippetHTML5 = new ArrayList<String>();
+
+        snippetsCSS3 = new HashMap<String, String>();
+        snippetsSASS = new HashMap<String, String>();
+        escapedSnippetsCSS3 = new HashMap<String, List<String>>();
+        escapedSnippetsCSS3 = new HashMap<String, List<String>>();
+        escapedSnippetJS5 = new ArrayList<String>();
+
+    }
+
+    public Map<String, String> getSnippetsSASS() {
+        return snippetsSASS;
+    }
+
+    public void setSnippetsSASS(Map<String, String> snippetsSASS) {
+        this.snippetsSASS = snippetsSASS;
+    }
+
+    public Map<String, List<String>> getEscapedSnippetsSASS() {
+        return escapedSnippetsSASS;
+    }
+
+    public void setEscapedSnippetsSASS(Map<String, List<String>> escapedSnippetsSASS) {
+        this.escapedSnippetsSASS = escapedSnippetsSASS;
+    }
 
 	public Map<String, String> getSnippetsCSS3() {
 		return snippetsCSS3;
@@ -30,11 +63,11 @@ public class HTML5Documentation {
 	}
 
 	public List<String> getEscapedSnippetJS5() {
-		return EscapedSnippetJS5;
+		return escapedSnippetJS5;
 	}
 
 	public void setEscapedSnippetJS5(List<String> escapedSnippetJS5) {
-		EscapedSnippetJS5 = escapedSnippetJS5;
+		this.escapedSnippetJS5 = escapedSnippetJS5;
 	}
 
 	public String getReadMoreHTML5() {
@@ -102,13 +135,68 @@ public class HTML5Documentation {
 	}
 	
 	public List<String> getEscapedSnippetJS5(String theme) {
-		List<String> string = new ArrayList<String>();
+
+        List<String> string = new ArrayList<String>();
 		
 		//TODO Rewrite with tapestry-func
-		for (String s : EscapedSnippetJS5) {
+		for (String s : escapedSnippetJS5) {
 			string.add(s.replace(ComponentConstants.THEME_IMG_DIR, theme));
 		}
 		
 		return string;
 	}
+
+    public List<String> getEscapedSnippetCSS3(String version) {
+        if (escapedSnippetsCSS3.containsKey(version)) {
+            return escapedSnippetsCSS3.get(version);
+        } else if (escapedSnippetsCSS3
+                .containsKey(ComponentConstants.SNIPPET_CSS)) {
+            return escapedSnippetsCSS3.get(ComponentConstants.SNIPPET_CSS);
+        } else {
+            return new ArrayList<String>();
+        }
+    }
+
+    public String getSnippetHTML5(String theme) {
+        return snippetHTML5.replace(
+                ComponentConstants.THEME_IMG_DIR, theme);
+    }
+
+    public String getSnippetCSS3(String version) {
+        if (snippetsCSS3.containsKey(version)) {
+            return snippetsCSS3.get(version);
+        } else if (snippetsCSS3.containsKey(ComponentConstants.SNIPPET_CSS3)) {
+            return snippetsCSS3.get(ComponentConstants.SNIPPET_CSS3);
+        } else {
+            return "";
+        }
+    }
+
+    public String getSnippetSASS(String version) {
+        return snippetsSASS.get(version);
+    }
+
+    public String getSnippetJS5(String theme) {
+        if (snippetJS5 != null)
+            return snippetJS5.replace(ComponentConstants.THEME_IMG_DIR, theme);
+        else
+            return snippetJS5;
+
+    }
+
+    public void addSnippetCSS3(String filename, String content) {
+        snippetsCSS3.put(filename, content);
+    }
+    public void addSnippetSASS(String filename, String content) {
+        System.out.println("add sass");
+        snippetsSASS.put(filename, content);
+    }
+    public void addEscapedSnippetCSS3(String filename,
+                                     List<String> escapedSnippetCSS) {
+        escapedSnippetsCSS3.put(filename, escapedSnippetCSS);
+    }
+    public void addEscapedSnippetSASS(String filename,
+                                      List<String> escapedSnippetCSS) {
+        escapedSnippetsSASS.put(filename, escapedSnippetCSS);
+    }
 }

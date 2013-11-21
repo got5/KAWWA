@@ -38,7 +38,7 @@
 			</fieldset>
 			<fieldset id="group-options">
 			<legend>Options</legend>
-				<p class="k-check">
+				<p class="k-check">                                                          ²
 					<t:checkbox t:id="examples" t:value="panier.includeTemplate"/>
 					<label for="examples">Include example HTML5 templates</label> 
 					<a href="#templates-info" class="k-field-help" title="About the example templates">

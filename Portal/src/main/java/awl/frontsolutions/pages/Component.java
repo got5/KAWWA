@@ -104,6 +104,7 @@ public class Component {
 	public void activation(EventContext ctx){
 		String urlTag = ctx.get(String.class, 0);
 		if(urlTag!=null){
+            System.out.println("Get for " + urlTag);
 			componentInfo = fileSystemIndexer.getLinkToComponent().get(urlTag);
 		}
 	}
@@ -150,7 +151,7 @@ public class Component {
 			
 			@Override
 			public InputStream getStream() throws IOException {
-				String content = componentInfo.getContent().getSnippetJS5(currentTheme.getDir());
+				String content = componentInfo.getContent().getHtml5().getSnippetJS5(currentTheme.getDir());
 				if(StringUtils.isEmpty(content)){
 					content = "";
 				}
@@ -258,45 +259,21 @@ public class Component {
 		return messages.get(currentTheme.getThemeName().substring(ThemeStack.PREFIX.length())+"-theme-code");
 	}
 	
-
-	
-	public String getSnippetCSS(){
-		return componentInfo.getContent().getSnippetCSS(currentTheme.getThemeName());
-	}
-	
-	public List<String> getEscapedSnippetCSS(){
-		return componentInfo.getContent().getEscapedSnippetCSS(currentTheme.getThemeName());
-	}
 	public List<String> getEscapedSnippetCSS3(){
-		return componentInfo.getContent().getEscapedSnippetCSS(currentTheme.getThemeName());
-	}
-	public List<String> getEscapedSnippetHTML(){
-		return componentInfo.getContent().getEscapedSnippetHTML(currentTheme.getDir());
+		return componentInfo.getContent().getHtml5().getEscapedSnippetCSS3(currentTheme.getThemeName());
 	}
 	public List<String> getEscapedSnippetHTML5(){
 		return componentInfo.getContent().getHtml5().getEscapedSnippetHTML5(currentTheme.getDir());
 	}
-	public List<String> getEscapedSnippetJS(){
-		return componentInfo.getContent().getEscapedSnippetJS(currentTheme.getDir());
-	}
 	public List<String> getEscapedSnippetJS5(){
 		return componentInfo.getContent().getHtml5().getEscapedSnippetJS5(currentTheme.getDir());
 	}
-	public String getSnippetHTML(){
-		return componentInfo.getContent().getSnippetHTML(currentTheme.getDir()); 
-	}
-	public String getSnippetHTML5(){
-		return componentInfo.getContent().getSnippetHTML5(currentTheme.getDir()); 
+    public String getSnippetHTML5(){
+		return componentInfo.getContent().getHtml5().getSnippetHTML5(currentTheme.getDir());
 	}
 	public String getSnippetCSS3(){
-		return componentInfo.getContent().getSnippetCSS(currentTheme.getThemeName());
+		return componentInfo.getContent().getHtml5().getSnippetCSS3(currentTheme.getThemeName());
 	}
-	
-	public List<String> getEscaped(){
-		return componentInfo.getContent().getEscapedSnippetCSS(currentTheme.getThemeName());
-	}
-
-
 	public TreeNode getComponentInfo() {
 		return componentInfo;
 	}
@@ -342,7 +319,7 @@ public class Component {
 	}
 	
 	public boolean getHasHtml(){
-		return componentInfo.getContent().getSnippetHTML() != null;
+		return componentInfo.getContent().getHtml5().getSnippetHTML5() != null;
 	}
 	public boolean getHasJs(){
 		return !InternalUtils.isEmptyCollection(componentInfo.getContent().getJsDependencies()) || getHasJqueryTag();

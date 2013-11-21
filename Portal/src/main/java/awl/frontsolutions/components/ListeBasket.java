@@ -77,11 +77,11 @@ public class ListeBasket {
 		if(panier.isIncludeTemplate()){
 			zipFiller.fillWithThemeTemplate(zos, panier.getTheme(), DownloadDocType.HTML5);
 		}
-		else{
+		/*else{
 			zipFiller.fillWithThemeCSS(zos, panier.getTheme());
 			zipFiller.fillWithThemeJs(zos, panier.getTheme());
 			zipFiller.fillWithThemeImg(zos, panier.getTheme());
-		}
+		} */
 		
 		if (panier.getListeComponent().size()>0) {
 			

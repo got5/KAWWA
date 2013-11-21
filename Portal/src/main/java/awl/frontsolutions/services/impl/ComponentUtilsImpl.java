@@ -43,9 +43,9 @@ public class ComponentUtilsImpl implements ComponentUtils{
 			List<String> srcPaths = new ArrayList<String>();
 			String basedir = info.getPath()+File.separator;
 			StringBuilder sb = null;
-			if(InternalUtils.isNonBlank(info.getContent().getSnippetHTML())){
-				sb = transformHTML(info.getContent().getSnippetHTML(),basedir,srcPaths, resources, info.getUrlParam()); 
-				info.getContent().setSnippetHTML(sb.toString());
+			if(InternalUtils.isNonBlank(info.getContent().getHtml5().getSnippetHTML5())){
+				sb = transformHTML(info.getContent().getHtml5().getSnippetHTML5(),basedir,srcPaths, resources, info.getUrlParam());
+				info.getContent().getHtml5().setSnippetHTML5(sb.toString());
 			}
 			
 			
@@ -64,10 +64,10 @@ public class ComponentUtilsImpl implements ComponentUtils{
 				info.getContent().setAfterwords(sb.toString());
 			}
 			
-			if(InternalUtils.isNonBlank(info.getContent().getSnippetJS()))
+			if(InternalUtils.isNonBlank(info.getContent().getHtml5().getSnippetJS5()))
 			{
-				StringBuilder js = transformJS(info.getContent().getSnippetJS(), srcPaths, resources, basedir, info.getUrlParam());
-				info.getContent().setSnippetJS(js.toString());
+				StringBuilder js = transformJS(info.getContent().getHtml5().getSnippetJS5(), srcPaths, resources, basedir, info.getUrlParam());
+				info.getContent().getHtml5().setSnippetJS5(js.toString());
 			}
 			
 			if(InternalUtils.isNonBlank(info.getContent().getHtml5().getSnippetJS5()))

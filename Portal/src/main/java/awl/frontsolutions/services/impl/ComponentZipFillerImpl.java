@@ -76,31 +76,18 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 
 		String path = "Components/" + componentInfo.getRelatifPath() + "/";
 
-		if (DownloadDocType.XHTML.equals(dlType)
-				&& InternalUtils.isNonBlank(content.getSnippetHTML(themeDir))
-				|| DownloadDocType.HTML5.equals(dlType)
-				&& InternalUtils.isBlank(content.getSnippetHTML5(themeDir))) {
-			
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_CSS,
-					content.getSnippetCSS(themeName));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
-					content.getSnippetHTML(themeDir));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
-					content.getSnippetJS(themeDir));
-		}
+		fillWithFile(zos, path + componentInfo.getCss()+".css",
+                    content.getHtml5().getSnippetCSS3(themeName));
 
-		if (DownloadDocType.XHTML.equals(dlType)
-				&& InternalUtils.isBlank(content.getSnippetHTML(themeDir))
-				|| DownloadDocType.HTML5.equals(dlType)
-				&& InternalUtils.isNonBlank(content.getSnippetHTML5(themeDir))) {
-			
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_CSS,
-					content.getSnippetCSS3(themeName));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
-					content.getSnippetHTML5(themeDir));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
-					content.getSnippetJS5(themeDir));
-		}
+        fillWithFile(zos, path + componentInfo.getCss()+".scss",
+                content.getHtml5().getSnippetSASS(themeName));
+
+        fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
+                content.getHtml5().getSnippetHTML5(themeDir));
+        fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
+                content.getHtml5().getSnippetJS5(themeDir));
+
+
 
 		fillWithFile(zos, path + "README.html", getNotes(componentInfo, dlType));
 
@@ -255,6 +242,13 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 		parcourirFolder(zos, file, "Templates_" + getThemeLabel(themeName)
 				+ "/");
 
+        for (File f : new File(root).listFiles()) {
+            if(f.isFile() && f.getName().endsWith(".scss")){
+                copyFile(zos, file, "Templates_" + getThemeLabel(themeName)
+                        + "/scss/");
+            }
+        }
+
         //Add CSS files
         fillWithThemeCSS(zos, themeName, "Templates_" + getThemeLabel(themeName) + "/css/");
 	}
@@ -351,13 +345,13 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 		if (DownloadDocType.XHTML.equals(dlType)) {
 			updateContent = addContent(updateContent,
 					messages.get("readme_html"), componentInfo.getContent()
-							.getReadMoreHTML());
+							.getHtml5().getReadMoreHTML5());
 			updateContent = addContent(updateContent,
 					messages.get("readme_css"), componentInfo.getContent()
-							.getReadMoreCSS());
+							.getHtml5().getReadMoreCSS3());
 			updateContent = addContent(updateContent,
 					messages.get("readme_javascript"), componentInfo
-							.getContent().getReadMoreJS());
+							.getContent().getHtml5().getReadMoreJS5());
 		} else {
 			if (DownloadDocType.HTML5.equals(dlType)) {
 				updateContent = addContent(updateContent,
