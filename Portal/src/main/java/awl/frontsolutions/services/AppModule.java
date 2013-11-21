@@ -22,7 +22,9 @@ import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
+import org.apache.tapestry5.services.transform.ComponentClassTransformWorker2;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
+import org.got5.tapestry5.jquery.services.*;
 import org.got5.tapestry5.jquery.services.javascript.FormSupportStack;
 import org.slf4j.Logger;
 
@@ -64,7 +66,13 @@ public class AppModule {
 
 		configuration.add("enableDocumentationBlock", "false");
 	}
+    @Contribute(ComponentClassTransformWorker2.class)
+    @Primary
+    public static void  addWorker(OrderedConfiguration<ComponentClassTransformWorker2> configuration) {
 
+
+        configuration.overrideInstance("ImportJQueryUIWorker", MyImportJQueryUIWorker.class);
+    }
 	public void contributeMetaDataLocator(
 			MappedConfiguration<String, String> configuration) {
 		configuration.add(MetaDataConstants.SECURE_PAGE, "true");
