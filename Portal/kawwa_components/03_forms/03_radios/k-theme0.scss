@@ -1,0 +1,37 @@
+/* -------------------------- GROUP OF RADIOS ------------------------ */
+
+/* Fieldset elements for radios */
+fieldset.k-radio {
+	padding: 0;
+	margin: 0;
+	border: none;
+	
+	legend {
+		float: left;
+		width: $labelW; 
+		font-size: 1em;
+		font-weight: bold;
+		text-transform: none;
+		text-align: right;
+		padding: 8px 15px 0 0;
+		margin: 0;
+	}
+	label {
+		float: none;
+		display: inline;
+		text-align: left;
+		font-weight: normal;
+		padding-right: 1.5em;
+	}
+	
+	p {float: left; width: auto;}
+	
+	ul {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		padding: 0;
+		margin: 0.3em 0 0;
+	}
+}
+
