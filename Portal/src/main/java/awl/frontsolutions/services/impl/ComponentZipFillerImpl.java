@@ -242,10 +242,14 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 		parcourirFolder(zos, file, "Templates_" + getThemeLabel(themeName)
 				+ "/");
 
-        for (File f : new File(root).listFiles()) {
+        for (File f : new File(new File(root).getAbsolutePath()+"/scss").listFiles()) {
             if(f.isFile() && f.getName().endsWith(".scss")){
-                copyFile(zos, file, "Templates_" + getThemeLabel(themeName)
+                copyFile(zos, f, "Templates_" + getThemeLabel(themeName)
                         + "/scss/");
+            }
+            if(f.isDirectory() && f.getName().equalsIgnoreCase(themeDir)){
+                parcourirFolder(zos, f, "Templates_" + getThemeLabel(themeName)
+                        + "/scss/"+themeDir+"/");
             }
         }
 
