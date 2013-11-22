@@ -5,24 +5,26 @@
 -------------------------------------------------------------------- */
 // KAWWA SASS V1
 
-// -------------- BASICS
+// -------------- COMMON
 
 @import "../k-mixins";
 @import "../k-reset";
-@import "k-structure";
+@import "../k-structure";
 
-@import "k-theme0/k-variables";
-@import "k-theme0/k-defaults";
+// -------------- THEME DEFAULTS
+
+@import "k-variables";
+@import "k-defaults";
 
 
 // ------------- COMPONENTS
 
 // NAVIGATION
-@import "k-theme0/k-breadcrumbs";
-@import "k-theme0/k-skip";
-@import "k-theme0/k-mainnav";
-@import "k-theme0/k-vmenu";
-@import "k-theme0/k-treestruct";
+@import "../../02_navigation/01_verticalNavigation/k-theme0.scss";
+@import "../../02_navigation/02_k-breadcrumbs/k-theme0.scss";
+@import "../../02_navigation/03_k-skip/k-theme0.scss";
+@import "../../02_navigation/05_treeviewStructure/k-theme0.scss";
+@import "../../02_navigation/06_mainResponsiveNavigation/k-theme0.scss";
 
 // FORMS
 //@import "k-actions-dropdown";
