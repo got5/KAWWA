@@ -9,6 +9,7 @@ import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.dom.Element;
+import org.apache.tapestry5.internal.services.DocumentLinker;
 import org.apache.tapestry5.internal.services.PageContentTypeAnalyzer;
 import org.apache.tapestry5.internal.services.RequestPageCache;
 import org.apache.tapestry5.ioc.Configuration;
@@ -22,6 +23,7 @@ import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
+import org.apache.tapestry5.services.javascript.StylesheetLink;
 import org.apache.tapestry5.services.transform.ComponentClassTransformWorker2;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.got5.tapestry5.jquery.services.*;
@@ -65,6 +67,8 @@ public class AppModule {
 		configuration.add("enableAnalytics", "false");
 
 		configuration.add("enableDocumentationBlock", "false");
+
+        configuration.add(SymbolConstants.OMIT_GENERATOR_META, "true");
 	}
     @Contribute(ComponentClassTransformWorker2.class)
     @Primary
@@ -137,6 +141,15 @@ public class AppModule {
 			}
 
 		};
+
+        MarkupRendererFilter injectDefaultStylesheet = new MarkupRendererFilter()
+        {
+            public void renderMarkup(MarkupWriter writer, MarkupRenderer renderer)
+            {
+                renderer.renderMarkup(writer);
+            }
+        };
+
 		configuration.add("meta", rendererFilter, "before:*");
 
 		if (enableAnalytics) {
@@ -144,7 +157,10 @@ public class AppModule {
 					GAnalyticsScriptsInjector.class, "after:DocumentLinker");
 		}
 
-	}
+        configuration.override("InjectDefaultStylesheet", injectDefaultStylesheet);
+
+
+    }
 
 	public RequestExceptionHandler buildAppRequestExceptionHandler(
 			final Logger logger, final ResponseRenderer renderer,
