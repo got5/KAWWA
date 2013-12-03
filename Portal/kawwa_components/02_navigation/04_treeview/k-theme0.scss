@@ -23,15 +23,15 @@ div.k-tree {
 	}
 	a:hover {
 		color: #000;
-		background: #ECECEC;
+		background: $neutral_lgt_clr;
 	}
 	a:focus {
 		color: #000;
 		background: rgba(164,8,0,.3);
-		border: 1px solid #A40800;
+		border: 1px solid $secondary_clr;
 	}
 	a.jstree-clicked {
-		color: #000;
+		color: $text_clr;
 		background: rgba(164,8,0,.3);
 	}
 }
