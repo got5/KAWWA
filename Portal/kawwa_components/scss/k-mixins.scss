@@ -10,7 +10,19 @@
 	-o-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+
+// FLEX CONTAINER
+@mixin M_flexCon($flow) {
+	display: flex;
+	-moz-display: flex;
+	-webkit-display: flex;
+	flex-flow: $flow;
+	-webkit-flex-flow: $flow;
+	flex-direction: $flow;
 }	
+
 
 // SIMPLE TRANSFORMATIONS 
 @mixin M_transform($type) {
