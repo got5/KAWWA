@@ -42,6 +42,13 @@ var ie = (function(){
 	var ie7 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 7.0") != -1);
 	var ie8 = (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) == 4 && navigator.appVersion.indexOf("MSIE 8.0") != -1);
 
+
+// Function for testing touch screens
+function is_touch_device() {
+	return !!('ontouchstart' in window);
+}
+
+
 // Loading all scripts ...
 
 window.onload = function(e) {
@@ -55,6 +62,15 @@ window.onload = function(e) {
 	if (ie === 8) {
 		fixStructure();
 	}
+	
+	
+	// Set class on html element for touch/no-touch
+	if (is_touch_device()) {
+		$('html').addClass('flexNav-touch');
+	} else {
+		$('html').addClass('flexNav-no-touch');
+	}
+	
 	
 // RESPONSIVE MENU ----------------------------------	
 	

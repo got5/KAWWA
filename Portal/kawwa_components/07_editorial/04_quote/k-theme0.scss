@@ -1,15 +1,19 @@
 /* ----------------------------- BLOCKQUOTE ------------------------------- */
 
+blockquote, q {quotes: none;}
+blockquote::before, blockquote::after, q::before, q::after {
+	content: "";
+	content: none;
+}
+
 blockquote {
 	position: relative;
-	width: 60%;
+	width: 80%;
 	max-width: 40em;
-	color: #000;
-	background: #FFF;
-	padding: 0 0 0 3em;
-	margin: 2em;
+	padding: 0 0 0 1.5em;
+	margin: 2em 3%;
 	
-	p {text-indent: 0;}
+	p {font-style: italic; text-indent: 0;}
 
 }
 	blockquote::before {
@@ -18,11 +22,19 @@ blockquote {
 		left: 0;
 		width: 0.5em;
 		content:"“";
-		font: 500% Georgia, Times, "Times New Roman", serif;
+		font: 300% Georgia, Times, "Times New Roman", serif;
 		color: $neutral_clr;
 		background: transparent;
+		
 	}
 
-	.citation {font-size: 0.75em; padding-top: 1em;}
-	cite.author {font-style: normal;}
+.citation {font-size: 90%; padding-top: 1em;}
+cite.author {font-style: normal;}
 		
+
+@media screen and (min-width: 640px) {
+	blockquote {padding: 0 0 0 3em; margin: 3em 3%;}
+	blockquote::before {font-size: 500%;}
+}
+
+

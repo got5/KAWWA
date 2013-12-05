@@ -2,30 +2,21 @@
 
 /* In a fieldset */
 fieldset.k-check {
-	clear: both;
-	padding: 0;
-	margin: 0;
-	border: none;
+	margin: 0 5% 1em;
 	
-	// Here, legend style mimics label
 	legend {
-		float: left;
-		width: $labelW;
-		font-size: 1em;
+		font-size: 90%;
 		font-weight: bold;
 		text-transform: none;
-		text-align: right;
-		padding: 8px 15px 0 0;
-		margin: 0;
+		margin: 0 0 0.3em;
+		padding: 0;
 	}
-	label {
-		float: none;
-		display: inline;
-		text-align: left;
-		font-weight: normal;
-		padding-right: 1.5em;
-	}
-	p {float: left; width: auto;}
+	legend::after {content: "";}
+	
+	label {font-weight: normal;}
+	
+	p {margin: 0;}
+	
 	ul {
 		float: left;
 		width: auto;
@@ -33,18 +24,47 @@ fieldset.k-check {
 		padding: 0;
 		margin: 0.3em 0 0;
 	}
+	
+	@media screen and (min-width: 790px) {
+		padding: 0.5em 1em;
+		margin: 0 2em 1em;
+		border: 2px solid #FFF;
+		
+		legend {padding: 0 0.5em;}
+		label {padding: 0;}
+	}
 }
 
 /* Applied to paragraphs */
 p.k-check {
-	width: auto;
-	padding-left: 16.3em;
+	background: #FFF;
+	padding: 0.5em 1em;
+	margin: 1em 5%;
 	
 	label {
-		float: none;
-		width: auto;
+		display: inline;
 		font-weight: normal;
 		text-align: left;
+		padding: 0;
+	}
+	
+	@media screen and (min-width: 790px) {display: block; margin: 1em 2em;}
+}
+
+/* --- TOUCH --- */
+
+.flexNav-touch {
+	fieldset.k-check {
+		label {
+			display: inline-block;
+			font-size: 140%;
+			font-weight: normal;
+			padding: 0.3em 0.5em;
+			margin-right: 1em;
+			border: 1px solid $neutral_md_clr;
+			border-radius: 3px;
+		}
+
 	}
 }
 

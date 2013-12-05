@@ -22,14 +22,6 @@ html {overflow-y: scroll;}
 
 article, aside, figure, figcaption, footer, header, main, nav, section {display: block;} 
 
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after, q:before, q:after {
-	content: "";
-	content: none;
-}
-
 table {
 	width: 100%;
 	border-collapse: collapse;
