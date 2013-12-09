@@ -1,0 +1,26 @@
+/* ----------------------------- INFO BLOCK ------------------------------- */
+
+.k-info-block {
+	clear: both;
+	word-wrap: break-word;
+	margin-bottom: 1em;
+	border-bottom: 2px solid $neutral_clr;
+	
+	h2, h3, h4, h5 {
+		font-size: 1em;
+		line-height: 1;
+		text-transform: none;
+		color: #FFF;
+		background: $identity_clr;
+		padding: 5px 10px;
+		margin: 0;
+		border: none;
+	}
+	
+	> .content {background: #FFF; padding: 5%;}
+	
+	p {line-height: 1.38; margin: 0 0 0.5em;}
+	p:last-child {padding-bottom: 0.5em;}
+}
+
+
