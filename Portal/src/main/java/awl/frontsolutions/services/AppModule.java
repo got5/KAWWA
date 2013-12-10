@@ -34,7 +34,7 @@ import java.io.IOException;
 
 //import awl.frontsolutions.services.atos.AtosModule;
 
-@SubModule(AtosModule.class)
+//@SubModule(AtosModule.class)
 public class AppModule {
 
 	@Startup
