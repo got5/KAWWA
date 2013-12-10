@@ -1,5 +1,7 @@
 package awl.frontsolutions.entities;
 
-public class XHTMLDocumentation {
+import java.io.Serializable;
+
+public class XHTMLDocumentation implements Serializable{
 
 }

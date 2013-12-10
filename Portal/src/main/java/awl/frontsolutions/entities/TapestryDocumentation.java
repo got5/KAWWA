@@ -1,8 +1,9 @@
 package awl.frontsolutions.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class TapestryDocumentation {
+public class TapestryDocumentation implements Serializable {
 	
 	public TapestryDocumentation(String name) {
 		super();

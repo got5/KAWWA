@@ -1,5 +1,6 @@
 package awl.frontsolutions.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.Map;
 
 import awl.frontsolutions.internal.ComponentConstants;
 
-public class HTML5Documentation {
+public class HTML5Documentation implements Serializable{
 	private String snippetHTML5;
 	private List<String> escapedSnippetHTML5;
 	private Map<String, String> snippetsCSS3;

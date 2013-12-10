@@ -1,6 +1,8 @@
 package awl.frontsolutions.entities;
 
-public class Documentation {
+import java.io.Serializable;
+
+public class Documentation implements Serializable{
 	private String path;
 	private String label;
 	private String descriptionEn;

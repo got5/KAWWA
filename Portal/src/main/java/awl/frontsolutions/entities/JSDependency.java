@@ -1,6 +1,8 @@
 package awl.frontsolutions.entities;
 
-public class JSDependency {
+import java.io.Serializable;
+
+public class JSDependency implements Serializable{
 	private String path;
 	private String label;
 	private String content;

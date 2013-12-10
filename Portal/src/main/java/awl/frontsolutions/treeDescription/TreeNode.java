@@ -1,5 +1,6 @@
 package awl.frontsolutions.treeDescription;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import org.apache.tapestry5.internal.TapestryInternalUtils;
 
 import awl.frontsolutions.entities.ComponentContent;
 
-public class TreeNode {
+public class TreeNode implements Serializable{
 
 	private String nodeName;
 

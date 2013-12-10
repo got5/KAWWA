@@ -1,8 +1,10 @@
 package awl.frontsolutions.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AngularDocumentation {
+public class AngularDocumentation implements Serializable
+{
 
 	public AngularDocumentation(String name) {
 		super();
