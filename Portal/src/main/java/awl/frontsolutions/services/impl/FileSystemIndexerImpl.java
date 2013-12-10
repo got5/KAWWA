@@ -25,6 +25,8 @@ import org.apache.tapestry5.func.*;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 import org.apache.tapestry5.ioc.services.ThreadLocale;
+import org.apache.tapestry5.services.Context;
+import org.apache.tapestry5.services.RequestGlobals;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.apache.tapestry5.services.javascript.StylesheetLink;
@@ -78,9 +80,15 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 	public FileSystemIndexerImpl(
 			@Symbol(ComponentConstants.FILE_INDEXER_ROOT) String root,
 			Logger logger, ThreadLocale threadLocale,
-			JavaScriptStackSource stackSource, ComponentUtils componentUtils) {
+			JavaScriptStackSource stackSource, ComponentUtils componentUtils,
+            Context context) {
 		super();
-		this.root = root;
+
+
+        if(root.equalsIgnoreCase("cloudbees")){
+            this.root = context.getRealFile("/kawwa").getAbsolutePath();
+        }
+		else this.root = root;
 		this.logger = logger;
 		this.threadLocale = threadLocale;
 		linkToComponent = new TreeMap<String, TreeNode>();

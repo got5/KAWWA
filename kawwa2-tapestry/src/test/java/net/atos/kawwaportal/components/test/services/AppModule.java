@@ -1,5 +1,6 @@
 package net.atos.kawwaportal.components.test.services;
 
+import net.atos.kawwaportal.components.KawwaConstants;
 import net.atos.kawwaportal.components.services.KawwaPortalComponentsModule;
 import net.atos.kawwaportal.components.services.breadcrumb.BreadcrumbListProvider;
 import net.atos.kawwaportal.components.services.breadcrumb.BreadcrumbListProviderSource;
@@ -30,6 +31,7 @@ public class AppModule {
 		configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en, fr");
 		configuration.add(JQuerySymbolConstants.JQUERY_ALIAS, "$j");
 		configuration.add(JQuerySymbolConstants.SUPPRESS_PROTOTYPE, "true");
+        configuration.add(KawwaConstants.KAWWA_COOKIE_ENABLE, "true");
 	}
 
 	public void contributeApplicationStateManager(

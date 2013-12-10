@@ -192,9 +192,9 @@ copyTapestryDocs.dependsOn("compileTapestryLib", "copyThemesForTapestry")
 copyAngularDocs.dependsOn("compileAngularLib", "copyThemesForAngular")
 compileTapestryLib.dependsOn("copyThemesForTapestry")
 compileAngularLib.dependsOn("copyThemesForAngular")
+   */
+//processResources.dependsOn aggregateSASSFiles
 
-processResources.dependsOn aggregateSASSFiles
-*/
 
 /*
 processResources.dependsOn("copyTapestryDocs")
