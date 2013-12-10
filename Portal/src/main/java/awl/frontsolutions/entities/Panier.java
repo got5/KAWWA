@@ -1,11 +1,12 @@
 package awl.frontsolutions.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import awl.frontsolutions.internal.DownloadDocType;
 
-public class Panier {
+public class Panier implements Serializable{
 	
 	private List<String> listeComponent = new ArrayList<String>();
 
