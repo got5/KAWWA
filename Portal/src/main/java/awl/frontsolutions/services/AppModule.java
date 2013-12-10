@@ -1,7 +1,6 @@
 package awl.frontsolutions.services;
 
 import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
-import awl.frontsolutions.services.atos.AtosModule;
 import awl.frontsolutions.services.impl.*;
 import awl.frontsolutions.services.stack.*;
 import net.atos.kawwaportal.components.KawwaConstants;
