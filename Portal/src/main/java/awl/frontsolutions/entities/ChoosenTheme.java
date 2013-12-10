@@ -4,7 +4,9 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 import awl.frontsolutions.services.stack.ThemeStack;
 
-public class ChoosenTheme{
+import java.io.Serializable;
+
+public class ChoosenTheme implements Serializable{
 	
  
 	
