@@ -118,7 +118,7 @@ public class ComponentUtilsImpl implements ComponentUtils{
 			sb.append(m.group(1));
 			sb.append("=\"");
 			try {
-				if(m.group(2).indexOf(ComponentConstants.THEME_IMG_DIR)!=-1){
+				if(m.group(2).indexOf(ComponentConstants.THEME_IMG_DIR)!=-1 || m.group(2).equalsIgnoreCase("#")){
 					path = m.group(2);
 				}
 				else if(!(m.group(1).equals("href") && (m.group(2).startsWith("#") || m.group(2).startsWith("http") )) &&
