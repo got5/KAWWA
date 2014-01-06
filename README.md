@@ -8,7 +8,7 @@ A Kawwa component is an identified web interface element made of:
 
 A component must be seen as an independent, single block of content, with specific characteristics and behavior, and that may be manipulated apart of the whole.
 
-##Kawwa is not a graphical theme
+##Kawwa is not a CSS Framework
 Although the Kawwa portal offers the possibility to add different graphical themes, the goal of this library is not to propose a CSS framework.
 We strongly believe that the web design is above all a matter of identity and of content strategy, and that it cannot, in no way, be offered as a framework. Nonetheless, CSS design is a sophisticated part of the front-end development. In this way, the graphical themes available on the Kawwa portal – and consequently the CSS snippets of components - must be taken only as a starting “canvas” for your own web design.
 
