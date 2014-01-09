@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
-	xmlns:p="tapestry:parameter">
+	xmlns:p="tapestry:parameter" lang="en">
 <head>
 <title>[ KAWWA PORTAL ] ${title}</title>
 <link rel="icon" type="image/png" href="${faviconUrl}" />
