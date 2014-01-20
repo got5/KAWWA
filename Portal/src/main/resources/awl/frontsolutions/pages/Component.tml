@@ -92,7 +92,7 @@
                             <a href="#demo">Demo</a>
                         </li>
                         <li>
-                            <a href="#html5">HTML5 version</a>
+                            <a href="#html5">Sources</a>
                         </li>
                     </t:if>
                 	<t:if test="hasTapestryTag">
@@ -111,10 +111,16 @@
                         <div id="i-component" class="content">
                             <t:outputRaw t:value="snippetHTML5"/>
                         </div>
+                        <t:if test="showFile(componentInfo.content.update, true)">
+                            <div class="c-update">
+                                <t:outputraw t:value="componentInfo.content.update" />
+                            </div>
+                        </t:if>
+
                     </div>
                     <div class="content" id="html5">
                     	<t:if test="showFile(componentInfo.content.html5.snippetHTML5)">
-                            <t:showSource t:type="html5" t:title="HTML5 Plain Code" t:escapedCode="escapedSnippetHTML5" t:readMore="componentInfo.content.html5.readMoreHTML5" />
+                            <t:showSource t:type="html5" t:title="HTML5 Plain Code" t:escapedCode="escapedSnippetHTML5" t:readMore="componentInfo.content.html5.readMoreHTML5" t:autoOpen="true"/>
 							<hr/>
                         </t:if>
                         <t:if test="showFile(snippetCSS3)">
@@ -122,7 +128,7 @@
                             <hr/>
                         </t:if>
                          <t:if test="showFile(componentInfo.content.html5.snippetJS5)">
-	                    	<t:showSource t:type="js" t:title="How to apply" t:escapedCode="escapedSnippetJS5" t:readMore="componentInfo.content.html5.readMoreJS5" />
+	                    	<t:showSource t:type="js" t:title="How to apply" t:escapedCode="escapedSnippetJS5" t:readMore="componentInfo.content.html5.readMoreJS5"/>
 	                    </t:if>
 	                    <t:showIEFiles t:xhtml="false"/>
                     </div>

@@ -30,6 +30,7 @@ public class ComponentConstants {
 	
 	public static final String NOTES = "notes.html";
 	public static final String FOREWORDS = "forewords.html";
+    public static final String UPDATES = "update.html";
 	public static final String AFTERWORDS = "afterwords.html";
 	public static final String READMORE_HTML = "readmore.html";
 	public static final String READMORE_HTML5 = "readmore.html5";

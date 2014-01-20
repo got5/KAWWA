@@ -565,6 +565,8 @@ private ComponentContent getComponentContent(File rootFile, String urlParam) thr
 		retour.setForewords((String) readFile(basedir + ComponentConstants.FOREWORDS)[0]);
 		
 		retour.setAfterwords((String) readFile(basedir + ComponentConstants.AFTERWORDS)[0]);
+
+        retour.setUpdate((String) readFile(basedir + ComponentConstants.UPDATES)[0]);
 	}
 
 	/**

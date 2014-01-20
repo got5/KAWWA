@@ -26,6 +26,8 @@ public class ComponentContent implements Serializable {
 
 	private String afterwords;
 
+    private String update;
+
 	private List<String> srcPaths;
 	
 	public XHTMLDocumentation getXhtml() {
@@ -117,4 +119,12 @@ public class ComponentContent implements Serializable {
 	public void setRebuilt(boolean rebuilt) {
 		this.rebuilt = rebuilt;
 	}
+
+    public String getUpdate() {
+        return update;
+    }
+
+    public void setUpdate(String update) {
+        this.update = update;
+    }
 }
