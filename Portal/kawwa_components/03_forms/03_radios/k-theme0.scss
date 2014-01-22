@@ -1,7 +1,7 @@
 /* -------------------------- GROUP OF RADIOS ------------------------ */
 
 /* Fieldset elements for radios */
-fieldset.k-radio {
+fieldset.k-choice-input, fieldset.k-check, fieldset.k-radio {
 	margin: 0 5% 1em;
 	
 	legend {
@@ -37,8 +37,8 @@ fieldset.k-radio {
 
 /* --- TOUCH --- */
 
-.flexNav-touch {
-	fieldset.k-radio {
+html.touch {
+	fieldset.k-choice-input, fieldset.k-check, fieldset.k-radio {
 		label {
 			display: inline-block;
 			font-size: 140%;
@@ -51,5 +51,3 @@ fieldset.k-radio {
 
 	}
 }
-
-
