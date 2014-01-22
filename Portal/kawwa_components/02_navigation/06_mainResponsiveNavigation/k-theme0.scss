@@ -2,14 +2,20 @@
 
 
 /* Navigation control */
-p.control {
-	display: none;
-	position: absolute;
-	top: 5px;
-	right: 3%;
-	width: 45px;
+nav.k-main-nav {
+	clear: both;
 	
-	a, a:link {display: block;}
+	p.control {
+		display: none;
+		position: absolute;
+		top: 5px;
+		right: 0;
+		width: 45px;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		z-index: 100;
+	}
 } 
 
 ul.k-navbar {
@@ -17,13 +23,11 @@ ul.k-navbar {
 	margin: 4px 0 2em;
 	
 	> li {
-		float: left;
-		width: auto;
+		display: inline-block;
 		list-style-type: none;
 		font: 1em $title_stack;
 		text-transform: uppercase;
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
-		margin: 0 1px;
 	}
 	a, a:link, a:visited {
 		display: block;
@@ -51,22 +55,37 @@ ul.k-navbar {
 	}
 	
 	// IF SECTION HAS DROPDOWN
+	a.hasdropdown {position: relative;}
+	a.hasdropdown::after {
+		position: absolute;
+		right: 2px;
+		bottom: 2px;
+		content: "";
+		width: 1px;
+		height: 1px;
+		background: $identity_clr;
+		border-left: 5px solid $identity_clr;
+		border-right: 5px solid $neutral_clr;
+		border-top: 5px solid $identity_clr;
+		border-bottom: 5px solid $neutral_clr;
+		z-index: 50;
+	}
 	a.hasdropdown, a.hasdropdown:link, a.hasdropdown:visited {
 		color: #FFF;
-		background: #000 url(../img/k-theme0/bg_hasdropdown.png) right bottom no-repeat;
+		background: $identity_clr;
 		padding-right: 20px;
 	}
 	a.hasdropdown:hover, a.hasdropdown:focus {
 		color: #FFF;
-		background: $neutral_clr url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		background: $neutral_clr;
 	}
 	li.active a.hasdropdown, li.active a.hasdropdown:link, li.active a.hasdropdown:visited {
 		color: #FFF;
-		background: $neutral_clr url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		background: $neutral_clr;
 	}
 	li.active a.hasdropdown:hover, li.active a.hasdropdown:focus {
 		color: #FFF;
-		background: $neutral_clr url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+		background: $neutral_clr;
 	}
 
 }
@@ -101,7 +120,7 @@ ul.k-navbar {
 		}
 		a:hover, a:focus {
 			text-shadow: none;
-			color: #000;
+			color: $identity_clr;
 			background: $neutral_clr;
 		}
 	}
@@ -114,16 +133,16 @@ ul.k-navbar {
 	 
 }
 
-/* Media queries for responsive navigation - 
-Modify max-width value to match your needs */
-
-@media only screen and (max-width : 800px) {
+nav.k-main-nav.adaptive {
 	p.control {display: block;}
-	ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
-	ul.k-navbar > li {float: none; clear: both; padding: 0 0 1px; }
-	ul.k-navbar a {display: block;}
-	.dropdown ul {position: static; width: 100%;}	
-	ul.k-navbar .dropdown li {padding-left: 25px;}
+	ul.k-navbar {
+		display: none;
+		margin: 0;
+		border-top: 2px solid #FFF;
+	
+		> li {display: block; padding: 0 0 1px;}
+		.dropdown ul {position: static; width: 100%;}	
+		.dropdown li {padding-left: 25px;}
+	}
 }
 
-		
