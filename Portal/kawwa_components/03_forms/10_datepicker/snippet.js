@@ -34,7 +34,7 @@ $(document).ready(function(){
 				});*/
 				jQuery( "input.k-datepick" ).datepicker({
 					showOn: "button",
-					buttonImage: "../img/[[THEME_IMG]]/pic_calendar.gif",
+					buttonImage: "../img/[[THEME_IMG]]/calendar.svg",
 					buttonImageOnly: true,
 					buttonText: "Click to open/close the calendar"
 				});
