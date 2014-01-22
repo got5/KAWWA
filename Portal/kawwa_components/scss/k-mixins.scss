@@ -2,7 +2,6 @@
 // MIXINS
 // V 1.0 11/2013
 
-
 // BORDER BOX
 @mixin M_borderBox {
 	-moz-box-sizing: border-box;
@@ -11,7 +10,6 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-
 
 // FLEX CONTAINER
 @mixin M_flexCon($flow) {
@@ -22,7 +20,7 @@
 	-webkit-flex-flow: $flow;
 	flex-direction: $flow;
 }	
-
+	
 
 // SIMPLE TRANSFORMATIONS 
 @mixin M_transform($type) {
@@ -31,13 +29,23 @@
 	-o-transform: $type;
 	-webkit-transform: $type;
 	transform: $type;
+}
+
+
+// TRANSITIONS 
+@mixin M_transition($what) {
+	-moz-transition: $what;
+	-ms-transition: $what;
+	-o-transition: $what;
+	-webkit-transition: $what;
+	transition: $what;
 }	
 
-// STRIPES BACKGROUND 
-@mixin M_stripes {
-	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,.04) 5px, rgba(0,0,0,.04) 20px);
-	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,.04) 5px, rgba(0,0,0,.04) 20px);
-	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,.04) 5px, rgba(0,0,0,.04) 20px);
-	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,.04) 5px, rgba(0,0,0,.04) 20px);
-	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,.04) 5px, rgba(0,0,0,.04) 20px);
+// STRIPS BACKGROUND 
+@mixin M_stripes($clr) {
+	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
 }
