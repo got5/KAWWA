@@ -1,7 +1,7 @@
-/* --- Required inputs ---  */
-/* add this snippet with the css default values */
+/* -------------------------------- REQUIRED INPUT FIELD ------------------------------- */
 
 input[required], select[required], textarea[required], .k-required {
-	background: #FFF url(../img/k-theme0/bg_required.png) 0.2em 0.3em no-repeat;
+	background: transparent url(../img/k-theme0/bg_required.svg) 0.2em 0.3em no-repeat;
 	padding-left: 1.2em;
 }
+
