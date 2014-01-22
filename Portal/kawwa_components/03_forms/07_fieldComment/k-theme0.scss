@@ -1,0 +1,15 @@
+/* ------------------------------ INPUT CONTEXTUAL COMMENTS ------------------------------ */
+
+input:focus + [role="tooltip"] {
+    display: block;
+}
+
+[role="tooltip"], .k-comment {
+    display: none;
+    line-height: 1.1;
+    color: #FFF;
+    background: $identity_clr;
+    padding: 0.2em 0.6em 0.4em;
+    margin: 0 0 0.5em;
+}
+
