@@ -10,7 +10,7 @@ ol.k-form-steps {
 	li {
 		position: relative;
 		-webkit-flex: 1 1 auto;
-      		flex: 1 1 auto;
+      	flex: 1 1 auto;
 		list-style-type: none;
 		font: 0.9em/1 $title_stack;
 		color: lighten($text_clr, 70%);
@@ -36,17 +36,17 @@ ol.k-form-steps {
 	li.past {color: $text_clr; background: $neutral_lgt_clr;}
 	li.past::before {color: $neutral_lgt_clr; background: $text_clr;}
 	
-  	li.active {color: $hot_clr;}
-  	li.active::before {color: $neutral_lgt_clr; background: $hot_clr;}
+  li.active {color: $hot_clr; border: 1px solid $neutral_lgt_clr;}
+  li.active::before {color: $neutral_lgt_clr; background: $hot_clr;}
   
-  	@media screen and (min-width: 790px) {
-		@include M_flexCon(row);
+  @media screen and (min-width: 790px) {
+	@include M_flexCon(row);
 	
-		li {text-align: center; float: left;}
-		li::before {
-			display: block;
-			margin: 0 auto 5px;
-		}
-  	}
+	li {text-align: center;}
+	li::before {
+		display: block;
+		margin: 0 auto 5px;
+	}
+  }
 }
 
