@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	if(jQuery.ui && jQuery.ui.accordion) {
-		jQuery('.k-menu').accordion({ active: false, collapsible: true });
+	if(jQuery.fn.vMenu){
+		jQuery( ".k-vertical-menu > ul" ).vMenu();
 	}
 });
