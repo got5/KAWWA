@@ -38,20 +38,20 @@ ul.k-navbar {
 	}
 	a:hover, a:focus {color: #FFF;	background: $neutral_clr;}
 	
-	// ACTIVE SECTION/ NO LINK
-	li.active strong {
-		display: block;
-		font-family: $title_stack;
-		font-weight: normal;
-		text-transform: uppercase;
-		color: #FFF;
-		background-color: $neutral_clr;
-		padding: 0.5em;
-	}
-	// ACTIVE SECTION / LINK
-	li.active a, li.active a:link, li.active a:visited {
-		color: #FFF;
-		background-color: $neutral_clr;
+	li.active {
+		strong {
+			display: block;
+			font-family: $title_stack;
+			font-weight: normal;
+			text-transform: uppercase;
+			color: #FFF;
+			background-color: $neutral_clr;
+			padding: 0.5em;
+		}
+		a, a:link, a:visited {
+			color: #FFF;
+			background-color: $neutral_clr;
+		}
 	}
 	
 	// IF SECTION HAS DROPDOWN
