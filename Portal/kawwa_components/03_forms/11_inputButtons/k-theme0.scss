@@ -1,21 +1,22 @@
-/* -------------------------- FORM CONTROLS BUTTONS ------------------------ */
+/* ------------------------------ FORM INPUT BUTTONS ------------------------------ */
 
 /* Buttons bar for inputs */
 .k-buttons-bar {
-	clear: both;
-	text-align: right;
-	padding: 0;
-	margin: 0 0 1em;
-	border: none;
+    clear: both;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 20px;
+    border: none;
     
-	li {
+    p {display: block; margin: 1em 0 2em;}
+    li {
 		display: inline;
 		font-size: 0.95em;
 		list-style-type: none;
 	}
 }
 
-/* Valid actions */
+/* Valid actions - must duplicate declarations for IE6!!*/
 input[type=button], input[type=submit] {
 	font: 100% $title_stack;
 	text-transform: uppercase;
@@ -24,7 +25,7 @@ input[type=button], input[type=submit] {
 	background: $secondary_clr;
 	padding: 0.3em 1em;
 	margin: 0 0.3em 0.5em;
-	border: none;
+	border: 1px solid $secondary_clr;
 	border-radius: 3px;
 	box-shadow: 0 1px 1px rgba(0,0,0,.5);
 	cursor: pointer;
@@ -34,6 +35,7 @@ input[type=button], input[type=submit] {
 input[type=button]:hover, input[type=submit]:hover {
 	color: #FFF;
 	background: $identity_clr;
+	border-color: $identity_clr;
 }
 
 /*focus*/
@@ -47,8 +49,9 @@ input[type=button]:focus, input[type=submit]:focus {
 
 input[type=submit]:disabled, input[type=button]:disabled {
 	text-shadow: none;
-	color: $neutral_drk_clr;
+	color: lighten($neutral_drk_clr, 35%);
 	background: $neutral_md_clr;
+	border: none;
 	box-shadow: none;
 	cursor: default;
 }
@@ -58,6 +61,7 @@ input[type=button].optional, input[type=submit].optional {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
 	color: #FFF;
 	background: $neutral_drk_clr;
+	border: 1px solid $neutral_drk_clr;
 }
 
 /*hover*/
@@ -74,8 +78,17 @@ input[type=button].optional:focus, input[type=submit].optional:focus {
 	
 /* Reset Actions */
 input[type=button].reset, input[type=reset] {
-	@extend input[type=submit];
+	font: 100% $title_stack;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
 	background: $neutral_drk_clr;
+	padding: 0.3em 1em;
+	margin: 0 5px 8px;
+	border: 1px solid $neutral_drk_clr;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
 }
 	
 /* Hover/Focus */
@@ -84,7 +97,22 @@ input[type=button].reset:hover, input[type=reset]:hover {
 	background: $identity_clr;
 }
 
-input[type=button].reset:focus, input[type=reset]:focus {
+input[type=button]:focus, input[type=reset]:focus {
 	color: #FFF;
 	background: $identity_clr;
+}
+
+/* --- SPECIFICS FOR TOUCH --- */
+html.touch {
+	input:not([type=date]), select {
+		font-size: 140%;
+	}
+	input[type=button], input[type=submit], input[type=reset] {
+		overflow: hidden;
+		font-size: 160%;
+		padding: 0.3em 3%;
+		margin: 0 5px 0.5em;
+		
+		@media screen and (max-width: 600px) {width: 90%; margin: 0 auto 0.5em;}
+	}
 }
