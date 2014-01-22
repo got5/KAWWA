@@ -1,0 +1,12 @@
+/* ------------------------------- INPUT HELP ------------------------------ */
+
+.k-field-help {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: 0 0.5em;
+	vertical-align: -3px;
+}
+
+label + .k-field-help {padding-left: 0; margin-left: -12px;}
+	
