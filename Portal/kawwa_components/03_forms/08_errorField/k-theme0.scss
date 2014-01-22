@@ -1,0 +1,21 @@
+/* -------------------------- INPUT ERROR ------------------------ */
+
+input.k-field-error {
+	color: #FFF;
+	background-color: $alert_clr;
+}
+
+label.k-field-error {
+	color: $alert_clr;
+	background-color: #FFF;
+}
+
+/* Contextual field error message */
+.k-contextual-error {
+	display: block;
+	font-size: 90%;
+	color: #FFF;
+	background-color: $alert_clr;
+	padding: 0.3em 0.5em;
+	margin-bottom: 0.5em;
+}
