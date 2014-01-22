@@ -1,61 +1,44 @@
-/* Based on FlexNav.js 0.3.2
- * Copyright 2013, Jason Weaver http://jasonweaver.name
- * Released under the WTFPL license
- * http://sam.zoy.org/wtfpl/
+/* Kawwa FlexNav.js 1.0.0
+ * Kawwa - Jan 2014
  * 
- * Modified for KAWWA - Feb 02 2013
- * 	Added ARIA support / 
- *	Modified variables / 
- *	Replaced resize method for jQuery version 1.7
+ * Manages the display and the controls of main navigation
+ * without media queries
  * 
- * Modified for Kawwa - May 2013
- * Added fix to correctly positions dropdown if parent's 
- * too close to right edge
- * Added missing prevent.default
+ * Thanks to Chris Ferdinandi (http://gomakethings.com/about/) 
+ * for the Resize performance tip
  * 
- * 'breakpoint' is the breakpoint width defined by the @media
  */
 
 
 (function($) {
 	$.fn.flexNav = function(options) {
 		var settings = $.extend({
-			'breakpoint': '800',
 			'animationSpeed': 'fast'
 		},
 		options);
 
+	return this.each(function() {
 		var $this = $(this);
+		var $theNav = $this.parent('nav');
+		var $sections = $this.children('li');
+		var resizeTimer; // Set resizeTimer to empty so it resets on page load
 		
 		/* Add ARIA roles */
 		$this.find('li').attr('role', 'presentation');
 		$this.find('a').attr('role', 'menuitem');
-
-		var resizer = function() {
-			if ($(window).width() < settings.breakpoint) {
-				$("body").removeClass("lg-screen").addClass("sm-screen");
+		
+		function resizeFunction() {
+			if($sections.eq(0).offset().top != $sections.eq($sections.length - 1).offset().top) {
+				$this.css('display', 'none');
+				$theNav.addClass('adaptive');
 			} else {
-				$("body").removeClass("sm-screen").addClass("lg-screen");
-			}
-			if ($(window).width() >= settings.breakpoint) {
-				$this.show();
+				$this.css('display', 'block');
+				$theNav.removeClass('adaptive');
 			}
 		};
 
 		// Call once to set.
-		resizer();
-
-		// Function for testing touch screens
-		function is_touch_device() {
-			return !!('ontouchstart' in window);
-		}
-
-		// Set class on html element for touch/no-touch
-		if (is_touch_device()) {
-			$('html').addClass('flexNav-touch');
-		} else {
-			$('html').addClass('flexNav-no-touch');
-		}
+		resizeFunction();
 
 		// Set some classes in the markup	
 		$this.find("li").each(function() {
@@ -66,7 +49,7 @@
 		});
 
 		// Toggle for nav menu
-		$this.siblings('p.control').children('a').click(function(event) {
+		$this.siblings('.control').click(function(event) {
 			event.preventDefault();
 			$this.slideToggle(settings.animationSpeed);
 		});
@@ -92,8 +75,12 @@
 
 		
 		// Call on resize.
-		$(window).resize(resizer);
-
+		$(window).resize(function() {
+	        clearTimeout(resizeTimer);
+	        resizeTimer = setTimeout(resizeFunction, 250);
+	    });
+		
+	 });
 	};
 
 })(jQuery);
