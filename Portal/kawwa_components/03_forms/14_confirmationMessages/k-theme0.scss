@@ -12,9 +12,14 @@
 	h3 {
 		color: #363;
 		background: rgba(207,237,214,.5);
-		margin: 0 0 1em;
+		margin: 0 0 0.5em;
 	}
 	h3::before {content: "\2611 \00A0 ";}
+	
+	.content {
+		background: rgba(207,237,214,.5);
+		padding: 0.5em;
+	}
 	
 	p {display: block; font-size: 1.1em;}
 	li {list-style-position: inside; font-size: 1.1em;}
