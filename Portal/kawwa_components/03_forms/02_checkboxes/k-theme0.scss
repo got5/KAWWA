@@ -1,7 +1,9 @@
-/* -------------------------- GROUP OF CHEKBOXES ------------------------ */
+/* -------------------------- GROUP OF RADIOS ------------------------ */
 
-/* In a fieldset */
-fieldset.k-check {
+/* Fieldset elements for radios */
+/*  "k-check" and  "k-radio" are deprecated */
+
+fieldset.k-choice-input, fieldset.k-check, fieldset.k-radio {
 	margin: 0 5% 1em;
 	
 	legend {
@@ -31,30 +33,14 @@ fieldset.k-check {
 		border: 2px solid #FFF;
 		
 		legend {padding: 0 0.5em;}
-		label {padding: 0;}
+		label {padding: 0 2em 0 0;}
 	}
-}
-
-/* Applied to paragraphs */
-p.k-check {
-	background: #FFF;
-	padding: 0.5em 1em;
-	margin: 1em 5%;
-	
-	label {
-		display: inline;
-		font-weight: normal;
-		text-align: left;
-		padding: 0;
-	}
-	
-	@media screen and (min-width: 790px) {display: block; margin: 1em 2em;}
 }
 
 /* --- TOUCH --- */
 
-.flexNav-touch {
-	fieldset.k-check {
+html.touch {
+	fieldset.k-choice-input, fieldset.k-check, fieldset.k-radio {
 		label {
 			display: inline-block;
 			font-size: 140%;
@@ -67,19 +53,3 @@ p.k-check {
 
 	}
 }
-
-/* Unique labels */
-label.k-check {
-	float: none;
-	width: auto;
-	font-weight: normal;
-	text-align: left;
-}
-
-/* List of inputs */
-ul.k-check {
-	margin: 0;
-	
-	li {display: inline-block; padding: 0 2% 0 0;}
-}
-
