@@ -1,0 +1,26 @@
+/* ----------------------------- LOGIN FORM ------------------------------- */
+
+form.k-login {
+	background: $neutral_lgt_clr;
+	
+	fieldset {margin: 0;}
+	legend {margin-bottom: 0.3em;}
+	.k-buttons-bar {text-align: left; margin-left: 5%;}
+}
+
+.lost-password {display: block; font-size: 80%;}
+ 
+p.to-register {
+	display: block;
+	font-size: 1em;
+    color: #FFF;
+    background: $neutral_clr;
+    padding: 1em 1.5em;
+    margin: 0;
+    
+    a, a:link, a:visited {
+		color: #FFF;
+		background: $neutral_clr;
+	}
+}
+
