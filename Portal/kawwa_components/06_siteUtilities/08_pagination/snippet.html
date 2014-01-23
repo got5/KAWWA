@@ -1,19 +1,21 @@
 <div class="k-pagination">
-	<form id="pagination" method="post" action="">
-		<p class="lines-to-display">
-			<label>Display  
-				<select name="display-value">
-					<option value="10">10</option>
-					<option value="15">15</option>
-					<option value="20">20</option>
-				</select> lines per page</label></p>
-	</form>
 	<p class="total-pages">Results 1 to 10 of <strong>20</strong></p>
-	<p class="page-numbers">
-		<img src="../img/[[THEME_IMG]]/pic_first_off.gif" alt="[ First page ]" /> 
-		<img src="../img/[[THEME_IMG]]/pic_prev_off.gif" alt="[ Previous page ]" /> 
-		<span><strong title="Current page">1</strong> |  <a href="#">2</a></span> 
-		<a href="#" title="Go to next page"><img src="../img/[[THEME_IMG]]/pic_next.gif" alt="[ Next page ]" /></a> 
-		<a href="#" title="Go to last page"><img src="../img/[[THEME_IMG]]/pic_last.gif" alt="[ Last page ]" /></a>
+	
+	<ul class="page-numbers">
+		<li><span class="disabled"><img src="../img/[[THEME_IMG]]/first.svg" alt="First page" /></span></li>
+		<li><a href="#" class="last" role="button"><img src="../img/[[THEME_IMG]]/prev.svg" alt="Previous page" /></a></li>
+		<li><strong aria-label="Current page">1</strong></li>
+		<li><a href="#">2</a></li> 
+		<li><a href="#" role="button"><img src="../img/[[THEME_IMG]]/next.svg" alt="Next page" /></a></li>
+		<li><a href="#" class="last" role="button"><img src="../img/[[THEME_IMG]]/last.svg" alt="Last page" /></a></li>
+	</ul>
+	
+	<p class="lines-to-display">
+		<label>Display  
+			<select name="display-value">
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+			</select> results per page</label>
 	</p>
 </div>
