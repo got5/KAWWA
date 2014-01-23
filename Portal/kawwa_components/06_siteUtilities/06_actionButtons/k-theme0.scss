@@ -1,0 +1,94 @@
+/* ------------------------- ACTION BUTTONS ------------------------- */
+
+ul.k-actions {
+	text-align: right;
+	padding: 0;
+	margin-bottom: 2em;
+	
+	li {
+		display: inline-block;
+		list-style-type: none;
+		padding: 0.5em;
+	}
+	
+	span, button, a {
+		display: inline-block;
+		font: bold 1.2em/1.5 $font_stack;
+		text-decoration: none;
+		color: $text_clr;
+		background-color: $neutral_lgt_clr;
+		background-origin: border-box;
+		background-position: -2px -2px;
+		background-repeat: no-repeat;
+		padding: 5px 10px;
+		border: none;
+		border-radius: 3px;
+		box-shadow: 0 1px 1px rgba(0,0,0,.5);
+		cursor: pointer;
+	}
+	
+	a:link, a:visited {
+		color: $neutral_drk_clr;
+		background-color: $neutral_lgt_clr;
+	}
+	button:hover, button:focus, a:hover, a:focus {
+		color: #000;
+		background-color: #FFF;
+		box-shadow: none;
+	}
+	
+	/* active */
+	button.active, a.active, a.active:link, a.active:visited {
+		color: #FFF;
+		background-color: $hot_clr;
+	}
+	/* Disabled */
+	button.disabled, button.disabled:hover, button.disabled:focus, span {
+		color: $neutral_drk_clr;
+		background-color: $neutral_lgt_clr;
+		box-shadow: none;
+		cursor: default;
+		opacity: .4;
+	}
+	
+	.no-label {width: 1px; color: $neutral_lgt_clr !important;}
+	
+	/* Icons bg images */
+	.bt-print {background-image: url(../img/k-theme0/print.svg); padding-left: 40px;}
+	.bt-download {background-image: url(../img/k-theme0/download.svg); padding-left: 40px;}
+	.bt-edit {background-image: url(../img/k-theme0/edit.svg); padding-left: 40px;}
+	.bt-view {background-image: url(../img/k-theme0/look.svg); padding-left: 40px;}
+	.bt-email {background-image: url(../img/k-theme0/mail.svg); padding-left: 40px;}
+	.bt-search {background-image: url(../img/k-theme0/search.svg); padding-left: 40px;}
+	.bt-new {background-image: url(../img/k-theme0/add.svg); padding-left: 40px;}
+	.bt-del {background-image: url(../img/k-theme0/delete.svg); padding-left: 40px;}
+}
+
+/* For icon buttons only */
+
+ul.k-actions.icon-only {
+	
+	li {
+		overflow: hidden;
+		width: 40px;
+		height: 40px;
+		background-color: $neutral_lgt_clr;
+		padding: 0;
+		margin: 3px;
+		border-radius: 3px;
+		box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	}
+	li:hover, li:focus {
+		background-color: #FFF;
+		box-shadow: none;
+	}
+	 
+	a, button, span {
+		height: 40px;
+		background-color: transparent;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	a, button, span {background-position: 0 1px;}
+}
+
