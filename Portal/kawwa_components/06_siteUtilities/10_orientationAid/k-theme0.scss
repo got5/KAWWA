@@ -1,0 +1,24 @@
+/* ----------------------------- ORIENTATION AID ------------------------------- */
+
+div.k-orientation-aid {
+	float: left;
+	width: 100%;
+	margin-top: 1em;
+	
+	p {
+		font-size: 0.85em;
+		text-transform: uppercase;
+	}
+	a, a:link, a:visited {text-decoration: none;}
+}
+	
+p.go-back {float: left; width: 45%;}
+	p.go-back::before {content: "\21A4 \00A0"; font-size: 120%;}
+	
+p.go-top {float: right; width: 45%; text-align: right;}
+	p.go-top::after {content: "\00A0 \21A5"; font-size: 120%;}
+
+
+
+
+
