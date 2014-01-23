@@ -1,14 +1,15 @@
-<p id="loginLink"><a href="#login" title="Click to fold/unfold login form">Please, sign-in</a></p>
-<form id="login" class="k-login collapsible" method="post" action="">
+<form id="login" class="k-login" method="post" action="#">
 	<fieldset>
 		<legend>Sign in</legend>
-       	<p><label for="userid-tag">User identifier</label> 
-       		<input type="text" id="userid-tag" name="userid-tag" /></p>
-       	<p><label for="password-tag">Password</label> 
-       		<input type="password" id="password-tag" name="password-tag" title="Password must include at least one digit and one special character" /> 
+	       	<p><label for="userid-tag">User identifier</label> 
+	       		<input type="text" id="userid-tag" name="userid-tag" /></p>
+	       	<p><label for="password-tag">Password</label> 
+	       		<input type="password" id="password-tag" name="password-tag" aria-describedby="password-tip" /> 
+	       		<span id="password-tip" role="tooltip" class="k-comment">Password must include at least one digit and one special character</span>
 			<span class="lost-password"><a href="#">Forgot your password?</a></span></p>
-		<p><input type="submit" value="ok" /></p>
-    </fieldset>
-	<p class="to-register">
-       	<strong>Not registered yet ?</strong> &raquo; <a href="#">Register now</a></p>
+	</fieldset>
+	<div class="k-buttons-bar">
+		<p><input type="submit" value="Log in" /></p>
+	</div>
+	<p class="to-register"><strong>Not registered yet ?</strong> &raquo; <a href="#">Sign up now</a></p>
 </form>
