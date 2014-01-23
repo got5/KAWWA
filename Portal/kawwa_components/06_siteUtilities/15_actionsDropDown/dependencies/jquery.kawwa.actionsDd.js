@@ -5,36 +5,46 @@
 
 
 (function($) {
-    $.fn.actionsDd = function(options) {
-        var $this = $(this);
+	$.fn.actionsDd = function(options) {
 
-        $this.each(function() {
+ 	return this.each(function() {
 
-            var $zControl = $(this).children('button');
+		var $this = $(this);
+		var $zControl = $this.find('button');
+		var $list = $this.children('.content');
 
-            var zListId = 'list' + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-            var zList = $(this).find('div.content');
+		var zListId = 'list' + Math.floor(Math.random() * 111);
+		var zList = '#' + zListId;
+		
+		// ARIA
+		$list.attr('id', zListId);
+		$zControl.attr('aria-owns', zListId);
+		$zControl.attr('aria-expanded', false);
+		$zControl.attr('aria-haspopup', true);
+		$this.find('a').attr('role', 'option');
 
-            // ARIA
-            zList.attr('id', zListId);
-            $zControl.attr('aria-owns', zListId);
-            $zControl.attr('aria-expanded', false);
+			// Prepares list
+			$(zList).css('display', 'none');
 
-            // Prepares list
-            zList.css('display', 'none');
+			$(zList).find('a').click(function() {
+				$(zList).slideToggle('fast');
+			});
+			
+			// Activates control
+			$zControl.click(function(event) {
+				event.preventDefault();
+				$(zList).slideToggle('fast');
+				$(this).toggleClass('active');
 
-            zList.find('a').click(function(){
-                zList.slideToggle('fast');
-            });
-            // Activates control
-            $zControl.click(function(event){
-                event.preventDefault();
-                zList.slideToggle('fast');
-                $(this).toggleClass('active');
-                $(this).attr('aria-expanded', $(this).hasClass('active'));
-            });
-        });
+				if($(this).hasClass('active')) {
+					$(this).attr('aria-expanded', true);
+				} else {
+					$(this).attr('aria-expanded', false);
+				}
 
-    };
-
+			});
+		});
+	};
 })(jQuery);
+
+
