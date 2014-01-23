@@ -1,6 +1,7 @@
 function toPrint() {
-	if (jQuery("a.bt-print")) {
-		jQuery("a.bt-print").click (function(){
+	if (jQuery(".bt-print")) {
+		jQuery(".bt-print").click (function(event){
+			event.preventDefault();
 			window.print();	
 			return false;
 		});
