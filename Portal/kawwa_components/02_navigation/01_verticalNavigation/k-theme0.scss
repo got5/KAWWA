@@ -21,17 +21,17 @@
 	a, a:link, a:visited {
 		display: block;
 		text-decoration: none;
-		color: #FFF;
+		color: $neutral_txt;
 		background: $neutral_clr url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
 		padding: 0.5em 28px 0.5em 0.7em;
 		cursor: pointer;
 	}
 	a:focus {
-		color: #FFF;
+		color: $identity_txt;
 		background: $identity_clr url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
 	}
 	a.active, a.active:link, a.active:visited {
-		color: #FFF;
+		color: $identity_txt;
 		background: $identity_clr url(../img/k-theme0/fold-trans.png) right 0.5em no-repeat;
 	}
 	
@@ -61,7 +61,7 @@ ul.level2 {
 		color: #000;
 		background: #FFF; 
 		padding: 0.5em 2% 0.5em 0.7em;
-		border-top: 1px dashed  $neutral_md_clr;
+		border-top: 1px dashed $neutral_md_clr;
 		
 		ul {padding-left: 1em;}
 	}
