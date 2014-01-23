@@ -1,0 +1,70 @@
+/* ---------------------------------------------------------------------------
+ * ----------------------------- DYNAMIC TABLE -------------------------------
+ * ---------------------------------------------------------------------------*/
+
+
+table.k-data-table {clear: both; border-top: 1px dashed #CCC;}
+
+div.dataTables_wrapper {
+	position: relative;
+	padding-top: 5px;
+	border-top: 1px dashed #CCC;
+}
+
+	th.sorting {
+		background: $neutral_clr url(../img/k-theme0/sort_both.png) right no-repeat;
+		cursor: pointer;
+	}
+	th.sorting_asc {
+		background: $neutral_clr url(../img/k-theme0/sort_asc.png) right no-repeat;
+		cursor: pointer;
+	}
+	th.sorting_desc {
+		background: $neutral_clr url(../img/k-theme0/sort_desc.png) right no-repeat;
+		cursor: pointer;
+	}
+	
+/* Data table lines */
+div.dataTables_length {
+	float: left;
+	width: 25%;
+	min-width: 10em;
+	
+	label {font-size: 0.7em; width: auto;}
+}
+	
+/* Data table filter */
+div.dataTables_filter {
+	label {
+		float: right;
+		width: 45%;
+		font-size: 0.7em;
+		text-align: right;
+	}
+}
+	
+/* Data table info */	
+div.dataTables_info {
+	position: absolute;
+	width: 30%;
+	top: 7px;
+	left: 28%;
+	font-size: 0.7em;
+	text-align: center;
+}
+
+/* Dynamic pagination */
+div.dataTables_paginate {
+	float: right;
+	width: auto;
+	font-size: 0.9em;
+	padding-top: 0.5em;
+	
+	a {padding: 0 0.5em;}
+	span {padding: 0 1em;}
+	.paginate_button {cursor: pointer;}
+	.paginate_button_disabled {color: $neutral_md_clr;	cursor: default;}
+	.paginate_active {color: $identity_clr;	cursor: default;}
+	
+}
+
