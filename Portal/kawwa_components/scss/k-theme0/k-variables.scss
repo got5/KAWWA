@@ -1,4 +1,4 @@
-// KAWWA DEFAULT THEME
+ // KAWWA DEFAULT THEME
 // Variables
 // V 1.0 11/2013
 
@@ -11,16 +11,19 @@ $title_stack: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic"
 
 // Colors
 
-$identity_clr:    	 #000;
-$secondary_clr:   	 #A40800;
-$hot_clr:    		 #A40800;
-$text_clr:   		 #050505;
-$neutral_clr:    	 #808080;
-$neutral_drk_clr:  	 #3E3E3E;
-$neutral_md_clr:  	 #CCC;
-$neutral_lgt_clr: 	 #EEE;
+$identity_clr:		#000;
+$identity_txt:		#FFF;
+$secondary_clr		#A40800;
+$secondary_txt		#FFF;
+$hot_clr					#A40800;
+$hot_txt					#FFF;
+$alert_clr:				#C00;
+$text_clr:				#050505;
+$neutral_clr:			#808080;
+$neutral_txt:			#FFF;
+$neutral_drk_clr:	#3E3E3E;
+$neutral_md_clr:	#CCC;
+$neutral_lgt_clr:	#EEE;
 
 
-// General values
-
-$labelW:	15.7em;
+$modal_bg:				rgba(0,0,0,.85);
