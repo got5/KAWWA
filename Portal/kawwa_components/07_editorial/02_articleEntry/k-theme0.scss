@@ -16,13 +16,13 @@ h2 + .k-entry {margin-top: 2em;}
 		a, a:link {
 			display: block;
 			text-decoration: none;
-			color: #555;
+			color: $text_clr;
 			background: #FFF;
 			padding: 0.5em;
 			border-top: 4px solid #000;
 		}
 		a:visited {color: #666; background: #FFF;}
-		a:hover, a:focus {color: #A40800; background: #FFF;}
+		a:hover, a:focus {color: $hot_clr; background: #FFF;}
 	}
 	
 	// Exceptions for entry level 
@@ -42,5 +42,3 @@ h2 + .k-entry {margin-top: 2em;}
 		.e-content {display: table-cell;}
 	} 
 }
-
-
