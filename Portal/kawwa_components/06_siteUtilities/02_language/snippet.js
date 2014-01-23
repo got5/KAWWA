@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	if (jQuery.ui && jQuery.ui.buttonset) {
-		jQuery('form.k-language fieldset.k-radio').buttonset();
+	if(jQuery.fn.radioMakeUp) {
+		if(jQuery("form").hasClass("k-language")) {
+			jQuery("form.k-language").radioMakeUp();
+		}
 	}
 });
