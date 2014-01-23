@@ -1,0 +1,53 @@
+/* -------------------------- CAROUSEL ------------------------ */
+
+.k-carousel {
+	float: left;
+	width: 80%;
+	padding: 15px 10%;
+	margin: 0 auto;
+	
+	ul {padding: 0;}
+	li {text-align: center;}
+	
+	img {display: block; margin: 0 auto;}
+	.p-price {display: block;}
+	a, a:link, a:visited {text-decoration: none;}
+	button {border: none;}
+}	
+
+.jcarousel-item {width: 20%; padding: 0;}
+
+.jcarousel-item-horizontal {margin: 0 10px;}
+
+.jcarousel-prev {
+	display: none; 
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	width: 47px;
+	height: 47px;
+	background: url(../img/k-theme0/bt_carousel.svg) no-repeat;
+	@include M_transform(rotate(-180deg));
+	cursor: pointer;
+}
+
+.jcarousel-next {
+	display: none;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	width: 47px;
+	height: 47px;
+	background: url(../img/k-theme0/bt_carousel.svg) no-repeat;
+	cursor: pointer;
+}
+	
+	.jcarousel-prev-disabled, .jcarousel-prev-disabled-horizontal {
+		opacity: .5;
+		cursor: default;
+	}
+	.jcarousel-next-disabled, .jcarousel-next-disabled-horizontal {
+		opacity: .5;
+		cursor: default;
+	}
+
