@@ -1,0 +1,14 @@
+/* ----------------------------- EXTERNAL LINKS ------------------------------- */
+
+a[href^="http:"]::after {
+	content: "- External link. Opens new tab/window";
+	left: -10000px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+
+a[href^="http:"]:link {
+	background: url(../img/k-theme0/new_window.svg) right no-repeat;
+	padding-right: 1.5em;
+}
