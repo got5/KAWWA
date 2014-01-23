@@ -1,0 +1,38 @@
+/* ----------------------------- LANGUAGE CHOICE ------------------------------- */
+
+form.k-language {
+	fieldset.k-radio {
+		clear: none;
+		background: transparent;
+		padding: 0;
+		margin: 0;
+	}
+	
+	legend, input {position: absolute; width: 1px; left: -9000px;}
+	
+	select {font-size: 120%; margin-top: 2em;}
+	
+	p {font-size: 0.65em; margin: 0;}
+	abbr {border-bottom: none;}
+	
+	label {
+		float: left;
+		width: 2em;
+		list-style-type: none;
+		text-align: center;
+		text-transform: uppercase;
+		color: $neutral_lgt_clr;
+		background: $neutral_drk_clr;
+		padding: 2em 0.2em 0.3em;
+		margin: 0 1px;
+		cursor: pointer;
+	}
+	
+	/* Active/Hover States */
+	label.active, label:hover, label:focus {
+		color: $text_clr;
+		background: #FFF;
+	}
+}
+	
+	
