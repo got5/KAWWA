@@ -1,11 +1,5 @@
 /* ----------------------------- BLOCKQUOTE ------------------------------- */
 
-blockquote, q {quotes: none;}
-blockquote::before, blockquote::after, q::before, q::after {
-	content: "";
-	content: none;
-}
-
 blockquote {
 	position: relative;
 	width: 80%;
@@ -16,6 +10,13 @@ blockquote {
 	p {font-style: italic; text-indent: 0;}
 
 }
+
+blockquote, q {quotes: none;}
+blockquote::before, blockquote::after, q::before, q::after {
+	content: "";
+	content: none;
+}
+
 	blockquote::before {
 		position: absolute;
 		top: -10px;
@@ -28,13 +29,11 @@ blockquote {
 		
 	}
 
-.citation {font-size: 90%; padding-top: 1em;}
-cite.author {font-style: normal;}
+	.citation {font-size: 90%; padding-top: 1em;}
+	cite.author {font-style: normal;}
 		
 
 @media screen and (min-width: 640px) {
 	blockquote {padding: 0 0 0 3em; margin: 3em 3%;}
 	blockquote::before {font-size: 500%;}
 }
-
-
