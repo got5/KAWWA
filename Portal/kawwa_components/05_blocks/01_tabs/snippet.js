@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	if(jQuery.ui && jQuery.ui.tabs) {
-		$('.k-tabbed-data').tabs();
+	if(jQuery.fn.kTabs) {
+		jQuery( ".k-tabbed-data" ).kTabs();
 	}
 });
