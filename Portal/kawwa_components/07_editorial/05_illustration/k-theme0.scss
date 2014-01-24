@@ -12,8 +12,7 @@
 	}
 }
 
-/*  ".caption" is for legacy purposes (XHTML) */
-figcaption, .caption {
+figcaption {
 	display: block;
 	font-size: 0.8em;
 	margin: 5px auto 0;
@@ -32,5 +31,8 @@ figcaption, .caption {
 		padding: 1em 8% 1em 0;
 	}
 }
+
+
+		
 
 
