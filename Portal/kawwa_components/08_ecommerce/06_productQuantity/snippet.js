@@ -13,8 +13,6 @@ $(document).ready(function(){
 		if(!incTest) {
 			jQuery('input[type=number]').addClass('uppydowner');
 			jQuery('input.uppydowner').uppydowner();
-		} else {
-			jQuery('input[type=number]').css('width', '3em');
 		}
 	}
 
