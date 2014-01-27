@@ -1,6 +1,7 @@
 /* ------------------------- ACTION BUTTONS ------------------------- */
 
 ul.k-actions {
+	position: relative;
 	text-align: right;
 	padding: 0;
 	margin-bottom: 2em;
@@ -37,12 +38,13 @@ ul.k-actions {
 		box-shadow: none;
 	}
 	
-	/* active */
+	// Active
 	button.active, a.active, a.active:link, a.active:visited {
 		color: #FFF;
 		background-color: $hot_clr;
 	}
-	/* Disabled */
+	
+	// Disabled
 	button.disabled, button.disabled:hover, button.disabled:focus, span {
 		color: $neutral_drk_clr;
 		background-color: $neutral_lgt_clr;
@@ -53,7 +55,7 @@ ul.k-actions {
 	
 	.no-label {width: 1px; color: $neutral_lgt_clr !important;}
 	
-	/* Icons bg images */
+	// Icons bg images
 	.bt-print {background-image: url(../img/k-theme0/print.svg); padding-left: 40px;}
 	.bt-download {background-image: url(../img/k-theme0/download.svg); padding-left: 40px;}
 	.bt-edit {background-image: url(../img/k-theme0/edit.svg); padding-left: 40px;}
@@ -90,5 +92,34 @@ ul.k-actions.icon-only {
 		box-shadow: none;
 	}
 	a, button, span {background-position: 0 1px;}
+	
+	// Tooltip for icon buttons only
+	span.tooltip {
+		display: block;
+		position: absolute;
+		top: 55px;
+		width: auto;
+		height: auto;
+		font-size: 0.8em;
+		text-align: center;
+		color: #FFF;
+		background: #000;
+		border-radius: 3px;
+		border-bottom: 1px solid rgba(255,255,255,.7);
+		box-shadow: 0 1px 2px #666;
+		opacity: 1;
+	}
+	span.tooltip::before {
+		position: absolute;
+		top: -3px;
+		left: 50%;
+		display: block;
+		width: 10px;
+		height: 10px;
+		content: "";
+		background: #000;
+		margin-left: -5px;
+		@include M_transform(rotate(45deg));
+	}
 }
 
