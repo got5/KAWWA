@@ -1,14 +1,88 @@
 /* ----------------------------- PRODUCT TEMPLATE ------------------------------- */
+/* Contains declarations of properties shared by all kinds of product displays */
 
-.k-product {position: relative;}
+.k-product {
+	position: relative;	
+	
+	header {margin-bottom: 2em;}
+	
+	.p-name {
+		text-transform: none;
+		margin: 0;
+	}
+}
 
 
-/* Add to basket link */
+/* --- PRODUCT DATA --- */
 
-div.buyZone {}
+/* --- Rating --- */
+
+.rating {
+	text-align: right;
+ 	margin: 1em 0;
+	 	
+ 	p {display: inline; font-size: 0.8em;}
+ 	p:first-child {position: relative; top: 2px; right: 5px;}
+ 	
+ 	a, a:link {color: $text_clr;}
+}
+	
+/* Price data */
+
+.p-price {font-size: 1.5em; font-weight: bold; white-space: nowrap;}
+.old-price {color: inherit;	text-decoration: line-through;}
+
+/* Extra prices info */
+
+p.extra {
+	font-size: 1.2em;
+	background: rgba(255,255,255,.8);
+}
+
+.sale {color: #C60;}
+p.extra.sale {}
+p.sale::before {
+	position: relative;
+	top: 1px;
+	content: "\263B  ";
+	line-height: 1.5;
+	font-size: 110%;
+	
+	@media screen and (min-width: 600px) {
+		display: block;
+		top: 5px;
+		line-height: 1;
+		font-size: 250%;
+	}
+}
+
+.new {color: #690;}
+p.extra.new {}
+p.new::before {
+	position: relative;
+	top: 1px;
+	content: "\272A  ";
+	line-height: 1.5;
+	font-size: 110%;
+	
+	@media screen and (min-width: 600px) {
+		display: block;
+		top: 5px;
+		line-height: 1;
+		font-size: 250%;
+	}
+}
+	
+/* Buy zone */
+
+.availability {font-size: 0.85em;}
+
+
+/* --- ADD TO BASKET BUTTON --- */
 
 p.buy {
 	line-height: 1;
+	margin: 1em 0;
 	
 	a, a:link, a:visited {
 		display: inline-block;
@@ -29,80 +103,3 @@ p.buy {
 		box-shadow: none;
 	}
 }
-
-
-/* Price data */
-
-div.price-data {}
-
-.old-price {color: inherit;	text-decoration: line-through;}
-
-.p-price {font-size: 1.5em; font-weight: bold; white-space: nowrap;}
-
-/* --- EXTRAS --- */
-
-p.extra {
-	position: absolute;
-	bottom: 10px;
-	left: 17.5%;
-	width: 5em;
-	font-size: 1.2em;
-	text-align: center;
-	background: rgba(255,255,255,.8);
-	margin-left: -2.5em;
-	border-radius: 3px;
-}
-
-/* Sale product */
-
-.sale {color: #C60;}
-
-p.extra.sale {}
-		p.sale::before {
-			position: relative;
-			top: 1px;
-			content: "\263B  ";
-			line-height: 1.5;
-		}
-		p.extra.sale::before {font-size: 110%;}
-
-
-/* New product */
-
-.new {color: #690;}
-
-p.extra.new {}
-		p.new::before {
-			position: relative;
-			top: 1px;
-			content: "\272A  ";
-			line-height: 1.5;
-		}
-		p.extra.new::before {font-size: 110%;}
-
-	@media screen and (min-width: 600px) {
-		p.extra {
-			top: 0;
-			right: 0;
-			bottom: auto;
-			margin: 0;
-			width: 3em;
-			font-size: 1em;
-			padding: 0 3px 5px;
-		}
-		p.new::before {
-			display: block;
-			top: 5px;
-			content: "\272A";
-			line-height: 1;
-		}
-		p.extra.new::before {font-size: 250%;}
-		
-		p.sale::before {
-			display: block;
-			top: 5px;
-			content: "\263B";
-			line-height: 1;
-		}
-		p.extra.sale::before {font-size: 250%;}
-	}
