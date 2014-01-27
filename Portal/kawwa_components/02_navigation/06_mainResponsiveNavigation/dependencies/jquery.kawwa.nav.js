@@ -28,7 +28,7 @@
 		$this.find('a').attr('role', 'menuitem');
 		
 		function resizeFunction() {
-			if($sections.eq(0).offset().top != $sections.eq($sections.length - 1).offset().top) {
+			if($sections.eq(0).offset().top < $sections.eq($sections.length - 1).offset().top) {
 				$this.css('display', 'none');
 				$theNav.addClass('adaptive');
 			} else {
