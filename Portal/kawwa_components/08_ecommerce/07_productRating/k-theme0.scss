@@ -1,0 +1,61 @@
+/* ----------------------------- PRODUCT RATING ------------------------------- */
+
+fieldset.k-rating {
+	position: relative;
+	background: $neutral_lgt_clr;
+	padding: 0.5em 0.5em 0.7em;
+	border: none;
+	
+	legend {
+		position: absolute;
+		width: auto;
+		top: 0;
+		left: 0.5em;
+		font-size: 0.75em;
+		background: none;
+		padding: 0.8em 0.5em;
+		margin: 0;
+	}
+	p {margin-top: 1.5em;}
+	
+	@media screen and (min-width: 500px) {
+		legend {position: static; float: left; width: 12em; margin: 0.7em 0 0; padding: 0;}
+		legend::after {content: "";}
+		p {float: left;	width: 50%; margin: 0;}
+	}
+}
+	
+div.rating-cancel, div.star-rating {
+	overflow: hidden;
+	display: block;
+	float: left;
+	width: 35px;
+	height: 33px;
+	text-indent: -999em;
+	background: transparent;
+	cursor: pointer;
+}
+
+	div.rating-cancel, div.rating-cancel a {
+		background: url(../img/k-theme0/no_star.png) 0 0 no-repeat;
+	}
+	div.star-rating, div.star-rating a {
+		background: url(../img/k-theme0/bg_ratings.png) 0 0 no-repeat;
+	}
+	div.rating-cancel a, div.star-rating a {
+		display: block;
+		width: 35px;
+		height: 100%;
+		background-position: 0 0;
+		border: 0;
+	}
+	div.star-rating-on a {background-position: 0 -91px;}
+	div.star-rating-hover a {background-position: 0 -91px;}
+	
+	/* Read Only CSS */
+	div.star-rating-readonly a {cursor: default !important;}
+	
+	/* Partial Star CSS */
+	div.star-rating {overflow: hidden; background-color: transparent;}
+
+
