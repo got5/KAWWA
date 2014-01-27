@@ -1,0 +1,23 @@
+/* -------------------------- BASKET SUMMARY ------------------------ */
+
+.k-basket-sum {
+	position: absolute;
+	top: 1.5em;
+	right: 4%;
+	width: auto;
+	font: 0.8em $title_stack;
+	text-align: right;
+	color: #FFF;
+	background: $identity_clr url(../img/k-theme0/bg_basket-sum.svg) right 10px no-repeat;
+	padding: 0.5em 1em;
+	border-left: 1px solid $neutral_clr;
+	
+	a, a:link, a:visited {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		background: transparent;
+		padding: 0.5em 2em 0.5em 0;
+	}
+}
+
