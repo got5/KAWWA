@@ -1,0 +1,76 @@
+/* ----------------------------- PRODUCT OPTIONS ------------------------------- */
+
+div.k-product-options {
+	float: left;
+	width: 96%;
+	background: $neutral_lgt_clr;
+	padding: 0.8em 2% 0;
+	margin-bottom: 2em;
+	
+	fieldset {
+		clear: none;
+		float: left;
+		width: 45%;
+		background: transparent;
+		padding: 0;
+		border: none;
+	}
+	legend {
+		font-size: 0.9em;
+		background: none;
+		padding: 0 0 8px 0;
+		margin: 0;
+	}
+	input {position: absolute; left: -9000px;}
+	p {font-size: 0.75em; margin: 0;}
+	
+	label {
+		overflow: hidden;
+		float: left;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		list-style-type: none;
+		font-weight: normal;
+		text-align: center;
+		text-transform: uppercase;
+		color: $text_clr;
+		background: #FFF;
+		padding: 0;
+		margin-right: 5px;
+		border: 1px outset $neutral_clr;
+		border-radius: 2em;
+		vertical-align: bottom;
+		cursor: pointer;
+		
+		img {vertical-align: middle;}
+	}
+	
+	// Active/Hover States
+	label.active, label:hover, label:focus {
+		color: #FFF;
+		background: $hot_clr;
+		border: 1px solid $hot_clr; 
+	}
+	
+	// Exception for color
+	.color label {
+		width: 25px;
+		height: 25px;
+		font-size: 1px;
+		padding: 0;
+		border: 2px solid #FFF;
+		border-radius: 25px;
+	}
+	// Active/Hover States
+	.color label.active, .color label:hover, .color label:focus {
+		border: 2px solid $hot_clr;
+	}
+}
+
+
+
+	
+	
+	
+
