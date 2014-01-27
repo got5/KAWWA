@@ -4,13 +4,13 @@
 	max-width: 50em;
 	margin: 0 4% 1em;
 	padding-bottom: 1em;
-	border-bottom: 1px dashed $neutral_md_clr;
 	
 	h2 {margin-bottom: 0;}
 	ul, ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
 	
 	.e-content {
 		p {line-height: 1.5;}
+		> p:last-child::after {content: "\00A0 \2756"; color: $neutral_clr;}
 		p + p, figure + p {text-indent: 1.3em;}
 		p + p.k-readmore {text-indent: 0;}
 		.p-name + ul.entry-info {margin-top: -1.5em;}
