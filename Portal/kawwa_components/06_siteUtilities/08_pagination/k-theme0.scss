@@ -6,6 +6,7 @@ div.k-pagination {
 	padding: 0.5em 0 0.7em;
 	border-top: 4px solid $identity_clr;
 }
+div.k-pagination:last-child {margin-bottom: 0;}
 
 p.total-pages {
 	font-size: 1em;
