@@ -3,8 +3,8 @@
 .k-panel {
 	clear: both;
 	overflow: auto;
-    margin-bottom: 2em;
-    border: 1px solid $neutral_md_clr;
+	margin-bottom: 2em;
+	border: 1px solid $neutral_md_clr;
     
     .control {
 		font: 1em $title_stack;
@@ -42,12 +42,11 @@
 	> .content {padding: 1em 20px;}
 }
 
-fieldset.k-panel {padding: 0;}
+fieldset.k-panel {
+	padding: 0;
 	
-	fieldset.k-panel legend.control {
-		width: 99%;
-		padding: 0.3em 0 0.3em 1%;
-		border-right: 1px solid $neutral_clr;
-	}
+	legend.control {width: 100%;}
+	legend.control::after {content: "";}
+}
 
 p + .k-panel {margin-top: 1em;}
