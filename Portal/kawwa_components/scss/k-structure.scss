@@ -37,7 +37,7 @@ header[role=banner] {
 		> main, #main {clear: none; float: left; width: 57%; padding: 0 0 2em 3%;}
 		> main:first-child, #main:first-child {clear: none; float: left; width: 75%;}
 		> main:last-child, #main:last-child {clear: none; float: left; width: 77%; padding: 0 0 0 3%}
-		> main:only-child, #main:only-child {width: 100%;}
+		> main:only-child, #main:only-child {width: 100%; padding: 0;}
 		> aside[role=complementary] {float: right; width: 20%;}
 		#menu {clear: none; float: left; width: 15%; margin: 0;}
 	}
