@@ -21,11 +21,11 @@
 	@media screen and (min-width: 780px) {
 		position: relative;
 		
-		header {position: absolute; width: auto; top: 0; left: 40%;}
+		header {position: absolute; width: auto; top: 0; left: 35%;}
 		.p-name {font-size: 2em;}
 		
 		.photo-data {float: left; width: 35%; margin-bottom: 2em;}
-		.product-data {clear: none; float: right; width: 60%; padding-top: 3em;}
+		.product-data {clear: none; float: left; width: 60%; padding-top: 3em;}
 		
 		.price-data {
 			float: left;
