@@ -37,7 +37,21 @@
 	.buy {margin: 1em 0 0 40%;}
 }
 
-/* --- LIST VIEW --- */
+
+/* --- IF PRODUCTS ARE IN A UL LIST --- */
+ul.k-catalog {
+	list-style-type: none;
+	
+	li {
+		float: left;
+		width: auto;
+		text-align: center;
+		padding: 10px;
+	}
+}
+
+
+/* --- FULL DETAILED VIEW --- */
 .k-catalog.list-view {
 	.k-product {
 		width: 100%;
