@@ -67,12 +67,14 @@
 			width: 100%;
 			top: 0;
 			left: 0;
-			padding: 0.5em 0 0.5em 0.7em;
+			padding: 0.5em 50px 0.5em 0.7em;
+			opacity: 0;
 			z-index: 0;
 		}
 		a.transformed.active, a.transformed.active:link, a.transformed.active:visited {
 			background: $identity_clr url(../img/k-theme0/nav-control.svg) right no-repeat;
 			background-size: 30px;
+			opacity: 1;
 			z-index: 100;
 		}
 	}
