@@ -2,19 +2,21 @@
 
 div.k-product-options {
 	float: left;
-	width: 96%;
+	width: 100%;
 	background: $neutral_lgt_clr;
-	padding: 0.8em 2% 0;
+	padding: 0.5em 0 0;
 	margin-bottom: 2em;
 	
 	fieldset {
 		clear: none;
 		float: left;
-		width: 45%;
+		width: auto;
 		background: transparent;
-		padding: 0;
+		padding: 0 1em 1em 1em;
+		margin: 0;
 		border: none;
 	}
+	
 	legend {
 		font-size: 0.9em;
 		background: none;
