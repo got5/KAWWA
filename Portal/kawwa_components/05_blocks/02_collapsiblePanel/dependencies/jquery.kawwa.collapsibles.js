@@ -4,7 +4,7 @@
  * Created for KAWWA - Dec 2013
  *
  * The active panel is:
- * - the one with the "active" class attributed to its control, in the markup
+ * - the one with the "active" class attributed to its control like, in the markup
  *
  */
 
