@@ -1,12 +1,2 @@
-/* -------------------------- MANDATORY INFO ------------------------ */
 
-p.k-mandatory {
-	clear: both;
-	display: block;
-	font-size: 0.8em;
-	text-align: right;
-	margin-bottom: 1em;
-} 
-	
-span[aria-label=Asterisk] {color: $hot_clr;}
 
