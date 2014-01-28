@@ -8,45 +8,54 @@
 /* -------------------------- CONTAINER ------------------------ */
 #container {
 	position: relative;
-	width: 97%;
-	max-width: 1240px;
+	width: 100%;
 	margin: 0 auto 20px;
 }
 
 /* -------------------------- HEADER --------------------------- */
-header[role=banner], #header {
+header[role=banner] {
 	clear: both;
 	position: relative;
-	width: 100%;
-}
-
-
-/* -------------------------- WRAPPER --------------------------- */
-#wrapper { 
-	float: left;
-	width: 100%;
+	padding: 0 5%;
 }
 
 /* -------------------------- COLUMNS --------------------------- */
 
-#menu, #secondary {float: left; width: 15%;}
-aside[role=complementary], #sidebar {float: right; width: 20%;}
+#wrapper {
+	width: 90%;
+	max-width: 1300px;
+	margin: 0 auto;
+	
+	> aside[role=complementary] {}
+	
+	> main, #main  {clear: both; padding: 2em 0;}
+	> main::after, #main::after {clear: both; display: block; content: "";}
+	
+	@media screen and (min-width: 1300px) {
+		margin: 1em auto;
+		
+		> main, #main {clear: none; float: left; width: 57%; padding: 0 0 2em 3%;}
+		> main:first-child, #main:first-child {clear: none; float: left; width: 75%;}
+		> main:last-child, #main:last-child {clear: none; float: left; width: 77%; padding: 0 0 0 3%}
+		> main:only-child, #main:only-child {width: 100%;}
+		> aside[role=complementary] {float: right; width: 20%;}
+		#menu {clear: none; float: left; width: 15%; margin: 0;}
+	}
+}
 
-main, #main {float: left; width: 59%; min-height: 400px; margin-left: 2%;} /* with three columns */
-
-/* Conditions based on columns number */
-#wrapper #main:first-child {width: 78%; margin-left: 0;}
-#wrapper #main:last-child {width: 83%;}
-#wrapper #main:only-child {width: 100%;}
-
-#wrapper main:first-child {width: 78%; margin-left: 0;}
-#wrapper main:last-child {width: 83%;}
-#wrapper main:only-child {width: 100%;}
-
+#menu {clear: both; margin: 1em 0;}
 
 /* -------------------------- FOOTER --------------------------- */
 footer[role=contentinfo], #footer {
 	clear: both;
 	position: relative;
-	width: 100%;
+	padding: 1em 5% 0 5%;
+}
+
+
+/* ----------------------- GENERAL LAYOUT-ONLY STYLES  ---------------------- */
+
+@media screen and (min-width: 800px) {	
+	.to-left {clear: none; float: left; width: 45%;}
+	.to-right {clear: none; float: right; width: 45%;}
 }
