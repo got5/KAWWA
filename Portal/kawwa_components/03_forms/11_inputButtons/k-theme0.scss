@@ -16,6 +16,8 @@
 	}
 }
 
+p.k-buttons-bar {display: block; margin: 1em 0 2em;}
+
 /* Valid actions - must duplicate declarations for IE6!!*/
 input[type=button], input[type=submit] {
 	font: 100% $title_stack;
