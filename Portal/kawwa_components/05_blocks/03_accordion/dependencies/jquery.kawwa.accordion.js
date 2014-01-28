@@ -4,7 +4,7 @@
  * Created for KAWWA - Oct 2013
  * 
  * The active panel is:
- * - the one with the "active" class attributed to its control, in the markup,
+ * - the one with the "active" class attributed to its control link, in the markup,
  * - the first one, by default (if no "active" class is assigned), or 
  * - the one explicitly passed as argument (zero based).
  * 
