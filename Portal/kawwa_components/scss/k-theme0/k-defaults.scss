@@ -241,4 +241,13 @@ th {
 	background: $neutral_clr;
 	border-top: 1px solid #FFF;
 	border-bottom: 2px solid $neutral_lgt_clr;
+	
+	a, a:link, a:visited {color: #FFF; background: $neutral_clr; padding-right: 20px;}
+	
+	a.descending, a.descending:link, a.descending:visited {
+		background: $neutral_clr url(../img/k-theme0/sort_desc.png) right no-repeat;
+	}
+	a.ascending, a.ascending:link, a.ascending:visited {
+		background: $neutral_clr url(../img/k-theme0/sort_asc.png) right no-repeat;
+	}
 }
