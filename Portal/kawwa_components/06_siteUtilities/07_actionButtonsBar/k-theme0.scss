@@ -5,15 +5,16 @@ div.k-actions-block {
 	border-top: 4px solid $identity_clr;
 }
 
-	/* Optional text */
-	.action-context {
+/* Optional text */
+.action-context {
+	font-size: 1em;
+	padding: 0.7em 0;
+	
+	@media screen and (min-width: 600px) {
 		float: left;
 		width: 25%;
-		font-size: 1em;
-		padding: 0.7em 1em 0;
-		margin: 0;
-		border: none;
 	}
-	.action-context + ul.k-actions {margin: 0;}
-	
-	
+}
+
+.action-context + ul.k-actions {margin: 0;}
+
