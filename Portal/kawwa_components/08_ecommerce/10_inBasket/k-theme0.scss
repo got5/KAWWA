@@ -1,7 +1,7 @@
 /* -------------------------- IN THE BASKET/LIST OF PRODUCTS ------------------------ */
 
 .k-basket {
-	border-color: $neutral_clr;
+	border: none;
 	
 	.content {width: 100%; padding: 0;}
 	
@@ -51,8 +51,8 @@ dl.new-item {background: $neutral_lgt_clr;}
 p.basket-total {
 	clear: both;
 	text-align: center;
-	color: #FFF;
-	background: $neutral_drk_clr;
+	color: $text_clr;
+	background: $neutral_lgt_clr;
 	padding: 5px;
 	margin: 5px 5px 0;
 }
