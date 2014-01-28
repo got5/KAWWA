@@ -10,6 +10,7 @@ h2 + .k-entry {margin-top: 2em;}
 	.p-name {
 		position: relative;
 		font-size: 2em;
+		line-height: 1;
 		padding: 0;
 		margin: 0 0 0.5em;
 		
@@ -18,7 +19,7 @@ h2 + .k-entry {margin-top: 2em;}
 			text-decoration: none;
 			color: $text_clr;
 			background: #FFF;
-			padding: 0.5em;
+			padding: 2%;
 			border-top: 4px solid #000;
 		}
 		a:visited {color: #666; background: #FFF;}
