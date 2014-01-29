@@ -3,150 +3,111 @@
 
 .k-tabbed-data {
 	
-	button.control {display: none;}
+	ul.tabs {
+		float: left;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			float: left;
+			width: auto;
+			list-style-type: none;
+			font: 1em $title_stack;
+			text-transform: uppercase;
+			padding: 0;
+			margin-right: 5px;
+		}
+		a, a:link, a:visited {
+			display: block;
+			text-decoration: none;
+			color: $identity_clr;
+			background: #FFF;
+			padding: 5px 10px;
+			border: 1px solid $neutral_clr;
+			border-bottom: none;
+		}
+		a:hover, a:focus {color: #FFF; background: $identity_clr;}
+		a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
+		
+		// Selected tab 
+		a.active, a.active:link, a.active:visited {
+			color: #FFF;
+			background: $identity_clr;
+			border: 1px solid $identity_clr;
+		}
+		a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
+		
+		// Disabled tab 
+		a.off, a.off:link, a.off:visited {
+			color: $neutral_md_clr;
+			background: #FFF;
+			border: 1px solid $neutral_clr;
+		}
+		a.off:focus {
+			color: $neutral_md_clr;
+			background: #FFF;
+		}
+		strong.off {
+			display: block;
+			font-weight: normal;
+			text-decoration: none;
+			color: $neutral_md_clr;
+			background: #FFF;
+			padding: 5px 10px;
+			border: 1px solid $neutral_clr;
+			border-bottom: none;
+		}
+	}
 	
 	> .content {
 		clear: both;
 		overflow: auto;
 		color: $identity_clr;
 		background: #FFF;
-		padding: 2%;
+		padding: 5px 10px 10px;
 		margin-bottom: 2em;
 		border: 1px solid $identity_clr;
 	}
 }
 
+/* ADAPTIVE VIEW */
 
 .k-tabbed-data.adaptive {
 	position: relative;
 	
-	button {
-		display: block;
-		position: absolute;
-		width: 4em;
-		top: 0;
-		right: 0;
-		cursor: pointer;
-		z-index: 200;
-	}
-	
-	> ul {
+	ul.tabs {
 		clear: both;
 		padding: 0;
 		margin: 0;
 	
-		> li {
+		li {
 			float: left;
 			width: 100%;
-			list-style-type: none;
-			font-family: $title_stack;
-			text-transform: uppercase;
 			padding: 0 0 0.1em;
 			
 			a, a:link, a:visited {
-				@include M_borderBox ;
-				display: block;
-				text-decoration: none;
+				@include M_borderBox;
 				color: #FFF;
-				background: $neutral_clr;
-				padding: 0.5em 0 0.5em 0.7em;
+				background-color: $identity_clr;
+				padding: 0.5em 50px 0.5em 0.7em;
 			}
-			a:focus {
-				color: #FFF;
-				background: $hot_clr;
+			a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
+			
+			a.transformed, a.transformed:link, a.transformed:visited  {
+				position: absolute;
+				width: 100%;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				z-index: 0;
 			}
-			a.active, a.active:link, a.active:visited {
-				color: #FFF;
-				background: $identity_clr;
+			a.transformed.active, a.transformed.active:link, a.transformed.active:visited {
+				background: $identity_clr url(../img/k-theme0/nav-control.svg) top right no-repeat;
+				background-size: 32px;
+				opacity: 1;
 				z-index: 100;
 			}
 		}
-		
-		a.transformed, a.transformed:link, a.transformed:visited  {
-			position: absolute;
-			width: 100%;
-			top: 0;
-			left: 0;
-			padding: 0.5em 50px 0.5em 0.7em;
-			opacity: 0;
-			z-index: 0;
-		}
-		a.transformed.active, a.transformed.active:link, a.transformed.active:visited {
-			background: $identity_clr url(../img/k-theme0/nav-control.svg) right no-repeat;
-			background-size: 30px;
-			opacity: 1;
-			z-index: 100;
-		}
 	}
 }
-
-ul.tabs {
-	float: left;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	
-	li {
-		float: left;
-		width: auto;
-		list-style-type: none;
-		font-size: 1.2em;
-		text-transform: uppercase;
-		padding: 0;
-		margin-right: 5px;
-		
-		@media screen and (min-width: 1020px) {
-			font-size: 1em;
-		}
-	}
-	a, a:link, a:visited {
-		display: block;
-		text-decoration: none;
-		color: $identity_clr;
-		background: #FFF;
-		padding: 5px 10px;
-		border: 1px solid $neutral_clr;
-		border-bottom: none;
-	}
-	a:hover, a:focus {color: #FFF; background: $hot_clr;}
-	
-	// Selected tab 
-	a.active, a.active:link, a.active:visited {
-		color: #FFF;
-		background: $identity_clr;
-		border: 1px solid $identity_clr;
-	}
-	a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
-	
-	// Disabled tab 
-	a.off, a.off:link, a.off:visited {
-		color: $neutral_md_clr;
-		background: #FFF;
-		border: 1px solid $neutral_clr;
-	}
-	a.off:focus {
-		color: $neutral_md_clr;
-		background: #FFF;
-	}
-	strong.off {
-		display: block;
-		font-weight: normal;
-		text-decoration: none;
-		color: $neutral_md_clr;
-		background: #FFF;
-		padding: 5px 10px;
-		border: 1px solid $neutral_clr;
-		border-bottom: none;
-	}
-}
-		
-/* Link for tabs container */
-p.tabs-link {
-	float: left;
-	width: 96%;
-	text-align: right;
-	background: url(../img/k-theme0/bg_photobox.png);
-	margin-top: 20px;
-	padding: 0.5em 2%;
-}
-	
