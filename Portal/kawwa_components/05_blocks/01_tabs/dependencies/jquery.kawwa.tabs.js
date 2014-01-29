@@ -35,6 +35,7 @@
 			var $tabs = $this.find('ul.tabs a');
 			var $panels = $this.find('.content');
 			var tabHref;
+			var tabHeight;
 			var tabId;
 			var panelId;
 
@@ -103,11 +104,19 @@
 					$tabs.removeClass('active').attr('aria-selected', 'false').attr('tabindex', '-1');
 					// Open clicked
 					$(this).addClass('active').attr('aria-selected', 'true').attr('tabindex', '0');
+					
 					panelId = $(this).attr('aria-controls');
+					
 					$('#' + panelId).css('display', 'block').attr({
 						'aria-hidden' : 'false',
 						'aria-expanded' : 'true'
 					});
+					
+					if($('#' + panelId).parent().hasClass('adaptive')) {
+						tabHeight = $('a.transformed.active').height() + 20;
+						$('#' + panelId).css('padding-top', tabHeight);
+					}
+					
 				}
 			});
 			// KEYBOARD EVENTS
@@ -136,14 +145,15 @@
 			
 			// RESPONSIVE BEHAVIOUR
 			var resizer = function() {
-				$this.removeClass('adaptive');
+				$this.removeClass('adaptive');				
 				if($tabsPres.eq(0).offset().top != $tabsPres.eq($tabsPres.length - 1).offset().top) {
 					$this.addClass('adaptive');
 					$tabs.addClass('transformed');
-					$this.find('> .content').css('padding-top', '3em');
+					tabHeight = $('a.transformed.active').height() + 20;
+					$this.find('> .content').css('padding-top', tabHeight);
 				} else {
-					$tabs.toggleClass('transformed');
-					$this.find('> .content').css('padding-top', '2%');
+					$tabs.removeClass('transformed');
+					$this.find('> .content').css('padding-top', '5px');
 				}
 			}
 			// Call once to set.
