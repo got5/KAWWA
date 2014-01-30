@@ -108,43 +108,108 @@ task zipComp(type: Zip) {
 	destinationDir = file("/target")
 }
 
-
-
-//1. Compile SASS files into CSS
+//1. Compile global SASS files into CSS
 compass {
-    cssDir = file('kawwa_components')
-    sassDir = file('kawwa_components')
-    debugInfo = false
+    cssDir = file('kawwa_components/scss')
+    sassDir = file('kawwa_components/scss')
     outputStyle = "nested"
 }
 
-//2. Aggregate SASS files into src/main/webapp/k-theme0.scss, ...
-task aggregateSASSFiles << {
-
-    FileTree tree = fileTree(dir: 'kawwa_components')
-
-    File gfile = null;
-    ["k-theme0","k-theme1", "k-theme2","iehacks0","iehacks1", "iehacks2"].each {String theme ->
-
-        gfile = new File("src/main/webapp/css/generated_"+theme+".css")
-        gfile.withWriter {it << "/*"+theme+"*/\n"}
-
-        tree.exclude "documentation/"
-        tree.exclude "templates_html5/"
-
-        tree.include "**/" + theme + ".css"
-        tree.each {File file ->
-           print file.getText()
-           gfile.withWriterAppend{it << file.getText()}
-           gfile.withWriterAppend{it << "\n"}
-        }
-
-
-        tree.exclude "**/" + theme + ".css"
+task copyComponentFile() << {
+    copy {
+        from 'kawwa_components/scss/temporary'
+        include '**/*.css'
+        exclude '**/*.scss'
+        into '/kawwa_components'
     }
 }
-aggregateSASSFiles.dependsOn  compileSass
 
+task copyDansAutreRepertoire() << {
+
+    ["k-theme0",/*"k-theme1", "k-theme2","iehacks0"/*,"iehacks1", "iehacks2"*/].each {String theme ->
+        copy {
+            from 'kawwa_components/scss/'
+            include 'k-reset.css', 'k-structure.css'
+            exclude '**/*.scss', '**/k-variables.css', '**/k-mixins.css', '**/k-defaults.css'
+            into '/kawwa_components/templates_html5/'+theme+'/css'
+        }
+        copy {
+            from 'kawwa_components/scss/'
+            include 'k-reset.css', 'k-structure.css'
+            exclude '**/*.scss', '**/k-variables.css', '**/k-mixins.css', '**/k-defaults.css'
+            into '/src/main/webapp/css'
+        }
+        copy {
+            from 'kawwa_components/scss/'+theme
+            include '**/k-theme*.css', '**/i-theme*.css'
+            exclude '**/*.scss', '**/k-variables.css', '**/k-mixins.css', '**/k-defaults.css'
+            into '/kawwa_components/templates_html5/'+theme+'/css'
+        }
+        copy {
+            from 'kawwa_components/scss/'+theme
+            include '**/k-theme*.css', '**/i-theme*.css'
+            exclude '**/*.scss', '**/k-variables.css', '**/k-mixins.css', '**/k-defaults.css'
+            into '/src/main/webapp/css'
+        }
+    }
+
+
+}
+task aggregateComponentSCSS << {
+    FileTree tree = fileTree(dir: 'kawwa_components')
+    File root = new File("kawwa_components")
+
+    String gfile = null;
+    File gfilef = null;
+    File dir = null
+
+    ["k-theme0",/*"k-theme1", "k-theme2","iehacks0"/*,"iehacks1", "iehacks2"*/].each {String theme ->
+
+        
+        tree.exclude "documentation/"
+        tree.exclude "templates_html5/"
+        tree.exclude "scss/"
+        tree.exclude "**/" + theme + ".css"
+
+        tree.include "**/" + theme + ".scss"
+
+
+        tree.each {File file ->
+
+            String subDir = file.getAbsolutePath().substring(file.getAbsolutePath().indexOf("kawwa_components") + 17,
+                    file.getAbsolutePath().lastIndexOf(File.separator));
+
+            new File("kawwa_components/scss/temporary"+File.separator+subDir).mkdirs()
+            gfile = "kawwa_components/scss/temporary"+File.separator+subDir+File.separator+theme+".scss"
+            new File(gfile).createNewFile()
+            gfilef = new File(gfile)
+
+            if(new File("kawwa_components"+File.separator+"scss"+File.separator+theme+File.separator+"k-variables.scss").exists()){
+                gfilef.withWriterAppend{it << new File("kawwa_components"+File.separator+"scss"+File.separator+theme+File.separator+"k-variables.scss").getText()}
+                gfilef.withWriterAppend{it << "\n"}
+            }
+            if(true && new File("kawwa_components"+File.separator+"scss"+File.separator+"k-mixins.scss").exists()){
+                gfilef.withWriterAppend{it << new File("kawwa_components"+File.separator+"scss"+File.separator+"k-mixins.scss").getText()}
+                gfilef.withWriterAppend{it << "\n"}
+            }
+
+            gfilef.withWriterAppend{it << file.getText()}
+            gfilef.withWriterAppend{it << "\n"}
+
+
+        }
+    }
+}
+
+task deleteTemporaryFile() {
+    println(new File("kawwa_components/scss/temporary").exists())
+    new File("kawwa_components/scss/temporary").deleteDir()
+}
+
+copyComponentFile.dependsOn compileSass
+copyDansAutreRepertoire.dependsOn compileSass
+compileSass.dependsOn aggregateComponentSCSS
+deleteTemporaryFile.dependsOn copyComponentFile
 
 //3. Sync Tapestry Lib
 task copyThemesForTapestry << {
@@ -164,7 +229,7 @@ task copyThemesForTapestry << {
         into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/css'
     }
 }
-copyThemesForTapestry.dependsOn aggregateSASSFiles
+copyThemesForTapestry.dependsOn deleteTemporaryFile
 
 //4. Sync Angular Lib
 task copyThemesForAngular(type: Copy) {
@@ -176,7 +241,7 @@ task copyThemesForAngular(type: Copy) {
 
     into '../kawwa2-angularjs/app/theme'
 }
-copyThemesForAngular.dependsOn aggregateSASSFiles
+copyThemesForAngular.dependsOn deleteTemporaryFile
 
 //5. Sync Sublime Snippets
 task generateSublimeTextSnippets(type: Exec) {
@@ -184,7 +249,7 @@ task generateSublimeTextSnippets(type: Exec) {
     commandLine 'cmd', '/c', 'node', 'script.js'
     standardOutput = new ByteArrayOutputStream()
 }
-generateSublimeTextSnippets.dependsOn aggregateSASSFiles
+generateSublimeTextSnippets.dependsOn deleteTemporaryFile
 
 
 /*
@@ -193,7 +258,7 @@ copyAngularDocs.dependsOn("compileAngularLib", "copyThemesForAngular")
 compileTapestryLib.dependsOn("copyThemesForTapestry")
 compileAngularLib.dependsOn("copyThemesForAngular")
    */
-//processResources.dependsOn aggregateSASSFiles
+processResources.dependsOn deleteTemporaryFile
 
 
 /*
