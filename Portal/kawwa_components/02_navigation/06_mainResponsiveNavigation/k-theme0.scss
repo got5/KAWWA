@@ -17,6 +17,19 @@ nav.k-main-nav {
 		cursor: pointer;
 		z-index: 100;
 	}
+	
+	@media screen and (max-width: 800px) {
+		p.control {display: block;}
+		ul.k-navbar {
+			display: none;
+			margin: 0;
+			border-top: 2px solid #FFF;
+			
+			> li {display: block; padding: 0 0 1px;}
+			.dropdown ul {position: static; width: 100%;}	
+			.dropdown li {padding-left: 25px;}
+		}
+	}
 } 
 
 ul.k-navbar {
@@ -133,17 +146,3 @@ ul.k-navbar {
 	}
 	 
 }
-
-nav.k-main-nav.adaptive {
-	p.control {display: block;}
-	ul.k-navbar {
-		display: none;
-		margin: 0;
-		border-top: 2px solid #FFF;
-	
-		> li {display: block; padding: 0 0 1px;}
-		.dropdown ul {position: static; width: 100%;}	
-		.dropdown li {padding-left: 25px;}
-	}
-}
-
