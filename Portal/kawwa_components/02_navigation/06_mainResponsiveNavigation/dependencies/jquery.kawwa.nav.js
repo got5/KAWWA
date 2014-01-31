@@ -1,44 +1,46 @@
-/* Kawwa FlexNav.js 1.0.0
- * Kawwa - Jan 2014
+/* Based on FlexNav.js 0.3.2
+ * Copyright 2013, Jason Weaver http://jasonweaver.name
+ * Released under the WTFPL license
+ * http://sam.zoy.org/wtfpl/
  * 
- * Manages the display and the controls of main navigation
- * without media queries
+ * Modified for KAWWA - Feb 02 2013
+ * 	Added ARIA support / 
+ *	Modified variables / 
+ *	Replaced resize method for jQuery version 1.7
  * 
- * Thanks to Chris Ferdinandi (http://gomakethings.com/about/) 
- * for the Resize performance tip
+ * Modified for Kawwa - May 2013
+ * Added fix to correctly position dropdown if parent's 
+ * too close to right edge
+ * Added missing prevent.default
  * 
+ * 'breakpoint' is the breakpoint width defined by the @media
  */
 
 
 (function($) {
 	$.fn.flexNav = function(options) {
 		var settings = $.extend({
+			'breakpoint': '800',
 			'animationSpeed': 'fast'
 		},
 		options);
 
-	return this.each(function() {
 		var $this = $(this);
-		var $theNav = $this.parent('nav');
-		var $sections = $this.children('li');
-		var resizeTimer; // Set resizeTimer to empty so it resets on page load
 		
 		/* Add ARIA roles */
 		$this.find('li').attr('role', 'presentation');
 		$this.find('a').attr('role', 'menuitem');
-		
-		function resizeFunction() {
-			if($sections.eq(0).offset().top < $sections.eq($sections.length - 1).offset().top) {
-				$this.css('display', 'none');
-				$theNav.addClass('adaptive');
+
+		var resizer = function() {
+			if ($(window).width() >= settings.breakpoint) {
+				$this.show();
 			} else {
-				$this.css('display', 'block');
-				$theNav.removeClass('adaptive');
+				$this.hide();
 			}
 		};
 
 		// Call once to set.
-		resizeFunction();
+		resizer();
 
 		// Set some classes in the markup	
 		$this.find("li").each(function() {
@@ -55,18 +57,18 @@
 		});
 
 		// Toggle click for sub-menus on touch and or small screens
-		$this.children('.dropdown').click(function(event) {			
+		$this.find('a.hasdropdown').click(function(event) {
 			event.preventDefault();
 			//Check dropdown position and fix it
 			var zDiff = $(window).width() - $(this).offset().left;
-			var zDDWidth = $(this).children('ul').css('width').replace('px', '');
+			var zDDWidth = $(this).next('ul').css('width').replace('px', '');
 			
 			if(zDDWidth > zDiff) {
-				$(this).children('ul').css('right', 0);
+				$(this).next('ul').css('right', 0);
 			}
 			
 			// Toggles dropdown
-			$(this).find('ul').slideToggle(settings.animationSpeed, function(){
+			$(this).next('ul').slideToggle(settings.animationSpeed, function(){
 				var isExpanded = $(this).css("display") === "block";
 				$(this).attr('aria-expanded', isExpanded);
 				$(this).attr('aria-hidden', !isExpanded);
@@ -75,12 +77,8 @@
 
 		
 		// Call on resize.
-		$(window).resize(function() {
-	        clearTimeout(resizeTimer);
-	        resizeTimer = setTimeout(resizeFunction, 250);
-	    });
-		
-	 });
+		$(window).resize(resizer);
+
 	};
 
 })(jQuery);
