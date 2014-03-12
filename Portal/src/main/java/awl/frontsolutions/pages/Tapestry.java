@@ -31,7 +31,7 @@ public class Tapestry {
 		snippet.add("	<repository>");
 		snippet.add("		<id>Kawwa2</id>");	
 		snippet.add("		<name>Kawwa2 Repository</name>");
-		snippet.add("		<url>http://nexus.devlab722.net/nexus/content/repositories/snapshots/</url>");
+		snippet.add("		<url>http://nexus.devlab722.net/nexus/content/repositories/releases/</url>");
 		snippet.add("	</repository>");
 		snippet.add("</repositories>");
 		
