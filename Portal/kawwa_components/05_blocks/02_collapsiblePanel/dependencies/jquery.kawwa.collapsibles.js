@@ -24,7 +24,7 @@
 			$panel.css('display', 'none').attr({
 				'aria-hidden': 'true',
 				'aria-expanded': 'false',
-				'id': panelId
+				'id': '#' + panelId
 			});
 			
 			$header.attr({
