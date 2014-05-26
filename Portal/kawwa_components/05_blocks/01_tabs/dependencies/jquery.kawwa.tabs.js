@@ -53,6 +53,8 @@
 			// Add ARIA roles/states
 			$tabsList.attr('role', 'tablist');
 			$tabsPres.attr('role', 'presentation');
+			$panels.find('*:first-child').attr('tabindex', '0');
+			
 			$panels.attr({
 				'aria-hidden' : 'true',
 				'aria-expanded' : 'false'
