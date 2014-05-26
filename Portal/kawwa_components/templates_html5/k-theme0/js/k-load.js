@@ -58,7 +58,7 @@ window.onload = function(e) {
 // RESPONSIVE MENU ----------------------------------	
 	
 	if(jQuery.fn.flexNav) {
-		$('.k-navbar').flexNav();
+		jQuery('.k-navbar').flexNav();
 	}
 	
 	
