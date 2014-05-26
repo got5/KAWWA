@@ -66,16 +66,16 @@ window.onload = function(e) {
 	
 	// Set class on html element for touch/no-touch
 	if (is_touch_device()) {
-		$('html').addClass('flexNav-touch');
+		jQuery('html').addClass('flexNav-touch');
 	} else {
-		$('html').addClass('flexNav-no-touch');
+		jQuery('html').addClass('flexNav-no-touch');
 	}
 	
 	
 // RESPONSIVE MENU ----------------------------------	
 	
 	if(jQuery.fn.flexNav) {
-		$('.i-navbar').flexNav();
+		jQuery('.i-navbar').flexNav();
 	}
 	
 	
