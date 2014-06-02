@@ -287,19 +287,24 @@ public class Kawwa2Grid implements ClientElement {
 
 				this.rowsPerPage = Integer.parseInt(cookies
 						.readCookieValue(resources.getCompleteId()));
-			}
+			}else{
+                initDefaultRowPerPage();
+            }
 		} catch (NumberFormatException nbfEx) {
-
-			// Set the number of default row per page to display.
-			// Value would be taken during first time rendering of Kawwagrid.
-			if (rowsPerPage == null) {
-
-				rowsPerPage = defaultRowPerPage;
-			}
-		}
+            initDefaultRowPerPage();
+        }
 	}
 
-	public Integer getRowsPerPage() {
+    private void initDefaultRowPerPage() {
+        // Set the number of default row per page to display.
+        // Value would be taken during first time rendering of Kawwagrid.
+        if (rowsPerPage == null) {
+
+            rowsPerPage = defaultRowPerPage;
+        }
+    }
+
+    public Integer getRowsPerPage() {
 
 		return this.rowsPerPage;
 	}
