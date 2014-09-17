@@ -1,0 +1,97 @@
+/* -------------------------------------------------------------------- 
+               KAWWA 2 - Page Structure
+          By Le Studio, Atos Worldline, 2011
+          
+          		Version 2.1 (02/2012)
+-------------------------------------------------------------------- */
+
+/* ------------------------------ RESET ---------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html {overflow-y: scroll;}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+hr {display: none;}
+
+img {border: 0;}
+
+
+/* -------------------------- STRUCTURE ------------------------ */
+/* Defines main page structure, from zero to three columns layout. 
+ * Used in combination with the theme stylesheet.
+ * */
+
+
+/* -------------------------- 1 / CONTAINER ------------------------ */
+#container {
+	position: relative;
+	width: 97%;
+	max-width: 1240px;
+	margin: 0 auto 20px;
+}
+
+/* -------------------------- 2 / HEADER --------------------------- */
+header[role=banner], #header {
+	clear: both;
+	position: relative;
+	width: 100%;
+}
+
+/* -------------------------- 3 / NAVBAR --------------------------- */
+nav, #navbar {}
+
+/* -------------------------- 4 / WRAPPER --------------------------- */
+#wrapper { 
+	float: left;
+	width: 100%;
+}
+
+/* -------------------------- 5 / COLUMNS --------------------------- */
+
+#menu, #secondary {float: left; width: 15%;}
+#main {float: left; width: 59%; min-height: 400px; margin-left: 2%;} /* with three columns */
+aside[role=complementary], #sidebar {float: right; width: 20%;}
+
+/* Conditions based on columns number */
+#wrapper #main:first-child {width: 78%; margin-left: 0;}
+#wrapper #main:last-child {width: 83%;}
+#wrapper #main:only-child {width: 100%;}
+
+
+/* -------------------------- 6 / FOOTER --------------------------- */
+footer[role=contentinfo], #footer {
+	clear: both;
+	position: relative;
+	width: 100%;
+}
+
+

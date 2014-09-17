@@ -1,0 +1,83 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="awl.frontsolutions.GoogleSpec" tests="1" failures="1" errors="0" timestamp="2013-08-23T12:19:12" hostname="L80576" time="0.552">
+  <properties/>
+  <testcase name="the first link should be wikipedia" classname="awl.frontsolutions.GoogleSpec" time="0.552">
+    <failure message="geb.driver.DriverCreationException: failed to create driver from callback 'script1377260351509472802729$_run_closure2_closure3_closure4@2d861958'" type="org.gradle.messaging.remote.internal.PlaceholderException">geb.driver.DriverCreationException: failed to create driver from callback 'script1377260351509472802729$_run_closure2_closure3_closure4@2d861958'
+	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy:80)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy)
+	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
+	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
+	at geb.Configuration.createDriver(Configuration.groovy:338)
+	at geb.Configuration.getDriver(Configuration.groovy:327)
+	at geb.Browser.getDriver(Browser.groovy:104)
+	at geb.Browser.go(Browser.groovy:371)
+	at geb.Page.to(Page.groovy:169)
+	at geb.Browser.via(Browser.groovy:446)
+	at geb.Browser.to(Browser.groovy:410)
+	at geb.Browser.to(Browser.groovy:386)
+	at geb.spock.GebSpec.methodMissing(GebSpec.groovy:51)
+	at awl.frontsolutions.GoogleSpec.the first link should be wikipedia(GoogleSpec.groovy:11)
+Caused by: java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:176)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:105)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:69)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
+	at script1377260351509472802729.run_closure2_closure3_closure4(script1377260351509472802729.groovy:13)
+	at script1377260351509472802729.run_closure2_closure3_closure4(script1377260351509472802729.groovy)
+	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
+	... 14 more
+</failure>
+    <failure message="geb.driver.DriverCreationException: failed to create driver from callback 'script1377260351509472802729$_run_closure2_closure3_closure4@2d861958'" type="org.gradle.messaging.remote.internal.PlaceholderException">geb.driver.DriverCreationException: failed to create driver from callback 'script1377260351509472802729$_run_closure2_closure3_closure4@2d861958'
+	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy:80)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy)
+	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
+	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
+	at geb.Configuration.createDriver(Configuration.groovy:338)
+	at geb.Configuration.getDriver(Configuration.groovy:327)
+	at geb.Browser.getDriver(Browser.groovy:104)
+	at geb.report.PageSourceReporter.getPageSource(PageSourceReporter.groovy:42)
+	at geb.report.PageSourceReporter.writePageSource(PageSourceReporter.groovy:38)
+	at geb.report.PageSourceReporter.writeReport(PageSourceReporter.groovy:29)
+	at geb.report.CompositeReporter.writeReport(CompositeReporter.groovy:31)
+	at geb.Browser.report(Browser.groovy:698)
+	at geb.spock.GebReportingSpec.report(GebReportingSpec.groovy:43)
+	at geb.spock.GebReportingSpec.cleanup(GebReportingSpec.groovy:39)
+Caused by: java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:176)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:105)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:69)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
+	at script1377260351509472802729.run_closure2_closure3_closure4(script1377260351509472802729.groovy:13)
+	at script1377260351509472802729.run_closure2_closure3_closure4(script1377260351509472802729.groovy)
+	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
+	... 14 more
+</failure>
+    <failure message="geb.driver.DriverCreationException: failed to create driver from callback 'script1377260351509472802729$_run_closure2_closure3_closure4@2d861958'" type="org.gradle.messaging.remote.internal.PlaceholderException">geb.driver.DriverCreationException: failed to create driver from callback 'script1377260351509472802729$_run_closure2_closure3_closure4@2d861958'
+	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy:80)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy)
+	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
+	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
+	at geb.Configuration.createDriver(Configuration.groovy:338)
+	at geb.Configuration.getDriver(Configuration.groovy:327)
+	at geb.Browser.getDriver(Browser.groovy:104)
+	at geb.Browser.clearCookies(Browser.groovy:454)
+	at geb.Browser.clearCookiesQuietly(Browser.groovy:462)
+	at geb.spock.GebSpec.resetBrowser(GebSpec.groovy:45)
+	at geb.spock.GebSpec.cleanup(GebSpec.groovy:67)
+Caused by: java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:176)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:105)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:69)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
+	at script1377260351509472802729.run_closure2_closure3_closure4(script1377260351509472802729.groovy:13)
+	at script1377260351509472802729.run_closure2_closure3_closure4(script1377260351509472802729.groovy)
+	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
+	... 11 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

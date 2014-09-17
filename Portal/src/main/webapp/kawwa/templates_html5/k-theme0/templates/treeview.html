@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>  
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+	<link rel="shortcut icon" href="../img/k-theme0/favicon.png" />
+	<title>[KAWWA &raquo; Treeview Structure ]</title>
+	<!-- STYLESHEET -->
+	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/k-theme0.css" rel="stylesheet" type="text/css" title="Default Theme" media="all" />
+	<!--[if lt IE 9]>
+    <link href="../css/iehacks0.css" rel="stylesheet" type="text/css"/><![endif]-->
+	<!-- SCRIPTS -->
+	<!--[if lt IE 9]><script src="../js/html5shiv.js"></script><![endif]-->
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<!-- Here go your plug-ins -->
+	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.button.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.hotkeys.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.jstree.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.kawwa.nav.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../js/k-general.js"></script>
+	<script type="text/javascript" src="../js/k-load.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+
+	<header role="banner">
+		<h1>KAWWA <small>Markup Pattern Library</small></h1>
+		<div class="k-tools">
+			<form class="k-language" method="post" action="">
+				<fieldset class="k-radio">
+					<legend>Choose preferred language:</legend>
+					<p>
+					    <input type="radio" id="en" value="en" name="language" checked="checked" />
+					    <label for="en" title="English version">EN</label>
+					    <input type="radio" id="fr" value="fr" name="language" />
+					    <label for="fr" lang="fr" title="Version française">FR</label>
+					    <input type="radio" id="de" value="de" name="language" />
+					    <label for="de" lang="de" title="Deutsch version">DE</label>
+			  		</p>
+				</fieldset>
+			</form>
+			<ul class="k-tools-list">
+				<li><a href="tools/faq.html">FAQ</a></li>
+				<li><a href="tools/contact.html">Contact us</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<nav>
+		<p class="control"><a href="#" title="Click to open/close menu"><img src="../img/k-theme0/nav_control.png" alt="Menu" /></a></p>
+		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+		<ul class="k-navbar" role="menubar">
+			<li class="home"><a href="../index.html">Home</a></li>
+			<li class="active"><a href="#">Tree Structure</a>
+				<ul role="menu">
+					<li class="active"><a href="#">About browsers</a></li>
+					<li><a href="#">About Worlds</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	
+	<p class="k-breadcrumbs">
+		<a href="#">Home</a> &gt; 
+		Tree structure</p>
+	<hr />
+		
+	<div id="wrapper">
+		
+		<div id="main" role="main">
+			<div class="k-tree-grid">
+				<div class="tree">
+					<ul class="actions">
+						<li><a href="#" class="bt-new" title="Create new tree item">New</a></li>
+						<li><a href="#" class="bt-del" title="Delete selected item">Delete</a></li>
+					</ul>
+					<!-- Here goes the treeview itens -->
+					<p class="k-skip"><a href="#">To navigate through the tree, use up/down arrows to jump nodes and left/right arrows to close/open them</a></p>
+					<div class="k-tree">
+						<ul>
+							<li><a href="#">Declined</a>
+								<ul>
+									<li> <a href="#">John Doe</a> </li>
+									<li> <a href="#">Jack Smith</a> </li>
+									<li> <a href="#">Hannah Boyd</a> </li>
+									<li> <a href="#">Reconsider?</a>
+										<ul>
+											<li> <a href="#">Sandra johnson</a> </li>
+											<li> <a href="#">Dan Smith</a> </li>
+											<li> <a href="#">Jason Bourne</a> </li>
+											<li> <a href="#">Jason Maple</a> </li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<section class="tree-content">
+					<h3>Tree Item</h3> <!-- Adapt the level of this H title to your page structure -->
+					<table class="k-data-table" summary="A summary description of table data">
+						<caption>The table title</caption>
+						<thead>
+								<tr>
+									<th>Rendering engine</th>
+									<th>Browser</th>
+									<th>Platform(s)</th>
+									<th>Engine version</th>
+									<th>CSS grade</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th>Rendering engine</th>
+									<th>Browser</th>
+									<th>Platform(s)</th>
+									<th>Engine version</th>
+									<th>CSS grade</th>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr class="gradeX">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 4.0</td>
+									<td>Win 95+</td>
+									<td class="center">4</td>
+									<td class="center">X</td>
+								</tr>
+								<tr class="gradeC">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 5.0</td>
+									<td>Win 95+</td>
+									<td class="center">5</td>
+									<td class="center">C</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 5.5</td>
+									<td>Win 95+</td>
+									<td class="center">5.5</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Trident</td>
+									<td>Internet
+										 Explorer 6</td>
+									<td>Win 98+</td>
+									<td class="center">6</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Trident</td>
+									<td>Internet Explorer 7</td>
+									<td>Win XP SP2+</td>
+									<td class="center">7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Trident</td>
+									<td>AOL browser (AOL desktop)</td>
+									<td>Win XP</td>
+									<td class="center">6</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 1.0</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 1.5</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 2.0</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Firefox 3.0</td>
+									<td>Win 2k+ / OSX.3+</td>
+									<td class="center">1.9</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Camino 1.0</td>
+									<td>OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Camino 1.5</td>
+									<td>OSX.3+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Netscape 7.2</td>
+									<td>Win 95+ / Mac OS 8.6-9.2</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Netscape Browser 8</td>
+									<td>Win 98SE+</td>
+									<td class="center">1.7</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Netscape Navigator 9</td>
+									<td>Win 98+ / OSX.2+</td>
+									<td class="center">1.8</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.0</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.1</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.1</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.2</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.2</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.3</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.3</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.4</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.4</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.5</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.5</td>
+									<td class="center">A</td>
+								</tr>
+								<tr class="gradeA">
+									<td>Gecko</td>
+									<td>Mozilla 1.6</td>
+									<td>Win 95+ / OSX.1+</td>
+									<td class="center">1.6</td>
+									<td class="center">A</td>
+								</tr>
+						</tbody>
+					</table>
+
+				</section>
+			</div>
+
+		</div><!-- /main -->
+	</div>
+	
+	<footer role="contentinfo">
+		<ul class="k-tools-list">
+			<li><a href="tools/faq.html">FAQ</a></li>
+			<li><a href="tools/contact.html">Contact us</a></li>
+		</ul>
+		<p class="k-copyright">&copy; Your copyright, 2013</p>
+	</footer>
+	
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<t:layout title="Login"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+
+
+	<t:form t:id="loginForm">
+		<t:errors />
+		<div class="k-notes">
+			<p>The login is only necessary for Atos employees.</p>
+		</div>
+		<fieldset>
+			<legend>You need to login</legend>
+
+			<p>
+				<t:label t:for="das" />
+				<t:textfield t:id="das" t:validate="required" />
+			</p>
+			<p>
+				<t:label t:for="password" />
+				<t:passwordfield t:id="password" />
+			</p>
+			<p>
+				<t:submit value="Submit" />
+			</p>
+
+		</fieldset>
+	</t:form>
+</t:layout>

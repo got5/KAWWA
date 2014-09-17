@@ -1,0 +1,71 @@
+/* ----------------------------- ARTICLE ------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000387}}
+.k-article {
+  margin: 0 4% 1em;
+  padding-bottom: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000391}}
+  .k-article h2 {
+    margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000392}}
+  .k-article ul, .k-article ol {
+    max-width: 40em;
+    margin: 1em 1em 1em 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000394}}
+  .k-article .e-content {
+    max-width: 50em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000397}}
+    .k-article .e-content p {
+      line-height: 1.5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000398}}
+    .k-article .e-content > p:last-child::after {
+      content: "\00A0 \2756";
+      color: gray; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000399}}
+    .k-article .e-content p + p, .k-article .e-content figure + p {
+      text-indent: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003100}}
+    .k-article .e-content p + p.k-readmore {
+      text-indent: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003101}}
+    .k-article .e-content .p-name + ul.entry-info {
+      margin-top: -1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003103}}
+    .k-article .e-content li {
+      line-height: 1.5; }
+  @media screen and (min-width: 1000px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\0000387}}
+    .k-article {
+      margin: 0 auto 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003108}}
+      .k-article h2 {
+        font-size: 3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003109}}
+      .k-article p, .k-article li {
+        font-size: 1.1em; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003114}}
+ul.entry-info {
+  padding: 0;
+  margin: 0 0 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003118}}
+  ul.entry-info li {
+    display: inline;
+    list-style-type: none;
+    line-height: 1.7;
+    font-size: 0.8em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003120}}
+ul.entry-info + .e-content {
+  margin: 2.5em 0 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003123}}
+.dt-published::after {
+  content: "\2609";
+  font-size: 100%;
+  padding: 0 0.3em 0 0.5em;
+  color: #979797; }
+  @media screen and (min-width: 490px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/01_article\/k-theme0\.scss}line{font-family:\00003123}}
+    .dt-published::after {
+      font-size: 150%;
+      vertical-align: -3px; } }

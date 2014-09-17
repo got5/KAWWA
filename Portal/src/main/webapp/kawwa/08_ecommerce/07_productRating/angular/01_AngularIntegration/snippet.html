@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/jquery-1.8.3.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/angular.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/jquery.ui.core.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/jquery.ui.widget.js"></script>
+    <script src="http://got5.github.io/KAWWA/grunt-scripts/kawwa-directives-full.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+<fieldset class="k-rating">
+    <legend>Rate this article: {{raty}}</legend>
+    <p data-raty data-rating-options="{'value': 'test'}" ng-model="raty">
+        <input name="star1" type="radio" value="1"/>
+        <input name="star1" type="radio" value="2"/>
+        <input name="star1" type="radio" value="3"/>
+        <input name="star1" type="radio" value="4"/>
+        <input name="star1" type="radio" value="5"/>
+    </p>
+</fieldset>
+</body>
+</html>

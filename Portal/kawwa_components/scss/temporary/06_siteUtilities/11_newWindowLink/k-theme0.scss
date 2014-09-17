@@ -1,0 +1,99 @@
+ // KAWWA DEFAULT THEME
+// Variables
+// V 1.0 11/2013
+
+// Font families
+$font_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$italic_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$bold_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$title_stack: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+
+
+// Colors
+
+$identity_clr:		#000;
+$identity_txt:		#FFF;
+$secondary_clr		#A40800;
+$secondary_txt		#FFF;
+$hot_clr			#A40800;
+$hot_txt			#FFF;
+$alert_clr:			#C00;
+$text_clr:			#050505;
+$neutral_clr:		#808080;
+$neutral_txt:		#FFF;
+$neutral_drk_clr:	#3E3E3E;
+$neutral_drk_txt:	#FFF;
+
+$neutral_md_clr:	#CCC;
+$neutral_lgt_clr:	#EEE;
+
+
+$modal_bg:			rgba(0,0,0,.85);
+
+// KAWWA
+// MIXINS
+// V 1.0 11/2013
+
+// BORDER BOX
+@mixin M_borderBox {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// FLEX CONTAINER
+@mixin M_flexCon($flow) {
+	display: flex;
+	-moz-display: flex;
+	-webkit-display: flex;
+	flex-flow: $flow;
+	-webkit-flex-flow: $flow;
+	flex-direction: $flow;
+}	
+	
+
+// SIMPLE TRANSFORMATIONS 
+@mixin M_transform($type) {
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+	-webkit-transform: $type;
+	transform: $type;
+}
+
+
+// TRANSITIONS 
+@mixin M_transition($what) {
+	-moz-transition: $what;
+	-ms-transition: $what;
+	-o-transition: $what;
+	-webkit-transition: $what;
+	transition: $what;
+}	
+
+// STRIPS BACKGROUND 
+@mixin M_stripes($clr) {
+	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+}
+
+/* ----------------------------- EXTERNAL LINKS ------------------------------- */
+
+a[href^="http:"]::after {
+	content: "- External link. Opens new tab/window";
+	left: -10000px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+
+a[href^="http:"]:link {
+	background: url(../img/k-theme0/new_window.svg) right no-repeat;
+	padding-right: 1.5em;
+}
+

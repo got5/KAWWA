@@ -1,0 +1,34 @@
+/* ----------------------------- INTRODUCTION ------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/03_introduction\/k-theme0\.scss}line{font-family:\0000387}}
+div.k-intro {
+  width: 80%;
+  max-width: 30em;
+  padding-left: 1em;
+  margin: 0 0 2em;
+  border-left: 1px solid #cccccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/03_introduction\/k-theme0\.scss}line{font-family:\0000394}}
+  div.k-intro p {
+    font-size: 1em;
+    line-height: 1.4;
+    text-indent: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/03_introduction\/k-theme0\.scss}line{font-family:\00003100}}
+  div.k-intro p:first-child {
+    position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/03_introduction\/k-theme0\.scss}line{font-family:\00003101}}
+  div.k-intro p:first-child:first-letter {
+    line-height: 0.1;
+    font: 200% "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    color: black;
+    background: #FFF; }
+
+@media screen and (min-width: 1000px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/03_introduction\/k-theme0\.scss}line{font-family:\00003110}}
+  div.k-intro {
+    font-size: 1.2em;
+    line-height: 1.53;
+    color: #3e3e3e;
+    background: #FFF;
+    margin: 0 0 2em 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/03_introduction\/k-theme0\.scss}line{font-family:\00003117}}
+    div.k-intro p {
+      font-size: 1.2em; } }

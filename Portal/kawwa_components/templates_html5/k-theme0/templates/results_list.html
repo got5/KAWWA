@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>  
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+	<link rel="shortcut icon" href="../img/k-theme0/favicon.png" />
+	<title>[KAWWA &raquo; Results List]</title>
+	<!-- STYLESHEET -->
+	<link href="../css/k-structure.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/k-theme0.css" rel="stylesheet" type="text/css" title="Default Theme" media="all" />
+	<!--[if lt IE 9]><link href="../css/iehacks0.css" rel="stylesheet" type="text/css" /><![endif]-->
+	<!-- SCRIPTS -->
+	<!--[if lt IE 9]><script src="../js/html5shiv.js"></script><![endif]-->
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.position.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.dialog.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.button.min.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.panel.awl.js"></script>
+	<script type="text/javascript" src="../js/ui/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.tipsy.js"></script>
+	<script type="text/javascript" src="../js/k-general.js"></script>
+	<script type="text/javascript" src="../js/k-load.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+
+	<header role="banner">
+		<h1>KAWWA <small>Markup Pattern Library</small></h1>
+		<div class="k-tools">
+			<form class="k-language" method="post" action="">
+				<fieldset class="k-radio">
+					<legend>Choose preferred language:</legend>
+					<p>
+					    <input type="radio" id="en" value="en" name="language" checked="checked" />
+					    <label for="en" title="English version">EN</label>
+					    <input type="radio" id="fr" value="fr" name="language" />
+					    <label for="fr" lang="fr" title="Version française">FR</label>
+					    <input type="radio" id="de" value="de" name="language" />
+					    <label for="de" lang="de" title="Deutsch version">DE</label>
+			  		</p>
+				</fieldset>
+			</form>
+			<ul class="k-tools-list">
+				<li><a href="tools/faq.html">FAQ</a></li>
+				<li><a href="tools/contact.html">Contact us</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<nav>
+		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+		<div id="navbar">
+			<ul class="k-navbar">
+				<li class="home active"><strong>Home</strong></li>
+				<li><a href="#">Management</a></li>
+			</ul>
+			<p class="k-breadcrumbs"><a href="#">Home</a> &gt; Form elements</p>
+		</div>
+	</nav>
+	
+	<hr />
+		
+	<div id="wrapper">
+
+		<div id="main" role="main">
+			<h2>Page Title</h2>
+			
+			<div class="k-actions-block">
+				<p class="action-context">Some optional text or title</p>
+				<ul class="k-actions">
+					<li><a href="#" class="bt-search">new search</a></li>
+					<li><a href="#" class="bt-print">print</a></li>
+					<li><a href="#" class="bt-download">download</a></li>
+				</ul>
+			</div>
+			
+			<form id="filter" method="post" action="#">
+				<fieldset class="k-panel ui-state-active">
+					<legend class="control ui-state-active"><a href="#" title="Click to fold/unfold">Search filter</a></legend>
+					<fieldset class="content">						
+						<p class="highlight"><label for="field1">Search tags:</label>
+							<input type="text" id="field1" name="field1" value="Invoice London" disabled="disabled" /></p>
+						<fieldset class="k-radio">
+							<legend>Choose one option:</legend>
+							<p><label for="t1"><input type="radio" id="t1" value="t1" name="other" /> Option 1</label> 
+								<label for="t2"><input type="radio" id="t2" value="t2" name="other" /> Option 2</label></p>
+						</fieldset>
+						<p><label for="field2">Enter something:</label>
+							<input type="text" class="k-field-comment" id="field2" name="field2" title="This is a field comment" /></p>
+						<p><label for="date1">Enter a date:</label>
+							<input type="date" id="date1" name="date1" /> 
+							<label for="place1" class="k-online">And a place:</label>
+							<input type="text" id="place1" name="place1" /></p>
+						<p class="k-check">
+							<input type="checkbox" id="add-templates" name="add-templates" value="yes" checked="checked" /> 
+							<label for="add-templates">Show results from archive</label> 
+							<a href="#archive-info" class="k-field-help" title="About the archive">
+								<img src="../img/k-theme0/pic_help.png" alt="[ Help ]" /></a></p>
+						<p class="k-buttons-bar">
+							<input type="submit" value="Filter list" />
+							<input type="reset" value="Reset filter" />
+						</p>
+					</fieldset>
+				</fieldset>
+			</form>
+			<div class="k-pagination">
+				<form id="pagination" method="post" action="#">
+					<p class="lines-to-display">
+						<label>Display  
+							<select name="display-value">
+								<option value="10">10</option>
+								<option value="15">15</option>
+								<option value="20">20</option>
+							</select> lines per page</label>
+					</p>
+				</form>
+				<p class="total-pages">Results 1 to 10 of <strong>20</strong></p>
+				<p class="page-numbers">
+					<img src="../img/k-theme0/pic_first_off.gif" alt="[ First page ]" /> 
+					<img src="../img/k-theme0/pic_prev_off.gif" alt="[ Previous page ]" /> 
+					<span><strong>1</strong> |  <a href="#">2</a></span> 
+					<a href="#" title="Go to next page"><img src="../img/k-theme0/pic_next.gif" alt="[ Next page ]" /></a> 
+					<a href="#" title="Go to last page"><img src="../img/k-theme0/pic_last.gif" alt="[ Last page ]" /></a>
+				</p>
+			</div>
+		
+			<form id="form-example" method="post" action="#">
+				<table id="example" summary="Here you explain table data">
+					<caption>Table's title</caption>
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" name="checkAll" value="all" title="Select/Deselect all" /></th>
+							<th scope="col"><a href="#" class="descending" title="Sort descending - Click to inverse order">Invoice number</a></th>
+							<th scope="col"><a href="#" title="Sort by Date">Date</a></th>
+							<th scope="col"><a href="#" title="Sort by Amount">Amount (&euro;)</a></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="check01" value="01" title="Select/Deselect this row" /></td>
+							<td><a href="#">012254</a></td>
+							<td>12/12/2010</td>
+							<td class="money-cell">1.002,55</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="check02" value="02" title="Select/Deselect this row" /></td>
+							<td><a href="#">012258</a></td>
+							<td>13/12/2010</td>
+							<td class="money-cell">2.358,00</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="check03" value="03" title="Select/Deselect this row" /></td>
+							<td><a href="#">012269</a></td>
+							<td>01/01/2011</td>
+							<td class="money-cell">102,25</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="check04" value="04" title="Select/Deselect this row" /></td>
+							<td><a href="#">012274</a></td>
+							<td>15/02/2011</td>
+							<td class="money-cell">352,54</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			
+			<div class="k-pagination">
+				<p class="page-numbers">
+					<img src="../img/k-theme0/pic_first_off.gif" alt="[ First page ]" /> 
+					<img src="../img/k-theme0/pic_prev_off.gif" alt="[ Previous page ]" /> 
+					<span><strong>1</strong> |  <a href="#">2</a></span> 
+					<a href="#" title="Go to next page"><img src="../img/k-theme0/pic_next.gif" alt="[ Next page ]" /></a> 
+					<a href="#" title="Go to last page"><img src="../img/k-theme0/pic_last.gif" alt="[ Last page ]" /></a>
+				</p>
+			</div>
+			
+			<div class="k-orientation-aid">
+				<p class="go-back"><a href="#" title="Go back to previous page">Back</a></p>
+				<p class="go-top"><a href="#container" title="Go to the top of the page">Top</a></p>
+			</div>
+			
+		</div>
+	</div>
+	
+	<footer role="contentinfo">
+		<p class="k-copyright">&copy; Your copyright, 2013</p>
+	</footer>
+	
+</div>
+
+
+</body>
+</html>
+

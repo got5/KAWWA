@@ -1,0 +1,56 @@
+/* ------------------------- ACTIONS DROPDOWN ------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\0000387}}
+.k-actions-dropdown {
+  position: relative;
+  width: 10em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\0000391}}
+  .k-actions-dropdown button {
+    position: relative;
+    font-weight: bold;
+    color: #FFF;
+    background: black;
+    padding: 0.3em 2em 0.3em 0.5em;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\00003102}}
+  .k-actions-dropdown button::after {
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
+    width: 20px;
+    content: "\25BC";
+    color: #FFF;
+    background: transparent;
+    z-index: 50; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\00003112}}
+  .k-actions-dropdown button:hover, .k-actions-dropdown button:focus {
+    color: #000;
+    background: #cccccc;
+    box-shadow: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\00003117}}
+  .k-actions-dropdown ul.content {
+    position: absolute;
+    top: 1.4em;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    z-index: 50; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\00003125}}
+    .k-actions-dropdown ul.content li {
+      list-style-type: none;
+      color: #000;
+      background: #cccccc;
+      padding: 0.25em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\00003133}}
+  .k-actions-dropdown a, .k-actions-dropdown a:link, .k-actions-dropdown a:visited {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    background: transparent;
+    padding: 0.25em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/06_siteUtilities\/15_actionsDropDown\/k-theme0\.scss}line{font-family:\00003140}}
+  .k-actions-dropdown a:hover, .k-actions-dropdown a:focus {
+    color: #FFF;
+    background: black; }

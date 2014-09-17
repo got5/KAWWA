@@ -1,0 +1,210 @@
+ // KAWWA DEFAULT THEME
+// Variables
+// V 1.0 11/2013
+
+// Font families
+$font_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$italic_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$bold_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$title_stack: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+
+
+// Colors
+
+$identity_clr:		#000;
+$identity_txt:		#FFF;
+$secondary_clr		#A40800;
+$secondary_txt		#FFF;
+$hot_clr			#A40800;
+$hot_txt			#FFF;
+$alert_clr:			#C00;
+$text_clr:			#050505;
+$neutral_clr:		#808080;
+$neutral_txt:		#FFF;
+$neutral_drk_clr:	#3E3E3E;
+$neutral_drk_txt:	#FFF;
+
+$neutral_md_clr:	#CCC;
+$neutral_lgt_clr:	#EEE;
+
+
+$modal_bg:			rgba(0,0,0,.85);
+
+// KAWWA
+// MIXINS
+// V 1.0 11/2013
+
+// BORDER BOX
+@mixin M_borderBox {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// FLEX CONTAINER
+@mixin M_flexCon($flow) {
+	display: flex;
+	-moz-display: flex;
+	-webkit-display: flex;
+	flex-flow: $flow;
+	-webkit-flex-flow: $flow;
+	flex-direction: $flow;
+}	
+	
+
+// SIMPLE TRANSFORMATIONS 
+@mixin M_transform($type) {
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+	-webkit-transform: $type;
+	transform: $type;
+}
+
+
+// TRANSITIONS 
+@mixin M_transition($what) {
+	-moz-transition: $what;
+	-ms-transition: $what;
+	-o-transition: $what;
+	-webkit-transition: $what;
+	transition: $what;
+}	
+
+// STRIPS BACKGROUND 
+@mixin M_stripes($clr) {
+	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+}
+
+/* ------------------------- ACTION BUTTONS ------------------------- */
+
+ul.k-actions {
+	position: relative;
+	text-align: right;
+	padding: 0;
+	margin-bottom: 2em;
+	
+	li {
+		display: inline-block;
+		list-style-type: none;
+		padding: 0.5em;
+	}
+	
+	span, button, a {
+		display: inline-block;
+		font: bold 1.2em/1.5 $font_stack;
+		text-decoration: none;
+		color: $text_clr;
+		background-color: $neutral_lgt_clr;
+		background-origin: border-box;
+		background-position: -2px -2px;
+		background-repeat: no-repeat;
+		padding: 5px 10px;
+		border: none;
+		border-radius: 3px;
+		box-shadow: 0 1px 1px rgba(0,0,0,.5);
+		cursor: pointer;
+	}
+	
+	a:link, a:visited {
+		color: $neutral_drk_clr;
+		background-color: $neutral_lgt_clr;
+	}
+	button:hover, button:focus, a:hover, a:focus {
+		color: #000;
+		background-color: #FFF;
+		box-shadow: none;
+	}
+	
+	// Active
+	button.active, a.active, a.active:link, a.active:visited {
+		color: #FFF;
+		background-color: $hot_clr;
+	}
+	
+	// Disabled
+	button.disabled, button.disabled:hover, button.disabled:focus, span {
+		color: $neutral_drk_clr;
+		background-color: $neutral_lgt_clr;
+		box-shadow: none;
+		cursor: default;
+		opacity: .4;
+	}
+	
+	.no-label {width: 1px; color: $neutral_lgt_clr !important;}
+	
+	// Icons bg images
+	.bt-print {background-image: url(../img/k-theme0/print.svg); padding-left: 40px;}
+	.bt-download {background-image: url(../img/k-theme0/download.svg); padding-left: 40px;}
+	.bt-edit {background-image: url(../img/k-theme0/edit.svg); padding-left: 40px;}
+	.bt-view {background-image: url(../img/k-theme0/look.svg); padding-left: 40px;}
+	.bt-email {background-image: url(../img/k-theme0/mail.svg); padding-left: 40px;}
+	.bt-search {background-image: url(../img/k-theme0/search.svg); padding-left: 40px;}
+	.bt-new {background-image: url(../img/k-theme0/add.svg); padding-left: 40px;}
+	.bt-del {background-image: url(../img/k-theme0/delete.svg); padding-left: 40px;}
+}
+
+/* For icon buttons only */
+
+ul.k-actions.icon-only {
+	
+	li {
+		overflow: hidden;
+		width: 40px;
+		height: 40px;
+		background-color: $neutral_lgt_clr;
+		padding: 0;
+		margin: 3px;
+		border-radius: 3px;
+		box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	}
+	li:hover, li:focus {
+		background-color: #FFF;
+		box-shadow: none;
+	}
+	 
+	a, button, span {
+		height: 40px;
+		background-color: transparent;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	a, button, span {background-position: 0 1px;}
+	
+	// Tooltip for icon buttons only
+	span.tooltip {
+		display: block;
+		position: absolute;
+		top: 55px;
+		width: auto;
+		height: auto;
+		font-size: 0.8em;
+		text-align: center;
+		color: #FFF;
+		background: #000;
+		border-radius: 3px;
+		border-bottom: 1px solid rgba(255,255,255,.7);
+		box-shadow: 0 1px 2px #666;
+		opacity: 1;
+	}
+	span.tooltip::before {
+		position: absolute;
+		top: -3px;
+		left: 50%;
+		display: block;
+		width: 10px;
+		height: 10px;
+		content: "";
+		background: #000;
+		margin-left: -5px;
+		@include M_transform(rotate(45deg));
+	}
+}
+
+

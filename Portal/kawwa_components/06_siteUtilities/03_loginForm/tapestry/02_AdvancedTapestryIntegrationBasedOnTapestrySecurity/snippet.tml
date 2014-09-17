@@ -1,0 +1,16 @@
+<t:security.notauthenticated>
+	<t:security.loginform />
+</t:security.notauthenticated>
+
+<t:security.authenticated>
+	Welcome ${currentUser.displayableName}! <t:actionlink t:id="logout">Logout</t:actionlink>
+	<div>
+		<t:security.haspermission permission="admin">
+			Can you feel the power of admin rights !?<br/>
+			<t:actionlink t:id="boom">This button will make the web site explose.</t:actionlink>
+		</t:security.haspermission>
+		<t:security.lackspermission permission="admin">
+			Sorry, as a stupid local user you can't do high level actions.
+		</t:security.lackspermission>
+	</div>
+</t:security.authenticated>

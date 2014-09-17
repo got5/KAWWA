@@ -1,0 +1,113 @@
+<t:layout t:activeMenu="4" t:title="All About Kawwa: The Kawwa Components" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+<t:AboutKawwaMenu />
+
+
+<div id="main">
+	<div class="k-article">
+		<h2>The Kawwa Components</h2>
+
+		<div class="k-intro">
+			<p>With Kawwa, we're introducing the "Kawwa Components" approach, a flexible new way to build and enhance 
+			your web pages.</p>
+		</div>
+
+		<div class="k-illustration-block to-right">
+			<p class="illustration"><img src="${asset:context:img/component.jpg}" alt="" /></p>
+		</div>
+
+		<h3>What's a "Kawwa Component"?</h3>
+		<p>A Kawwa component is an <strong>identified web interface element made of</strong>:</p>
+
+		<ul>
+			<li>an HTML template (either XHTML Strict or HTML5), </li>
+			<li>related CSS declarations and, eventually, </li>
+			<li>javascript files and function calls, in the case of "interactive" components.</li>
+		</ul> 
+
+		<p>A component must be seen as an independent, single block of content that has specific characteristics and behavior and 
+		that may be manipulated apart of the whole.</p>
+
+		<h4>The Code</h4>
+		<p>Each Kawwa Component presents a HTML code snippet that is unique to the component.</p>
+		<p>Today the Kawwa Portal offers you about 50 Kawwa Components in HTML5 version, but you may find the XHTML Strict version where needed. 
+		Also, some of the components were integrated into the Tapestry 5 framework.</p> 
+		<p>The principal characteristics to this code snippet are:</p>
+		
+		<ul>
+			<li>it respects strictly the web standards</li>
+			<li>it follows the general web best practices</li>
+			<li>it respects the W3C/WAI accessibility recommendations</li>
+			<li>it is fully semantic</li>
+		</ul>
+
+		<p class="k-quote">To each Kawwa component we assigned a specific class name that makes the component unique and that allows us 
+		to control its <strong>graphical style and interactive behaviour</strong>.</p>
+
+		<h4>The Style</h4>
+			<p>To the HTML snippet of a component is assigned a series of CSS declarations specific to it. 
+			Those declarations will define the style and positioning of the component, based on 
+			the graphical theme chosen among those available at the Kawwa Portal.</p>
+			<p>The CSS declarations of a Kawwa component have the following characteristics:</p>
+
+			<ul>
+				<li>they follow the general web Best Practices</li>
+
+				<li>they respect the web standards</li>
+
+				<li>they follow the state of art of CSS design with CSS3 properties and paths for responsive design</li>
+
+				<li>they rely on the graceful degradation approach to deal with older browsers</li>
+
+			</ul>
+
+			<p><strong>Note that the CSS declarations are always optional</strong>. You may add the component's declarations to your existing style-sheet, 
+
+					or you may simply let your component inherit styles already defined in your site.</p>
+
+			
+
+			<h4>The Behavior</h4>
+
+			<p>Some Kawwa Components may also present a specific interface behavior that is defined by 
+
+				carefully chosen and tested javascript plug-ins.</p>
+
+			<p>To those "rich" components are assigned the javascript plug-in files and a javascript code snippet which will 
+
+			"apply" the desired behaviour to the component at page load.</p>
+
+			<p>The control of the behavior of Kawwa components have the following characteristics:</p>
+
+			<ul>
+
+				<li>it follows the general web Best Practices</li>
+
+				<li>it respects the web standards</li>
+
+				<li>it relies on the well-known and performing jQuery library</li>
+
+				<li>it relies on heavily tested jQuery plug-ins</li>
+
+				<li>it relies on non-intrusive scripts</li>
+
+				<li>it follows the W3C/WAI accessibility recommendations for rich interfaces</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div id="sidebar">
+
+		<ul class="k-actions">
+
+			<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
+
+		</ul>
+
+		<t:themeSwitcher />
+
+		<t:CheckOutAlso />
+
+	</div>
+</t:layout>

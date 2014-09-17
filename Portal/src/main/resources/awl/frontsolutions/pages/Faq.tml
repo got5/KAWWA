@@ -1,0 +1,159 @@
+<t:layout t:activeMenu="20" t:title="All About Kawwa"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+	<div id="main">
+		<h2>FAQ</h2>
+
+		<div class="k-notes">
+			<p>
+				<strong>Help us feed our FAQ pages by sending your
+					questions to our distribution list at</strong> <a
+					href="mailto:dl-kawwa@atos.net">dl-kawwa@atos.net</a>.
+			</p>
+		</div>
+
+		<h3 id="theme1">About Kawwa and the Kawwa Portal</h3>
+		<div class="k-panel">
+			<h4 class="control">
+				<a href="#" title="Click to fold/unfold block">What is the
+					"Kawwa Portal"?</a>
+			</h4>
+			<div class="content k-article">
+				<p>The Kawwa Portal is the interface for Kawwa, based on the
+					"component approach", which means you may assemble your web pages
+					with just what you need, helping to reduce the time of interface
+					development.</p>
+				<p>This new interface was created to improve the way Kawwa
+					guidelines are applied and to extend those guidelines to other
+					kinds of web sites, and not only to web applications. In this
+					sense, you will be able to find in the portal components like
+					articles, product sheets, etc.</p>
+				<p class="k-readmore">
+					For more information about the portal or about Kawwa components,
+					please refer to the "<a t:type="pagelink" t:page="aboutkawwa">All About Kawwa</a>"
+					pages.
+				</p>
+			</div>
+		</div>
+		<div class="k-panel">
+			<h4 class="control">
+				<a href="#" title="Click to fold/unfold block">What do you call
+					"Kawwa Components"?</a>
+			</h4>
+			<div class="content k-article">
+				<p>In the Kawwa Portal, a component is an element of a web page
+					that is made of a specific HTML code, specific CSS declarations
+					and, in the case of rich components, the javascript code used to
+					apply it to the page and, eventually, a set of javascript files.</p>
+				<p>
+					What makes them "components" is the fact that <strong>they're
+						"independent" of the context where they will be applied</strong>. In other
+					words, a component can be applied to an existing site, with an
+					existing HTML code and style-sheet, and it can "fit" in the
+					existing site easily.
+				</p>
+				<p>For example, a sliding pannel block (a block that
+					folds/unfolds its content like this one) is a component made of
+					some lines of HTML code (to structure the component and to give it
+					the classes or ids needed), its predefined CSS declarations and the
+					javascript instructions necessary to apply it to the page in order
+					to be interactive (to fold/unfold itself).</p>
+				<p>
+					<strong>Note that the CSS declarations are always optional</strong>.
+					You may add the component's declarations to your existing
+					style-sheet, or you may simply let your component inherit styles
+					already defined in your site.
+				</p>
+				<p class="k-readmore">
+					For more information about the portal or about Kawwa components,
+					please refer to the "<a t:type="pagelink" t:page="aboutkawwa">All About Kawwa</a>"
+					pages.
+				</p>
+			</div>
+		</div>
+		<div class="k-panel">
+			<h4 class="control">
+				<a href="#" title="Click to fold/unfold block">Why the
+					components don't rely on the jQuery UI themes classes?</a>
+			</h4>
+			<div class="content k-article">
+				<p>In fact, most of the interactive components of Kawwa use
+					jQuery plugins and, therefore, they're dynamically classed with the
+					jQuery UI classes. Nonetheless, we've chosen not to "use" those
+					classes in our graphical themes (except when it was absolutely
+					necessary) for two main reasons:</p>
+				<ul>
+					<li><strong>To assure the cascading logic proposed by
+							the Kawwa style-sheet</strong>: The style-sheets of Kawwa graphical themes
+						aren't crafted to be used as frameworks. On the contrary, they try
+						to take the most of the cascading principals. Adding declarations
+						for jQuery UI selectors would disturb the desired logic.</li>
+					<li><strong>To assure the autonomy of the components</strong>:
+						today, some components use jQuery plugins, but the HTML snippet
+						can be handled in an autonomous way. If, in the future, there's is
+						some new way to give interactivity to a component, the plugin can
+						be replaced without any dependency.</li>
+				</ul>
+				<p>Even if Kawwa graphical themes don't rely on jQuery UI
+					classes, you still can use the HTML markup of Kawwa components with
+					your favorite jQuery UI Theme.</p>
+				<p class="k-readmore">
+					For more information about the portal or about Kawwa components,
+					please refer to the "<a t:type="pagelink" t:page="aboutkawwa">All About Kawwa</a>"
+					pages.
+				</p>
+			</div>
+		</div>
+		<div class="k-orientation-aid">
+			<p class="go-top">
+				<a href="#container" title="Go to the top of the page">Top</a>
+			</p>
+		</div>
+
+		<h3 id="theme3">Problems and Bugs</h3>
+		<div class="k-panel">
+			<h4 class="control">
+				<a href="#" title="Click to fold/unfold block">I can't copy the
+					HTML (CSS/JS) code. What is happenning?</a>
+			</h4>
+			<div class="content k-article">
+				<p>In the Kawwa Portal we use ZeroClipboard to the copy/paste
+					feature.</p>
+				<p>ZeroClipboard is a quite reliable function that relies on the
+					flash "swf" format to control some browser security issues. So, if
+					you're facing problems copying code, please check if you have the
+					Flash Player on your browser.</p>
+				<p>
+					If you do, we suggest you reload the page and try again. If you
+					face this problem often, please let us know. You may send us a
+					message precising your problem to our distribution list at <a
+						href="mailto:dl-kawwa@atos.net">dl-kawwa@atos.net</a>.
+				</p>
+			</div>
+		</div>
+		<div class="k-orientation-aid">
+			<p class="go-top">
+				<a href="#container" title="Go to the top of the page">Top</a>
+			</p>
+		</div>
+	</div>
+
+	<div id="sidebar">
+
+		<t:themeswitcher />
+		<t:if t:test="isAtosMember()">
+			<div class="k-info-block">
+				<div class="hgroup">
+					<h3>For more Information</h3>
+				</div>
+				<div class="content">
+					<p>
+						You may want also to check our <a t:type="pageLink"
+							t:page="Documentation">Documentation &amp; Tools</a> page for
+						more specific and technical info.
+					</p>
+				</div>
+			</div>
+		</t:if>
+	</div>
+</t:layout>

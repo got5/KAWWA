@@ -1,0 +1,51 @@
+/* ----------------------------- ARTICLE ------------------------------- */
+/* line 3, k-theme0.scss */
+.k-article {
+  max-width: 45em;
+  margin: 0 0 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px dashed #CCC; }
+  /* line 9, k-theme0.scss */
+  .k-article ul, .k-article ol {
+    max-width: 40em;
+    margin: 1em 1em 1em 1.5em; }
+  /* line 11, k-theme0.scss */
+  .k-article p {
+    line-height: 1.6; }
+  /* line 12, k-theme0.scss */
+  .k-article p + p, .k-article figure + p {
+    text-indent: 1.5em; }
+  /* line 14, k-theme0.scss */
+  .k-article li {
+    line-height: 1.5; }
+
+/* line 17, k-theme0.scss */
+p + p.k-readmore {
+  text-indent: 0; }
+
+/* line 18, k-theme0.scss */
+.p-name + ul.entry-info {
+  margin-top: -1.5em; }
+
+/* line 20, k-theme0.scss */
+ul.entry-info {
+  padding: 0;
+  margin: 0 0 1.5em; }
+  /* line 24, k-theme0.scss */
+  ul.entry-info li {
+    display: inline;
+    list-style-type: none;
+    line-height: 1.7;
+    font-size: 0.8em; }
+
+/* line 26, k-theme0.scss */
+ul.entry-info + .e-content {
+  margin: 2.5em 0 0; }
+
+/* line 28, k-theme0.scss */
+.dt-published::after {
+  content: "\2609";
+  font-size: 150%;
+  padding: 0 0.5em 0 0.7em;
+  vertical-align: -3px;
+  color: #999; }

@@ -1,0 +1,29 @@
+<table summary="This table shows the parameters needed for the ProductGallery Component">
+	<caption>ProductGallery parameters</caption>
+   		<tr>
+           	<th scope="col"> Name </th>
+               <th scope="col"> Required </th>
+               <th scope="col"> Java Type </th>
+               <th scope="col"> Default Prefix </th>
+               <th scope="col"> Default Value </th>
+               <th scope="col"> Description </th>
+		</tr>
+        <tr>
+           	   <td> params </td>
+			   <td> true </td>
+               <td> List&lt;FrontProductImage&gt;</td>
+               <td> prop </td>
+               <td></td>
+               <td> The list of the images you want to use with this component. The list has to contain FrontProductImage objects. With this
+               		interface, you need to implement 4 methods, returning the name of image, and the path of the 3 needed versions of the same image. 
+               		</td>
+		</tr>
+		<tr>
+           	   <td> productImages </td>
+			   <td> false </td>
+               <td> JSONObject </td>
+               <td> literal </td>
+               <td> false </td>
+               <td> The basic JSON-type parameter of the jQuery widget</td>
+		</tr>
+</table>

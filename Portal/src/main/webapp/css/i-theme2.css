@@ -1,0 +1,531 @@
+/*--------------------------------------------------------------------
+	          	  KAWWA2 - Theme 2
+	   	      PORTAL SPECIFIC INTERFACE
+          By Le Studio, Atos Worldline, 2011
+-------------------------------------------------------------------- */
+
+/* --- STYLESWITCH BOX --- */
+div.i-change-style {
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 3px #666;
+}
+	#styleswitch {color: #FFF; background: #837060;}
+	div.i-change-style label {width: auto; text-align: left;}
+	div.i-change-style p {
+		line-height: 1.2;
+		font-size: 0.8em;
+		padding: 5px 10px 10px;
+		margin: 0;
+		border-top: 1px dotted #FFF;
+		border-bottom: 1px dotted #FFF;
+	}
+	#i-theme {width: 90%; margin-top: 3px;}
+
+/* --- INDEX OF COMPONENTS --- */
+
+ul.i-index li {float: left; width: 20%; list-style-type: none; padding: 15px 3%;}
+ul.i-index li li {float: none; width: auto; padding: 0;}
+
+
+/* --- COMPONENT DEMO --- */
+
+/* Component data */
+
+ul.component-info {width: 19px; padding: 0; margin-top: -1.2em;}
+	
+	ul.component-info {
+		width: 15em;
+		background: #FFF;
+		padding: 0 0.8em;
+		border: 1px solid #000;
+		box-shadow: 2px 2px 3px #999;
+		z-index: 200;
+	}
+		ul.component-info li {
+			height: 3em;
+			line-height: 3em;
+			list-style-type: none;
+			font-size: 0.75em;
+			padding: 0;
+			border-top: 1px dashed #CCC;
+		}
+		ul.component-info li:first-child {border: none;}
+		
+		ul.component-info img {vertical-align: middle; padding-right: 5px;}
+
+#i-component {
+	float: left;
+	width: 96%;
+	background: #EFEFEF url(../img/bg_portal_demo.png);
+	padding: 2%;
+	margin-bottom: 21px;
+}
+
+/* --- CODE DISPLAY --- */
+
+.i-code {font-family: "Courier New", Courier, "American Typewriter", serif;}
+
+	div.i-code {
+		width: 85%;
+		color: #000;
+		background: #EEE;
+		padding: 2% 4%;
+		margin: 2em 0;
+		border: 1px solid #CCC;
+	}
+	
+/* Specific interface folders */
+
+/* Code display format */
+ol.display-code {
+	min-width: 85%;
+	padding-left: 2em;
+	margin: 2%;
+	list-style-type: decimal; 
+	color: #FFF;
+	background: #EEE;
+}
+	ol.display-code li {
+		padding: 2px 5px;
+		line-height: 1;
+		font: 0.8em "Courier New", Courier, "American Typewriter", serif;
+		color: #000;
+		background: #FFF;
+		border-left: 2px solid #999;
+	}
+	ol.display-code li:nth-child(even) {color: #000; background: #EFEFEF;}
+	ol.display-code pre {font-size: 120%; text-align: left; line-height: 1; padding: 2px;}
+
+div.i-html-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #555;
+	background: #FFF;
+	border: 1px dashed #CCC;
+}
+
+div.i-css-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #FFF;
+	border: 1px dashed #CCC;
+}
+	
+div.i-js-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #FFF;
+	border: 1px dashed #CCC;
+}
+div.i-TapestryIntegration_html-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #FFF;
+	border: 1px dashed #CCC;
+}
+div.i-tapestry_java-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #FFF;
+	border: 1px dashed #CCC;
+}
+div.i-tapestry_js-code {
+	overflow: auto;
+	min-height: 80px;
+	margin: 1%;
+	color: #000;
+	background: #FFF;
+	border: 1px dashed #CCC;
+}
+/* --- ZERO CLIPBOARD --- */
+div.clip-container {position: relative; float: right; width: 93px; right: 20px; top: 20px;}
+div.clip-button {
+	width: 93px;
+	height: 26px;
+	font-size: 1px;
+	color: #FFF;
+	background: transparent url(../img/k-theme2/copy2clip-trans.png) no-repeat;
+}
+
+/*
+div.i-html-code:hover .clip-button {visibility: visible;}
+div.i-css-code:hover .clip-button {visibility: visible;}
+div.i-js-code:hover .clip-button {visibility: visible;}
+div.i-tapestry_html-code:hover .clip-button {visibility: visible;}
+div.i-tapestry_java-code:hover .clip-button {visibility: visible;}
+div.i-tapestry_js-code:hover .clip-button {visibility: visible;}*/
+
+/* Add to Basket */
+#toBasket {margin-top: -5em;}
+
+#downloadList {border: 1px solid #837060; border-top: none;}
+#downloadList ul.i-list {
+	overflow: auto;
+	max-height: 8em; 
+	padding: 0;
+	border-bottom: 1px solid #837060;
+}
+#downloadList h3 {font-size: 0.8em; padding-left: 30px;}
+
+li.basket-item {
+	list-style-type: none;
+	font-size: 0.8em;
+	padding: 0.4em 0.6em;
+	border-bottom: 1px dashed #CCC;
+}
+	li.basket-item:before {content: "\2714 \00A0"}
+
+#downloadList fieldset {
+	width: 83%;
+	background: #EEE;
+	padding: 0 3% 1em;
+	margin: 0.9em auto 0.6em;
+	border: none;
+}
+
+#downloadList legend {
+	float: none;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: left;
+	color: #000;
+	background: #EEE;
+	padding: 0.4em 0.6em 0;
+	border-top-right-radius: 5px;
+}
+#downloadList fieldset.k-radio {width: auto; padding-bottom: 0;}
+#downloadList fieldset.k-radio legend {padding: 1em 0 0;}
+
+#downloadList p {font-size: 0.75em;}
+#downloadList .content p:first-child {
+	background: #EFEFEF;
+	padding: 2% 4%;
+	margin: 4%;
+}
+#downloadList p.k-check {float: none; padding: 0 1%; margin: 0;}
+
+/* --- HOME PAGE --- */
+
+/*  ie warning  */
+#ie-warning {
+	display: none; text-align: center; color: #000; background: #FCC16A; padding: 1em; margin-bottom: 2em;}
+
+/* --- Slider --- */
+#slider {
+	float: left;
+	overflow: hidden;
+	width: 67%;
+	margin-bottom: 2em;
+	border: 1px solid #FFF;
+	outline: 2px solid #000;
+}
+	#slider ul {padding: 0;}
+	#slider li {list-style-type: none; line-height: 1; padding: 0;}
+	#slider img {max-width: 100%; vertical-align: bottom;}
+
+
+/* --- Highlight --- */
+#highlight {float: right; width: 23%; padding: 0 5% 0 3%;}
+
+	#highlight h2 {
+		font-weight: bold;
+		line-height: 1.2;
+		margin: 0.5em 0;
+	}
+	#highlight li {
+		margin: 0 0 0 15px;
+	}
+	#highlight p {line-height: 1.4; font-size: 1em; margin-bottom: 0.5em;}
+	#highlight p.k-readmore {margin-top: 1em;}
+
+/* --- Topics --- */
+div.i-topics {
+	float: left;
+	width: 100%;
+	background: #FFF url(../img/k-theme2/bg_mainNav.gif) repeat-x;
+	padding-top: 5px;
+}
+	div.i-topics div.k-info-block {
+		clear: none;
+		float: left;
+		width: 73%;
+		color: #000;
+		background: #FFF;
+		padding: 1em 0 0 4%;
+	}
+	div.i-topics div.k-info-block:last-child {margin-top: -1em; border-top: 1px solid #000;}
+	
+	div.i-topics div.k-info-block h2 {
+		font-size: 1.5em;
+		color: #F90;
+		padding: 0;
+		margin: 0 0 0.5em;
+	}
+	div.i-topics div.k-info-block p {font-size: 0.85em; line-height: 1.58; margin: 0 0 0.5em;}
+	
+	div.i-topics div.k-illustration-block.to-left {width: auto;}
+	
+/* New component topic */
+#on-the-spot {
+	float: left;
+	width: 18%;
+	padding: 1.5em 4% 0 0;
+	margin: 0 0 1em;
+	border-right: 1px solid #000;
+}
+
+	#on-the-spot div.hgroup {background: none;}
+	#on-the-spot h2 {
+		font-size: 0.9em;
+		font-weight: bold;
+		margin: 0;
+	}
+	#on-the-spot h3 {
+		font-size: 1.5em;
+		padding: 0;
+		border: none;
+	}
+
+
+/* Contact box */
+#contact {
+	border: 1px solid #68C800;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+	#contact div.hgroup {background: none;}
+	#contact h2 {
+		margin: 5px 0 0;
+		color: #71533A;
+		background: none;
+	}
+
+
+/* --- CONTACT US --- */
+
+#contact-form label {float: none; display: block; width: auto; text-align: left;}
+#ipEmail {width: 30em;}
+#ipQuestion {width: 90%;}
+
+/* --- DOWNLOAD PAGE --- */
+
+
+div.aside {
+	float: right;
+	width: 25%;
+	background: #EEE;
+	padding: 1%;
+}
+#group-components {float: left; width: 65%;}
+
+	div.aside fieldset {
+		background: #EEE;
+		border: none;
+		border-bottom: 1px dashed #837060;
+	}
+		div.aside fieldset fieldset {border: none;}
+	
+	div.aside label {
+		float: none;
+		display: block;
+		width: auto;
+		text-align: left;
+	}
+	div.aside legend {
+		color: #F90;
+		background: #EEE;
+		padding-left: 0;
+	}
+
+	div.aside p.k-check {padding-left: 0;}
+		div.aside p.k-check label {display: inline;}
+		div.aside .k-radio legend {
+			float: none;
+			display: block;
+			width: auto;
+			text-align: left;
+			color: #000;
+			background: #EEE;
+		}
+		
+	div.aside p.k-buttons-bar {text-align: center;}
+
+
+#complete-selection {
+	display: none;
+	float: left;
+	width: 100%;
+	color: #000;
+	background: #E1E9F1;
+	padding: 0.2em 0;
+	margin-bottom: 2em;
+}
+	#complete-selection label {width: auto; padding: 0 5em 0 2.6em;}
+	#complete-selection p {float: left; width: auto;}
+	
+	#complete-selection + fieldset {margin-top: 4em;}
+	
+	legend label {float: none;}
+	
+#total-selection {
+	display: inline-block;
+    background: #FFF;
+    padding: 1px 5px;
+    border: 2px solid #84D0F0;
+}
+
+#group-components ul {margin: 0; padding: 0;}
+#group-components li {list-style-type: none;}
+#group-components ul.k-check li {display: inline-block; width: 20em;}
+
+.alone {
+	text-align: left;
+	color: #F90;
+	background: #FFF url(../img/k-theme2/bg_pixCCC.gif) 0 0.8em repeat-x;
+	padding: 0 0 2em 20px;
+	margin-top: 2em;
+}
+	.alone label {
+		float: none;
+		width: auto;
+		background: #FFF;
+	}
+
+/* Download buttons */
+input.major-action {
+	width: auto;
+	height: 2em;
+	line-height: 2em;
+	font-size: 2em;
+	padding: 0 0.8em;
+}
+
+/* Follow-up fieldset */
+#group-followUp {
+	color: #000;
+	background: #FFF;
+	margin-bottom: 2em;
+	border: none;
+}
+	
+	#group-followUp legend {position: absolute; text-indent: -9999px; background: transparent;}
+
+#email {width: 90%; margin-top: 5px;}
+#downloadForm #theme {width: 90%; margin-top: 5px;}
+
+
+/* --- ABOUT KAWWA PAGES --- */
+.stressed {color: #C00;}
+
+ul.i-menu {padding: 0;}
+	ul.i-menu li {
+		list-style-type: none;
+		padding: 0.4em 0; 
+		border-bottom: 1px solid #000;
+	}
+		ul.i-menu li li {border-bottom: none;}
+	
+	ul.i-menu a, ul.i-menu a:link {text-decoration: none;}
+	ul.i-menu li.active strong {color: #F60;}
+
+
+/* Example templates */
+
+#theTemplates div.k-illustration-block img {border: none; outline: none;}
+#theTemplates div.k-illustration-block.to-left {width: 70%;}
+#theTemplates .content li {list-style-position: inside;}
+
+/* --- DOCUMENTATION PAGE --- */
+
+#theTemplates h3 {float: left; width: 100%; margin-top: 2em;}
+#theTemplates h3:first-child {margin-top: 0;}
+
+dl.i-doc-list {margin-bottom: 2em;}
+	dl.i-doc-list dt {
+		font-weight: bold;
+		padding-bottom: 1em;
+	}
+	dl.i-doc-list dd {padding: 0.5em 0 0.5em 0.5em;}
+	dl.i-doc-list dd:nth-child(even) {background: #F0EBE6;}
+	dl.i-doc-list a {float: left; width: 60%;}
+
+/* --- LOCAL ADJUSTEMENTS FOR COMPONENTS --- */
+#i-component #language-choice label {padding-bottom: 4px;}
+
+#i-component p.k-readmore {
+	color: #000;
+	background-color: #FFF;
+}
+
+#i-component div.k-article {background: #FFF;}	
+
+
+/* e-commerce */
+#i-component div.k-product {background: #FFF; margin: 0;}
+#i-component div.k-basket.k-panel .content {display: block; background: #FFF;}
+#i-component .k-basket-sum {position: static; width: 16em; text-align: left;}
+
+#i-component div.k-product-options {background: #FFF;}
+
+#i-component div.photo-data {position: relative;}
+#i-component div.k-product-gallery:after {top: 25px;}
+
+/*  Language choice */
+#i-component form.k-language {position: static; width: 5.2em;}
+
+/* Login form/data */
+#i-component form.k-login {position: relative; top: 0;}
+
+#i-component #loginLink a, #i-component #loginLink a:link, #i-component #loginLink a:visited {
+	position: static;
+}
+#i-component p.k-login-data {position: static;}
+
+
+/* Sitemap */
+#i-component ul.k-sitemap {width: 96%; background: #FFF; padding: 2%;}
+	#i-component ul.k-sitemap li {width: 18%;}
+		#i-component ul.k-sitemap li li {width: 100%; padding: 0.5em 0;}
+
+
+/*-------------------------------------------- MEDIA QUERIES ---------------------------------------------- */
+
+/* Middle Res --------------------------------------------- */
+@media only screen and (min-width : 480px) and (max-width : 750px) {
+	#highlight {clear: both; float: none; width: 100%; margin-bottom: 1em;}
+	#slider {width: 100%; text-align: center;}
+	#toBasket {margin-top: -3em;}
+	
+	input.major-action {font-size: 1em;}
+}
+
+/* iPhone (portrait & landscape) --------------------------------------------- */
+@media only screen and (min-width : 300px) and (max-width : 480px) {
+	h2 {margin: 1.5em 0 0;}
+	#highlight {float: none; width: 100%; margin-bottom: 1em;}
+	#slider {width: 100%;}
+	#toBasket {margin: -2em 0 1em;}	
+	
+	div.i-topics {border: none;}
+	div.i-topics div.k-info-block {width: 96%;}
+	#on-the-spot {
+		width: 96%;
+		color: #000;
+		background: #EEE;
+		padding: 0.5em 2%;
+		border: none;
+	}
+	
+}

@@ -1,0 +1,199 @@
+ // KAWWA DEFAULT THEME
+// Variables
+// V 1.0 11/2013
+
+// Font families
+$font_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$italic_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$bold_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$title_stack: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+
+
+// Colors
+
+$identity_clr:		#000;
+$identity_txt:		#FFF;
+$secondary_clr		#A40800;
+$secondary_txt		#FFF;
+$hot_clr			#A40800;
+$hot_txt			#FFF;
+$alert_clr:			#C00;
+$text_clr:			#050505;
+$neutral_clr:		#808080;
+$neutral_txt:		#FFF;
+$neutral_drk_clr:	#3E3E3E;
+$neutral_drk_txt:	#FFF;
+
+$neutral_md_clr:	#CCC;
+$neutral_lgt_clr:	#EEE;
+
+
+$modal_bg:			rgba(0,0,0,.85);
+
+// KAWWA
+// MIXINS
+// V 1.0 11/2013
+
+// BORDER BOX
+@mixin M_borderBox {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// FLEX CONTAINER
+@mixin M_flexCon($flow) {
+	display: flex;
+	-moz-display: flex;
+	-webkit-display: flex;
+	flex-flow: $flow;
+	-webkit-flex-flow: $flow;
+	flex-direction: $flow;
+}	
+	
+
+// SIMPLE TRANSFORMATIONS 
+@mixin M_transform($type) {
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+	-webkit-transform: $type;
+	transform: $type;
+}
+
+
+// TRANSITIONS 
+@mixin M_transition($what) {
+	-moz-transition: $what;
+	-ms-transition: $what;
+	-o-transition: $what;
+	-webkit-transition: $what;
+	transition: $what;
+}	
+
+// STRIPS BACKGROUND 
+@mixin M_stripes($clr) {
+	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+}
+
+/* ----------------------------- TABBED DATA ------------------------------- */
+
+
+.k-tabbed-data {
+	clear: both;
+	
+	ul.tabs {
+		float: left;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			float: left;
+			width: auto;
+			list-style-type: none;
+			font: 1em $title_stack;
+			text-transform: uppercase;
+			padding: 0;
+			margin-right: 5px;
+		}
+		a, a:link, a:visited {
+			display: block;
+			text-decoration: none;
+			color: $identity_clr;
+			background: #FFF;
+			padding: 5px 10px;
+			border: 1px solid $neutral_clr;
+			border-bottom: none;
+		}
+		a:hover, a:focus {color: #FFF; background: $identity_clr;}
+		a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
+		
+		// Selected tab 
+		a.active, a.active:link, a.active:visited {
+			color: #FFF;
+			background: $identity_clr;
+			border: 1px solid $identity_clr;
+		}
+		a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
+		
+		// Disabled tab 
+		a.off, a.off:link, a.off:visited {
+			color: $neutral_md_clr;
+			background: #FFF;
+			border: 1px solid $neutral_clr;
+		}
+		a.off:focus {
+			color: $neutral_md_clr;
+			background: #FFF;
+		}
+		strong.off {
+			display: block;
+			font-weight: normal;
+			text-decoration: none;
+			color: $neutral_md_clr;
+			background: #FFF;
+			padding: 5px 10px;
+			border: 1px solid $neutral_clr;
+			border-bottom: none;
+		}
+	}
+	
+	> .content {
+		clear: both;
+		overflow: auto;
+		color: $identity_clr;
+		background: #FFF;
+		padding: 5px 10px 10px;
+		margin-bottom: 2em;
+		border: 1px solid $identity_clr;
+	}
+}
+
+/* ADAPTIVE VIEW */
+
+.k-tabbed-data.adaptive {
+	position: relative;
+	
+	ul.tabs {
+		clear: both;
+		padding: 0;
+		margin: 0;
+	
+		li {
+			float: left;
+			width: 100%;
+			padding: 0 0 0.1em;
+			
+			a, a:link, a:visited {
+				@include M_borderBox;
+				color: #FFF;
+				background-color: $identity_clr;
+				padding: 0.5em 50px 0.5em 0.7em;
+			}
+			a.active:hover, a.active:focus {color: #FFF; background: $hot_clr;}
+			
+			a.transformed, a.transformed:link, a.transformed:visited  {
+				position: absolute;
+				width: 100%;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				z-index: 0;
+			}
+			a.transformed.active, a.transformed.active:link, a.transformed.active:visited {
+				background: $identity_clr url(../img/k-theme0/nav-control.svg) top right no-repeat;
+				background-size: 32px;
+				opacity: 1;
+				z-index: 100;
+			}
+		}
+	}
+}
+

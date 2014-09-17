@@ -1,0 +1,282 @@
+/* -------------------------------------------------------------------- 
+        		KAWWA2 - Theme 0
+      	  Hacks for Internet Explorer (< v9)
+          By Le Studio, Atos Worldline, 2013
+-------------------------------------------------------------------- */
+
+/*  "*" is for IE6 and 7 */
+/*  "_" is for ie6 only */
+/* no hack means all IE versions <9 */
+
+/* --- PAGE RESTRUCTURE --- */
+
+#container {width: 1280px; max-width: 1280px; min-width: 800px;}
+header[role=banner], #header {*height: 60px; float: left; background: #000;}
+aside[role=complementary], #sidebar {*padding-left: 40px; _padding-left: 20px;}
+aside[role=complementary] h2.k-skip, #sidebar h2.k-skip {display: none;}
+
+#wrapper {_float: left; _width: 99%;}
+#main-alone {float: left; width: 100%;} /* alone */
+#main-menu {float: right; width: 83%;} /* with menu only */
+#main-aside {float: left; width: 76%; margin-left: 0;} /* with sidebar only */
+
+#footer {*float: left; *width: 94%;}
+
+/* --- DOUBLE MARGIN BUG --- */
+div.k-catalog .k-product {_display: inline;}
+div.i-topics div.k-info-block {_display: inline;}
+
+/* --- PORTAL HOME PAGE ---*/
+
+#home h1 {width: 50%;}
+#home #header {*height: 10em; _height: 8em;}
+#home #wrapper {float: left; overflow: visible;}
+#home aside {*width: 23%; *background: #000; *padding: 1em 5%;}
+#highlight li {*float: left; *width: auto;}
+
+dl.legend dt, dl.legend dd {*display: inline;}
+dl.legend dt {*padding-right: 5px;}
+
+#components-list {_overflow: auto;}
+#components-list section {*background: #EEE;}
+#components-list li {*line-height: 1.5;}
+
+#footer a, #footer a:link, #footer a:visited {color: #FFF;}
+
+#download-entry a, #download-entry a:link, #download-entry a:visited {padding-left: 5%;}
+#download-entry a:after {width: 0; height: 0;} 
+#download-entry a:before {content: "";}
+
+/* ------------------------ GENERAL FIXES ------------------------- */
+
+body {_line-height: 1.5;}
+
+h1 {_display: inline; background: url(../img/k-theme0/kawweagle_small.png) -1px 10px no-repeat;}
+legend {margin-bottom: 21px;}
+
+/* --- NAVIGATON --- */
+
+ul.k-navbar a, ul.k-navbar a:visited, ul.k-navbar li.active strong {_display: inline-block;}
+ul.k-navbar .dropdown li {float: left; width: 100%;}
+p.view-all a {_float: left; _width: 100%;}
+
+p.k-breadcrumbs {padding: 0.5em 4%;}
+
+ul.i-menu li li {line-height: 1.2;}
+
+/* --- FORMS --- */
+
+input[type=radio], input[type=checkbox] {border: none;}
+
+fieldset.k-check legend, fieldset.k-radio legend {
+	_float: none;
+	_width: auto;
+	_text-align: left;
+	_padding: 0;
+}
+fieldset.k-check p {}
+ul.actions a, ul.actions a:link, ul.actions a:visited {
+	_width: 45px;
+}
+
+/* Buttons (ie6 only) */
+input.btSubmit {
+	font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	background: #A40800;
+	padding: 0.3em 1em;
+	margin: 0 5px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+input.btReset {
+	font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	background: #3E3E3E;
+	padding: 0.3em 1em;
+	margin: 0 5px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+input.btDisabled {
+		text-shadow: none;
+		color: #999;
+		background: #CCC;
+		box-shadow: none;
+		cursor: default;
+}
+input.btOptional {
+	font: 100% NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	background: #3E3E3E;
+	padding: 0.3em 1em;
+	margin: 0 5px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+
+form.k-language {*width: 6em; *text-align: right;}
+
+ul.k-tools-list li {*padding-top: 1.5em; *border-left: 1px solid #FFF;}
+
+/* Search form */
+.k-search input.btSubmit {
+	font-size: 12px;
+}
+
+/* Login form */
+#k-login input.btSubmit {_margin-top: 10px}
+
+/* Form wizard */
+ul.k-form-steps li {
+	*display: inline;
+	*float: left;
+	*width: auto;
+}
+ul.k-form-steps li.active {background-position: 0 0.4em;}
+
+/* --- BLOCKS --- */
+
+/* Accordion/collapsible panels */
+.k-panel {*overflow: visible; *border: none;}
+.k-panel .control {
+	_float: left;
+	_width: 98%;
+	_padding: 3px 1% 4px;
+}
+.k-panel .content {*border: none;}
+.k-panel legend.control {margin-left: -0.8%;}
+ 
+ 
+/* --- TOOLTIPS'n MODALS --- */
+ .ui-dialog {*top: 10%; *left: 40%;}
+ a.ui-dialog-titlebar-close, a:link.ui-dialog-titlebar-close, a:visited.ui-dialog-titlebar-close {
+		*top: 0;
+		*left: -3px;
+	}
+
+/* --- TREEVIEW --- */
+div.k-tree li, div.k-tree li ins {_background: none; cursor: pointer;}
+div.k-tree li.jstree-leaf, div.k-tree li.jstree-leaf ins {_cursor: default;}
+
+/* --- TABS --- */
+
+div.k-tabbed-data .content {
+	*float: left;
+	*width: 100%; 
+	*margin-bottom: 2em; 
+	*border: 1px solid #000;
+}
+
+	
+/* --- EDITORIAL --- */
+
+.k-intro {*width: 40em;}
+blockquote {padding-bottom: 2em;}
+
+
+	
+/* --- CAROUSEL --- */
+.k-carousel li {
+	*float: left;
+	*display: inline;
+	*width: 101px; 
+	*list-style-type: none;
+	*margin: 1em;
+}
+
+.k-carousel .jcarousel-container-horizontal {
+    *width: 300px;
+    *padding: 20px 67px;border: 1px solid #C00
+}
+
+.k-carousel .jcarousel-clip-horizontal {
+   *width:  101px;
+    *height: 12.5em;
+}
+
+.k-carousel .jcarousel-clip-vertical {
+   *width:  101px;
+    *height: 12.5em;
+}
+
+.k-carousel .jcarousel-item {
+   *width:  101px;
+    *height: 12.5em;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.k-carousel .jcarousel-next-horizontal {
+    *position: absolute;
+    *top: 43px;
+    *left: 160px;
+    *width: 47px;
+    *height: 47px;
+    *cursor: pointer;
+}
+
+.k-carousel .jcarousel-prev-horizontal {
+    *position: absolute;
+    *top: 43px;
+    *left: -60px;
+    *width: 47px;
+    *height: 47px;
+    *cursor: pointer;
+}
+
+/* --- DATA TABLES --- */
+div.dataTables_wrapper {*width: 96%;}
+div.dataTables_wrapper {*position: static;}
+div.dataTables_info {*position: static;}
+
+
+/* --- E-COMMERCE --- */
+
+/* No choice between list or blocks for IE6 and 7 */
+
+ul.catalog-view {*display: none;}
+.k-catalog .hproduct {*float: none; *width: 94%; *padding: 2% 3%;}
+.k-catalog div.photo-data {*float: left; *width: 30%;}
+.k-catalog div.product-data {*float: right; *width: 65%;}
+.k-catalog .name {*height: auto; *padding-right: 15%;}
+
+.k-product-sheet .price {font-size: 100%;}
+.k-product-sheet div.product-data .price {font-size: 210%;}
+.k-product-sheet div.photo-data {width: 35%;}
+.k-product-sheet div.product-data {width: 58%;}
+
+
+/* quantity */
+.k-quantity span {*height: 20px; *font-size: 16px; *vertical-align: 3px;}
+.k-basket span {*height: 16px; *vertical-align: 0;}
+
+/* ZOOM */
+
+.zoomPreload {
+    *width: 100px;
+    *height: 49px;
+   filter: alpha(opacity = 80);
+}
+.zoomPup {filter: alpha(opacity = 60);}
+.zoomIframe {filter:alpha(opacity=0);}
+
+/* OPTIONS */
+div.k-product-options p {*padding: 0 0 1em 10px; *margin-bottom: 1em;}
+
+/* RATING */
+
+fieldset.k-rating p {*padding: 0 0 1em 7px;}

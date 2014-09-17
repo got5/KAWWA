@@ -1,0 +1,18 @@
+/* ----------------------------- SKIP LINK ------------------------------- */
+
+.k-skip {
+	display: inline;
+	font-size: 1em;
+	
+	a, a:link, a:visited {
+		position: absolute;
+		overflow: hidden;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+	}
+	a:focus {position: static; width: auto; height: auto;}
+}
+	
+

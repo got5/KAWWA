@@ -1,0 +1,70 @@
+<t:container 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+
+	<nav>
+		
+			<p class="control"><a href="#" title="Click to open/close menu"><img src="${urlImg}" alt="Menu"/></a></p>
+			<h2 class="k-skip">
+				<a href="#wrapper">Skip this menu</a>
+			</h2>
+			<ul class="i-navbar">
+				<li class="${getClass(0)}"><t:if t:test="${isActive(0)}">
+						<strong title="Current Section">Home</strong>
+						<p:else>
+							<t:pagelink page="index">Home</t:pagelink>
+						</p:else>
+					</t:if></li>
+
+				<li class="${getClass(4)}"><t:if t:test="${isActive(4)}">
+						<strong title="Current Section">All About Kawwa</strong>
+						<p:else>
+							<t:pagelink page="KawwaPortal">All About Kawwa</t:pagelink>
+						</p:else>
+					</t:if></li>
+
+				<li class="${getClass(5)}"><t:if t:test="${isActive(5)}">
+						<strong title="Current Section">Example Templates</strong>
+						<p:else>
+							<t:pagelink page="templates">Example Templates</t:pagelink>
+						</p:else>
+					</t:if></li>
+
+				<t:if t:test="isAtos()">
+					<li class="${getClass(2)}"><t:if t:test="${isActive(2)}">
+							<strong title="Current Section">Documentation &amp;
+								Tools</strong>
+							<p:else>
+								<t:pagelink page="documentation">Documentation &amp; Tools</t:pagelink>
+							</p:else>
+						</t:if></li>
+				</t:if>
+				<li class="${getClass(3)}"><t:if t:test="${isActive(3)}">
+						<strong title="Current Section">Downloads</strong>
+						<p:else>
+							<t:pagelink page="download">Downloads</t:pagelink>
+						</p:else>
+					</t:if></li>
+					
+				<t:if t:test="newTheme()" t:negate="true">	
+				<li class="${getClass(1)}"><t:if t:test="${isActive(1)}">
+						<strong title="Current Section">Kawwa Components</strong>
+						<p:else>
+							<t:pagelink page="Components">Kawwa Components</t:pagelink>
+						</p:else>
+					</t:if></li>
+					
+					<p:else>
+						<li class="${getClass(1)} compo-entry"><a
+							href="#components-list">Kawwa Components</a></li>	
+					</p:else>
+				
+				</t:if>
+
+			</ul>
+
+	</nav>
+
+
+</t:container>

@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="awl.frontsolutions.SearchboxSpec" tests="21" failures="0" errors="0" timestamp="2013-11-06T09:50:20" hostname="L80576" time="24.162">
+  <properties/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Index" classname="awl.frontsolutions.SearchboxSpec" time="1.785"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/AboutKawwa" classname="awl.frontsolutions.SearchboxSpec" time="1.269"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Accessibility" classname="awl.frontsolutions.SearchboxSpec" time="1.201"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Angular" classname="awl.frontsolutions.SearchboxSpec" time="1.178"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Component" classname="awl.frontsolutions.SearchboxSpec" time="1.394"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/ComponentApproach" classname="awl.frontsolutions.SearchboxSpec" time="1.296"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Contact" classname="awl.frontsolutions.SearchboxSpec" time="1.325"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Documentation" classname="awl.frontsolutions.SearchboxSpec" time="1.329"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Download" classname="awl.frontsolutions.SearchboxSpec" time="1.302"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Faq" classname="awl.frontsolutions.SearchboxSpec" time="1.154"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/HowTo" classname="awl.frontsolutions.SearchboxSpec" time="1.728"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/IeFix" classname="awl.frontsolutions.SearchboxSpec" time="1.064"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/KawwaPortal" classname="awl.frontsolutions.SearchboxSpec" time="1.475"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/License" classname="awl.frontsolutions.SearchboxSpec" time="0.852"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Releases" classname="awl.frontsolutions.SearchboxSpec" time="0.842"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Releases" classname="awl.frontsolutions.SearchboxSpec" time="1.106"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Login" classname="awl.frontsolutions.SearchboxSpec" time="0.743"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Tapestry" classname="awl.frontsolutions.SearchboxSpec" time="0.838"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Templates" classname="awl.frontsolutions.SearchboxSpec" time="0.786"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/UnobtrusiveApproach" classname="awl.frontsolutions.SearchboxSpec" time="0.758"/>
+  <testcase name="nav should have role=navigation and role=searchfor /Portal/Updates" classname="awl.frontsolutions.SearchboxSpec" time="0.725"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

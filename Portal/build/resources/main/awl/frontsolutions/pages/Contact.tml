@@ -1,0 +1,65 @@
+<html t:type="layout" title="Contact us"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div id="main">
+
+
+
+	<h2>Contact Us</h2>
+
+
+
+
+
+	<div class="k-intro">
+
+		<p>
+			<strong>Your bug-repports, comments, suggestions, questions
+				and feedbacks are welcome!</strong>
+		</p>
+
+	</div>
+
+
+
+	<t:form t:id="contextForm" t:clientValidation="false">
+		<t:errors />
+
+		<fieldset>
+			<legend>Contact Form</legend>
+
+			<p>
+				<t:label t:for="namecontact">* Name</t:label>
+				<t:textfield t:id="namecontact" />
+			</p>
+			<p>
+				<t:label t:for="emailcontact">* Email</t:label>
+				<t:textfield t:id="emailcontact" />
+			</p>
+			<p>
+				<t:label t:for="bodycontact">* Message</t:label>
+				<t:textarea t:id="bodycontact" rows="10" cols="60"/>
+			</p>
+			<p>
+				<t:submit value="Submit" />
+			</p>
+
+		</fieldset>
+	</t:form>
+
+
+
+
+</div>
+
+
+
+<div id="sidebar">
+
+	<t:themeswitcher />
+
+</div>
+
+
+</html>

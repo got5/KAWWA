@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+<body>
+	
+	
+		<form t:type="form" t:id="quantityForm" id="quantityForm" method="post">
+
+			<fieldset id="fsGeneral">
+				<label for="Quantité">Quantité1</label> <input t:type="textfield" t:value="quantity_1" type="text" value="0" t:mixins="kawwa2/productquantity" />
+				<label for="Quantité">Quantité2</label> <input t:type="textfield" t:value="quantity_2" type="text" value="0" t:mixins="kawwa2/productquantity" />
+				<label for="Quantité">Quantité3</label> <input t:type="textfield" t:value="quantity_3" type="text" value="0" t:mixins="kawwa2/productquantity" />
+			</fieldset>
+
+			<fieldset id="fsSubmit">
+				<input t:type="submit" t:clientId="btSubmit" type="button" value="Submit" />
+			</fieldset>
+
+		</form>
+		
+</body>
+</html>

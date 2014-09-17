@@ -1,0 +1,171 @@
+ // KAWWA DEFAULT THEME
+// Variables
+// V 1.0 11/2013
+
+// Font families
+$font_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$italic_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$bold_stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$title_stack: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+
+
+// Colors
+
+$identity_clr:		#000;
+$identity_txt:		#FFF;
+$secondary_clr		#A40800;
+$secondary_txt		#FFF;
+$hot_clr			#A40800;
+$hot_txt			#FFF;
+$alert_clr:			#C00;
+$text_clr:			#050505;
+$neutral_clr:		#808080;
+$neutral_txt:		#FFF;
+$neutral_drk_clr:	#3E3E3E;
+$neutral_drk_txt:	#FFF;
+
+$neutral_md_clr:	#CCC;
+$neutral_lgt_clr:	#EEE;
+
+
+$modal_bg:			rgba(0,0,0,.85);
+
+// KAWWA
+// MIXINS
+// V 1.0 11/2013
+
+// BORDER BOX
+@mixin M_borderBox {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// FLEX CONTAINER
+@mixin M_flexCon($flow) {
+	display: flex;
+	-moz-display: flex;
+	-webkit-display: flex;
+	flex-flow: $flow;
+	-webkit-flex-flow: $flow;
+	flex-direction: $flow;
+}	
+	
+
+// SIMPLE TRANSFORMATIONS 
+@mixin M_transform($type) {
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+	-webkit-transform: $type;
+	transform: $type;
+}
+
+
+// TRANSITIONS 
+@mixin M_transition($what) {
+	-moz-transition: $what;
+	-ms-transition: $what;
+	-o-transition: $what;
+	-webkit-transition: $what;
+	transition: $what;
+}	
+
+// STRIPS BACKGROUND 
+@mixin M_stripes($clr) {
+	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, $clr 5px, $clr 20px);
+}
+
+/* ----------------------------- VERTICAL MENU ------------------------------- */
+
+.k-vertical-menu {
+	
+	> ul {
+		clear: both;
+		padding: 0;
+		margin: 0;
+	
+		> li {
+			float: left;
+			width: 100%;
+			list-style-type: none;
+			font: 1em $title_stack;
+			text-transform: uppercase;
+			padding: 0 0 0.1em;
+		}
+		
+	}
+	
+	a, a:link, a:visited {
+		display: block;
+		text-decoration: none;
+		color: $neutral_txt;
+		background: $neutral_clr url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
+		padding: 0.5em 28px 0.5em 0.7em;
+		cursor: pointer;
+	}
+	a:focus {
+		color: $identity_txt;
+		background: $identity_clr url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
+	}
+	a.active, a.active:link, a.active:visited {
+		color: $identity_txt;
+		background: $identity_clr url(../img/k-theme0/fold-trans.png) right 0.5em no-repeat;
+	}
+	
+	// If there is no sub-menu
+	a.no-child, a.no-child:link, a.no-child:visited {
+		background-image: none;
+	}
+	a.no-child:focus {background-image: none;}
+	a.no-child.active, a.no-child.active:link, a.no-child.active:visited {
+		background: $identity_clr;
+	}
+}
+
+.k-vertical-menu + .k-vertical-menu {clear: both; padding-top: 2em;}
+	
+// Level 2 list
+
+ul.level2 {
+	padding: 0;
+	
+	> li {
+		width: 94%;
+		font-size: 90%;
+		list-style-type: none;
+		font-family: $font_stack;
+		text-transform: none;
+		color: #000;
+		background: #FFF; 
+		padding: 0.5em 2% 0.5em 0.7em;
+		border-top: 1px dashed $neutral_md_clr;
+		
+		ul {padding-left: 1em;}
+	}
+	li:first-child {border: none;}
+	
+	a, a:link {
+		text-decoration: none;
+		color: $neutral_drk_clr;
+		background: #FFF;
+		padding-left: 0;
+	}
+	a:visited {color: $neutral_clr; background: #FFF;}
+	a:hover, a:focus {text-decoration: underline;}
+	
+}
+	
+/* Touch specifics */
+html.touch {
+	.k-vertical-menu > ul > li {font-size: 1.2em;}
+}
+		
+	
+

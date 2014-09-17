@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+ 	
+ 	
+ 	<t:jquery.dialog t:clientId="myDialog" class="k-modal">
+	<h3 class="modal-header">Dialog test!</h3>
+		Modal Window		
+	</t:jquery.dialog>
+				
+	<p>
+		<label t:type="label" t:for="field1">Enter Something</label>
+		<input t:type="textField" t:id="field1" />
+		<t:jquery.dialoglink t:dialog="myDialog" class="k-field-help"
+			title="About the Field Enter something">
+			
+			<img src="${asset:classpath:net/atos/kawwaportal/components/theme/img/k-theme1/pic_help.png}" 
+			alt="[ Help ]"/>
+			
+		</t:jquery.dialoglink>
+	</p>
+	
+</html>

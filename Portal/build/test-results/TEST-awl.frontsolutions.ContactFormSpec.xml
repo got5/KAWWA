@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="awl.frontsolutions.ContactFormSpec" tests="1" failures="1" errors="0" timestamp="2013-10-21T12:09:02" hostname="L80576" time="1.952">
+  <properties/>
+  <testcase name="label associated to input" classname="awl.frontsolutions.ContactFormSpec" time="1.952">
+    <failure message="java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list" type="java.lang.IllegalStateException">java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:176)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:105)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:69)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
+	at geb.driver.NameBasedDriverFactory.getDriver(NameBasedDriverFactory.groovy:42)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy:80)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy)
+	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
+	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
+	at geb.Configuration.createDriver(Configuration.groovy:354)
+	at geb.Configuration.getDriver(Configuration.groovy:343)
+	at geb.Browser.getDriver(Browser.groovy:105)
+	at geb.Browser.go(Browser.groovy:394)
+	at geb.Browser.go(Browser.groovy:386)
+	at geb.spock.GebSpec.methodMissing(GebSpec.groovy:51)
+	at awl.frontsolutions.ContactFormSpec.label associated to input(ContactFormSpec.groovy:8)
+</failure>
+    <failure message="java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list" type="java.lang.IllegalStateException">java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see http://code.google.com/p/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://code.google.com/p/chromedriver/downloads/list
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:176)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:105)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:69)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
+	at geb.driver.NameBasedDriverFactory.getDriver(NameBasedDriverFactory.groovy:42)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy:80)
+	at geb.driver.CachingDriverFactory.getDriver_closure3(CachingDriverFactory.groovy)
+	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
+	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
+	at geb.Configuration.createDriver(Configuration.groovy:354)
+	at geb.Configuration.getDriver(Configuration.groovy:343)
+	at geb.Browser.getDriver(Browser.groovy:105)
+	at geb.Browser.clearCookies(Browser.groovy:483)
+	at geb.Browser.clearCookiesQuietly(Browser.groovy:491)
+	at geb.spock.GebSpec.resetBrowser(GebSpec.groovy:45)
+	at geb.spock.GebSpec.cleanup(GebSpec.groovy:67)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

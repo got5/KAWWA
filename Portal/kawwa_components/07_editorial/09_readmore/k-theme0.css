@@ -1,0 +1,16 @@
+/* ----------------------------- READ MORE ------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/09_readmore\/k-theme0\.scss}line{font-family:\0000387}}
+p.k-readmore {
+  clear: both;
+  color: #000;
+  background: #FFF;
+  padding: 0.5em 0 0 0;
+  border-top: 1px dashed gray; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/09_readmore\/k-theme0\.scss}line{font-family:\0000396}}
+p.k-readmore::after, .k-article .e-content > p.k-readmore::after {
+  content: "\00A0 \00BB"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/09_readmore\/k-theme0\.scss}line{font-family:\00003100}}
+p + p.k-readmore {
+  margin-top: 1em; }

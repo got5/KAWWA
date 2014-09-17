@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="awl.frontsolutions.ComponentSpec" tests="2" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="L80576" time="1.383731373427E9">
+  <properties/>
+  <testcase name="A Component page should have a DEMO tab" classname="awl.frontsolutions.ComponentSpec" time="7.137"/>
+  <testcase name="A Component page should have a HTML5 tab" classname="awl.frontsolutions.ComponentSpec" time="1.459"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver (v2.4.226107) on port 44420
+]]></system-err>
+</testsuite>

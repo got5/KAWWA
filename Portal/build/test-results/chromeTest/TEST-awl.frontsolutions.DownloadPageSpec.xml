@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="awl.frontsolutions.DownloadPageSpec" tests="21" failures="0" errors="0" timestamp="2013-11-06T09:49:55" hostname="L80576" time="20.389">
+  <properties/>
+  <testcase name="nav should have role=navigation for /Portal/Index" classname="awl.frontsolutions.DownloadPageSpec" time="0.986"/>
+  <testcase name="nav should have role=navigation for /Portal/AboutKawwa" classname="awl.frontsolutions.DownloadPageSpec" time="0.745"/>
+  <testcase name="nav should have role=navigation for /Portal/Accessibility" classname="awl.frontsolutions.DownloadPageSpec" time="0.771"/>
+  <testcase name="nav should have role=navigation for /Portal/Angular" classname="awl.frontsolutions.DownloadPageSpec" time="0.733"/>
+  <testcase name="nav should have role=navigation for /Portal/Component" classname="awl.frontsolutions.DownloadPageSpec" time="0.986"/>
+  <testcase name="nav should have role=navigation for /Portal/ComponentApproach" classname="awl.frontsolutions.DownloadPageSpec" time="0.785"/>
+  <testcase name="nav should have role=navigation for /Portal/Contact" classname="awl.frontsolutions.DownloadPageSpec" time="0.903"/>
+  <testcase name="nav should have role=navigation for /Portal/Documentation" classname="awl.frontsolutions.DownloadPageSpec" time="0.725"/>
+  <testcase name="nav should have role=navigation for /Portal/Download" classname="awl.frontsolutions.DownloadPageSpec" time="0.801"/>
+  <testcase name="nav should have role=navigation for /Portal/Faq" classname="awl.frontsolutions.DownloadPageSpec" time="0.847"/>
+  <testcase name="nav should have role=navigation for /Portal/HowTo" classname="awl.frontsolutions.DownloadPageSpec" time="0.729"/>
+  <testcase name="nav should have role=navigation for /Portal/IeFix" classname="awl.frontsolutions.DownloadPageSpec" time="0.695"/>
+  <testcase name="nav should have role=navigation for /Portal/KawwaPortal" classname="awl.frontsolutions.DownloadPageSpec" time="1.051"/>
+  <testcase name="nav should have role=navigation for /Portal/License" classname="awl.frontsolutions.DownloadPageSpec" time="1.163"/>
+  <testcase name="nav should have role=navigation for /Portal/Releases" classname="awl.frontsolutions.DownloadPageSpec" time="1.259"/>
+  <testcase name="nav should have role=navigation for /Portal/Releases" classname="awl.frontsolutions.DownloadPageSpec" time="1.576"/>
+  <testcase name="nav should have role=navigation for /Portal/Login" classname="awl.frontsolutions.DownloadPageSpec" time="1.01"/>
+  <testcase name="nav should have role=navigation for /Portal/Tapestry" classname="awl.frontsolutions.DownloadPageSpec" time="1.472"/>
+  <testcase name="nav should have role=navigation for /Portal/Templates" classname="awl.frontsolutions.DownloadPageSpec" time="1.193"/>
+  <testcase name="nav should have role=navigation for /Portal/UnobtrusiveApproach" classname="awl.frontsolutions.DownloadPageSpec" time="1.021"/>
+  <testcase name="nav should have role=navigation for /Portal/Updates" classname="awl.frontsolutions.DownloadPageSpec" time="0.923"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

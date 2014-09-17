@@ -1,0 +1,108 @@
+<t:layout t:activeMenu="4" t:title="All About Kawwa: The Kawwa Portal" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+<t:AboutKawwaMenu />
+
+		
+
+		<div id="main">
+
+			
+
+			<div class="k-article">
+
+				<h2>The Kawwa Portal</h2>
+
+				
+
+				<div class="k-intro">
+
+					<p>The Kawwa Porta is a whole new interface that centralizes 
+
+					all what Kawwa is about: web standard accessible sources, references, quality control 
+
+					and best practices documentation, follow-up and contact medium.</p>
+
+				</div>
+
+				
+
+				<p>The challenge for this new version of Kawwa was threefold:</p>
+
+				
+
+				<ul>
+
+					<li>to offer our users the state of art of front web development including rich accessible interfaces, paths for 
+
+					responsive design, multiple sources (XHTML, HTML5, Tapestry components);</li>
+
+					<li>to widen the scope of web projects covered, and</li>
+
+					<li>to develop a system flexible and easy enough to be maintained and updated</li>
+
+				</ul>
+
+				
+
+				<p>The use of Kawwa sources is today much more flexible thanks to the new 
+
+				<strong><a t:type="pageLink" t:page="ComponentApproach">Kawwa components approach</a></strong> 
+
+				which allows you to get only what you need to enrich or to modify existing sites, or to build new web sites from scratch.</p>				
+
+				<p>The Kawwa Portal is also an <strong>extension</strong> of Kawwa1.6 because it proposes a much 
+
+					<strong>wider range of web components</strong> than before: articles, product sheets, image carousels, and many other components 
+
+					that will help you start your web project, whether it is a web application, an e-commerce site or a corporate site.</p>
+
+
+
+				<h3>Main Features</h3>
+
+
+
+				<p>The Kawwa Portal main features are:</p>
+
+				
+
+				<ul>
+
+					<li>exclusive online access to <strong>about 50 Kawwa Components</strong> in HTML5 and XHTML Strict versions</li>
+
+					<li>online graphical theme selection</li>
+
+					<li>exclusive online access to <strong>Tapestry</strong> instructions to apply some of the Kawwa Components to the Tapestry 5 framework</li>
+
+					<li>a pack of <strong>seven example templates</strong>, in the desired graphical theme, available for download</li>
+
+					<li>online access to Kawwa documentation, including code best practices, quality checklists, usability references and FAQ</li>
+
+					<li>a fully customizable download</li>
+
+				</ul>			
+
+		   	</div>
+
+			
+
+		</div>
+
+		
+
+		<div id="sidebar">
+
+			<ul class="k-actions">
+
+				<li><a href="#" class="bt-print" title="Print this article">Print</a></li>
+
+				<!-- <li><a href="#" class="bt-email" title="Send this article by e-mail">Email</a></li>-->
+
+			</ul>
+
+			<t:themeswitcher />
+
+			<t:CheckOutAlso />
+		
+		</div>
+</t:layout>

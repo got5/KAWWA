@@ -1,0 +1,14 @@
+/* ----------------------------- BREADCRUMBS ------------------------------- */
+
+nav.k-breadcrumbs {
+  clear: both;
+  
+  li {
+    display: inline;
+    list-style-type: none;
+    font: 0.75em $title_stack;
+    padding: 2em 0 0;
+  }
+}
+
+

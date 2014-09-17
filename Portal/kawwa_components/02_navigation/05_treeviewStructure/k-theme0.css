@@ -1,0 +1,29 @@
+/* ----------------------------- TREEVIEW STRUCTURE ------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/02_navigation\/05_treeviewStructure\/k-theme0\.scss}line{font-family:\0000387}}
+div.k-tree-grid {
+  float: left;
+  width: 100%;
+  padding: 0 0 1em;
+  margin-bottom: 1em;
+  border-top: 4px solid black;
+  border-bottom: 2px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/02_navigation\/05_treeviewStructure\/k-theme0\.scss}line{font-family:\0000395}}
+  div.k-tree-grid div.tree {
+    float: left;
+    overflow: auto;
+    width: 20%;
+    height: 25em;
+    padding: 1em 0 2%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/02_navigation\/05_treeviewStructure\/k-theme0\.scss}line{font-family:\00003102}}
+  div.k-tree-grid .tree-content {
+    float: right;
+    overflow: auto;
+    width: 74%;
+    height: 33em;
+    padding: 2%;
+    border-left: 1px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/02_navigation\/05_treeviewStructure\/k-theme0\.scss}line{font-family:\00003110}}
+  div.k-tree-grid ul.actions {
+    padding: 5px 5px 0;
+    margin: 0 0 2em;
+    background: #3e3e3e; }

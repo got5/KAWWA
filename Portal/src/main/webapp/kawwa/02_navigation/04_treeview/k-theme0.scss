@@ -1,0 +1,39 @@
+/* ------------------------------------- TREEVIEW -------------------------------------------- */
+
+div.k-tree {
+	li {
+		list-style-type: none;
+		font-size: 0.85em;
+		background: #FFF url(../img/k-theme0/tree_sprite.gif) -90px 0 repeat-y;
+		
+		li {font-size: 100%;}
+		ins {background: transparent url(../img/k-theme0/tree_sprite.gif) -90px 0 repeat-y;}
+	}
+	li.jstree-last {background: none;}
+	li.jstree-leaf > ins {background-position: -36px 0;}
+	li.jstree-closed > ins {background-position: -54px 0;}
+	li.jstree-open > ins {background-position: -72px 0;}
+	
+	a .jstree-icon {background-position: -56px -19px;}
+	
+	a, a:link {
+		display: inline-block;
+		color: #000;
+		background: #FFF;
+	}
+	a:hover {
+		color: #000;
+		background: $neutral_lgt_clr;
+	}
+	a:focus {
+		color: #000;
+		background: rgba(164,8,0,.3);
+		border: 1px solid $secondary_clr;
+	}
+	a.jstree-clicked {
+		color: $text_clr;
+		background: rgba(164,8,0,.3);
+	}
+}
+
+

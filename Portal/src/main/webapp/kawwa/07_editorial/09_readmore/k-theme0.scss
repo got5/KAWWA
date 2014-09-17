@@ -1,0 +1,18 @@
+/* ----------------------------- READ MORE ------------------------------- */
+
+p.k-readmore {
+	clear: both;
+	color: #000;
+	background: #FFF;
+	padding: 0.5em 0 0 0;
+	border-top: 1px dashed $neutral_clr;
+	
+}
+	
+p.k-readmore::after {
+	content: "\00A0 \00BB";
+}
+
+p + p.k-readmore {margin-top: 1em;}
+	
+

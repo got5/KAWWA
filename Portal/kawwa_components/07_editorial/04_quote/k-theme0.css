@@ -1,0 +1,52 @@
+@charset "Windows-1252";
+/* ----------------------------- BLOCKQUOTE ------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\0000387}}
+blockquote {
+  position: relative;
+  width: 80%;
+  max-width: 40em;
+  padding: 0 0 0 1.5em;
+  margin: 2em 3%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\0000394}}
+  blockquote p {
+    font-style: italic;
+    text-indent: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\0000398}}
+blockquote, q {
+  quotes: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\0000399}}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\00003104}}
+blockquote::before {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 0.5em;
+  content: "“";
+  font: 300% Georgia, Times, "Times New Roman", serif;
+  color: gray;
+  background: transparent; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\00003116}}
+.citation {
+  font-size: 90%;
+  padding-top: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\00003117}}
+cite.author {
+  font-style: normal; }
+
+@media screen and (min-width: 640px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\00003121}}
+  blockquote {
+    padding: 0 0 0 3em;
+    margin: 3em 3%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/04_quote\/k-theme0\.scss}line{font-family:\00003122}}
+  blockquote::before {
+    font-size: 500%; } }

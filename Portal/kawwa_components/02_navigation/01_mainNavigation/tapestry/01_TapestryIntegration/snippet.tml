@@ -1,0 +1,18 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+ 	
+ 	<t:kawwa2.MainNav>
+ 	
+		<li class="home"><a href="#">Home</a></li>
+		<li class="active"><a href="#" title="You are here">Components</a>
+			<ul>
+				<li><a href="#">Navigation</a></li>
+				<li><a href="#">Tools</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Documentation</a></li>
+		<li><a href="#">Downloads</a></li>
+
+ 	</t:kawwa2.MainNav>
+ 	
+</html>

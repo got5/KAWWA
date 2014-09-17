@@ -1,0 +1,21 @@
+/* ------------------------------------- HIGHLIGHT TEXTUAL BLOCK ---------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/10_highlight\/k-theme0\.scss}line{font-family:\0000388}}
+div.k-highlight-block {
+  max-width: 40em;
+  color: #444;
+  background: #FFF;
+  padding: 0.5em 3%;
+  margin: 2em auto;
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/10_highlight\/k-theme0\.scss}line{font-family:\0000397}}
+  div.k-highlight-block p {
+    font-weight: bold;
+    font-style: italic;
+    text-indent: 0; }
+  @media screen and (min-width: 500px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/workspaces\/KawwaLib\/Portal\/kawwa_components\/scss\/temporary\/07_editorial\/10_highlight\/k-theme0\.scss}line{font-family:\0000388}}
+    div.k-highlight-block {
+      width: 80%;
+      padding: 0.5em 5%;
+      margin: 2em 5%; } }

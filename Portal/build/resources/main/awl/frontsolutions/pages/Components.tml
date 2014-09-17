@@ -1,0 +1,16 @@
+<t:layout t:title="Components" t:activeMenu="1" 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+		
+	
+	
+	<div id="main">
+		<h2>Component List</h2>
+		<t:componentList fileStructure="root" />
+	</div>
+	<div id="sidebar">
+		<t:themeswitcher />
+		
+	</div>
+</t:layout>

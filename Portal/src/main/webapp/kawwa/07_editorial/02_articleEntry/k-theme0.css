@@ -1,0 +1,54 @@
+/* ----------------------------- ARTICLE ENTRY ------------------------------- */
+/* line 3, k-theme0.scss */
+h2 + .k-entry {
+  margin-top: 2em; }
+
+/* line 5, k-theme0.scss */
+.k-entry {
+  clear: both;
+  max-width: 55em;
+  border-bottom: none; }
+  /* line 10, k-theme0.scss */
+  .k-entry .p-name {
+    position: relative;
+    font-size: 2em;
+    padding: 0;
+    margin: 0 0 0.5em; }
+    /* line 16, k-theme0.scss */
+    .k-entry .p-name a, .k-entry .p-name a:link {
+      display: block;
+      text-decoration: none;
+      color: #555;
+      background: #FFF;
+      padding: 0.5em;
+      border-top: 4px solid #000; }
+    /* line 24, k-theme0.scss */
+    .k-entry .p-name a:visited {
+      color: #666;
+      background: #FFF; }
+    /* line 25, k-theme0.scss */
+    .k-entry .p-name a:hover, .k-entry .p-name a:focus {
+      color: #A40800;
+      background: #FFF; }
+  /* line 30, k-theme0.scss */
+  .k-entry ul.entry-info, .k-entry .e-content {
+    padding-left: 2%; }
+  /* line 31, k-theme0.scss */
+  .k-entry ul.entry-info + .e-content {
+    margin: 0; }
+  @media screen and (min-width: 690px) {
+    /* line 35, k-theme0.scss */
+    .k-entry ul.entry-info {
+      display: table-cell;
+      width: 10em; }
+      /* line 39, k-theme0.scss */
+      .k-entry ul.entry-info li {
+        display: block;
+        line-height: 1;
+        font-size: 0.8em; }
+    /* line 41, k-theme0.scss */
+    .k-entry .dt-published::after {
+      content: ""; }
+    /* line 42, k-theme0.scss */
+    .k-entry .e-content {
+      display: table-cell; } }

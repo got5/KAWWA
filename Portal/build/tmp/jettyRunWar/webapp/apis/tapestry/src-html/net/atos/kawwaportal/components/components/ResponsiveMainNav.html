@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="fr">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>package net.atos.kawwaportal.components.components;<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>import org.apache.tapestry5.Asset;<a name="line.3"></a>
+<span class="sourceLineNo">004</span>import org.apache.tapestry5.Block;<a name="line.4"></a>
+<span class="sourceLineNo">005</span>import org.apache.tapestry5.ComponentResources;<a name="line.5"></a>
+<span class="sourceLineNo">006</span>import org.apache.tapestry5.MarkupWriter;<a name="line.6"></a>
+<span class="sourceLineNo">007</span>import org.apache.tapestry5.annotations.AfterRender;<a name="line.7"></a>
+<span class="sourceLineNo">008</span>import org.apache.tapestry5.annotations.Import;<a name="line.8"></a>
+<span class="sourceLineNo">009</span>import org.apache.tapestry5.annotations.Parameter;<a name="line.9"></a>
+<span class="sourceLineNo">010</span>import org.apache.tapestry5.annotations.Property;<a name="line.10"></a>
+<span class="sourceLineNo">011</span>import org.apache.tapestry5.annotations.SetupRender;<a name="line.11"></a>
+<span class="sourceLineNo">012</span>import org.apache.tapestry5.annotations.SupportsInformalParameters;<a name="line.12"></a>
+<span class="sourceLineNo">013</span>import org.apache.tapestry5.ioc.annotations.Inject;<a name="line.13"></a>
+<span class="sourceLineNo">014</span>import org.apache.tapestry5.json.JSONObject;<a name="line.14"></a>
+<span class="sourceLineNo">015</span>import org.apache.tapestry5.services.javascript.JavaScriptStack;<a name="line.15"></a>
+<span class="sourceLineNo">016</span>import org.apache.tapestry5.services.javascript.JavaScriptSupport;<a name="line.16"></a>
+<span class="sourceLineNo">017</span><a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>/**<a name="line.19"></a>
+<span class="sourceLineNo">020</span> * <a name="line.20"></a>
+<span class="sourceLineNo">021</span> * @tapestrydoc<a name="line.21"></a>
+<span class="sourceLineNo">022</span> *<a name="line.22"></a>
+<span class="sourceLineNo">023</span> */<a name="line.23"></a>
+<span class="sourceLineNo">024</span>@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/flexnav.js", <a name="line.24"></a>
+<span class="sourceLineNo">025</span>                "classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})<a name="line.25"></a>
+<span class="sourceLineNo">026</span>@SupportsInformalParameters<a name="line.26"></a>
+<span class="sourceLineNo">027</span>public class ResponsiveMainNav {<a name="line.27"></a>
+<span class="sourceLineNo">028</span><a name="line.28"></a>
+<span class="sourceLineNo">029</span><a name="line.29"></a>
+<span class="sourceLineNo">030</span>        @Inject<a name="line.30"></a>
+<span class="sourceLineNo">031</span>        private JavaScriptSupport js;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>        <a name="line.32"></a>
+<span class="sourceLineNo">033</span>        @Inject<a name="line.33"></a>
+<span class="sourceLineNo">034</span>        private ComponentResources cr;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>        <a name="line.35"></a>
+<span class="sourceLineNo">036</span>        @Property<a name="line.36"></a>
+<span class="sourceLineNo">037</span>        private String id;<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        <a name="line.38"></a>
+<span class="sourceLineNo">039</span>        @Parameter(name="control")<a name="line.39"></a>
+<span class="sourceLineNo">040</span>        private Block pcontrol;<a name="line.40"></a>
+<span class="sourceLineNo">041</span>        @Parameter(name="skip")<a name="line.41"></a>
+<span class="sourceLineNo">042</span>        private Block pskip;<a name="line.42"></a>
+<span class="sourceLineNo">043</span>        @Parameter(name="items")<a name="line.43"></a>
+<span class="sourceLineNo">044</span>        private Block pitems;<a name="line.44"></a>
+<span class="sourceLineNo">045</span>        <a name="line.45"></a>
+<span class="sourceLineNo">046</span>        @Inject <a name="line.46"></a>
+<span class="sourceLineNo">047</span>        private Block control;<a name="line.47"></a>
+<span class="sourceLineNo">048</span>        <a name="line.48"></a>
+<span class="sourceLineNo">049</span>        @Inject <a name="line.49"></a>
+<span class="sourceLineNo">050</span>        private Block skip;<a name="line.50"></a>
+<span class="sourceLineNo">051</span>        <a name="line.51"></a>
+<span class="sourceLineNo">052</span>        @Inject <a name="line.52"></a>
+<span class="sourceLineNo">053</span>        private Block items;<a name="line.53"></a>
+<span class="sourceLineNo">054</span>        <a name="line.54"></a>
+<span class="sourceLineNo">055</span>        <a name="line.55"></a>
+<span class="sourceLineNo">056</span>        public Block getDcontrol() {<a name="line.56"></a>
+<span class="sourceLineNo">057</span>                return cr.isBound("control") ? pcontrol : control;      <a name="line.57"></a>
+<span class="sourceLineNo">058</span>        }<a name="line.58"></a>
+<span class="sourceLineNo">059</span>        public Block getDskip() {<a name="line.59"></a>
+<span class="sourceLineNo">060</span>                return cr.isBound("skip") ? pskip : skip;<a name="line.60"></a>
+<span class="sourceLineNo">061</span>        }<a name="line.61"></a>
+<span class="sourceLineNo">062</span>        public Block getDitems() {<a name="line.62"></a>
+<span class="sourceLineNo">063</span>                return cr.isBound("items") ? pitems: items;<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        }<a name="line.64"></a>
+<span class="sourceLineNo">065</span>        /**<a name="line.65"></a>
+<span class="sourceLineNo">066</span>         * Force the ID attribute for the main ul tag<a name="line.66"></a>
+<span class="sourceLineNo">067</span>         */<a name="line.67"></a>
+<span class="sourceLineNo">068</span>        @SetupRender<a name="line.68"></a>
+<span class="sourceLineNo">069</span>        public void setupRender(MarkupWriter writer) {<a name="line.69"></a>
+<span class="sourceLineNo">070</span>                <a name="line.70"></a>
+<span class="sourceLineNo">071</span>                id = js.allocateClientId(cr);<a name="line.71"></a>
+<span class="sourceLineNo">072</span>                <a name="line.72"></a>
+<span class="sourceLineNo">073</span>        }<a name="line.73"></a>
+<span class="sourceLineNo">074</span>        /**<a name="line.74"></a>
+<span class="sourceLineNo">075</span>         * We set an id for the &lt;ul&gt; tag in order to use it in our jQuery selector.<a name="line.75"></a>
+<span class="sourceLineNo">076</span>         */<a name="line.76"></a>
+<span class="sourceLineNo">077</span>        @AfterRender<a name="line.77"></a>
+<span class="sourceLineNo">078</span>        public void setJs(MarkupWriter writer){<a name="line.78"></a>
+<span class="sourceLineNo">079</span>                <a name="line.79"></a>
+<span class="sourceLineNo">080</span>                js.addInitializerCall("responsiveMainNav", new JSONObject("id", id));<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        }<a name="line.81"></a>
+<span class="sourceLineNo">082</span>}<a name="line.82"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

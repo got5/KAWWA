@@ -1,0 +1,111 @@
+<p>
+    NB: Those components belong to the tapestry5-jquery project, please have a look to <a href="http://tapestry5-jquery.com/components/docscarouselpage">the official website.</a>
+</p>
+<table summary="This table shows the parameters needed for the Carousel Component">
+	<caption>Carousel parameters</caption>
+   		<tr>
+			<th scope="col"> Name </th>
+            <th scope="col"> Required </th>
+            <th scope="col"> Java Type </th>
+            <th scope="col"> Default Prefix </th>
+            <th scope="col"> Default Value </th>
+            <th scope="col"> Description </th>
+		</tr>
+        <tr>
+			<td> clientId </td>
+			<td> false </td>
+			<td> String </td>
+			<td> literal </td>
+			<td></td>
+			<td> The client id of the carousel </td>
+		</tr>
+		<tr>
+			<td> className </td>
+			<td> false </td>
+			<td> String </td>
+			<td> literal </td>
+			<td></td>
+			<td> The class attribute is added to the carousel </td>
+		</tr>
+		<tr>
+			<td> params </td>
+			<td> false </td>
+			<td> JSONObject </td>
+			<td> prop </td>
+			<td></td>
+			<td> The slider parameters (please refer to jcarousel documentation) </td>
+		</tr>
+</table>
+
+<p>
+	You have to use an other component inside a carousel component, one carouselitem per image 
+	you want to show in the carousel. It depends on the carousel component and cannot be used alone.
+</p>
+
+<table summary="This table shows the parameters needed for the CarouselItem Component">
+	<caption>CarouselItem parameters</caption>
+   		<tr>
+			<th scope="col"> Name </th>
+            <th scope="col"> Required </th>
+            <th scope="col"> Java Type </th>
+            <th scope="col"> Default Prefix </th>
+            <th scope="col"> Default Value </th>
+            <th scope="col"> Description </th>
+		</tr>
+        <tr>
+			<td> width </td>
+			<td> false </td>
+			<td> int </td>
+			<td> literal </td>
+			<td> 75 </td>
+			<td> The width of the image in pixels </td>
+		</tr>
+		<tr>
+			<td> height </td>
+			<td> false </td>
+			<td> int </td>
+			<td> literal </td>
+			<td> 75 </td>
+			<td> The height of the image in pixels </td>
+		</tr>
+		<tr>
+			<td> imageSource </td>
+			<td> true </td>
+			<td> String </td>
+			<td> prop </td>
+			<td></td>
+			<td> The path of the image </td>
+		</tr>
+		<tr>
+			<td> page </td>
+			<td> false </td>
+			<td> String </td>
+			<td> literal </td>
+			<td></td>
+			<td> If you provide a value, the image will be surrounded by a pagelink which targets this page. </td>
+		</tr>
+		<tr>
+			<td> event </td>
+			<td> false </td>
+			<td> String </td>
+			<td> literal </td>
+			<td></td>
+			<td> If you provide a value, the image will be surrounded by an eventlink which triggers this event. </td>
+		</tr>
+		<tr>
+			<td> context </td>
+			<td> false </td>
+			<td> Object </td>
+			<td> prop </td>
+			<td></td>
+			<td> If the image is surrounded by a link, you can provide a context thanks to this parameter. </td>
+		</tr>
+		<tr>
+			<td> zone </td>
+			<td> false </td>
+			<td> String </td>
+			<td> literal </td>
+			<td></td>
+			<td> If you provide a zone name, the surrounding link will be an ajax link </td>
+		</tr>
+</table>
