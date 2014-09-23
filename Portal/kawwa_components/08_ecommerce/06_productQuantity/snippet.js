@@ -1,5 +1,5 @@
 /* Feature detection */
-function incrementTest() {
+function isNumberInput() {
 	var i = document.createElement('input');
 	i.setAttribute('type', 'number');
 	return i.type !== 'text';
@@ -7,10 +7,10 @@ function incrementTest() {
 	
 $(document).ready(function(){
 	
-	var incTest = incrementTest();
+	var incTest = isNumberInput();
 
 	if (jQuery.fn.uppydowner) {
-		if(incTest) {
+		if(!incTest) {
 			jQuery('input[type=number]').addClass('uppydowner');
 			jQuery('input.uppydowner').uppydowner();
 		} else {

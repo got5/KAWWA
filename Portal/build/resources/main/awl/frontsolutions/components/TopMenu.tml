@@ -3,7 +3,7 @@
 	xmlns:p="tapestry:parameter">
 
 
-	<nav>
+	<nav role="navigation">
 		
 			<p class="control"><a href="#" title="Click to open/close menu"><img src="${urlImg}" alt="Menu"/></a></p>
 			<h2 class="k-skip">
@@ -14,20 +14,6 @@
 						<strong title="Current Section">Home</strong>
 						<p:else>
 							<t:pagelink page="index">Home</t:pagelink>
-						</p:else>
-					</t:if></li>
-
-				<li class="${getClass(4)}"><t:if t:test="${isActive(4)}">
-						<strong title="Current Section">All About Kawwa</strong>
-						<p:else>
-							<t:pagelink page="KawwaPortal">All About Kawwa</t:pagelink>
-						</p:else>
-					</t:if></li>
-
-				<li class="${getClass(5)}"><t:if t:test="${isActive(5)}">
-						<strong title="Current Section">Example Templates</strong>
-						<p:else>
-							<t:pagelink page="templates">Example Templates</t:pagelink>
 						</p:else>
 					</t:if></li>
 

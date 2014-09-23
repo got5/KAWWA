@@ -5,11 +5,13 @@
 			<input 	t:type="textfield"
 					t:id="searchTag"
 					t:clientId="search-tag"
+					type="search"
 					title="Search"
 					class="k-autocomplete"
 					placeholder="Search a Component..."
 					t:mixins="jquery/autocomplete" 
-					size="30"/>
+					size="30"
+					role="search"/>
 			<input	type="submit" value="go" />
 		</p>
 </t:form>
