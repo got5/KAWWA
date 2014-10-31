@@ -1,9 +1,0 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="awl.frontsolutions.ListOfComponentsSpec" tests="3" failures="0" errors="0" timestamp="2013-11-06T09:50:15" hostname="L80576" time="4.492">
-  <properties/>
-  <testcase name="A Section with id=components-list should exist" classname="awl.frontsolutions.ListOfComponentsSpec" time="1.196"/>
-  <testcase name="A category should contain only one UL element" classname="awl.frontsolutions.ListOfComponentsSpec" time="1.807"/>
-  <testcase name="All header images should have an alt attribute" classname="awl.frontsolutions.ListOfComponentsSpec" time="1.489"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

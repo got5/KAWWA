@@ -61,11 +61,6 @@ public class AppModule {
 		configuration.add("enableDocumentationBlock", "false");
 	}
 
-	public void contributeMetaDataLocator(
-			MappedConfiguration<String, String> configuration) {
-		configuration.add(MetaDataConstants.SECURE_PAGE, "true");
-	}
-
 	@Contribute(JavaScriptStackSource.class)
 	public static void addKawwa2Themes(
 			MappedConfiguration<String, JavaScriptStack> configuration) {

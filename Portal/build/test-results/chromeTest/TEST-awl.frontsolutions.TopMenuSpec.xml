@@ -1,7 +1,0 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="awl.frontsolutions.TopMenuSpec" tests="1" failures="0" errors="0" timestamp="2013-11-06T09:50:44" hostname="L80576" time="0.72">
-  <properties/>
-  <testcase name="Email field should have a type=email" classname="awl.frontsolutions.TopMenuSpec" time="0.72"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
