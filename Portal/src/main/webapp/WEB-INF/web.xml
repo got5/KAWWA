@@ -14,7 +14,7 @@
 	</context-param>
 	<context-param>
 		<param-name>awl.filesystemindexer.root</param-name>
-		<param-value>D:\\workspaces\\KawwaLib\\Portal\\kawwa_components</param-value>
+		<param-value>C:\\Users\\ge\\Documents\\GitHub\\Kawwa2\\KAWWA\\Portal\\kawwa_components</param-value>
 	</context-param>
 	<context-param>
         <param-name>ganalytics.key</param-name>

@@ -1,6 +1,12 @@
 Portal/src/main/java/awl/frontsolutions/services/atos
 app/components/
 *.iml
+*.iws
+*.ipr
+.gradle/
+build/
+.jruby/
+.sass-cache/
 .idea/
 .project
 .settings/

@@ -1,7 +1,6 @@
 package awl.frontsolutions.services;
 
 import awl.frontsolutions.pages.GAnalyticsScriptsInjector;
-import awl.frontsolutions.services.atos.AtosModule;
 import awl.frontsolutions.services.impl.*;
 import awl.frontsolutions.services.stack.*;
 import net.atos.kawwaportal.components.KawwaConstants;
@@ -27,7 +26,7 @@ import java.io.IOException;
 
 //import awl.frontsolutions.services.atos.AtosModule;
 
-@SubModule(AtosModule.class)
+//@SubModule(AtosModule.class)
 public class AppModule {
 
 	@Startup
@@ -60,11 +59,6 @@ public class AppModule {
 		configuration.add("enableAnalytics", "false");
 
 		configuration.add("enableDocumentationBlock", "false");
-	}
-
-	public void contributeMetaDataLocator(
-			MappedConfiguration<String, String> configuration) {
-		configuration.add(MetaDataConstants.SECURE_PAGE, "true");
 	}
 
 	@Contribute(JavaScriptStackSource.class)

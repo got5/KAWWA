@@ -76,31 +76,14 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 
 		String path = "Components/" + componentInfo.getRelatifPath() + "/";
 
-		if (DownloadDocType.XHTML.equals(dlType)
-				&& InternalUtils.isNonBlank(content.getSnippetHTML(themeDir))
-				|| DownloadDocType.HTML5.equals(dlType)
-				&& InternalUtils.isBlank(content.getSnippetHTML5(themeDir))) {
-			
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_CSS,
-					content.getSnippetCSS(themeName));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
-					content.getSnippetHTML(themeDir));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
-					content.getSnippetJS(themeDir));
-		}
-
-		if (DownloadDocType.XHTML.equals(dlType)
-				&& InternalUtils.isBlank(content.getSnippetHTML(themeDir))
-				|| DownloadDocType.HTML5.equals(dlType)
-				&& InternalUtils.isNonBlank(content.getSnippetHTML5(themeDir))) {
-			
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_CSS,
-					content.getSnippetCSS3(themeName));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
-					content.getSnippetHTML5(themeDir));
-			fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
-					content.getSnippetJS5(themeDir));
-		}
+		
+		fillWithFile(zos, path + ComponentConstants.SNIPPET_CSS,
+				content.getSnippetCSS3(themeName));
+		fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
+				content.getSnippetHTML5(themeDir));
+		fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
+				content.getSnippetJS5(themeDir));
+		
 
 		fillWithFile(zos, path + "README.html", getNotes(componentInfo, dlType));
 

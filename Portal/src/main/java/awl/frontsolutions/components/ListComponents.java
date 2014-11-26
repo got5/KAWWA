@@ -97,7 +97,16 @@ public class ListComponents {
 		writer.element("dd");
 		writer.write("Tapestry integration");
 		writer.end();
+		
+		writer.element("dt");
+		writer.element("img", "src", angularIconUrl, "alt", "AngularJS Feature");
+		writer.end();
+		writer.end();
 
+		writer.element("dd");
+		writer.write("AngularJS Feature");
+		writer.end();
+		
 		writer.end();
 
 		for (TreeNode subMenu : fileStructure.getChildren()) {
@@ -128,7 +137,8 @@ public class ListComponents {
 				writer.write(fileStructure.getNodeName());
 				writer.end();
 			}
-
+			
+			writer.element("ul");
 			F.flow(fileStructure.getChildren())
 					.sort(new Comparator<TreeNode>() {
 
@@ -141,14 +151,12 @@ public class ListComponents {
 
 						@Override
 						public void work(TreeNode element) {
-							writer.element("ul");
 							listDirectory(element, writer, level + 1);
-							writer.end();
 
 						}
 					});
 
-			
+			writer.end();
 			writer.end();
 		} else if (fileStructure.getNodeType().equals(NodeType.COMPONENT)) {
 			if (level == 1) {
@@ -164,9 +172,10 @@ public class ListComponents {
 								String.format("img/%s/icon_%s.png", theme
 										.getDir(), fileStructure.getNodeName()
 										.replaceAll("\\s", "")), null)
-								.toClientURL(), "alt", "");
+								.toClientURL(), "alt", "Page Structure");
 				writer.end();
-
+				
+				writer.write("Page Structure");
 				writer.end();
 
 				writer.element("ul");

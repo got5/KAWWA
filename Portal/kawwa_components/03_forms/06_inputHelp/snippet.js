@@ -7,6 +7,8 @@ function fieldHelp(window, trigger) {
         },
         autoOpen: false
     });
+    
+    
     $(trigger).click(function(){
         $(window).dialog("open");
         return false;
