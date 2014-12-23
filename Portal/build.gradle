@@ -1,3 +1,8 @@
+/**
+* This is the GRadle Configuration file for the Portal. 
+* We will create the war archive for the portal, sync CSS files with the2 others libraries, 
+* and zip the components directory.
+*/
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'war'
@@ -6,9 +11,8 @@ apply plugin: 'jetty'
 
 sourceCompatibility = 1.6
 
-version = '3.0.0'
+version = '3.0.1-SNAPSHOT'
 
-//ext.drivers = ["firefox", "chrome"]
 ext.drivers = ["chrome",]
 
 configurations {
@@ -51,16 +55,13 @@ drivers.each { driver ->
 
         systemProperty "geb.build.reportsDir", reporting.file("$name/geb")
         systemProperty "geb.env", driver
-
-        // If you wanted to set the baseUrl in your build�
-        // systemProperty "geb.build.baseUrl", "http://myapp.com"
     }
 }
 
-/*test {
+test {
 	dependsOn drivers.collect { tasks["${it}Test"] }
 	enabled = false
-} */
+}
 
 repositories {
 	mavenCentral()
@@ -68,36 +69,9 @@ repositories {
 	maven {url 'http://nexus.devlab722.net/nexus/content/repositories/releases/'}
 }
 
-task deleteTapestryDocs(type: Delete) {
-	delete 'src/main/webapp/apis/tapestry/'
-}
-task deleteAngularDocs(type: Delete) {
-	delete 'src/main/webapp/apis/angular/'	
-}
-task compileTapestryLib(type: Exec)  {
-    workingDir = file('../kawwa2-tapestry')
-	commandLine 'cmd', '/c', 'mvn', 'site', '-o'
-	standardOutput = new ByteArrayOutputStream()
-    
-}
-task compileAngularLib(type: Exec)  {
-	workingDir = file('../kawwa2-angularjs')
-	commandLine 'cmd', '/c', 'grunt', 'doc'
-    standardOutput = new ByteArrayOutputStream()
-    ignoreExitValue = true
-}
-task copyTapestryDocs(type: Copy)  {
-	from '../kawwa2-tapestry/target/site/apidocs'
-	into 'src/main/webapp/apis/tapestry'
-}
-task copyAngularDocs(type: Copy) {
-	from '../kawwa2-angularjs/docs'
-	into 'src/main/webapp/apis/angular'
-}
-
 task generateSublimeTextSnippets(type: Exec) {
 	workingDir = file('../kawwa2-sublimetext')
-	commandLine 'cmd', '/c', 'node', 'script.js'
+	commandLine 'node', 'script.js'
 	standardOutput = new ByteArrayOutputStream()
 }
 
@@ -109,10 +83,8 @@ task copyThemesForAngular(type: Copy) {
 	exclude 'css/i-theme*'
 	
 	into '../kawwa2-angularjs/app/theme'
-	
-	
-	
 }
+
 task copyThemesForTapestry << {
 	copy {
 		from 'src/main/webapp/'
@@ -141,18 +113,12 @@ task zipComp(type: Zip) {
 }
 
 
-copyTapestryDocs.dependsOn("compileTapestryLib", "deleteTapestryDocs")
-copyAngularDocs.dependsOn("compileAngularLib", "deleteAngularDocs")
-
-/*
-processResources.dependsOn("copyTapestryDocs")
-//processResources.dependsOn("copyAngularDocs")
 processResources.dependsOn("generateSublimeTextSnippets")
 processResources.dependsOn("copyThemesForAngular")
 processResources.dependsOn("copyThemesForTapestry")
 processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
-*/
+
 task wrapper(type: Wrapper) {
     gradleVersion = '1.7'
 }
