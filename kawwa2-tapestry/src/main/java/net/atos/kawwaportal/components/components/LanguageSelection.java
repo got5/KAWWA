@@ -11,7 +11,6 @@ import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
@@ -31,7 +30,6 @@ import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.PersistentLocale;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-import org.got5.tapestry5.jquery.ImportJQueryUI;
 
 /**
  * 
@@ -39,8 +37,6 @@ import org.got5.tapestry5.jquery.ImportJQueryUI;
  * @component_version 1.1
  *
  */
-@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
-@ImportJQueryUI("jquery.ui.button")
 public class LanguageSelection {
 
 	/**
@@ -170,11 +166,10 @@ public class LanguageSelection {
 		}
 		
 		//Init the JavaScript Code
-		js.addInitializerCall("languageSelection", 
-							new JSONObject("id", idForm, 
+		js.require("kawwa/languageSelection").with(new JSONObject("id", idForm, 
 										   "mode", mode.toString(), 
 										   "url", cr.createEventLink(KawwaEventsConstants.LANGUAGE_SELECTED, null).toURI()));
-		
+				
 	}
 	
 	/**

@@ -13,8 +13,8 @@ public class LanguageSelectionTest extends SeleniumTestCase{
 	public void testLanguageSelectionRadio(){
 	
 		open("LanguageSelection");
-		
-		radio(getSelector());
+
+        radio(getSelector());
 		
 		radio(getSelector());
 		
@@ -27,8 +27,8 @@ public class LanguageSelectionTest extends SeleniumTestCase{
 	public void testLanguageSelectionSelect(){
 	
 		open("LanguageSelectionSelect");
-		
-		select(getSelectorValue());
+
+        select(getSelectorValue());
 		
 		select(getSelectorValue());
 		
@@ -36,7 +36,7 @@ public class LanguageSelectionTest extends SeleniumTestCase{
 	
 	private void radio(final String selector){
 		
-		clickAndWait("id="+selector);
+		clickAndWait("//input[@id='" + selector + "']");
 		
 		new Wait() {
 			
@@ -45,7 +45,7 @@ public class LanguageSelectionTest extends SeleniumTestCase{
 				return getAttribute("//input[@id='" + selector + "']@checked").equalsIgnoreCase("checked") || 
 				getAttribute("//input[@id='" + selector + "']@checked").equalsIgnoreCase("true");
 			}
-		}.wait("The radio " + selector + " input is not checked", 5000l);
+		}.wait("The radio " + selector + " input is not checked", 2000l);
 		
 	}
 	
@@ -67,11 +67,10 @@ public class LanguageSelectionTest extends SeleniumTestCase{
 	}
 	
 	private String getSelector(){
-		return (Boolean.valueOf(getAttribute("//label[@for='lang_radio']@aria-pressed"))) ? "lang_radio_0" : "lang_radio";
+        return isElementPresent("//label[@for='lang_radio'][contains(@class, 'ui-state-active')]") ? "lang_radio_0" : "lang_radio";
 	}
+
 	private String getSelectorValue(){
 		return (getSelectedValue("//select[@id='language']").equals("fr")) ? "en" : "fr";
 	}
-	
-	
 }

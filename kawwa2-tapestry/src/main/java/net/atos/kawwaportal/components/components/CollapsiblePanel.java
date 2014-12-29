@@ -7,7 +7,6 @@ import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.AfterRenderTemplate;
 import org.apache.tapestry5.annotations.Environmental;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.dom.Element;
@@ -23,8 +22,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @component_version 1.1
  *
  */
-@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/jquery.ui.panel.awl.js",
-		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 public class CollapsiblePanel {
 	
 	/**
@@ -88,7 +85,7 @@ public class CollapsiblePanel {
 						if(InternalUtils.isBlank(object.getAttribute("class"))) return false;
 						return object.getAttribute("class").contains("control");
 					}
-				}).addClassName("ui-state-active");
+				}).attribute("class",  "control ui-state-active");
 			}
 		}
 	}
@@ -103,7 +100,7 @@ public class CollapsiblePanel {
 		
 		params.put("options", options);
 		
-		javaScriptSupport.addInitializerCall("panel" ,params);
+		javaScriptSupport.require("kawwa/panel").with(params);
 	}
 	
 	public String getClientId(){

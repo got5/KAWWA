@@ -6,6 +6,7 @@ import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.dom.Element;
+import org.apache.tapestry5.func.Predicate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 /**
@@ -27,17 +28,20 @@ public class Mandatory {
 	
 	@AfterRender
 	private void afterRender(MarkupWriter writer){
-		
 		if(!disableKawwaMandatory){
-			Element el = writer.getElement().getElementByAttributeValue("class", "k-required");
-			
-			if(el!=null){
+			Element el = writer.getElement().getElement(new Predicate<Element>() {
+                public boolean accept(Element element) {
+                    return element.getAttribute("class") != null && element.getAttribute("class").contains("k-required");
+                }
+            });
+
+            if(el != null){
 				
 				Element required = writer.getElement().element("p", "class", "k-mandatory");
 				
-				required.raw(String.format(kawwaMandatoryMessage, String.format("<img src='%s' alt='Asterisk'/>", mandatory.toClientURL())));					
+				required.raw(String.format(kawwaMandatoryMessage, String.format("<img src='%s' alt='Asterisk'/>", mandatory.toClientURL())));
 				
-				required.moveBefore(writer.getElement().getElementByAttributeValue("class", "t-invisible"));
+				required.moveToTop(writer.getElement());
 			}
 		}
 	}

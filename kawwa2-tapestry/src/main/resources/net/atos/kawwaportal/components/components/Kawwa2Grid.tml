@@ -39,7 +39,7 @@
 			t:rowsPerPage="rowsPerPage" t:pagerPosition="none"
 			t:class="prop:tableClass">
 		</t:Grid>
-
+²
 		<t:delegate t:to="pagerBottom" />
 
 	</t:block>

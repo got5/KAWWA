@@ -4,7 +4,6 @@ import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.BeginRender;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectContainer;
 import org.apache.tapestry5.annotations.MixinAfter;
 import org.apache.tapestry5.annotations.Parameter;
@@ -44,8 +43,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  */
 
 @MixinAfter
-@Import(library = { "classpath:/net/atos/kawwaportal/components/assets/kawwa.js",
-		"classpath:net/atos/kawwaportal/components/assets/jquery.uppydowner.js" } )
 public class ProductQuantity {
 
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
@@ -78,8 +75,8 @@ public class ProductQuantity {
 	    JSONObject opt = new JSONObject();
 	    opt.put("id", id);
 	    opt.put("params", options);
-	    
-		javaScriptSupport.addInitializerCall("productquantity", opt);
+
+        javaScriptSupport.require("kawwa/productquantity").with(opt);
 
 	}
 

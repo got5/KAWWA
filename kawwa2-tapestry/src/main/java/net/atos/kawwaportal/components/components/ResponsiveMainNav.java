@@ -1,18 +1,11 @@
 package net.atos.kawwaportal.components.components;
 
-import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.MarkupWriter;
-import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
-import org.apache.tapestry5.annotations.Parameter;
-import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.SetupRender;
-import org.apache.tapestry5.annotations.SupportsInformalParameters;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
-import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 
@@ -22,8 +15,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @component_version 1.0
  *
  */
-@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/flexnav.js", 
-		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 @SupportsInformalParameters
 public class ResponsiveMainNav {
 
@@ -78,6 +69,6 @@ public class ResponsiveMainNav {
 	@AfterRender
 	public void setJs(MarkupWriter writer){
 		
-		js.addInitializerCall("responsiveMainNav", new JSONObject("id", id));
+		js.require("kawwa/responsiveMainNav").with(new JSONObject("id", id));
 	}
 }

@@ -42,9 +42,7 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @component_version 1.0
  */
 
-@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/ratings/jquery.rating.pack.js",
-		"classpath:/net/atos/kawwaportal/components/assets/ratings/rating.js",
-		"classpath:/net/atos/kawwaportal/components/assets/ratings/ratings.css"})
+@Import(stylesheet = {"classpath:/net/atos/kawwaportal/components/assets/ratings/ratings.css"})
 public class Rating {
 	
 	@Parameter(required=true)
@@ -138,7 +136,6 @@ public class Rating {
     	
     	JSONObject option = new JSONObject();
 	    option.put("target", ratingRadioField.getControlName());
-	    
-    	javaScriptSupport.addInitializerCall("rating", option);
+	    javaScriptSupport.require("kawwa/rating").with(option);
     }
 }

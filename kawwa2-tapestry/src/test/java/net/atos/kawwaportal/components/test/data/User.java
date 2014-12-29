@@ -1,14 +1,10 @@
 package net.atos.kawwaportal.components.test.data;
 
-import java.util.List;
-import java.util.UUID;
-
-import net.atos.kawwaportal.components.tree.DefaultTreeModel;
-import net.atos.kawwaportal.components.tree.TreeModel;
-import net.atos.kawwaportal.components.tree.TreeModelAdapter;
-
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.ioc.internal.util.CollectionFactory;
+
+import java.util.List;
+import java.util.UUID;
 
 public class User {
 
@@ -71,42 +67,5 @@ public class User {
 					 )
 			.addChild(new User("Ferarri").addChildrenNamed("F430", "California"));
 		
-	}
-	
-	public static TreeModel<User> createTreeModel(){
-		
-		ValueEncoder encoder = new ValueEncoder<User>() {
-
-			public String toClient(User arg0) {
-				return arg0.uuid;
-			}
-
-			public User toValue(String arg0) {
-				return User.ROOT.seek(arg0);
-			}
-		};
-		
-		TreeModelAdapter<User> adapter = new TreeModelAdapter<User>() {
-
-			public List<User> getChildren(User arg0) {
-				return arg0.children;
-			}
-
-			public String getLabel(User arg0) {
-				return arg0.getNom();
-			}
-
-			public boolean hasChildren(User arg0) {
-				return !arg0.children.isEmpty();
-			}
-
-			public boolean isLeaf(User arg0) {
-				return arg0.children.isEmpty();
-			}
-			
-		};
-		
-		return new DefaultTreeModel<User>(encoder, adapter, User.ROOT.children);
-			
 	}
 }

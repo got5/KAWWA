@@ -156,9 +156,9 @@
 		</snapshotRepository>
 	</distributionManagement>	
     <properties>
-        <tapestry-release-version>5.3.7</tapestry-release-version>
+        <tapestry-release-version>5.4-beta-22</tapestry-release-version>
         <testng-version>5.12.1</testng-version>
-        <tapestry-jquery-version>3.3.7</tapestry-jquery-version>
+        <tapestry-jquery-version>4.0.1-SNAPSHOT</tapestry-jquery-version>
         <servlet-version>2.5</servlet-version>
     </properties>
 <reporting>

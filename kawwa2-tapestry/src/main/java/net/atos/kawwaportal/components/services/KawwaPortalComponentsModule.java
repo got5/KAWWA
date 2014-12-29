@@ -8,6 +8,7 @@ import net.atos.kawwaportal.components.services.breadcrumb.BreadcrumbListProvide
 import net.atos.kawwaportal.components.services.breadcrumb.PackageBasedBreadcrumbListProvider;
 
 import org.apache.tapestry5.MarkupWriter;
+import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ValidationDecorator;
 import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.func.Predicate;
@@ -17,16 +18,14 @@ import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Symbol;
+import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.FactoryDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.json.JSONObject;
-import org.apache.tapestry5.services.Environment;
-import org.apache.tapestry5.services.LibraryMapping;
-import org.apache.tapestry5.services.MarkupRenderer;
-import org.apache.tapestry5.services.MarkupRendererFilter;
-import org.apache.tapestry5.services.RequestGlobals;
+import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
+import org.apache.tapestry5.services.javascript.StackExtension;
 import org.apache.tapestry5.services.transform.ComponentClassTransformWorker2;
 import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.got5.tapestry5.jquery.services.WidgetParams;
@@ -48,7 +47,20 @@ public class KawwaPortalComponentsModule {
 						5);
 	}
 
-	@Contribute(BreadcrumbListProviderSource.class)
+    @Contribute(SymbolProvider.class)
+    @ApplicationDefaults
+    public static void contributeApplicationDefault(MappedConfiguration<String, Object> configuration) {
+        configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
+    }
+
+    @Contribute(JavaScriptStack.class)
+    @Core
+    public static void setupCoreJavaScriptStack(OrderedConfiguration<StackExtension>
+                                     configuration) {
+        configuration.override("bootstrap.css", null);
+    }
+
+    @Contribute(BreadcrumbListProviderSource.class)
 	public static void addingThePackageBasedBreadcrumbListProvider(
 			MappedConfiguration<String, BreadcrumbListProvider> configuration) {
 		configuration.addInstance(PackageBasedBreadcrumbListProvider.name,

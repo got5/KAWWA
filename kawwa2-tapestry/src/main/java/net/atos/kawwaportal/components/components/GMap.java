@@ -1,17 +1,14 @@
 package net.atos.kawwaportal.components.components;
 
-import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.ClientElement;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.BeginRender;
 import org.apache.tapestry5.annotations.Parameter;
-import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-
 
 /**
  * <p>
@@ -39,15 +36,7 @@ public class GMap implements ClientElement {
 	
 	@Property
 	private String id;
-	
-	@Inject
-	@Path("classpath:net/atos/kawwaportal/components/assets/gmap/gmap3.js")
-	private Asset gmap3;
-	
-	@Inject
-	@Path("classpath:net/atos/kawwaportal/components/assets/gmap/GMap.js")
-	private Asset gmap;
-	
+		
 	@Inject
 	private JavaScriptSupport javaScriptSupport;
 	
@@ -66,11 +55,7 @@ public class GMap implements ClientElement {
 	    JSONObject opt = new JSONObject();
 	    opt.put("id", id);
 	    opt.put("params", parameters);
-	    
-		javaScriptSupport.importJavaScriptLibrary("http://maps.google.com/maps/api/js?sensor=false");
-		javaScriptSupport.importJavaScriptLibrary(gmap3);
-		javaScriptSupport.importJavaScriptLibrary(gmap);
-		javaScriptSupport.addInitializerCall("gmap", opt);
+		javaScriptSupport.require("kawwa/GMap").with(opt);
 	}
 
 	public String getClientId() {

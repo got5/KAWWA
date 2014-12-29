@@ -329,7 +329,11 @@ public class Kawwa2Grid implements ClientElement {
 	}
 
 	public int getCurrentPage() {
-		return kGrid.getCurrentPage();
+        try {
+            return kGrid.getCurrentPage();
+        } catch (Exception e){
+            return 1;
+        }
 	}
 
 	/**

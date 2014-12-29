@@ -5,7 +5,6 @@ import java.util.List;
 import net.atos.kawwaportal.components.data.ecommerce.FrontProductImage;
 
 import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SetupRender;
@@ -19,8 +18,6 @@ import org.got5.tapestry5.jquery.utils.JQueryUtils;
  * @tapestrydoc
  * @component_version 1.0
  */
-@Import(library = {"classpath:net/atos/kawwaportal/components/assets/productgallery/jquery.jqzoom-core.js",
-		"classpath:net/atos/kawwaportal/components/assets/productgallery/productGallery.js" })
 public class ProductGallery {
 
 	@Property
@@ -64,7 +61,7 @@ public class ProductGallery {
 		JSONObject opt = new JSONObject();
 		opt.put("id", id);
 		opt.put("params", def);
-		support.addInitializerCall("initZoom", opt);
+		support.require("kawwa/productGallery").with(opt);
 	}
 
 	public boolean getFirst() {
