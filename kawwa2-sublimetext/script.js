@@ -7,9 +7,9 @@ function endsWith(string, suffix) {
     return string.indexOf(suffix, string.length - suffix.length) !== -1;
 };
 function hasToBeASnippet(file){
-  return (endsWith(file, "snippet.css") || endsWith(file, "snippet.js") || endsWith(file, ".scss") || endsWith(file, ".css") || endsWith(file, "snippet.html")) && 
+  return (endsWith(file, "snippet.css") || endsWith(file, "snippet.js")  || endsWith(file, "snippet.html")) && 
     file.indexOf("01_pageStructure") === -1 && file.indexOf("templates_html5") === -1 && file.indexOf("dependencies") === -1
-    && file.indexOf("/tapestry/") === -1 && file.indexOf("/xhtml/") === -1
+    && file.indexOf("/tapestry/") === -1 && file.indexOf("/xhtml/") === -1 && file.indexOf("/angular/") === -1
 }
 
 function getDirectoryFiles(directory, callback) {

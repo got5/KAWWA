@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[<nav>
+  <content><![CDATA[<nav role="navigation">
 	<p class="control"><a href="#" title="Click to open/close menu"><img src="./nav_control.png" alt="Menu" /></a></p>
 	<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
 	<ul class="k-navbar" role="menubar">
