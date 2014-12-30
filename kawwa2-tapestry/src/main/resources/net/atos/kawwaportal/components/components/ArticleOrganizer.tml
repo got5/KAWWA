@@ -1,4 +1,4 @@
-<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter"
+<div xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter"
 		t:type="any" t:mixins="kawwa2/tabs" tabs.options="prop:tabOptions" class="k-tabbed-data">
 
 	<t:if test="TabArticleNotEmpty">

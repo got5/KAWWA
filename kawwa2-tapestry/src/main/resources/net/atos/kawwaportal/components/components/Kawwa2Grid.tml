@@ -1,5 +1,5 @@
 <t:container
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
 
 	<t:zone t:id="rowPerPageZone" id="${rowPerPageZone}" t:update="show">

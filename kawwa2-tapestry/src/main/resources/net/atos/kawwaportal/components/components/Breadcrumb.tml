@@ -1,5 +1,5 @@
 <t:container
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 	<p class="k-breadcrumbs">
 	<t:loop t:source="breadcrumb"
 		t:value="current" t:index="index">
