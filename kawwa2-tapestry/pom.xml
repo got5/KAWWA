@@ -42,6 +42,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
@@ -89,6 +90,7 @@
             <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
 				<configuration>
 					<archive>
 						<manifestEntries>
@@ -130,13 +132,14 @@
 	        </releases>
 	    </repository>
     </repositories>
-      	 <profiles>
+    <profiles>
 	    <profile>
 	    	<id>opensource</id>
              	<activation> 
-        		<activeByDefault>true</activeByDefault> 
-      		</activation> 
-	      <properties> 
+                    <activeByDefault>true</activeByDefault>
+      		    </activation>
+	      <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	        <kazan-public-releases-repo-url>http://nexus.devlab722.net/nexus/content/repositories/releases</kazan-public-releases-repo-url>
 	        <kazan-public-snapshots-repo-url>http://nexus.devlab722.net/nexus/content/repositories/snapshots</kazan-public-snapshots-repo-url> 
 	        <release-id>devlab722-repo</release-id>
