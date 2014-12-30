@@ -1,0 +1,119 @@
+div.k-product-gallery:after {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	content: "icon";
+	text-indent: -9999px;
+	background: transparent url(../img/k-theme1/bg_zoom.png) no-repeat;
+	z-index: 1000;
+}
+
+/* LIST OF THUMBS */
+
+ul.thumblist {clear: both; padding: 0;}
+
+	ul.thumblist li {
+		float: left;
+		width: auto;
+		list-style-type: none;
+		margin-right: 5px;
+	}
+		ul.thumblist li a, ul.thumblist li a:link, ul.thumblist li a:visited {
+			display: block;
+			padding: 1px;
+			border: 1px solid #CCC;
+		}
+		ul.thumblist li a:hover, ul.thumblist li a.zoomThumbActive {
+			background: #F60;
+			border: 1px solid #F60;
+		}
+		ul.thumblist img {vertical-align: bottom;}
+
+/* ZOOM */
+
+.zoomPad {
+	position: relative;
+	float: left;
+	cursor: crosshair;
+	z-index: 99;
+}
+
+.zoomPreload {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 90px;
+   height: 43px;
+   text-decoration: none;
+   text-align:center;
+   color: #333;
+   background: #FFF url(../img/k-theme1/zoomloader.gif) 43px 30px no-repeat;
+   padding: 8px;
+   border: 1px solid #CCC;
+   opacity: 0.8;
+   z-index: 110;
+}
+
+.zoomPup {
+	overflow: hidden;
+	position: absolute;
+	background: #EEE;
+	opacity: 0.5;
+	border: 1px solid #CCC;
+	z-index: 120;
+    z-index: 101;
+	cursor: crosshair;
+	outline: 4px solid #FFF;
+}
+
+.zoomOverlay{ 
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background:#FFF;
+	/*opacity:0.5;*/
+	z-index:5000;
+	z-index: 101;
+}
+
+.zoomWindow {
+	position: absolute;
+	top: 40px;
+	left: 110%;
+	height: auto;
+	background: #FFF;
+	box-shadow: 0 0 3px #999;
+ 	z-index: 10000;
+}
+.zoomWrapper {
+	position: relative;
+	border: 1px solid #999;
+  	z-index: 110;
+}
+.zoomWrapperTitle {display: none;}
+
+.zoomWrapperImage {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	z-index: 110;
+}
+	.zoomWrapperImage img {
+	  display: block;
+	  position: absolute;
+	  border: 0;
+	  z-index:101;
+	}
+
+.zoomIframe {
+  position: absolute;
+  display: block;
+  opacity: 0.8;
+  z-index: -1;
+}
+

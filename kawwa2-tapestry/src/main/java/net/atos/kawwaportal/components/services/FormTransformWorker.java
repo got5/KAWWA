@@ -14,7 +14,7 @@ public class FormTransformWorker implements ComponentClassTransformWorker2 {
 	
 	public void transform(PlasticClass plasticClass, TransformationSupport support,
 			MutableComponentModel model) {
-		
+		System.out.println(model.getComponentClassName());
 		if(model.getComponentClassName().equals(Form.class.getName())){
 			model.addMixinClassName(net.atos.kawwaportal.components.mixins.Mandatory.class.getName());
 		}

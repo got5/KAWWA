@@ -35,7 +35,7 @@ public class Errors {
 					
 					if(InternalUtils.isBlank(object.getAttribute("class"))) return false;
 					
-					return object.getAttribute("class").equals("t-error");
+					return object.getAttribute("class").equals("alert-dismissable alert alert-danger");
 				}
 			};
 			while(writer.getDocument().getRootElement().getElement(predicate) != null)
@@ -44,17 +44,15 @@ public class Errors {
 				
 				element.forceAttributes("class", "k-error-messages");
 				
-				Element div = element.find("div");
+				Element banner = element.find("h4");
 				
 				Element ul = element.find("ul");
-				
-				String banner = div.getChildMarkup();
 				
 				element.removeChildren();
 				
 				element.element("h3").text(kawwaErrorMessage);
 				
-				element.element("p").text(banner);
+				element.element("p").text(banner.getChildMarkup());
 				
 				element.element("ul").raw(ul.getChildMarkup());
 			}

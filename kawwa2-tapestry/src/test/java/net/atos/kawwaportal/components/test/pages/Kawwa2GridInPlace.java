@@ -1,30 +1,24 @@
 package net.atos.kawwaportal.components.test.pages;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import net.atos.kawwaportal.components.test.data.Celebrity;
 import net.atos.kawwaportal.components.test.data.Occupation;
-
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.ajax.MultiZoneUpdate;
-import org.apache.tapestry5.annotations.InjectComponent;
-import org.apache.tapestry5.annotations.OnEvent;
-import org.apache.tapestry5.annotations.Persist;
-import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.beaneditor.BeanModel;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.json.JSONLiteral;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.BeanModelSource;
 import org.apache.tapestry5.util.EnumSelectModel;
 import org.got5.tapestry5.jquery.components.InPlaceEditor;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Kawwa2GridInPlace {
 	@Property

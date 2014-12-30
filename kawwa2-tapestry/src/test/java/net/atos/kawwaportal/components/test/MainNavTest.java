@@ -8,7 +8,7 @@ import com.thoughtworks.selenium.Wait;
 public class MainNavTest extends SeleniumTestCase{
 	
 	@Test
-	public void testSiteSearch(){
+	public void testMainNav(){
 	
 		open("MainNav");
 		

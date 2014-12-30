@@ -1,4 +1,4 @@
-<t:block t:id="defaultBlock" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+<t:block t:id="defaultBlock" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
          xmlns:p="tapestry:parameter">
     <a href="${url}">${item.item}</a>
 </t:block>

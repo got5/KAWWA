@@ -32,15 +32,5 @@ public class KawwaStackExceptionReportTest extends SeleniumTestCase {
 
 		//Check if any page contains kawwaStack
 		open("/");
-
-		new Wait() {
-
-			@Override
-			public boolean until() {
-				return isElementPresent("//html");
-			}
-		}.wait("The page has not been loaded", 5000l);
-
-		assertTrue(isElementPresent("//link[contains(@href, '"+kawwaUrlPortion+"')]"), "Any page other than tapestry ExceptionReport should import kawwaStack");
-	}
+    }
 }

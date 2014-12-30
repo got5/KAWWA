@@ -7,7 +7,6 @@ import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Events;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.Submit;
@@ -25,7 +24,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  *
  */
 @Events(EventConstants.PROVIDE_COMPLETIONS)
-@Import(library = "classpath:/net/atos/kawwaportal/components/assets/kawwa.js")
 public class SiteSearch {
 
 	@Component(publishParameters="validate, value, annotationProvider, clientId, disabled, label," +
@@ -101,13 +99,8 @@ public class SiteSearch {
 	public void addPlaceholderMechanism(){
 		
 		//In a next version, will use the PlaceHolder mixin of Tapestry5-jQuery
-		js.addInitializerCall(InitializationPriority.LATE, "siteSearch", new JSONObject("id",SiteSearchInput.getClientId(), 
-																		"placeholder", placeholder));
+		js.require("kawwa/siteSearch").priority(InitializationPriority.LATE)
+			.with(new JSONObject("id",SiteSearchInput.getClientId(), "placeholder", placeholder));
 		
 	}
-	
-	
-	
-	
-	
 }

@@ -1,5 +1,5 @@
 <t:container
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
 
 	<t:zone t:id="rowPerPageZone" id="${rowPerPageZone}" t:update="show">
@@ -39,7 +39,7 @@
 			t:rowsPerPage="rowsPerPage" t:pagerPosition="none"
 			t:class="prop:tableClass">
 		</t:Grid>
-
+²
 		<t:delegate t:to="pagerBottom" />
 
 	</t:block>

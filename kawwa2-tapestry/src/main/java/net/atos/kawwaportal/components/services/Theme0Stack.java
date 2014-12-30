@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.services.AssetSource;
+import org.apache.tapestry5.services.javascript.JavaScriptAggregationStrategy;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.StylesheetLink;
 import org.apache.tapestry5.services.javascript.StylesheetOptions;
@@ -45,7 +46,15 @@ public class Theme0Stack implements JavaScriptStack {
 		return stylesheetStack;
 	}
 
-	public String getInitialization() {
+    public List<String> getModules() {
+        return Collections.emptyList();
+    }
+
+    public JavaScriptAggregationStrategy getJavaScriptAggregationStrategy() {
+        return null;
+    }
+
+    public String getInitialization() {
 		return null;
 	}
 

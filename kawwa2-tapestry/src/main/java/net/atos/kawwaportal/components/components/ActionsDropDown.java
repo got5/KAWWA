@@ -36,8 +36,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 */
 @Events({KawwaEventsConstants.ACTIONSDROPDOWN_SELECT})
 @SupportsInformalParameters
-@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/actiondropdown/jquery.kawwa.actionsDd.js",
-		"classpath:/net/atos/kawwaportal/components/assets/actiondropdown/actionsdropdown.js"})
 public class ActionsDropDown {
 	
 	/**
@@ -175,10 +173,8 @@ public class ActionsDropDown {
 
 		writer.end();
 		writer.end();
-    	JSONObject option = new JSONObject();
-    	option.put("id", id);
-	    
-    	javaScriptSupport.addInitializerCall("actionsdropdown", option);
+
+        javaScriptSupport.require("kawwa/actionsdropdown").with(new JSONObject("id", id));
     }
 
     /**

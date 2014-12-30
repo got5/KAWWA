@@ -8,7 +8,6 @@ import net.atos.kawwaportal.components.data.GMapSelectLocation;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.Link;
 import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
@@ -50,8 +49,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @tapestrydoc
  * @component_version 1.0
  */
-
-@Import(library = "classpath:net/atos/kawwaportal/components/assets/deliveryform/DeliveryForm.js")
 public class DeliveryForm {
 	
 	@Parameter(required = true)
@@ -114,7 +111,7 @@ public class DeliveryForm {
 	    opt.put("zoneId", zoneId);
 	    opt.put("link", link.toURI());
 	    
-		javaScriptSupport.addInitializerCall("deliveryform", opt);
+		javaScriptSupport.require("kawwa/DeliveryForm").with(opt);
 		
 	}
 	

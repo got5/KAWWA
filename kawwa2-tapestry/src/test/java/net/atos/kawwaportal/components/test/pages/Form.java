@@ -19,7 +19,7 @@ public class Form {
     @Property
     private String third;
 
-	@Property 
+    @Property
 	private String test;
 	
 	@Property 
@@ -38,10 +38,7 @@ public class Form {
 	@InjectComponent(value="t1")
 	private Checkbox c;
 
-    @Property
-    private UploadedFile file;
-
-	public CardType getMasterCard() { return CardType.MASTER_CARD; }
+    public CardType getMasterCard() { return CardType.MASTER_CARD; }
 
     public CardType getVisa() { return CardType.VISA; }
 

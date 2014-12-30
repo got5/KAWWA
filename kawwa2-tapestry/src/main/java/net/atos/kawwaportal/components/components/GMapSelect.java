@@ -5,7 +5,6 @@ import java.util.List;
 import net.atos.kawwaportal.components.data.GMapSelectLocation;
 
 import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
@@ -40,7 +39,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @tapestrydoc
  */
 
-@Import(library = "classpath:net/atos/kawwaportal/components/assets/gmapselect/GMapSelect.js")
 public class GMapSelect {
 	
 	@Parameter(required = true)
@@ -90,7 +88,7 @@ public class GMapSelect {
 	    opt.put("locationName", locationName);
 	    opt.put("gmapId", gmapId);
 	    opt.put("gmapMarkers", gmapMarkers);
-	    
-		javaScriptSupport.addInitializerCall("gmapselect", opt);
+	   	
+	   	javaScriptSupport.require("kawwa/GMapSelect").with(opt);
 	}
 }

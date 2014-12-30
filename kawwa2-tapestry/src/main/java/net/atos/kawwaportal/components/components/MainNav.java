@@ -3,7 +3,6 @@ package net.atos.kawwaportal.components.components;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -17,8 +16,6 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @component_version 1.1
  * @deprecated
  */
-@Import(library = {"classpath:/net/atos/kawwaportal/components/assets/superfish.js", 
-		"classpath:/net/atos/kawwaportal/components/assets/kawwa.js"})
 public class MainNav {
 
 
@@ -50,6 +47,6 @@ public class MainNav {
 		
 		cr.renderInformalParameters(writer);
 		writer.end();
-		js.addInitializerCall("mainNav", new JSONObject("id", id));
+		js.require("kawwa/mainNav").with(new JSONObject("id", id));
 	}
 }

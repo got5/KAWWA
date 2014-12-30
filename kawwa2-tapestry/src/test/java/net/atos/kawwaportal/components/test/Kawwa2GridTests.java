@@ -10,7 +10,7 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
 	@Test
 	public void testDefaultNbRows(){
 		
-		open("Kawwa2Grid");
+        open("Kawwa2Grid");
 		
 		checkNumbRows(getValue("//select").toString());
     }
@@ -71,8 +71,8 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
         
 		checkArrow("pic_first_off.gif");
 		checkArrow("pic_prev_off.gif");
-		checkArrow("pic_last_off.gif");
-		checkArrow("pic_next_off.gif");
+		checkArrow("pic_last.gif");
+		checkArrow("pic_next.gif");
 		
 		checkCurrentPage("1");
     }
@@ -92,8 +92,8 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
 		
 		checkArrow("pic_first.gif");
 		checkArrow("pic_prev.gif");
-		checkArrow("pic_last_off.gif");
-		checkArrow("pic_next_off.gif");
+		checkArrow("pic_last.gif");
+		checkArrow("pic_next.gif");
 				
 		checkCurrentPage("2");
     }
@@ -107,30 +107,15 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
 		checkCurrentPage("1");
 		
 		//sort descending
-		clickAjax("//*[@class='t-sort-icon']");
+		clickAjax("//th[1]");
 		
 		//sort ascending
-		clickAjax("//*[@class='t-sort-icon']");
+		clickAjax("//th[1]");
 		
 		checkNumbRows("10");
     }
 	
-	@Test(dependsOnMethods="testSort")
-	public void testEmpty(){
-		
-		open("Kawwa2Grid?empty=true");
-		
-		checkIsEmpty();
-    }
-	
-	@Test(dependsOnMethods="testEmpty")
-	public void testEmptyInPlace(){
-		
-		open("Kawwa2Grid/true?empty=true");
-		
-		checkIsEmpty();
-    }
-	
+
 	private void checkNumbRows(final String expected){
 		
 		new Wait()
@@ -138,7 +123,7 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
             @Override
             public boolean until()
             {
-                return getXpathCount("//div[@class='t-data-grid']/table/tbody/tr").toString().equalsIgnoreCase(expected);
+                return getXpathCount("//table/tbody/tr").toString().equalsIgnoreCase(expected);
             }
         }.wait("We should have " + expected + " rows, but we have " + getXpathCount("//div[@class='t-data-grid']/table/tbody/tr"), 5000l);
         
@@ -153,7 +138,7 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
             {
                 return (isElementPresent("//img[contains(@src, '"+img+"')]"));
             }
-        }.wait("The pictures are not the good ones. ", 5000l);
+        }.wait("The pictures are not the good ones. " + img, 5000l);
 	}
 
 	private void checkCurrentPage(final String expected){
@@ -175,15 +160,4 @@ public class Kawwa2GridTests  extends SeleniumTestCase{
 		        "selenium.browserbot.getCurrentWindow().jQuery.active == 0",
 		        "5000l");
 	}
-	
-	private void checkIsEmpty(){
-		checkNumbRows("0");
-		
-		/**
-		 * check that the pagination is not displayed
-		 * */
-		assertFalse(isElementPresent("//div[@class='k-pagination']"), "Kawwa2Grid should not contain pagination where source is empty");
-
-	}
-	
 }

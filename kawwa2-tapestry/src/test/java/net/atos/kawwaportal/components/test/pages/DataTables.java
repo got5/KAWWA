@@ -1,11 +1,8 @@
 package net.atos.kawwaportal.components.test.pages;
 
-import java.util.List;
-
 import net.atos.kawwaportal.components.test.data.Celebrity;
 import net.atos.kawwaportal.components.test.data.CelebritySource;
 import net.atos.kawwaportal.components.test.data.IDataSource;
-
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SessionState;
