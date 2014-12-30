@@ -3,10 +3,14 @@
 	<h3>Form Error</h3>
 	<p>The following fields present an error:</p>
 	<ul>
-		<li>Error field 1: it is a mandatory field</li>
-		<li>Error field 2: wrong characters found (only numbers are allowed)</li>
+		<li id="error1" aria-controls="field1">Error field 1: A comment about the error</li>
 	</ul>
-</div>]]></content>
+</div>
+<form>
+	<p><label for="field2">Enter something:</label>
+		<input class="k-field-error" type="text" id="field1" name="field1" aria-describedby="error1" />
+		<span class="k-contextual-error">A comment about the error</span></p>
+</form>]]></content>
   <tabTrigger>errorMessages</tabTrigger>
   <scope>text.html</scope>
 </snippet>

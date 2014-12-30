@@ -1,5 +1,0 @@
-<snippet>
-  <content><![CDATA[In order to style the catalog products correctly, be sure to have on your style-sheet the code for the product template also.]]></content>
-  <tabTrigger>productCatalog_readmore</tabTrigger>
-  <scope>source.css</scope>
-</snippet>
