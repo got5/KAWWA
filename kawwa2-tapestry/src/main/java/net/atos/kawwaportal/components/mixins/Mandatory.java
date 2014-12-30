@@ -40,8 +40,7 @@ public class Mandatory {
             });
 
             if(el != null){
-                System.out.println(writer.getElement());
-				Element required = writer.getElement().element("p", "class", "k-mandatory");
+                Element required = writer.getElement().element("p", "class", "k-mandatory");
 				
 				required.raw(String.format(kawwaMandatoryMessage, String.format("<img src='%s' alt='Asterisk'/>", mandatory.toClientURL())));
 				
