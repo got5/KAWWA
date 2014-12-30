@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[<form class="k-search" method="post" action="">
-	<p><input type="search" class="k-autocomplete" id="search-tag" name="search-tag" placeholder="Search..." /> 
+	<p><input type="search" class="k-autocomplete" id="search-tag" name="search-tag" placeholder="Search..." title="Search" role="search" /> 
 		<input type="submit" value="go" /></p>
 </form>
 ]]></content>
