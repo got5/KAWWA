@@ -1,13 +1,11 @@
 package net.atos.kawwaportal.components.mixins;
 
 import org.apache.tapestry5.ClientElement;
-import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectContainer;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
-import org.got5.tapestry5.jquery.mixins.ui.Widget;
 
 /**
  * 
