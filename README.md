@@ -17,7 +17,18 @@ We strongly believe that the web design is above all a matter of identity and of
 We will be thrilled to have you contributing to our project!
 You may contribute:
 -	By proposing and/or pulling new components;
--	By giving us feed-back on issues or bugs, or by giving us tips to improve existing components.
+-	By giving us feed-back on issues or bugs, or by giving us tips to improve existing components;
+-	Write Unit or Integration tests for the portal;
+-	Improve the quality of the project;
+-	Write some Documentation
+
+If you want to create a new component, you have to send a new pull request with this files : 
+- dependencies/ : directory containing all external jQuery librairies
+- snippet.js and snippet.hmtl : the HTML and JavaScript codes of the component
+- forewords.html : Global documentation about the component
+- metadata.properties : Metatdata properties (name, type, tags, ...)
+- readmore.[js, css, html] : Extra informationd for the corresponding snippet. You should use HTML tags inside these files. 
+- An updated of versionPortal/src/main/webapp/css/k-theme0.css with the CSS definition of your component.
 
 Although, as mentioned before, Kawwa goal is not to spread graphical themes, your designs would be equally welcome. We'll add instructions about how you can do it asap.
 
