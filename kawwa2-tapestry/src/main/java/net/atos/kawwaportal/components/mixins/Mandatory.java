@@ -3,7 +3,6 @@ package net.atos.kawwaportal.components.mixins;
 import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.*;
-import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.func.Predicate;
 import org.apache.tapestry5.ioc.annotations.Inject;
