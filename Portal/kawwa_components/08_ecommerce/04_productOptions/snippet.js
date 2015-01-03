@@ -1,5 +1,9 @@
-$(document).ready(function(){
-	if (jQuery("div").hasClass("k-product-options")) {
-		jQuery('fieldset').buttonset();
-	}
-});
+(function($){
+	'use strict';
+
+	$(document).ready(function(){
+		if ($('div').hasClass('k-product-options')) {
+			jQuery('fieldset').buttonset();
+		}
+	});
+})(jQuery);

@@ -1,16 +1,23 @@
-$(document).ready(function(){
-	if (jQuery('form.k-login').hasClass('collapsible')) {
-		jQuery('form.k-login.collapsible').css("display", "none");
-		jQuery('#loginLink').children("a").attr("href", "#");
-		jQuery('#loginLink').click(function() {
-			jQuery('form.k-login.collapsible').animate({
-			    height: 'toggle'
-			  }, {
-			    duration: 500,
-			    specialEasing: {
-			      height: 'linear'
-			    }
-			  });
-		});
-	}
-});
+(function($){
+	'use strict';
+
+	$(document).ready(function(){
+		var login = $('form.k-login');
+		var loginLink = $('#loginLink');
+
+		if (login.hasClass('collapsible')) {
+			login.css('display', 'none');
+			loginLink.children('a').attr('href', '#');
+			loginLink.click(function() {
+				$('form.k-login.collapsible').animate({
+					height: 'toggle'
+				}, {
+					duration: 500,
+					specialEasing: {
+						height: 'linear'
+					}
+				});
+			});
+		}
+	});
+})(jQuery);

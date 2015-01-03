@@ -1,21 +1,24 @@
-/* Feature detection */
-function isNumberInput() {
-	var i = document.createElement('input');
-	i.setAttribute('type', 'number');
-	return i.type !== 'text';
-}
-	
-$(document).ready(function(){
-	
-	var incTest = isNumberInput();
+(function($){
+	'use strict';
 
-	if (jQuery.fn.uppydowner) {
-		if(!incTest) {
-			jQuery('input[type=number]').addClass('uppydowner');
-			jQuery('input.uppydowner').uppydowner();
-		} else {
-			jQuery('input[type=number]').css('width', '3em');
-		}
+	/* Feature detection */
+	function isNumberInput() {
+		var i = document.createElement('input');
+		i.setAttribute('type', 'number');
+		return i.type !== 'text';
 	}
+	$(document).ready(function(){
 
-});
+		var incTest = isNumberInput();
+
+		if ($.fn.uppydowner) {
+			if(!incTest) {
+				$('input[type=number]').addClass('uppydowner');
+				$('input.uppydowner').uppydowner();
+			} else {
+				$('input[type=number]').css('width', '3em');
+			}
+		}
+
+	});
+})(jQuery);

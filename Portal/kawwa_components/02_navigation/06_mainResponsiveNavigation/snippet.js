@@ -1,6 +1,10 @@
-/* Responsive Main Navigation call */
-$(document).ready(function(){
-	if(jQuery.fn.flexNav) {
-		$('.k-navbar').flexNav();
-	}
-});
+(function($){
+	'use strict';
+
+	/* Responsive Main Navigation call */
+	$(document).ready(function(){
+		if($.fn.flexNav) {
+			$('.k-navbar').flexNav();
+		}
+	});
+})(jQuery);

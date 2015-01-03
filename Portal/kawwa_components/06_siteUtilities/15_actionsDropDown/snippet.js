@@ -1,9 +1,13 @@
-// ACTIONS DROPDOWN ----------------------------------	
+(function($){
+	'use strict';
 
-$(document).ready(function(){
+	// ACTIONS DROPDOWN ----------------------------------
 
-	if(jQuery.fn.actionsDd) {
+	$(document).ready(function(){
 
-		jQuery('.k-actions-dropdown').actionsDd();
-	}
-});
+		if($.fn.actionsDd) {
+
+			$('.k-actions-dropdown').actionsDd();
+		}
+	});
+})(jQuery);
