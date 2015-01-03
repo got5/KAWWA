@@ -1,5 +1,9 @@
-$(document).ready(function(){
-	if(jQuery.fn.switchView) {
-		jQuery('.catalog-view').switchView();
-	}	
-});
+(function($){
+	'use strict';
+
+	$(document).ready(function(){
+		if($.fn.switchView) {
+			$('.catalog-view').switchView();
+		}
+	});
+})(jQuery);
