@@ -1,13 +1,17 @@
-function toPrint() {
-	if (jQuery("a.bt-print")) {
-		jQuery("a.bt-print").click (function(){
-			window.print();	
-			return false;
-		});
+(function($){
+	'use strict';
+
+	function toPrint() {
+		if ($('a.bt-print')) {
+			$('a.bt-print').click(function(){
+				window.print();
+				return false;
+			});
+		}
 	}
-}
 
 
-$(document).ready(function(){
-	toPrint();
-});
+	$(document).ready(function(){
+		toPrint();
+	});
+})(jQuery);

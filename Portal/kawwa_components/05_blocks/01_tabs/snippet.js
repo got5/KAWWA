@@ -1,5 +1,9 @@
-$(document).ready(function(){
-	if(jQuery.ui && jQuery.ui.tabs) {
-		$('.k-tabbed-data').tabs();
-	}
-});
+(function($){
+	'use strict';
+
+	$(document).ready(function(){
+		if($.ui && $.ui.tabs) {
+			$('.k-tabbed-data').tabs();
+		}
+	});
+})(jQuery);
