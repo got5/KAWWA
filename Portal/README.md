@@ -2,6 +2,10 @@
 
 ## Clone the Repository
 
+In order to work locally with the Kawwa2 portal, you should clone clone the Git Repository. You can use Git command-line client, or the "Github for Windows" UI tool. Here is the URL of the repository : https://github.com/got5/KAWWA.git. 
+
+Everything related to the portal are in the Portal directory.
+
 ## Launch the Portal
 
 In order to execute locally the portal, we will use the Jetty gradle plugin. Everything is already defined in the build.gradle. You should open your command line tool, go to the Portal directory, and execute this command : 
