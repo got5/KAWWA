@@ -19,14 +19,16 @@ import org.got5.tapestry5.jquery.JQuerySymbolConstants;
  */
 @Import(library = "classpath:/net/atos/kawwaportal/components/assets/readMore.js")
 public class ReadMore {
-	
+
+    /**
+     * Message used to display/hide a part of a text
+     */
 	@Parameter(value = "message:read-more-header", defaultPrefix = BindingConstants.MESSAGE)
 	private String header;
 	
 	@InjectContainer
 	private ClientElement clientElement;
-	
-    
+
 	@Inject
 	@Symbol(JQuerySymbolConstants.JQUERY_ALIAS)
 	private String jqueryAlias;

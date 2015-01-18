@@ -44,10 +44,16 @@ import net.atos.kawwaportal.components.data.articleOrganizer.TabArticleDetail;
 
 public class ArticleOrganizer {
 
+    /**
+     * Define the tabs and articles displayed.
+     */
 	@Parameter
 	@Property
 	private List<TabArticleDetail> tabArticleList;
-	
+
+    /**
+     * Will configure the tab component.
+     */
 	@Parameter
 	@Property
 	private JSONObject tabOptions;

@@ -18,9 +18,15 @@ import org.apache.tapestry5.ioc.internal.util.InternalUtils;
  */
 public class Errors {
 
+    /**
+     * Header part of the Errors component
+     */
 	@Parameter(value="message:errors-message")
 	private String kawwaErrorMessage;
-	
+
+    /**
+     * Flag used to enable/disable this mixin.
+     */
 	@Parameter(defaultPrefix="literal",value="false")
 	private boolean disableKawwaErrors;
 	

@@ -40,11 +40,17 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  */
 
 public class GMapSelect {
-	
+
+    /**
+     * The list of GMapSelectLocation objects
+     */
 	@Parameter(required = true)
 	@Property
 	private List<GMapSelectLocation> currentGMapSelectLocationsList;
-	
+
+    /**
+     * The name of the location reference variable returned on submit
+     */
 	@Parameter
 	@Property
 	@SuppressWarnings("unused")

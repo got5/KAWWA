@@ -15,10 +15,16 @@ import org.got5.tapestry5.jquery.utils.JQueryUtils;
  * @component_version 1.1
  */
 public class JsTree {
-	
+
+    /**
+     * If the hotkeys boolean parametre, an external jquery.hotkeys javascript file will be loaded.
+     */
 	@Parameter(value="false")
 	private boolean hotkey;
 
+    /**
+     * Parameter of the corresponding jQuery widget.
+     */
     @Parameter
     private JSONObject options;
 

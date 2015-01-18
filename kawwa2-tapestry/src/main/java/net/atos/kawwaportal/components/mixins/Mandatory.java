@@ -19,9 +19,15 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 @MixinAfter
 public class Mandatory {
 
+    /**
+     * Warning test, used as a legend for the '*' characters displayed on required field.
+     */
 	@Parameter(value = "message:mandatory-field")
 	private String kawwaMandatoryMessage;
-	
+
+    /**
+     * Flag used to enable/disable this mixin.
+     */
 	@Parameter(defaultPrefix = "literal", value = "false")
 	private boolean disableKawwaMandatory;
 	

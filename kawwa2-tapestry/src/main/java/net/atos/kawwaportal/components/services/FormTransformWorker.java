@@ -8,13 +8,13 @@ import org.apache.tapestry5.services.transform.TransformationSupport;
 
 /**
  * Worker will override the rendering of the Form Component.
+ * Will automatically add the Mandatory mixin if at least one input is required in the current form.
  */
 public class FormTransformWorker implements ComponentClassTransformWorker2 {
 
 	
 	public void transform(PlasticClass plasticClass, TransformationSupport support,
 			MutableComponentModel model) {
-		System.out.println(model.getComponentClassName());
 		if(model.getComponentClassName().equals(Form.class.getName())){
 			model.addMixinClassName(net.atos.kawwaportal.components.mixins.Mandatory.class.getName());
 		}

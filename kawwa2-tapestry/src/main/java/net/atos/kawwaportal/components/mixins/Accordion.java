@@ -8,7 +8,8 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.got5.tapestry5.jquery.mixins.ui.Widget;
 
 /**
- * 
+ * jQuery accordion-like mixin
+ *
  * @tapestrydoc
  * @component_version 1.1
  */

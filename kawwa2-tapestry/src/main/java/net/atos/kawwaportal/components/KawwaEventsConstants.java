@@ -9,9 +9,17 @@ public class KawwaEventsConstants {
 	 * Event triggered when the user changed the locale
 	 */
 	public static final String LANGUAGE_SELECTED = "languageSelected";
-	
+
+    /**
+     * Event triggered by the Kawwa2Grid when we change the number of rows that should be displayed
+     */
 	public static final String GRID_EVENT_ROW_PER_PAGE_SELECT = "rowPerPageSelectionEvent";
-	
+
+    /**
+     * Event handled by the Kawwa2Grid when we change the number of rows that should be displayed.
+     * When this event is triggered, the component will trigger the GRID_EVENT_ROW_PER_PAGE_SELECT event
+     * if everything is ok.
+     */
 	public static final String SELECT_ROWPERPAGE = "rowPerPageSelect";
 	
 	/**

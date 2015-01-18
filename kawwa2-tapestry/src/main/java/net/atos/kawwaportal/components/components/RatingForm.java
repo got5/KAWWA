@@ -46,11 +46,11 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 @Import(stylesheet = "classpath:/net/atos/kawwaportal/components/assets/ratings/ratings.css")
 public class RatingForm {
-	
+
 	@Parameter(required=true)
 	@Property
 	private Rating rating;
-	
+
 	@Parameter(required=true)
 	@Property
 	private List<CriteriaDefinition> criteriasDefinition;

@@ -31,6 +31,10 @@ import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.got5.tapestry5.jquery.services.WidgetParams;
 
 public class KawwaPortalComponentsModule {
+
+    /**
+     * Factory configuration for the Kawwa2 Components library.
+     */
 	@Contribute(SymbolProvider.class)
 	@FactoryDefaults
 	public static void contributeSymboleProvider(
@@ -50,13 +54,14 @@ public class KawwaPortalComponentsModule {
     @Contribute(SymbolProvider.class)
     @ApplicationDefaults
     public static void contributeApplicationDefault(MappedConfiguration<String, Object> configuration) {
+        //Define jQuery as the default JavaScript stack
         configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
     }
 
     @Contribute(JavaScriptStack.class)
     @Core
-    public static void setupCoreJavaScriptStack(OrderedConfiguration<StackExtension>
-                                     configuration) {
+    public static void setupCoreJavaScriptStack(OrderedConfiguration<StackExtension> configuration) {
+        //Remove the default bootstrap.css stylesheet.
         configuration.override("bootstrap.css", null);
     }
 

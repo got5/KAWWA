@@ -32,7 +32,9 @@ import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 /**
- * 
+ * Make possible to select a language. When selected, the current page should be refreshed, an
+ * the selected locale stored in the right Tapestry service.
+ *
  * @tapestrydoc
  * @component_version 1.1
  *

@@ -17,7 +17,8 @@ import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 /**
- * 
+ *
+ * Collapsible Panel component
  * @tapestrydoc
  * @component_version 1.1
  *
@@ -47,8 +48,7 @@ public class CollapsiblePanel {
 	 */
 	@Parameter(value = "message:panel-title", defaultPrefix = BindingConstants.MESSAGE)
 	private String title;
-	
-	
+
 	/**
 	 * The Header of your Collapsible Panel
 	 */

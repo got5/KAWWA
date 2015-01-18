@@ -12,10 +12,14 @@ import org.apache.tapestry5.services.javascript.StylesheetLink;
 import org.apache.tapestry5.services.javascript.StylesheetOptions;
 
 /**
- * Stack for k-theme1
+ * Default Kawwa2 Stacks.
+ * Will only import CSS stylesheets
  */
 public class Theme0Stack implements JavaScriptStack {
 
+    /**
+     * Root directory containing stylesheets
+     */
 	public static final String STACK_PATH = "classpath:net/atos/kawwaportal/components/theme/k-theme0";
 	
 	private final List<Asset> javaScriptStack;

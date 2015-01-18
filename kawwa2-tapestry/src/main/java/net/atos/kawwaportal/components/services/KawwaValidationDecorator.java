@@ -42,7 +42,7 @@ public class KawwaValidationDecorator implements ValidationDecorator{
 		
 		if(!(field.getClass().getCanonicalName().equalsIgnoreCase("org.apache.tapestry5.corelib.components.Radio") ||
 				field.getClass().getCanonicalName().equalsIgnoreCase("org.apache.tapestry5.corelib.components.Checkbox"))) return;
-		
+
 		if(inError(field))
 				labelElement.addClassName(KawwaConstants.CSS_CLASS_ERROR);
 		
@@ -68,10 +68,12 @@ public class KawwaValidationDecorator implements ValidationDecorator{
 			 * The Checkbox element should not have the CSS_CLASS_ERROR class when it is in error
 			 */
 			if(field.getClass().getCanonicalName().equalsIgnoreCase("org.apache.tapestry5.corelib.components.Checkbox")) return;
-			
+
+            //If the field is in error, will add a specific kawwa2 CSS class
 			e.addClassName(KawwaConstants.CSS_CLASS_ERROR);
 		}
 
+        //If the field is mandatory, will add a specific kawwa2 CSS class
 		if(field.isRequired()){
 			e.addClassName(KawwaConstants.CSS_CLASS_REQUIRED);
 		}

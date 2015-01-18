@@ -29,7 +29,10 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  */
 
 public class GMap implements ClientElement {
-	
+
+    /**
+     * Parameter of the corresponding jQuery widget.
+     */
 	@Parameter
 	@Property
 	private JSONObject parameters;

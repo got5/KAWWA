@@ -13,7 +13,6 @@ public class KawwaUtils {
 	 * This method will return the value of a Key. If the key is not specified
 	 * in one of the Client's Bundle, We will use the Kawwa default bundle.
 	 */
-	
 	public static String getMessages(String key, Messages messages, Locale l){
 		
 		String message = new String();
@@ -33,7 +32,12 @@ public class KawwaUtils {
 		return message;
 		
 	}
-	
+
+    /**
+     * This method will transform each string of an array into its camelized version
+     * @param args Array of string that should be camelized
+     * @return array of camelized strings
+     */
 	public static String camelCase(String... args) {
 		if (args == null || args.length == 0) {
 			return null;

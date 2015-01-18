@@ -45,6 +45,9 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 @MixinAfter
 public class ProductQuantity {
 
+    /**
+     * Parameter of the corresponding jQuery widget.
+     */
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
 	private JSONObject options;
 

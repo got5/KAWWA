@@ -50,32 +50,44 @@ import org.apache.tapestry5.services.javascript.JavaScriptSupport;
  * @component_version 1.0
  */
 public class DeliveryForm {
-	
+
+    /**
+     * The list of deliveryMode objects
+     */
 	@Parameter(required = true)
 	@Property
 	private List<DeliveryMode> currentDeliveryModesList;
-	
+
+    /**
+     * The optional JSON Object that will parameter the gmap plugin
+     */
 	@Parameter
 	@Property
 	@SuppressWarnings("unused")
 	private JSONObject gMapParameters;
-	
+
+    /**
+     * The name of the mode reference variable returned on submit
+     */
+    @Parameter
+    @Property
+    @SuppressWarnings("unused")
+    private String deliveryModeSelected;
+
+    /**
+     * The name of the location reference variable returned on submit
+     */
+    @Parameter
+    @Property
+    @SuppressWarnings("unused")
+    private String deliveryLocationSelected;
+
 	@Property
 	private List<GMapSelectLocation> currentDeliveryLocationsList;
 	
 	@Property
 	@SuppressWarnings("unused")
 	private DeliveryMode currentDelieveryMode;
-	
-	@Parameter
-	@Property
-	@SuppressWarnings("unused")
-	private String deliveryModeSelected;
-	
-	@Parameter
-	@Property
-	@SuppressWarnings("unused")
-	private String deliveryLocationSelected;
 	
 	@Property
 	@SuppressWarnings("unused")
