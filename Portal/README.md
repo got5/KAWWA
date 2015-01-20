@@ -28,6 +28,9 @@ If you are windows, you can also double-click on the run.bat file available in t
 
 In order to build the portal, we will use the build gradle goal. Everything is already defined in the build.gradle. You should open your command line tool, go to the Portal directory, and execute this command : 
 
+The Portal will be available here : http://localhost:8080/Portal/
+
+In order to get the components, you should update the awl.filesystemindexer.root property inside the Portal\src\main\webapp\WEB-INF\web.xml file.
 ```
 ./gradlew.bat build
 ```
