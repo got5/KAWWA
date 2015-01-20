@@ -16,3 +16,4 @@ out/
 .DS_Store
 kawwa2-angularjs/npm-debug.log
 Portal/src/main/webapp/WEB-INF/web.xml
+Portal/gradle.properties
