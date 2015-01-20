@@ -8,6 +8,14 @@ Everything related to the portal are in the Portal directory.
 
 ## Launch the Portal
 
+First, you should install the Java Developper Kit 7 (JDK), and set the Windows/Linux Environmental Variable JAVA_HOME to the path containing the JDK binaries.
+
+If you any proxy issues with Gradle, you should set these Gradle properties inside the .gradle\gradle.properties file : 
+* systemProp.http.proxyHost=www.somehost.org
+* systemProp.http.proxyPort=8080
+* systemProp.http.proxyUser=userid
+* systemProp.http.proxyPassword=password
+
 In order to execute locally the portal, we will use the Jetty gradle plugin. Everything is already defined in the build.gradle. You should open your command line tool, go to the Portal directory, and execute this command : 
 
 ```
