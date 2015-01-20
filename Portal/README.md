@@ -8,7 +8,7 @@ Everything related to the portal are in the Portal directory.
 
 ## Launch the Portal
 
-First, you should install the Java Developper Kit (JDK), and set the Windows/Linux Environmental Variable JAVA_HOME to the path containing the JDK binaries.
+First, you should install the Java Developper Kit 7 (JDK), and set the Windows/Linux Environmental Variable JAVA_HOME to the path containing the JDK binaries.
 
 If you any proxy issues with Gradle, you should set these Gradle properties inside the .gradle\gradle.properties file : 
 * systemProp.http.proxyHost=www.somehost.org
