@@ -113,9 +113,9 @@ task zipComp(type: Zip) {
 }
 
 
-processResources.dependsOn("generateSublimeTextSnippets")
-processResources.dependsOn("copyThemesForAngular")
-processResources.dependsOn("copyThemesForTapestry")
+//processResources.dependsOn("generateSublimeTextSnippets")
+//processResources.dependsOn("copyThemesForAngular")
+//processResources.dependsOn("copyThemesForTapestry")
 processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
 
