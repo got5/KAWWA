@@ -24,6 +24,8 @@ In order to execute locally the portal, we will use the Jetty gradle plugin. Eve
 
 If you are windows, you can also double-click on the run.bat file available in the Portal directory. 
 
+You should update the awl.filesystemindexer.root property defined in the Portal\src\main\webapp\WEB-INF\web.xml file. This property should contain the full path of the kawwa_components directory.
+
 ## Build the Portal
 
 In order to build the portal, we will use the build gradle goal. Everything is already defined in the build.gradle. You should open your command line tool, go to the Portal directory, and execute this command : 
