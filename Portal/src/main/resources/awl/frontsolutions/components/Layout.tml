@@ -79,7 +79,7 @@
             <p class="community">
                 <a href="https://twitter.com/kawwalibrary" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @kawwalibrary</a>
             </p>
-            <p class="k-copyright">&copy; Except where otherwise noted, content on this site is licensed under a <a href="https://github.com/got5/KAWWA/blob/master/Portal/Licence.md">MIT License</a></p>
+            <p class="k-copyright">&copy; Except where otherwise noted, content on this site is licensed under a <a rel="license" href="https://github.com/got5/KAWWA/blob/master/Portal/Licence.md">MIT License</a></p>
         </footer>
 
 
