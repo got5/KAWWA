@@ -268,27 +268,7 @@
 					</div>
 
 				</div>
-				<t:if t:test="atosMember">
-					<div class="k-info-block exception">
 
-						<div class="hgroup">
-
-							<h2>Join the Kawwa Community in Alchemy!</h2>
-
-						</div>
-
-						<div class="content">
-
-							<p>
-								Contribute to this project joining the Kawwa Community in our
-								Atos Worldline Social Networking, <a
-									href="http://alchemy.atosworldline.com/fr/node/9450">Alchemy</a>.
-							</p>
-
-						</div>
-
-					</div>
-				</t:if>
 				<p class="i-banner">
 					<img src="${asset:context:img/banner_html5.jpg}"
 						alt="HTML5 version of Kawwa components available in the first quarter of 2012" />
