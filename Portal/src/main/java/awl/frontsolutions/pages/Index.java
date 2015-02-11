@@ -64,8 +64,4 @@ public class Index {
 	public boolean isAtosMember(){
 		return atos.isAtosMember();
 	}
-	public Boolean newTheme(){
-		//return theme.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);
-		return true;
-	}
 }
