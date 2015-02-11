@@ -92,11 +92,11 @@
 			<form t:type="form"	t:id="contextForm" t:clientValidation="false" t:autofocus="false">
 				
 				<p>
-					<label for="namecontact">Name</label> <input t:type="textfield" required="true" t:value="namecontact"
+					<label for="namecontact">Name</label> <input t:type="textfield" aria-required="true" required="true" t:value="namecontact"
 						t:id="namecontact" name="namecontact" type="text"></input>
 				</p>
 				<p>
-					<label for="emailcontact">Email</label> <input t:type="textfield" type="email" required="true" t:value="emailcontact"
+					<label for="emailcontact">Email</label> <input t:type="textfield" type="email" aria-required="true" required="true" t:value="emailcontact"
 						t:id="emailcontact" name="emailcontact" />
 				</p>
 				<p>
