@@ -11,7 +11,8 @@
 					placeholder="Search a Component..."
 					t:mixins="jquery/autocomplete" 
 					size="30"
-					role="search"/>
+					role="search"
+					aria-autocomplete="list"/>
 			<input	type="submit" value="go" />
 		</p>
 </t:form>
