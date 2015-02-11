@@ -192,9 +192,7 @@ public class Download {
 	}
 
 	public void afterRender() {
-		js.addInitializerCall(InitializationPriority.LATE, "downloadPage",
-				new JSONObject("url", cr.createEventLink("check", null)
-						.toAbsoluteURI()));
+		js.addInitializerCall(InitializationPriority.LATE, "downloadPage", new JSONObject("url", cr.createEventLink("check").toAbsoluteURI()));
 	}
 
 }

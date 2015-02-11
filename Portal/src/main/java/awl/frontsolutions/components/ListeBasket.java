@@ -138,7 +138,7 @@ public class ListeBasket {
 	public void afterRender(){
 		js.addInitializerCall(InitializationPriority.LATE, 
 				"basketDownload", 
-				new JSONObject("url", cr.createEventLink("checked", null).toAbsoluteURI()));
+				new JSONObject("url", cr.createEventLink("checked").toAbsoluteURI()));
 	}
 	@OnEvent(value="checked")
 	public void checkComp(@RequestParameter(value = "name") String name, 

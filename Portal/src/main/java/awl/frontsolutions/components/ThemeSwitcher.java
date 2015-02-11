@@ -107,7 +107,7 @@ public class ThemeSwitcher {
 		if (InternalUtils.isNonBlank(urlParam))
 			return cr.createPageLink("Component", false, urlParam);
 		else
-			return cr.createPageLink(cr.getPageName(), false, null);
+			return cr.createPageLink(cr.getPageName(), false);
 	}
 
 	public Boolean getIndex() {

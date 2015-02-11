@@ -50,7 +50,7 @@ public class AboutKawwaMenu {
 		writer.end();
 		
 		writer.element("p", "class", "aid");
-		writer.element("a", "href", cr.createPageLink("Components", false, null));
+		writer.element("a", "href", cr.createPageLink("Components", false));
 		writer.write("Back to index of components");
 		writer.end();
 		writer.end();
@@ -83,7 +83,7 @@ public class AboutKawwaMenu {
 				writer.end();
 			}
 			else {
-				writer.element("a", "href", cr.createPageLink((String) key, false, null));
+				writer.element("a", "href", cr.createPageLink((String) key, false));
 				writer.write((String) val);
 				writer.end();
 			}
