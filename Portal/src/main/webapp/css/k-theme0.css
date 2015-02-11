@@ -2644,7 +2644,7 @@ p + .k-accordion {margin-top: 1em;}
 		}
 		
 
-.published:after {
+.dt-published:after {
 	content: "\00A0 \2609\00A0";
 	font-size: 150%;
 	vertical-align: -3px;
@@ -2702,7 +2702,7 @@ h2 + .k-entry {margin-top: 2em;}
 	.k-entry ul.entry-info, .k-entry .content {padding-left: 2%;}
 	.k-entry ul.entry-info + div.content {margin: 0;}
 	
-	.k-entry ul.entry-info {float: left; width: 30%;}
+	.k-entry entry-info {float: left; width: 30%;}
 	.k-entry .content {float: right; width: 65%;}
 		.k-entry ul.entry-info li {font-size: 0.8em;}
 		
