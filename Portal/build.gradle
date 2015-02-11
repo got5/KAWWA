@@ -30,38 +30,9 @@ dependencies {
  compile group: 'xerces', name: 'xerces', version: '2.4.0'
  compile group: 'org.apache.tapestry', name: 'tapestry-core', version: '5.3.7'
  providedCompile  group: 'javax.servlet', name: 'servlet-api', version: '2.5'
- 
- 
- 
- testCompile "org.gebish:geb-spock:$gebVersion"
- testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
- testCompile group: 'junit', name: 'junit', version: '4.10'
- 
- // If using JUnit, need to depend on geb-junit (3 or 4)
- testCompile "org.gebish:geb-junit4:$gebVersion"
 
- // Drivers
- drivers.each { driver ->
-     testCompile "org.seleniumhq.selenium:selenium-$driver-driver:$seleniumVersion"
- }
-
- testRuntime "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
 }
 
-drivers.each { driver ->
-    task "${driver}Test"(type: Test) {
-        testReportDir = reporting.file("$name/tests")
-        testResultsDir = file("$buildDir/test-results/$name")
-
-        systemProperty "geb.build.reportsDir", reporting.file("$name/geb")
-        systemProperty "geb.env", driver
-    }
-}
-
-test {
-	dependsOn drivers.collect { tasks["${it}Test"] }
-	enabled = false
-}
 
 repositories {
 	mavenCentral()
@@ -120,5 +91,5 @@ processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.7'
+    gradleVersion = '2.2.1'
 }
