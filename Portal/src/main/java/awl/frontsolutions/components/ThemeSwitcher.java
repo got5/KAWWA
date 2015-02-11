@@ -1,19 +1,13 @@
 package awl.frontsolutions.components;
 
-import java.util.List;
-import java.util.TreeMap;
-
+import awl.frontsolutions.entities.ChoosenTheme;
+import awl.frontsolutions.services.FileSystemIndexer;
+import awl.frontsolutions.services.stack.ThemeStack;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.Link;
 import org.apache.tapestry5.SelectModel;
-import org.apache.tapestry5.annotations.AfterRender;
-import org.apache.tapestry5.annotations.Import;
-import org.apache.tapestry5.annotations.OnEvent;
-import org.apache.tapestry5.annotations.Parameter;
-import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.SessionState;
-import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.func.F;
 import org.apache.tapestry5.func.Predicate;
 import org.apache.tapestry5.func.Worker;
@@ -25,10 +19,8 @@ import org.apache.tapestry5.json.JSONObject;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
-import awl.frontsolutions.entities.ChoosenTheme;
-import awl.frontsolutions.services.AtosService;
-import awl.frontsolutions.services.FileSystemIndexer;
-import awl.frontsolutions.services.stack.ThemeStack;
+import java.util.List;
+import java.util.TreeMap;
 
 @Import(library = "ThemeSwitcher.js")
 public class ThemeSwitcher {
@@ -56,9 +48,6 @@ public class ThemeSwitcher {
 	private ComponentResources cr;
 
 	@Inject
-	private AtosService atos;
-
-	@Inject
 	private FileSystemIndexer indexer;
 
 	@SetupRender
@@ -83,14 +72,6 @@ public class ThemeSwitcher {
 
 			public boolean accept(String element) {
 				return element.startsWith(ThemeStack.PREFIX);
-			}
-		}).filter(new Predicate<String>() {
-
-			public boolean accept(String element) {
-				String themeName = element.substring(ThemeStack.PREFIX.length());
-				return (!messages.contains(themeName + "-fitler") || (messages
-						.get(themeName + "-fitler").equalsIgnoreCase("yes") && atos
-						.isAtosMember()));
 			}
 		}).each(new Worker<String>() {
 

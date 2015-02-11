@@ -5,14 +5,16 @@ import awl.frontsolutions.services.impl.*;
 import awl.frontsolutions.services.stack.*;
 import net.atos.kawwaportal.components.KawwaConstants;
 import org.apache.tapestry5.MarkupWriter;
-import org.apache.tapestry5.MetaDataConstants;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
-import org.apache.tapestry5.ioc.annotations.*;
+import org.apache.tapestry5.ioc.annotations.Contribute;
+import org.apache.tapestry5.ioc.annotations.Local;
+import org.apache.tapestry5.ioc.annotations.Startup;
+import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
@@ -24,9 +26,6 @@ import org.slf4j.Logger;
 
 import java.io.IOException;
 
-//import awl.frontsolutions.services.atos.AtosModule;
-
-//@SubModule(AtosModule.class)
 public class AppModule {
 
 	@Startup
@@ -66,10 +65,6 @@ public class AppModule {
 			MappedConfiguration<String, JavaScriptStack> configuration) {
 		configuration.addInstance("themestack", ThemeSwitcherStack.class);
 		configuration.addInstance(ThemeStack.DEFAULT_THEME, Theme0Stack.class);
-		configuration.addInstance(ThemeStack.PREFIX + "k-theme1",
-				Theme1Stack.class);
-		// configuration.addInstance(ThemeStack.PREFIX+"k-theme2",
-		// Theme2Stack.class);
 
 		configuration.overrideInstance(JQuerySymbolConstants.PROTOTYPE_STACK,
 				OverridePrototypeStack.class);
@@ -84,7 +79,6 @@ public class AppModule {
 		binder.bind(ComponentUtils.class, ComponentUtilsImpl.class);
 		binder.bind(DASSecurityManager.class, DASSecurityManagerImpl.class);
 		binder.bind(TopComponent.class, TopComponentImpl.class);
-		binder.bind(AtosService.class, AtosServiceDefaultImpl.class);
 		binder.bind(Authentification.class, AuthentificationDefaultImpl.class);
 		binder.bind(MailService.class, DefaultMailServiceImpl.class);
 	}
