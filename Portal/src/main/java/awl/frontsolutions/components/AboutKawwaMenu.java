@@ -1,9 +1,5 @@
 package awl.frontsolutions.components;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.annotations.AfterRender;
@@ -11,7 +7,9 @@ import org.apache.tapestry5.annotations.BeginRender;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
-import awl.frontsolutions.services.AtosService;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class AboutKawwaMenu {
 	
@@ -20,9 +18,6 @@ public class AboutKawwaMenu {
 	private Map<String, String> guidelines = new LinkedHashMap<String, String>();
 	
 	@Inject
-	private AtosService atos;
-	
-	@Inject 
 	private ComponentResources cr;
 	
 	@SetupRender
@@ -31,8 +26,7 @@ public class AboutKawwaMenu {
 		
 		presentation.put("KawwaPortal", "The Kawwa Portal");
 		
-		if(atos.isAtosMember()) presentation.put("AboutKawwa", "The Kawwa2 Project");
-        presentation.put("Releases", "Release Notes");
+		presentation.put("Releases", "Release Notes");
 
 		component.put("ComponentApproach", "The Kawwa Components");
 		component.put("HowTo", "How to work with components");
