@@ -29,15 +29,6 @@ public class Index {
 	@Inject
 	private AssetSource as;
 	
-	@Inject
-	private TopComponent topComponent;
-	
-	@Inject 
-	private AtosService atos;
-	
-	@Property
-	private Set<String> topComponents;
-	
 	@Property
 	private String comp;
 	
@@ -48,20 +39,7 @@ public class Index {
 		return null;
 	}
 	
-	@SetupRender
-	public void getTopComp(){
-		topComponents = topComponent.getTopComponent().keySet();
-	}
-	
-	public String getComponentLibelle(){
-		return topComponent.getTopComponent().get(comp);
-	}
-	
 	public String getBannerUrl(){
 		return as.getContextAsset("img/"+theme.getDir()+".jpg", null).toClientURL();
-	}
-	
-	public boolean isAtosMember(){
-		return atos.isAtosMember();
 	}
 }
