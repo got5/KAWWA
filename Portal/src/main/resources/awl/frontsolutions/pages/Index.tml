@@ -60,9 +60,6 @@
 				<p id="download-entry">
 					<a t:type="pagelink" t:page="download">Build your custom <span>download</span></a>
 				</p>
-				<div class="i-change-style">
-					<t:themeswitcher />
-				</div>
 			</aside>
 </t:layout>
 
