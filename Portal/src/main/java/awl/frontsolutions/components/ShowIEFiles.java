@@ -63,7 +63,7 @@ public class ShowIEFiles {
 		writer.end();//ul
 		writer.element("p", "class", "k-readmore");
 		writer.write("If you want to know how to apply those files to your project, please consult ");
-		writer.element("a", "href", cr.createPageLink(IeFix.class, false, null));
+		writer.element("a", "href", cr.createPageLink(IeFix.class, false));
 		writer.write("Support for Internet Explorer");
 		writer.end();
 		writer.end();
