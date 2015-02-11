@@ -348,8 +348,6 @@ public class Component {
 		return !InternalUtils.isEmptyCollection(componentInfo.getContent().getJsDependencies()) || getHasJqueryTag();
 	}
 	
-	public boolean newTheme(){ return !currentTheme.getThemeName().equalsIgnoreCase(ThemeStack.DEFAULT_THEME);}
-	
 	public Asset getTapestryPath(){
 		return this.assetSource.getContextAsset(String.format("img/%s/jquery-trans.png", currentTheme.getDir()), null);
 	}

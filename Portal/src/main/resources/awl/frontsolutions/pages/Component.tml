@@ -1,11 +1,6 @@
 <t:layout t:activeMenu="1" t:title="prop:title" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
 	
-	<t:if t:test="newTheme()">
-		<div id="menu">
-	        <t:leftMenu t:urlParam="componentInfo.urlParam"/>
-	    </div>
-    </t:if>
-    <div id="main">
+	<div id="main">
         <h2>${groupTitle}</h2>
         
         <t:if t:test="PageStructureComponent">
@@ -58,7 +53,6 @@
 		</div>
     </div>
     <div id="sidebar">
-        <t:themeswitcher t:urlParam="componentInfo.urlParam"/>
         <t:zone t:id="zoneBasket">
 	       
 	        	<t:listeBasket t:urlParam="componentInfo.urlParam"/>
