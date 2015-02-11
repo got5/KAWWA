@@ -15,6 +15,10 @@ If you any proxy issues with Gradle, you should set these Gradle properties insi
 * systemProp.http.proxyPort=8080
 * systemProp.http.proxyUser=userid
 * systemProp.http.proxyPassword=password
+* systemProp.https.proxyHost=www.somehost.org
+* systemProp.https.proxyPort=8080
+* systemProp.https.proxyUser=userid
+* systemProp.https.proxyPassword=password
 
 In order to execute locally the portal, we will use the Jetty gradle plugin. Everything is already defined in the build.gradle. You should open your command line tool, go to the Portal directory, and execute this command : 
 
