@@ -18,7 +18,7 @@ public class Reset {
 	@OnEvent("resetComponents")
 	public Object resetComponents(){
 		indexer.reParseFileStructure();
-		return Components.class;
+		return Index.class;
 	}
 
 

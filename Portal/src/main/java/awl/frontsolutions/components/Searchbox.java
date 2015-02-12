@@ -1,10 +1,8 @@
 package awl.frontsolutions.components;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
+import awl.frontsolutions.pages.Component;
+import awl.frontsolutions.services.FileSystemIndexer;
+import awl.frontsolutions.treeDescription.TreeNode;
 import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
@@ -12,14 +10,14 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.PageRenderLinkSource;
-
-import awl.frontsolutions.pages.Component;
-import awl.frontsolutions.pages.Components;
-import awl.frontsolutions.services.FileSystemIndexer;
-import awl.frontsolutions.treeDescription.TreeNode;
 import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
 import org.apache.tapestry5.services.ajax.JavaScriptCallback;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Searchbox {
 
