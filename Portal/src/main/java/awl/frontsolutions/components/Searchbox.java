@@ -6,8 +6,10 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.tapestry5.EventConstants;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.PageRenderLinkSource;
 
@@ -15,6 +17,9 @@ import awl.frontsolutions.pages.Component;
 import awl.frontsolutions.pages.Components;
 import awl.frontsolutions.services.FileSystemIndexer;
 import awl.frontsolutions.treeDescription.TreeNode;
+import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
+import org.apache.tapestry5.services.ajax.JavaScriptCallback;
+import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
 public class Searchbox {
 
@@ -26,7 +31,13 @@ public class Searchbox {
     
     @Inject
     private PageRenderLinkSource pageLinkSource;
-    
+
+    @Inject
+    private AjaxResponseRenderer ajax;
+
+    @InjectComponent
+    private Zone searchZone;
+
     @OnEvent(value=EventConstants.PROVIDE_COMPLETIONS)
     public List<String> autocompletion(String term){
     	List<String> retour = new ArrayList<String>();
@@ -49,7 +60,15 @@ public class Searchbox {
 				return pageLinkSource.createPageRenderLinkWithContext(Component.class, s);
 			}
 		}
-    	return Components.class;
+
+        ajax.addCallback(new JavaScriptCallback() {
+            @Override
+            public void run(JavaScriptSupport javascriptSupport) {
+                javascriptSupport.addScript("jQuery('.compo-entry').click();");
+            }
+        });
+
+    	return searchZone.getBody();
     	
     }
 }
