@@ -59,12 +59,7 @@
 
         <footer role="contentinfo">
             <ul class="index">
-                <li><a t:type="pagelink" t:page="AboutKawwa">All About
-                        Kawwa</a></li>
-                <li><a t:type="pagelink" t:page="Templates">Example
-                        Templates</a></li>
                 <li><a t:type="pagelink" t:page="download">Download</a></li>
-                <li><a t:type="pagelink" t:page="components">Components</a></li>
                 <li><a t:type="pagelink" t:page="faq">FAQ</a></li>
             </ul>
             <section class="contact">
