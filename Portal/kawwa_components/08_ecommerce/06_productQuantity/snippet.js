@@ -9,10 +9,8 @@
 	}
 	$(document).ready(function(){
 
-		var incTest = isNumberInput();
-
 		if ($.fn.uppydowner) {
-			if(!incTest) {
+			if(!isNumberInput()) {
 				$('input[type=number]').addClass('uppydowner');
 				$('input.uppydowner').uppydowner();
 			} else {
