@@ -1,17 +1,9 @@
 (function($){
-	'use strict';
-
-	function toPrint() {
-		if ($('a.bt-print')) {
-			$('a.bt-print').click(function(){
-				window.print();
-				return false;
-			});
-		}
-	}
-
-
-	$(document).ready(function(){
-		toPrint();
-	});
+    'use strict';
+    $(document).ready(function(){
+        $('a.bt-print').click(function(){
+            window.print();
+            return false;
+        });
+    });
 })(jQuery);
