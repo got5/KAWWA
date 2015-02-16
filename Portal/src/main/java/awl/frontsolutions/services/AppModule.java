@@ -16,6 +16,7 @@ import org.apache.tapestry5.ioc.annotations.Local;
 import org.apache.tapestry5.ioc.annotations.Startup;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.ApplicationDefaults;
+import org.apache.tapestry5.ioc.services.ServiceOverride;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.*;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
@@ -46,7 +47,7 @@ public class AppModule {
 		configuration.add(SymbolConstants.COMPRESS_WHITESPACE, "false");
 
         configuration.add(SymbolConstants.HMAC_PASSPHRASE, "kawwa_portal");
-        
+
 		configuration
 				.add(SymbolConstants.APPLICATION_VERSION, "0.0.2-SNAPSHOT");
 
@@ -83,7 +84,15 @@ public class AppModule {
 		binder.bind(TopComponent.class, TopComponentImpl.class);
 		binder.bind(Authentification.class, AuthentificationDefaultImpl.class);
 		binder.bind(MailService.class, DefaultMailServiceImpl.class);
+        binder.bind(MarkupWriterFactory.class, Html5MarkupWriterFactory.class).withId("Html5MarkupWriterFactory");
 	}
+
+    @Contribute(ServiceOverride.class)
+    public static void setupApplicationServiceOverrides(MappedConfiguration<Class,Object> configuration,
+        @Local MarkupWriterFactory override)
+    {
+        configuration.add(MarkupWriterFactory.class, override);
+    }
 
 	@Contribute(MarkupRenderer.class)
 	public static void addMetaRenderFilter(
