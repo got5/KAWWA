@@ -46,35 +46,6 @@ task generateSublimeTextSnippets(type: Exec) {
 	standardOutput = new ByteArrayOutputStream()
 }
 
-task copyThemesForAngular(type: Copy) {
-	from 'src/main/webapp/'
-	
-	include 'css/**', 'img/k-theme0/**', 'img/k-theme0/**', 'img/k-theme2/**'
-	
-	exclude 'css/i-theme*'
-	
-	into '../kawwa2-angularjs/app/theme'
-}
-
-task copyThemesForTapestry << {
-	copy {
-		from 'src/main/webapp/'
-		include 'css/**', 'img/k-theme0/**', 'img/k-theme1/**', 'img/k-theme2/**'
-		exclude 'css/i-theme*'
-		into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/theme'
-	}
-	copy {
-		from 'src/main/webapp/'
-		include 'img/k-theme0/**', 'img/k-theme1/**', 'img/k-theme2/**'
-		into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components'
-	}
-	copy {
-		from 'src/main/webapp/css/k-structure.css'
-		into '../kawwa2-tapestry/src/main/resources/net/atos/kawwaportal/components/css'
-	}
-}
-
-
 task zipComp(type: Zip) {
     from('/kawwa_components')
     baseName = 'Component'
@@ -83,10 +54,6 @@ task zipComp(type: Zip) {
 	destinationDir = file("/target")
 }
 
-
-//processResources.dependsOn("generateSublimeTextSnippets")
-//processResources.dependsOn("copyThemesForAngular")
-//processResources.dependsOn("copyThemesForTapestry")
 processResources.dependsOn("zipComp")
 assemble.dependsOn("wrapper")
 
