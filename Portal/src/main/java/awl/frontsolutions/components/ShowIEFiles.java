@@ -15,6 +15,7 @@ import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.AssetSource;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.apache.tapestry5.services.javascript.StylesheetLink;
 
@@ -44,7 +45,10 @@ public class ShowIEFiles {
 	
 	@Inject
 	private ComponentUtils utils;
-		
+
+    @Inject
+    private PageRenderLinkSource prls;
+
 	public void beginRender(MarkupWriter writer) {
 		writer.element("div","class","k-panel exception");
 		
@@ -63,7 +67,7 @@ public class ShowIEFiles {
 		writer.end();//ul
 		writer.element("p", "class", "k-readmore");
 		writer.write("If you want to know how to apply those files to your project, please consult ");
-		writer.element("a", "href", cr.createPageLink(IeFix.class, false));
+		writer.element("a", "href", prls.createPageRenderLink(IeFix.class));
 		writer.write("Support for Internet Explorer");
 		writer.end();
 		writer.end();
@@ -107,8 +111,8 @@ public class ShowIEFiles {
 	private void addStylesheets(MarkupWriter writer) {
 		List<StylesheetLink> links = jsss.getStack(currentTheme.getThemeName()).getStylesheets();
 		for (StylesheetLink l : links) {
-			if(l.getOptions()!=null && l.getOptions().getCondition()!=null){
-				if(l.getOptions().getCondition().toUpperCase().contains("IE")){
+			if(l.getOptions()!=null && l.getOptions().condition != null){
+				if(l.getOptions().condition.toUpperCase().contains("IE")){
 					writer.element("li");
 					writer.element("a","href",l.getURL());
 					String[] path = l.getURL().split("/");

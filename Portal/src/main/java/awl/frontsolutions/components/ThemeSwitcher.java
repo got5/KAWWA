@@ -1,6 +1,7 @@
 package awl.frontsolutions.components;
 
 import awl.frontsolutions.entities.ChoosenTheme;
+import awl.frontsolutions.pages.*;
 import awl.frontsolutions.services.FileSystemIndexer;
 import awl.frontsolutions.services.stack.ThemeStack;
 import org.apache.tapestry5.ComponentResources;
@@ -16,6 +17,7 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 import org.apache.tapestry5.json.JSONObject;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.apache.tapestry5.services.javascript.JavaScriptStackSource;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
@@ -49,6 +51,9 @@ public class ThemeSwitcher {
 
 	@Inject
 	private FileSystemIndexer indexer;
+
+    @Inject
+    private PageRenderLinkSource prls;
 
 	@SetupRender
 	public void init() {
@@ -105,9 +110,9 @@ public class ThemeSwitcher {
 		indexer.setToRebuilt();
 
 		if (InternalUtils.isNonBlank(urlParam))
-			return cr.createPageLink("Component", false, urlParam);
+			return prls.createPageRenderLinkWithContext(awl.frontsolutions.pages.Component.class, urlParam);
 		else
-			return cr.createPageLink(cr.getPageName(), false);
+			return prls.createPageRenderLink(cr.getPageName());
 	}
 
 	public Boolean getIndex() {

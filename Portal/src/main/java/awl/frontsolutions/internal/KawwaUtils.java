@@ -1,13 +1,8 @@
 package awl.frontsolutions.internal;
 
-import java.io.IOException;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
-
+import awl.frontsolutions.entities.Panier;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
-
-import awl.frontsolutions.entities.Panier;
 
 public class KawwaUtils {
 
