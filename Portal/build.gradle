@@ -9,7 +9,7 @@ apply plugin: 'war'
 apply plugin: 'eclipse'
 apply plugin: 'jetty'
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.7
 
 version = '3.0.1-SNAPSHOT'
 
