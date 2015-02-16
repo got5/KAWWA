@@ -6,6 +6,7 @@ import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.BeginRender;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -19,7 +20,10 @@ public class AboutKawwaMenu {
 	
 	@Inject
 	private ComponentResources cr;
-	
+
+    @Inject
+    private PageRenderLinkSource prls;
+
 	@SetupRender
 	public void populatePage(){
 		
@@ -50,7 +54,7 @@ public class AboutKawwaMenu {
 		writer.end();
 		
 		writer.element("p", "class", "aid");
-		writer.element("a", "href", cr.createPageLink("Components", false));
+		writer.element("a", "href", prls.createPageRenderLink("Components"));
 		writer.write("Back to index of components");
 		writer.end();
 		writer.end();
@@ -83,7 +87,7 @@ public class AboutKawwaMenu {
 				writer.end();
 			}
 			else {
-				writer.element("a", "href", cr.createPageLink((String) key, false));
+				writer.element("a", "href", prls.createPageRenderLink((String) key));
 				writer.write((String) val);
 				writer.end();
 			}

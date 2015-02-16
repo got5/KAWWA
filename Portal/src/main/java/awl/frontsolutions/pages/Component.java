@@ -30,6 +30,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.internal.util.InternalUtils;
 import org.apache.tapestry5.ioc.services.ThreadLocale;
 import org.apache.tapestry5.services.AssetSource;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.Response;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
@@ -90,7 +91,10 @@ public class Component {
 	
 	@Property
 	private boolean panierExists;
-	
+
+    @Inject
+    private PageRenderLinkSource prls;
+
 	@OnEvent(EventConstants.ACTIVATE)
 	public void activationNoParam(){
 		if(componentInfo==null){
@@ -337,8 +341,8 @@ public class Component {
 		panier.add(componentInfo.getUrlParam());
 		if(request.isXHR())
 			return zoneBasket;
-		
-		return resources.createPageLink("Component", false, componentInfo.getUrlParam());
+
+        return prls.createPageRenderLinkWithContext(Component.class, componentInfo.getUrlParam());
 	}
 	
 	public boolean getHasHtml(){

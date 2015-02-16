@@ -2,7 +2,6 @@ package awl.frontsolutions.services;
 
 import org.apache.tapestry5.ContentType;
 import org.apache.tapestry5.MarkupWriter;
-import org.apache.tapestry5.dom.DefaultMarkupModel;
 import org.apache.tapestry5.dom.MarkupModel;
 import org.apache.tapestry5.dom.XMLMarkupModel;
 import org.apache.tapestry5.internal.services.MarkupWriterImpl;

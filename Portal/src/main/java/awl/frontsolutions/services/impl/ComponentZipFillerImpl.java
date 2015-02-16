@@ -155,13 +155,13 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 			is.close();
 			String comment = "";
 			if (cssFile.getOptions() != null) {
-				if (cssFile.getOptions().getMedia() != null) {
-					comment += "media='" + cssFile.getOptions().getMedia()
+				if (cssFile.getOptions().media != null) {
+					comment += "media='" + cssFile.getOptions().media
 							+ "', ";
 				}
-				if (cssFile.getOptions().getCondition() != null) {
+				if (cssFile.getOptions().condition != null) {
 					comment += "condition='"
-							+ cssFile.getOptions().getCondition() + "'";
+							+ cssFile.getOptions().condition + "'";
 				}
 			}
 			if (StringUtils.isNotEmpty(comment)) {

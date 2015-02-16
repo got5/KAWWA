@@ -5,6 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipOutputStream;
 
+import awl.frontsolutions.pages.Component;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.EventConstants;
@@ -18,6 +19,7 @@ import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.json.JSONObject;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 import org.apache.tapestry5.services.javascript.InitializationPriority;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
@@ -63,7 +65,10 @@ public class ListeBasket {
 	
 	@Inject
 	private JavaScriptSupport js;
-	
+
+    @Inject
+    private PageRenderLinkSource prls;
+
 	public void setupRender(){
 		panier.setTheme(currentTheme.getThemeName());
 	}
@@ -109,7 +114,7 @@ public class ListeBasket {
 	@OnEvent(value=EventConstants.ACTION, component="reset")
 	public Link deleteBasket(){
 		panier = null;
-		return cr.createPageLink("component", false, urlParam);
+        return prls.createPageRenderLinkWithContext(Component.class, urlParam);
 	}
 	
 	public int getNumber(){
@@ -117,7 +122,7 @@ public class ListeBasket {
 	}
 	
 	public String getComponentUrl(){
-		return cr.createPageLink("component", false, comp).toAbsoluteURI();
+        return prls.createPageRenderLinkWithContext(Component.class, comp).toAbsoluteURI();
 	}
 	
 	public String getComponentName(){
