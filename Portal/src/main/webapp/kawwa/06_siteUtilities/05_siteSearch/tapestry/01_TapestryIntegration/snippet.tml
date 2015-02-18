@@ -1,9 +1,0 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
-	xmlns:p="tapestry:parameter">
-
-		
-	<div t:type="kawwa2/SiteSearch" t:id="search"
-			t:value="search" t:minChars="3" 
-			t:placeholder="Search..." t:autofocus="false"/>
-
-</html>
