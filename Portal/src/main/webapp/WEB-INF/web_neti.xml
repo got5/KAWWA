@@ -16,10 +16,6 @@
         <param-name>tapestry.production-mode</param-name>
         <param-value>true</param-value>
     </context-param>
-    <context-param>
-        <param-name>kawwa2.friends</param-name>
-        <param-value>altima</param-value>
-    </context-param>
 	<context-param>
         <param-name>ganalytics.key</param-name>
         <param-value>UA-9983102-5</param-value>

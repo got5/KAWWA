@@ -14,7 +14,7 @@
 	</context-param>
 	<context-param>
 		<param-name>awl.filesystemindexer.root</param-name>
-		<param-value>D:\\Documents\\fr20196\\Documents\\GitHub\\KAWWA\\Portal\\kawwa_components</param-value>
+		<param-value>C:\\Utilisateurs\\a503018\\Documents\\workspaces\\KAWWA\\Portal\\kawwa_components</param-value>
 	</context-param>
 	<context-param>
         <param-name>ganalytics.key</param-name>
@@ -31,10 +31,6 @@
     <context-param>
         <param-name>google-clientSecret</param-name>
         <param-value>fskGKYmQUMaTzEPD5K5UBwsp</param-value>
-    </context-param>
-    <context-param>
-        <param-name>kawwa2.friends</param-name>
-        <param-value>altima,demey</param-value>
     </context-param>
 	<filter>
 		<filter-name>app</filter-name>
