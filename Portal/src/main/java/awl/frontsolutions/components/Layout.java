@@ -1,14 +1,16 @@
 package awl.frontsolutions.components;
 
 import awl.frontsolutions.entities.ChoosenTheme;
-import awl.frontsolutions.entities.DASUser;
 import awl.frontsolutions.entities.Panier;
 import awl.frontsolutions.services.FileSystemIndexer;
 import awl.frontsolutions.services.MailService;
 import awl.frontsolutions.treeDescription.TreeNode;
 import org.apache.tapestry5.BindingConstants;
 import org.apache.tapestry5.ComponentResources;
-import org.apache.tapestry5.annotations.*;
+import org.apache.tapestry5.annotations.Import;
+import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.AssetSource;
@@ -55,9 +57,6 @@ public class Layout
     private ChoosenTheme choosen;
 
     @SessionState
-    private DASUser loggedUser;
-    
-    @SessionState
     private Panier panier;
 
     @Inject
@@ -98,15 +97,6 @@ public class Layout
     }
 
     
-	@OnEvent("logout")
-	private void logout(){
-		
-		panier = null;
-		loggedUser = null;
-		
-	}
-
-	
 	public TreeNode getRoot() {
 		return indexer.getFileStructure();
 	}
@@ -125,8 +115,5 @@ public class Layout
 		mail.sendMailToAdmin(emailcontact, "Contact Form", sb.toString());
 		
 	}
-	
-	public Boolean getHideListComponents(){
-		return title.equalsIgnoreCase("Login");
-	}
+
 }
