@@ -14,6 +14,7 @@ sourceCompatibility = 1.7
 version = '3.0.1-SNAPSHOT'
 
 System.setProperty("awl.filesystemindexer.root", getProject().getBuildFile().getParent() + "\\kawwa_components")
+System.setProperty("tapestry.production-mode", "false")
 
 dependencies {
  compile group: 'net.atos.tapestry', name: 'tapestry5-kawwa-components', version: '2.0.6'
