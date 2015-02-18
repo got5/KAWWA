@@ -80,9 +80,7 @@ public class AppModule {
 		binder.bind(FileSystemIndexer.class, FileSystemIndexerImpl.class);
 		binder.bind(ComponentZipFiller.class, ComponentZipFillerImpl.class);
 		binder.bind(ComponentUtils.class, ComponentUtilsImpl.class);
-		binder.bind(DASSecurityManager.class, DASSecurityManagerImpl.class);
 		binder.bind(TopComponent.class, TopComponentImpl.class);
-		binder.bind(Authentification.class, AuthentificationDefaultImpl.class);
 		binder.bind(MailService.class, DefaultMailServiceImpl.class);
         binder.bind(MarkupWriterFactory.class, Html5MarkupWriterFactory.class).withId("Html5MarkupWriterFactory");
 	}

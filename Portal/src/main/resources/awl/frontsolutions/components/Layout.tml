@@ -53,9 +53,7 @@
 
 		<hr />
 
-        <t:if t:test="hideListComponents" t:negate="true">
-            <t:listComponents fileStructure="root" />
-        </t:if>
+        <t:listComponents fileStructure="root" />
 
         <footer role="contentinfo">
             <ul class="index">
