@@ -105,7 +105,7 @@
 					</li>
                     <t:if test="hasHtml5Tag">
                         <li>
-                            <a href="#html5">HTML</a>
+                            <a href="#html5">Snippets</a>
                         </li>
                     </t:if>
                 	<t:if test="hasTapestryTag">

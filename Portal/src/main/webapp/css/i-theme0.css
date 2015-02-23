@@ -9,7 +9,7 @@
 
 h1 {
 	line-height: 1.3;
-	background: url(../img/k-theme0/kawweagle.png) -1px 10px no-repeat;
+	background: url(../img/k-theme0/kawweagle.svg) -1px 10px no-repeat;
 	background-size: 60px 58px;
 	padding: 0.5em 0 0.3em 70px;
 }
@@ -18,11 +18,13 @@ h1 {
 		width: 63px;
 		top: 2.5em;
 		left: 0;
-		content: url(../img/k-theme0/bowtie_small.png);
+		content: url(../img/k-theme0/bowtie_small.svg);
 		padding-left: 15px;
 		z-index: 10;
 	}
 
+
+#main > h2 {margin: 0.5em 0 0;}
 
 
 /* --- NAVIGATION --- */
@@ -33,7 +35,7 @@ ul.i-navbar {padding: 0; margin: 4px 4% 2em 57px;}
 		float: left;
 		width: auto;
 		list-style-type: none;
-		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 1em;
 		text-transform: uppercase;
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 		margin: 0 1px;
@@ -54,7 +56,6 @@ ul.i-navbar {padding: 0; margin: 4px 4% 2em 57px;}
 		/* Active section / no link */
 		ul.i-navbar li.active strong {
 			display: block;
-			font-family: NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: normal;
 			text-transform: uppercase;
 			color: #FFF;
@@ -72,20 +73,20 @@ ul.i-navbar {padding: 0; margin: 4px 4% 2em 57px;}
 		/* If section has dropdown */
 		ul.i-navbar a.hasdropdown, ul.i-navbar a.hasdropdown:visited {
 			color: #FFF;
-			background: #000 url(../img/k-theme0/bg_hasdropdown.png) right bottom no-repeat;
+			background: #000 url(../img/k-theme0/bg_hasdropdown.svg) right bottom no-repeat;
 			padding-right: 20px;
 		}
 		ul.i-navbar a.hasdropdown:hover, ul.i-navbar a.hasdropdown:focus {
 			color: #FFF;
-			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.svg) right bottom no-repeat;
 		}
 		ul.i-navbar li.active a.hasdropdown, ul.i-navbar li.active a.hasdropdown:visited {
 			color: #FFF;
-			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.svg) right bottom no-repeat;
 		}
 		ul.i-navbar li.active a.hasdropdown:hover, ul.i-navbar li.active a.hasdropdown:focus {
 			color: #FFF;
-			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
+			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.svg) right bottom no-repeat;
 		}
 		
 		
@@ -146,13 +147,15 @@ ul.i-navbar .dropdown li {
 }
 
 #home h1 {
-	font: 3em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background: url(../img/k-theme0/kawweagle.png) 0 1.1em no-repeat;
+	font: 3em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: url(../img/k-theme0/kawweagle.svg) 0 1.1em no-repeat;
 	margin-left: 5%;
-	padding: 1.5em 0 0.3em 150px;
+	padding: 1em 0 0.5em 150px;
 }
 	#home h1 small {
 		display: block;
+		position: relative;
+		top: -0.5em;
 		font-size: 50%;
 		color: #888;
 		background: #000;
@@ -161,7 +164,7 @@ ul.i-navbar .dropdown li {
 	#home h1:before {
 		top: 3.4em;
 		left: 5%;
-		content: url(../img/k-theme0/bowtie.png);
+		content: url(../img/k-theme0/bowtie.svg);
 		padding-left: 30px;
 	}
 
@@ -238,7 +241,7 @@ ul.i-navbar .dropdown li {
 	#components-list ul {width: 100%; padding: 0;}
 	#components-list li {
 		list-style-type: none;
-		font: 0.9em/1.2 PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;	
+		font: 0.8em/1.2 open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		border-bottom: none;
 		border-top: 1px dotted #999;
 	}
@@ -334,7 +337,7 @@ div.baseline small {display: block; font-size: 60%; padding-top: 1em;}
 		top: -0.25em;
 		right: -0.25em;
 		content: "/";
-		font: 2em PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 2em open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 	#highlight ul li:first-child {padding-left: 130px;}
 	#highlight ul li:last-child:after {content: ""; padding: 0; margin: 0;}
@@ -351,7 +354,7 @@ div.baseline small {display: block; font-size: 60%; padding-top: 1em;}
 /* Download button */
 
 #download-entry {
-	font: 0.95em/1 NovecentowideBook, sans-serif;
+	font: 0.95em/1 open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 1em 0;
 	margin: 1em 0;
 	border-top: 1px dashed #666;
@@ -420,7 +423,7 @@ ul.items {
 	ul.items li {
 		float: left;
 		width: 208px;
-		font: 1em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 1em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-align: center;
 		color: #000;
 		background:  #EEE;
@@ -526,6 +529,7 @@ section.contact {
 	padding-left: 5%;
 }
 	section.contact h2 {font-size: 1.5em;}
+	section.contact p {font-size: 0.85em;}
 
 p.community {float: left; width: 50%; padding-left: 5%; margin-top: 2em;}
 p.k-copyright {
@@ -577,7 +581,7 @@ p.aid {
 	width: 80%;
 	font-size: 3em;
 	text-align: center;
-	background: url(../img/kawwaeagle.png) bottom center no-repeat;
+	background: url(../img/kawwaeagle.svg) bottom center no-repeat;
 	padding: 0 0 482px;
 	margin: 0.5em 10% 0;
 }
@@ -951,7 +955,7 @@ div.clip-container {
 div.clip-button {
 	width: 73px;
 	height: 16px;
-	font: 1em NovecentowideBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 1em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 	color: #FFF;
@@ -1142,13 +1146,13 @@ ul.i-menu {background: #EEE; padding: 0 10%;}
 	ul.i-menu ul.level2 {padding-left: 1em;}
 
 	ul.i-menu li {
-		font: 1em NovecentowideBook, PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 1em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		list-style-type: none;
 		padding: 0.4em 0; 
 		border-bottom: 1px dashed #888;
 	}
 		ul.i-menu li li {
-			font: 0.9em/1.2 PTSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font: 0.9em/1.2 open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			border-bottom: none;
 		}
 	
@@ -1272,14 +1276,14 @@ dl.i-doc-list {margin-bottom: 2em;}
 	#home h1 {
 		width: 70%;
 		font-size: 1.5em;
-		background: url(../img/k-theme0/kawweagle_small.png) -1px 10px no-repeat;
+		background: url(../img/k-theme0/kawweagle_small.svg) -1px 10px no-repeat;
 		padding: 0.5em 0 0.3em 70px;
 	}
 	#home h1:before {
 		width: 63px;
 		top: 2.5em;
 		left: 5%;
-		content: url(../img/k-theme0/bowtie_small.png);
+		content: url(../img/k-theme0/bowtie_small.svg);
 		margin-left: -16px;
 	}
 	#home nav {padding-left: 56px;}
@@ -1306,7 +1310,7 @@ dl.i-doc-list {margin-bottom: 2em;}
 	div.k-tools {
 		float: left;
 		width: 100%;
-		background: #303030 url(../img/k-theme0/bowtie_small_full.png) no-repeat;
+		background: #303030 url(../img/k-theme0/bowtie_small_full.svg) no-repeat;
 		border-top: 1px solid #FFF;
 	}
 	form.k-search {float: none; text-align: left; margin-left: 71px;}
@@ -1343,7 +1347,7 @@ dl.i-doc-list {margin-bottom: 2em;}
 	div.k-tools {
 		float: left;
 		width: 100%;
-		background: #303030 url(../img/k-theme0/bowtie_small_full.png) no-repeat;
+		background: #303030 url(../img/k-theme0/bowtie_small_full.svg) no-repeat;
 		border-top: 1px solid #FFF;
 	}
 	
