@@ -27,12 +27,12 @@
 			<div id="highlight">
 				<div class="baseline">
 					<p>
-						More than 50 HTML patterns crafted to help you start your <strong>standard</strong>,
-						<strong>accessible</strong> and <strong>adaptive</strong> web
+						More than 60 HTML patterns crafted to help you create the basis for your <strong>standard</strong>,
+						<strong>accessible</strong> and <strong>responsive</strong> web
 						sites.
 					</p>
 				</div>
-				<ul class="k-links-list">
+				<!--<ul class="k-links-list">
 					<li><a t:type="pagelink" t:page="KawwaPortal">Discover <small>all
 								about Kawwa</small></a></li>
 					<li class="compo-entry"><a href="#components-list">Explore
@@ -42,7 +42,7 @@
 								our templates</small></a></li>
 					<li><a t:type="pagelink" t:page="download">Download <small>only
 								what you need</small></a></li>
-				</ul>
+				</ul>-->
 			</div>
 		</t:if>
 		<div id="wrapper">
@@ -58,16 +58,12 @@
         <footer role="contentinfo">
             <ul class="index">
                 <li><a t:type="pagelink" t:page="download">Download</a></li>
-                <li><a t:type="pagelink" t:page="faq">FAQ</a></li>
+                <!--<li><a t:type="pagelink" t:page="faq">FAQ</a></li>-->
             </ul>
             <section class="contact">
                 <h2>Contact us</h2>
-                <p>
-                    Be welcome to use our <a href="#contact-modal"
-                        class="k-modal-trigger">contact form</a> to send us your
-                    comments, suggestions and questions.
-                </p>
-                <p>We'll do our best to get back to you as soon as we can.</p>
+                <p>Be welcome to use our <a href="#contact-modal" class="k-modal-trigger">contact form</a> to send us your
+                    comments, suggestions and questions. We'll do our best to get back to you as soon as we can.</p>
             </section>
             <p class="community">
                 <a href="https://twitter.com/kawwalibrary" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @kawwalibrary</a>
