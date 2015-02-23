@@ -25,10 +25,6 @@
 						<legend>Basic configuration</legend>
 						
 						<p class="k-check">
-							<t:checkbox t:id="examples" id="examples" t:value="panier.includeTemplate" />	
-							<t:label for="examples">Include example HTML5 templates</t:label>
-						</p>
-						<p class="k-check">
 							<t:checkbox t:id="tapestryFlag" t:value="panier.includeTapestry" />
 							<t:label for="tapestryFlag">Include Tapestry Snippets</t:label> 
 						</p>

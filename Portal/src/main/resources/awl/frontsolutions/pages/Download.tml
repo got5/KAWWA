@@ -23,13 +23,6 @@
 			<fieldset id="group-options">
 			<legend>Options</legend>
 				<p class="k-check">
-					<t:checkbox t:id="examples" t:value="panier.includeTemplate"/>
-					<label for="examples">Include example HTML5 templates</label> 
-					<a href="#templates-info" class="k-field-help" title="About the example templates">
-						<img src="${infoIconUrl}" alt="Information" />
-					</a>
-				</p>
-				<p class="k-check">
 					<t:checkbox t:id="tapestry" t:value="panier.includeTapestry" />
 					<label for="tapestry">Include Tapestry Snippets</label> 
 				</p>
