@@ -49,14 +49,14 @@ public class ListComponents {
 
 	public void beginRender(MarkupWriter writer) {
 		jQueryIconUrl = assetSource.getContextAsset(
-				String.format("img/%s/jquery-trans.png", theme.getDir()), null)
+				String.format("img/%s/jquery-trans.svg", theme.getDir()), null)
 				.toClientURL();
 		tapestryIconUrl = assetSource.getContextAsset(
-				String.format("img/%s/tapestry-small.png", theme.getDir()),
+				String.format("img/%s/tapestry-small.svg", theme.getDir()),
 				null).toClientURL();
 
         angularIconUrl = assetSource.getContextAsset(
-                String.format("img/%s/angular-small.png", theme.getDir()),
+                String.format("img/%s/angular-small.svg", theme.getDir()),
                 null).toClientURL();
 		linkToResources = new HashMap<String, String>();
 
@@ -212,19 +212,19 @@ public class ListComponents {
 								fileStructure.getUrlParam()));
 				writer.write(fileStructure.getNodeName());
 				if (fileStructure.containsTag(ComponentConstants.TAG_JQUERY)) {
-					writer.write(" ");
+					writer.write("  ");
 					writer.element("img", "src", jQueryIconUrl, "alt",
 							"jQuery", "title", "jQuery Interactive feature");
 					writer.end();
 				}
 				if (fileStructure.containsTag(ComponentConstants.TAG_TAPESTRY)) {
-					writer.write(" ");
+					writer.write("  ");
 					writer.element("img", "src", tapestryIconUrl, "alt",
 							"Tapestry", "title", "Tapestry Integration");
 					writer.end();
 				}
                 if (fileStructure.containsTag(ComponentConstants.TAG_ANGULAR)) {
-                    writer.write(" ");
+                    writer.write("  ");
                     writer.element("img", "src", angularIconUrl, "alt",
                             "Angular", "title", "ANGULARIntegration");
                     writer.end();
