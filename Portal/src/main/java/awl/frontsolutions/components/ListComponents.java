@@ -86,7 +86,7 @@ public class ListComponents {
 		writer.end();
 
 		writer.element("dd");
-		writer.write("jQuery Interactive Feature");
+		writer.write(" jQuery Interactive Feature");
 		writer.end();
 
 		writer.element("dt");
@@ -95,7 +95,7 @@ public class ListComponents {
 		writer.end();
 		writer.end();
 		writer.element("dd");
-		writer.write("Tapestry integration");
+		writer.write(" Tapestry integration");
 		writer.end();
 		
 		writer.element("dt");
@@ -104,7 +104,7 @@ public class ListComponents {
 		writer.end();
 
 		writer.element("dd");
-		writer.write("AngularJS Feature");
+		writer.write(" AngularJS Feature");
 		writer.end();
 		
 		writer.end();
@@ -184,23 +184,13 @@ public class ListComponents {
 				writer.element("a", "href", pageRender
 						.createPageRenderLinkWithContext(Component.class,
 								fileStructure.getUrlParam()));
-				writer.write("HTML5 Page Structure");
+				writer.write("HTML5 Page Structure ");
 				writer.element("img", "src", tapestryIconUrl, "alt",
 						"Tapestry Integration");
 				writer.end();
 				writer.end();
 				writer.end();
 
-				writer.element("li");
-				writer.element("a", "href", pageRender
-						.createPageRenderLinkWithContext(Component.class,
-								fileStructure.getUrlParam()));
-				writer.write("XHTML Page Structure");
-				writer.element("img", "src", tapestryIconUrl, "alt",
-						"Tapestry Integration");
-				writer.end();
-				writer.end();
-				writer.end();
 
 				writer.end();
 
@@ -212,19 +202,19 @@ public class ListComponents {
 								fileStructure.getUrlParam()));
 				writer.write(fileStructure.getNodeName());
 				if (fileStructure.containsTag(ComponentConstants.TAG_JQUERY)) {
-					writer.write("  ");
+					writer.write(" ");
 					writer.element("img", "src", jQueryIconUrl, "alt",
 							"jQuery", "title", "jQuery Interactive feature");
 					writer.end();
 				}
 				if (fileStructure.containsTag(ComponentConstants.TAG_TAPESTRY)) {
-					writer.write("  ");
+					writer.write(" ");
 					writer.element("img", "src", tapestryIconUrl, "alt",
 							"Tapestry", "title", "Tapestry Integration");
 					writer.end();
 				}
                 if (fileStructure.containsTag(ComponentConstants.TAG_ANGULAR)) {
-                    writer.write("  ");
+                    writer.write(" ");
                     writer.element("img", "src", angularIconUrl, "alt",
                             "Angular", "title", "ANGULARIntegration");
                     writer.end();

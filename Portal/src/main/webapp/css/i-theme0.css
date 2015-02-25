@@ -221,7 +221,7 @@ ul.i-navbar .dropdown li {
 		border-bottom: 1px dotted #CCC;
 	}
 		dl.legend dt, dl.legend dd {display: inline-block;}
-		dl.legend dd {padding-right: 15px;}
+		dl.legend dd {padding-right: 15px;padding-left: 5px;}
 	
 	#components-list h3 {
 		font-size: 1em;
