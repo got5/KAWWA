@@ -218,7 +218,7 @@ strong {
 em {
 	font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 400;
-	font-style: italic;
+	font-style: normal;
 }
 
 
@@ -2630,14 +2630,16 @@ p + .k-accordion {margin-top: 1em;}
 		ul.entry-info address {
 			display: inline;
 			font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-style: normal;
 		}
 		
 
 .dt-published:after {
-	content: "\00A0 \2609\00A0";
+	content: "\2609";
 	font-size: 150%;
 	vertical-align: -3px;
-	color: #999;
+	color: #333;
+	padding: 0 0.5rem 0 0.7rem;
 }
 
 	
