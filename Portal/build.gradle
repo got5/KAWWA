@@ -17,7 +17,7 @@ System.setProperty("awl.filesystemindexer.root", getProject().getBuildFile().get
 System.setProperty("tapestry.production-mode", "false")
 
 dependencies {
- compile group: 'net.atos.tapestry', name: 'tapestry5-kawwa-components', version: '3.0.0'
+ compile group: 'net.atos.tapestry', name: 'tapestry5-kawwa-components', version: '2.0.6'
     compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
  compile group: 'com.google.api-client', name: 'google-api-client', version: '1.10.3-beta'
  compile group: 'javax.mail', name: 'mail', version: '1.4.3'
