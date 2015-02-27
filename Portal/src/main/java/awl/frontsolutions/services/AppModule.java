@@ -46,7 +46,7 @@ public class AppModule {
 
 		configuration.add(SymbolConstants.COMPRESS_WHITESPACE, "false");
 
-        configuration.add(SymbolConstants.HMAC_PASSPHRASE, "kawwa_portal");
+        	configuration.add(SymbolConstants.HMAC_PASSPHRASE, "kawwa_portal");
 
 		configuration
 				.add(SymbolConstants.APPLICATION_VERSION, "0.0.2-SNAPSHOT");
