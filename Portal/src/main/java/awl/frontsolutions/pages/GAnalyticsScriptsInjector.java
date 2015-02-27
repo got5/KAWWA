@@ -15,44 +15,27 @@ public class GAnalyticsScriptsInjector implements MarkupRendererFilter {
 
 	private final static Messages SCRIPTS = MessagesImpl.forClass(GAnalyticsScriptsMessages.class);
 
-	private final String key;
 	
-	public GAnalyticsScriptsInjector(@Inject @Symbol("ganalytics.key") String key) {
-		this.key = key;
+	public GAnalyticsScriptsInjector() {
+		
 	}
 
 	private void addScript(Document document) {
-		if (key != null && !key.trim().equals("")) {
-			Element root = document.getRootElement();
+		
+		Element root = document.getRootElement();
 
-			if (root == null)
-				return;
-			
-			Element TitlePage = root.getElement(new Predicate<Element>() {
-				
-				public boolean accept(Element object) {
-					return object.getName().equalsIgnoreCase("title");
-				}
-			});
-			
-			//We do not add the Google Analytics script on the Login page
-			if(TitlePage.getChildMarkup().contains("Login")) return;
-			
-			Element body = root.find("body");
+		if (root == null)
+			return;
+		
+		Element body = root.find("body");
 
-			if (body == null) {
-				body = root.element("body");
-			}
-
-			Element e = body.element("script", "type", "text/javascript");
-
-			e.raw(SCRIPTS.get("scriptOne"));
-
-			e = body.element("script", "type", "text/javascript");
-
-			e.raw(SCRIPTS.format("scriptTwo", key));
-
+		if (body == null) {
+			body = root.element("body");
 		}
+
+		Element e = body.element("script", "type", "text/javascript");
+
+		e.raw(SCRIPTS.get("scriptOne"));
 	}
 
 	public void renderMarkup(MarkupWriter writer, MarkupRenderer renderer) {
