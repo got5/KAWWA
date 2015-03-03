@@ -1727,11 +1727,23 @@ ul.k-menu {
 /* ----------------------------------------------------- BREADCRUMBS */
 /* CB/ breadcrumbs */
 
-p.k-breadcrumbs {
+nav.k-breadcrumbs {
 	clear: both;
-    font-size: 0.7em;
     padding: 2em 4% 0;
 }
+	nav.k-breadcrumbs h2,
+	nav.k-breadcrumbs ol,
+	nav.k-breadcrumbs li {
+		display: inline;
+		padding: 0;
+	}
+	nav.k-breadcrumbs h2{
+		font-size: 0.7em;
+	}
+	nav.k-breadcrumbs li {
+		list-style-type: none;
+		font-size: 0.7em;
+	}
 
 /* CE/ breadcrumbs */
 
