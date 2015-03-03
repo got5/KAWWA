@@ -252,7 +252,7 @@ ul.i-navbar .dropdown li {
 		text-decoration: none;
 		color: #000;
 		background: transparent;
-		padding: 0.2em;
+		padding: 0.5em;
 	}
 	#components-list a:hover {
 		color: #FFF;
@@ -435,7 +435,6 @@ ul.items {
 	display: -webkit-flex;
 	min-height: 0;
 }
-#home #main:first-child {width: auto;}
 
 #home .k-info-block {
 	float: left;

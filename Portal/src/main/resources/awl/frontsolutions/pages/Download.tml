@@ -40,27 +40,6 @@
 		</div>
 	</t:form>
 	
-	
-	<div id="templates-info" class="k-modal">
-            <h3 class="modal-header">About the Example HTML5 Templates</h3>
-            <div class="content">
-                  <p>If you choose to add the example templates, then you will have in your zip file a folder with seven examples of pages:</p>
-                  <ul>
-                        <li>A search results list and filter</li>
-                        <li>A treeview structure</li>
-                        <li>A form</li>
-                        <li>An Article</li>
-                        <li>A list of articles</li>
-                        <li>A product catalog</li>
-                        <li>A product sheet</li>
-                  </ul>
-                  <p>Each of those example pages present a real case use of Kawwa components and it can be an interesting starting point if you're beginning your web project from scratch.</p>
-                  <p>Notice that the example templates are available only for HTML5 Doctype.</p>
-                  <p class="k-readmore">Read more about it on the "<a t:type="pagelink" t:page="templates">Example Templates</a>" page</p>
-            </div>
-      </div>
-	
-	
 </t:layout>
 
 
