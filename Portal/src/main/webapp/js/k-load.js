@@ -148,8 +148,8 @@ function supports_input_placeholder() {
 	
 // TABS -------------------------------------------
 
-	if(jQuery.ui && jQuery.ui.tabs) {
-		jQuery('.k-tabbed-data').tabs();
+	if (jQuery.fn.kTabs) {
+		jQuery('.k-tabbed-data').kTabs();
 	}
 	
 	

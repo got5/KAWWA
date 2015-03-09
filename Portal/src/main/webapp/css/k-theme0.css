@@ -1731,6 +1731,9 @@ nav.k-breadcrumbs {
 	clear: both;
     padding: 2em 4% 0;
 }
+
+	nav.k-breadcrumbs h2 {font-size: 0.7em;}
+	
 	nav.k-breadcrumbs h2,
 	nav.k-breadcrumbs ol,
 	nav.k-breadcrumbs li {
@@ -2369,60 +2372,124 @@ div.k-orientation-aid {
 /* ---------------------------------------------------------------------- TABS */
 /* CB/ tabs */
 
-p + div.k-tabbed-data {margin-top: 1em;}
 
-	ul.tabs {float: left; width: 100%; padding: 0;}
-	div.k-tabbed-data .ui-tabs-hide {display: none;}  /* required */
-	ul.tabs li {
-		float: left;
-		width: auto;
+.k-tabbed-data {clear: both;}
+
+ul.tabs {padding: 0; margin: 0;}
+
+	ul.tabs > li {
+		display: inline-block;
 		list-style-type: none;
-		font-family: open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 1em;
 		text-transform: uppercase;
 		padding: 0;
-		margin-right: 5px;
+		margin-right: 0.5rem;
 	}
 	ul.tabs a, ul.tabs a:link, ul.tabs a:visited {
 		display: block;
 		text-decoration: none;
 		color: #000;
 		background: #FFF;
-		padding: 5px 10px;
-		border: 1px solid #808080;
+		padding: 0.5em 1em;
+		border: 1px solid gray;
+		border-bottom: none
+	}
+	ul.tabs a:hover, ul.tabs a:focus {
+		color: #FFF;
+		background: #A40800;
+	}
+	
+	/* Active tab*/
+	ul.tabs a.active, ul.tabs a.active:link, ul.tabs a.active:visited {
+		color: #FFF;
+		background: #000;
+		border: 1px solid #000;
+	}
+	ul.tabs a.active:hover, ul.tabs a.active:focus {
+		color: #FFF;
+		background: #A40800;
+		border-color: #A40800;
+	}
+	
+	/* Disabled tab */
+	ul.tabs a.off, ul.tabs a.off:link, ul.tabs a.off:visited {
+		color: #CCC;
+		background: #FFF;
+		border: 1px solid #CCC;
+	}
+	ul.tabs a.off:focus {
+		color: #CCC;
+		background: #FFF;
+	}
+	ul.tabs strong.off {
+		display: block;
+		font-weight: normal;
+		text-decoration: none;
+		color: #ccc;
+		background: #FFF;
+		padding: 0.5em 1em;
+		border: 1px solid #CCC;
 		border-bottom: none;
 	}
-	ul.tabs a:hover {color: #FFF; background: #808080;}
-	ul.tabs a:focus {color: #FFF; background: #000;}
+	
+/* Content block */
 
-/* Selected tab */
-	ul.tabs li.ui-state-active a, ul.tabs li.ui-state-active a:link, ul.tabs li.ui-state-active a:visited {
-		color: #FFF;
-		background: #000;
-		border: 1px solid #000;
-	}
-	ul.tabs li.ui-state-active a:focus {
-		color: #FFF;
-		background: #000;
-	}
-	
-	div.k-tabbed-data > .content {
-		float: left;
-		width: 96%;
-		color: #000;
-		background: #FFF;
-		padding: 2%;
-		margin-bottom: 2em;
-		border: 1px solid #000;
-	}
-	
-		
-/* Link for tabs container */
-p.tabs-link {
-	float: left;
-	width: 96%;
-	text-align: right;
-	margin-top: 20px;background: url(../img/k-theme0/bg_photobox.png);
-	padding: 0.5em 2%;
+.k-tabbed-data > .content {
+	clear: both;
+	overflow: auto;
+	color: #000;
+	background: #FFF;
+	padding: 1rem;
+	margin-bottom: 2em;
+	border: 1px solid #000;
+}
+
+/* Small view - when tabs don't fit anymore */
+
+.k-tabbed-data.adaptive {position: relative;}
+.k-tabbed-data.adaptive ul.tabs {clear: both;}
+
+.k-tabbed-data.adaptive ul.tabs > li {
+	display: block;
+	margin: 0;
+}
+
+.k-tabbed-data.adaptive ul.tabs a, .k-tabbed-data.adaptive ul.tabs a:link, .k-tabbed-data.adaptive ul.tabs a:visited {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #FFF;
+	background-color: #000;
+	padding: 0.5em 50px 0.5em 0.7em;
+}
+
+.k-tabbed-data.adaptive ul.tabs a.transformed, 
+.k-tabbed-data.adaptive ul.tabs a.transformed:link, 
+.k-tabbed-data.adaptive ul.tabs a.transformed:visited {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 0;
+}
+.k-tabbed-data.adaptive ul.tabs a.transformed.active, 
+.k-tabbed-data.adaptive ul.tabs a.transformed.active:link, 
+.k-tabbed-data.adaptive ul.tabs a.transformed.active:visited {
+	background-image: url(../img/k-theme0/nav-control.svg);
+	background-position: right 2px;
+	background-repeat: no-repeat;
+	background-size: 32px;
+	opacity: 1;
+	z-index: 100
+}
+.k-tabbed-data.adaptive ul.tabs a:hover, 
+.k-tabbed-data.adaptive ul.tabs a:focus {
+	color: #FFF;
+	background-color: #A40800;
+	border-color: #A40800;
 }
 	
 /* CE/ tabs */

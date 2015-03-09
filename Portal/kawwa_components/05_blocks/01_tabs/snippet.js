@@ -2,8 +2,8 @@
 	'use strict';
 
 	$(document).ready(function(){
-		if($.ui && $.ui.tabs) {
-			$('.k-tabbed-data').tabs();
+		if (jQuery.fn.kTabs) {
+			jQuery('.k-tabbed-data').kTabs();
 		}
 	});
 })(jQuery);
