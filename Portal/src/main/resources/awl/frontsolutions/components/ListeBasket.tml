@@ -25,11 +25,11 @@
 						<legend>Basic configuration</legend>
 						
 						<p class="k-check">
-							<t:checkbox t:id="tapestryFlag" t:value="panier.includeTapestry" />
+							<t:checkbox t:id="tapestryFlag" t:value="panier.includeTapestry" /> 
 							<t:label for="tapestryFlag">Include Tapestry Snippets</t:label> 
 						</p>
                         <p class="k-check">
-                            <t:checkbox t:id="AngularFlag" t:value="panier.includeAngular" />
+                            <t:checkbox t:id="AngularFlag" t:value="panier.includeAngular" /> 
                             <t:label for="AngularFlag">Include Angular Snippets</t:label>
                         </p>
 						

@@ -1,0 +1,26 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+ 	<t:form t:clientValidation="false" t:id="form">
+ 		Because the following textfield is required, the default message will be displayed.
+ 		<t:textfield t:id="value" t:validate="required"/><br />
+ 		<t:submit />
+ 	</t:form>
+
+	
+	<t:form t:clientValidation="false" t:id="form" t:kawwaMandatoryMessage="message:mandatory-field">
+ 		Tapestry will expect to find a "mandatory-field" key in your .properties files. (the page specific or the global catalogue) and will display it.
+		The value you specify for the key will be formated : '%s' caracter will automatically be replaced by the symbol configured to identify mandatory fields (* by default)
+		This means your key may look like this: mandatory-field=Fields marked by %s are mandatory
+		If you want to change the default * symbol, you can override the KawwaConstants.MANDATORY_FIELD_IMAGE symbol in your AppModule.
+		But keep in mind that the final symbol used in textfields is also defined in the CSS file (checkout Form > Required field section for more information).
+ 		<t:textfield t:id="value3" t:validate="required"/><br />
+ 		<t:submit />
+ 	</t:form>
+	 
+		
+	<t:form t:clientValidation="false" t:id="form" t:disableKawwaMandatory="false">
+		The mandatory information won't be displayed.
+		<t:textfield t:id="value2" t:validate="required"/><br />
+		<t:submit />
+	</t:form>
+</html>

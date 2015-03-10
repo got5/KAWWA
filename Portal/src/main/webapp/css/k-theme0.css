@@ -264,74 +264,92 @@ blockquote, .k-quote {
 
 /* --- FORM DEFAULTS --- */
 
-form p {margin: 8px 0;}
-form p.highlight {background: #E8E8E8; padding: 1em 0 0.5em;}
 
-	form table {float: left;}
+form p {margin: 0.3em 5%;}
+
+form p.highlight {
+	background: #CCC;
+	padding: 1em 1em 0.5em;
+	margin-bottom: 1em;
+}
+form p.highlight label {display: inline;}
 
 fieldset {
 	clear: both;
-	padding: 1% 2%;
-	margin-bottom: 1em;
+	background: #EEE;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
 	border: 0;
-	border-top: 1px solid #000;
 }
-	fieldset fieldset {
-		clear: none;
-		padding: 0;
-		margin: 0;
-		border: none;
-	}
-	fieldset ul {margin: 0 0 20px 20px;}
+
+fieldset fieldset {
+	clear: none;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+fieldset ul {margin: 0 0 1rem 1rem;}
 
 legend {
-	font: 1.5em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	padding: 0 8px 1em;
-	margin: 1em 0 0 -1em
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #000;
+	background: #EEE;
+	padding: 0.3em 1em 0.5em 1em;
+	margin-bottom: 1em;
 }
 
 label {
-	float: left;
-	width: 15em;
-	font-family: open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	text-align: right;
-	padding-right: 15px;
+	display: block;
+	font-weight: bold;
 }
-	label em {
-		font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #F00;
-		background: transparent;
-	}
-	label.simple {
-		float: none;
-		display: block;
-		width: auto;
-		text-align: left;
-	}
 
-/* General inputs */
+label em {color: #F00;	background: transparent;}
+
+label.simple {
+	display: block;
+	text-align: left;
+}
+
+p.k-check label {
+	display: inline;
+	font-family: open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media screen and (min-width: 790px) {
+	form p {display: table-row;}
+	form p.highlight {display: block;}
+	label {
+		display: table-cell;
+		text-align: right;
+		padding: 0 0.5em 0 0;
+		vertical-align: top;
+	}
+}
+
 input {
+	max-width: 90%;
 	padding: 0.2em;
 	margin: 0 0 5px 0;
-	border: 1px inset #999;
+	border: 1px inset #3E3E3E;
 	border-radius: 3px;
+	box-shadow: none;
+	-moz-transition: box-shadow 1s;
+	-ms-transition: box-shadow 1s;
+	-webkit-transition: box-shadow 1s;
+	transition: box-shadow 1s;
 }
-
 input[type=checkbox], input[type=radio] {
 	background: #FFF;
 	border: none;
 }
-
-input:focus, select:focus, textarea:focus {background: #EEE; border: 1px solid #A40800;}
-input[type=checkbox]:focus, input[type=radio]:focus {
-	outline: 2px solid #A40800;
+input:focus, select:focus, textarea:focus {
+	border: 1px solid #CCC;
+	box-shadow: 0 0 3px #CCC;
 }
-	
 input[type=text]:disabled, input[type=text]:disabled:hover {
-	font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #000;
+	color: #050505;
 	background: #CCC;
 	border-color: #CCC;
 	cursor: default;
@@ -341,12 +359,12 @@ select {
 	font-size: 90%;
 	padding: 2px;
 	border: 1px solid #CCC;
-}		
+}
 textarea {
 	width: 90%;
 	font-size: 120%;
 	padding: 0 0 2px 2px;
-	border: 1px inset #999;
+	border: 1px inset #3E3E3E;
 	border-radius: 3px;
 }
 
@@ -593,96 +611,43 @@ fieldset.k-sub-group {
 	
 /* CE/ subFieldsets */
 
-/* ------------------------------------------------------------- CHECKBOXES */
-/* CB/ checkboxes */
+/* ------------------------------------------------------------- CHECKBOXES and RADIOS */
+/* CB/ checkboxesAndRadios */
 
-/* In a fieldset */
-fieldset.k-check {clear: both; padding: 0; margin: 0; border: none;}
-	
-	/* Here, legend style mimics label */
-	fieldset.k-check legend {
-		float: left;
-		width: 15.7em; /* gets the same width from default lable width */
-		font: 0.95em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		text-transform: uppercase;
-		text-align: right;
-		padding: 8px 15px 0 0;
-		margin: 0;
+fieldset.k-choice-input {margin: 0 0 1em;}
+
+fieldset.k-choice-input legend {
+	font-size: 90%;
+	font-weight: bold;
+	text-transform: none;
+	margin: 0 0 0.3em;
+	padding: 0;
+}
+
+fieldset.k-choice-input label {font-weight: normal;}
+
+fieldset.k-choice-input ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0.3em 0 0;
+}
+
+@media screen and (min-width: 790px) {
+	fieldset.k-choice-input {
+		padding: 0.5em 1em;
+		margin: 0 2em 1em;
+		border: 2px solid #CCC;
 	}
-	.k-check label {
-		float: none;
-		display: inline;
-		font-family: open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		text-transform: capitalize;
-        text-align: left;
-		padding-right: 1.5em;
+	fieldset.k-choice-input legend {
+		padding: 0 0.5em;
 	}
-	fieldset.k-check label {
-		display: inline;
-		padding-right: 1.5em;
+	fieldset.k-choice-input label {
+		padding: 0 2em 0 0;
 	}
-	
-	fieldset.k-check p {float: left; width: auto;}
-    fieldset.k-check ul {
-        float: left;
-        width: auto;
-        list-style-type: none;
-		padding: 0;
-        margin: 0.3em 0 0;
-    }
+}
 
-/* Applied to paragraphs */
-p.k-check {width: auto; padding-left: 16.3em;}
-	p.k-check label {
-	    float: none;
-	    width: auto;
-	    font-weight: normal;
-	    text-align: left;
-	}
+/* CE/ checkboxesAndRadios */
 
-/* Unique labels */
-label.k-check {float: none; width: auto; font-weight: normal; text-align: left;}
-
-/* List of inputs */
-ul.k-check {margin: 0;}
-	ul.k-check li {display: inline-block; padding: 0 2% 0 0;}
-
-/* CE/ checkboxes */
-
-
-/* ------------------------------------------------------------- RADIOS */
-/* CB/ radios */
-
-/* Fieldset elements for radios */
-fieldset.k-radio {padding: 0; margin: 0; border: none;}
-	
-	fieldset.k-radio legend {
-		float: left;
-		width: 15.7em; /* gets the same width from default lable width */
-		font: 0.95em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		text-transform: uppercase;
-		text-align: right;
-		padding: 8px 15px 0 0;
-		margin: 0;
-	}
-	fieldset.k-radio label {
-		float: none;
-		display: inline;
-		font-family: open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		text-transform: capitalize;
-		padding-right: 1.5em;
-	}
-	
-	fieldset.k-radio p {float: left; width: auto;}
-    fieldset.k-radio ul {
-        float: left;
-        width: auto;
-        list-style-type: none;
-		padding: 0;
-        margin: 0.3em 0 0;
-    }
-
-/* CE/ radios */
 
 /* ------------------------------------------------------------- MANDATORY INFO */
 /* CB/ mandatoryInfo */
@@ -703,7 +668,7 @@ p.k-mandatory {
 /* CB/ requiredField */
 
 input[required], textarea[required], .k-required {
-	background: #FFF url(../img/k-theme0/bg_required.png) 0.2em 0.3em no-repeat;
+	background: #FFF url(../img/k-theme0/bg_required.svg) 0.2em 0.3em no-repeat;
 	padding-left: 1.2em;
 }
 	
@@ -1153,73 +1118,78 @@ td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today 
 /* CB/ formWizard */
 
 
-ul.k-form-steps {
+ol.k-form-steps {
+	display: flex;
+	-moz-display: flex;
+	-webkit-display: flex;
+	flex-flow: column;
+	-webkit-flex-flow: column;
+	flex-direction: column;
 	position: relative;
 	clear: both;
-	margin-bottom: 1em;
-	padding: 0 0 0 10px;
-	border-left: 1px solid #000;
+	counter-reset: step;
+	margin: 1em 0;
 }
-	ul.k-form-steps:before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		content: " ";
-		width: 15px;
-		height: 1px;
-		background: #000;
+
+ol.k-form-steps li {
+	position: relative;
+	-webkit-flex: 1 1 auto;
+	flex: 1 1 auto;
+	list-style-type: none;
+	font: 0.9em /1 open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #B7B7B7;
+	background: #EEE;
+	padding: 0.5em 0.7em;
+	margin: 1rem 0.5rem 0 0;
+}
+ol.k-form-steps li::before {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 1.3em;
+	content: counter(step);
+	counter-increment: step;
+	text-align: center;
+	color: #EEE;
+	background: #D1D1D1;
+	margin-right: 1rem;
+	border-radius: 1.5em;
+}
+ol.k-form-steps li.past {
+	color: #050505;
+	background: #EEE;
+}
+ol.k-form-steps li.past::before {
+	color: #EEE;
+	background: #050505,
+}
+ol.k-form-steps li.active {
+	color: #A40800;
+	border: 1px solid #eee
+}
+ol.k-form-steps li.active::before {
+	color: #EEE;
+	background: #A40800
+}
+
+@media screen and (min-width: 790px) {
+	ol.k-form-steps {
+		display: flex;
+		-moz-display: flex;
+		-webkit-display: flex;
+		flex-flow: row;
+		-webkit-flex-flow: row;
+		flex-direction: row;
 	}
-	ul.k-form-steps:after {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		content: " ";
-		width: 15px;
-		height: 1px;
-		background: #000;
+	ol.k-form-steps li {
+		text-align: center;
 	}
-	
-	ul.k-form-steps li {
-		position: relative;
-		display: inline-block;
-		list-style-type: none;
-		font: 1em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		text-transform: uppercase;
-		color: #BBB;
-		background: #F3F3F3;
-		margin: 10px 0;
-		padding: 10px 10px 10px 3em;
-	}
-	ul.k-form-steps strong {
+	ol.k-form-steps li::before {
 		display: block;
-		font: 120% open_sansbold, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin: 0 auto 5px;
 	}
-	
-	/* States */
-	ul.k-form-steps li.past {color: #000; background: #F3F3F3;}
-    ul.k-form-steps li.active {color: #A40800; background: #F3F3F3;}
-	   
-	ul.k-form-steps li:nth-child(1):before {
-		position: absolute;
-		width: 1em;
-		content: "\2776 \00A0";
-		left: 10px;
-		font: 160% sans-serif;
-	}
-	ul.k-form-steps li:nth-child(2):before {
-		position: absolute;
-		width: 1em;
-		content: "\2777 \00A0";
-		left: 10px;
-		font-size: 160%;
-	}
-	ul.k-form-steps li:nth-child(3):before {
-		position: absolute;
-		width: 1em;
-		content: "\2778 \00A0";
-		left: 10px;
-		font-size: 160%;
-	}
+}
 
 
 /* CE/ formWizard */
@@ -3895,7 +3865,7 @@ p.k-basket-sum {
 	#loginLink {position: relative; top: 2em;}
 	form.k-login.collapsible {top: 7.8em;}
 
-	label, fieldset.k-radio legend, fieldset.k-check legend {
+	label, fieldset.k-choice-input legend {
 		float: none;
 		width: auto;
 		display: block;

@@ -1,0 +1,19 @@
+<p>
+	The DateField component come from the Tapesry framework, but with the jQuery UI Javascript file. 
+	So, you will have the same behavior as the original one. 
+</p>
+<p>
+    NB: Those components belong to the tapestry5-jquery project, please have a look to <a href="http://tapestry5-jquery.com/core/docsdatefield">the official website.</a>
+</p>
+<p>
+	If you want to override the JSONObject of the jQuery UI widget, you need to use 
+	the CustomDatepicker mixin, provided by the Tapestry5-jQuery project. This mixin
+	has just one JSONObject-type parameter <strong>params</strong>, which correspond
+	to the parameters of the jQuery UI widget.  You will find more information on the
+	Tapestry5-jQuery website : http://tapestry5-jquery.com/docs/mixins/customdatepicker 
+</p>
+<p>
+    You should not use the dateFormat parameter of the jQuery UI widget. The Java and jQuery formats
+    are not the same. We have created an utility method, that will convert a Java format into a jQuery one.
+    If you need to specify a specific format, you should use the format parameter of the datefield component.
+</p>
