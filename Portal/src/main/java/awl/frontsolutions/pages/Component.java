@@ -47,48 +47,48 @@ import awl.frontsolutions.treeDescription.TreeNode;
 
 @Import(stack="themestack")
 public class Component {
-	
+
 	@Inject
 	private FileSystemIndexer fileSystemIndexer;
-	
+
 	@Inject
 	private ComponentResources resources;
-	
+
 	@Inject
 	private Messages messages;
-	
+
 	@Inject
 	private ThreadLocale threadLocale;
-	
+
 	@Inject
 	private JavaScriptSupport javascriptSupport;
-	
+
 	@Inject
 	private AssetSource assetSource;
 
 	@Inject
 	private ComponentUtils componentUtils;
-	
+
 	@Persist
 	private TreeNode componentInfo;
 
 	@SessionState
 	private ChoosenTheme currentTheme;
-	
+
 	@Property
 	private awl.frontsolutions.entities.Documentation currentDocumentation;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private String currentLine;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private int index;
-	
+
 	@SessionState
 	private Panier panier;
-	
+
 	@Property
 	private boolean panierExists;
 
@@ -102,8 +102,8 @@ public class Component {
 			componentInfo =  fileSystemIndexer.getLinkToComponent().get((String) keys.toArray()[0]);
 		}
 	}
-	
-	
+
+
 	@OnEvent(EventConstants.ACTIVATE)
 	public void activation(EventContext ctx){
 		String urlTag = ctx.get(String.class, 0);
@@ -111,16 +111,16 @@ public class Component {
 			componentInfo = fileSystemIndexer.getLinkToComponent().get(urlTag);
 		}
 	}
-	
+
 	@OnEvent(EventConstants.PASSIVATE)
 	public Object passivation(){
 		return componentInfo.getUrlParam();
 	}
-	
-	
+
+
 	@SetupRender
 	public void init(MarkupWriter writer) throws IOException{
-		
+
 		componentInfo = componentUtils.rebuildSources(componentInfo,resources);
 
 		List<JSDependency> jsdeps = componentInfo.getContent().getJsDependencies();
@@ -129,14 +129,14 @@ public class Component {
 		}
 		javascriptSupport.importJavaScriptLibrary(resources.createEventLink(ComponentConstants.JS_EVENT).toURI());
 	}
-	
-	
+
+
 	@OnEvent(ComponentConstants.JS_DEP)
 	public StreamResponse loadJSDependency(final int context){
 		return new StreamResponse() {
 			@Override
 			public void prepareResponse(Response response) {}
-			
+
 			@Override
 			public InputStream getStream() throws IOException {
 				return IOUtils.toInputStream(componentInfo.getContent().getJsDependencies().get(context).getContent());
@@ -145,13 +145,13 @@ public class Component {
 			public String getContentType() {return "text/javascript";}
 		};
 	}
-	
+
 	@OnEvent(ComponentConstants.JS_EVENT)
 	public StreamResponse loadJSFile(){
 		return new StreamResponse() {
 			@Override
 			public void prepareResponse(Response response) {}
-			
+
 			@Override
 			public InputStream getStream() throws IOException {
 				String content = componentInfo.getContent().getSnippetJS5(currentTheme.getDir());
@@ -160,43 +160,36 @@ public class Component {
 				}
 				return IOUtils.toInputStream(content);
 			}
-			
+
 			@Override
 			public String getContentType() {return "text/javascript";}
 		};
 	}
-	
+
 	@OnEvent(ComponentConstants.SRC_EVENT)
 	public StreamResponse loadSrcFile(final int srcIndex){
 		return new StreamResponse() {
 			@Override
 			public void prepareResponse(Response response) {
-				
-				//For the pageStructure component, there are links in the snippetHTML. 
-				if(componentInfo.getContent().getSrcPaths().get(srcIndex).endsWith(".css") || 
+
+				//For the pageStructure component, there are links in the snippetHTML.
+				if(componentInfo.getContent().getSrcPaths().get(srcIndex).endsWith(".css") ||
 						componentInfo.getContent().getSrcPaths().get(srcIndex).endsWith(".html"))
-				
+
 				response.setHeader("Content-Disposition", "attachment; filename="+new File(componentInfo.getContent().getSrcPaths().get(srcIndex)).getName());
 			}
-			
+
 			@Override
 			public InputStream getStream() throws IOException {
-				
+
 				return new FileInputStream(componentInfo.getContent().getSrcPaths().get(srcIndex));}
-			
+
 			@Override
 			public String getContentType() {return "application/octet-stream";}
 		};
 	}
-	
-	
-	@OnEvent(ComponentConstants.DOC_EVENT)
-	public StreamResponse loadDocumentation(final int context){
-		return new DocumentationStreamResponse(componentInfo.getContent().getDocumentation().get(context).getPath());
-	}
-	
-	
-	
+
+
 	public String getComponentTitle(){
 		if(componentInfo.getParent().getNodeName().equals("root")){
 			return "";
@@ -204,7 +197,7 @@ public class Component {
 			return componentInfo.getNodeName();
 		}
 	}
-	
+
 	public String getComponentCssClass(){
 		if(StringUtils.isNotEmpty(componentInfo.getCss())){
 			return "("+componentInfo.getCss()+")";
@@ -212,7 +205,7 @@ public class Component {
 			return "";
 		}
 	}
-	
+
 	public String getGroupTitle(){
 		if(componentInfo.getParent().getNodeName().equals("root")){
 			return componentInfo.getNodeName();
@@ -220,7 +213,7 @@ public class Component {
 			return componentInfo.getParent().getNodeName();
 		}
 	}
-	
+
 	public String getCurrentDocumentationDescription(){
 		if(Locale.FRENCH.getLanguage().equals(threadLocale.getLocale().getLanguage())){
 			return currentDocumentation.getDescriptionFr();
@@ -228,28 +221,28 @@ public class Component {
 			return currentDocumentation.getDescriptionEn();
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	public boolean showFile(String fileContent){
-		
+
 		if(componentInfo.getUrlParam().equalsIgnoreCase("pageStructure")) return false;
-		
+
 		return showFile(fileContent, true);
 	}
 	public boolean showFile(String fileContent, boolean flag){
-		
+
 		return StringUtils.isNotEmpty(fileContent);
 	}
 	public boolean getHasJqueryTag(){
 		return componentInfo.containsTag(ComponentConstants.TAG_JQUERY);
 	}
-	
+
 	public boolean getHasHTML5Tag(){
 		return componentInfo.getContent().getHtml5().getSnippetHTML5() != null;
 	}
-	
+
 	public boolean getHasTapestryTag(){
 		return componentInfo.containsTag(ComponentConstants.TAG_TAPESTRY);
 	}
@@ -257,17 +250,17 @@ public class Component {
         return componentInfo.containsTag(ComponentConstants.TAG_ANGULAR);
     }
 
-	
+
 	private String getThemeCode(){
 		return messages.get(currentTheme.getThemeName().substring(ThemeStack.PREFIX.length())+"-theme-code");
 	}
-	
 
-	
+
+
 	public String getSnippetCSS(){
 		return componentInfo.getContent().getSnippetCSS(currentTheme.getThemeName());
 	}
-	
+
 	public List<String> getEscapedSnippetCSS(){
 		return componentInfo.getContent().getEscapedSnippetCSS(currentTheme.getThemeName());
 	}
@@ -287,15 +280,15 @@ public class Component {
 		return componentInfo.getContent().getHtml5().getEscapedSnippetJS5(currentTheme.getDir());
 	}
 	public String getSnippetHTML(){
-		return componentInfo.getContent().getSnippetHTML(currentTheme.getDir()); 
+		return componentInfo.getContent().getSnippetHTML(currentTheme.getDir());
 	}
 	public String getSnippetHTML5(){
-		return componentInfo.getContent().getSnippetHTML5(currentTheme.getDir()); 
+		return componentInfo.getContent().getSnippetHTML5(currentTheme.getDir());
 	}
 	public String getSnippetCSS3(){
 		return componentInfo.getContent().getSnippetCSS(currentTheme.getThemeName());
 	}
-	
+
 	public List<String> getEscaped(){
 		return componentInfo.getContent().getEscapedSnippetCSS(currentTheme.getThemeName());
 	}
@@ -308,54 +301,54 @@ public class Component {
 	public boolean isPageStructureComponent(){
 		return componentInfo.getUrlParam().equalsIgnoreCase("pageStructure");
 	}
-	
+
 	@Inject
 	private Block source;
-	
+
 	@Inject
 	private Block forewords;
-	
+
 	public Block getSourceBlock(){
 		return source;
 	}
-	
+
 	public Block getForewords(){
 		return forewords;
 	}
-	
+
 	public String getTitle(){
 		return "Components : " + componentInfo.getNodeName();
 	}
-	
-	
-	
+
+
+
 	@InjectComponent
 	private Zone zoneBasket;
-	
+
 	@Inject
 	private Request request;
-	
+
 	@OnEvent(value=EventConstants.ACTION, component="panier")
 	public Object addToBasket(){
-		
+
 		panier.add(componentInfo.getUrlParam());
 		if(request.isXHR())
 			return zoneBasket;
 
         return prls.createPageRenderLinkWithContext(Component.class, componentInfo.getUrlParam());
 	}
-	
+
 	public boolean getHasHtml(){
 		return componentInfo.getContent().getSnippetHTML() != null;
 	}
 	public boolean getHasJs(){
 		return !InternalUtils.isEmptyCollection(componentInfo.getContent().getJsDependencies()) || getHasJqueryTag();
 	}
-	
+
 	public Asset getTapestryPath(){
 		return this.assetSource.getContextAsset(String.format("img/%s/jquery-trans.png", currentTheme.getDir()), null);
 	}
-	
+
 	public Asset getJQueryPath(){
 		return this.assetSource.getContextAsset(String.format("img/%s/tapestry-small.png", currentTheme.getDir()), null);
 	}

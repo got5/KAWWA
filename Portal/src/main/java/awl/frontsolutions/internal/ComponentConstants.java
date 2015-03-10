@@ -44,8 +44,6 @@ public class ComponentConstants {
 	public static final String JS_DEP = "jsdep";
 	public static final String IMAGE_DEP = "imgdep";
 
-	public static final String DOC_EVENT = "getdoc";
-
 	public static final String DL_TYPE_HTML5 = "html5";
 	public static final String DL_TYPE_XHTML = "xhtml";
 
