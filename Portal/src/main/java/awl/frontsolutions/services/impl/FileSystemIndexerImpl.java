@@ -162,8 +162,6 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 								ComponentConstants.METADATA_FILE_NAME)
 								&& !pathname.getName().equals(
 										ComponentConstants.DEPENDENCIES_DIR)
-								&& !pathname.getName().equals(
-										ComponentConstants.DOC_DIR)
 								&& pathname.isDirectory();
 					}
 
@@ -274,85 +272,14 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 		readHtml5Directory(retour, basedir, rootFile);
 
 		readJsDependencies(retour, basedir);
-		
+
 		readXhtmlDirectory(retour, urlParam, basedir);
 
 		readTapestryDirectory(retour, basedir);
 
         readAngularDirectory(retour, basedir);
 
-		readDocumentationDirectory(basedir, retour);
-
 		return retour;
-	}
-
-	private void readDocumentationDirectory(String basedir,
-			ComponentContent retour) {
-		// documentation reading
-		try {
-			logger.info("reading documentation...");
-			File docDir = new File(basedir + ComponentConstants.DOC_DIR);
-			if (docDir.exists()) {
-				Properties docInfo = new Properties();
-				docInfo.load(new FileInputStream(basedir
-						+ ComponentConstants.DOC_DIR + File.separator
-						+ ComponentConstants.DOC_INFO_FILE));
-				Set<String> files = docInfo.stringPropertyNames();
-
-				String lang = threadLocale.getLocale().getLanguage()
-						.toLowerCase();
-				for (String file : files) {
-					File doc = new File(basedir + ComponentConstants.DOC_DIR
-							+ File.separator + file);
-					if (!doc.exists()) {
-						// On cherche ds le dossier de la locale
-						doc = new File(basedir + ComponentConstants.DOC_DIR
-								+ File.separator + lang + File.separator + file);
-						if (!doc.exists()) {
-							// On cherche ds la documentation générale
-							doc = new File(root + File.separator
-									+ ComponentConstants.DOC_DIR
-									+ File.separator + file);
-							if (!doc.exists()) {
-								// On cherche ds la documentation générale
-								// avec la locale
-								doc = new File(root + File.separator
-										+ ComponentConstants.DOC_DIR
-										+ File.separator + lang
-										+ File.separator + file);
-								if (!doc.exists()) {
-									doc = null;
-								}
-							}
-						}
-					}
-					if (doc != null) {
-						Documentation d = new Documentation();
-						d.setLabel(doc.getName() + " ["
-								+ componentUtils.formatFileSize(doc.length())
-								+ "]");
-						String description = (String) docInfo.get(file);
-						String[] descriptions = description
-								.split("\\s*\\|\\s*");
-						if (descriptions.length <= 1) {
-							d.setDescriptionFr(description);
-							d.setDescriptionEn(description);
-						} else {
-							d.setDescriptionFr(descriptions[0]);
-							d.setDescriptionEn(descriptions[1]);
-						}
-
-						d.setPath(doc.getAbsolutePath());
-						retour.getDocumentation().add(d);
-
-					}
-				}
-			}
-		} catch (FileNotFoundException e) {
-			logger.error("Error while reading documentation", e);
-		} catch (IOException e) {
-			logger.error("Error while reading documentation", e);
-		}
 	}
 
 	private ComponentContent readXhtmlDirectory(ComponentContent retour,
@@ -397,11 +324,11 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 
 		}
 
-		
+
 		retour.setReadMoreHTML((String) readFile(basedir + ComponentConstants.READMORE_HTML)[0]);
 		retour.setReadMoreCSS((String) readFile(basedir + ComponentConstants.READMORE_CSS)[0]);
 		retour.setReadMoreJS((String) readFile(basedir + ComponentConstants.READMORE_JS)[0]);
-		
+
 		return retour;
 	}
 
@@ -488,7 +415,7 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
     }
 	/**
 	 * Method used to read all the Tapestry documentation for a Component
-	 * 
+	 *
 	 * @param retour
 	 * @param basedir
 	 *            : the components directory
@@ -595,9 +522,9 @@ public class FileSystemIndexerImpl implements FileSystemIndexer {
 	}
 
 	private void readAfterBeforeWords(ComponentContent retour, String basedir) {
-		
+
 		retour.setForewords((String) readFile(basedir + ComponentConstants.FOREWORDS)[0]);
-		
+
 		retour.setAfterwords((String) readFile(basedir + ComponentConstants.AFTERWORDS)[0]);
 	}
 

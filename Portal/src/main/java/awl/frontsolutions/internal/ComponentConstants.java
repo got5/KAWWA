@@ -16,7 +16,7 @@ public class ComponentConstants {
     public static final String TAG_HTML5 = "html5";
     public static final String TAG_TAPESTRY = "tapestry";
     public static final String TAG_ANGULAR = "angular";
-    
+
 	public static final String DEPENDENCIES_DIR = "dependencies";
 	public static final String RESOURCES_DIR = "resources";
 	public static final String DOC_DIR = "documentation";
@@ -27,7 +27,7 @@ public class ComponentConstants {
 	public static final String SNIPPET_HTML5 = "snippet.html5";
 	public static final String SNIPPET_TML = "snippet.tml";
 	public static final String SNIPPET_JAVA = "snippet.java";
-	
+
 	public static final String NOTES = "notes.html";
 	public static final String FOREWORDS = "forewords.html";
 	public static final String AFTERWORDS = "afterwords.html";
@@ -38,19 +38,19 @@ public class ComponentConstants {
 	public static final String READMORE_JS = "readmore.js";
 	public static final String READMORE_JAVA = "readmore.java";
 	public static final String READMORE_TML = "readmore.tml";
-	
-	public static final String SRC_EVENT = "getsrc"; 
-	public static final String JS_EVENT = "getjs"; 
+
+	public static final String SRC_EVENT = "getsrc";
+	public static final String JS_EVENT = "getjs";
 	public static final String JS_DEP = "jsdep";
 	public static final String IMAGE_DEP = "imgdep";
-	
+
 	public static final String DOC_EVENT = "getdoc";
-	
+
 	public static final String DL_TYPE_HTML5 = "html5";
 	public static final String DL_TYPE_XHTML = "xhtml";
-	
+
 	public static final String IE_HACK_PREFIX = "k-ieFix-";
-	
+
 	public static final String THEME_IMG_DIR = "[[THEME_IMG]]";
 	public static final String TAPESTRY_FOLDER = "tapestry";
     public static final String ANGULAR_FOLDER = "angular";
