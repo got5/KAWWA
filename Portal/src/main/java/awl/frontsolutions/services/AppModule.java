@@ -59,8 +59,6 @@ public class AppModule {
 		configuration.add("IncludeStack", "false");
 
 		configuration.add("enableAnalytics", "false");
-
-		configuration.add("enableDocumentationBlock", "false");
 	}
 
 	@Contribute(JavaScriptStackSource.class)
@@ -144,10 +142,5 @@ public class AppModule {
 
 			@Local RequestExceptionHandler handler) {
 		configuration.add(RequestExceptionHandler.class, handler);
-	}
-
-	public static void contributeIgnoredPathsFilter(
-			Configuration<String> configuration) {
-		configuration.add("/apis/.*");
 	}
 }

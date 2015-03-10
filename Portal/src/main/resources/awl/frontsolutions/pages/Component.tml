@@ -63,32 +63,6 @@
         	<t:componentdependencies t:jsDependencies="componentInfo.content.jsDependencies" t:showJquery="hasJqueryTag" />
         </t:if>
 
-        <t:if t:test="symbol:enableDocumentationBlock">
-	        <t:if t:test="componentInfo.content.documentation">
-		        <div class="k-info-block">
-		            <div class="hgroup">
-		                <h3>Documentation:</h3>
-		            </div>
-		            <div class="content">
-		                <ul class="k-links-list">
-		                    <t:loop t:source="componentInfo.content.documentation" t:index="index" t:value="currentDocumentation">
-		                        <li>
-		                            <t:eventlink t:event="getdoc" t:context="index">
-		                                ${currentDocumentation.label}
-		                            </t:eventlink>
-		                            <em>${currentDocumentationDescription}</em>
-		                        </li>
-		                    </t:loop>
-		                </ul>
-
-						<p class="k-readmore">
-							Most documents are available in both English and French versions.
-							Please consult the "<a t:type="pageLink" t:page="documentation">Documentation &amp; Tools</a>" section for available translations.
-						</p>
-		            </div>
-		        </div>
-	        </t:if>
-        </t:if>
     </div>
     <t:block t:id="forewords">
        	 <t:if test="showFile(componentInfo.content.forewords, true)">
