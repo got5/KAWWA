@@ -1,4 +1,4 @@
-// Le Studio, Atos Worldline, 2011
+//Le Studio, Atos Worldline, 2011
 // Groups all functions to be loaded on page loading
 // Version 1.2 - 02/2013
 
@@ -11,53 +11,53 @@
 // Loading all scripts ...
 
 window.onload = function(e) {
-	
+
     if (ie8) {
 		inputFix();
 		selectorFix();
 		fixStructure();
 	}
-	
+
 	if (ie8) {
 		fixStructure();
 	}
-	
-// RESPONSIVE MENU ----------------------------------	
-	
+
+// RESPONSIVE MENU ----------------------------------
+
 	if(jQuery.fn.flexNav) {
 		$('.i-navbar').flexNav();
 	}
-	
-	
+
+
 // HIDE URL BAR FOR iPHone ----------------------------------
 
 	if (jQuery(window).width()<=490) {
 		window.scrollTo(0, 1);
 	}
-	
+
 // TREEVIEW ----------------------------------
-	
+
 	if(jQuery.fn.jstree) {
 		jQuery('.k-tree').jstree({plugins : ["html_data", "ui", "hotkeys"]});
-		/*if you don't want keyboard navigation, use this line instead : 
+		/*if you don't want keyboard navigation, use this line instead :
 		jQuery('.k-tree').jstree();*/
 		jQuery(".jstree-closed > a").attr("aria-expanded", "false");
 		jQuery(".jstree-open > a").attr("aria-expanded", "true");
 	}
-	
-	
-// FORM FIELD HELP ----------------------------------		
+
+
+// FORM FIELD HELP ----------------------------------
 
 	if (jQuery.ui && jQuery.ui.dialog) {
 		var theValue = "";
-		jQuery("a.k-field-help").each(function(){  
+		jQuery("a.k-field-help").each(function(){
 			theValue = jQuery(this).attr("href");
 			fieldHelp(theValue, ".k-field-help");
-		});	
+		});
 	}
 
 // FORM FIELD COMMENTS ----------------------------------
-	
+
 	if (jQuery.fn.tipsy) {
 		jQuery('.k-field-comment').tipsy({
 			gravity: 's',
@@ -65,15 +65,15 @@ window.onload = function(e) {
 		});
 	}
 
-// LANGUAGE SELECTION ----------------------------------	
+// LANGUAGE SELECTION ----------------------------------
 
 	if (jQuery.ui && jQuery.ui.buttonset) {
 		jQuery('form.k-language fieldset.k-radio').buttonset();
 	}
-	
 
-// LOGIN FORM -------------------------------------------	
-	
+
+// LOGIN FORM -------------------------------------------
+
 	/*if (jQuery('form.k-login').hasClass('collapsible')) {
 		jQuery('form.k-login.collapsible').css("display", "none");
 		jQuery('#loginLink').children("a").attr("href", "#");
@@ -88,9 +88,9 @@ window.onload = function(e) {
 			  });
 		});
 	}*/
-	
 
-// SEARCH/AUTOCOMPLETE ----------------------------------	
+
+// SEARCH/AUTOCOMPLETE ----------------------------------
 // Added input value for search
 
 function supports_input_placeholder() {
@@ -115,9 +115,9 @@ function supports_input_placeholder() {
 	} else {
 		jQuery('input.k-autocomplete').attr("value", "Search a Component...");
 	}
-	
 
-// VERTICAL ACCORDION MENU ----------------------------------		
+
+// VERTICAL ACCORDION MENU ----------------------------------
 
 	if(jQuery.ui && jQuery.ui.accordion) {
 		jQuery('ul.k-menu').accordion({  collapsible: true });
@@ -126,9 +126,9 @@ function supports_input_placeholder() {
 			jQuery('a.one-level').bind('click', function(){
 			window.location.href = jQuery(this).attr("href");
 		});
-		} 
+		}
 	}
-	
+
 
 // ACCORDION  BLOCK ----------------------------------
 
@@ -137,41 +137,41 @@ function supports_input_placeholder() {
 			heightStyle: "content"
 		});
 	}
-	
-		
-// COLLAPSIBLE PANELS ----------------------------------	
-	
+
+
+// COLLAPSIBLE PANELS ----------------------------------
+
 	if(jQuery.ui && jQuery.ui.panel) {
 		jQuery('.k-panel').panel();
 	}
-	
-	
+
+
 // TABS -------------------------------------------
 
 	if (jQuery.fn.kTabs) {
-		jQuery('.k-tabbed-data').kTabs();
+		jQuery('#demo-tab').kTabs();
 	}
-	
-	
+
+
 // MODAL WINDOW ----------------------------------
 	opensModal();
-	
- 	
+
+
  // PRINT -------------------------------
-    
+
     toPrint();
-    
+
     // PORTAL DOWNLOAD PAGE ------------------------------
- 
+
  	if(jQuery('#downloadForm')) {selectAll();}
-          
+
 //OPEN NEW WINDOW LINK -------------------------------
-    
+
     toNewWindow();
 
-	
+
 // IMAGE CAROUSEL ----------------------------------
- 
+
  	if (!(ie6 || ie7)) {
  		if(jQuery.fn.jcarousel) {
  			if (jQuery(window).width()>=700) {
@@ -192,11 +192,9 @@ function supports_input_placeholder() {
 	 		}
  		}
  	}
- 	
-	
-	
+
 // PRODUCT GALLERY -------------------------------
-	
+
 	if(jQuery.fn.jqzoom) {
 		jQuery('.jqzoom').jqzoom ({
             zoomType: 'standard',
@@ -205,21 +203,19 @@ function supports_input_placeholder() {
             alwaysOn: false
         });
 	}
-	
 
-// PRODUCT OPTIONS -------------------------------	
+// PRODUCT OPTIONS -------------------------------
 
 	if (jQuery("div").hasClass("k-product-options")) {
 		jQuery('fieldset').buttonset();
 	}
-	
-	
-// RATINGS -------------------------------	
+
+// RATINGS -------------------------------
 
 	if(jQuery.fn.rating) {
 		jQuery('fieldset.k-rating input').rating();
 	}
-// ACTIONS DROPDOWN ----------------------------------	
+// ACTIONS DROPDOWN ----------------------------------
 
 	if(jQuery.fn.actionsDd) {
 
@@ -234,7 +230,7 @@ if(jQuery.fn.libraryControl) {
 	}
 
 // PORTAL / COMPO INFO -------------------------------
-    
+
     if(jQuery('ul').hasClass('component-info')) {
           jQuery('ul.component-info').css('display', 'none');
           jQuery('ul.component-info').css('position', 'absolute');
@@ -253,4 +249,4 @@ if(jQuery.fn.libraryControl) {
     }
 //----------------------------------------------------
 }	//close function
-	
+

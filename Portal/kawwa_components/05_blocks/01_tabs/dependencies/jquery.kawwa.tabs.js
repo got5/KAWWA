@@ -30,10 +30,10 @@
 
 		return this.each(function() {
 			var $this = $(this);
-			var $tabsList = $this.find('ul.tabs');
-			var $tabsPres = $this.find('ul.tabs li');
-			var $tabs = $this.find('ul.tabs a');
-			var $panels = $this.find('.content');
+			var $tabsList = $this.find('ul.tabs:first');
+			var $tabsPres = $this.find('ul.tabs:first li');
+			var $tabs = $this.find('ul.tabs:first a');
+			var $panels = $this.find('> .content');
 			var tabHref;
 			var	tabHeight;
 			var tabId;
@@ -105,20 +105,20 @@
 					$tabs.removeClass('active').attr('aria-selected', 'false').attr('tabindex', '-1');
 					// Open clicked
 					$(this).addClass('active').attr('aria-selected', 'true').attr('tabindex', '0');
-					
-					panelId = $(this).attr('aria-controls');					
+
+					panelId = $(this).attr('aria-controls');
 					$('#' + panelId).children(':first-child').attr('tabindex', '0');
-					
+
 					$('#' + panelId).css('display', 'block').attr({
 						'aria-hidden' : 'false',
 						'aria-expanded' : 'true'
 					});
-					
+
 					if($('#' + panelId).parent().hasClass('adaptive')) {
 						tabHeight = $('a.transformed.active').height() + 30;
 						$('#' + panelId).css('padding-top', tabHeight);
 					}
-					
+
 				}
 			});
 			// KEYBOARD EVENTS
@@ -144,10 +144,10 @@
 					}
 				}
 			});
-			
+
 			// RESPONSIVE BEHAVIOUR
 			var resizer = function() {
-				$this.removeClass('adaptive');				
+				$this.removeClass('adaptive');
 				if($tabsPres.eq(0).offset().top != $tabsPres.eq($tabsPres.length - 1).offset().top) {
 					$this.addClass('adaptive');
 					$tabs.addClass('transformed');

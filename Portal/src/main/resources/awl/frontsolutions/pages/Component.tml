@@ -1,15 +1,15 @@
 <t:layout t:activeMenu="1" t:title="prop:title" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
-	
+
 	<div id="main">
         <h2>${groupTitle}</h2>
-        
+
         <t:if t:test="PageStructureComponent">
-        
+
         	<t:delegate t:to="sourceBlock" />
-        	
+
         	<p:else>
         		<div class="i-section">
-        	
+
 		            <h3>${componentTitle} <a href="#"><img alt="Component Information" src="${asset:context:img/info.png}" /></a></h3>
 					<ul class="component-info">
 					      <li>Class name: <em>${componentCssClass}</em></li>
@@ -34,35 +34,35 @@
 		            <p id="toBasket" class="buy">
 		            	<t:actionLink t:zone="zoneBasket" t:id="panier" t:context="componentInfo.urlParam" title="Add this component to download list" role="button">Add to list</t:actionLink>
 		            </p>
-		            
+
 		            <t:delegate t:to="forewords" />
-		            
+
 		            <t:delegate t:to="sourceBlock" />
 		        </div>
         	</p:else>
         </t:if>
-        
+
         <t:if test="showFile(componentInfo.content.afterwords)">
             <div class="k-notes">
                 <t:outputraw value="componentInfo.content.afterwords" />
             </div>
         </t:if>
-        
+
         <div class="k-orientation-aid">
 			<p class="go-top"><a href="#container" title="Go to the top of the page">Top</a></p>
 		</div>
     </div>
     <div id="sidebar">
         <t:zone t:id="zoneBasket">
-	       
+
 	        	<t:listeBasket t:urlParam="componentInfo.urlParam"/>
-	       
+
         </t:zone>
-        
+
         <t:if t:test="hasJs">
         	<t:componentdependencies t:jsDependencies="componentInfo.content.jsDependencies" t:showJquery="hasJqueryTag" />
         </t:if>
-        
+
         <t:if t:test="symbol:enableDocumentationBlock">
 	        <t:if t:test="componentInfo.content.documentation">
 		        <div class="k-info-block">
@@ -80,10 +80,10 @@
 		                        </li>
 		                    </t:loop>
 		                </ul>
-		                
+
 						<p class="k-readmore">
-							Most documents are available in both English and French versions. 
-							Please consult the "<a t:type="pageLink" t:page="documentation">Documentation &amp; Tools</a>" section for available translations. 
+							Most documents are available in both English and French versions.
+							Please consult the "<a t:type="pageLink" t:page="documentation">Documentation &amp; Tools</a>" section for available translations.
 						</p>
 		            </div>
 		        </div>
@@ -98,14 +98,14 @@
           </t:if>
     </t:block>
     <t:block t:id="source">
-    	<div class="k-tabbed-data">
+    	<div id="demo-tab" class="k-tabbed-data">
                 <ul class="tabs">
                 	<li>
 						<a href="#demo">Demo</a>
 					</li>
                     <t:if test="hasHtml5Tag">
                         <li>
-                            <a href="#html5">Snippets</a>
+                            <a href="#snippet">Snippets</a>
                         </li>
                     </t:if>
                 	<t:if test="hasTapestryTag">
@@ -121,11 +121,11 @@
                 </ul>
                 <t:if test="hasHtml5Tag">
                 	<div class="content" id="demo">
-						<div id="i-component" class="content">
+
 							<t:outputRaw t:value="snippetHTML5"/>
-						</div>
+
 					</div>
-                    <div class="content" id="html5">
+                    <div class="content" id="snippet">
                     	<t:if test="showFile(componentInfo.content.html5.snippetHTML5)">
                             <t:showSource t:type="html5" t:title="HTML5 Plain Code" t:escapedCode="escapedSnippetHTML5" t:readMore="componentInfo.content.html5.readMoreHTML5" />
 							<hr/>
@@ -140,7 +140,7 @@
 	                    <t:showIEFiles t:xhtml="false"/>
                     </div>
                 </t:if>
-                
+
                 <t:if test="hasTapestryTag">
                 	<t:documentation.TapestryDocumentationComponent t:tapestry="componentInfo.content.tapestry" t:urlParam="componentInfo.urlParam"/>
                 </t:if>
@@ -149,5 +149,5 @@
             </t:if>
             </div>
     </t:block>
-    
+
 </t:layout>
