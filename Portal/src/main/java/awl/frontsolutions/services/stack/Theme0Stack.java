@@ -17,21 +17,22 @@ public class Theme0Stack extends ThemeStack{
 			@Inject final SymbolSource symbolSource,
 			@Inject final ThreadLocale threadLocale) {
 		super(assetSource, productionMode, symbolSource, threadLocale);
-		
+
 
 		addStyleSheet(new StylesheetLink(expand("context:css/k-theme0.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/i-theme0.css")));
 		addStyleSheet(new StylesheetLink(expand("context:css/iehacks0.css"),new StylesheetOptions("all").withCondition("lt IE 9")));
-		
+
 		addLibrary(expand("context:js/plugins/jquery.masonry.min.js"));
+		addLibrary(expand("context:js/plugins/jquery.kawwa.tabs.js"));
 		addLibrary(expand("context:js/i-general.js"));
 		addLibrary(expand("context:js/k-general.js"));
 		addLibrary(expand("context:js/k-load.js"));
 	}
 
-	
 
 
-	
+
+
 
 }

@@ -35,61 +35,6 @@ window.onload = function(e) {
 		window.scrollTo(0, 1);
 	}
 
-// TREEVIEW ----------------------------------
-
-	if(jQuery.fn.jstree) {
-		jQuery('.k-tree').jstree({plugins : ["html_data", "ui", "hotkeys"]});
-		/*if you don't want keyboard navigation, use this line instead :
-		jQuery('.k-tree').jstree();*/
-		jQuery(".jstree-closed > a").attr("aria-expanded", "false");
-		jQuery(".jstree-open > a").attr("aria-expanded", "true");
-	}
-
-
-// FORM FIELD HELP ----------------------------------
-
-	if (jQuery.ui && jQuery.ui.dialog) {
-		var theValue = "";
-		jQuery("a.k-field-help").each(function(){
-			theValue = jQuery(this).attr("href");
-			fieldHelp(theValue, ".k-field-help");
-		});
-	}
-
-// FORM FIELD COMMENTS ----------------------------------
-
-	if (jQuery.fn.tipsy) {
-		jQuery('.k-field-comment').tipsy({
-			gravity: 's',
-			fade: true
-		});
-	}
-
-// LANGUAGE SELECTION ----------------------------------
-
-	if (jQuery.ui && jQuery.ui.buttonset) {
-		jQuery('form.k-language fieldset.k-radio').buttonset();
-	}
-
-
-// LOGIN FORM -------------------------------------------
-
-	/*if (jQuery('form.k-login').hasClass('collapsible')) {
-		jQuery('form.k-login.collapsible').css("display", "none");
-		jQuery('#loginLink').children("a").attr("href", "#");
-		jQuery('#loginLink').click(function() {
-			jQuery('form.k-login.collapsible').animate({
-			    height: 'toggle'
-			  }, {
-			    duration: 500,
-			    specialEasing: {
-			      height: 'linear'
-			    }
-			  });
-		});
-	}*/
-
-
 // SEARCH/AUTOCOMPLETE ----------------------------------
 // Added input value for search
 
@@ -130,15 +75,6 @@ function supports_input_placeholder() {
 	}
 
 
-// ACCORDION  BLOCK ----------------------------------
-
-	if(jQuery.ui && jQuery.ui.accordion){
-		jQuery( ".k-accordion" ).accordion({
-			heightStyle: "content"
-		});
-	}
-
-
 // COLLAPSIBLE PANELS ----------------------------------
 
 	if(jQuery.ui && jQuery.ui.panel) {
@@ -164,63 +100,6 @@ function supports_input_placeholder() {
     // PORTAL DOWNLOAD PAGE ------------------------------
 
  	if(jQuery('#downloadForm')) {selectAll();}
-
-//OPEN NEW WINDOW LINK -------------------------------
-
-    toNewWindow();
-
-
-// IMAGE CAROUSEL ----------------------------------
-
- 	if (!(ie6 || ie7)) {
- 		if(jQuery.fn.jcarousel) {
- 			if (jQuery(window).width()>=700) {
-	 			jQuery('.k-carousel').jcarousel({
-		    		size: '7',
-		    		visible: '4'
-		    	});
-	 		} else if (jQuery(window).width()>=480) {
-	 			jQuery('.k-carousel').jcarousel({
-		    		size: '7',
-		    		visible: '3'
-		    	});
-	 		} else {
-	 			jQuery('.k-carousel').jcarousel({
-		    		size: '5',
-		    		visible: '2'
-		    	});
-	 		}
- 		}
- 	}
-
-// PRODUCT GALLERY -------------------------------
-
-	if(jQuery.fn.jqzoom) {
-		jQuery('.jqzoom').jqzoom ({
-            zoomType: 'standard',
-            lens: true,
-            preloadImages: true,
-            alwaysOn: false
-        });
-	}
-
-// PRODUCT OPTIONS -------------------------------
-
-	if (jQuery("div").hasClass("k-product-options")) {
-		jQuery('fieldset').buttonset();
-	}
-
-// RATINGS -------------------------------
-
-	if(jQuery.fn.rating) {
-		jQuery('fieldset.k-rating input').rating();
-	}
-// ACTIONS DROPDOWN ----------------------------------
-
-	if(jQuery.fn.actionsDd) {
-
-		jQuery('.k-actions-dropdown').actionsDd();
-	}
 
 // PORTAL ONLY***************** -------------------------------
 

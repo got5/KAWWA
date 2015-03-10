@@ -2,7 +2,7 @@
           	  	 KAWWA - Default Theme
 	          	 Default OS Theme
           By Le Studio, Atos Worldline, 2012
-          
+
 				Version 1.0 (09/2012)
 				   Updated 02/2013
 -------------------------------------------------------------------- */
@@ -15,8 +15,8 @@
 		DYNAMIC TABLES
 	FORM SPECIFICS
 		SUB-FIELDSETS
-		CHECKBOXES 
-		RADIOS 
+		CHECKBOXES
+		RADIOS
 		MANDATORY INFO
 		REQUIRED FIELD
 		INPUT HELP
@@ -25,32 +25,32 @@
 		ERROR MESSAGES
 		CONFIRMATION MESSAGES
 		FORM BUTTONS
-		DATEPICKER 
+		DATEPICKER
 		FORM WIZARD
 		ACTIONS DROPDOWN
-	NAVIGATION 
+	NAVIGATION
 		MAIN NAV/FIRST LEVEL
 		VERTICAL MENU
 		SKIP MENU LINK
-		BREADCRUMBS 
+		BREADCRUMBS
 		TREE-VIEW
 		TREE-VIEW GRID
 	SITE UTILITIES
 		NO DISPLAY
 		NEW WINDOW LINK
-		SITEMAP 
+		SITEMAP
 		TOOLS LINKS
-		SEARCH 
+		SEARCH
 		LANGUAGE CHOICE
-		LOGIN 
+		LOGIN
 		LOGIN DATA
 		ACTION BUTTONS BAR
 		ACTION BUTTONS
 		ICON BUTTONS
-		PAGINATION 
-		MODAL 
+		PAGINATION
+		MODAL
 		ORIENTATION AID
-	BLOCKS 
+	BLOCKS
 		TABS
 		IMAGE CAROUSEL
 		COLLAPSIBLE PANELS
@@ -169,7 +169,7 @@ h3 {
 	padding: 5px 0;
 	margin-bottom: 0.5em;
 }
-	
+
 h4 {
 	font: 2em open_sansbold, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
@@ -185,7 +185,7 @@ h6 {
 	font: 1em open_sansbold, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0.5em 0;
 }
-	
+
 p, li, dt, dd {font-size: 1em;}
 ul, ol {padding-left: 21px;}
 li {line-height: 1.3; padding: 3px 0;}
@@ -229,7 +229,7 @@ blockquote, .k-quote {
 	position: relative;
 	width: 50%;
 	max-width: 40em;
-	
+
 	color: #000;
 	background: #FFF;
 	padding: 0 0 0 2em;
@@ -245,20 +245,20 @@ blockquote, .k-quote {
 		color: #808080;
 		background: inherit;
 	}
-		
+
 	blockquote p, .k-quote p {
 		font: 0.85em open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-indent: 0;
 	}
-		
+
 	blockquote p.citation, .k-quote p.citation {
 		font-size: 0.7em;
 		padding-top: 1em;
 	}
 		blockquote p.citation:before, .k-quote p.citation:before {content: "\2500 \00A0 ";}
-		
+
 	cite {font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;}
-		
+
 /* CE/ quote */
 
 
@@ -477,7 +477,7 @@ aside[role=complementary], #sidebar {
 footer[role=contentinfo], #footer {
 	clear: both;
 	width: 92%;
-	min-height: 100px; 
+	min-height: 100px;
 	color: #EEE;
 	background: #3E3E3E;
 	padding: 1em 4%;
@@ -519,11 +519,11 @@ div.dataTables_wrapper {
 		background: #808080 url(../img/k-theme0/sort_desc.png) right no-repeat;
 		cursor: pointer;
 	}
-	
+
 /* Data table lines */
 div.dataTables_length {float: left; width: 25%; min-width: 10em;}
 	div.dataTables_length label {font-size: 0.7em; width: auto;}
-	
+
 /* Data table filter */
 div.dataTables_filter {}
 	div.dataTables_filter label {
@@ -532,8 +532,8 @@ div.dataTables_filter {}
 		font-size: 0.7em;
 		text-align: right;
 	}
-	
-/* Data table info */	
+
+/* Data table info */
 div.dataTables_info {
 	position: absolute;
 	width: 30%;
@@ -545,7 +545,7 @@ div.dataTables_info {
 
 /* Dynamic pagination */
 div.dataTables_paginate {float: right; width: auto; font-size: 0.9em; padding-top: 0.5em;}
-	
+
 	div.dataTables_paginate a {padding: 0 0.5em;}
 
 	div.dataTables_paginate span {padding: 0 1em;}
@@ -608,7 +608,7 @@ fieldset.k-sub-group {
 		background: transparent;
 		text-align: left;
 	}
-	
+
 /* CE/ subFieldsets */
 
 /* ------------------------------------------------------------- CHECKBOXES and RADIOS */
@@ -660,8 +660,8 @@ p.k-mandatory {
 	background: transparent;
 	padding-right: 5px;
 	margin-bottom: 1em;
-} 
-	
+}
+
 /* CE/ mandatoryInfo */
 
 /* ------------------------------------------------------------- REQUIRED FIELD */
@@ -671,7 +671,7 @@ input[required], textarea[required], .k-required {
 	background: #FFF url(../img/k-theme0/bg_required.svg) 0.2em 0.3em no-repeat;
 	padding-left: 1.2em;
 }
-	
+
 /* CE/ requiredField */
 
 /* ------------------------------------------------------------- INPUT HELP */
@@ -685,7 +685,7 @@ input[required], textarea[required], .k-required {
     vertical-align: -3px;
 }
 	label + .k-field-help {padding-left: 0; margin-left: -12px;}
-	
+
 /* CE/ inputHelp */
 
 /* ------------------------------------------------------------- FIELD COMMENT --- */
@@ -853,9 +853,9 @@ div.k-error-messages {
 	}
 	div.k-error-messages h3:before {content: "\26A0 \00A0 ";}
 	div.k-error-messages li {list-style-position: inside;}
-	
-	
-/* CE/ errorMessages */	
+
+
+/* CE/ errorMessages */
 
 
 /* ------------------------------------------------------------- CONFIRMATION MESSAGES */
@@ -877,9 +877,9 @@ div.k-confirm-messages {
 	}
 	div.k-confirm-messages h3:before {content: "\2611 \00A0 ";}
 	div.k-error-messages li {list-style-position: inside;}
-	
-	
-/* CE/ confirmMessages */	
+
+
+/* CE/ confirmMessages */
 
 /* ------------------------------------------------------------- FORM BUTTONS */
 /* CB/ inputButtons */
@@ -893,7 +893,7 @@ div.k-confirm-messages {
     margin: 0 0 20px;
     border: none;
 }
-	
+
 	/* Buttons bar for links */
 	.k-buttons-bar li {
 		display: inline;
@@ -960,7 +960,7 @@ input[type=button], input[type=submit] {
 		margin: 0 5px 8px;
 		border-radius: 3px;
 	}
-		
+
 /* Optional actions */
 input[type=button].optional, input[type=submit].optional {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
@@ -981,7 +981,7 @@ a.k-button.optional, a.k-button.optional:link, a.k-button.optional:visited {
 		color: #FFF;
 		background: #000;
 	}
-	
+
 /* Reset Actions */
 input[type=button].reset, input[type=reset] {
 	font: 100% open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1000,7 +1000,7 @@ a.k-button.reset, a.k-button.reset:link, a.k-button.reset:visited {
 	color: #FFF;
 	background: #3E3E3E;
 }
-	
+
 	/* Hover/Focus */
 	input[type=button].reset:hover, input[type=reset]:hover, a.k-button.reset:hover {
 		color: #FFF;
@@ -1010,9 +1010,9 @@ a.k-button.reset, a.k-button.reset:link, a.k-button.reset:visited {
 		color: #FFF;
 		background: #000;
 	}
-		
 
-/* CE/ linkButtons */	
+
+/* CE/ linkButtons */
 /* CE/ inputButtons */
 
 
@@ -1080,7 +1080,7 @@ td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today 
 	position: absolute;
 	top: 2px;
 	width: 23px;
-	height: 23px; 
+	height: 23px;
 }
 
 .ui-datepicker .ui-icon {
@@ -1108,7 +1108,7 @@ td.ui-datepicker-today a, td.ui-datepicker-today a:link, td.ui-datepicker-today 
 	left: 50%;
 	margin-left: -8px;
 	top: 50%;
-	margin-top: -8px;  
+	margin-top: -8px;
 }
 
 /* CE/ datepicker */
@@ -1199,8 +1199,8 @@ ol.k-form-steps li.active::before {
 
 /* Width of k-actions-dropdown must be locally defined */
 .k-actions-dropdown {position: relative; width: 10em;}
-	
-	
+
+
 	.k-actions-dropdown button {
 		position: relative;
 		color: #FFF;
@@ -1219,9 +1219,8 @@ ol.k-form-steps li.active::before {
 		background: #000;
 		z-index: 50;
 	}
-		
+
 	.k-actions-dropdown div.content {
-		position: absolute;
 		top: 1.5em;
 		left: 0;
 		width: 100%;
@@ -1238,9 +1237,9 @@ ol.k-form-steps li.active::before {
 		background: #808080;
 		padding: 0.2em 0 0.2em 0.8em;
 	}
-	
+
 	.k-actions-dropdown ul {padding: 0;}
-		
+
 	.k-actions-dropdown li {
 		list-style-type: none;
 		margin: 0.2em 0;
@@ -1255,7 +1254,7 @@ ol.k-form-steps li.active::before {
 	.k-actions-dropdown a:hover, .k-actions-dropdown a:focus {
 		background: #DFEFF6;
 	}
-		
+
 
 /* CE/ actionsDd */
 
@@ -1274,7 +1273,7 @@ p.control {
 	top: 5px;
 	right: 3%;
 	width: 45px;
-} 
+}
 	p.control a {display: block}
 
 ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
@@ -1288,7 +1287,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 		margin: 0 1px;
 	}
-	
+
 		ul.k-navbar a, ul.k-navbar a:visited {
 			display: block;
 			text-decoration: none;
@@ -1300,7 +1299,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			color: #FFF;
 			background: #808080;
 		}
-		
+
 		/* Active section / no link */
 		ul.k-navbar li.active strong {
 			display: block;
@@ -1311,14 +1310,14 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			background-color: #808080;
 			padding: 0.5em;
 		}
-		
+
 		/* Active section / with link */
 		ul.k-navbar li.active a, ul.k-navbar li.active a:link, ul.k-navbar li.active a:visited {
 			color: #FFF;
 			background-color: #808080;
 		}
 
-		
+
 		/* If section has dropdown */
 		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
 			color: #FFF;
@@ -1337,8 +1336,8 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			color: #FFF;
 			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
 		}
-		
-		
+
+
 /* SECOND LEVEL UL - Dropdown menu */
 .dropdown ul {
 	display: none;
@@ -1388,11 +1387,11 @@ Modify max-width value to match your needs
 	.sm-screen ul.k-navbar {display: none; margin: 0; border-top: 2px solid #FFF;}
 	.sm-screen .k-navbar li {float: none; clear: both; padding: 0 0 1px; }
 	.sm-screen .k-navbar a {display: block;}
-	.dropdown ul {position: static; width: 100%;}	
+	.dropdown ul {position: static; width: 100%;}
 	ul.k-navbar .dropdown li {padding-left: 25px;}
 }
 */
-		
+
 /* CE/ ResponsiveMainNav */
 
 /*------------------------------------------------------*/
@@ -1409,7 +1408,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 		margin: 0 1px;
 	}
-	
+
 		ul.k-navbar a, ul.k-navbar a:visited {
 			display: block;
 			text-decoration: none;
@@ -1421,7 +1420,7 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			color: #FFF;
 			background: #808080;
 		}
-		
+
 		/* Active section / no link */
 		ul.k-navbar li.active strong {
 			display: block;
@@ -1432,14 +1431,14 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			background-color: #808080;
 			padding: 0.5em;
 		}
-		
+
 		/* Active section / with link */
 		ul.k-navbar li.active a, ul.k-navbar li.active a:link, ul.k-navbar li.active a:visited {
 			color: #FFF;
 			background-color: #808080;
 		}
 
-		
+
 		/* If section has dropdown */
 		ul.k-navbar a.hasdropdown, ul.k-navbar a.hasdropdown:visited {
 			color: #FFF;
@@ -1458,10 +1457,10 @@ ul.k-navbar {padding: 0; margin: 4px 4% 2em;}
 			color: #FFF;
 			background: #808080 url(../img/k-theme0/bg_hasdropdown_on.png) right bottom no-repeat;
 		}
-		
+
 		.sf-sub-indicator {display: none;}
-		
-		
+
+
 /* SECOND LEVEL UL - Dropdown menu */
 ul.dropdown {
 	display: none;
@@ -1520,7 +1519,7 @@ ul.k-navbar ul.dropdown li {
 		border: none;
     }
 	ul.k-navbar .big-menu a {min-width: 0; font-weight: normal;}
-	
+
 	/* "View all" link */
     p.view-all {
         clear: both;
@@ -1570,21 +1569,21 @@ ul.subnavbar {
 		background: #000;
 		border: 1px solid #000;
 	}
-	
+
 	/* Active sub-section section */
 	ul.subnavbar li.active ul li.active a, ul.subnavbar li.active ul li.active a:visited {
 		color: #FFF;
 		background: #000;
 		border: 1px solid #000;
 	}
-	
+
 /* CE/ mainNav */
 
 
 /* ------------------------------------------------------------ VERTICAL MENU */
 /* CB/ vmenu */
 
-ul.k-menu { 
+ul.k-menu {
 	float: left;
 	width: 100%;
 	padding: 0;
@@ -1598,7 +1597,7 @@ ul.k-menu {
 		padding: 0 0 0.5em;
 		list-style-type: none;
 	}
-	
+
 	ul.k-menu a, ul.k-menu a:link, ul.k-menu a:visited {
 		display: block;
 		text-decoration: none;
@@ -1615,17 +1614,17 @@ ul.k-menu {
 		color: #FFF;
 		background: #000 url(../img/k-theme0/fold-trans.png) right 0.5em no-repeat;
 	}
-	
+
 	/* If there's no sub-menu */
 	ul.k-menu a.one-level, ul.k-menu a.one-level:link, ul.k-menu a.one-level:visited {
 		background-image: none;
 	}
 	ul.k-menu a.one-level:focus {background-image: none;}
-	
+
 	ul.k-menu li.active a.one-level, ul.k-menu li.active a.one-level:link, ul.k-menu li.active a.one-level:visited {
 		background: #000;
 	}
-		
+
 	/* Level 2 */
 	ul.k-menu ul.level2 {
 		-moz-box-sizing: border-box;
@@ -1639,19 +1638,19 @@ ul.k-menu {
 			width: 94%;
 			font-size: 90%;
 			color: #000;
-			background: #FFF; 
+			background: #FFF;
 			padding: 0.5em 2% 0.5em 4%;
 			border-top: 1px dashed #CCC;
 		}
 		ul.k-menu ul.level2 li:first-child {border: none;}
-		ul.k-menu ul.level2 a, ul.k-menu ul.level2 a:link, ul.k-menu ul.level2 a:visited { 
+		ul.k-menu ul.level2 a, ul.k-menu ul.level2 a:link, ul.k-menu ul.level2 a:visited {
 			text-decoration: none;
 			color: #555;
 			background: #FFF;
 			padding-left: 0;
 		}
 		ul.k-menu ul.level2 a:hover, ul.k-menu ul.level2 a:focus {text-decoration: underline;}
-	
+
 			ul.k-menu ul.level2 ul li {
 				list-style-type: disc;
 				font: 100%/1.3 open_sansregular, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1659,7 +1658,7 @@ ul.k-menu {
 				padding: 0;
 				border: none;
 			}
-			
+
 		/* Active section */
 		ul.k-menu ul.level2 li.active a, ul.k-menu ul.level2 li.active a:link, ul.k-menu ul.level2 li.active a:visited {
 			font-family: open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1673,14 +1672,14 @@ ul.k-menu {
 			color: #000;
 			background: #FFF;
 		}
-			
+
 /* CE/ vmenu */
 
 /* ----------------------------------------------------- SKIP MENU LINK */
 /* CB/ skip */
 
 .k-skip {display: inline;}
-	
+
 	.k-skip a {
 		position: absolute;
 		overflow: hidden;
@@ -1703,7 +1702,7 @@ nav.k-breadcrumbs {
 }
 
 	nav.k-breadcrumbs h2 {font-size: 0.7em;}
-	
+
 	nav.k-breadcrumbs h2,
 	nav.k-breadcrumbs ol,
 	nav.k-breadcrumbs li {
@@ -1725,7 +1724,7 @@ nav.k-breadcrumbs {
 
 div.k-tree {}
 
-	
+
 	div.k-tree li {
 		list-style-type: none;
 		font-size: 0.85em;
@@ -1740,7 +1739,7 @@ div.k-tree {}
 	div.k-tree li.jstree-closed > ins {background-position: -54px 0;}
 	div.k-tree li.jstree-open > ins {background-position: -72px 0;}
 	div.k-tree a .jstree-icon {background-position: -56px -19px;}
-	
+
 	div.k-tree a, div.k-tree a:link {
 		display: inline-block;
 		color: #000;
@@ -1788,15 +1787,15 @@ div.k-tree-grid {
 		width: 74%;
 		height: 33em;
 		padding: 2%;
-		border-left: 1px solid #000; 
+		border-left: 1px solid #000;
 	}
-	
+
 	div.k-tree-grid ul.actions {
 		padding: 5px 5px 0;
 		margin: 0 0 2em;
 		background: #3E3E3E;
 	}
-	
+
 
 /* CE/ treeviewGrid */
 
@@ -1841,7 +1840,7 @@ a.k-new-window, a.k-new-window:link {
 
 ul.k-sitemap {float: left; width: 100%; margin-bottom: 2em;}
 	ul.k-sitemap ul {margin-bottom: 2em;}
-		
+
 	ul.k-sitemap li {
 		float: left;
 		width: 20%;
@@ -1851,7 +1850,7 @@ ul.k-sitemap {float: left; width: 100%; margin-bottom: 2em;}
 		border-left: 1px solid #CCC;
 	}
 	ul.k-sitemap li:first-child {padding: 0; margin: 0; border-left: none;}
-	
+
 		ul.k-sitemap li strong {
 			display: block;
 			font-size: 0.8em;
@@ -1868,7 +1867,7 @@ ul.k-sitemap {float: left; width: 100%; margin-bottom: 2em;}
 			border-bottom: 1px dashed #CCC;
 		}
 		ul.k-sitemap li li:first-child {padding: 1em 0.3em 0.5em;}
-		
+
 		/* Third level */
 		ul.k-sitemap li li ul {padding: 0.5em 0; margin-top: 0.5em;}
 		ul.k-sitemap li li li, ul.k-sitemap li li li:first-child {
@@ -1890,7 +1889,7 @@ ul.k-tools-list {
 	width: auto;
 	padding: 1em 2% 0;
 }
-		
+
 	ul.k-tools-list li {
 		display: inline;
 		font-size: 0.65em;
@@ -1902,14 +1901,12 @@ ul.k-tools-list {
 	ul.k-tools-list li:before {content: "\25CF \00A0 \00A0 ";}
 
 	ul.k-tools-list a, ul.k-tools-list a:link {
-		color: #FFF;
-		background: transparent;
 		text-decoration: none;
 	}
 	ul.k-tools-list a:hover, ul.k-tools-list a:focus {text-decoration: underline;}
-	
+
 	/* Exceptions */
-		
+
 	footer[role=contentinfo] ul.k-tools-list, #footer ul.k-tools-list {
 		float: none;
 		padding: 0.5em 0 1em 0.5em;
@@ -1920,7 +1917,7 @@ ul.k-tools-list {
 		display: block;
 		padding-top: 0.5em;
 	}
-		
+
 /* CE/ toolslinks */
 
 
@@ -1947,12 +1944,12 @@ form.k-search {float: left; width: 20%;}
 	    list-style-type: none;
 		padding: 0;
 	}
-	
+
 	.ui-autocomplete a, .ui-autocomplete a:link, .ui-autocomplete a:visited {
 	    display: block;
 	    padding: 2px 8px;
 	}
-	.ui-autocomplete a:hover {color: #FFF; background: #66A3C7;}	
+	.ui-autocomplete a:hover {color: #FFF; background: #66A3C7;}
 	form.k-search .ui-state-hover, form.k-search .ui-state-focus {
 	    color: #FFF;
 	    background: #66A3C7;
@@ -1993,25 +1990,25 @@ form.k-language {float: right; width: auto;}
 		color: #050505;
 		background: #FFF;
 	}
-	
+
 /* CE/ language */
 
 /* -------------------------------------------------------------------- LOGIN */
 /* CB/ loginForm */
 
 form.k-login {color: #050505; background: #FFF;}
-	
+
 	form.k-login label {
 		float: none;
 		display: block;
 		width: auto;
 		text-align: left;
 	}
-	
+
 	form.k-login input[type=submit] {margin-top: 1em;}
 
 .lost-password {display: block; font-size: 80%;}
- 
+
 p.to-register {
     color: #FFF;
     background: #808080;
@@ -2023,28 +2020,9 @@ p.to-register {
 		background: #808080;
 	}
 
-	
+
 	/* Collapsible form */
-	#loginLink {
-		font-size: 0.8em;
-		text-transform: uppercase;
-	}
-		#loginLink a, #loginLink a:link, #loginLink a:visited {
-			position: absolute;
-			top: 6em;
-			right: 4%;
-			width: auto;
-			max-width: 40%;
-			text-decoration: none;
-			color: #000;
-			background: transparent;
-			padding-left: 10px;
-		}
-		#loginLink a:before {content: "\270F \00A0"; font-size: 120%;}
-		#loginLink a:hover:before {content: "\25BE \00A0";}
-	
-	form.k-login.collapsible {
-		position: absolute;
+	form.k-login {
 		top: 6.5em;
 		right: 4%;
 		width: 20%;
@@ -2053,11 +2031,11 @@ p.to-register {
 		box-shadow: 0 1px 2px #666;
 		z-index: 200;
 	}
-		form.k-login.collapsible fieldset {margin: 0 4%;}
-		form.k-login.collapsible legend {padding: 0 8px 0.5em; margin: 0.5em 0 0 -0.5em;}
-		form.k-login.collapsible p.to-register {margin-bottom: 0;}
-			form.k-login.collapsible p.to-register strong {display: block;}
-		
+		form.k-login fieldset {margin: 0 4%;}
+		form.k-login legend {padding: 0 8px 0.5em; margin: 0.5em 0 0 -0.5em;}
+		form.k-login p.to-register {margin-bottom: 0;}
+			form.k-login p.to-register strong {display: block;}
+
 
 /* CE/ loginForm */
 
@@ -2065,7 +2043,6 @@ p.to-register {
 /* CB/ loginData */
 
 p.k-login-data {
-	position: absolute;
 	width: 15%;
 	top: 5.1em;
 	right: 4%;
@@ -2105,8 +2082,8 @@ div.k-actions-block {
 		border: none;
 	}
 		.action-context + ul.k-actions {float: right; width: 70%; margin: 0;}
-	
-	
+
+
 /* CE/ actionButtonsBar */
 
 
@@ -2121,7 +2098,7 @@ ul.k-actions {text-align: right; padding: 0; margin-bottom: 2em;}
 		font: 0.9em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 	}
-	
+
 	ul.k-actions a, ul.k-actions a:link, ul.k-actions a:visited {
 		overflow: hidden;
 		display: inline-block;
@@ -2141,7 +2118,7 @@ ul.k-actions {text-align: right; padding: 0; margin-bottom: 2em;}
 		color: #000;
 		background-color: #FFF;
 	}
-	
+
 	/* active */
 	ul.k-actions strong {
 		display: inline-block;
@@ -2154,8 +2131,8 @@ ul.k-actions {text-align: right; padding: 0; margin-bottom: 2em;}
 		padding: 0 10px;
 		border: 1px #000 solid;
 	}
-	
-	
+
+
 	/* Icons sprite */
 	ul.k-actions a.bt-print {background-position: 6px -741px; padding-left: 35px;}
 	ul.k-actions a.bt-download {background-position: 6px -619px; padding-left: 35px;}
@@ -2165,11 +2142,11 @@ ul.k-actions {text-align: right; padding: 0; margin-bottom: 2em;}
 	ul.k-actions a.bt-search {background-position: 6px -79px; padding-left: 35px;}
 	ul.k-actions a.bt-new {background-position: 6px -277px; padding-left: 35px;}
 	ul.k-actions a.bt-del {background-position: 6px -175px; padding-left: 35px;}
-	
+
 	/* Exceptions */
 	#sidebar ul.k-actions {text-align: center; margin-bottom: 1em;}
-	
-	
+
+
 /* CE/ actionButtons */
 
 
@@ -2197,10 +2174,10 @@ ul.actions {}
 			border-radius: 3px;
 			box-shadow: 0 1px 1px rgba(0,0,0,.5);
 		}
-		
+
 		ul.actions a:hover {color: #FFF; background-color: #FFF;}
-		
-	
+
+
 	/* Icons sprite */
 	ul.actions a.bt-print {background-position: 11px -740px; padding-left: 35px;}
 	ul.actions a.bt-download {background-position: 11px -618px; padding-left: 35px;}
@@ -2228,7 +2205,7 @@ div.k-pagination {
 	border-top: 4px solid #000;
 	border-bottom: 1px dashed #666;
 }
-	
+
 	div.k-pagination p {
 		font-size: 0.75em;
 		text-transform: uppercase;
@@ -2236,9 +2213,9 @@ div.k-pagination {
 	}
 	p.lines-to-display {float: left; width: 45%; padding-top: 0.6em;}
 		p.lines-to-display label {width: auto; font-weight: normal; margin-top: -0.3em;}
-		
+
 	div.k-pagination p.total-pages {position: absolute; top: -2em; right: 0; font-size: 1em;}
-		
+
 	p.page-numbers {float: right; width: 45%; color: #FFF; text-align: right;}
 	p.page-numbers strong, p.page-numbers a, p.page-numbers a:link {
 		display: inline-block;
@@ -2280,7 +2257,7 @@ div.k-modal {
 		border: none;
 	}
 	div.k-modal .content {padding: 3% 5%;}
-	
+
 	div.k-modal .k-buttons-bar {text-align: center; margin-top: 2em;}
 
     .ui-widget-overlay {
@@ -2320,13 +2297,13 @@ div.k-orientation-aid {
 		font: 0.8em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
 	}
-	
+
 	p.go-back {float: left; width: 45%;}
 	p.go-top {float: right; width: 45%; text-align: right;}
-	
+
 		p.go-back:before {content: "\21A4 \00A0"; font-size: 120%;}
 		p.go-top:after {content: "\00A0 \21A5"; font-size: 120%;}
-		
+
 		div.k-orientation-aid a, div.k-orientation-aid a:link, div.k-orientation-aid a:visited {
 			text-decoration: none;
 		}
@@ -2368,7 +2345,7 @@ ul.tabs {padding: 0; margin: 0;}
 		color: #FFF;
 		background: #A40800;
 	}
-	
+
 	/* Active tab*/
 	ul.tabs a.active, ul.tabs a.active:link, ul.tabs a.active:visited {
 		color: #FFF;
@@ -2380,7 +2357,7 @@ ul.tabs {padding: 0; margin: 0;}
 		background: #A40800;
 		border-color: #A40800;
 	}
-	
+
 	/* Disabled tab */
 	ul.tabs a.off, ul.tabs a.off:link, ul.tabs a.off:visited {
 		color: #CCC;
@@ -2401,7 +2378,7 @@ ul.tabs {padding: 0; margin: 0;}
 		border: 1px solid #CCC;
 		border-bottom: none;
 	}
-	
+
 /* Content block */
 
 .k-tabbed-data > .content {
@@ -2435,8 +2412,8 @@ ul.tabs {padding: 0; margin: 0;}
 	padding: 0.5em 50px 0.5em 0.7em;
 }
 
-.k-tabbed-data.adaptive ul.tabs a.transformed, 
-.k-tabbed-data.adaptive ul.tabs a.transformed:link, 
+.k-tabbed-data.adaptive ul.tabs a.transformed,
+.k-tabbed-data.adaptive ul.tabs a.transformed:link,
 .k-tabbed-data.adaptive ul.tabs a.transformed:visited {
 	position: absolute;
 	width: 100%;
@@ -2445,8 +2422,8 @@ ul.tabs {padding: 0; margin: 0;}
 	opacity: 0;
 	z-index: 0;
 }
-.k-tabbed-data.adaptive ul.tabs a.transformed.active, 
-.k-tabbed-data.adaptive ul.tabs a.transformed.active:link, 
+.k-tabbed-data.adaptive ul.tabs a.transformed.active,
+.k-tabbed-data.adaptive ul.tabs a.transformed.active:link,
 .k-tabbed-data.adaptive ul.tabs a.transformed.active:visited {
 	background-image: url(../img/k-theme0/nav-control.svg);
 	background-position: right 2px;
@@ -2455,13 +2432,13 @@ ul.tabs {padding: 0; margin: 0;}
 	opacity: 1;
 	z-index: 100
 }
-.k-tabbed-data.adaptive ul.tabs a:hover, 
+.k-tabbed-data.adaptive ul.tabs a:hover,
 .k-tabbed-data.adaptive ul.tabs a:focus {
 	color: #FFF;
 	background-color: #A40800;
 	border-color: #A40800;
 }
-	
+
 /* CE/ tabs */
 
 /* -------------------------------------------------------- IMAGE CAROUSEL */
@@ -2476,21 +2453,21 @@ ul.tabs {padding: 0; margin: 0;}
 	.k-carousel ul {padding: 0;}
 	.k-carousel .price {display: block;}
 	.k-carousel a, .k-carousel a:link, .k-carousel a:visited {text-decoration: none;}
-	
+
 	.k-carousel button {border: none;}
-	
+
 	.jcarousel-item {
 	    width: 20%;
 	    padding: 0;
 	}
-	
+
 	.jcarousel-item-horizontal {margin: 0 10px;}
 		.jcarousel-item-horizontal img {
 			max-width: 100%;
 		}
 
 	.jcarousel-prev {
-		display: none; 
+		display: none;
 		position: absolute;
 		top: 50px;
 		left: 10px;
@@ -2509,7 +2486,7 @@ ul.tabs {padding: 0; margin: 0;}
 		background: url(../img/k-theme0/bt_next.png) no-repeat;
 		cursor: pointer;
 	}
-	
+
 	.jcarousel-prev-disabled, .jcarousel-prev-disabled-horizontal {
 		background: url(../img/k-theme0/bt_prev_off.png) no-repeat;
 		cursor: default;
@@ -2521,7 +2498,7 @@ ul.tabs {padding: 0; margin: 0;}
 
 /* CE/ carousel */
 
-		
+
 /* ---------------------------------------- COLLAPSIBLE PANELS --- */
 /* CB/ collapsiblePanel */
 
@@ -2545,7 +2522,7 @@ p + .k-panel {margin-top: 1em;}
 		cursor: pointer;
 	}
 	.k-panel h3.control {border: none;}
-	
+
 	.k-panel .ui-state-hover, .k-panel .ui-state-focus {
 		background-color: #000;
 	}
@@ -2562,7 +2539,7 @@ p + .k-panel {margin-top: 1em;}
 		color: #FFF;
 		background: transparent;
 	}
-	
+
 	.k-panel .content {
 		float: left;
 		width: 96%;
@@ -2571,13 +2548,13 @@ p + .k-panel {margin-top: 1em;}
 		padding: 1em 2%;
 		border: none;
 	}
-	
+
 		.k-panel .content h3:first-child, .k-panel .content h4:first-child {
 			font-size: 1.2em;
 			padding: 0 0 0.5em;
 			margin: 0;
 		}
-		
+
 	.k-panel.exception .control {
 		color: #FFF;
 		background-color: #A40800;
@@ -2586,10 +2563,10 @@ p + .k-panel {margin-top: 1em;}
 		color: #FFF;
 		background: #A40800;
 	}
-	
+
 /* CE/ collapsiblePanel */
 
-		
+
 /* ---------------------------------------- ACCORDION --- */
 /* CB/ accordion */
 
@@ -2621,7 +2598,7 @@ p + .k-accordion {margin-top: 1em;}
 		cursor: pointer;
 	}
 	.k-accordion .control:first-child {border-top: none;}
-	
+
 	.k-accordion .ui-state-active {
 		color: #FFF;
 		background: #000 url(../img/k-theme0/fold-trans.png) right 0.5em no-repeat;
@@ -2636,13 +2613,13 @@ p + .k-accordion {margin-top: 1em;}
 		color: #FFF;
 		background: #666;
 	}
-	
+
 	.k-accordion .content {
 		color: #000;
 		background: #FFF;
 		padding: 0.8em 0;
 	}
-	
+
 /* CE/ accordion */
 
 /* --------------------------------------------------------------------------- */
@@ -2659,29 +2636,29 @@ p + .k-accordion {margin-top: 1em;}
 	padding-bottom: 1em;
 	border-bottom: 1px dashed #CCC;
 }
-	
+
 	.k-article h2 + ul.entry-info {margin-top: -1.5em;}
 	.k-article h3 {margin: 1.2em 0 0.6em;}
 	.k-article h4 {padding: 0; margin: 1.2em 0 0.6em;}
 	.k-article ul, .k-article ol {max-width: 40em; margin: 1em 1em 1em 1.5em;}
-	
+
 	.k-article p {line-height: 1.7;}
 	.k-article p.illustration {max-width: 100%;}
 	.k-article p + p {text-indent: 1.5em;}
 	.k-article p + p.k-readmore {text-indent: 0;}
-	
+
 	.k-article li {line-height: 1.7;}
-	
+
 	ul.entry-info {padding: 0; margin: 0 0 1.5em;}
 		ul.entry-info li {display: inline; list-style-type: none; line-height: 1.7;}
-		
+
 		ul.entry-info + div.content {margin: 2.5em 0 0;}
 		ul.entry-info address {
 			display: inline;
 			font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-style: normal;
 		}
-		
+
 
 .dt-published:after {
 	content: "\2609";
@@ -2691,7 +2668,7 @@ p + .k-accordion {margin-top: 1em;}
 	padding: 0 0.5rem 0 0.7rem;
 }
 
-	
+
 	/* Exceptions */
 	.k-article div.k-pagination {
 		width: 96%;
@@ -2699,7 +2676,7 @@ p + .k-accordion {margin-top: 1em;}
 		padding: 0.3em 2%;
 		margin-top: 1em;
 	}
-	
+
      .k-article p.page-numbers, #sidebar p.page-numbers, aside[role=complementary] p.page-numbers {
         width: 100%;
         background: #E8E8E8;
@@ -2716,7 +2693,7 @@ p + .k-accordion {margin-top: 1em;}
 h2 + .k-entry {margin-top: 2em;}
 
 .k-entry {float: left; width: 100%; max-width: 55em; border-bottom: none;}
-	
+
 	.k-entry h3 {
 		position: relative;
 		font-size: 2em;
@@ -2724,7 +2701,7 @@ h2 + .k-entry {margin-top: 2em;}
 		padding: 0;
 		margin: 0 0 0.5em;
 	}
-	
+
 		.k-entry h3 a, .k-entry h3 a:link {
 			display: block;
 			text-decoration: none;
@@ -2735,18 +2712,18 @@ h2 + .k-entry {margin-top: 2em;}
 		}
 		.k-entry h3 a:visited {color: #666; background: #FFF;}
 		.k-entry h3 a:hover, .k-entry h2 a:focus {color: #A40800; background: #FFF;}
-	
+
 
 	/* Exceptions for entry level */
-	
+
 	.k-entry ul.entry-info, .k-entry .content {padding-left: 2%;}
 	.k-entry ul.entry-info + div.content {margin: 0;}
-	
+
 	.k-entry entry-info {float: left; width: 30%;}
 	.k-entry .content {float: right; width: 65%;}
 		.k-entry ul.entry-info li {font-size: 0.8em;}
-		
-	
+
+
 
 /* CE/ articleEntry */
 
@@ -2769,11 +2746,11 @@ div.k-intro {
 		color: #000;
 		background: #FFF;
 	}
-	
+
 	/* Exceptions */
 	div.k-article div.k-intro {max-width: 33em;}
 	ul.k-form-steps + div.k-intro {margin: 2em 0;}
-		
+
 /* CE/ introduction */
 
 
@@ -2827,9 +2804,9 @@ div.k-highlight-block {
 		font: 0.8em open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		margin: 5px auto 0;
 	}
-	
+
 /* CE/ illustration */
-	
+
 /* ----------------------------------------------------------------- NOTES --- */
 /* CB/ notes */
 
@@ -2843,11 +2820,11 @@ div.k-notes {
 	div.k-notes p {max-width: 40em; line-height: 1.5;}
 	div.k-notes p + p {margin-top: 0.8em;}
 	div.k-notes ul {margin: 1rem 2rem;}
-	
+
 	p + div.k-notes {margin-top: 1em;}
-	
+
 		div.k-article div.k-notes p {margin: 0.18em 0; text-indent: 0;}
-	
+
 /* CE/ notes */
 
 
@@ -2870,12 +2847,12 @@ div.k-notes {
 		margin: 0;
 		border: none;
 	}
-	
+
 	.k-info-block .content {background: #FFF; padding: 5%;}
-	
+
 	.k-info-block p {line-height: 1.38; margin: 0 0 8px;}
 	.k-info-block p:last-child {padding-bottom: 10px;}
-	
+
 
 /* CE/ infoBlock */
 
@@ -2893,7 +2870,7 @@ p.k-readmore {
 }
 	p.k-readmore:before {content: "\2315 \0020 "; color: #A40800;}
 	p + p.k-readmore {margin-top: 1em;}
-	
+
 
 /* CE/ readMore */
 
@@ -2922,9 +2899,9 @@ ul.k-links-list {padding: 0; margin: 0 0 15px 15px;}
 	padding: 0 2% 2%;
 	margin: 0 0 2em;
 }
-	
+
 	/* Product's title */
-	.name {  
+	.name {
 		overflow: hidden;
 		font-size: 1em;
 		padding: 0;
@@ -2933,7 +2910,7 @@ ul.k-links-list {padding: 0; margin: 0 0 15px 15px;}
 	}
 	p.extra {min-height: 1.5em;}
 	p.description {line-height: 1.5;}
-	
+
 
 /* Ratings */
 p.rating {font-size: 0.75em;}
@@ -3049,10 +3026,10 @@ p.buy {
 
 /* Product Image data */
 /* Product's photo */
-	
+
 div.photo-data {padding-top: 1em;}
 	div.photo-data p {margin: 0;}
-	
+
 /* Product info list */
 .product-info {margin: 1em 0 2em;}
 
@@ -3069,7 +3046,7 @@ li.hproduct {
 		padding-left: 0;
 		border-left: 0;
 	}
-	
+
 	li.hproduct dt {margin-bottom: 0.5em;}
 	li.hproduct dd.price {}
 
@@ -3141,7 +3118,7 @@ dl.hreview {
 	padding: 10px 0;
 	border-top: 1px solid #CCC;
 }
-	
+
 	dl.hreview dt {
 		float: left;
 		width: 20%;
@@ -3152,15 +3129,15 @@ dl.hreview {
 			display: block;
 			padding-top: 15px;
 		}
-	
+
 	dl.hreview dd {
 		float: right;
 		width: 76%;
 		padding-right: 2%;
 		word-wrap: break-word;
 	}
-	
-		
+
+
 p.average {
 	font-size: 1em;
 	text-transform: uppercase;
@@ -3189,7 +3166,7 @@ fieldset.k-rating {
 		float: left;
 		width: 50%;
 	}
-	
+
 div.rating-cancel, div.star-rating {
 	overflow: hidden;
 	display: block;
@@ -3216,10 +3193,10 @@ div.rating-cancel, div.star-rating {
 	}
 	div.star-rating-on a {background-position: 0 -53px;}
 	div.star-rating-hover a {background-position: 0 -53px;}
-	
+
 	/* Read Only CSS */
 	div.star-rating-readonly a {cursor: default !important;}
-	
+
 	/* Partial Star CSS */
 	div.star-rating {overflow: hidden; background-color: transparent;}
 
@@ -3230,9 +3207,9 @@ div.rating-cancel, div.star-rating {
 /* --------------------------------------------------------- CATALOG --- */
 /* CB/ catalog */
 
-/* Notice that the min-width of the hproduct depends on the width of 
+/* Notice that the min-width of the hproduct depends on the width of
  * the product's image, which should be standardized */
-	
+
 .k-catalog {}
 	.k-catalog .k-product {
 		float: left;
@@ -3242,17 +3219,17 @@ div.rating-cancel, div.star-rating {
 		border: none;
 		border: 1px solid #CCC;
 	}
-	
+
 	.k-catalog .name {height: 2.5em;}
 	.k-catalog .photo-data {padding-top: 10px;}
-	
-	.k-catalog div.price-data {height: 3.5em;}	
-	
+
+	.k-catalog div.price-data {height: 3.5em;}
+
 	.k-catalog p.buy {font-size: 0.7em; margin-top: 10px;}
-	
+
 	.k-catalog p.extra.sale {top: 4%; right: 4%;}
 	.k-catalog p.extra.new {top: 4%; right: 4%;}
-	
+
 	.k-catalog div.k-pagination {
 		/*width: 96%;
 		background: #E8E8E8;
@@ -3260,10 +3237,10 @@ div.rating-cancel, div.star-rating {
 		margin: 0 0 1em;;
 		border: none;*/
 	}
-	
+
 	.k-catalog p.lines-to-display {margin: 0;}
 	.k-catalog p.lines-to-display label {margin: 0;}
-	
+
 	ul.catalog-view {
 		font: 0.95em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
@@ -3288,13 +3265,13 @@ div.rating-cancel, div.star-rating {
 			color: #FFF;
 			background: #000;
 		}
-		
+
 		ul.catalog-view li.active a, ul.catalog-view li.active a:link, ul.catalog-view li.active a:visited {
 			color: #FFF;
 			background: #000;
 			box-shadow: 1px 1px 1px #999;
 		}
-		
+
 		ul.catalog-view li:first-of-type a {
 			border-top-left-radius: 3px;
 			border-bottom-left-radius: 3px;
@@ -3303,8 +3280,8 @@ div.rating-cancel, div.star-rating {
 			border-top-right-radius: 3px;
 			border-bottom-right-radius: 3px;
 		}
-		
-	
+
+
 /* --- LIST VIEW --- */
 
 .k-catalog.list-view .k-product {
@@ -3315,44 +3292,44 @@ div.rating-cancel, div.star-rating {
 		border: 1px solid #CCC;
 		border-bottom-color: #808080;
 	}
-	
+
 	.k-catalog.list-view div.photo-data {float: left; width: 20%; padding: 0 4% 0 0;}
 
 	.k-catalog.list-view div.product-data {
 		float: left;
 		width: 50%;
 	}
-	
+
 	.k-catalog.list-view div.buyZone {float: right; width: 15%; padding: 1em 2%;}
 		.k-catalog.list-view div.buyZone p {float: none; text-align: center;}
 		.k-catalog.list-view div.buyZone p.k-quantity {text-align: center; margin-bottom: 3em;}
-	
+
 	.k-catalog.list-view p.rating {position: absolute; width: 20%; left: 2%; bottom: 2%;}
-	
+
 	.k-catalog.list-view .discount {top: 1em; left: 16%;}
-	
+
 	.k-catalog.list-view p.extra.new, .k-catalog.list-view p.extra.sale {left: 1%; top: 0;}
-	
+
 
 /* CE/ catalog */
 
 
 /* --------------------------------------------------------- PRODUCT SHEET --- */
 /* CB/ productSheet */
-	
+
 .k-product-sheet .k-product {float: left; width: 100%; padding: 1em 0 2%; margin: 0;}
 	.k-product-sheet div.photo-data {
 		float: left;
 		width: 28%;
 		padding: 1em 0;
 	}
-	
+
 	.k-product-sheet img.photo {
 		border: 1px solid #FFF;
 		outline: 1px solid #CCC;
 	  box-shadow: 0 0 3px #333;
 	}
-	
+
 	.k-product-sheet div.product-data {
 		float: right;
 		width: 60%;
@@ -3362,7 +3339,7 @@ div.rating-cancel, div.star-rating {
 	.k-product-sheet ul.k-actions {margin-bottom: 0;}
 
 	/* Product's title */
-		
+
 	.k-product-sheet div.product-data .name {
 		font-size: 2.5em;
 		margin: 0 0 0.3em;
@@ -3375,7 +3352,7 @@ div.rating-cancel, div.star-rating {
 		margin: 0 0 3em;
 	}
 
-	
+
 	/* Positions */
 	.k-product-sheet .k-product .rating {
 		float: right;
@@ -3383,19 +3360,19 @@ div.rating-cancel, div.star-rating {
 		text-align: right;
 		margin-top: -6em;
 	}
-	
+
 	.k-product-sheet p.extra.sale {
-		top: 5em; 
+		top: 5em;
 		left: 20%;
 		height: 3.5em;
 		z-index: 150;
 	}
-	
+
 	.k-product-sheet  div.product-data .price-data {width: 30%;}
 	.k-product-sheet  div.product-data .price {font-size: 220%;}
 	.k-product-sheet  div.product-data .old-price {font-size: 150%;}
 	.k-product-sheet  div.product-data p.buy {font-size: 95%; margin-top: 1em;}
-	
+
 	.k-product-sheet .k-actions-block {
 		background: #FFF;
 		margin: 0;
@@ -3403,7 +3380,7 @@ div.rating-cancel, div.star-rating {
 		border-bottom: 1px solid #808080;
 	}
 	.k-product-sheet .action-context {background: #FFF;}
-	
+
 	/* Buy zone */
 	.k-product-sheet div.buyZone {
 		float: right;
@@ -3418,7 +3395,7 @@ div.rating-cancel, div.star-rating {
 			display: block;
 			text-transform: uppercase;
 		}
-	
+
 
 /* CE/ productSheet */
 
@@ -3489,7 +3466,7 @@ ul.thumblist {clear: both; padding: 0;}
 		width: 40px;
 	}
 
-.zoomOverlay{ 
+.zoomOverlay{
 	display: none;
 	position: absolute;
 	left: 0;
@@ -3555,7 +3532,7 @@ div.k-product-options {
 	border-top: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
 }
-		
+
 	div.k-product-options fieldset {
 		clear: none;
 		float: left;
@@ -3564,7 +3541,7 @@ div.k-product-options {
 		padding: 0;
 		border: none;
 	}
-	
+
 	div.k-product-options legend {
 		font-size: 0.9em;
 		background: none;
@@ -3603,7 +3580,7 @@ div.k-product-options {
 		background: #000;
 		border: 1px solid #000;
 	}
-	
+
 /* Exception for color */
 	div.k-product-options .color label {
 		width: 20px;
@@ -3619,7 +3596,7 @@ div.k-product-options {
 		color: #FFF;
 		background: #000;
 	}
-	
+
 
 /* CE/ productOptions */
 
@@ -3629,9 +3606,9 @@ div.k-product-options {
 
 .k-basket {border: none;}
 	.k-basket div.content {width: 100%; padding: 0;}
-	
+
 dl.basket-item {
-	position: relative; 
+	position: relative;
 	float: left;
 	width: 100%;
 	padding: 5px 0;
@@ -3647,16 +3624,16 @@ dl.new-item {background: #EFEFEF;}
 		padding: 0 5px;
 	}
 		dl.basket-item img {max-width: 100%; border: 1px solid #000;}
-		
+
 	dl.basket-item dd {overflow: visible; height: auto; font-size: 0.75em; margin: 0;}
-		
+
 	dl.basket-item dd.price {
 		font-family: open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-align: right;
 		padding: 1em 1em 0 0;
 	}
 
-	
+
 /* Total */
 p.basket-total {
 	clear: both;
@@ -3668,7 +3645,7 @@ p.basket-total {
 }
 
 /* Exceptions */
-	
+
 	.k-basket .k-buttons-bar {
 		text-align: center;
 		margin: 5px 5px 1em;
@@ -3676,7 +3653,7 @@ p.basket-total {
 
 	.k-basket .k-buttons-bar li {font-size: 0.8em;}
 	.k-basket input.uppydowner {font-size: 80%;}
-	
+
 
 /* CE/ basket */
 
@@ -3685,7 +3662,6 @@ p.basket-total {
 /* CB/ basketSum */
 
 p.k-basket-sum {
-	position: absolute;
 	top: 1.5em;
 	right: 4%;
 	width: 16.5em;
@@ -3695,7 +3671,7 @@ p.k-basket-sum {
 	background: #000 url(../img/k-theme0/bg_basket-sum.png) 5px 2px no-repeat;
 	border-right: 1px solid #808080;
 }
-	
+
 	p.k-basket-sum a, p.k-basket-sum a:link, p.k-basket-sum a:visited {
 		display: block;
 		text-decoration: none;
@@ -3716,10 +3692,10 @@ p.k-basket-sum {
 	.k-tools, .k-login-data, .k-search, nav, .k-breadcrumbs {display: none;}
 	aside[role=complementary] {display: none;}
 	.k-pagination {display: none;}
-	
+
 	h2, h3, h4, h5 {page-break-after: avoid;}
 	figure {page-break-inside: avoid;}
-	
+
 	a, a:link, a:visited {text-decoration: none;}
 	p.k-readmore a:after {
 		font-family: open_sansbold, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3740,18 +3716,18 @@ p.k-basket-sum {
 	p.all-prices {float: none;}
 	.discount {position: static;}
 	#push-data, #comments {display: none;}
-	
+
 	div.k-product-sheet div.photo-data:after {display: none;}
-	
-	
+
+
 /* Collapsible panels */
 	.k-panel .content {float: none; width: 100%; padding: 0; border: none;}
 	.k-panel .control {font-size: 14pt; color: #000; background: #FFF; padding: 0 0 20px;}
-	
+
 /* Results list / treegrid / datatables */
 	#filter {display: none;} /* You may want to hide general forms otherwise */
 	div.tree {display: none;}
-	
+
 	div.k-tree-grid div.tree-content {
 		overflow: visible;
 		float: none;
@@ -3776,7 +3752,7 @@ p.k-basket-sum {
 }
 
 @media only screen and (max-width: 1200px) {
-	
+
 	#sidebar, aside[role=complementary] {
 		float: none;
 		clear: both;
@@ -3784,28 +3760,28 @@ p.k-basket-sum {
 		padding: 0;
 		border: none;
 	}
-	
+
 	#menu {width: 25%;}
 	#main {width: 72%; margin-left: 3%;} /* with three columns */
-	
+
 	/* Conditions based on columns number */
 	#wrapper #main:first-child  {width: 100%;}
 	#wrapper #main:last-child {width: 83%;}
 	#wrapper #main:only-child {width: 100%;}
-	
+
 	.k-product-sheet p.extra.sale {position: static;}
 	div.k-product-options fieldset {float: none; clear: both; width: 100%;}
-	
-	
+
+
 } /* max 1024 */
 
 @media only screen and (max-width : 1000px) {
-	
+
 	.k-product-sheet div.product-data {float: none; clear: both; width: 100%; padding: 2em 0 0;}
 	.k-product-sheet p.extra.sale {left: 30%;}
 	.k-product-sheet div.buyZone {float: left; clear: none; width: 100%; margin-bottom: 2em;}
 	.k-product-sheet .availability {float: left; clear: none; width: 40%; text-align: left;}
-	
+
 	.k-product-sheet div.photo-data {
 		position: relative;
 		overflow: auto;
@@ -3836,11 +3812,11 @@ p.k-basket-sum {
 }
 
 @media only screen and (max-width : 800px) {
-	
+
 	h1 {width: 70%;}
-	
+
 	header[role=banner] {width: 100%; padding: 0;}
-	
+
 	div.k-tools {
 		float: left;
 		width: 100%;
@@ -3852,7 +3828,7 @@ p.k-basket-sum {
 	form.k-language fieldset.k-radio {background: transparent;}
 	form.k-language fieldset.k-radio label {padding: 8px 15px;}
 	form.k-language select {position: absolute; top: 0; right: 4%; width: 10em;}
-	
+
 	p.k-login-data {
 		position: static;
 		clear: both;
@@ -3874,11 +3850,11 @@ p.k-basket-sum {
 	}
 	label.k-online {padding: 0;}
 	p.k-check {padding: 1em 0 0 0;}
-	
+
 	.k-buttons-bar {text-align: center;}
-	
+
 	.k-catalog .k-product {width: 41%;}
-	
+
 	p.k-basket-sum {
 		overflow: hidden;
 		width: 2em;
@@ -3887,19 +3863,19 @@ p.k-basket-sum {
 		padding: 0 0 0 35px;
 		border: none;
 	}
-	
-	.k-entry ul.entry-info li:last-child {display: block;}	
+
+	.k-entry ul.entry-info li:last-child {display: block;}
 	blockquote, .k-quote {width: 80%;}
 }
 
 @media only screen and (max-width : 675px) {
-	
+
 	#menu, #secondary {clear: both; float: none; width: 100%; margin-bottom: 1em;}
-	
+
 	/* Conditions based on columns number */
 	#main {width: 100%; margin: 0 0 1em;}
 	#wrapper #main:last-child {width: 100%;}
-	
+
 	.to-left, .to-right {float: none; width: 100%;}
 
   	li.hproduct:first-child, li.hproduct {
@@ -3910,36 +3886,36 @@ p.k-basket-sum {
 	}
   	li.hproduct dt {float: left; width: 30%;}
   	li.hproduct dd {float: left; width: 65%; padding-left: 5%;}
-  	
+
   	.k-catalog .k-product {width: 96%; margin-right: 0;}
 
 	.action-context + ul.k-actions {float: none; clear: both; width: 100%;}
 	.action-context {width: 10em;}
 	.k-product-sheet .action-context {position: relative; top: 2em;}
-	
+
 	form.k-login.collapsible {width: 93%;}
-	
+
 } /* max 675 */
 
 @media only screen and (max-width : 590px) {
-	
+
 	div.k-tools {background-image: none;}
-	
+
 	h2 {font-size: 2em; line-height: 1;}
 	h3 {font-size: 1.5em;}
 	h4 {font-size: 1.2em;}
-	
+
 	ul.k-navbar {margin: 4px 4% 2em 4%;}
-	
+
 	p.k-login-data {display: none;}
 	form.k-language {margin: 0;}
-	
+
 	.k-entry h3 {margin: 0;}
 	.k-entry h3 a, .k-entry h3 a:link {padding: 10px 0 0 2%;}
 	.k-entry ul.entry-info {float: none; width: 100%;}
 	.k-entry ul.entry-info li:last-child {display: inline;}
 	.k-entry .content {float: none; width: 100%;}
-	
+
 	.k-pagination {padding-top: 0;}
 	p.lines-to-display {float: none; width: 100%; padding-bottom: 1em;}
 	p.lines-to-display label {text-align: center; background: #EEE;}
@@ -3947,7 +3923,7 @@ p.k-basket-sum {
 
 	dl.hreview dt {float: none; width: 100%; margin-bottom: 0.5em;}
   	dl.hreview dd {float: none; width: 100%;}
-} 
+}
 
 @media only screen and (max-width : 440px) {
 
@@ -3959,7 +3935,7 @@ p.k-basket-sum {
 
 	.k-illustration-block.to-left, .k-illustration-block.to-right {float: none; width: 90%; padding: 20px 0;}
 
-} 
+}
 
 
 
