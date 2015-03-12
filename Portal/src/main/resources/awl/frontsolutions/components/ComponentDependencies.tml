@@ -1,15 +1,15 @@
 <t:container xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
-      	
-		
-		
+
+
+
 		<div class="k-info-block">
 			<div class="hgroup">
 				<h3>Dependencies:</h3>
 			</div>
 			<div class="content">
-				
+
 				<t:if test="hasJsDependencies">
 					<ul class="k-links-list">
 						<t:if test="showJquery">
@@ -23,14 +23,14 @@
 							<li><t:eventlink event="imgdep" context="index">${currentImageDependency.label}</t:eventlink></li>
 						</t:loop>
 						</t:if-->
-						
+
 					</ul>
-					
+
 				<p:else>
 					<p>No interactive functions</p>
 				</p:else>
 				</t:if>
-				<!-- 
+				<!--
 				<h3>CSS dependencies</h3>
 				<ul class="k-links-list">
 					<t:loop t:source="cssDependencies" t:value="currentCssDependency">
@@ -40,5 +40,5 @@
 				 -->
 			</div>
 		</div>
-		
+
 </t:container>

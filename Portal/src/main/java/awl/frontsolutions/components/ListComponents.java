@@ -97,7 +97,7 @@ public class ListComponents {
 		writer.element("dd");
 		writer.write(" Tapestry integration");
 		writer.end();
-		
+
 		writer.element("dt");
 		writer.element("img", "src", angularIconUrl, "alt", "AngularJS Feature");
 		writer.end();
@@ -106,7 +106,7 @@ public class ListComponents {
 		writer.element("dd");
 		writer.write(" AngularJS Feature");
 		writer.end();
-		
+
 		writer.end();
 
 		for (TreeNode subMenu : fileStructure.getChildren()) {
@@ -137,7 +137,7 @@ public class ListComponents {
 				writer.write(fileStructure.getNodeName());
 				writer.end();
 			}
-			
+
 			writer.element("ul");
 			F.flow(fileStructure.getChildren())
 					.sort(new Comparator<TreeNode>() {
@@ -174,7 +174,7 @@ public class ListComponents {
 										.replaceAll("\\s", "")), null)
 								.toClientURL(), "alt", "Page Structure");
 				writer.end();
-				
+
 				writer.write("Page Structure");
 				writer.end();
 

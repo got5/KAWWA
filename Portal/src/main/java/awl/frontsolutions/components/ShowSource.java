@@ -30,41 +30,41 @@ public class ShowSource implements ClientElement{
 	@Property
 	@Parameter(required=true, defaultPrefix = BindingConstants.LITERAL)
 	private String type;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	@Parameter(required=true, defaultPrefix = BindingConstants.LITERAL)
 	private String title;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	@Parameter(required=true, defaultPrefix = BindingConstants.PROP)
 	private List<String> escapedCode;
-	
+
 	@Property
 	@Parameter(required=true, defaultPrefix = BindingConstants.PROP)
 	private String readMore;
-	
+
 	@Parameter(value="false")
 	private Boolean autoOpen;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private String currentLine;
-	
+
 	@Inject
 	private JavaScriptSupport jsSupport;
-	
+
 	@Inject
 	private ComponentResources resources;
-	
+
 	@Inject
 	private AssetSource assetSource;
-	
+
 	public boolean getHasReadMore(){
 		return StringUtils.isNotEmpty(readMore);
 	}
-	
+
 	@AfterRender
 	public void finish(){
 		Link link = resources.createEventLink("getzeroclipboard");
@@ -75,29 +75,29 @@ public class ShowSource implements ClientElement{
 		jso.put("id", type + "-code");
 		jsSupport.addInitializerCall(InitializationPriority.EARLY, "showSource", jso);
 	}
-	
+
 	@OnEvent("getzeroclipboard")
 	public StreamResponse loadZeroClipboard(){
 		final Asset swf = assetSource.getExpandedAsset("context:swf/ZeroClipboard10.swf");
 		return new StreamResponse() {
 			@Override public void prepareResponse(Response response) {}
-			
+
 			@Override
 			public InputStream getStream() throws IOException {
 				return swf.getResource().openStream();
 			}
-			
+
 			@Override
 			public String getContentType() {return "application/x-shockwave-flash";}
 		};
-		
+
 	}
-	
+
 
 	public String getClassOpen(){
 		return (autoOpen) ? "ui-state-active" : "";
 	}
-	
+
 	@Override
 	public String getClientId() {
 		return jsSupport.allocateClientId(resources);

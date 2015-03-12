@@ -1,11 +1,11 @@
 <t:container xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
-      	
+
 	<p class="aid"><a t:type="pageLink" t:page="components">Back to index of components</a></p>
-		
+
 	<p class="k-skip"><a href="#main">Skip this menu</a></p>
 	<t:listDirectory t:id="liste" fileStructure="root"/>
-	
-		
+
+
 </t:container>

@@ -24,63 +24,63 @@ import awl.frontsolutions.entities.JSDependency;
 import awl.frontsolutions.services.ComponentUtils;
 
 public class ComponentDependencies {
-	
+
 	@SessionState
 	private ChoosenTheme theme;
-	
+
 	@Property
 	@Parameter(required=true)
 	private List<JSDependency> jsDependencies;
-	
+
 	@Property
 	@Parameter(required=true)
 	private boolean showJquery;
-	
+
 	@Inject
 	private JavaScriptStackSource stackSource;
-	
+
 	@Inject
 	private ComponentUtils componentUtils;
-	
+
 	@Inject
 	@Symbol(JQuerySymbolConstants.JQUERY_VERSION)
 	private String jQueryVersion;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private List<StylesheetLink> cssDependencies;
-	
+
 	@Property
 	private StylesheetLink currentCssDependency;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private JSDependency currentJsDependency;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private int index;
-	
+
 	@Inject
 	private AssetSource assetSource;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private String jQueryName;
-	
+
 	@SuppressWarnings("unused")
 	@Property
 	private String jQueryURL;
-	
+
 	@SetupRender
 	public void init(){
-		
+
 		cssDependencies = stackSource.getStack(theme.getThemeName()).getStylesheets();
-		
-				
+
+
 		JavaScriptStack stack = stackSource.getStack("core");
 		List<Asset> libs = stack.getJavaScriptLibraries();
-		
+
 		for (Asset a : libs) {
 			if(a.toClientURL().contains("jquery-"+jQueryVersion)){
 				jQueryName = getResourceName(a.getResource());
@@ -88,9 +88,9 @@ public class ComponentDependencies {
 			}
 		}
 	}
-	
-	
-	
+
+
+
 	private Resource getCurrentCss(){
 		String[] urlTree = currentCssDependency.getURL().split("/");
 		//On supprime les 4 premiers dossiers
@@ -101,10 +101,10 @@ public class ComponentDependencies {
 		}
 		String ctxPath = "context:"+sb.toString().substring(1);
 		Asset a = assetSource.getExpandedAsset(ctxPath);
-		
+
 		return a.getResource();
 	}
-	
+
 	private String getResourceName(Resource r){
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try {
@@ -116,12 +116,12 @@ public class ComponentDependencies {
 		}
 		return r.getFile();
 	}
-	
+
 	public String getCurrentCssDependencyName(){
 		return getResourceName(getCurrentCss());
-		
+
 	}
-	
+
 	public boolean getHasJsDependencies(){
 		return showJquery || jsDependencies!=null && jsDependencies.size()>0;
 	}

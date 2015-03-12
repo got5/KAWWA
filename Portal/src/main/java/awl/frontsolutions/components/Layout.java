@@ -25,16 +25,16 @@ import java.util.Date;
 @Import(library={"context:js/plugins/ZeroClipboard.js","context:js/ui/jquery.ui.panel.awl.js"})
 public class Layout
 {
-	
+
     /** The page title, for the <title> element and the <h1> element. */
 	@Property
     @Parameter(defaultPrefix = BindingConstants.LITERAL)
     private String title;
 
 	@Property
-	@Parameter 
+	@Parameter
 	private String activeMenu;
-	
+
     @Property
     private String pageName;
 
@@ -61,10 +61,10 @@ public class Layout
 
     @Inject
     private ComponentResources resources;
-    
+
     @Inject
     private AssetSource as;
-    
+
     @Inject
 	private FileSystemIndexer indexer;
 
@@ -77,7 +77,7 @@ public class Layout
              ? "current_page_item"
              : null;
     }
-    
+
     public Boolean isIndex(){return title.equalsIgnoreCase("Index");}
 
     public String getCurrentYear(){
@@ -91,19 +91,19 @@ public class Layout
     public String getFaviconUrl(){
     	return as.getContextAsset("img/"+choosen.getDir()+"/favicon.png", null).toClientURL();
     }
-    
+
     public String getId(){
     	return isIndex() ? "home" : "";
     }
 
-    
+
 	public TreeNode getRoot() {
 		return indexer.getFileStructure();
 	}
 	public String getTwitterImg(){
-		
+
 		return as.getContextAsset("img/"+choosen.getDir()+"/tweetexe.png", null).toClientURL();
-		
+
 	}
 
 	public void onSubmit(){
@@ -111,9 +111,9 @@ public class Layout
 		sb.append("Name : " + namecontact).append("\n");
 		sb.append("Message : ").append("\n");
 		sb.append(bodycontact);
-		
+
 		mail.sendMailToAdmin(emailcontact, "Contact Form", sb.toString());
-		
+
 	}
 
 }

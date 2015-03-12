@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,20 +11,19 @@
 <body id="error">
 
 <div id="container">
-	
-		<h1><strong>404 Error</strong> Page not found! 
+
+		<h1><strong>404 Error</strong> Page not found!
 			<img class="animated bowtie" src="${asset:context:img/bowtie.png}" alt="" /></h1>
 		<h2><img class="animated-quick ouch" src="${asset:context:img/ouch_404.png}" alt="Ouch, dude!" /></h2>
-		
+
 		<div class="content">
 			<p>Yeah.. Something went very wrong! But don't worry, you can find your way again in one of this sections:</p>
 			<ul class="k-links-list">
-				<li><a t:type="pagelink" t:page="aboutkawwa">Discover <small>all about Kawwa</small></a></li>
 				<li><a t:type="pagelink" t:page="download">Download <small>only what you need</small></a></li>
 			</ul>
 		</div>
-		
-	
+
+
 </div>
 
 

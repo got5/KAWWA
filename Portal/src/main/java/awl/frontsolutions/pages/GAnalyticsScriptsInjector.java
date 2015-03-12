@@ -15,18 +15,18 @@ public class GAnalyticsScriptsInjector implements MarkupRendererFilter {
 
 	private final static Messages SCRIPTS = MessagesImpl.forClass(GAnalyticsScriptsMessages.class);
 
-	
+
 	public GAnalyticsScriptsInjector() {
-		
+
 	}
 
 	private void addScript(Document document) {
-		
+
 		Element root = document.getRootElement();
 
 		if (root == null)
 			return;
-		
+
 		Element body = root.find("body");
 
 		if (body == null) {
@@ -40,7 +40,7 @@ public class GAnalyticsScriptsInjector implements MarkupRendererFilter {
 
 	public void renderMarkup(MarkupWriter writer, MarkupRenderer renderer) {
 		renderer.renderMarkup(writer);
-		
+
 		this.addScript(writer.getDocument());
 	}
 

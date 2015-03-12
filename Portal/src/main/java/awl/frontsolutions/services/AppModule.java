@@ -29,12 +29,6 @@ import java.io.IOException;
 
 public class AppModule {
 
-	@Startup
-	public static void parseComponens(FileSystemIndexer indexer,
-			TopComponent topComponent) {
-		topComponent.setTopComponent();
-	}
-
 	@Contribute(SymbolProvider.class)
 	@ApplicationDefaults
 	public static void configure(
@@ -78,7 +72,6 @@ public class AppModule {
 		binder.bind(FileSystemIndexer.class, FileSystemIndexerImpl.class);
 		binder.bind(ComponentZipFiller.class, ComponentZipFillerImpl.class);
 		binder.bind(ComponentUtils.class, ComponentUtilsImpl.class);
-		binder.bind(TopComponent.class, TopComponentImpl.class);
 		binder.bind(MailService.class, DefaultMailServiceImpl.class);
         binder.bind(MarkupWriterFactory.class, Html5MarkupWriterFactory.class).withId("Html5MarkupWriterFactory");
 	}

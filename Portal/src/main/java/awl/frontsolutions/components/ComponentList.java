@@ -20,26 +20,26 @@ import awl.frontsolutions.treeDescription.NodeType;
 import awl.frontsolutions.treeDescription.TreeNode;
 
 public class ComponentList {
-	
+
 	@Inject
 	private PageRenderLinkSource pageRender;
-	
+
 	@Inject
 	private AssetSource assetSource;
-		
+
 	@Parameter(required = true)
 	private TreeNode fileStructure;
 
 	@Persist
 	private Map<String,String> linkToResources;
-	
-	
-	private String jQueryIconUrl;
-	
-	private String tapestryIconUrl;
-	
 
-	
+
+	private String jQueryIconUrl;
+
+	private String tapestryIconUrl;
+
+
+
 	public Map<String, String> getLinkToResources() {
 		return linkToResources;
 	}
@@ -47,8 +47,8 @@ public class ComponentList {
 	public void beginRender(MarkupWriter writer) {
 		jQueryIconUrl = assetSource.getContextAsset("img/jquery-trans.png",null).toClientURL();
 		tapestryIconUrl = assetSource.getContextAsset("img/tapestry-small.png",null).toClientURL();
-		
-		
+
+
 		linkToResources = new HashMap<String, String>();
 		writer.element("ul" ,"class","k-sitemap");
 		for (TreeNode subMenu : fileStructure.getChildren()) {
@@ -66,7 +66,7 @@ public class ComponentList {
 				writer.end();
 			}
 			writer.element("ul");
-			
+
 			F.flow(fileStructure.getChildren())
 					.sort(new Comparator<TreeNode>() {
 
@@ -83,14 +83,14 @@ public class ComponentList {
 
 						}
 					});
-		
+
 			writer.end();
-			
+
 		}
 		if(fileStructure.getNodeType().equals(NodeType.COMPONENT)){
-			
+
 			if(level==1 && fileStructure.getChildren().size()==0) writer.attributes("class", "one-level");
-			
+
 			writer.element("a");
 			writer.attributes("href",pageRender.createPageRenderLinkWithContext(Component.class, fileStructure.getUrlParam()));
 			writer.write(fileStructure.getNodeName());
@@ -105,7 +105,7 @@ public class ComponentList {
 				writer.element("img", "src", tapestryIconUrl, "alt", "Tapestry", "title", "Tapestry Integration");
 				writer.end();
 			}
-			
+
 			linkToResources.put(fileStructure.getUrlParam(), fileStructure.getPath());
 		}
 		writer.end();

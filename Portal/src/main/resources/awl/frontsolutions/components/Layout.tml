@@ -68,7 +68,7 @@
 		<h3 class="modal-header">Contact form</h3>
 		<div class="content">
 			<form t:type="form"	t:id="contextForm" t:clientValidation="false" t:autofocus="false">
-				
+
 				<p>
 					<label for="namecontact">Name</label> <input t:type="textfield" aria-required="true" required="true" t:value="namecontact"
 						t:id="namecontact" name="namecontact" type="text"></input>

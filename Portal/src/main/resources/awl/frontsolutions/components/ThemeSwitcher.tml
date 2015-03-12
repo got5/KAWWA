@@ -1,7 +1,7 @@
-<div class="i-change-style" 
+<div class="i-change-style"
 			xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       		xmlns:p="tapestry:parameter">
-			
+
 			<t:if t:test="Index">
 				<p>Changing a graphical theme here below will change all the portal pages, helping you to choose the theme you want to download.</p>
 			</t:if>
@@ -10,6 +10,6 @@
 					<t:label t:for="theme">Select a graphic theme:</t:label>
 					<t:select t:clientId="i-theme" t:id="theme" model="themeModel" t:blankOption="NEVER"/>
 				</p>
-				
+
 			</t:form>
 </div>

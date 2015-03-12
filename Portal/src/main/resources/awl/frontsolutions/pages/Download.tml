@@ -1,7 +1,7 @@
 <t:layout t:activeMenu="3" t:title="Download" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"  xmlns:p="tapestry:parameter">
 
 	<h2>Downloads</h2>
-	
+
 	<div class="k-intro">
 		<p>Use this form to download a customized zip file with only the elements you will need to start or to complete your web project.</p>
 	</div>
@@ -9,7 +9,7 @@
 		<p>
 			<t:textfield t:id="componentList" class="t-invisible"/>
 		</p>
-		
+
 		<fieldset id="group-components">
 			<legend>Select desired components</legend>
 			<div id="complete-selection">
@@ -18,13 +18,13 @@
 			</div>
 			<t:componentFormList t:source="fileStructure" />
 		</fieldset>
-		
+
 		<div class="configure">
 			<fieldset id="group-options">
 			<legend>Options</legend>
 				<p class="k-check">
 					<t:checkbox t:id="tapestry" t:value="panier.includeTapestry" />
-					<label for="tapestry">Include Tapestry Snippets</label> 
+					<label for="tapestry">Include Tapestry Snippets</label>
 				</p>
                 <p class="k-check">
                     <t:checkbox t:id="angular" t:value="panier.includeAngular" />
@@ -39,7 +39,7 @@
 			<p><input class="major-action" type="submit" value="Download" /></p>
 		</div>
 	</t:form>
-	
+
 </t:layout>
 
 

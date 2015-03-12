@@ -14,7 +14,7 @@ public class Reset {
 
 	@Inject
 	private FileSystemIndexer indexer;
-	
+
 	@OnEvent("resetComponents")
 	public Object resetComponents(){
 		indexer.reParseFileStructure();

@@ -3,32 +3,32 @@ package awl.frontsolutions.entities;
 import java.util.List;
 
 public class TapestryDocumentation {
-	
+
 	public TapestryDocumentation(String name) {
 		super();
 		this.name = name;
 	}
 
 	public String name;
-	
+
 	public String Template;
-	
+
 	public String Java;
-	
+
 	public String Js;
-	
+
 	public List<String> EscapedTemplate;
-	
+
 	public List<String> EscapedJava;
-	
+
 	public List<String> EscapedJs;
-	
+
 	public String Forewords;
-	
+
 	public String ReadmeTemplate;
-	
+
 	public String ReadmeJava;
-	
+
 	public String ReadmeJs;
 
 	public String getName() {

@@ -26,7 +26,7 @@ public class Searchbox {
 
     @Property
     private String searchTag;
-    
+
     @Inject
     private PageRenderLinkSource pageLinkSource;
 
@@ -40,14 +40,14 @@ public class Searchbox {
     public List<String> autocompletion(String term){
     	List<String> retour = new ArrayList<String>();
     	List<TreeNode> tns = fileIndexer.searchComponent(term);
-    	
+
     	//TODO Rewrite with tapestry-func
     	for (TreeNode tn : tns) {
     		retour.add(tn.getNodeName());
 		}
     	return retour;
     }
-    
+
     @OnEvent(value=EventConstants.SUCCESS)
     public Object submitForm(){
     	Map<String, TreeNode> linkToComponent = fileIndexer.getLinkToComponent();
@@ -67,6 +67,6 @@ public class Searchbox {
         });
 
     	return searchZone.getBody();
-    	
+
     }
 }

@@ -38,6 +38,6 @@ public class KawwaUtils {
 			return notes.replaceAll("\\[\\[" + tag + "\\]\\]", "");
 		}
 	}
-	
+
 
 }

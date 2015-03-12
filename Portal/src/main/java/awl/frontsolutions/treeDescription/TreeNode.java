@@ -20,19 +20,19 @@ public class TreeNode {
 	private int level;
 
 	private String path;
-	
+
 	private String relatifPath;
-	
+
 	private String urlParam;
 
 	private String version;
-	
+
 	private String[] tags;
-	
+
 	private String css;
-	
+
 	private TreeNode parent;
-	
+
 	private ComponentContent content;
 
 	public TreeNode() {
@@ -100,7 +100,7 @@ public class TreeNode {
 	public String[] getTags() {
 		return tags;
 	}
-	
+
 	public boolean containsTag(String tag){
 		return ArrayUtils.contains(tags, tag);
 	}
@@ -150,16 +150,16 @@ public class TreeNode {
 		for (TreeNode c : children) {
 			conditionEnfants = conditionEnfants || c.hasChild(urlParam2);
 		}
-		
-		
+
+
 		return conditionPerso || conditionEnfants;
 	}
-	
-	
+
+
 	public String getCleanName(){
 		return toCamelCase(nodeName, true);
 	}
-	
+
 	private String toCamelCase(String value, boolean startWithLowerCase) {
 		String[] strings = StringUtils.split(value.toLowerCase(), "_");
 		for (int i = startWithLowerCase ? 1 : 0; i < strings.length; i++){
@@ -176,9 +176,9 @@ public class TreeNode {
 		this.version = version;
 	}
 
-	
-	
-	
-	
+
+
+
+
 
 }

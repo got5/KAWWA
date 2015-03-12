@@ -11,11 +11,11 @@ import org.apache.tapestry5.services.Response;
 public class ZipStreamResponse implements StreamResponse {
 
 	private ByteArrayOutputStream out;
-	
-	private String filename; 
-	
-	
-	
+
+	private String filename;
+
+
+
 	public ZipStreamResponse(ByteArrayOutputStream out) {
 		super();
 		this.out = out;

@@ -22,6 +22,6 @@
             <t:if t:test="lastDirectory">
             	<hr />
             </t:if>
-        </t:loop>   
+        </t:loop>
     </div>
-</t:container>	
+</t:container>

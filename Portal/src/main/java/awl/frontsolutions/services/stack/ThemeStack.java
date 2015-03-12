@@ -16,23 +16,23 @@ import org.apache.tapestry5.services.javascript.StylesheetLink;
 public class ThemeStack implements JavaScriptStack{
 
 	public static final String PREFIX = "themestack:";
-	
+
 	public static final String DEFAULT_THEME = PREFIX+"defaultTheme";
 
 	private AssetSource assetSource;
-	
+
 	@SuppressWarnings("unused")
 	private boolean productionMode;
-	
+
 	private SymbolSource symbolSource;
-	
+
 	private ThreadLocale threadLocale;
-	
+
 	private List<StylesheetLink> stylesheets;
-	
+
 	private List<Asset> libraries;
-	
-	
+
+
 	public ThemeStack( AssetSource assetSource,
 			boolean productionMode,
 			SymbolSource symbolSource, ThreadLocale threadLocale) {
@@ -45,7 +45,7 @@ public class ThemeStack implements JavaScriptStack{
 		stylesheets = new ArrayList<StylesheetLink>();
 	}
 
-	
+
 	@Override
 	public String getInitialization() {
 		return null;
@@ -65,15 +65,15 @@ public class ThemeStack implements JavaScriptStack{
 	public List<StylesheetLink> getStylesheets() {
 		return stylesheets;
 	}
-	
+
 	protected void setLibraries(List<String> libraries){
 		this.libraries = convertToAssets(libraries);
 	}
-	
+
 	protected void setStylesheets(List<StylesheetLink> stylesheets){
 		this.stylesheets = stylesheets;
 	}
-	
+
 	//TODO Rewrite with tapestry-func
 	protected final List<Asset> convertToAssets(List<String> paths) {
 		List<Asset> assets = CollectionFactory.newList();
@@ -90,7 +90,7 @@ public class ThemeStack implements JavaScriptStack{
 	protected final Asset expand(String path){
 		return expand(path, threadLocale.getLocale());
 	}
-	
+
 	private final Asset expand(String path, Locale locale) {
 		String expanded = symbolSource.expandSymbols(path);
 
@@ -101,10 +101,10 @@ public class ThemeStack implements JavaScriptStack{
 	protected void addStyleSheet(StylesheetLink stylesheetLink) {
 		this.stylesheets.add(stylesheetLink);
 	}
-	
+
 	protected void addLibrary(Asset library){
 		this.libraries.add(library);
 	}
-	
+
 
 }

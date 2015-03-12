@@ -14,7 +14,7 @@ public class LeftMenu {
 
 	@Component(publishParameters="urlParam")
 	private ListDirectory liste;
-	
+
 	public TreeNode getRoot() {
 		return indexer.getFileStructure();
 	}

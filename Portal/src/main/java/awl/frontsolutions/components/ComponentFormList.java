@@ -17,29 +17,24 @@ import awl.frontsolutions.treeDescription.TreeNode;
 
 public class ComponentFormList {
 
-	
-	
 	@Inject
 	private PageRenderLinkSource pageRender;
-	
+
 	@Inject
 	private AssetSource assetSource;
-		
+
 	@Parameter(defaultPrefix = BindingConstants.PROP, required = true)
 	private TreeNode source;
 
 	@Persist
 	private Map<String,String> linkToResources;
-	
-	
-	
-	
+
 	public Map<String, String> getLinkToResources() {
 		return linkToResources;
 	}
 
 	public void beginRender(MarkupWriter writer) {
-		
+
 		linkToResources = new HashMap<String, String>();
 		writer.element("ul");
 		for (TreeNode subMenu : source.getChildren()) {
@@ -51,9 +46,9 @@ public class ComponentFormList {
 	private void listDirectory(TreeNode fileStructure, MarkupWriter writer, int level) {
 
 		writer.element("li");
-		
+
 		if (fileStructure.getNodeType().equals(NodeType.GROUP)) {
-			
+
 			writer.element("fieldset","class","k-sub-group");
 			writer.element("legend");
 			writer.element("label");
@@ -62,27 +57,27 @@ public class ComponentFormList {
 			writer.write(" "+fileStructure.getNodeName());
 			writer.end();//label
 			writer.end();//legend
-		
-		
+
+
 			writer.element("ul","class","k-check");
 			for (TreeNode subMenu : fileStructure.getChildren()) {
 				listDirectory(subMenu, writer, level+1);
 			}
 			writer.end();//ul
 			writer.end();//fieldset
-			
+
 		}
 		if(fileStructure.getNodeType().equals(NodeType.COMPONENT)){
-			
+
 			if(level == 1 ) writer.attributes("class","alone");
-			
+
 			writer.element("input", "type","checkbox","id",fileStructure.getUrlParam(),"class","counter");
 			writer.end();//input
 			writer.element("label","for",fileStructure.getUrlParam());
 			writer.write(" "+fileStructure.getNodeName());
 			writer.end();//label
-			
-			
+
+
 		}
 		writer.end();//li
 	}

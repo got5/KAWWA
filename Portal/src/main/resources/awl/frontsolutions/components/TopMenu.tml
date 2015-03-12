@@ -1,10 +1,10 @@
-<t:container 
+<t:container
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
 	xmlns:p="tapestry:parameter">
 
 
 	<nav role="navigation">
-		
+
 			<p class="control"><a href="#" title="Click to open/close menu"><img src="${urlImg}" alt="Menu"/></a></p>
 			<h2 class="k-skip">
 				<a href="#wrapper">Skip this menu</a>

@@ -12,14 +12,14 @@ public class Breadcrumb {
 
 	@Inject
 	private ComponentResources resources;
-	
+
 	@InjectPage
 	private Component component;
-	
+
 	public String getPageName(){
-		
+
 		String breadcrumb = resources.getPageName();
-		
+
 		if(breadcrumb.equalsIgnoreCase(KawwaPortalConstants.COMPONENT_PAGE)){
 			StringBuilder sb = new StringBuilder(component.getComponentInfo().getNodeName());
 			TreeNode parent = component.getComponentInfo().getParent();
@@ -29,10 +29,10 @@ public class Breadcrumb {
 			}
 			breadcrumb = sb.toString();
 		}
-		
+
 		return breadcrumb;
 	}
-	
+
 	public boolean getShowComponents(){
 		return resources.getPageName().equalsIgnoreCase(KawwaPortalConstants.COMPONENT_PAGE);
 	}

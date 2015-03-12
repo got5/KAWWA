@@ -55,7 +55,7 @@ public class Download {
 
     @Inject
 	private RequestGlobals request;
-	
+
 	@Inject
 	private FileSystemIndexer indexer;
 

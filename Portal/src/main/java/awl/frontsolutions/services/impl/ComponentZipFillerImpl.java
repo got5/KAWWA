@@ -76,14 +76,14 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 
 		String path = "Components/" + componentInfo.getRelatifPath() + "/";
 
-		
+
 		fillWithFile(zos, path + ComponentConstants.SNIPPET_CSS,
 				content.getSnippetCSS3(themeName));
 		fillWithFile(zos, path + ComponentConstants.SNIPPET_HTML,
 				content.getSnippetHTML5(themeDir));
 		fillWithFile(zos, path + ComponentConstants.SNIPPET_JS,
 				content.getSnippetJS5(themeDir));
-		
+
 
 		fillWithFile(zos, path + "README.html", getNotes(componentInfo, dlType));
 
@@ -175,10 +175,10 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 	}
 
 	/**
-	 * 
+	 *
 	 * We include into the ZIP file the ieGeneralFix.js, used for Internet
 	 * Explorer issues.
-	 * 
+	 *
 	 * @param zos
 	 * @param themeName
 	 * @throws IOException
@@ -193,7 +193,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 						+ ".js", null));
 	}
 
-	
+
 
 	/* (non-Javadoc)
 	 * @see awl.frontsolutions.services.ComponentZipFiller#fillWithThemeTemplate(java.util.zip.ZipOutputStream, java.lang.String, awl.frontsolutions.internal.DownloadDocType)
@@ -254,7 +254,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 				.split(ThemeStack.PREFIX)[1] : themeName;
 	}
 
-	
+
 
 	/* (non-Javadoc)
 	 * @see awl.frontsolutions.services.ComponentZipFiller#fillWithThemeImg(java.util.zip.ZipOutputStream, java.lang.String)
@@ -378,7 +378,7 @@ public class ComponentZipFillerImpl implements ComponentZipFiller {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * @param zos
 	 * @param themeName

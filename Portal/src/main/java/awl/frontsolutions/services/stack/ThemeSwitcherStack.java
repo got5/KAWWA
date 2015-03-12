@@ -15,29 +15,21 @@ import awl.frontsolutions.entities.ChoosenTheme;
 
 public class ThemeSwitcherStack implements JavaScriptStack {
 
-	
-	
 	private ApplicationStateManager asm;
 	private JavaScriptStackSource jss;
 
-	
-	
 	public ThemeSwitcherStack(@Inject final ApplicationStateManager asm,@Inject final JavaScriptStackSource jss) {
 		super();
 		this.asm = asm;
 		this.jss = jss;
-		
-		
-		
-		
 	}
 
 	private ChoosenTheme getThemeInSession(){
 		ChoosenTheme ct = asm.get(ChoosenTheme.class);
 		return ct;
 	}
-	
-	
+
+
 	@Override
 	public String getInitialization() {
 		return null;

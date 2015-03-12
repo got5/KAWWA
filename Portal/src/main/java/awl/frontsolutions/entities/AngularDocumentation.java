@@ -10,21 +10,19 @@ public class AngularDocumentation {
 	}
 
 	public String name;
-	
+
 	public String html;
-	
+
 	public String js;
 
-
-
     public List<String> EscapedHtml;
-	
+
 	public List<String> EscapedJs;
-	
+
 	public String Forewords;
-	
+
 	public String ReadmeHtml;
-	
+
 	public String ReadmeJs;
 
 	public String getName() {

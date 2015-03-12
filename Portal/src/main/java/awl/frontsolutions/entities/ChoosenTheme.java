@@ -5,9 +5,9 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import awl.frontsolutions.services.stack.ThemeStack;
 
 public class ChoosenTheme{
-	
- 
-	
+
+
+
 	//Put the annotation to force this constructor by default
 	@Inject
 	public ChoosenTheme() {
@@ -33,8 +33,6 @@ public class ChoosenTheme{
 		this.themeName = themeName;
 	}
 
-	
-	
 	public String getDir() {
 		return dir;
 	}

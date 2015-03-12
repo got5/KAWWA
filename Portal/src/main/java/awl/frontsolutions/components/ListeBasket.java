@@ -37,20 +37,20 @@ public class ListeBasket {
 
 	@Parameter
 	private String urlParam;
-	
+
 	@SessionState
 	@Property
 	private Panier panier;
-		
+
 	@Inject
 	private FileSystemIndexer file;
-	
+
 	@Inject
 	private ComponentResources cr;
-	
+
 	@Property
 	private String comp;
-	
+
 	@SessionState
 	private ChoosenTheme currentTheme;
 
@@ -59,10 +59,10 @@ public class ListeBasket {
 
 	@Inject
 	private ComponentZipFiller zipFiller;
-	
+
 	@Inject
 	private Messages messages;
-	
+
 	@Inject
 	private JavaScriptSupport js;
 
@@ -72,13 +72,13 @@ public class ListeBasket {
 	public void setupRender(){
 		panier.setTheme(currentTheme.getThemeName());
 	}
-	
+
 	@OnEvent(EventConstants.SUBMIT)
 	public ZipStreamResponse downloadBasket() throws IOException{
-		
+
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		ZipOutputStream zos = new ZipOutputStream(out);
-		
+
 		if(panier.isIncludeTemplate()){
 			zipFiller.fillWithThemeTemplate(zos, panier.getTheme(), DownloadDocType.HTML5);
 		}
@@ -87,9 +87,9 @@ public class ListeBasket {
 			zipFiller.fillWithThemeJs(zos, panier.getTheme());
 			zipFiller.fillWithThemeImg(zos, panier.getTheme());
 		}
-		
+
 		if (panier.getListeComponent().size()>0) {
-			
+
 			//TODO Rewrite with tapestry-func
 			for (int i=0; i<panier.getListeComponent().size();i++) {
 				if (StringUtils.isNotEmpty(panier.getListeComponent().get(i).toString())) {
@@ -104,31 +104,31 @@ public class ListeBasket {
 				}
 			}
 		}
-		
+
 		out.close();
 		zos.close();
-		
+
 		return new ZipStreamResponse(out);
 	}
-	
+
 	@OnEvent(value=EventConstants.ACTION, component="reset")
 	public Link deleteBasket(){
 		panier = null;
         return prls.createPageRenderLinkWithContext(Component.class, urlParam);
 	}
-	
+
 	public int getNumber(){
 		return panier.getListeComponent().size();
 	}
-	
+
 	public String getComponentUrl(){
         return prls.createPageRenderLinkWithContext(Component.class, comp).toAbsoluteURI();
 	}
-	
+
 	public String getComponentName(){
 		return file.getLinkToComponent().get(comp).getNodeName();
 	}
-	
+
 	public DownloadDocType getXhtmlFlag() {
 		return DownloadDocType.XHTML;
 	}
@@ -139,16 +139,16 @@ public class ListeBasket {
 	public boolean getData(){
 		return panier.getListeComponent().size()>0;
 	}
-	
+
 	public void afterRender(){
-		js.addInitializerCall(InitializationPriority.LATE, 
-				"basketDownload", 
+		js.addInitializerCall(InitializationPriority.LATE,
+				"basketDownload",
 				new JSONObject("url", cr.createEventLink("checked").toAbsoluteURI()));
 	}
 	@OnEvent(value="checked")
-	public void checkComp(@RequestParameter(value = "name") String name, 
+	public void checkComp(@RequestParameter(value = "name") String name,
 			@RequestParameter(value = "value") String value){
-		
+
 		KawwaUtils.updateDownload(panier, name, value);
 	}
-}	
+}

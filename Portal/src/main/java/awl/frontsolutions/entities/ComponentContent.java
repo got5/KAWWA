@@ -15,8 +15,6 @@ public class ComponentContent {
 
 	private HTML5Documentation html5;
 
-	private XHTMLDocumentation xhtml;
-
 	private List<JSDependency> jsDependencies;
 
 	private List<Documentation> documentation;
@@ -26,14 +24,6 @@ public class ComponentContent {
 	private String afterwords;
 
 	private List<String> srcPaths;
-	
-	public XHTMLDocumentation getXhtml() {
-		return xhtml;
-	}
-
-	public void setXhtml(XHTMLDocumentation xhtml) {
-		this.xhtml = xhtml;
-	}
 
 	public Map<String, TapestryDocumentation> getTapestry() {
 		return Tapestry;
@@ -74,7 +64,7 @@ public class ComponentContent {
 	public void setDocumentation(List<Documentation> documentation) {
 		this.documentation = documentation;
 	}
-	
+
 	public String getForewords() {
 		return forewords;
 	}
@@ -90,7 +80,7 @@ public class ComponentContent {
 	public void setAfterwords(String afterwords) {
 		this.afterwords = afterwords;
 	}
-	
+
 	public List<String> getSrcPaths() {
 		return srcPaths;
 	}
@@ -98,7 +88,7 @@ public class ComponentContent {
 	public void setSrcPaths(List<String> srcPaths) {
 		this.srcPaths = srcPaths;
 	}
-	
+
 	//NOT TESTED
 
 	private String snippetHTML;
@@ -119,7 +109,7 @@ public class ComponentContent {
 
 	private String readMoreJS;
 
-	
+
 
 	private boolean rebuilt;
 
@@ -153,7 +143,7 @@ public class ComponentContent {
 			return html5.getSnippetHTML5().replace(
 					ComponentConstants.THEME_IMG_DIR, theme);
 		else
-			return getSnippetHTML();	
+			return getSnippetHTML();
 	}
 
 	public void setSnippetHTML(String snippetHTML) {
@@ -194,13 +184,13 @@ public class ComponentContent {
 		else
 			return getSnippetJS();
 	}
-	
-	
+
+
 	public String getSnippetJS5(String theme) {
 		if (html5.getSnippetJS5() != null)
 			return html5.getSnippetJS5().replace(ComponentConstants.THEME_IMG_DIR, theme);
 		else
-			return getSnippetJS(theme);	
+			return getSnippetJS(theme);
 	}
 
 	public void setSnippetJS(String snippetJS) {
@@ -213,7 +203,7 @@ public class ComponentContent {
 
 	public List<String> getEscapedSnippetHTML(String theme) {
 		List<String> string = new ArrayList<String>();
-		
+
 		//TODO Rewrite with tapestry-func
 		for (String s : escapedSnippetHTML) {
 			string.add(s.replace(ComponentConstants.THEME_IMG_DIR, theme));
@@ -222,7 +212,7 @@ public class ComponentContent {
 		return string;
 	}
 
-	
+
 	public List<String> getEscapedSnippetJS(String theme) {
 		List<String> string = new ArrayList<String>();
 

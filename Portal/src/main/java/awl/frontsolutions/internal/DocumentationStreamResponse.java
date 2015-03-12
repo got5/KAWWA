@@ -11,9 +11,9 @@ import org.apache.tapestry5.services.Response;
 public class DocumentationStreamResponse implements StreamResponse {
 
 	public File file;
-	
-	
-	
+
+
+
 	public DocumentationStreamResponse(String filepath) {
 		super();
 		this.file = new File(filepath);
@@ -36,7 +36,7 @@ public class DocumentationStreamResponse implements StreamResponse {
 
 	@Override
 	public void prepareResponse(Response response) {
-		response.setHeader("Content-Disposition", "attachment; filename="+file.getName()); 
+		response.setHeader("Content-Disposition", "attachment; filename="+file.getName());
 
 	}
 

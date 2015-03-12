@@ -6,7 +6,7 @@ import java.util.List;
 import awl.frontsolutions.internal.DownloadDocType;
 
 public class Panier {
-	
+
 	private List<String> listeComponent = new ArrayList<String>();
 
 	private boolean includeTapestry;
@@ -14,13 +14,13 @@ public class Panier {
 
 
     private boolean includeAngular;
-	
+
 	private boolean includeTemplate;
-	
+
 	private DownloadDocType doctype;
-	
+
 	private String theme;
-	
+
 	public List<String> getListeComponent() {
 		return listeComponent;
 	}
@@ -28,10 +28,10 @@ public class Panier {
 	public void setListeComponent(List<String> listeComponent) {
 		this.listeComponent = listeComponent;
 	}
-	
+
 	public void add(String param){
 		if(!listeComponent.contains(param)) listeComponent.add(0, param);
-		
+
 	}
 
 	public boolean isIncludeTapestry() {
@@ -51,7 +51,7 @@ public class Panier {
 	}
 
 	public DownloadDocType getDoctype() {
-		if(doctype == null) return DownloadDocType.HTML5;	
+		if(doctype == null) return DownloadDocType.HTML5;
 		return doctype;
 	}
 

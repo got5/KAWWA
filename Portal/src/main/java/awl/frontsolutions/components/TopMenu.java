@@ -12,7 +12,7 @@ public class TopMenu {
 
 	@Parameter
 	private Integer activeMenu;
-	
+
 	@SessionState
     private ChoosenTheme choosen;
 
@@ -20,20 +20,20 @@ public class TopMenu {
     private AssetSource as;
 
 	public String getClass(Integer indice){
-		
+
 		String classe = new String();
-		
-		if(indice == 0) classe = "home "; 
-			
+
+		if(indice == 0) classe = "home ";
+
 		if(indice == activeMenu) classe += "active";
-		
+
 		return classe;
 	}
-	
+
 	public Boolean isActive(Integer indice){
 		return getClass(indice).contains("active");
-	}	
-	
+	}
+
 	public String getUrlImg(){
 		return as.getContextAsset(String.format("img/%s/nav_control.png", choosen.getDir()), null).toClientURL();
 	}

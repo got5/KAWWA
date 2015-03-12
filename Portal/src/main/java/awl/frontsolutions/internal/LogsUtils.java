@@ -14,14 +14,14 @@ import java.util.List;
 
 public class LogsUtils {
 
-	public static File getFile(String prefix, String componentFolder) 
+	public static File getFile(String prefix, String componentFolder)
     {
 		Calendar now = Calendar.getInstance();
-		
-		File file = new File(componentFolder + File.separatorChar + "logs" + File.separatorChar + prefix+"_"+ 
+
+		File file = new File(componentFolder + File.separatorChar + "logs" + File.separatorChar + prefix+"_"+
     			new SimpleDateFormat("yyyy").format(new Date()) + "_" +
     			now.get(Calendar.WEEK_OF_YEAR) + ".csv");
-    	
+
 		if(!file.exists()){
     		try {
 				file.createNewFile();
@@ -29,30 +29,30 @@ public class LogsUtils {
 				System.out.println(e);
 			}
     	}
-    	
+
     	return file;
     }
-	
+
 	public static void log(File file, String value){
-		
+
 		List<String> list = new ArrayList<String>();
-		
+
 		FileReader fr;
 		try {
 			fr = new FileReader(file);
-	
+
 			BufferedReader reader = new BufferedReader(fr);
-	        
+
 	        String tmp;
-	        
+
 	        list.add(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date())+","+value);
-	        
+
 	        while ((tmp = reader.readLine()) != null ) {
 	        	if(!list.contains(tmp)) list.add(tmp);
 	        }
-	            
+
 	        fr.close();
-	        	
+
 	        FileWriter fw = new FileWriter(file);
 	        BufferedWriter writer = new BufferedWriter(fw);
 	        for (int i = 0; i < list.size(); i++){

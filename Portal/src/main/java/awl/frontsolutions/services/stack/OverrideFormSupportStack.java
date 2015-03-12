@@ -15,7 +15,7 @@ public class OverrideFormSupportStack extends FormSupportStack {
 		super(assetSource, minified);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public List<StylesheetLink> getStylesheets() {
 		return CollectionFactory.newList();

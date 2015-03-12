@@ -18,20 +18,20 @@ public class Index {
 
 	@SessionState
 	private ChoosenTheme theme;
-	
+
 	@Inject
 	private AssetSource as;
-	
+
 	@Property
 	private String comp;
-	
+
 	@OnEvent(value = EventConstants.ACTIVATE)
 	public Object Error(EventContext ctx){
 		if(ctx.getCount() > 0)
 			return ErrorPage.class;
 		return null;
 	}
-	
+
 	public String getBannerUrl(){
 		return as.getContextAsset("img/"+theme.getDir()+".jpg", null).toClientURL();
 	}
