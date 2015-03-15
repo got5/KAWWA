@@ -225,17 +225,16 @@ em {
 /* ------------------------------------------------------------- BLOCK QUOTE */
 /* CB/ quote */
 
-blockquote, .k-quote {
+blockquote {
 	position: relative;
 	width: 50%;
 	max-width: 40em;
-
 	color: #000;
 	background: #FFF;
 	padding: 0 0 0 2em;
 	margin: 2em;
 }
-	blockquote:before, .k-quote:before {
+	blockquote:before {
 		position: absolute;
 		top: -10px;
 		left: 0;
@@ -246,26 +245,26 @@ blockquote, .k-quote {
 		background: inherit;
 	}
 
-	blockquote p, .k-quote p {
-		font: 0.85em open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	blockquote p {
+		font: 1em/1.5 open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-indent: 0;
 	}
 
-	blockquote p.citation, .k-quote p.citation {
-		font-size: 0.7em;
+	blockquote p.citation {
+		font-size: 0.85em;
 		padding-top: 1em;
 	}
-		blockquote p.citation:before, .k-quote p.citation:before {content: "\2500 \00A0 ";}
+		blockquote p.citation:before {content: "\2500 \00A0 ";}
 
-	cite {font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+	cite {
+		font-family: open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-style: normal;
+	}
 
 /* CE/ quote */
 
 
 /* --- FORM DEFAULTS --- */
-
-
-form p {margin: 0.3em 5%;}
 
 form p.highlight {
 	background: #CCC;
@@ -318,14 +317,7 @@ p.k-check label {
 }
 
 @media screen and (min-width: 790px) {
-	form p {display: table-row;}
 	form p.highlight {display: block;}
-	label {
-		display: table-cell;
-		text-align: right;
-		padding: 0 0.5em 0 0;
-		vertical-align: top;
-	}
 }
 
 input {
@@ -636,10 +628,9 @@ fieldset.k-choice-input ul {
 	fieldset.k-choice-input {
 		padding: 0.5em 1em;
 		margin: 0 2em 1em;
-		border: 2px solid #CCC;
 	}
 	fieldset.k-choice-input legend {
-		padding: 0 0.5em;
+		padding: 0.5em 1em;
 	}
 	fieldset.k-choice-input label {
 		padding: 0 2em 0 0;
@@ -1998,12 +1989,8 @@ form.k-language {float: right; width: auto;}
 
 form.k-login {color: #050505; background: #FFF;}
 
-	form.k-login label {
-		float: none;
-		display: block;
-		width: auto;
-		text-align: left;
-	}
+	form.k-login fieldset {padding: 0; margin: 0;}
+	form.k-login fieldset p {padding: 0.5em 1em;}
 
 	form.k-login input[type=submit] {margin-top: 1em;}
 
@@ -2019,23 +2006,6 @@ p.to-register {
 		color: #FFF;
 		background: #808080;
 	}
-
-
-	/* Collapsible form */
-	form.k-login {
-		top: 6.5em;
-		right: 4%;
-		width: 20%;
-		min-width: 200px;
-		background: #FFF;
-		box-shadow: 0 1px 2px #666;
-		z-index: 200;
-	}
-		form.k-login fieldset {margin: 0 4%;}
-		form.k-login legend {padding: 0 8px 0.5em; margin: 0.5em 0 0 -0.5em;}
-		form.k-login p.to-register {margin-bottom: 0;}
-			form.k-login p.to-register strong {display: block;}
-
 
 /* CE/ loginForm */
 
@@ -2503,66 +2473,59 @@ ul.tabs {padding: 0; margin: 0;}
 /* CB/ collapsiblePanel */
 
 .k-panel {
-	clear: both;
-	overflow: auto;
-    margin-bottom: 20px;
-    border: 1px solid #D0D0D0;
+  clear: both;
+  overflow: auto;
+  margin-bottom: 2em;
+  border: 1px solid #CCC;
 }
-fieldset.k-panel {padding: 0;}
-	fieldset.k-panel legend.control {width: 99%; padding: 0.3em 0 0.3em 1%; border-right: 1px solid #808080;}
-p + .k-panel {margin-top: 1em;}
+.k-panel .control {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: white;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+.k-panel .control a, .k-panel .control a:link, .k-panel .control a:visited {
+  display: block;
+  font-size: 100%;
+  text-decoration: none;
+  text-align: left;
+  color: white;
+  background: #999 url(../img/k-theme0/unfold.svg) right 0.45em no-repeat;
+  padding: 0.5em 2em 0.5em 0.7em;
+  border: none;
+  cursor: pointer;
+}
+.k-panel .control a:hover, .k-panel .control a:focus {
+  color: white;
+  background-color: #a40800;
+}
+.k-panel .control a.active, .k-panel .control a.active:link, .k-panel .control a.active:visited {
+  color: white;
+  background: black url(../img/k-theme0/fold.svg) right 0.45em no-repeat;
+}
+.k-panel .control a.active:hover, .k-panel .control a.active:focus {
+  color: white;
+  background-color: #a40800;
+}
+.k-panel > .content {
+  padding: 1em 20px;
+}
 
-	.k-panel .control {
-		font-size: 1.3em;
-		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
-		color: #FFF;
-		background: #000 url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
-		padding: 0.2em 25px 0.2em 15px;
-		margin: 0;
-		cursor: pointer;
-	}
-	.k-panel h3.control {border: none;}
+fieldset.k-panel {
+  padding: 0;
+}
+fieldset.k-panel legend.control {
+  width: 100%;
+}
+fieldset.k-panel legend.control::after {
+  content: "";
+}
 
-	.k-panel .ui-state-hover, .k-panel .ui-state-focus {
-		background-color: #000;
-	}
-	.k-panel .ui-state-active {
-		background: #000 url(../img/k-theme0/fold-trans.png) right 0.5em no-repeat;
-	}
-	.k-panel .control a, .k-panel .control a:link, .k-panel .control a:visited {
-		text-decoration: none;
-		color: #FFF;
-		background: transparent;
-	}
-	.k-panel .control a:hover, .k-panel .control a:focus {
-		text-decoration: none;
-		color: #FFF;
-		background: transparent;
-	}
-
-	.k-panel .content {
-		float: left;
-		width: 96%;
-		color: #000;
-		background: #FFF;
-		padding: 1em 2%;
-		border: none;
-	}
-
-		.k-panel .content h3:first-child, .k-panel .content h4:first-child {
-			font-size: 1.2em;
-			padding: 0 0 0.5em;
-			margin: 0;
-		}
-
-	.k-panel.exception .control {
-		color: #FFF;
-		background-color: #A40800;
-	}
-	.k-panel.exception .control a, .k-panel.exception .control a:link, .k-panel.exception .control a:visited {
-		color: #FFF;
-		background: #A40800;
-	}
+p + .k-panel {
+  margin-top: 1em;
+}
 
 /* CE/ collapsiblePanel */
 
@@ -2571,54 +2534,39 @@ p + .k-panel {margin-top: 1em;}
 /* CB/ accordion */
 
 .k-accordion {
-	clear: both;
-    margin-bottom: 20px;
-    border: 1px solid #D0D0D0;
+  clear: both;
+  margin-bottom: 2em;
+  border-bottom: 4px solid black;
 }
-
-p + .k-accordion {margin-top: 1em;}
-
-	.k-accordion ul.k-links-list {
-	    margin-left: 2em;
-	    padding: 0;
-	}
-	.k-accordion p {
-		line-height: 1.2;
-		padding: 0 0.8em 0.8em;
-	}
-	.k-accordion .control {
-		clear: both;
-		font-size: 1em;
-		text-transform: uppercase;
-		color: #FFF;
-		background: #000 url(../img/k-theme0/unfold-trans.png) right 0.5em no-repeat;
-		padding: 0.2em 25px 0.2em 0.8em;
-		margin: 0;
-		border-top: 1px solid #FFF;
-		cursor: pointer;
-	}
-	.k-accordion .control:first-child {border-top: none;}
-
-	.k-accordion .ui-state-active {
-		color: #FFF;
-		background: #000 url(../img/k-theme0/fold-trans.png) right 0.5em no-repeat;
-	}
-	.k-accordion .control a, .k-accordion .control a:link, .k-accordion .control a:visited {
-		text-decoration: none;
-		color: #FFF;
-		background: transparent;
-	}
-	.k-accordion .control a:hover, .k-accordion .control a:focus {
-		text-decoration: none;
-		color: #FFF;
-		background: #666;
-	}
-
-	.k-accordion .content {
-		color: #000;
-		background: #FFF;
-		padding: 0.8em 0;
-	}
+.k-accordion .control {
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 1px 0;
+  margin: 0;
+}
+.k-accordion .control a, .k-accordion .control a:link, .k-accordion .control a:visited {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #999 url(../img/k-theme0/unfold.svg) right 0.45em no-repeat;
+  padding: 0.5em 28px 0.5em 0.7em;
+  cursor: pointer;
+}
+.k-accordion .control a:focus, .k-accordion .control a:focus {
+  color: white;
+  background-color: #a40800;
+}
+.k-accordion .control a.active, .k-accordion .control a.active:link, .k-accordion .control a.active:visited {
+  color: white;
+  background: black;
+}
+.k-accordion .control a.active:focus, .k-accordion .control a.active:focus {
+  color: white;
+  background-color: #a40800;
+}
+.k-accordion div.content {
+  margin: 1em;
+}
 
 /* CE/ accordion */
 
@@ -2768,7 +2716,7 @@ div.k-highlight-block {
 	border-bottom: 1px dashed #999;
 }
 	div.k-highlight-block p {
-		font: 0.8em open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 1em/1.5 open_sansitalic, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-indent: 0;
 	}
 
@@ -3160,11 +3108,11 @@ fieldset.k-rating {
 		width: 12em;
 		font-size: 0.75em;
 		background: none;
-		margin: 0.6em 0 0;
 	}
 	fieldset.k-rating p {
 		float: left;
 		width: 50%;
+		padding-top: 0.3rem;
 	}
 
 div.rating-cancel, div.star-rating {

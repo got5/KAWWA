@@ -2,8 +2,8 @@
 	'use strict';
 
 	$(document).ready(function(){
-		if($.ui && $.ui.panel) {
-			$('.k-panel').panel();
+		if(jQuery.fn.collapsiblePanel) {
+			jQuery( ".k-panel" ).collapsiblePanel();
 		}
 	});
 })(jQuery);

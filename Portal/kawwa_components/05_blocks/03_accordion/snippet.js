@@ -2,10 +2,8 @@
 	'use strict';
 
 	$(document).ready(function(){
-		if($.ui && $.ui.accordion){
-			$('.k-accordion' ).accordion({
-				heightStyle: 'content'
-			});
+		if(jQuery.fn.kAccordion) {
+			jQuery( ".k-accordion" ).kAccordion();
 		}
 	});
 })(jQuery);

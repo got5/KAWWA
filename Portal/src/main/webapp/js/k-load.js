@@ -64,23 +64,16 @@ function supports_input_placeholder() {
 
 // VERTICAL ACCORDION MENU ----------------------------------
 
-	if(jQuery.ui && jQuery.ui.accordion) {
-		jQuery('ul.k-menu').accordion({  collapsible: true });
-		//FOR Accordion With one level, we make the redirect
-		if(jQuery('a.one-level')){
-			jQuery('a.one-level').bind('click', function(){
-			window.location.href = jQuery(this).attr("href");
-		});
-		}
+	if(jQuery.fn.kAccordion) {
+		jQuery( ".k-accordion" ).kAccordion();
 	}
 
 
 // COLLAPSIBLE PANELS ----------------------------------
 
-	if(jQuery.ui && jQuery.ui.panel) {
-		jQuery('.k-panel').panel();
+	if(jQuery.fn.collapsiblePanel) {
+		jQuery( ".k-panel" ).collapsiblePanel();
 	}
-
 
 // TABS -------------------------------------------
 

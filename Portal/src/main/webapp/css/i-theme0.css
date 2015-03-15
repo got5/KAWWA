@@ -984,6 +984,7 @@ li.basket-item {
 
 #downloadList fieldset {
 	background: #EEE;
+	padding: 1rem;
 	margin: 2em 0 1em;
 	border: none;
 }
@@ -1027,7 +1028,8 @@ div.configure {
 	background: #3E3E3E;
 	padding: 1%;
 }
-#group-components {float: left; width: 65%;}
+#group-components {float: left; width: 65%; background: #FFF;}
+#group-components > legend {background: #FFF;}
 
 	div.configure fieldset {
 		border: none;
@@ -1040,15 +1042,10 @@ div.configure {
 		padding: 0 0 0.5em;
 		margin: 0;
 	}
-	div.configure label {
-		float: none;
-		display: block;
-		width: auto;
-		text-align: left;
-	}
+	#group-components label {display: inline; font-weight: normal;}
 
 	div.configure p.k-check {padding-left: 0;}
-		div.configure p.k-check label {display: inline;}
+		div.configure p.k-check label, div.configure ul.k-check label {display: inline;}
 		div.configure .k-radio legend {
 			float: none;
 			display: block;
@@ -1059,6 +1056,11 @@ div.configure {
 		}
 		
 	div.configure p.k-buttons-bar {text-align: center;}
+	
+	div.configure #group-options, div.configure #group-options legend {
+		color: #FFF;
+		background: transparent;
+	}
 
 #complete-selection {
 	float: left;
@@ -1113,6 +1115,7 @@ input.major-action {
 
 /* Follow-up fieldset */
 #group-followUp {
+	display: none;
 	color: #000;
 	background: #EEE;
 	padding: 0 4%;
