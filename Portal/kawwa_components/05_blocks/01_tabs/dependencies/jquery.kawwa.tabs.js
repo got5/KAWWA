@@ -77,8 +77,8 @@
 				});
 			});
 			// SETS ACTIVE TAB/PANEL
-			if($this.find('a.active').length != 0) {
-				$theOne = $this.find('a.active');
+			if($this.find('> li a.active').length != 0) {
+				$theOne = $this.find('> li a.active');
 			} else {
 				$theOne = $tabs.eq(settings.selected);
 				$theOne.addClass('active');

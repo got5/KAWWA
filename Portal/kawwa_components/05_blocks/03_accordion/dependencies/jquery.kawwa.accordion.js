@@ -25,8 +25,8 @@
 	
 	return this.each(function() {	
 		var $this = $(this);
-		var $headers = $this.find(".control a");
-		var $panels = $this.find(".content");
+		var $headers = $this.find("> .control a");
+		var $panels = $this.find("> .content");
 		var $zActive;
 		
 		$panels.css('display', 'none').attr('aria-hidden', 'true').attr('aria-expanded', 'false');
