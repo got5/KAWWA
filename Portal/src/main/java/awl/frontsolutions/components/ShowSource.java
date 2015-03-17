@@ -23,7 +23,7 @@ import org.apache.tapestry5.services.Response;
 import org.apache.tapestry5.services.javascript.InitializationPriority;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
-@Import(library={"context:js/plugins/jquery.showsource.js","context:js/components/ShowSource.js"})
+@Import(library={"context:js/plugins/jquery.showsource.js", "context:js/plugins/jquery.kawwa.collapsible.js", "context:js/components/ShowSource.js"})
 public class ShowSource implements ClientElement{
 
 	@SuppressWarnings("unused")
@@ -73,7 +73,7 @@ public class ShowSource implements ClientElement{
 		params.put("swfUrl",link.toAbsoluteURI());
 		jso.put("params", params);
 		jso.put("id", type + "-code");
-		jsSupport.addInitializerCall(InitializationPriority.EARLY, "showSource", jso);
+		//jsSupport.addInitializerCall(InitializationPriority.EARLY, "showSource", jso);
 	}
 
 	@OnEvent("getzeroclipboard")

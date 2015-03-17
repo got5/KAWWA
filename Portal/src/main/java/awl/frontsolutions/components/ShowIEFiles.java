@@ -49,7 +49,7 @@ public class ShowIEFiles {
     private PageRenderLinkSource prls;
 
 	public void beginRender(MarkupWriter writer) {
-		writer.element("div","class","k-panel exception");
+		writer.element("div","class","exception");
 
         writer.element("h3", "class", "control");
         writer.write("IE Backward Compatibility");

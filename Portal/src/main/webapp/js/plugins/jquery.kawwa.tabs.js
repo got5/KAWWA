@@ -32,7 +32,7 @@
 			var $this = $(this);
 			var $tabsList = $this.find('ul.tabs:first');
 			var $tabsPres = $this.find('ul.tabs:first li');
-			var $tabs = $this.find('ul.tabs:first a');
+			var $tabs = $this.find('ul.tabs:first > li > a');
 			var $panels = $this.find('> .content');
 			var tabHref;
 			var	tabHeight;

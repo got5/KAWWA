@@ -68,7 +68,6 @@ function supports_input_placeholder() {
 		jQuery( ".k-accordion" ).kAccordion();
 	}
 
-
 // COLLAPSIBLE PANELS ----------------------------------
 
 	if(jQuery.fn.collapsiblePanel) {
