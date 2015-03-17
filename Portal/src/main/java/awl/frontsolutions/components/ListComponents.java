@@ -129,7 +129,7 @@ public class ListComponents {
 						"img",
 						"src",
 						assetSource.getContextAsset(
-								String.format("img/%s/icon_%s.png", theme
+								String.format("img/%s/icon_%s.svg", theme
 										.getDir(), fileStructure.getNodeName()
 										.replaceAll("\\s", "")), null)
 								.toClientURL(), "alt", "");
