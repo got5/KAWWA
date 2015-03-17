@@ -812,6 +812,11 @@ ul.component-info {width: 19px; padding: 0; margin-top: -1em;}
 		ul.component-info li:first-child {border: none;}
 		
 		ul.component-info img {vertical-align: middle; padding-right: 5px;}
+		
+		.k-panel.exception h3.control {
+			color: #333;
+			padding: 1em;
+		}
 
 /* Check this... */
 #i-component {
@@ -931,6 +936,10 @@ div.i-tapestry_js-code {
 	border: 1px dashed #CCC;
 	padding-top: 2em;
 }
+
+#snippet p.k-readmore {margin: 1em;}
+
+
 /* --- ZERO CLIPBOARD --- */
 
 div.clip-container {
@@ -965,7 +974,7 @@ div.i-tapestry_js-code:hover .clip-button {visibility: visible;}*/
 
 /* Add to Basket */
 
-#toBasket {margin-top: -4.5em;}
+#toBasket {float: right; width: auto;}
 #downloadList p {font-size: 0.8em;}
 
 #downloadList ul.i-list {
@@ -1005,7 +1014,14 @@ li.basket-item {
 	background: #EEE;
 	padding: 2% 4%;
 }
-#downloadList h3.control {font-size: 1em;}
+#downloadList h3.control {
+	font-size: 1em;
+	color: #FFF;
+	background-color: #000;
+	padding: 0.3em 1em;
+	margin-bottom: 0.5em;
+	cursor: pointer;
+}
 	#downloadList h3.control small {display: block;}
 
 #downloadList .k-buttons-bar li {font-size: 0.7em;}
