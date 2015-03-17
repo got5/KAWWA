@@ -1,35 +1,45 @@
-<article class="k-product-sheet">
-	<!-- example of hproduct sheet -->
-	<div class="hproduct k-product">
-		<div class="photo-data">
-			<p><a href="#" title="">
-				<img class="photo" src="./prod_catalog.png" alt="Title of product" /></a></p>
+<article class="k-product h-product k-product-sheet">
+	<header>
+		<h3 class="p-name fn"><a href="#">Title of product</a></h3>
+		<p class="p-category"><a href="#">Product category</a></p>
+	</header>
+	
+	<p class="photo-data"><a href="#"><img class="u-photo" src="../img/image_examples/product_main.svg" alt="Title of product" /></a></p>
+	
+	<div class="product-data">
+		<div class="rating">
+			<p class="h-review"><data class="p-rating" value="5"><img src="../img/k-theme0/five-stars.svg" alt="Five stars" /></data></p>
+			<p><a href="#comments">50 comments</a></p>
 		</div>
-		<div class="product-data">
-			<h3 class="fn name">Title of product</h3>
-			<h4 class="category"><a href="#">Product category</a></h4>
-			<p class="rating five" title="5/5"><a href="#comments" title="See what other customers are saying">50 comments</a></p>
-			<p class="description">Eget velit convallis laoreet consectetuer In dictum est 
-								ipsum gravida consequat. Elit Sed magna id congue scelerisque velit convallis laoreet consectetuer In dictum est 
-								ipsum gravida consequat. Elit Sed magna id congue scelerisque.</p>
+		
+		<div class="content k-article">
+			<div class="e-description">
+				<p>Eget velit convallis laoreet consectetuer In dictum est 
+				ipsum gravida consequat. Elit Sed magna id congue scelerisque velit convallis laoreet consectetuer In dictum est 
+				ipsum gravida consequat. Elit Sed magna id congue scelerisque.</p>
+			</div>
+			
 			<ul class="product-info">
+				<li><a href="http://example.com/acme" class="p-brand h-card">ACME Publishing inc.</a></li>
 				<li><strong>Ref.:</strong> 1235A/gray</li>
 				<li><strong>Height:</strong> 65cm</li>
-				<li><strong>Composition:</strong> 20% cotton/80% wool</li>
+				<li><strong>Composition:</strong> 100% cotton</li>
 			</ul>
-			<div class="price-data">
-				<p class="extra sale"><span class="discount">-20%</span> sale</p>
-				<p class="all-prices">
-					<span class="hidden">Old price :</span> 
-					<span class="old-price" title="Old price">50,50 &euro;</span><br />
-					<strong class="price sale">50,50 &euro;</strong></p>
+		</div>
+		
+		<div class="price-data">
+			<p class="old-price">
+				<span class="k-no-display">Old price:</span> 
+				<span aria-label="Old price">50,50 &euro;</span></p>
+			<p><data class="p-price sale" value="50.50">50,50 &euro;</data></p>
+			<p class="extra sale">-10%</p>
+		</div>
+		
+		<div class="buy-zone">
+			<div class="availability">
+				<p><strong>Availability:</strong> immediate delivery</p>
 			</div>
-			<div class="buyZone">
-				<div class="availability">
-					<p><strong>Availability :</strong> immediate delivery</p>
-				</div>
-				<p class="buy"><a href="#">Add to basket</a></p>
-			</div>
+			<p class="buy"><button>Add to basket</button></p>
 		</div>
 	</div>
 </article>

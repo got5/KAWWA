@@ -10,11 +10,11 @@
 	
 	$.fn.switchView = function (settings) {
 			
-		$('.catalog-view li:first-child a').addClass('active');
+		$('.catalog-view li:first-child button').addClass('active');
 		
-		$('.catalog-view a').click(function(event) {
+		$('.catalog-view button').click(function(event) {
 			event.preventDefault();
-			$('.catalog-view a').toggleClass('active');
+			$('.catalog-view button').toggleClass('active');
 			$('.k-catalog').toggleClass('list-view');
 		});
 				
