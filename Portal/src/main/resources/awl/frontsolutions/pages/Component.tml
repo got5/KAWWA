@@ -74,9 +74,11 @@
     <t:block t:id="source">
     	<div id="demo-tab" class="k-tabbed-data">
                 <ul class="tabs">
-                	<li>
-						<a href="#demo">Demo</a>
-					</li>
+                    <t:if t:test="componentCssClass.contains('(k-no-display)')" t:negate="true">
+                    	<li>
+    						<a href="#demo">Demo</a>
+    					</li>
+                    </t:if>
                     <t:if test="hasHtml5Tag">
                         <li>
                             <a href="#snippet">Snippets</a>
@@ -94,11 +96,13 @@
                     </t:if>
                 </ul>
                 <t:if test="hasHtml5Tag">
-                	<div class="content" id="demo">
+                    <t:if t:test="componentCssClass.contains('(k-no-display)')" t:negate="true">
+                    	<div class="content" id="demo">
 
-							<t:outputRaw t:value="snippetHTML5"/>
+    							<t:outputRaw t:value="snippetHTML5"/>
 
-					</div>
+    					</div>
+                    </t:if>
                     <div class="content" id="snippet">
                     	<t:if test="showFile(componentInfo.content.html5.snippetHTML5)">
                             <t:showSource t:type="html5" t:title="HTML5 Plain Code" t:escapedCode="escapedSnippetHTML5" t:readMore="componentInfo.content.html5.readMoreHTML5" />
