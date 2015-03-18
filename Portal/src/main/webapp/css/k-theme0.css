@@ -166,7 +166,7 @@ h2 {
 h3 {
 	font: 2.5em open_sansbold, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
-	padding: 5px 0;
+	padding: 0.3em 0;
 	margin-bottom: 0.5em;
 }
 
@@ -3001,16 +3001,6 @@ input.uppydowner {
 }
 
 
-/* Exceptions for inBasket */
-
-.k-basket .k-quantity {clear: both; font-size: 0.6em; padding: 0 5px;}
-.k-basket .k-quantity span {
-	width: 0.5em;
-	height: 1em;
-	line-height: 1em;
-	padding: 1px 3px;
-}
-
 /* CE/ productQtty */
 
 /* --------------------------------------------------------- PRODUCT REVIEW --- */
@@ -3523,80 +3513,64 @@ div.k-product-options {
 
 
 .k-basket {border: none;}
+	.k-basket h3 {
+		font-size: 1.2em;
+		color: #FFF;
+		background: #000;
+		padding: 0.3em 1em;
+	}
 
+	.k-basket .content {
+		width: 100%;
+		padding: 0;
+	}
 	.k-basket .k-buttons-bar {
 		padding: 1em 0 0.5em;
 		margin-bottom: 0;
 	}
-	.k-basket .k-buttons-bar li {
-		font-size: 0.8em;
-	}
-	.k-basket input.uppydowner {
-		font-size: 80%;
-	}
+		.k-basket .k-buttons-bar li {font-size: 0.8em;}
+		
+	.k-basket input.uppydowner {font-size: 80%;}
 	
 dl.basket-item {
 	position: relative;
 	float: left;
 	width: 94%;
-	padding: 5px 3%;
-	margin-bottom: 0.5em;
+	padding: 0.3em 3%;
+	margin-bottom: 0.3em;
 	border-bottom: 1px dashed #CCC;
-	display: flex;
-    align-items: center;
-    flex-flow: row wrap;
-    display: -webkit-flex;
-    -webkit-align-items: center;
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
-
 }
+
 	dl.basket-item dt {
 		float: left;
 		width: 20%;
-		min-width: 10em;
-		max-width: 35em;
+		min-width: 50px;
+		max-width: 100px;
+		background: #FFF;
 		padding: 0.3em;
 		margin-right: 1em;
 	}
+	dl.basket-item dt, dl.basket-item dd {font-size: 0.8em;}
 	dl.basket-item dd.name {
 		overflow: visible;
 		margin: 0 0 1em;
-		flex: 1 1 100%;
-		-webkit-flex: 1 1 100%;
 	}
-	dl.basket-item dd.k-quantity input {
-		width: 2em;
-	}
-	dl.basket-item dd.price {
-		text-align: right;
-	}
-
-/*@media only screen and (max-width: 1200px) {	*/
-
-/* New item */
+	
+	dl.basket-item dd.k-quantity {clear: none;}
+		dl.basket-item dd.k-quantity input {width: 2em;}
+		
+	dl.basket-item dd.price {text-align: right;}
+	
 dl.new-item {background: #EEE;}
 
-/* Total */
 p.basket-total {
 	clear: both;
 	text-align: center;
 	color: #050505;
 	background: #EEE;
 	padding: 0.3em;
-	margin: 0.5em 0.5em 0;
+	margin: 0.3em 0.3em 0;
 }
-
-/* Exceptions */
-
-	.k-basket .k-buttons-bar {
-		text-align: center;
-		margin: 5px 5px 1em;
-	}
-
-	.k-basket .k-buttons-bar li {font-size: 0.8em;}
-	.k-basket input.uppydowner {font-size: 80%;}
-
 
 /* CE/ basket */
 
