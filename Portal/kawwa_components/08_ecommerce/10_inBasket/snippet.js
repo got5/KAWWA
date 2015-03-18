@@ -2,10 +2,6 @@
 	'use strict';
 
 	$(document).ready(function(){
-		if(jQuery.fn.collapsiblePanel) {
-			jQuery( ".k-panel" ).collapsiblePanel();
-		}
-
 		function incrementTest() {
 			var i = document.createElement('input');
 			i.setAttribute('type', 'number');

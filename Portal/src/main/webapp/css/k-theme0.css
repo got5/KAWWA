@@ -3542,19 +3542,28 @@ dl.basket-item {
 	padding: 5px 3%;
 	margin-bottom: 0.5em;
 	border-bottom: 1px dashed #CCC;
+	display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+
 }
 	dl.basket-item dt {
 		float: left;
 		width: 20%;
 		min-width: 10em;
 		max-width: 35em;
-		background: #FFF;
 		padding: 0.3em;
 		margin-right: 1em;
 	}
 	dl.basket-item dd.name {
 		overflow: visible;
 		margin: 0 0 1em;
+		flex: 1 1 100%;
+		-webkit-flex: 1 1 100%;
 	}
 	dl.basket-item dd.k-quantity input {
 		width: 2em;
@@ -3562,7 +3571,9 @@ dl.basket-item {
 	dl.basket-item dd.price {
 		text-align: right;
 	}
-	
+
+/*@media only screen and (max-width: 1200px) {	*/
+
 /* New item */
 dl.new-item {background: #EEE;}
 

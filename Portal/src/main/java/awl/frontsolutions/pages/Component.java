@@ -172,7 +172,7 @@ public class Component {
 			@Override
 			public void prepareResponse(Response response) {
 
-				//For the pageStructure component, there are links in the snippetHTML.
+                //For the pageStructure component, there are links in the snippetHTML.
 				if(componentInfo.getContent().getSrcPaths().get(srcIndex).endsWith(".css") ||
 						componentInfo.getContent().getSrcPaths().get(srcIndex).endsWith(".html"))
 
@@ -181,11 +181,16 @@ public class Component {
 
 			@Override
 			public InputStream getStream() throws IOException {
-
-				return new FileInputStream(componentInfo.getContent().getSrcPaths().get(srcIndex));}
+                return new FileInputStream(componentInfo.getContent().getSrcPaths().get(srcIndex));}
 
 			@Override
-			public String getContentType() {return "application/octet-stream";}
+			public String getContentType() {
+                if(componentInfo.getContent().getSrcPaths().get(srcIndex).endsWith(".svg")){
+                    return "image/svg+xml";
+                }
+                return "application/octet-stream";
+
+            }
 		};
 	}
 
