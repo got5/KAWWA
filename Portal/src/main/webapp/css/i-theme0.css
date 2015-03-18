@@ -813,9 +813,10 @@ ul.component-info {width: 19px; padding: 0; margin-top: -1em;}
 		
 		ul.component-info img {vertical-align: middle; padding-right: 5px;}
 		
-		.k-panel.exception h3.control {
+		div.exception h3.control {
+			font-size: 1.2em;
 			color: #333;
-			padding: 1em;
+			padding: 0;
 		}
 
 /* Check this... */
@@ -952,16 +953,20 @@ div.clip-container {
 
 div.clip-button {
 	width: 73px;
-	height: 16px;
 	font: 1em open_sanslight, "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 	color: #FFF;
 	background: #A40800;
-	padding: 4px 10px 6px;
-	border: 1px dashed #FFF;
+	padding: 0.3em 1em;
+	border: 1px solid #FFF;
 	border-radius: 3px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+div.clip-button:hover {
+	color: #FFF;
+	background: #000;
 }
 
 /*div.i-html-code:hover .clip-button {visibility: visible;}
@@ -1038,14 +1043,26 @@ li.basket-item {
 /* --- DOWNLOAD PAGE --- */
 
 div.configure {
-	float: right;
-	width: 25%;
 	color: #FFF;
 	background: #3E3E3E;
-	padding: 1%;
+	padding: 1em;
+	margin-bottom: 2em;
 }
-#group-components {float: left; width: 65%; background: #FFF;}
-#group-components > legend {background: #FFF;}
+#group-components {
+	background: #FFF;
+	padding: 0;
+	margin: 0;
+}
+
+	#group-components ul {margin: 0; padding: 0;}
+	#group-components li {
+		width: 100%;
+		list-style-type: none;
+		padding: 0.2em 0;
+	}
+	#group-components label {display: inline; font-weight: normal;}
+
+	#group-components > legend {background: #FFF;}
 
 	div.configure fieldset {
 		border: none;
@@ -1058,7 +1075,6 @@ div.configure {
 		padding: 0 0 0.5em;
 		margin: 0;
 	}
-	#group-components label {display: inline; font-weight: normal;}
 
 	div.configure p.k-check {padding-left: 0;}
 		div.configure p.k-check label, div.configure ul.k-check label {display: inline;}
@@ -1079,17 +1095,44 @@ div.configure {
 	}
 
 #complete-selection {
-	float: left;
-	width: 100%;
+	overflow: auto;
 	color: #000;
 	background: #FFF url(../img/k-theme0/bg_photobox.png);
-	padding: 0.2em 0;
-	margin-bottom: 2em;
+	padding: 1em;
 }
-	#complete-selection label {width: auto; padding: 0 5em 0 2.6em;}
-	#complete-selection p {float: left; width: auto;}
+	#complete-selection p:last-child {padding: 0.5em 0 0 1em;}
 	
 	#complete-selection + fieldset {margin-top: 4em;}
+
+.alone {
+	display: inline-block;
+	width: 21em;
+	text-align: left;
+	color: #000;
+	background: #EEE;
+	padding-left: 0.4em;
+	margin: 2em 0;
+}
+	#group-components li.alone {padding-left: 0.4em;}
+	.alone label {
+		float: none;
+		width: auto;
+	}
+	
+@media screen and (min-width: 1000px) {
+	div.configure {
+		float: right;
+		width: 25%;
+		color: #FFF;
+		background: #3E3E3E;
+		padding: 1%;
+	}
+	#group-components {float: left; width: 65%; background: #FFF;}
+	
+	#complete-selection p {clear: none; float: left; width: 35%;}
+	#complete-selection p:last-child {float: right; width: 45%; text-align: right; padding: 0 2.7em;}
+}
+
 	
 #total-selection {
 	display: inline-block;
@@ -1098,26 +1141,6 @@ div.configure {
     border: 2px solid #A40800;
 }
 
-#group-components ul {margin: 0; padding: 0;}
-#group-components li {list-style-type: none; padding: 0.2em 0;}
-#group-components ul.k-check li {display: inline-block; width: 20em;}
-
-.alone {
-	display: inline-block;
-	width: 21em;
-	height: 1.5em;
-	line-height: 1.5em;
-	text-align: left;
-	color: #000;
-	background: #EEE;
-	padding-left: 0.4em;
-	margin: 2em 0 2em 20px;
-}
-	#group-components li.alone {padding-left: 0.4em;}
-	.alone label {
-		float: none;
-		width: auto;
-	}
 
 /* Download buttons */
 input.major-action {
@@ -1265,14 +1288,8 @@ dl.i-doc-list {margin-bottom: 2em;}
 	#home div.i-change-style {width: 100%;}
 
 	#downloadListForm {float: right; clear: none; width: 45%;}
-		
-	#group-components {width: 55%;}
-	div.configure {width: 35%;}
 	
 	#components-list h3 {font-size: 0.8em;}
-	
-	#complete-selection p {clear: both; float: none; padding-left: 25px;}
-	#complete-selection label {padding: 0 0 1em;}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1319,9 +1336,11 @@ dl.i-doc-list {margin-bottom: 2em;}
 	div.k-tools {
 		float: left;
 		width: 100%;
-		background: #303030 url(../img/k-theme0/bowtie_small_full.svg) no-repeat;
+		background: #303030;
 		border-top: 1px solid #FFF;
 	}
+	h1::before {content: none;}
+	
 	form.k-search {float: none; text-align: left; margin-left: 71px;}
 	#home form.k-search {margin: 0;}
 	form.k-search p {margin: 0.3em 0;}

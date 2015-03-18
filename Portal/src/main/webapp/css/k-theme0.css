@@ -2831,7 +2831,7 @@ p.k-readmore {
 /* --------------------------------------------------------- LIST OF LINKS --- */
 /* CB/ linksList */
 
-ul.k-links-list {padding: 0; margin: 0 0 15px 15px;}
+ul.k-links-list {padding: 0; margin: 1em;}
 	ul.k-links-list li {list-style-type: disc;}
 
 /* CE/ linksList */
