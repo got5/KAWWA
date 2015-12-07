@@ -1,11 +1,11 @@
 (function() {
   requirejs.config({
   	'shim' : {
-  		'tjq/vendor/ui/jquery-ui.custom': ['jquery']
+  		'tjq/vendor/ui/custom': ['jquery']
   	}
   });
 
-  define(['tjq/vendor/ui/jquery-ui.custom'], function() {
+  define(['tjq/vendor/ui/custom'], function() {
   	return exports = function(spec) {
           if(spec.mode == 'false') {
               var element = jQuery('#' + spec.id + ' fieldset.k-radio p select')
