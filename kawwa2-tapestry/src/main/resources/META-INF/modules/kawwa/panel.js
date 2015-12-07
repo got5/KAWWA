@@ -1,7 +1,7 @@
 (function() {
   requirejs.config({
   	'shim' : {
-  		'kawwa/vendor/jquery.ui.panel.awl': ['tjq/vendor/ui/jquery-ui.custom']
+  		'kawwa/vendor/jquery.ui.panel.awl': ['tjq/vendor/ui/custom']
   	}
   });
   define(['kawwa/vendor/jquery.ui.panel.awl'], function() {
