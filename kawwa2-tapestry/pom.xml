@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.atos.tapestry</groupId>
     <artifactId>tapestry5-kawwa-components</artifactId>
-    <version>4.0.0-Beta-26</version>
+    <version>4.0-rc-1</version>
     <packaging>jar</packaging>
     <name>kawwaportal-components</name>
      <dependencies>
@@ -108,30 +108,33 @@
         </plugins>
     </build>
 
-    <repositories>
-        <!-- This repository is only needed when the tapestry-release-version is a snapshot release. -->
+   <repositories>
         <repository>
             <id>apache-snapshots</id>
-            <url>http://repository.apache.org/snapshots/</url>
+            <url>http://repository.apache.org/snapshots</url>
+        </repository>
+
+        <repository>
+            <id>apache-releases</id>
+            <url>https://repository.apache.org/content/repositories/releases/</url>
         </repository>
         <repository>
-	        <id>devlab722-repo</id>
-	        <url>http://nexus.devlab722.net/nexus/content/repositories/releases
-	        </url>
-	        <snapshots>
-	            <enabled>false</enabled>
-	        </snapshots>
-	    </repository>
+          		<id>central</id>
+          		<url>https://repo1.maven.org/maven2</url>
+          		<releases>
+            			<enabled>true</enabled>
+          		</releases>
+         </repository>
 
-	    <repository>
-	        <id>devlab722-snapshot-repo</id>
-	        <url>http://nexus.devlab722.net/nexus/content/repositories/snapshots
-	        </url>
-	        <releases>
-	            <enabled>false</enabled>
-	        </releases>
-	    </repository>
-    </repositories>
+		 <repository>
+			<id>oss—sonatype-snapshot-repo</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots
+			</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		 </repository>
+        </repositories>
     <profiles>
 	    <profile>
 	    	<id>opensource</id>
@@ -159,9 +162,9 @@
 		</snapshotRepository>
 	</distributionManagement>	
     <properties>
-        <tapestry-release-version>5.4-beta-26</tapestry-release-version>
+        <tapestry-release-version>5.4-rc-1</tapestry-release-version>
         <testng-version>5.12.1</testng-version>
-        <tapestry-jquery-version>4.0.1-beta-26</tapestry-jquery-version>
+        <tapestry-jquery-version>4.0-rc-1</tapestry-jquery-version>
         <servlet-version>2.5</servlet-version>
     </properties>
 <reporting>
