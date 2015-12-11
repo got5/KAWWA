@@ -1,8 +1,10 @@
 <p xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
 	
-	<t:label for="ratingRadioGroup"/>
+	<label>
+		${prop:getRatingCriteriaLabel()}
+	</label>
 	
-	<t:RadioGroup t:id="ratingRadioGroup" t:label="prop:getRatingCriteriaLabel()"
+	<t:RadioGroup  t:id="ratingRadioGroup"
 		t:value="ratingCriteria.optionValue" t:encoder="stringEncoder" t:disabled="renderMode">
 
 		<t:loop t:source="criteriaDefinition.options" t:value="currentOptionDefinition" t:encoder="optionEncoder">

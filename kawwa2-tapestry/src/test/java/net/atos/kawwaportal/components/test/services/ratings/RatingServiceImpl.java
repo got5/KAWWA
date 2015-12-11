@@ -208,7 +208,31 @@ public class RatingServiceImpl implements RatingService, ReviewService {
 	public Rating getFrontRating(String entityRef, String entityType) {
 		
 		//Mok\\
+		ArrayList<RatingCriteria> ratingCriterias= new ArrayList<RatingCriteria>();
+		
+		RatingCriteria rating= new RatingCriteria();
+		rating.setRef("001");
+		rating.setLabel("Product quality");
+		rating.setOptionLabel("pq");
+		rating.setOptionValue("2");
+		
+		ratingCriterias.add(rating);
+		
+		rating =  new RatingCriteria();
+		rating.setRef("002");
+		rating.setLabel("Service quality");
+		rating.setOptionLabel("sq");
+		rating.setOptionValue("5");
+				
+		ratingCriterias.add(rating);
+		
 		RatingImpl frontRating = new RatingImpl();
+		frontRating.setCriterias(ratingCriterias);
+		frontRating.setComment("Here is my comment");
+		frontRating.setDate(new Date());
+		frontRating.setLogin("login");
+		frontRating.setTitle("Global Rating Title");
+		
 		return frontRating;
 		//---\\
 	}
