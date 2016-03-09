@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.atos.tapestry</groupId>
     <artifactId>tapestry5-kawwa-components</artifactId>
-    <version>4.0-rc-1</version>
+    <version>4.0.0</version>
     <packaging>jar</packaging>
     <name>kawwaportal-components</name>
      <dependencies>
@@ -162,9 +162,9 @@
 		</snapshotRepository>
 	</distributionManagement>	
     <properties>
-        <tapestry-release-version>5.4-rc-1</tapestry-release-version>
+        <tapestry-release-version>5.4.0</tapestry-release-version>
         <testng-version>5.12.1</testng-version>
-        <tapestry-jquery-version>4.0-rc-1</tapestry-jquery-version>
+        <tapestry-jquery-version>4.0.0</tapestry-jquery-version>
         <servlet-version>2.5</servlet-version>
     </properties>
 <reporting>
