@@ -43,4 +43,9 @@ public class KawwaConstants {
      */
 	public static final String CSS_CLASS_CONTEXTUAL_ERROR = "k-contextual-error";
 	
+	/**
+	 * Indicates that we want to drop out bootstrap css embedded in tapestry 5.4
+	 */
+	public static final String SUPPRESS_BOOTSTRAP = "suppress.bootstrap";
+	
 }

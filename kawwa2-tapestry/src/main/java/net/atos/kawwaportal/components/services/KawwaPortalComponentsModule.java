@@ -22,7 +22,12 @@ import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 import org.apache.tapestry5.ioc.services.FactoryDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.json.JSONObject;
-import org.apache.tapestry5.services.*;
+import org.apache.tapestry5.services.Core;
+import org.apache.tapestry5.services.Environment;
+import org.apache.tapestry5.services.LibraryMapping;
+import org.apache.tapestry5.services.MarkupRenderer;
+import org.apache.tapestry5.services.MarkupRendererFilter;
+import org.apache.tapestry5.services.RequestGlobals;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.apache.tapestry5.services.javascript.StackExtension;
@@ -49,6 +54,9 @@ public class KawwaPortalComponentsModule {
 		configuration
 				.add(Kawwa2ComponentParameterConstants.KAWWA2GRIDPAGER_PAGE_RANGE,
 						5);
+		//by default, bootstrap is suppressed
+		//but we let the possibility to not override the configuration (as it can lead to exception on application load if already suppressed by another module)
+    	configuration.add(KawwaConstants.SUPPRESS_BOOTSTRAP, true);
 	}
 
     @Contribute(SymbolProvider.class)
@@ -60,9 +68,14 @@ public class KawwaPortalComponentsModule {
 
     @Contribute(JavaScriptStack.class)
     @Core
-    public static void setupCoreJavaScriptStack(OrderedConfiguration<StackExtension> configuration) {
-        //Remove the default bootstrap.css stylesheet.
-        configuration.override("bootstrap.css", null);
+    public static void setupCoreJavaScriptStack(OrderedConfiguration<StackExtension> configuration,
+    		@Symbol(KawwaConstants.SUPPRESS_BOOTSTRAP) Boolean suppress) {
+    	//by default, bootstrap is suppressed but sometimes, this is already the case (been done by another 3rd party)
+    	//so we let the possibility to not override the configuration as it leads to exception on application load
+    	if(suppress){
+    		//Remove the default bootstrap.css stylesheet.
+    		configuration.override("bootstrap.css", null);
+    	}
     }
 
     @Contribute(BreadcrumbListProviderSource.class)
