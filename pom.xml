@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.atos.tapestry</groupId>
     <artifactId>Kawwa2</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
     <name>Kawwa2 POM</name>
 
@@ -27,24 +27,10 @@
                     <id>apache-snapshots</id>
                     <url>http://repository.apache.org/snapshots/</url>
         </repository>
-        <repository>
-	            <id>devlab722-repo</id>
-	            <url>http://nexus.devlab722.net/nexus/content/repositories/releases</url>
-	            <snapshots>
-	                       <enabled>false</enabled>
-                    </snapshots>
-	</repository>
-        <repository>
-	            <id>devlab722-snapshot-repo</id>
-                    <url>http://nexus.devlab722.net/nexus/content/repositories/snapshots</url>
-	            <releases>
-                              <enabled>false</enabled>
-                    </releases>
-       </repository>
    </repositories>
 
    <properties>
-       <tapestry-release-version>5.2.6</tapestry-release-version>
+       <tapestry-release-version>5.4.0</tapestry-release-version>
    </properties>
   <modules>
     <module>kawwa2-archetype-maven</module>

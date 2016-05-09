@@ -102,14 +102,6 @@ of testing facilities designed for use with TestNG (http://testng.org/), so it's
             <id>apache-staging</id>
             <url>https://repository.apache.org/content/groups/staging/</url>
         </repository>
-        <repository>
-            <id>Kawwa2 Repo</id>
-            <url>http://nexus.devlab722.net/nexus/content/repositories/releases</url>
-        </repository>
-        <repository>
-            <id>Kawwa2 Repo snapshot</id>
-            <url>http://nexus.devlab722.net/nexus/content/repositories/snapshots</url>
-        </repository>
     </repositories>
 
     <properties>
