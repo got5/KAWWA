@@ -55,7 +55,7 @@ public class Theme0Stack implements JavaScriptStack {
     }
 
     public JavaScriptAggregationStrategy getJavaScriptAggregationStrategy() {
-        return null;
+    	return org.apache.tapestry5.services.javascript.JavaScriptAggregationStrategy.COMBINE_AND_MINIMIZE;
     }
 
     public String getInitialization() {
